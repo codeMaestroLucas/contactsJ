@@ -1,0 +1,153 @@
+package org.example.src.entities.BaseSites;
+
+import lombok.Data;
+import org.example.src.entities.Lawyer;
+import org.example.src.entities.MyDriver;
+import org.example.src.entities.excel.Sheet;
+import org.example.src.utils.EmailOfMonth;
+import org.example.src.utils.FirmsOfWeek;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
+@Data
+public abstract class Site  {
+    protected final String name;
+    protected final  String link;
+    protected  int lawyersRegistered;
+    protected final int totalPages;
+    protected final int maxLawyersForSite;
+    protected Set<String> lastCountries = new HashSet<>();
+    public final WebDriver driver = MyDriver.getINSTANCE();
+    protected final SiteUtils siteUtl = SiteUtils.getINSTANCE();
+    protected String emailsOfMonthPath;
+    protected String emailsToAvoidPath;
+
+
+    protected Site(String name, String link, int totalPages, int maxLawyersForSite, String path) {
+        this.name = name;
+        this.link = link;
+        this.totalPages = totalPages;
+        this.maxLawyersForSite = maxLawyersForSite;
+
+        this.generateEmailPaths(path);
+    }
+
+    protected Site(String name, String link, int maxLawyersForSite, String path) {
+        this.name = name;
+        this.link = link;
+        this.totalPages = 1;
+        this.maxLawyersForSite = maxLawyersForSite;
+
+        this.generateEmailPaths(path);
+    }
+
+    /**
+     * Creates the emailsOfMonthPath and emailsToAvoidPath based on the given name.
+     * It sanitizes the name by trimming spaces and removing all whitespace.
+     *
+     */
+    private void generateEmailPaths(String folderPath) {
+        String sanitizedPath = this.name.trim().replaceAll("\\s+", "");
+        this.emailsOfMonthPath = "data/sites/" +  folderPath + sanitizedPath + ".txt";
+        this.emailsToAvoidPath = "data/_toAvoid/" + folderPath + sanitizedPath + ".txt";
+
+        ensureFileExists(this.emailsOfMonthPath);
+        ensureFileExists(this.emailsToAvoidPath);
+    }
+
+
+    /**
+     * Ensures that the file exists, creating it if necessary (including parent directories).
+     *
+     * @param path Path to the file.
+     */
+    private static void ensureFileExists(String path) {
+        File file = new File(path);
+        try {
+            if (!file.exists()) {
+                boolean dirsCreated = file.getParentFile().mkdirs();
+
+                if (!dirsCreated && !file.getParentFile().exists()) {
+                    throw new IOException("Could not create directories: " + file.getParent());
+                }
+                boolean fileCreated = file.createNewFile();
+                if (!fileCreated) {
+                    throw new IOException("Could not create file: " + file.getAbsolutePath());
+                }
+            } else {
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Error ensuring file exists: " + path, e);
+        }
+    }
+
+
+    /**
+     *   * Function used to get the email and phone.
+     * @param socials web list of all the socials values to be iterated
+     * @return Array[0] == email; Array[1] == phone
+     */
+    protected String[] getSocials(List<WebElement> socials) {
+        String email = "";
+        String phone = "";
+
+        for (WebElement social : socials) {
+            String href = social.getAttribute("href").toLowerCase().trim();
+
+            if (href.contains("mail") && email.isEmpty()) {
+                email = href;
+            } else if ((href.contains("tel") || href.contains("call")) && phone.isEmpty()) {
+                phone = href;
+            }
+
+            if (!email.isEmpty() && !phone.isEmpty()) break;
+        }
+
+        return new String[] { email, phone };
+    }
+
+
+        protected void addLawyer(Lawyer lawyer) {
+        Sheet sheet = Sheet.getINSTANCE();
+        sheet.addLawyer(lawyer);
+
+        EmailOfMonth.registerEmailOfMonth(lawyer.email, this.emailsOfMonthPath);
+
+        String country = lawyer.country;
+        if (!country.equals("Not Found") || !country.equals("-----")) {
+            this.lastCountries.add(country);
+        }
+
+        FirmsOfWeek.registerFirmWeek(lawyer.firm);
+
+        this.lawyersRegistered ++;
+    }
+
+
+    // ABSTRACT METHODS
+    /**
+     * Collect all lawyers in the current page.
+     */
+    protected abstract List<WebElement> getLawyersInPage();
+
+    /**
+     * Get the lawyer info.
+     * @return HashMap<String, String> if the Lawyer Data is found || String == "Not Found" if no Lawyer Data.
+     */
+    protected abstract Object getLawyer(WebElement lawyer) throws Exception;
+
+    /**
+     * Searches for lawyers across multiple web pages and registers them if they
+     * meet validation criteria.
+     * This asynchronous function iterates through a specified number of pages to
+     * find lawyers. It accesses each page, retrieves lawyer details, and performs
+     * validation checks.
+     * Lawyers who pass the validation are registered.
+     *
+     */
+    protected abstract void searchForLawyers();
+}
