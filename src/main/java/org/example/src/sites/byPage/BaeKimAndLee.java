@@ -35,6 +35,7 @@ public class BaeKimAndLee extends ByPage {
         driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
+        MyDriver.rollDown(1, 0.5);
     }
 
 

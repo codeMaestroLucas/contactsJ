@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +17,7 @@ public class AlTamimi extends ByPage {
             "Al Tamimi",
             "https://www.tamimi.com/about-us/partners/",
             12,
-            3
+            1
         );
     }
 
@@ -29,6 +28,10 @@ public class AlTamimi extends ByPage {
         driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
+
+        if (index > 0) return;
+
+        siteUtl.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
     }
 
 
@@ -93,7 +96,7 @@ public class AlTamimi extends ByPage {
         String[] socials = this.getSocials(lawyer);
 
         return Map.of(
-                "link", this.link,
+                "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,

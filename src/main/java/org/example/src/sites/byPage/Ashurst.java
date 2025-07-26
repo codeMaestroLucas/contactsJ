@@ -30,6 +30,10 @@ public class Ashurst extends ByPage {
         driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
+
+        if (index > 0) return;
+
+        siteUtl.clickOnAddBtn(By.xpath("//*[@id=\"termsfeed-com---nb\"]/div/div[3]/button[1]"));
     }
 
 
@@ -161,4 +165,5 @@ public class Ashurst extends ByPage {
                 "phone", socials[1]
         );
     }
+
 }

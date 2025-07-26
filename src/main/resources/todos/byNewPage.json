@@ -1,3 +1,5537 @@
-{
-  "data" : []
-}
+[
+  {
+    "name": "",
+    "link": ""
+  },
+  {
+    "name": "Dottir",
+    "link": "https://www.dottirlaw.com/team/"
+  },
+  {
+    "name": "Marić & Co",
+    "link": "https://www.mariclaw.com/team.html"
+  },
+  {
+    "name": "Vasconcelos Arruda",
+    "link": "https://www.va.pt/en/team/"
+  },
+  {
+    "name": "Ogletree Deakins",
+    "link": "https://ogletree.fr/people/?lang=en"
+  },
+  {
+    "name": "Arno Legal",
+    "link": "https://arnolegal.com/teamen"
+  },
+  {
+    "name": "BTG Advaya",
+    "link": "https://www.btgadvaya.com/our-people"
+  },
+  {
+    "name": "Covenant Chambers",
+    "link": "https://www.covenantchambers.com/firm"
+  },
+  {
+    "name": "Pradhan & Associates",
+    "link": "https://www.pradhanlaw.com/team"
+  },
+  {
+    "name": "Lewiss Silkin",
+    "link": "https://www.lewissilkin.com/experts?role=Directors%253BPartners"
+  },
+  {
+    "name": "Control Risks",
+    "link": "https://www.controlrisks.com/who-we-are/our-experts"
+  },
+  {
+    "name": "Lee Tsai & Partners",
+    "link": "https://www.leetsai.com/people.php",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "Winkler",
+    "link": "https://winklerpartners.com/people/"
+  },
+  {
+    "name": "TEMPLARS",
+    "link": "https://www.templars-law.com/our-people/?show_page=3#block_acf-6426ea0693100",
+    "Note": "Start from this page"
+  },
+  {
+    "name": "KAA Law",
+    "link": "https://www.kaa.co.ug/team/"
+  },
+  {
+    "name": "Madrona",
+    "link": "https://madronaadvogados.com.br/en/our-lawyers/"
+  },
+  {
+    "name": "Gumucio & Abogados",
+    "link": "https://www.gumucioabogados.com.bo/en/team/"
+  },
+  {
+    "name": "Vazquez Tercero & Zepeda",
+    "link": "https://vtz.mx/team/"
+  },
+  {
+    "name": "Torres Legal",
+    "link": "https://torres.legal/team/"
+  },
+  {
+    "name": "Torras & Asociados",
+    "link": "https://www.torrasasociados.com/en/our-team/"
+  },
+  {
+    "name": "Sherrards",
+    "link": "https://sherrards.com/people/"
+  },
+  {
+    "name": "Ellisons Solicitors",
+    "link": "https://www.ellisonssolicitors.com/our-people/"
+  },
+  {
+    "name": "MIO Law",
+    "link": "https://miolawfirm.com/pages/meet-the-team",
+    "Note": "Try-catch email"
+  },
+  {
+    "name": "ASB Consulting Group",
+    "link": "https://asbconsulting.ru/en/about/team/"
+  },
+  {
+    "name": "Thielen & Associes",
+    "link": "https://www.lexthielen.com/en/team/"
+  },
+  {
+    "name": "FCM Limited",
+    "link": "https://fcmtrust.com/team/"
+  },
+  {
+    "name": "BĒS Associati",
+    "link": "https://www.besassociati.it/en/professionals/"
+  },
+  {
+    "name": "SPITZWEG",
+    "link": "https://www.spitzweg.com/en/consultants-2/"
+  },
+  {
+    "name": "Keiper & Co",
+    "link": "https://keiper-co.de/team/"
+  },
+  {
+    "name": "CS AVOCATS ASSOCIES",
+    "link": "https://www.csavocats.com/en/talents/"
+  },
+  {
+    "name": "GALST",
+    "link": "https://www.galst.dk/en/personer"
+  },
+  {
+    "name": "ADCO Law",
+    "link": "https://adcolaw.com/our-team"
+  },
+  {
+    "name": "H.Y. Leung & Co",
+    "link": "https://hyleung.com/our-team-members/"
+  },
+  {
+    "name": "Deutsch Miller",
+    "link": "https://www.deutschmiller.com/our-people/"
+  },
+  {
+    "name": "Allan Hall",
+    "link": "https://allanhall.com.au/our-directors/"
+  },
+  {
+    "name": "Baumgartners",
+    "link": "https://www.baumgartners.com.au/people"
+  },
+  {
+    "name": "Prasad & Company",
+    "link": "https://www.prasadcpa.com/our-team/"
+  },
+  {
+    "name": "ENS Africa",
+    "link": "https://www.ensafrica.com/people"
+  },
+  {
+    "name": "JMW",
+    "link": "https://www.jmw.co.uk/people"
+  },
+  {
+    "name": "Stach Rechtsanwälte",
+    "link": "https://stach.ch/en/team-2/"
+  },
+  {
+    "name": "Gilligan Sheppard",
+    "link": "https://gilligansheppard.co.nz/about-us/meet-the-team/"
+  },
+  {
+    "name": "Belluzzo",
+    "link": "https://belluzzo.net/en/company/professionals"
+  },
+  {
+    "name": "Eppinger & Kolarova Legal",
+    "link": "https://www.eak.legal/en/team/"
+  },
+  {
+    "name": "One Essex Court",
+    "link": "https://www.oeclaw.co.uk/mediators"
+  },
+  {
+    "name": "Greens List",
+    "link": "https://www.greenslist.com.au/s/mediators",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "Young List",
+    "links": [
+      "https://www.youngslist.com.au/the-list/?_counsel=27",
+      "https://www.youngslist.com.au/the-list/?_counsel=28"
+    ]
+  },
+  {
+    "name": "35 West Chambers",
+    "link": "https://35westchambers.com/barristers/"
+  },
+  {
+    "name": "Belgravia",
+    "link": "https://www.belgravia.law/team"
+  },
+  {
+    "name": "Holmes",
+    "link": "https://holmeslaw.ie/people"
+  },
+  {
+    "name": "Whitney Moore",
+    "link": "https://whitneymoore.ie/people/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "Wynn Williams",
+    "link": "https://wynnwilliams.co.nz/people/"
+  },
+  {
+    "name": "Wilson Harle",
+    "link": "https://www.wilsonharle.com/people"
+  },
+  {
+    "name": "Webb Henderson",
+    "link": "https://webbhenderson.com/people/"
+  },
+  {
+    "name": "Mills Oakley",
+    "link": "https://www.millsoakley.com.au/people/"
+  },
+  {
+    "name": "Pearce IP",
+    "link": "https://www.pearceip.law/our-people/"
+  },
+  {
+    "name": "Norman Waterhouse",
+    "link": "https://www.normans.com.au/people/"
+  },
+  {
+    "name": "McCullough Robertson",
+    "link": "https://mccullough.com.au/people/"
+  },
+  {
+    "name": "Wrays",
+    "link": "https://wrays.com.au/people/"
+  },
+  {
+    "name": "Madderns",
+    "link": "https://madderns.com.au/team/"
+  },
+  {
+    "name": "Chamberlains",
+    "link": "https://chamberlains.com.au/about/"
+  },
+  {
+    "name": "ABG IP",
+    "link": "https://abg-ip.com/our-people/"
+  },
+  {
+    "name": "Saba&Co",
+    "link": "https://www.sabaip.com/our-team-2/"
+  },
+  {
+    "name": "Ron Klagsbald",
+    "link": "https://aoilaw.co.il/our-team/"
+  },
+  {
+    "name": "Ben-Ami & Associates ",
+    "link": "https://benami.com/en/our-people/"
+  },
+  {
+    "name": "Luzzatto & Luzzatto",
+    "link": "https://www.luzzatto.co.il/%d7%94%d7%a6%d7%95%d7%95%d7%aa-%d7%a9%d7%9c%d7%a0%d7%95/?_expert_name=&_role_filter=349#search_results"
+  },
+  {
+    "name": "Daniel, Brantley & Associates",
+    "link": "https://www.danielbrantley.com/our-people/",
+    "Note": "Country: Nevis. Avoid the first partner"
+  },
+  {
+    "name": "Ferrere",
+    "link": "https://www.ferrere.com/es/profesionales/"
+  },
+  {
+    "name": "Estudio Delion",
+    "link": "https://www.estudiodelion.com.pe/our-team/"
+  },
+  {
+    "name": "Dumont Bergman Bider",
+    "link": "https://www.dumont.mx/our-team/"
+  },
+  {
+    "name": "Cameron & Shepherd",
+    "link": "https://cameronandshepherd.com/our-team"
+  },
+  {
+    "name": "Legalsa",
+    "link": "https://www.legalsa.com/socios/"
+  },
+  {
+    "name": "LatinAlliance",
+    "link": "https://latinalliance.co/en/expertoslegal/"
+  },
+  {
+    "name": "EProint",
+    "link": "https://eproint.com/what-we-do-best/#ourPeople"
+  },
+  {
+    "name": "Sargent & Krahn",
+    "link": "https://www.sargent.cl/en/our-team/?filter_tax_326=partner,partner-en"
+  },
+  {
+    "name": "Nieto Patents and Trademark",
+    "link": "https://nietonieto.com/en/our-partners/"
+  },
+  {
+    "name": "MBM Intellectual Property Law",
+    "link": "http://www.mbm.com/en/our-team"
+  },
+  {
+    "name": "HSM Group",
+    "link": "https://hsmllpcas.com/profiles/",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Cameron IP",
+    "link": "https://cameronintellectualproperty.com/team/",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Riches, McKenzie & Herbert",
+    "link": "https://www.patents-toronto.com/people/",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "KIBLAF LLC",
+    "link": "https://kiblaf.com/our-people/"
+  },
+  {
+    "name": "TMP Intellectual Property",
+    "link": "https://tmp-ip.com/team/"
+  },
+  {
+    "name": "Wenfei Law",
+    "link": "https://www.wenfei.com/index.php?id=14&no_cache=1&L=588"
+  },
+  {
+    "name": "Asia Liuh IP",
+    "link": "https://www.asialiuh.com/en/team.php?act=list&cid=1"
+  },
+  {
+    "name": "KASAN",
+    "link": "http://www.kspat.com/en/professionals"
+  },
+  {
+    "name": "21st Century Patent & Law",
+    "link": "http://www.21cpat.com/eng/?page_id=9211"
+  },
+  {
+    "name": "Donaldson & Burkinshaw",
+    "link": "https://donburk.asia/our-people.html#partners"
+  },
+  {
+    "name": "Cochingyan & Partners Law",
+    "link": "http://www.cochingyanlaw.net/attorneys/"
+  },
+  {
+    "name": "NATL",
+    "link": "https://natl.com.my/our-people/"
+  },
+  {
+    "name": "Marks&Clerk",
+    "link": "https://www.marks-clerk.com/our-people/"
+  },
+  {
+    "name": "FPA Patent",
+    "link": "https://www.fpapatents.com/our-attorneys/"
+  },
+  {
+    "name": "Hastings & Co",
+    "link": "https://hastings-hk.com/our-people/"
+  },
+  {
+    "name": "Fairbairn Catley Low & Kong",
+    "link": "https://www.fclklaw.com.hk/en/our-people/"
+  },
+  {
+    "name": "Ribeiro Hui Solicitors",
+    "link": "https://www.ribeirohui.com/professionals"
+  },
+  {
+    "name": "M&D LAW",
+    "link": "http://en.mdlaw.cn/teachers.aspx?TypeId=66&FId=t26:66:26"
+  },
+  {
+    "name": "Beijing East IP",
+    "link": "https://www.beijingeastip.com/professionals/?professional=&key_words=&position=0&offices=0&practices=0"
+  },
+  {
+    "name": "Advancing China IP Ltd",
+    "link": "http://advancelaw.cn/zytd/list_81.aspx"
+  },
+  {
+    "name": "Sunbow Law",
+    "link": "http://ip.chinasunbow.com/professionals.html"
+  },
+  {
+    "name": "STANDARD PATENT & TRADEMARK",
+    "link": "http://www.szstd.com/en/staff/index.asp"
+  },
+  {
+    "name": "DAI TIN & ASSOCIATES",
+    "link": "https://daitin.com.vn/our-team/partners/"
+  },
+  {
+    "name": "Vemma Consult",
+    "link": "https://vemmaattorneys.co.tz/our-people/"
+  },
+  {
+    "name": "Abenry & Company",
+    "link": "https://abenry.co.tz/partners/"
+  },
+  {
+    "name": "Hans Offia & Associates",
+    "link": "https://hansoffialawfirm.com/team/"
+  },
+  {
+    "name": "Jackson, Etti & Edu",
+    "link": "https://www.jee.africa/people"
+  },
+  {
+    "name": "Porta & Consulenti Associati",
+    "link": "https://www.pcapatlaw.it/en/about-us/"
+  },
+  {
+    "name": "Enpora",
+    "link": "https://enpora.com/about-us/our-experts/"
+  },
+  {
+    "name": "ACOPAT ID",
+    "link": "https://www.acopat.com/en/team"
+  },
+  {
+    "name": "Kondrat",
+    "link": "https://kondrat.pl/en/home/"
+  },
+  {
+    "name": "Wardyński & Partners ",
+    "link": "https://wardynski.com.pl/en/lawyers"
+  },
+  {
+    "name": "JWP",
+    "link": "https://www.jwp-poland.com/team/"
+  },
+  {
+    "name": "Otello",
+    "link": "https://otello.dk/en/medarbejdere"
+  },
+  {
+    "name": "Hamso Patentybra",
+    "link": "https://www.patent.no/en/our-employees/"
+  },
+  {
+    "name": "EP&C",
+    "link": "https://www.epc.nl/en/employees"
+  },
+  {
+    "name": "Le Poole Bekema",
+    "link": "https://acr.amsterdam/en/#people"
+  },
+  {
+    "name": "Kennedy Van der Laan",
+    "link": "https://kvdl.com/en/our-team@job-function:attorney-at-law"
+  },
+  {
+    "name": "Philippe & Partners",
+    "link": "https://philippelaw.eu/en/lawyers/"
+  },
+  {
+    "name": "Freylinger",
+    "link": "https://www.freylinger.com/our-team/"
+  },
+  {
+    "name": "METIDA",
+    "link": "https://metida.com/all-team/#"
+  },
+  {
+    "name": "Cruickshank",
+    "link": "https://cruickshank.ie/our-people"
+  },
+  {
+    "name": "Arnason Faktor",
+    "link": "https://arnasonfaktor.is/en/about-us-about-us/about-us"
+  },
+  {
+    "name": "SBGK",
+    "link": "https://sbgk.hu/en/our_people"
+  },
+  {
+    "name": "MSA IP Law",
+    "link": "https://msa-iplaw.com/people/"
+  },
+  {
+    "name": "Kovári and Partners",
+    "link": "https://kovaripatent.com/team/"
+  },
+  {
+    "name": "Gödölle, Kékes, Mészáros & Szabó",
+    "link": "https://godollepat.hu/en/attorneys-2/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "DANUBIA Patent & Law",
+    "link": "https://www.danubia.com/danubia-patent-and-law-office/#our-people"
+  },
+  {
+    "name": "RGTH",
+    "link": "https://rgth.de/en/team-2/"
+  },
+  {
+    "name": "Reinhard Skuhra Weise & Partner GbR",
+    "link": "https://www.isarpatent.com/team/partner-von-isarpatent/"
+  },
+  {
+    "name": "Prinz & Partner",
+    "link": "https://www.prinz.eu/en/team"
+  },
+  {
+    "name": "Prüfer & Partner",
+    "link": "https://pruefer.eu/en/team/"
+  },
+  {
+    "name": "Notarbartolo & Gervasi",
+    "link": "https://www.ngpatent.it/en/NG-Team"
+  },
+  {
+    "name": "Greyhills Rechtsanwälte",
+    "link": "https://www.greyhills.com/en/success-team/"
+  },
+  {
+    "name": "FPS Law",
+    "link": "https://fps-law.de/de/experten"
+  },
+  {
+    "name": "Flügel Preissner",
+    "link": "https://fluegelpreissner.com/en/start/#!/team"
+  },
+  {
+    "name": "Betten & Resch",
+    "link": "https://www.bettenresch.com/en-frontpage#our_team"
+  },
+  {
+    "name": "Weickmann & Weickmann",
+    "link": "https://www.weickmann.de/en/team/",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "Vossius & Partner",
+    "link": "https://www.vossius.eu/en/attorneys-professionals"
+  },
+  {
+    "name": "SKW Schwarz",
+    "link": "https://www.skwschwarz.de/en/lawyers"
+  },
+  {
+    "name": "Maikowski & Ninnemann",
+    "link": "https://www.maikowski-ninnemann.com/mn-team/partner"
+  },
+  {
+    "name": "Hoffmann Eitle",
+    "link": "https://www.hoffmanneitle.com/de/teams?partner=true&team=#form"
+  },
+  {
+    "name": "HARTE-BAVENDAMM",
+    "link": "https://www.harte-bavendamm.de/en/about"
+  },
+  {
+    "name": "Grünecker Patent",
+    "link": "https://grunecker.de/en/team/"
+  },
+  {
+    "name": "Eisenfuhr,Speiser & Partner",
+    "link": "https://www.eisenfuhr.com/de/team"
+  },
+  {
+    "name": "Kern, Weyl & Andreani",
+    "link": "https://kern-weyl.com/en/our-team/"
+  },
+  {
+    "name": "Ardan",
+    "link": "https://ardan.law/en/our-team/"
+  },
+  {
+    "name": "Laurent & Charras",
+    "link": "https://www.laurentcharras.com/en/our-team/",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "Berggren",
+    "link": "https://www.berggren.eu/en/our-experts"
+  },
+  {
+    "name": "KAULO & PARTNERS",
+    "link": "https://kaulopartners.fi/en/team"
+  },
+  {
+    "name": "Plougmann Vingtoft",
+    "link": "https://www.pv.eu/our-experts/"
+  },
+  {
+    "name": "Hoiberg",
+    "link": "https://hoiberg.com/experts/?filter_Positions_49352=Partners||Associate%20Partners"
+  },
+  {
+    "name": "Otello",
+    "link": "https://www.otello.dk/en/medarbejdere"
+  },
+  {
+    "name": "CHAS HUDE",
+    "link": "https://chashude.com/experts/"
+  },
+  {
+    "name": "Chrysostomides & Co",
+    "link": "https://www.chrysostomides.com/lawyers/"
+  },
+  {
+    "name": "Strelia",
+    "link": "https://www.strelia.com/en/lawyers"
+  },
+  {
+    "name": "Schoups",
+    "link": "https://schoups.be/en/team_members"
+  },
+  {
+    "name": "Racine",
+    "link": "https://www.racine.eu/status/associes/"
+  },
+  {
+    "name": "Janson",
+    "link": "https://www.janson.be/team-1"
+  },
+  {
+    "name": "Brantsandpatents",
+    "link": "https://brantsandpatents.com/en/about-us"
+  },
+  {
+    "name": "Lansky, Ganzger & Partner",
+    "link": "https://www.lansky.at/en/team-1/"
+  },
+  {
+    "name": "Kaan Cronenberg & Partners",
+    "link": "https://kcp.at/en/partners/"
+  },
+  {
+    "name": "Haffner und Keschmann",
+    "link": "https://www.sonn.at/en/team"
+  },
+  {
+    "name": "Frieders, Tassul & Partner",
+    "link": "https://www.friederstassul.at/#team"
+  },
+  {
+    "name": "bpv Hügel",
+    "link": "https://www.bpv-huegel.com/juristen/"
+  },
+  {
+    "name": "BRAUNEIS RECHTSANWÄLTE",
+    "link": "https://www.brauneis.law/en/team"
+  },
+  {
+    "name": "Almeida Advogados",
+    "link": "https://www.almeidalaw.com.br/en/team/",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "MB Legal",
+    "link": "https://mblegal.am/our-team/"
+  },
+  {
+    "name": "RDM Lawyers",
+    "link": "https://rdmlawyers.com/team/",
+    "Note": "Avoid Retired partners"
+  },
+  {
+    "name": "Birdsell Grant LLP",
+    "link": "https://birdsell.ca/lawyers"
+  },
+  {
+    "name": "Sampson Coward LLP",
+    "link": "https://www.sampsoncoward.co.uk/our-people"
+  },
+  {
+    "name": "Pinney Talfourd Solicitors",
+    "link": "https://www.pinneytalfourd.co.uk/people/"
+  },
+  {
+    "name": "Osbornes Solicitors",
+    "link": "https://osborneslaw.com/teams/?_sft_department=family-law"
+  },
+  {
+    "name": "Mercer Solicitors",
+    "link": "https://mercerslaw.co.uk/our-team/"
+  },
+  {
+    "name": "Greene & Greene Solicitors",
+    "link": "https://greene-greene.com/our-people/"
+  },
+  {
+    "name": "Francis Wilks & Jones",
+    "link": "https://www.franciswilksandjones.co.uk/people/"
+  },
+  {
+    "name": "Aitken Partners",
+    "link": "https://www.aitken.com.au/our-people-list"
+  },
+  {
+    "name": "Al Sulaiti Law",
+    "link": "https://www.alsulaitilawfirm.com/our-team.html"
+  },
+  {
+    "name": "TTT & Partners",
+    "link": "https://tttandpartners.com/team/"
+  },
+  {
+    "name": "The Capital Law",
+    "link": "https://thecapitallaw.com/our-team/"
+  },
+  {
+    "name": "Weerawong C&P",
+    "link": "https://weerawongcp.com/people-list.php?key=c&type=surname",
+    "Note": "Start from  C "
+  },
+  {
+    "name": "Eldan Law",
+    "link": "https://www.eldanlaw.com/our-people/"
+  },
+  {
+    "name": "Christopher Chuah Law",
+    "link": "https://www.cclawchambers.com/our-team"
+  },
+  {
+    "name": "RevLaw",
+    "link": "https://revlawllc.com/our-people/"
+  },
+  {
+    "name": "RCL Chambers Law",
+    "link": "https://www.rclc.com.sg/our-team/"
+  },
+  {
+    "name": "Ascendant Legal",
+    "link": "https://www.ascendantlegal.com/our-people"
+  },
+  {
+    "name": "Amica Law",
+    "link": "https://www.amicalaw.com/"
+  },
+  {
+    "name": "Allen & Gledhill",
+    "link": "https://www.allenandgledhill.com/sg/partners/"
+  },
+  {
+    "name": "KMD Lee & Co",
+    "link": "https://kmdlee.com/our-people/"
+  },
+  {
+    "name": "Harold & Lam Partnership",
+    "link": "https://hlplawyers.com/team/"
+  },
+  {
+    "name": "Mohanadass Partnership",
+    "link": "https://mohanadass.com/people.html"
+  },
+  {
+    "name": "Tommy Thomas",
+    "link": "https://www.tommythomas.net/main/staticpage/barristers"
+  },
+  {
+    "name": "One Asia Lawyers",
+    "link": "https://oneasia.legal/en/member-page"
+  },
+  {
+    "name": "LS Horizon",
+    "link": "https://lshorizon.com/professionals/"
+  },
+  {
+    "name": "Andersen",
+    "link": "https://kh.andersen.com/our-people/?n=&ser=&title="
+  },
+  {
+    "name": "Sudath Perera Associates",
+    "link": "https://sudathpereraassociates.com/lawyers"
+  },
+  {
+    "name": "S&A Lawyers",
+    "link": "https://sandalawyers.com/peoples"
+  },
+  {
+    "name": "CTL Strategies",
+    "link": "https://www.ctlstrategies.com/people/"
+  },
+  {
+    "name": "Woo Kwan Lee & Lo",
+    "link": "https://www.wkll.com/en/our-professionals"
+  },
+  {
+    "name": "Naik Naik & Company",
+    "link": "https://naiknaik.com/team/"
+  },
+  {
+    "name": "Atlas Law",
+    "link": "https://atlaslawpartners.com/partners/"
+  },
+  {
+    "name": "TT&A",
+    "link": "https://tta.in/team/"
+  },
+  {
+    "name": "DMD Law",
+    "link": "https://www.dmd.law/people/"
+  },
+  {
+    "name": "Wadia Ghandy & Co",
+    "link": "https://wadiaghandy.com/the-team/"
+  },
+  {
+    "name": "IC Universal Legal",
+    "link": "https://icul.in/our-people/"
+  },
+  {
+    "name": "EJE Law",
+    "link": "http://www.ejelaw.com/members/?lang=en"
+  },
+  {
+    "name": "Unicase",
+    "link": "https://unicaselaw.com/team"
+  },
+  {
+    "name": "Tokyo International Law",
+    "link": "https://www.tkilaw.com/en/members",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "Zhong Lun Law",
+    "link": "https://www.zhonglun.com.hk/en/ourpeople.php"
+  },
+  {
+    "name": "Robertsons Solicitors",
+    "link": "https://robertsonshk.com/en/people"
+  },
+  {
+    "name": "Boase Cohen & Collins",
+    "link": "https://www.boasecohencollins.com/people/"
+  },
+  {
+    "name": "Gall",
+    "link": "https://www.gallhk.com/our-people/"
+  },
+  {
+    "name": "DeHeng",
+    "link": "https://www.dehenglaw.com/EN/Team/0005.aspx"
+  },
+  {
+    "name": "MinterEllison",
+    "link": "https://www.minterellison.com.hk/our-people/"
+  },
+  {
+    "name": "YYC Legal",
+    "link": "https://www.yyc-ec.com/our-team"
+  },
+  {
+    "name": "Ravenscroft & Schmierer",
+    "link": "https://www.rs-lawyers.com.hk/team"
+  },
+  {
+    "name": "Lanbai Law",
+    "link": "https://www.lanbailawfirm.com/team"
+  },
+  {
+    "name": "River Delta Law",
+    "link": "http://www.jsjlawyer.com/en/gjpartner_en/"
+  },
+  {
+    "name": "China Patent Agent",
+    "link": "https://www.cpahkltd.com/index.php?c=category&id=57",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "T&C Law",
+    "link": "https://en.tclawfirm.com/list-5.html"
+  },
+  {
+    "name": "Guantao Law",
+    "link": "https://www.guantao.com/en/column41"
+  },
+  {
+    "name": "Anli Partners",
+    "link": "https://www.anlilaw.com/100043/"
+  },
+  {
+    "name": "Baohua Law",
+    "link": "https://www.baohualaw.com/team.html"
+  },
+  {
+    "name": "Wintell & Co",
+    "link": "https://www.wintell.cn/yingtai/en/toPersonnelPc.do"
+  },
+  {
+    "name": "Chang Tsi & Partners",
+    "link": "https://www.changtsi.com/team?position=7",
+    "Note": "Check if there's any more lawyer to register. All the Managing Partners registered"
+  },
+  {
+    "name": "Dowway & Partners",
+    "link": "https://www.dowway.com/en/professional/",
+    "Note": "Just 4"
+  },
+  {
+    "name": "TA Law",
+    "link": "https://www.taoanlaw.com/professionals/en"
+  },
+  {
+    "name": "KaiRong Law",
+    "link": "https://www.skrlf.com/lawfirm/team.html"
+  },
+  {
+    "name": "Wang Jing & Co",
+    "link": "https://wjnco.com/menu.aspx?m=35"
+  },
+  {
+    "name": "AnJie Broad",
+    "link": "https://www.anjielaw.com/team/team.html"
+  },
+  {
+    "name": "Stellar Chambers",
+    "link": "https://stellarchambers.com/attorneys.html"
+  },
+  {
+    "name": "Stelios Americanos & Co",
+    "link": "https://americanoslaw.com/firm-members/"
+  },
+  {
+    "name": "Stek",
+    "link": "https://stek.com/en/people/?q=&_practice-area=&_sector=&_function=partner&_team="
+  },
+  {
+    "name": "Stehlin & Associés",
+    "link": "https://everlaw-tax.fr/en/lawyers/"
+  },
+  {
+    "name": "Sullivan & Cromwell",
+    "link": "https://www.sullcrom.com/LawyerListing?custom_i_type=25257&custom_is_office=27561+27573+27562+27563+27564+27569+27570+27571"
+  },
+  {
+    "name": "Quinn Emanuel",
+    "link": "https://www.quinnemanuel.com/attorneys#byCountry=1757&byChar=all&byProfileType=1766&bySearch=&byOffice=28613,28189,26851,1096,25454,1099,1100,1101,1103,1105,23207,1107,13319,25494,12782,35081,13698,1110,1111,12228&byPracticeArea=&byLawClerk=&byAdp=&currentPage=1"
+  },
+  {
+    "name": "Cravath, Swaine & Moore",
+    "link": "https://www.cravath.com/people/index.html?of=5412&po=5499&s=20"
+  },
+  {
+    "name": "Squair",
+    "link": "https://www.squairlaw.com/en/notre-equipe"
+  },
+  {
+    "name": "SPS Advogados",
+    "link": "https://spsadvogados.com/en/equipa-2/socios/"
+  },
+  {
+    "name": "SPA Ajibade & Co",
+    "link": "https://spaajibade.com/people/"
+  },
+  {
+    "name": "SouzaOkawa",
+    "link": "https://souzaokawa.com.br/en/"
+  },
+  {
+    "name": "Souriadakis Tsibris",
+    "link": "https://souriadakistsibris.gr/our-people/"
+  },
+  {
+    "name": "Solvere",
+    "link": "https://solvere.legal/en/nosotros/#equipo"
+  },
+  {
+    "name": "Solola & Akpana",
+    "link": "https://sololaakpana.ng/teams/"
+  },
+  {
+    "name": "Sokol, Novák, Trojan, Doleček",
+    "link": "https://sntd.eu/en/people/pozice:partner"
+  },
+  {
+    "name": "Soemadipradja & Taher",
+    "link": "https://www.soemadipradjataher.com/people"
+  },
+  {
+    "name": "Snellman",
+    "link": "https://snellman.com/our-people/?e-filter-5135e0e-role=Partners"
+  },
+  {
+    "name": "Skrastiņš & Dzenis",
+    "link": "https://skdz.lv/position_team/partner,senior-partner/?post_types=team"
+  },
+  {
+    "name": "Skils Law",
+    "link": "https://skils.cz/en/people/"
+  },
+  {
+    "name": "Skau Reipurth",
+    "link": "https://www.skaureipurth.com/en/team/"
+  },
+  {
+    "name": "SSMP Law",
+    "link": "https://ssmp.co/people/"
+  },
+  {
+    "name": "Simpson Grierson",
+    "link": "https://www.simpsongrierson.com/people?roleType=Partner"
+  },
+  {
+    "name": "Simont Braun",
+    "link": "https://simontbraun.eu/lawyers/"
+  },
+  {
+    "name": "Simonsen Vogt Wiig",
+    "link": "https://svw.no/en/people"
+  },
+  {
+    "name": "Simon Associés",
+    "link": "https://simonassocies.com/en/the-partners/"
+  },
+  {
+    "name": "Silveiro",
+    "link": "https://silveiro.com.br/equipe/"
+  },
+  {
+    "name": "SIGNUM",
+    "link": "https://signumlaw.com/en/people"
+  },
+  {
+    "name": "Shibolet & Co",
+    "link": "https://www.shibolet.com/en/legal-team/"
+  },
+  {
+    "name": "Sharkawy & Sarhan",
+    "link": "https://sharkawylaw.com/our-people-2-2-2/"
+  },
+  {
+    "name": "Shardul Amarchand Mangaldas & Co",
+    "link": "https://www.amsshardul.com/people/management-board/"
+  },
+  {
+    "name": "Shanghai Pacific Legal",
+    "link": "https://shanghaipacificlegal.com.cn/en/our-people/"
+  },
+  {
+    "name": "Shandong Deheng Law",
+    "link": "https://www.deheng.com/lawyer/"
+  },
+  {
+    "name": "Shalakany Law",
+    "link": "https://shalakany.com/"
+  },
+  {
+    "name": "SGP Schneider Geiwitz & Partner",
+    "link": "https://www.schneidergeiwitz.de/team"
+  },
+  {
+    "name": "SGLA Law",
+    "link": "https://www.sgla.com/Lawyer?Name=&Job=e2061910-1001-4860-b92d-7d03c67436a3&AreaId=&Business=&IsShow=1"
+  },
+  {
+    "name": "SG & Co Lawyers",
+    "link": "http://en.sglaw.cn/personnel.personnel"
+  },
+  {
+    "name": "SFA",
+    "link": "https://www.sfa.law/en/legal-team/?role=39"
+  },
+  {
+    "name": "Setterwalls",
+    "link": "https://setterwalls.se/en/our-people/?f_f=&f_a=&f_i=&f_o=&e_s=&f_l=&f_p=1&f_q=12"
+  },
+  {
+    "name": "Senica and Partners",
+    "link": "https://www.senica.si/public/en/professionals"
+  },
+  {
+    "name": "SDZLEGAL Schindhelm",
+    "link": "https://pl.schindhelm.com/en/team"
+  },
+  {
+    "name": "Scotto Partners",
+    "link": "https://www.scottopartners.com/equipes/"
+  },
+  {
+    "name": "Schulte Roth & Zabel",
+    "link": "https://www.srz.com/en/people?of=190385&po=1699"
+  },
+  {
+    "name": "Schramm Öhler",
+    "link": "https://www.schramm-oehler.at/menschen/"
+  },
+  {
+    "name": "Schneeweiss Weixelbaum Rechtsanwälte",
+    "link": "https://swlaw.at/home-en/#team"
+  },
+  {
+    "name": "Schellenberg Wittmer",
+    "link": "https://www.swlegal.com/en/lawyers/#category/view-type/list/position/partner/zurich/false/geneva/false/singapore/false"
+  },
+  {
+    "name": "Schalast & Partner",
+    "link": "https://www.schalast.com/en/team/all_attorneys.php"
+  },
+  {
+    "name": "Scanlen and Holderness",
+    "link": "https://www.scanlenandholderness.com/our-people/partners/"
+  },
+  {
+    "name": "Sayın Law",
+    "link": "https://sayinlaw.com.tr/ekibimiz/"
+  },
+  {
+    "name": "Sayat Zholshy & Partners",
+    "link": "https://szp.kz/en/team"
+  },
+  {
+    "name": "SAXINGER Rechtsanwalts GmbH",
+    "link": "https://at.schindhelm.com/en/team"
+  },
+  {
+    "name": "Sarantitis",
+    "link": "https://www.sarantitis.com/index.php/our-team"
+  },
+  {
+    "name": "Saraf and Partners",
+    "link": "https://www.sarafpartners.com/people/"
+  },
+  {
+    "name": "AS Papadimitriou & Partners",
+    "link": "https://saplegal.gr/people/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "Santamarina y Steta",
+    "link": "https://www.santamarinasteta.mx/en/equipo-sys/?_puesto_rol=socio"
+  },
+  {
+    "name": "Sangra Moller LLP",
+    "link": "https://www.sangra.com/people/"
+  },
+  {
+    "name": "SANDS",
+    "link": "https://www.sands.no/vare-medarbeidere/"
+  },
+  {
+    "name": "Salus Legal",
+    "link": "https://salus.law/en/staff/"
+  },
+  {
+    "name": "SASLO",
+    "link": "https://www.saslo.com/our-lawyers"
+  },
+  {
+    "name": "Sadkowski i Wspólnicy",
+    "link": "https://sadkowskiiwspolnicy.pl/en/team/?stanowisko=Partner"
+  },
+  {
+    "name": "Rymarz Zdort Maruta",
+    "link": "https://rzmlaw.com/en/team/?lang=en"
+  },
+  {
+    "name": "Ružička and Partners",
+    "link": "https://r-c.sk/sk/ludia/zoznam/"
+  },
+  {
+    "name": "Rubeya & Co",
+    "link": "https://rubeya.bi/people/"
+  },
+  {
+    "name": "R&P",
+    "link": "https://www.rplawyers.com/people/"
+  },
+  {
+    "name": "Rosselló Abogados",
+    "link": "https://rossellolaw.com/en/attorneys/"
+  },
+  {
+    "name": "RDS Partners",
+    "link": "https://www.rdslawpartners.com/people"
+  },
+  {
+    "name": "RONN Law",
+    "link": "https://www.ronn.law/team.html"
+  },
+  {
+    "name": "Romeu Amaral Advogados",
+    "link": "https://romeuamaral.com.br/en/#team"
+  },
+  {
+    "name": "Rolim Goulart Cardoso",
+    "link": "https://www.rolim.com/en/professionals",
+    "Note": "Click on partner opt"
+  },
+  {
+    "name": "Rojs Peljhan Prelesnik & Partners",
+    "link": "https://www.rppp.si/experts/#partner"
+  },
+  {
+    "name": "Robinson Bertram",
+    "link": "https://robinsonbertram.law.sz/team/",
+    "Note": "The name must be collected from the previos page"
+  },
+  {
+    "name": "Robalino",
+    "link": "https://www.robalinolaw.com/en/profesionales"
+  },
+  {
+    "name": "RLD",
+    "link": "https://www.gruporld.com/equipo-rld?lang=en"
+  },
+  {
+    "name": "RKKW",
+    "link": "https://rkkw.pl/en/team/"
+  },
+  {
+    "name": "Ried Fabres",
+    "link": "https://www.riedfabres.cl/en/cargo/partners/"
+  },
+  {
+    "name": "Riad Saleh & Partners",
+    "link": "https://riadsaleh.com/our-team/"
+  },
+  {
+    "name": "Riad & Riad",
+    "link": "https://riad-riad.com/attorney/?wpv-wpcf-position=1&wpv_aux_current_post_id=3964&wpv_aux_parent_post_id=3964&wpv_view_count=2257"
+  },
+  {
+    "name": "Revera Law",
+    "link": "https://cyprus.revera.legal/komanda/"
+  },
+  {
+    "name": "Raz Dlugin & Co",
+    "link": "https://raz-dlugin.co.il/"
+  },
+  {
+    "name": "Rayes & Fagundes",
+    "link": "https://rfaa.com.br/en/our-team/",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "Raveh Haber & Co",
+    "link": "https://www.rhlawyers.co.il/lawyers/"
+  },
+  {
+    "name": "Rask",
+    "link": "https://rask.ee/team"
+  },
+  {
+    "name": "Ramón y Cajal",
+    "link": "https://www.ramonycajalabogados.es/en"
+  },
+  {
+    "name": "Ramesh Dipendra Jeremiah Law",
+    "link": "https://www.rdj-law.com/our-team"
+  },
+  {
+    "name": "Rajani Associates",
+    "link": "https://www.rajaniassociates.net/team-overview.html"
+  },
+  {
+    "name": "RdHOO",
+    "link": "https://rdhoo.com/contenidos/gente"
+  },
+  {
+    "name": "RS Legal",
+    "link": "https://rslegal.pl/en/our-team"
+  },
+  {
+    "name": "RTPR",
+    "link": "https://www.rtpr.ro/team/"
+  },
+  {
+    "name": "Radovanović Stojanović & Partners",
+    "link": "https://www.rspartners.rs/team"
+  },
+  {
+    "name": "Racine",
+    "link": "https://www.racine.eu/en/status/partners/"
+  },
+  {
+    "name": "Quinz",
+    "link": "https://www.quinz.be/team"
+  },
+  {
+    "name": "Quiason Makalintal",
+    "link": "https://www.qmlaw.com.ph/partners"
+  },
+  {
+    "name": "Puga Ortiz",
+    "link": "https://pugaortiz.cl/equipo/"
+  },
+  {
+    "name": "Providence Law",
+    "link": "https://www.providencelawasia.com/our-people/"
+  },
+  {
+    "name": "Wierzbowski & Partners",
+    "link": "https://wierzbowski.com/en/lawyers/"
+  },
+  {
+    "name": "Pérez-Llorca",
+    "link": "https://www.perezllorca.com/en/?s=&post_type%5B%5D=abogado&tiposhidden=partner&tipos=partner"
+  },
+  {
+    "name": "Premier Chambers",
+    "link": "https://www.premier-chambers.com/team"
+  },
+  {
+    "name": "Prager Dreifuss",
+    "link": "https://www.prager-dreifuss.com/en/team?mod_action=filter_entries&property_filter[1][]=3"
+  },
+  {
+    "name": "PotamitisVekris",
+    "link": "https://www.potamitisvekris.com/people/?pos=partner"
+  },
+  {
+    "name": "Poswa Incorporated",
+    "link": "https://poswainc.com/our-team/"
+  },
+  {
+    "name": "Pini Franco LLP",
+    "link": "https://www.pinifranco.com/professionisti-copy/"
+  },
+  {
+    "name": "Acumum",
+    "link": "https://acumum.com/about/"
+  },
+  {
+    "name": "TLA Law",
+    "link": "https://t-lawadvisors.com/partners/"
+  },
+  {
+    "name": "Nicolas Kanellopoulos Law",
+    "link": "https://www.kanell.gr/eteri-synergates/?lang=en"
+  },
+  {
+    "name": "Politis & Partners",
+    "link": "https://politispartners.gr/our-lawyers/"
+  },
+  {
+    "name": "POELLATH",
+    "link": "https://www.pplaw.com/en/team/professionals?url=https%3A%2F%2Fwww.pplaw.com%2Fen%2Fteam%2Fprofessionals&mfilter%5B0%5D%5Btype%5D=position&mfilter%5B0%5D%5Bvalue%5D=28"
+  },
+  {
+    "name": "PLUTA",
+    "link": "https://www.pluta.net/en/profile/about-us.html",
+    "Note": "Check if is an valid firm"
+  },
+  {
+    "name": "PLMJ",
+    "link": "https://www.plmj.com/en/people/"
+  },
+  {
+    "name": "PK Wong & Nair",
+    "link": "https://pkwongnair.com/directors/"
+  },
+  {
+    "name": "Employment Law Alliance",
+    "link": "https://www.ela.law/firms"
+  },
+  {
+    "name": "Pietrantoni Méndez & Alvarez LLC",
+    "link": "https://www.pmalaw.com/attorneys/?letter=all"
+  },
+  {
+    "name": "Philip Lee",
+    "link": "https://www.philiplee.ie/our-people/"
+  },
+  {
+    "name": "PHH Rechtsanwält:innen",
+    "link": "https://phh.at/en/teams/"
+  },
+  {
+    "name": "PG Law",
+    "link": "https://pg.law/en/team/"
+  },
+  {
+    "name": "Pestalozzi",
+    "link": "https://pestalozzilaw.com/en/lawyers/"
+  },
+  {
+    "name": "PSTBN",
+    "link": "https://www.pstbn.com.py/en/abogados-ingles/"
+  },
+  {
+    "name": "Perchstone and Graeys",
+    "link": "https://perchstoneandgraeys.com/teams/"
+  },
+  {
+    "name": "Peli Partners",
+    "link": "https://pelipartners.com/team-partners/#our-team"
+  },
+  {
+    "name": "Patterson Mair Hamilton",
+    "link": "https://pmhlaw.net/attorneys/"
+  },
+  {
+    "name": "Patrikios Pavlou & Associates",
+    "link": "https://www.pavlaw.com/people/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "Papapolitis & Papapolitis",
+    "link": "https://papapolitis.com/our-people/"
+  },
+  {
+    "name": "Palma Law",
+    "link": "https://www.palma.cl/en/"
+  },
+  {
+    "name": "Palacios Lleras",
+    "link": "https://www.palacioslleras.com/our-team/#partners"
+  },
+  {
+    "name": "Osterling",
+    "link": "https://osterlingfirm.com/el-equipo/"
+  },
+  {
+    "name": "Ortus",
+    "link": "https://ortusadvocates.com/partners/"
+  },
+  {
+    "name": "Orsingher",
+    "link": "https://orsingher.com/en/professionals/"
+  },
+  {
+    "name": "Orizzo Marques Advogados",
+    "link": "https://orizzomarques.com.br/en/partners/"
+  },
+  {
+    "name": "Oraro & Company",
+    "link": "https://www.oraro.co.ke/our-people/"
+  },
+  {
+    "name": "Oppenhoff",
+    "link": "https://www.oppenhoff.eu/en/lawyers/?tx_contacts_filter%5Baction%5D=filter&tx_contacts_filter%5Bcontroller%5D=Contact&cHash=7dfb8ef3f694aec3f6bb0e93f015724f"
+  },
+  {
+    "name": "Ontier",
+    "link": "https://www.ontier.law/people?jobtype=Partner%2FDirector"
+  },
+  {
+    "name": "O'Neill & Borges",
+    "link": "https://www.oneillborges.com/our-attorneys/#alpha"
+  },
+  {
+    "name": "Nuno Simões & Associados",
+    "link": "https://www.jurismac.com/our-team/legal-team/"
+  },
+  {
+    "name": "Nunes Scholefield DeLeon & Co",
+    "link": "https://nsdco.com/attorneys/"
+  },
+  {
+    "name": "Novotny Advogados",
+    "link": "https://www.novotny.com.br/en/professionals"
+  },
+  {
+    "name": "Norton White",
+    "link": "https://www.nortonwhite.com/lawyers/overview"
+  },
+  {
+    "name": "Niedermüller",
+    "link": "https://www.niedermueller.law/en/about-us/team/"
+  },
+  {
+    "name": "Niederhuber & Partner",
+    "link": "https://www.nhp.eu/en/company/team"
+  },
+  {
+    "name": "Niederer Kraft Frey",
+    "link": "https://www.nkf.ch/lawyers/?positions=22"
+  },
+  {
+    "name": "NGL Legal",
+    "link": "https://www.ngllegal.com/people/"
+  },
+  {
+    "name": "NGA",
+    "link": "https://nga.pt/en/lawyers/"
+  },
+  {
+    "name": "Naschitz Brandes Amir",
+    "link": "https://nblaw.com/lawyers"
+  },
+  {
+    "name": "Nagy és Trócsányi",
+    "link": "https://nt.hu/#people"
+  },
+  {
+    "name": "Nader Hayaux & Goebel",
+    "link": "https://www.nhg.mx/es/about-us/our-team/partners/"
+  },
+  {
+    "name": "Simeza Sangwa & Associates",
+    "link": "https://simezasangwa.com/our-lawyers/"
+  },
+  {
+    "name": "Muvingi and Mugadza",
+    "link": "https://www.mmmlawfirm.co.zw/people/"
+  },
+  {
+    "name": "Mulenga Mundashi Legal Practitioners",
+    "link": "https://mmlp.co.zm/ourteam/"
+  },
+  {
+    "name": "Muşat & Asociaţii",
+    "link": "https://www.musat.ro/attorneys/"
+  },
+  {
+    "name": "MPR Partners",
+    "link": "https://www.mprpartners.com/people/team/"
+  },
+  {
+    "name": "M&P Legal",
+    "link": "https://www.mplegal.im/profiles"
+  },
+  {
+    "name": "Morgan & Morgan",
+    "link": "https://morimor.com/morgan-attorneys/partners/"
+  },
+  {
+    "name": "Yossi Levy & Co",
+    "link": "https://ljlaw.co.il/en/the-legal-team/"
+  },
+  {
+    "name": "Shoob & Co.",
+    "link": "https://www.shoob.co.il/en/team/"
+  },
+  {
+    "name": "BGA",
+    "link": "https://www.bgalaw.co.il/team/"
+  },
+  {
+    "name": "Monard",
+    "link": "https://monardlaw.be/en/teams/"
+  },
+  {
+    "name": "Molina Ríos",
+    "link": "https://molinarios.cl/"
+  },
+  {
+    "name": "Mochtar Karuwin Komar",
+    "link": "https://www.mkklaw.net/attorneys_main_eng.asp.html"
+  },
+  {
+    "name": "MMD Advokati",
+    "link": "https://mmd-associates.com/people/"
+  },
+  {
+    "name": "MMAN",
+    "link": "https://mman.co.ke/our-people"
+  },
+  {
+    "name": "MMAKS",
+    "link": "https://www.mmaks.co.ug/who-we-are/team"
+  },
+  {
+    "name": "Mitrani Caballero & Ruiz Moreno",
+    "link": "https://mcolex.com/team-category/?lang=en#partners"
+  },
+  {
+    "name": "Mishcon de Reya",
+    "link": "https://www.mishcon.com/people"
+  },
+  {
+    "name": "Miranda & Amado",
+    "link": "https://www.mafirma.pe/es/resultado"
+  },
+  {
+    "name": "Mihaj, Ilić & Milanović",
+    "link": "https://mim-law.com/en/our-team/"
+  },
+  {
+    "name": "Hamel-Smith",
+    "link": "https://trinidadlaw.com/attorneys/"
+  },
+  {
+    "name": "M G Daly & Partners",
+    "link": "https://mgdalypartners.com/about/#Partners",
+    "Note": "Country === Trinidad and Tobago"
+  },
+  {
+    "name": "MFW Fiałek",
+    "link": "https://mfwfialek.com/zespol/?lang=en"
+  },
+  {
+    "name": "Meysan",
+    "link": "https://www.meysan.com/people/"
+  },
+  {
+    "name": "Mermoz Avocats",
+    "link": "https://mermoz.law/en/une-equipe-pluridisciplinaire-au-service-de-votre-strategie-en/"
+  },
+  {
+    "name": "MENA City Lawyers",
+    "link": "https://menacitylawyers.com/our_team"
+  },
+  {
+    "name": "MGA",
+    "link": "https://www.mga.com.do/en/our-lawers/"
+  },
+  {
+    "name": "MDP & Partners",
+    "link": "https://mdplegal.co/partners/"
+  },
+  {
+    "name": "McCullough Robertson",
+    "link": "https://www.mccullough.com.au/people/?_sft_role=partner"
+  },
+  {
+    "name": "Mayne Wetherell",
+    "link": "https://maynewetherell.com/people/"
+  },
+  {
+    "name": "MHR Legal",
+    "link": "https://mhrlegal.com/team-2/"
+  },
+  {
+    "name": "Marić & Co",
+    "link": "https://mariclaw.com/team.html"
+  },
+  {
+    "name": "MAQ Legal",
+    "link": "https://maqlegal.com/about-us/"
+  },
+  {
+    "name": "Maples",
+    "link": "https://maples.com/people"
+  },
+  {
+    "name": "MannBenham Advocates",
+    "link": "https://mannbenham.com/about-us/our-people/"
+  },
+  {
+    "name": "Maheshwari & Co",
+    "link": "https://www.maheshwariandco.com/our-team/"
+  },
+  {
+    "name": "Małecki Legal",
+    "link": "https://maleckilegal.pl/en/team/"
+  },
+  {
+    "name": "Madirazza & Partners",
+    "link": "https://madirazza.hr/team/"
+  },
+  {
+    "name": "Machas & Partners",
+    "link": "https://www.machas-partners.com/our-people/?role=partner&page=1"
+  },
+  {
+    "name": "Macedo Vitorino",
+    "link": "https://www.macedovitorino.com/en/lawyers/?f_l=C"
+  },
+  {
+    "name": "LXA",
+    "link": "https://www.lxa.nl/en/our-office/"
+  },
+  {
+    "name": "Luther",
+    "link": "https://www.luther-lawfirm.com/en/team?tx_fwluther_pi3%5B__referrer%5D%5B%40extension%5D=FwLuther&tx_fwluther_pi3%5B__referrer%5D%5B%40controller%5D=Contact&tx_fwluther_pi3%5B__referrer%5D%5B%40action%5D=listTeam&tx_fwluther_pi3%5B__referrer%5D%5Barguments%5D=YTowOnt981434360b0903b6a5fd120bfbd82e4ede65f249d&tx_fwluther_pi3%5B__referrer%5D%5B%40request%5D=%7B%22%40extension%22%3A%22FwLuther%22%2C%22%40controller%22%3A%22Contact%22%2C%22%40action%22%3A%22listTeam%22%7D513af7b68294e8b497e8fd5259084b9924f0e225&tx_fwluther_pi3%5B__trustedProperties%5D=%7B%22filter%22%3A%7B%22name%22%3A1%2C%22industryServices%22%3A1%2C%22practiceServices%22%3A1%2C%22digitalService%22%3A1%2C%22location%22%3A1%2C%22position%22%3A1%2C%22additional_qualification%22%3A1%7D%7D27382106ac2b224fb36421307b1aa132e548a3c6&tx_fwluther_pi3%5Bfilter%5D%5Bname%5D=&tx_fwluther_pi3%5Bfilter%5D%5BindustryServices%5D=&tx_fwluther_pi3%5Bfilter%5D%5BpracticeServices%5D=&tx_fwluther_pi3%5Bfilter%5D%5BdigitalService%5D=&tx_fwluther_pi3%5Bfilter%5D%5Blocation%5D=&tx_fwluther_pi3%5Bfilter%5D%5Bposition%5D=20&tx_fwluther_pi3%5Bfilter%5D%5Badditional_qualification%5D="
+  },
+  {
+    "name": "Lundgrens",
+    "link": "https://lundgrens.dk/en/page/our-employees?role=152&speciality=All"
+  },
+  {
+    "name": "Lund Elmer Sandager",
+    "link": "https://les.dk/en/professionals"
+  },
+  {
+    "name": "Lumiere Law",
+    "link": "https://lumierelp.com/meet-our-team/"
+  },
+  {
+    "name": "BMA",
+    "link": "https://www.bma.pt/team"
+  },
+  {
+    "name": "GPA Advogados",
+    "link": "https://www.gpasa.pt/en/team/"
+  },
+  {
+    "name": "TFRA",
+    "link": "https://tfra.pt/team/?lang=en"
+  },
+  {
+    "name": "Sérvulo & Associados",
+    "link": "https://www.servulo.com/en/team/partners/"
+  },
+  {
+    "name": "GLX LTM",
+    "link": "https://www.gamalobomelo.com/en/team/"
+  },
+  {
+    "name": "PRA",
+    "link": "https://pra.pt/en/team_type/partners/"
+  },
+  {
+    "name": "pbbr",
+    "link": "https://www.pbbr.pt/en/team/"
+  },
+  {
+    "name": "Provença de Carvalho",
+    "link": "https://proencadecarvalho.com/en/team/"
+  },
+  {
+    "name": "DALDEWOLF",
+    "link": "https://www.daldewolf.com/en/our-team/?filter_position-filtration_2990=managing_partner,partner"
+  },
+  {
+    "name": "LSW Law",
+    "link": "https://lsw.com.pl/en/who-we-are"
+  },
+  {
+    "name": "Lovill",
+    "link": "https://www.lovill.com/team/"
+  },
+  {
+    "name": "Lopez-Ibor",
+    "link": "https://lopez-iborabogados.com/en/team-jobs/socio-en/"
+  },
+  {
+    "name": "LMS",
+    "link": "https://www.lmslex.com/lawyers-archive/"
+  },
+  {
+    "name": "LL Berg",
+    "link": "https://www.ll-berg.com/en/partners/"
+  },
+  {
+    "name": "Livingston Alexander & Levy",
+    "link": "https://www.lival.co/attorneys"
+  },
+  {
+    "name": "Lipa Meir & Co",
+    "link": "https://lipameir.co.il/en/attorneys/"
+  },
+  {
+    "name": "Lindemann Schwennicke & Partner",
+    "link": "https://www.lspartner.de/en/team"
+  },
+  {
+    "name": "Lexvalor Abogados",
+    "link": "https://lexvalor.com/en/professional-team/"
+  },
+  {
+    "name": "Lexincorp",
+    "link": "https://lexincorp.com/nuestro-equipo/"
+  },
+  {
+    "name": "Lexcel Partners",
+    "link": "https://www.lexgroup.com.tw/en/professional/"
+  },
+  {
+    "name": "Levari",
+    "link": "https://levarilaw.com/partners"
+  },
+  {
+    "name": "Lerners",
+    "link": "https://www.lerners.ca/lawyers/"
+  },
+  {
+    "name": "LSWF",
+    "link": "https://www.lswf.de/en/team/"
+  },
+  {
+    "name": "Lenz & Staehelin",
+    "link": "https://www.lenzstaehelin.com/people-across-the-firm/"
+  },
+  {
+    "name": "Lener",
+    "link": "https://www.lener.es/en/professionals"
+  },
+  {
+    "name": "LeitnerLaw Rechtsanwälte",
+    "link": "https://www.leitnerlaw.eu/en/team/"
+  },
+  {
+    "name": "RSM",
+    "link": "https://www.rsm.global/tajikistan/en/our-people"
+  },
+  {
+    "name": "Lee & Lee",
+    "link": "https://www.leenlee.com.sg/our-people/partners/"
+  },
+  {
+    "name": "LHAG",
+    "link": "https://lh-ag.com/people/"
+  },
+  {
+    "name": "LEC Abogados",
+    "link": "https://www.lec.com.ve/en/about-us/"
+  },
+  {
+    "name": "Leaf",
+    "link": "https://www.leaf-legal.com/team/"
+  },
+  {
+    "name": "Leadell Balčiūnas & Grajauskas",
+    "link": "https://leadell.lt/en/people/"
+  },
+  {
+    "name": "LAW Partnership",
+    "link": "https://law-partnership.com/our-people/"
+  },
+  {
+    "name": "Pepeljugoski Law",
+    "link": "https://pepeljugoski.com.mk/en/our-team/"
+  },
+  {
+    "name": "Wongtschowski Kleiman Advogados",
+    "link": "https://wkadvogados.com/en/professionals/"
+  },
+  {
+    "name": "William Freire Advogados",
+    "link": "https://williamfreire.com.br/lawyers-2/?lang=en"
+  },
+  {
+    "name": "VMCA Advogados",
+    "link": "https://www.vmca.adv.br/profissionais/"
+  },
+  {
+    "name": "Velloza",
+    "link": "https://velloza.com.br/en/profissionais/"
+  },
+  {
+    "name": "VBD Advogados",
+    "link": "https://www.vbdlaw.com.br/equipe/"
+  },
+  {
+    "name": "VBSO Advogados",
+    "link": "https://vbso.com.br/en/cargo/partner/?post_types=profissional"
+  },
+  {
+    "name": "TAGD",
+    "link": "https://tagdlaw.com.br/en/team-en/"
+  },
+  {
+    "name": "Sibinčič Novak & Partners",
+    "link": "https://www.sn-p.si/the-team/"
+  },
+  {
+    "name": "Lavín Abogados & Consultores",
+    "link": "https://lavinabogados.com/eng/equipo/"
+  },
+  {
+    "name": "Lavery",
+    "link": "https://www.lavery.ca/en/team.html",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Robertson Stromberg",
+    "link": "https://www.rslaw.com/lawyers/",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Pitblado",
+    "link": "https://www.pitblado.com/our-people",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Lavelle Partners",
+    "link": "https://www.lavellepartners.ie/our-people"
+  },
+  {
+    "name": "",
+    "link": "https://www.lmcr.it/lmcr/en/professionisti/"
+  },
+  {
+    "name": "Landslög",
+    "link": "https://en.landslog.is/personnel/"
+  },
+  {
+    "name": "Lakatos Köves & Partners",
+    "link": "https://www.lakatoskoves.hu/partners-and-lawyers"
+  },
+  {
+    "name": "Lacourte Raquin Tatar",
+    "link": "https://lacourte.com/en/our-team"
+  },
+  {
+    "name": "Labbe Abogados",
+    "link": "https://labbe.legal/pages/equipo"
+  },
+  {
+    "name": "Koutalidis Law ",
+    "link": "https://www.koutalidis.gr/lawyers/"
+  },
+  {
+    "name": "Schneider Pugliese",
+    "link": "https://www.schneiderpugliese.com.br/profissionais/?cargos=socio&keyword=&filtro=true"
+  },
+  {
+    "name": "Kolcuoğlu Demirkan Koçaklı",
+    "link": "https://www.kolcuoglu.av.tr/the-team"
+  },
+  {
+    "name": "Koç Attorneys",
+    "link": "https://www.kocattorneys.com/our-team"
+  },
+  {
+    "name": "KO Associates",
+    "link": "https://koassociates.co.ke/people/"
+  },
+  {
+    "name": "Filion Wakely Thorup Angeletti",
+    "link": "https://www.filion.on.ca/our-team/"
+  },
+  {
+    "name": "lelex Attorneys at Law",
+    "link": "https://www.lelex.law/de/team/"
+  },
+  {
+    "name": "SRS Legal",
+    "link": "https://www.srslegal.pt/en/our-people/partners/"
+  },
+  {
+    "name": "Sobczyk & Partners",
+    "link": "https://sobczyk.com.pl/en/our-team/"
+  },
+  {
+    "name": "Helmr",
+    "link": "https://helmr.no/menneskene/"
+  },
+  {
+    "name": "Flichy Grangé Avocats",
+    "link": "https://www.flichygrange.com/our-partners.htm"
+  },
+  {
+    "name": "KLC Law",
+    "link": "https://www.klclawfirm.com/our-team/partners/"
+  },
+  {
+    "name": "K&K Advocates",
+    "link": "https://kandk.co.ug/our-people/"
+  },
+  {
+    "name": "Kirm Perpar",
+    "link": "https://www.k-p.si/en/#our-team"
+  },
+  {
+    "name": "Kinkin & Partners",
+    "link": "https://lawfirm-bg.com/en/team/attorneys/"
+  },
+  {
+    "name": "King Stubb & Kasiva",
+    "link": "https://ksandk.com/people/?_designation=partner%2Cassociate-partner%2Cmanaging-partner%2Csenior-partner"
+  },
+  {
+    "name": "Santos Bevilaqua Advogados",
+    "link": "https://santosbevilaqua.com.br/en/equipe/"
+  },
+  {
+    "name": "Sacha Calmon",
+    "link": "https://sachacalmon.com.br/en/team/"
+  },
+  {
+    "name": "Kim Chang & Lee",
+    "link": "https://www.kimchanglee.co.kr/en/member/lawyers.php?seq=&cPage=1&cBlck=1&srchWord="
+  },
+  {
+    "name": "Kejie Associates",
+    "link": "http://www.kejielaw.com/en/professionals.php"
+  },
+  {
+    "name": "KBVL Law",
+    "link": "https://www.kbvl.gr/our-team/"
+  },
+  {
+    "name": "Karatzas & Partners",
+    "link": "https://karatza-partners.gr/ourpeople/"
+  },
+  {
+    "name": "Rossi, Maffini, Milman & Grando",
+    "link": "https://www.rmmgadvogados.com.br/en/team.html",
+    "Notes": "Try find position on new page"
+  },
+  {
+    "name": "Kanuka Thuringer",
+    "link": "https://kanuka.ca/people/",
+    "Notes": "Try find position on new page"
+  },
+  {
+    "name": "Kambourov & Partners",
+    "link": "https://www.kambourov.biz/en/professionals"
+  },
+  {
+    "name": "Kalikova & Associates",
+    "link": "http://www.k-a.kg/eng/persons",
+    "Notes": "Country === Kyrgyzstan"
+  },
+  {
+    "name": "Kaimakliotis",
+    "link": "https://kaimakliotis.com/people/"
+  },
+  {
+    "name": "Matry Meiri & Co ",
+    "link": "https://www.mamlaw.co.il/en/team-en/",
+    "Notes": "Check if has any more partner to register"
+  },
+  {
+    "name": "Juris Corp",
+    "link": "https://www.juriscorp.in/key-people/",
+    "Notes": "Check if has any more partner to register"
+  },
+  {
+    "name": "Juris",
+    "link": "https://juris.is/starfsfolk/0/Partners"
+  },
+  {
+    "name": "JunZeJun Law",
+    "link": "https://www.junzejun.com/en/Professionals/search.html?text=&ss_ywly=&ss_bgs=&ss_key=&ss_order="
+  },
+  {
+    "name": "JPM & Partners",
+    "link": "https://www.jpm.law/lawyers/"
+  },
+  {
+    "name": "Jonsson & Hall",
+    "link": "https://law.is/en/our-team/"
+  },
+  {
+    "name": "JLD & MB Legal",
+    "link": "http://jldmblaw.net/our-team"
+  },
+  {
+    "name": "JIPYONG",
+    "link": "https://www.legal500.com/firms/31433-jipyong-llc/c-south-korea/lawyers"
+  },
+  {
+    "name": "J.D Sellier + Co",
+    "link": "https://jdsellier.com/attorneys-at-law/#partners"
+  },
+  {
+    "name": "JB Law",
+    "link": "https://jblaw.nl/en/ons-team/"
+  },
+  {
+    "name": "Jadek & Pensa",
+    "link": "https://www.jadek-pensa.si/en/experts/"
+  },
+  {
+    "name": "Jackson Etti & Edu",
+    "link": "https://jee.africa/category/our-people/"
+  },
+  {
+    "name": "Živković Samardžić",
+    "link": "https://www.zslaw.rs/our-people-2/partners-2/"
+  },
+  {
+    "name": "Insights Law",
+    "link": "https://www.insightslaw.sg/people/"
+  },
+  {
+    "name": "Prado Vidigal",
+    "link": "https://pradovidigal.com.br/en/our-team/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "PNM Adovagos",
+    "link": "https://www.pnm.adv.br/lawyers/?lang=en"
+  },
+  {
+    "name": "Slaughter & May",
+    "link": "https://www.slaughterandmay.com/people/?Name=&PracticeArea=&Position=Partner&Location="
+  },
+  {
+    "name": "Valfor",
+    "link": "https://www.valfor.ch/en/team"
+  },
+  {
+    "name": "Nestor Nestor Diculescu Kingston Petersen",
+    "link": "https://www.nndkp.ro/who-we-are/our-team/"
+  },
+  {
+    "name": "Wiersholm",
+    "link": "https://wiersholm.no/en/people/?query-0-role_tax=partner"
+  },
+  {
+    "name": "Nunziante Magrone",
+    "link": "https://nunziantemagrone.it/en/team/"
+  },
+  {
+    "name": "Oppenheim",
+    "link": "https://www.oppenheimlegal.com/en/people"
+  },
+  {
+    "name": "Lambadarios",
+    "link": "https://www.lambadarioslaw.gr/people/"
+  },
+  {
+    "name": "Jeantet",
+    "link": "https://www.jeantet.fr/en/?name=&s=&search-lawyer=&fonction=17&office=&expertise="
+  },
+  {
+    "name": "Zaki Hashem & Partners",
+    "link": "https://hashemlaw.com/our-lawyers/"
+  },
+  {
+    "name": "Ioannides Demetriou LLC",
+    "link": "https://www.idlaw.com.cy/people/"
+  },
+  {
+    "name": "Ilej & Partners",
+    "link": "https://www.ilej-partners.com/people/"
+  },
+  {
+    "name": "Karanovic & Partners",
+    "link": "https://www.karanovicpartners.com/people/"
+  },
+  {
+    "name": "Ikeyi Shittu & Co",
+    "link": "https://isc.ng/team-category/partner/"
+  },
+  {
+    "name": "id est avocats",
+    "link": "https://www.idest.pro/who-we-are/"
+  },
+  {
+    "name": "IC Universal Legal",
+    "link": "http://icul.in/our-people/#"
+  },
+  {
+    "name": "Icaza González-Ruiz & Alemán",
+    "link": "https://icazalaw.com/our-experts/"
+  },
+  {
+    "name": "IBLAW",
+    "link": "https://www.iblaw.com.jo/people"
+  },
+  {
+    "name": "Ibañez Parkman",
+    "link": "https://i-parkman.mx/en/ourteam/"
+  },
+  {
+    "name": "Peixoto & Cury",
+    "link": "https://www.peixotoecury.com.br/profissionais"
+  },
+  {
+    "name": "Padis Mattar",
+    "link": "https://www.padismattar.com.br/en/"
+  },
+  {
+    "name": "NHM",
+    "link": "https://www.nhmadv.com.br/equipe/"
+  },
+  {
+    "name": "HVG Law",
+    "link": "https://www.hvglaw.nl/en/our-people/",
+    "Note": "check for partners. Email formatt (name1).(name2).(nameX)@hvglaw.nl",
+    "Ex.:": "Arie Dirk de With === arie.dirk.de.with@hvglaw.nl"
+  },
+  {
+    "name": "Horn & Co",
+    "link": "https://www.hornlaw.co.il/our-team/"
+  },
+  {
+    "name": "Hope Duggan & Silva",
+    "link": "https://www.hds.com.ar/busqueda-x-filtros/?lang=en&wpv_view_count=103&wpv-jerarquia=partner&wpv-areas=0&wpv_filter_submit=Submit"
+  },
+  {
+    "name": "Homburger",
+    "link": "https://www.homburger.ch/en/team?presentation=portrait&position=240"
+  },
+  {
+    "name": "HØIBERG",
+    "link": "https://hoiberg.com/experts/?filter_Positions_49352=Partners"
+  },
+  {
+    "name": "Hoffmann Liebs Fritsch & Partner",
+    "link": "https://www.hoffmannliebs.de/en/?searchType=PROPERTIES&s="
+  },
+  {
+    "name": "HNS Legal",
+    "link": "https://hnslegal.com/attorneys/"
+  },
+  {
+    "name": "Hillbridges",
+    "link": "https://www.hillbridges.com/people/"
+  },
+  {
+    "name": "HHP Attorneys",
+    "link": "https://www.hhp.com.cn/en/professionals/"
+  },
+  {
+    "name": "H&G Advocates",
+    "link": "https://handgadvocates.com/people"
+  },
+  {
+    "name": "Heussen",
+    "link": "https://www.heussen-law.nl/en/team"
+  },
+  {
+    "name": "Heuking Kühn Lüer Wojtek",
+    "link": "https://www.heuking.de/en/lawyers.html"
+  },
+  {
+    "name": "Hergüner Bilgen Üçer",
+    "link": "https://herguner.av.tr/ortaklar/"
+  },
+  {
+    "name": "AI & WONG",
+    "link": "https://www.aiwonglawyers-en.com/our-team.html"
+  },
+  {
+    "name": "Hengeler Mueller",
+    "link": "https://www.hengeler.com/en/lawyers"
+  },
+  {
+    "name": "Held Berdnik Astner & Partner",
+    "link": "https://www.hba.ch/en/lawyers/"
+  },
+  {
+    "name": "HD Legal",
+    "link": "https://www.hdgroup.cl/legal/en/our-team/"
+  },
+  {
+    "name": "Haya Rashed Al Khalifa",
+    "link": "https://www.hraklf.com/index.php"
+  },
+  {
+    "name": "Mundie e Advogados",
+    "link": "https://www.mundie.com.br/en/profissionais"
+  },
+  {
+    "name": "MPA Trade Law",
+    "link": "https://www.mpalaw.com.br/en/staff/"
+  },
+  {
+    "name": "Hauzen",
+    "link": "https://hauzen.hk/people"
+  },
+  {
+    "name": "Hamilton Locke",
+    "link": "https://hamiltonlocke.com.au/our-team/"
+  },
+  {
+    "name": "Guzmán Ariza",
+    "link": "https://drlawyer.com/the-firm-2/#pro"
+  },
+  {
+    "name": "Gugić Kovačić & Krivić",
+    "link": "https://odgkk.com/people/?_gl=1*1w0fs9y*_up*MQ..*_ga*ODgxNzc0ODMuMTczODg3NTMxNw..*_ga_KV0DYM9WG7*MTczODg3NTMxNi4xLjAuMTczODg3NTMxNi4wLjAuMA.."
+  },
+  {
+    "name": "Guerrero Olivos",
+    "link": "https://guerrero.cl/abogados/?category_position=socio&page=1"
+  },
+  {
+    "name": "Gütt Olk Feldhaus",
+    "link": "https://www.gof-partner.com/en/lawyers"
+  },
+  {
+    "name": "Gross & Co",
+    "link": "https://www.dglaw.co.il/firm-profile/"
+  },
+  {
+    "name": "Grimaldi Alliance",
+    "link": "https://www.grimaldialliance.com/en/our-people/"
+  },
+  {
+    "name": "Greenwood Roche",
+    "link": "https://www.greenwoodroche.com/people"
+  },
+  {
+    "name": "Gárdos Mosonyi Tomori",
+    "link": "https://gmtlegal.hu/our-colleagues.php"
+  },
+  {
+    "name": "Granrut",
+    "link": "https://www.herald-avocats.com/en/categorie/partners/"
+  },
+  {
+    "name": "GRAF ISOLA",
+    "link": "https://www.grafisola.at/en/team/"
+  },
+  {
+    "name": "Goldfarb Gross Seligman",
+    "link": "https://www.goldfarb.com/team-members/"
+  },
+  {
+    "name": "GLNS",
+    "link": "https://www.glns.de/team/"
+  },
+  {
+    "name": "GSO Legal",
+    "link": "https://gsolegal.com/our-team/"
+  },
+  {
+    "name": "Gleiss Lutz",
+    "link": "https://www.gleisslutz.com/en/experts"
+  },
+  {
+    "name": "Glade Michel Wirtz",
+    "link": "https://www.glademichelwirtz.com/en/team/?position=partner#anwaelte"
+  },
+  {
+    "name": "GLA & Company",
+    "link": "https://www.glaco.com/our-team/"
+  },
+  {
+    "name": "GKC Partners",
+    "link": "https://www.gkcpartners.com/people.html"
+  },
+  {
+    "name": "Giovannelli e Associati",
+    "link": "https://www.galaw.it/partners/"
+  },
+  {
+    "name": "Gill, Godlonton & Gerrans",
+    "link": "https://www.ggg.co.zw/our-people/partners/"
+  },
+  {
+    "name": "Giliberti Triscornia e Associati",
+    "link": "https://www.gtalex.com/en/professionisti/partners/"
+  },
+  {
+    "name": "Gilbert + Tobin",
+    "link": "https://www.gtlaw.com.au/our-people?query=&start_rank=1&sort=metasortKey&num_ranks=16&f.Job+Title%7Crole=partner"
+  },
+  {
+    "name": "Giese & Partner",
+    "link": "https://www.giese.cz/team"
+  },
+  {
+    "name": "GESSEL",
+    "link": "https://gessel.pl/en/team/"
+  },
+  {
+    "name": "Georgiev Todorov & Co",
+    "link": "https://georg-tod.com/team/"
+  },
+  {
+    "name": "Georgiades & Pelides",
+    "link": "https://www.cypruslaw.com.cy/people/"
+  },
+  {
+    "name": "GPBL",
+    "link": "https://www.gpblex.it/en/people/"
+  },
+  {
+    "name": "Gan Lee & Tan",
+    "link": "https://gltlaw.my/our-people/"
+  },
+  {
+    "name": "FTPA",
+    "link": "https://ftpa.com/en/equipe/"
+  },
+  {
+    "name": "Fortis Law",
+    "link": "https://fortislaw.com.sg/our-team/"
+  },
+  {
+    "name": "Fort Legal",
+    "link": "https://fortlegal.com/en/lawyers/"
+  },
+  {
+    "name": "Florent",
+    "link": "https://www.florent.nl/team/"
+  },
+  {
+    "name": "Fleischmann & Roman",
+    "link": "https://www.flycia.cl/en/equipo.php"
+  },
+  {
+    "name": "MBC Law",
+    "link": "https://mbclaw.com.br/en/equipe/"
+  },
+  {
+    "name": "Fishman Flanz Meland Paquin",
+    "link": "https://ffmp.ca/lawyers/"
+  },
+  {
+    "name": "Fischer & Cia",
+    "link": "https://fycom.cl/en/partner/"
+  },
+  {
+    "name": "FG Lawyers",
+    "link": "https://fglawyersamsterdam.com/en/team/"
+  },
+  {
+    "name": "Ferreira Pinto Cardigos",
+    "link": "https://www.fpclegal.pt/en/team/"
+  },
+  {
+    "name": "Ferrada Nehme",
+    "link": "https://fn.cl/en/people"
+  },
+  {
+    "name": "Interlaw",
+    "link": "https://www.interlaw.com/about/leadership"
+  },
+  {
+    "name": "Fellner Wratzfeld & Partner",
+    "link": "https://www.fwp.at/en/lawyers"
+  },
+  {
+    "name": "FBT",
+    "link": "https://www.fbt-avocats.ch/en/avocats-equipe/#(mediaboxes-grid-5d38449fddf41|filter_1)=.category_portfolio_entries-629;"
+  },
+  {
+    "name": "FBL Advogados",
+    "link": "https://www.fbladvogados.com/?lang=en"
+  },
+  {
+    "name": "Farris",
+    "link": "https://farris.com/our-people/"
+  },
+  {
+    "name": "Fadedongheng Law",
+    "link": "http://fddhlaw.com/team.asp"
+  },
+  {
+    "name": "Fabrega Molino & Mulino",
+    "link": "https://fmm.com.pa/our-people/"
+  },
+  {
+    "name": "Eversheds Sutherland",
+    "link": "https://www.eversheds-sutherland.com/en/lithuania/people?role=Executive+Partner%7CManaging+Partner%7CPartner%7CChair%7CLegal+Director%7CSenior+Partner&office=Angola%7CAsia%7CAustria%7CBelgium%7CBulgaria%7CCzech+Republic%7CEstonia%7CUnited+Kingdom%7CUnited+Arab+Emirates%7CTunisia%7CSwitzerland%7CSweden%7CSpain%7CSouth+Africa%7CSlovakia%7CSaudi+Arabia%7CRomania%7CQatar%7CPortugal%7CPoland%7CNetherlands%7CMozambique%7CMauritius%7CLuxembourg%7CLithuania%7CLatvia%7CJordan%7CItaly%7CIreland%7CIraq%7CHungary%7CGermany%7CFrance%7CFinland"
+  },
+  {
+    "name": "Etihad Law",
+    "link": "https://etihad-law.com/people/"
+  },
+  {
+    "name": "hww hermann wienberg wilhelm",
+    "link": "https://www.hww.eu/en/about-us/team",
+    "Note": "email formatt == (firstName)(lastName)@hww.eu",
+    "Ex.:": "Osamu Inoue === osamuinoue@hww.eu"
+  },
+  {
+    "name": "Abe Ikubo & Katayama",
+    "link": "https://www.aiklaw.co.jp/en/division/law/",
+    "Note": "email formatt == (firstName).(lastName)@aiklaw.co.jp",
+    "Ex.:": "Osamu Inoue === osamu.inoue@aiklaw.co.jp"
+  },
+  {
+    "name": "Olaechea",
+    "link": "https://www.esola.com.pe/en/our-team/",
+    "Note": "email formatt == (firstName)(lastName)@esola.com.pe",
+    "Ex.:": "Osamu Inoue === osamuinoue@esola.com.pe"
+  },
+  {
+    "name": "O'Farrell",
+    "link": "https://www.estudio-ofarrell.com/en/team/"
+  },
+  {
+    "name": "Gross Brown",
+    "link": "https://grossbrown.com.py/sobre-nosotros#seccion_miembros"
+  },
+  {
+    "name": "Garrido",
+    "link": "http://garridolawfirm.com/esp/nuestra_familia/personal.php?id=23"
+  },
+  {
+    "name": "Esin",
+    "link": "https://www.esin.av.tr/our-people/"
+  },
+  {
+    "name": "ErsoyBilgehan",
+    "link": "https://ersoybilgehan.com/our-people/"
+  },
+  {
+    "name": "Ergün Avukatlik Bürosu",
+    "link": "https://www.cergun.av.tr/people/"
+  },
+  {
+    "name": "ERM",
+    "link": "https://erm-law.com/en/team/"
+  },
+  {
+    "name": "EP Legal",
+    "link": "https://eplegal.com/our-team/"
+  },
+  {
+    "name": "EPENA LAW",
+    "link": "https://epena-law.com/team/"
+  },
+  {
+    "name": "ENR Advisory",
+    "link": "https://enradvisory.com/core-team/"
+  },
+  {
+    "name": "Engoru Mutebi",
+    "link": "https://engorumutebi.co.ug/lawyers/"
+  },
+  {
+    "name": "Engling Stritter & Partners",
+    "link": "https://www.englinglaw.com.na/our-team/"
+  },
+  {
+    "name": "Response Legal",
+    "link": "https://response-legal.lt/en/team/"
+  },
+  {
+    "name": "Elmann",
+    "link": "https://elmann.dk/en/personer-side/"
+  },
+  {
+    "name": "ELIG Gürkaynak",
+    "link": "https://www.gurkaynak.av.tr/partners-counsel"
+  },
+  {
+    "name": "Elias Neocleous & Co LLC",
+    "link": "https://neo.law/people/"
+  },
+  {
+    "name": "E+H Rechtsanwälte",
+    "link": "https://www.eh.at/en/team/?lastname=&position=partnerin&eh_group=0&eh_location=0"
+  },
+  {
+    "name": "Ecovis ProventusLaw",
+    "link": "https://ecovis.lt/team/"
+  },
+  {
+    "name": "Čechová & Partners",
+    "link": "https://www.cechova.sk/people/"
+  },
+  {
+    "name": "DVLAW",
+    "link": "https://www.dvlaw.gr/team-category/our-people/"
+  },
+  {
+    "name": "DVDW",
+    "link": "https://www.dvdw.nl/en/about-dvdw/"
+  },
+  {
+    "name": "DunnCox",
+    "link": "https://dunncox.com/our-attorneys/"
+  },
+  {
+    "name": "Duale Ovia & Alex-Adedipe",
+    "link": "https://www.doa-law.com/partners/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "DSM Avocats",
+    "link": "https://www.dsm.legal/fr/nos-avocats/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "DSK Legal",
+    "link": "https://dsklegal.com/team-member/"
+  },
+  {
+    "name": "Maeda, Ayres & Sarubbi",
+    "link": "https://maedaayres.com.br/lawyers/"
+  },
+  {
+    "name": "Madruga BTW",
+    "link": "https://madruga.com/en/team/"
+  },
+  {
+    "name": "Luiz Leonardos & Advogados",
+    "link": "https://llip.com/Profissionais"
+  },
+  {
+    "name": "DS Casahierro",
+    "link": "https://www.dscasahierro.pe/en/our-team/partners/"
+  },
+  {
+    "name": "DS Navarro Castex",
+    "link": "https://www.dsavocats.com/equipe/"
+  },
+  {
+    "name": "D&P",
+    "link": "https://dnplawgroup.com/we-are-david-and-paulian"
+  },
+  {
+    "name": "Dottir",
+    "link": "https://www.dottirlaw.com/team"
+  },
+  {
+    "name": "DORDA",
+    "link": "https://www.dorda.at/en/team?f%5B0%5D=roles%3A10"
+  },
+  {
+    "name": "DKCO",
+    "link": "https://www.dkco-law.com/en/our-people"
+  },
+  {
+    "name": "Gün + Partners",
+    "link": "https://gun.av.tr/people?roles=partners"
+  },
+  {
+    "name": "Fitzwilliam Stone Furness & Smith & Morgan",
+    "link": "https://fitzwilliamstone.com/partners/",
+    "Note": "Country === Trinidad and Tobago"
+  },
+  {
+    "name": "Abril Abogados",
+    "link": "https://www.abrilabogados.com/en/team/partners/"
+  },
+  {
+    "name": "Adams & Adams",
+    "link": "https://www.adams.africa/people/"
+  },
+  {
+    "name": "Nitschneider & Partners",
+    "link": "https://www.nitschneider.com/tim?lang=en"
+  },
+  {
+    "name": "Živković Samardžić",
+    "link": "https://www.zslaw.rs/our-people-2/#partners"
+  },
+  {
+    "name": "Stratulat Albulescu",
+    "link": "https://saa.ro/en/our-people/"
+  },
+  {
+    "name": "SK&S Law Firm",
+    "link": "https://skslegal.pl/en/team/"
+  },
+  {
+    "name": "Arochi & Lindner",
+    "links": [
+      "https://www.arochilindner.com/en/mexico-en/",
+      "https://www.arochilindner.com/en/spain-en/"
+    ]
+  },
+  {
+    "name": "MOLITOR",
+    "link": "https://molitorlegal.lu/our-team/#partners"
+  },
+  {
+    "name": "Kan and Krishme",
+    "link": "https://kankrishme.com/our-team/"
+  },
+  {
+    "name": "HEUKING",
+    "link": "https://www.heuking.de/en/lawyers.html"
+  },
+  {
+    "name": "GZG",
+    "link": "https://gzg.com.cy/people/?group=1"
+  },
+  {
+    "name": "Harris",
+    "link": "https://harrisco.com/lawyers/",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Divjak Topić Bahtijarević & Krka Law",
+    "link": "https://dtb.hr/#our-professionals"
+  },
+  {
+    "name": "New Balkans Law",
+    "link": "https://www.newbalkanslawoffice.com/practice-areas/family-and-children/?gad_source=1&gclid=Cj0KCQiAkoe9BhDYARIsAH85cDOMo4Dk7XDd0FPTyWtdgDk5UxxteKeSOpTqBxDNH3BdCR34nL31HdAaAn3gEALw_wcB"
+  },
+  {
+    "name": "LDCM",
+    "link": "https://www.ldcm.com.br/en/home-en/#team"
+  },
+  {
+    "name": "Deheheng Law",
+    "link": "http://en.deheheng.com/plus/list.php?tid=50"
+  },
+  {
+    "name": "Desfilis",
+    "link": "https://www.desfilisavocats.com/en/lequipe"
+  },
+  {
+    "name": "De Pardieu",
+    "link": "https://www.de-pardieu.com/en/lawyers-team/"
+  },
+  {
+    "name": "Delco Law",
+    "link": "https://delcolaw.com/equipo/"
+  },
+  {
+    "name": "Delphi",
+    "link": "https://www.delphi.se/en/coworkers/?search=&off=&pos=173&comp="
+  },
+  {
+    "name": "De Gaulle Fleurance",
+    "link": "https://www.degaullefleurance.com/en/annuaire/fonction/25109-21960-21961-21962-21950/"
+  },
+  {
+    "name": "De Camps Vasquez Varela",
+    "link": "http://www.dcvlex.com/?version="
+  },
+  {
+    "name": "Dashnyam",
+    "link": "https://dplaw.mn/category/our-people/"
+  },
+  {
+    "name": "D&B David si Baias",
+    "link": "https://www.david-baias.ro/en/our-team/"
+  },
+  {
+    "name": "Darrois",
+    "link": "https://www.darrois.com/en/avocat/"
+  },
+  {
+    "name": "Czabański Gałuszyński",
+    "link": "https://czabanski-galuszynski.pl/en/lawyers/"
+  },
+  {
+    "name": "Curtis Dawe",
+    "link": "https://curtisdawe.com/index.php/our-team/"
+  },
+  {
+    "name": "Century Tongren",
+    "link": "http://www.ct-partners.com.cn/PC/#/goods",
+    "Note": "Check if is an valid firm - all in chinese"
+  },
+  {
+    "name": "CS Associados",
+    "link": "https://www.csassociados.pt/en/lawyers/?f_kw=&f_pos=4&f_area=&f_setor="
+  },
+  {
+    "name": "Criales Urcullo",
+    "link": "https://bolivialaw.com/professionals/?lang=en"
+  },
+  {
+    "name": "Rojas Law Firm",
+    "link": "https://rojas-lawfirm.com/en/lawyers/"
+  },
+  {
+    "name": "Richardson Lissack",
+    "link": "https://www.richardsonlissack.co.uk/our-lawyers/"
+  },
+  {
+    "name": "Cox & Palmer",
+    "link": "https://coxandpalmerlaw.com/people/?s=&filter_area=&filter_location=&filter_type=Partner&filter_language=&filter_school="
+  },
+  {
+    "name": "Askews Legal",
+    "link": "https://askewslegal.co/meet-our-team/?_gl=1*csp8tc*_up*MQ..*_gs*MQ..&gclid=CjwKCAiA74G9BhAEEiwA8kNfpS02J4AL4Ox5moNCqjxrZuf1wb40sRWJkqVa2JBnUQZMdDBKJerbfxoCC8kQAvD_BwE"
+  },
+  {
+    "name": "AWS Legal",
+    "link": "https://aws-legalgroup.com/lawyers/#"
+  },
+  {
+    "name": "Davidson & Co Legal",
+    "link": "https://davidsoncolaw.com/team/"
+  },
+  {
+    "name": "wilson/ryan/grose",
+    "link": "https://www.wrg.com.au/our-knowledge/business/?gad_source=1&gclid=CjwKCAiA74G9BhAEEiwA8kNfpTab-OOGsnN8Up1C0A23jtqE4Jckg5AuA1rc_MB_IDBSsAGE_a3ppBoCHMAQAvD_BwE"
+  },
+  {
+    "name": "Corpus Legal",
+    "link": "https://corpus.co.zm/our-team-of-lawyers/"
+  },
+  {
+    "name": "Cooley",
+    "link": "https://www.cooley.com/people#t=cooley-coveo-tab-people-listing&sort=%40personsortname%20ascending&layout=card&f:cooley-offices-facet=[Beijing,Hong%20Kong,London,Singapore]&f:cooley-job-title-facet=[Partner]"
+  },
+  {
+    "name": "KVLAW",
+    "link": "https://www.kvlaw.com.br/en/home-en/#professionals"
+  },
+  {
+    "name": "Justen, Pereira, Oliveira & Talamini",
+    "link": "https://justen.com.br/#advogados"
+  },
+  {
+    "name": "J. Armando Batista e Benes Advogados Associados",
+    "link": "https://jarmandobatista.com.br/profissionais/"
+  },
+  {
+    "name": "Tongshang",
+    "link": "http://www.tongshang.com/en/professionals/"
+  },
+  {
+    "name": "Collyer Law",
+    "link": "https://www.collyerlaw.com/team"
+  },
+  {
+    "name": "Co-effort Law",
+    "link": "http://www.co-effort.com/en/en_personnel/personnel_list"
+  },
+  {
+    "name": "CNPLaw",
+    "link": "https://www.cnplaw.com/our-lawyers/"
+  },
+  {
+    "name": "Cliffe Dekker Hofmeyr",
+    "link": "https://www.cliffedekkerhofmeyr.com/en/people/"
+  },
+  {
+    "name": "Chrysses Demetriades & Co",
+    "link": "https://www.demetriades.com/lawyers/"
+  },
+  {
+    "name": "Chooi & Company",
+    "link": "https://chooi.com.my/chooi-company-partners/"
+  },
+  {
+    "name": "Chien Yeh Law",
+    "link": "https://www.chienyeh.com.tw/people.php?lang=en"
+  },
+  {
+    "name": "Chevalier & Sciales",
+    "link": "https://www.cs-avocats.lu/partners/"
+  },
+  {
+    "name": "Chazai Wamba",
+    "link": "https://www.chazai-wamba.com/chazai-wamba-equipe/"
+  },
+  {
+    "name": "ChanceryGreen",
+    "link": "https://www.chancerygreen.com/people"
+  },
+  {
+    "name": "Chance Bridge",
+    "link": "https://chancebridge.com/en/zyry/1/?pid=1"
+  },
+  {
+    "name": "Chaitons",
+    "link": "https://www.chaitons.com/lawyers"
+  },
+  {
+    "name": "CGA",
+    "link": "https://www.cga.co.mz/pt/moz/people"
+  },
+  {
+    "name": "Cerrahoğlu",
+    "link": "https://cerrahoglu.av.tr/en/our-team/"
+  },
+  {
+    "name": "Bener",
+    "link": "https://bener.com/the-team/"
+  },
+  {
+    "name": "CCS Legal",
+    "link": "https://ccsllegal.com/team/"
+  },
+  {
+    "name": "CCA",
+    "link": "https://www.cca.law/en/team/?f_posicao=SOC"
+  },
+  {
+    "name": "CASSAGNE",
+    "link": "https://cassagne.com.ar/socios/"
+  },
+  {
+    "name": "Cases & Lacambra",
+    "link": "https://www.caseslacambra.com/andorra/professional-team/"
+  },
+  {
+    "name": "CasePro",
+    "link": "https://www.casepro.bg/en"
+  },
+  {
+    "name": "Capital Equity Legal Group",
+    "link": "https://en.celg.cn/product_1562.html?&member_sortid_2=1396"
+  },
+  {
+    "name": "Cantez & Partners",
+    "link": "https://www.cantez.legal/MertCantez/"
+  },
+  {
+    "name": "Cambrian",
+    "link": "https://www.cambrian.be/team/"
+  },
+  {
+    "name": "Bun & Associates",
+    "link": "https://www.bun-associates.com/our-people"
+  },
+  {
+    "name": "Bulboaca & Asociaţii",
+    "link": "https://bulboaca.com/home/our-squad",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "IW Melcheds",
+    "link": "https://iwmelcheds.com.br/equipe/?cargo=socios"
+  },
+  {
+    "name": "BAQSN",
+    "link": "https://baqsn.bo/en/partners/"
+  },
+  {
+    "name": "BSP",
+    "link": "https://www.bsp.lu/lu/people?expertise=All&job_title=33&name="
+  },
+  {
+    "name": "Bruzzone & González",
+    "link": "https://bruzzoneygonzalez.cl/en/our-team/"
+  },
+  {
+    "name": "Bruun & Hjejle",
+    "link": "https://www.bruunhjejle.dk/people?job_title_target_id=25&major_target_id=All&title="
+  },
+  {
+    "name": "Brunswick",
+    "link": "https://www.bwklegal.com/equipe/"
+  },
+  {
+    "name": "Brouxel & Rabia",
+    "link": "https://brouxelrabia.lu/our-lawyers/"
+  },
+  {
+    "name": "Bross & Partners",
+    "link": "http://bross.vn/en/our-people/"
+  },
+  {
+    "name": "B2R Law",
+    "link": "https://b2rlaw.com/about-b2r/"
+  },
+  {
+    "name": "Brighteous Law Firm",
+    "link": "http://www.zjblf.com/en/category/%E5%9B%A2%E9%98%9F%E4%BB%8B%E7%BB%8D-en/contacts/"
+  },
+  {
+    "name": "Bratschi",
+    "link": "https://www.bratschi.ch/en/team?search=&personFunktion%5B13%5D=51543&personFunktion%5B4%5D=51677&personFunktion%5B9%5D=51662&personFunktion%5B11%5D=51568&offset=0&limit=12&viewmode=card"
+  },
+  {
+    "name": "Brandl Talos",
+    "link": "https://brandltalos.com/en/team/"
+  },
+  {
+    "name": "Bragard",
+    "link": "https://www.bragard.com.uy/our-team"
+  },
+  {
+    "name": "Bracewell",
+    "link": "https://www.bracewell.com/people/?relationships.poa_office=Paris&taxonomies.br_search_positions_taxonomy=Partner",
+    "Notes": "Only France and the UAE"
+  },
+  {
+    "name": "Grigorescu Ştefănică",
+    "link": "https://www.bpv-grigorescu.com/people/"
+  },
+  {
+    "name": "BoyneClarke",
+    "link": "https://boyneclarke.com/lawyers/",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Boss & Young",
+    "link": "https://www.boss-young.com/teamList"
+  },
+  {
+    "name": "Borel & Barbey",
+    "link": "https://www.borel-barbey.ch/en/team/"
+  },
+  {
+    "name": "Bookbinder",
+    "link": "https://bookbinderlaw.co.bw/lawyers/"
+  },
+  {
+    "name": "Bonn & Schmitt",
+    "link": "https://bonnschmitt.lu/team/"
+  },
+  {
+    "name": "Bomchil",
+    "link": "https://bomchil.com/equipo/"
+  },
+  {
+    "name": "BLC & ASSOCIATES",
+    "link": "https://bombaylawchambers.com/attorneys/"
+  },
+  {
+    "name": "Bojanovic & Partners",
+    "link": "https://www.bopa.rs/people"
+  },
+  {
+    "name": "Granadeiro Guimarães",
+    "link": "https://www.granadeiro.adv.br/en/our-team/"
+  },
+  {
+    "name": "Bech-Bruun",
+    "link": "https://www.bechbruun.com/en/employees?withFilters=false&page=4&term=&initPage=0&staffCategories=Partners"
+  },
+  {
+    "name": "BDK Advokati",
+    "link": "https://bdkadvokati.com/partners-counsels/"
+  },
+  {
+    "name": "BDGS Associates",
+    "link": "https://www.bdgs-associes.com/avocats/"
+  },
+  {
+    "name": "BBA // Fjeldco",
+    "link": "https://www.bbafjeldco.is/our-people"
+  },
+  {
+    "name": "BWB",
+    "link": "https://bwb.legal/en/team"
+  },
+  {
+    "name": "BARGER PREKOP",
+    "link": "https://www.bargerprekop.com/the-team/partners/adrian-barger/"
+  },
+  {
+    "name": "Boden Law",
+    "link": "https://boden-law.com/our-senior-team/"
+  },
+  {
+    "name": "Birungyi, Barata & Associates",
+    "link": "https://taxconsultants.co.ug/index.php/our-people"
+  },
+  {
+    "name": "Binder Grösswang",
+    "link": "https://www.bindergroesswang.at/en/lawyers"
+  },
+  {
+    "name": "BHSM",
+    "link": "https://bhsm.ie/people/"
+  },
+  {
+    "name": "Bernitsas",
+    "link": "https://bernitsaslaw.com/lawyers"
+  },
+  {
+    "name": "Benson Buffett",
+    "link": "https://www.bensonbuffett.com/lawyers",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Bennani & Associes",
+    "link": "https://www.bennaniassocies.com/en/equipe/"
+  },
+  {
+    "name": "Bell Gully",
+    "link": "https://www.bellgully.com/our-people/?q=&filter-role=partner&filter-expertise=&filter-location="
+  },
+  {
+    "name": "Babic&Partners",
+    "link": "https://www.babic-partners.hr/legal-team/marija-gregoric/"
+  },
+  {
+    "name": "AHRP Law",
+    "link": "https://www.ahrplaw.com/people"
+  },
+  {
+    "name": "Azman Davidson & Co",
+    "link": "https://azmandavidson.com.my/our-team/"
+  },
+  {
+    "name": "AYR",
+    "link": "https://www.ayr.co.il/professionals/",
+    "Note": "Click on partner opt"
+  },
+  {
+    "name": "AVS Legal",
+    "link": "https://avs.legal/our-team/"
+  },
+  {
+    "name": "AVM",
+    "link": "https://www.avm-advogados.com/en/equipa/"
+  },
+  {
+    "name": "SPVS",
+    "link": "https://spvs.ro/teodora-stoian-en/"
+  },
+  {
+    "name": "Ashong Benjamin",
+    "link": "https://ashongbenjamin.com/people/"
+  },
+  {
+    "name": "ASAR",
+    "link": "https://www.asarlegal.com/people/"
+  },
+  {
+    "name": "VISION Consulting",
+    "link": "https://visionconsultingalbania.com/about-us/"
+  },
+  {
+    "name": "ARS",
+    "link": "https://arslaw.co.tz/"
+  },
+  {
+    "name": "ARQUIS",
+    "link": "https://www.arqis.com/en/team/"
+  },
+  {
+    "name": "Arntzen de Besche",
+    "link": "https://www.adeb.no/en/employees?position=Partner"
+  },
+  {
+    "name": "Armstrongs",
+    "link": "https://armstrongs.bw/attorneys/",
+    "Note": "Country === Botswana"
+  },
+  {
+    "name": "Argo",
+    "link": "https://www.argo-law.be/people/"
+  },
+  {
+    "name": "Arendt & Medernach",
+    "link": "https://www.arendt.com/about-us/our-people/?_paged=2",
+    "Note": "Start from this page"
+  },
+  {
+    "name": "FM Derraik",
+    "link": "https://www.fmderraik.com.br/equipe/"
+  },
+  {
+    "name": "AP Legal",
+    "link": "https://ap-legal.rs/our-team/"
+  },
+  {
+    "name": "Miranda & Amado",
+    "link": "https://mafirma.pe/en/resultado"
+  },
+  {
+    "name": "Kneppelhout",
+    "link": "https://kneppelhout.com/about-us/our-people/?tx_personnel_category=partner"
+  },
+  {
+    "name": "ANSS",
+    "link": "https://ansslaw.com/partners"
+  },
+  {
+    "name": "Anoma Legal",
+    "link": "https://www.anomalegal.com/attorneys/"
+  },
+  {
+    "name": "AGM Abogados",
+    "link": "https://www.agmabogados.com/equipo/"
+  },
+  {
+    "name": "Agio Legal",
+    "link": "https://agiosolutions.eu/en/team-capability/agio-legal-en/"
+  },
+  {
+    "name": "AG Advokat",
+    "link": "https://www.agadvokat.se/en/our-people/?expertise=&roles=partner&es="
+  },
+  {
+    "name": "Africase Attorneys",
+    "link": "https://africase.co/leadership/#section-ec6be19-1"
+  },
+  {
+    "name": "AF Mpanga",
+    "link": "https://afmpanga.com/people/"
+  },
+  {
+    "name": "Aegis Law",
+    "link": "https://www.aegislaw.cz/en#lide"
+  },
+  {
+    "name": "AECO",
+    "link": "https://aecolaw.com/team/#partners"
+  },
+  {
+    "name": "Advocaat Law Practice",
+    "link": "https://advocaat-law.com/people/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "TripleOKLaw",
+    "link": "https://www.tripleoklaw.com/people/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "Advel",
+    "link": "https://advel.is/en/home/starfsfolk/"
+  },
+  {
+    "name": "ADVANT Altana",
+    "link": "https://www.advant-altana.com/avocats?tx_codersprofessional_list%5BsearchName%5D=&tx_codersprofessional_list%5BcurrentPage%5D=1&tx_codersprofessional_list%5Broles%5D%5B%5D=2"
+  },
+  {
+    "name": "ACI Partners",
+    "link": "https://aci.md/legal-team/"
+  },
+  {
+    "name": "Benson Buffett",
+    "link": "https://bensonbuffett.com/lawyers",
+    "Note": "Canada, check if is an valid firm"
+  },
+  {
+    "name": "Corcoran",
+    "link": "https://cflaw.co.nz/our-people/?role=partner"
+  },
+  {
+    "name": "WWL",
+    "link": "https://www.wwl.co.nz/team"
+  },
+  {
+    "name": "AMERELLER",
+    "link": "https://amereller.com/lawyers/?category=Partners"
+  },
+  {
+    "name": "Al Yaqout and Al Fouzan Legal",
+    "link": "https://alyaqoutlg.com/our-team/"
+  },
+  {
+    "name": "Askews Legal LLP",
+    "link": "https://askewslegal.co/meet-our-team/?_gl=1*f0l2mr*_up*MQ..*_gs*MQ..&gclid=CjwKCAiAneK8BhAVEiwAoy2HYfzbzeYkCGtYfmqVknfCFwEDhVX8uUWxGsXcccmA7brB6qxNklCPOhoCtSgQAvD_BwE"
+  },
+  {
+    "name": "Al Markaz Law",
+    "link": "https://www.markazlaw.com/Litigation-Team.html"
+  },
+  {
+    "name": "Alliance Law",
+    "link": "https://alliancelaw.com.eg/people/"
+  },
+  {
+    "name": "Al-Hamad Legal",
+    "link": "https://www.alhamadlaw.com/peoples.html",
+    "Note": "email formatt == (firstName)@alhamadlaw.com",
+    "Ex.:": "Andrew Clark - andrew@alhamadlaw.com"
+  },
+  {
+    "name": "Alessandri Lawyers",
+    "link": "https://alessandri.legal/equipo/"
+  },
+  {
+    "name": "Alcogal",
+    "link": "https://alcogal.com/lawyers/"
+  },
+  {
+    "name": "ALC - Alieldean Weshahi & Partners",
+    "link": "https://www.alc.law/the-team/team/"
+  },
+  {
+    "name": "Amjoman",
+    "link": "https://www.amjoman.com/people/"
+  },
+  {
+    "name": "Alburquerque Abogados Consultores",
+    "link": "https://www.alburquerque.com.do/en/team/"
+  },
+  {
+    "name": "Al Alawi & Co",
+    "link": "https://www.alalawico.com/experts/"
+  },
+  {
+    "name": "AKL",
+    "link": "https://www.aklawfirm.gr/team"
+  },
+  {
+    "name": "HWL Ebsworth",
+    "link": "https://hwlebsworth.com.au/about-us/"
+  },
+  {
+    "name": "Zan Hub",
+    "link": "https://www.zanhub.com/en/team/"
+  },
+  {
+    "name": "Langseth",
+    "link": "https://langsethadvokat.no/om-oss/oversikt-partnere/?_gl=1*12njgmy*_up*MQ..*_gs*MQ..&gclid=CjwKCAiAneK8BhAVEiwAoy2HYWMa94C8f4qgFgGu6Q6Ow_Uj24mYn5I40qH3YEdEebE51ejtAnD8ehoC9c8QAvD_BwE"
+  },
+  {
+    "name": "Ernesto Borges",
+    "link": "https://www.ernestoborges.com.br/en/team/?cargo=partner&localizacao=&nome="
+  },
+  {
+    "name": "Duarte Garcia, Serra Netto e Terra",
+    "link": "https://www.duartegarcia.com.br/en/equipe/index?termo=socio"
+  },
+  {
+    "name": "Dias De Souza",
+    "link": "https://www.dsa.com.br/advogados/"
+  },
+  {
+    "name": "Di Blasi, Parente & Associados",
+    "link": "https://diblasiparente.com.br/en/our-team/",
+    "Notes": "Partner + Head"
+  },
+  {
+    "name": "Contexto Legal",
+    "link": "https://contextolegal.com/equipo/"
+  },
+  {
+    "name": "Suarez Consultoria",
+    "link": "https://www.suarezconsultoria.com/team-4"
+  },
+  {
+    "name": "Chrupo Evans",
+    "link": "https://www.grupoevans.cl/en/team/"
+  },
+  {
+    "name": "Baraona Marshall",
+    "link": "https://www.baraona.cl/en/equipo/"
+  },
+  {
+    "name": "Arntzen de Besche",
+    "link": "https://www.adeb.no/en/employees?position=Partner"
+  },
+  {
+    "name": "Lembeye",
+    "link": "https://www.lembeye.cl/en/team/"
+  },
+  {
+    "name": "Latin Alliance",
+    "link": "https://latinalliance.co/en/equipo-de-expertos/"
+  },
+  {
+    "name": "Setterwalls",
+    "link": "https://setterwalls.se/en/our-people/?f_f=522&f_a=&f_i=&f_o=&e_s=&f_l=&f_p=1&f_q=12"
+  },
+  {
+    "name": "Gernandt & Danielsson",
+    "link": "https://www.gda.se/en/our-people/?query=&title=217&title=7"
+  },
+  {
+    "name": "Mannheimer Swartling",
+    "link": "https://www.mannheimerswartling.se/en/our-people/?position=%5B4869%5D"
+  },
+  {
+    "name": "Atlas Advokater",
+    "link": "https://atlasadvokater.com/medarbetare/"
+  },
+  {
+    "name": "Daniel Law",
+    "link": "https://www.daniel-ip.com/en/team/"
+  },
+  {
+    "name": "CTP Advogados",
+    "link": "https://www.ctpadv.com.br/en/professionals/",
+    "Note": "Click on partners opt"
+  },
+  {
+    "name": "Workx",
+    "link": "https://www.workxadvocaten.nl/en/team/"
+  },
+  {
+    "name": "CLEERDIN & HAMER",
+    "link": "https://cleerdin-hamer.nl/advocaten/"
+  },
+  {
+    "name": "Pot Jonker",
+    "link": "https://www.potjonker.nl/en/our-people/?FUNCTION=132&EXPERTISE="
+  },
+  {
+    "name": "CMS",
+    "link": "https://cms.law/en/int/people",
+    "Note": "Click on partner opt"
+  },
+  {
+    "name": "GMW lawyers",
+    "link": "https://www.gmw.nl/en/lawyers/"
+  },
+  {
+    "name": "",
+    "link": "https://www.poelmannvandenbroek.nl/en/people/advocaten#filters"
+  },
+  {
+    "name": "WILLEMSPARK",
+    "link": "https://willemsparkadvocaten.nl/advocaten/"
+  },
+  {
+    "name": "VDB Law",
+    "link": "https://vdb-law.nl/uw-adviseurs/notariaat"
+  },
+  {
+    "name": "Finnius",
+    "link": "https://finnius.com/en/team/"
+  },
+  {
+    "name": "Blenheim",
+    "link": "https://www.blenheim.nl/advocaten/"
+  },
+  {
+    "name": "Fruytier",
+    "link": "https://www.flib.nl/advocaten"
+  },
+  {
+    "name": "L&A",
+    "link": "https://www.lenaadvocaten.nl/ons-team/#onze-advocaten"
+  },
+  {
+    "name": "Wintertaling",
+    "link": "https://wintertaling.nl/team/"
+  },
+  {
+    "name": "LA GRO",
+    "link": "https://www.lagro.com/en/employees/"
+  },
+  {
+    "name": "HEKKELMAN",
+    "link": "https://www.hekkelman.nl/onze-mensen/"
+  },
+  {
+    "name": "Windt Le Grand Leeuwenburgh",
+    "link": "https://www.windtlegal.com/nl/team"
+  },
+  {
+    "name": "Lennox",
+    "link": "https://lennox.nl/en/team/"
+  },
+  {
+    "name": "Rutgers & Posch",
+    "link": "https://www.rutgersposch.com/team/"
+  },
+  {
+    "name": "LEGALTREE",
+    "link": "https://legaltree.nl/en/our-partners/"
+  },
+  {
+    "name": "ACT LEGAL",
+    "link": "https://actlegal.com/professionals/"
+  },
+  {
+    "name": "TRUST",
+    "link": "https://trustadvocaten.be/eng/team"
+  },
+  {
+    "name": "Straatman Koster",
+    "link": "https://en.straatmankoster.nl/team"
+  },
+  {
+    "name": "KENNEDY VAN DER LAAN",
+    "link": "https://kvdl.com/en/our-team@job-function:partner-1"
+  },
+  {
+    "name": "LEXENCE",
+    "link": "https://www.lexence.com/en/our-people/?query=&filter_function%5B%5D=partner-en"
+  },
+  {
+    "name": "DVDK Law",
+    "link": "https://www.dvdk.nl/team"
+  },
+  {
+    "name": "Wijn & Stael",
+    "link": "https://www.wijnenstael.nl/en/our-people"
+  },
+  {
+    "name": "BG Legal",
+    "link": "https://bg.legal/en/who-are-we/"
+  },
+  {
+    "name": "ATIM",
+    "link": "https://www.atim.com.vn/teams"
+  },
+  {
+    "name": "Global Vietnam Lawyers",
+    "link": "https://gvlawyers.com.vn/our-lawyers/"
+  },
+  {
+    "name": "Chediak",
+    "link": "https://chediak.com.br/en/profissionais"
+  },
+  {
+    "name": "CBLM",
+    "link": "https://cblm.com.br/#advogados"
+  },
+  {
+    "name": "Frasers",
+    "link": "https://www.frasersvn.com/senior-legal-team"
+  },
+  {
+    "name": "YKVN",
+    "link": "https://ykvn-law.com/lawyer/#partner"
+  },
+  {
+    "name": "VILAF",
+    "link": "https://www.vilaf.com.vn/our-people/"
+  },
+  {
+    "name": "S&O IP",
+    "link": "https://www.so-ipr.com/S-O-IP-l-HOME/team"
+  },
+  {
+    "name": "Domnern Somgiat & Boonma",
+    "link": "https://dsb.co.th/about/#firm-members"
+  },
+  {
+    "name": "Formosan Brothers",
+    "link": "https://www.fblaw.com.tw/en/our-people"
+  },
+  {
+    "name": "Lee Tsai & Partners",
+    "link": "https://www.leetsai.com/professionals"
+  },
+  {
+    "name": "Lee International",
+    "link": "https://www.leeinternational.com/home/etc/searchResultPf.php?stx=a"
+  },
+  {
+    "name": "You Me",
+    "link": "https://en.youme.com/sub_people/people.aspx?idx=1"
+  },
+  {
+    "name": "Zul Rafique & Partners",
+    "link": "https://www.zulrafique.com.my/our_people.php"
+  },
+  {
+    "name": "",
+    "link": "https://www.albar.com.my/partners.html"
+  },
+  {
+    "name": "Shook Lin & Bok",
+    "link": "https://www.shooklin.com/en/our-partners?start=9"
+  },
+  {
+    "name": "Skrine",
+    "link": "https://www.skrine.com/people/partners#people-partners"
+  },
+  {
+    "name": "Christopher & Lee Ong",
+    "link": "https://www.christopherleeong.com/?s=&post_type=partners&post_type=partners&wpse_type=people-search&wpse_action=search"
+  },
+  {
+    "name": "SCPT",
+    "link": "https://scpt.com.mo/teams/"
+  },
+  {
+    "name": "FCLaw",
+    "link": "https://fclaw.com.mo/lawyers/"
+  },
+  {
+    "name": "C&C",
+    "link": "https://www.ccadvog.com/cca/our-team?law=140&areas=&ind=&lan="
+  },
+  {
+    "name": "Manuela António",
+    "link": "https://mantonio.net/our-team/lawyers/"
+  },
+  {
+    "name": "Tilleke & Gibbins",
+    "link": "https://www.tilleke.com/professionals/?fl_name=wpcf-professional_given_name&alpha=&position[]=4553&position[]=4553&location=&keyword="
+  },
+  {
+    "name": "LS Horizon",
+    "link": "http://lshorizon.com/professionals/"
+  },
+  {
+    "name": "DFDL",
+    "link": "https://www.dfdl.com/teams/"
+  },
+  {
+    "name": "Venture Law",
+    "link": "https://www.venturelawltd.com/index.php/people-page/"
+  },
+  {
+    "name": "PDLegal",
+    "link": "https://www.pdlegal.com.sg/people/"
+  },
+  {
+    "name": "Oon & Bazul",
+    "link": "https://oonbazul.com/our-lawyers/"
+  },
+  {
+    "name": "Collyer Law",
+    "link": "https://www.collyerlaw.com/team"
+  },
+  {
+    "name": "RHTLaw",
+    "link": "https://www.rhtlawasia.com/partners/"
+  },
+  {
+    "name": "Yuen Law",
+    "link": "https://yuenlaw.com.sg/our-team/"
+  },
+  {
+    "name": "Withers KhattarWong",
+    "link": "https://www.withersworldwide.com/en-gb/people?filterByOffice=&filterByRole=1584c97f-45b9-4c6d-afcf-c9761dfc039e&filterByPractice=&filterByAreaOfFocus=&filterByClientType=#filter"
+  },
+  {
+    "name": "Quahe Woo & Palmer",
+    "link": "https://www.qwp.sg/our-lawyers/"
+  },
+  {
+    "name": "TSMP",
+    "link": "https://www.tsmplaw.com/our-people/",
+    "Note": "Part + Dir"
+  },
+  {
+    "name": "Sarmiento Loriega Law",
+    "link": "https://www.sl-lawoffice.com/Lawyers"
+  },
+  {
+    "name": "Mosveldtt Law",
+    "link": "https://mosveldttlaw.com/people/partners/"
+  },
+  {
+    "name": "Platon Martinez Flores San Pedro & Leaño",
+    "link": "https://platonmartinez.com/team"
+  },
+  {
+    "name": "FNS Law",
+    "link": "https://www.fnslaw.com.ph/lawyers/"
+  },
+  {
+    "name": "GRUBA LAW",
+    "link": "https://grubalaw.com/our-lawyers/"
+  },
+  {
+    "name": "MVGS",
+    "link": "https://mvgslaw.com/our_people/"
+  },
+  {
+    "name": "Castillo Laman Tan Pantaleon & San Jose",
+    "link": "https://cltpsj.com.ph/the-lawyers/"
+  },
+  {
+    "name": "C&G",
+    "link": "https://www.cagatlaw.com/our-partners/"
+  },
+  {
+    "name": "ACCRALAW",
+    "link": "https://accralaw.com/our-lawyers/?_accra_role=60",
+    "Note": "see this vídeo later https://www.youtube.com/watch?v=Y9JDrTG1vWc&pp=ygUYI2NvbnRlbnRwcm90ZWN0aW9uYnlwYXNz"
+  },
+  {
+    "name": "FGE Ebrahim Hosain",
+    "link": "https://www.fge-eh.com/people/"
+  },
+  {
+    "name": "Cornelius Lane & Mufti",
+    "link": "https://clm.com.pk/CLM-Partners.html"
+  },
+  {
+    "name": "Vanguard Lawyers Tokyo",
+    "link": "https://www.vl-tokyo.co.jp/en/en_team.html"
+  },
+  {
+    "name": "",
+    "link": "https://www.kk-advocates.com/team"
+  },
+  {
+    "name": "SIP Law",
+    "link": "https://siplawfirm.id/our-sip-team/partners/"
+  },
+  {
+    "name": "FKNK Law",
+    "link": "https://www.fknk.co.id/team-level/prtnr/"
+  },
+  {
+    "name": "AYMP",
+    "link": "https://www.aymp.law/partners",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "William Hendrik & Siregar Djojonegoro",
+    "link": "https://whsdlaw.com/people-2/"
+  },
+  {
+    "name": "Soemadipradja & Taher",
+    "link": "https://soemadipradjataher.com/people"
+  },
+  {
+    "name": "UMBRA",
+    "link": "https://umbra.law/lawyers/"
+  },
+  {
+    "name": "MKK",
+    "link": "http://www.mkklaw.net/attorneys_main_eng.asp"
+  },
+  {
+    "name": "Stratage Law",
+    "link": "https://www.stratage.in/partners/"
+  },
+  {
+    "name": "SNG & Partners",
+    "link": "https://sngpartners.in/team/"
+  },
+  {
+    "name": "Archeus Law",
+    "link": "https://archeuslaw.com/team/"
+  },
+  {
+    "name": "Lakshmikumaran & Sridharan",
+    "link": "https://www.lakshmisri.com/people?people=a"
+  },
+  {
+    "name": "JPM Law",
+    "link": "https://jmp.law/professionals/"
+  },
+  {
+    "name": "Vaish",
+    "link": "https://www.vaishlaw.com/our-team/",
+    "Note": "Click to load more. Check how many already are registred"
+  },
+  {
+    "name": "",
+    "link": "https://www.vaishlaw.com/our-team/"
+  },
+  {
+    "name": "RPV Legal",
+    "link": "https://rpvlegal.com/people/"
+  },
+  {
+    "name": "Prosoll Law",
+    "link": "https://prosolllaw.com/core-team/"
+  },
+  {
+    "name": "K Law",
+    "link": "https://www.klaw.in/our-team/partners/"
+  },
+  {
+    "name": "Clasis Law",
+    "link": "https://clasislaw.com/team#"
+  },
+  {
+    "name": "BRZ",
+    "link": "https://brzadvogados.com.br/en/time-brz/"
+  },
+  {
+    "name": "Chandhiok & Mahajan",
+    "link": "https://www.chandhiok.com/our-team"
+  },
+  {
+    "name": "Argus",
+    "link": "https://www.argus-p.com/our-people/our-partners/"
+  },
+  {
+    "name": "Numen Law",
+    "link": "https://numenlaw.com/teams.php"
+  },
+  {
+    "name": "Phoenix Legal",
+    "link": "https://www.phoenixlegal.in/partners.php"
+  },
+  {
+    "name": "Luthra and Luthra",
+    "link": "https://luthra.com/partners/"
+  },
+  {
+    "name": "Poovayya",
+    "link": "https://www.poovayya.net/our-people/"
+  },
+  {
+    "name": "S&R Associates",
+    "link": "https://www.snrlaw.in/lawyers/"
+  },
+  {
+    "name": "Economic Laws Practice",
+    "link": "https://elplaw.in/people/"
+  },
+  {
+    "name": "Cyril Amarchand Mangaldas",
+    "link": "https://www.cyrilshroff.com/people-partners/"
+  },
+  {
+    "name": "AZB",
+    "link": "https://www.azbpartners.com/people/"
+  },
+  {
+    "name": "Bowers",
+    "link": "https://bowers.law/team/"
+  },
+  {
+    "name": "Zhong Lun",
+    "link": "https://en.zhonglun.com/team"
+  },
+  {
+    "name": "ONC",
+    "link": "https://www.onc.hk/en_US/our-people"
+  },
+  {
+    "name": "Gallant",
+    "link": "https://www.gallantho.com/our-professionals"
+  },
+  {
+    "name": "Wilkinson & Grist",
+    "link": "http://www.wilgrist.com/wng/index.php/en/our-people",
+    "Note": "Check how to get the email: 1. Clicking 2. Generating"
+  },
+  {
+    "name": "Woo Kwan Lee & Lo",
+    "link": "https://wkll.com/en/our-professionals"
+  },
+  {
+    "name": "Joint-Win",
+    "link": "http://www.joint-win.com/En/lawyer/lists/job/2/catid/114"
+  },
+  {
+    "name": "Anli",
+    "link": "https://www.anlilaw.com/100043/?dd=&ly=&key=partner&zm="
+  },
+  {
+    "name": "Haiwen",
+    "link": "http://www.haiwen-law.com/64/"
+  },
+  {
+    "name": "Duan & Duan",
+    "link": "https://www.duanduan.com/team"
+  },
+  {
+    "name": "Hylands",
+    "link": "https://en.hylandslaw.com/team/"
+  },
+  {
+    "name": "Merits & Tree",
+    "link": "http://www.meritsandtree.com/en/personnel/"
+  },
+  {
+    "name": "Hai Run",
+    "link": "https://www.hairunlawyer.com/en/personnel/?lb=1162&dd=&ly=&zm=&text=#topbox"
+  },
+  {
+    "name": "Docvit",
+    "link": "https://en.dtlawyers.com.cn/people"
+  },
+  {
+    "name": "Chance Bridge",
+    "link": "https://chancebridge.com/en/zyry/"
+  },
+  {
+    "name": "Kangda",
+    "link": "http://en.kangdalawyers.com/team",
+    "Note": "Avoid 1st"
+  },
+  {
+    "name": "Hui Zhong",
+    "link": "http://www.huizhonglaw.com/en/index.php/group"
+  },
+  {
+    "name": "Jingtian & Gongcheng",
+    "link": "https://www.jingtian.com/en/zyry/?text=&zyly=&bgdd=&key="
+  },
+  {
+    "name": "KWM",
+    "link": "https://www.kwm.com/global/en/people.html"
+  },
+  {
+    "name": "Syed Ishtiaq Ahmed & Associates",
+    "link": "https://www.siaalaw.com/our-people"
+  },
+  {
+    "name": "Sudath Perera",
+    "link": "https://www.sudathpereraassociates.com/lawyers"
+  },
+  {
+    "name": "Julius & Creasy",
+    "link": "https://www.juliusandcreasy.com/our-people"
+  },
+  {
+    "name": "Palacio",
+    "link": "https://www.palacio.com.ar/en/our-team/"
+  },
+  {
+    "name": "SADER & Associates",
+    "link": "https://www.saderlaw.com/people.php"
+  },
+  {
+    "name": "TKP",
+    "link": "https://www.traple.pl/en/people/",
+    "Note": "Select only partners, all seniors already registred"
+  },
+  {
+    "name": "FGGH IP",
+    "link": "https://www.fgghip.com/en/#team"
+  },
+  {
+    "name": "Camilleri Preziosi",
+    "link": "https://camilleripreziosi.com/our-firm/about-us/our-people/",
+    "Note": "send key to load lawyers"
+  },
+  {
+    "name": "SBGK",
+    "link": "https://sbgk.hu/hu/szakterueletek",
+    "Note": "Find lawyers by practice area"
+  },
+  {
+    "name": "DR. HELEN G. PAPACONSTANTINOU AND PARTNERS",
+    "link": "https://www.hplawfirm.com/about-us/our-people"
+  },
+  {
+    "name": "PREU BOHLIG & PARTNERS",
+    "link": "https://preubohlig.de/team/?lang=en"
+  },
+  {
+    "name": "Torres Plaz & Araujo",
+    "link": "https://torresplazaraujo.com/en/our-team/"
+  },
+  {
+    "name": "YUHONG IP Law Firm,",
+    "link": "http://www.yuhongip.com/Partners.html",
+    "Note": "email formatt == (lastName)(firstName)@yuhongip.com",
+    "Ex.:": "Dajian Wu === wudajian@yuhongip.com"
+  },
+  {
+    "name": "Wanhuida",
+    "link": "https://www.wanhuida.com/en/team/"
+  },
+  {
+    "name": "RNA",
+    "link": "https://rnaip.com/our-team/"
+  },
+  {
+    "name": "KRISHNA & SAURASTRI ASSOCIATES LLP",
+    "link": "https://krishnaandsaurastri.com/professionals"
+  },
+  {
+    "name": "Griffith Hack",
+    "link": "https://www.griffithhack.com/people/"
+  },
+  {
+    "name": "R K Dewan & Co",
+    "link": "https://www.rkdewan.com/ourteam.php?page=1"
+  },
+  {
+    "name": "Spoor & Fisher",
+    "link": "https://spoor.com/our-people/"
+  },
+  {
+    "name": "Lullius partners",
+    "link": "https://www.lullius.com/en/about/"
+  },
+  {
+    "name": "Brodies",
+    "link": "https://brodies.com/people/?position=partner&page=1"
+  },
+  {
+    "name": "MLL Legal",
+    "link": "https://mll-legal.com/people/?lang=en&mll-function=partner"
+  },
+  {
+    "name": "Doklestic Repic & Gajin",
+    "link": "https://doklestic.law/our-team/"
+  },
+  {
+    "name": "Miller Canfield",
+    "link": "https://millercanfield.pl/en/attorneys/"
+  },
+  {
+    "name": "Boontje",
+    "link": "https://boontje.nl/en/ons-team/"
+  },
+  {
+    "name": "CAINS",
+    "link": "https://cains.com/people/"
+  },
+  {
+    "name": "Kyriakides Georgopoulos",
+    "link": "https://kglawfirm.gr/people/?pos=2"
+  },
+  {
+    "name": "ADVANT Beiten",
+    "link": "https://www.advant-beiten.com/en/experts?tx_codersprofessional_list%5BsearchName%5D=&tx_codersprofessional_list%5BcurrentPage%5D=1&tx_codersprofessional_list%5Broles%5D%5B%5D=1&tx_codersprofessional_list%5Broles%5D%5B%5D=4&tx_codersprofessional_list%5Broles%5D%5B%5D=2&tx_codersprofessional_list%5Broles%5D%5B%5D=3"
+  },
+  {
+    "name": "Ellex",
+    "link": "https://ellex.legal/lawyers/?position=92%2C154"
+  },
+  {
+    "name": "Plesner",
+    "link": "https://plesner.com/en/our-people?term_node_tid_depth_1=18&term_node_tid_depth=All"
+  },
+  {
+    "name": "KŠB",
+    "link": "https://www.ksb.cz/en/lide"
+  },
+  {
+    "name": "Cerha Hempel",
+    "link": "https://www.cerhahempel.com/lawyers?role=1"
+  },
+  {
+    "name": "Lee, Tsai & Partners",
+    "link": "https://www.leetsai.com/professionals"
+  },
+  {
+    "name": "WongPartnership",
+    "link": "https://www.wongpartnership.com/people/search"
+  },
+  {
+    "name": "August Debouzy",
+    "link": "https://www.august-debouzy.com/en/team",
+    "Note": "email formatt == (firstNameLetter)(lastName)@august-debouzy.com",
+    "Ex.:": "Laurent Cotret === lcotret@august-debouzy.com"
+  },
+  {
+    "name": "Ushijima & Partners",
+    "link": "https://www.ushijima-law.gr.jp/en/attorney/?t1=60&t2=&t3=",
+    "Note": "email formatt == (firstName).(lastName)@ushijima-law.gr.jp",
+    "Ex.:": "Osamu Inoue === osamu.inoue@ushijima-law.gr.jp"
+  },
+  {
+    "name": "JunHe",
+    "link": "https://www.junhe.com/professionals/search/result?initial=A"
+  },
+  {
+    "name": "Udo Udoma and Belo-Osagie",
+    "link": "https://uubo.org/people/"
+  },
+  {
+    "name": "NBA",
+    "link": "https://www.nblaw.com/lawyers"
+  },
+  {
+    "name": "Miranda",
+    "link": "https://www.mirandalawfirm.com/en/our-people/partner",
+    "Note": "5 Load More"
+  },
+  {
+    "name": "Ibrachy & Dermarkar",
+    "link": "https://id.com.eg/people/"
+  },
+  {
+    "name": "Fátima Freitas",
+    "link": "https://www.fatimafreitas.com/en/people"
+  },
+  {
+    "name": "PHR Legal",
+    "link": "https://phrlegal.com/en/lawyers/?_sf_s=partner&_sft_categoria-abogado=partners"
+  },
+  {
+    "name": "Moreno Baldivieso",
+    "link": "https://emba.com.bo/en/teams/"
+  },
+  {
+    "name": "Bichara e Motta",
+    "link": "https://www.bicharaemotta.com.br/en/our-team/"
+  },
+  {
+    "name": "Bicalho Navarro",
+    "link": "https://bicalhonavarro.com.br/en/team/"
+  },
+  {
+    "name": "Basch & Rameh",
+    "link": "https://baschrameh.com.br/en/partners-and-associates/"
+  },
+  {
+    "name": "Jiménez & Lozano",
+    "link": "https://www.jlabogados.es/abogados-madrid/"
+  },
+  {
+    "name": "Mariscal",
+    "link": "https://www.mariscal-abogados.com/international-lawyers-in-spain/#partners"
+  },
+  {
+    "name": "Malaga Solicitors",
+    "link": "https://www.malagasolicitors.com/about-us/?_gl=1*1ipia7g*_up*MQ..*_ga*NjkxMTk4MjkxLjE3MzcxMzAyODk.*_ga_G0YF1W9HKP*MTczNzEzMDI4NC4xLjAuMTczNzEzMDI4NC4wLjAuMA.."
+  },
+  {
+    "name": "G.Elías & Muñoz",
+    "link": "https://www.eliasymunozabogados.com/en/team?_gl=1*puxa8l*_up*MQ..*_gs*MQ..&gclid=CjwKCAiAnKi8BhB0EiwA58DA4QCSQIHCCyiZ04aRs9xXlgIvJiFV0xJ2lv-5VfreIYhWVoeibLEuMRoCSPgQAvD_BwE"
+  },
+  {
+    "name": "Barnard Inc",
+    "link": "https://barnardinc.co.za/our-team/",
+    "Note": "First 2 registred"
+  },
+  {
+    "name": "SLKB",
+    "link": "https://slkb.co.za/our-team/"
+  },
+  {
+    "name": "Senekal Simmonds",
+    "link": "https://www.sesi.co.za/team.html"
+  },
+  {
+    "name": "Abrahams & Gross Incorporated",
+    "link": "https://www.abgross.co.za/team/"
+  },
+  {
+    "name": "Matthews Folbigg",
+    "link": "https://www.matthewsfolbigg.com.au/our-people/"
+  },
+  {
+    "name": "Tabacks",
+    "link": "https://www.tabacks.com/people"
+  },
+  {
+    "name": "HJW",
+    "link": "https://hjwattorneys.co.za/people"
+  },
+  {
+    "name": "Leĝa",
+    "link": "https://lega.law/en/nuestro-equipo/"
+  },
+  {
+    "name": "Araquereyna",
+    "link": "https://araquereyna.com/en/lawyers/"
+  },
+  {
+    "name": "Antequera Parilli & Rodríguez",
+    "link": "https://antequera.legal/en/our-team/"
+  },
+  {
+    "name": "D'Empaire",
+    "link": "https://www.dra.com.ve/lawyer/"
+  },
+  {
+    "name": "Barcellos Tucunduva",
+    "link": "https://btlaw.com.br/en/socios/"
+  },
+  {
+    "name": "Balera, Berbel & Mitne",
+    "link": "https://balera.com.br/b-staff/"
+  },
+  {
+    "name": "Ayres Ribeiro",
+    "link": "https://www.ayresribeiro.com.br/equipe-item.php?id=1",
+    "Note": "Start from this, the first lawyer is registered already"
+  },
+  {
+    "name": "Osterling",
+    "link": "https://osterlingfirm.com/en/the-team/"
+  },
+  {
+    "name": "Ibarra, del Paso y Gallego",
+    "link": "https://www.ibarrapg.com/en/lawyers/"
+  },
+  {
+    "name": "Sánchez Devanny",
+    "link": "https://sanchezdevanny.com/en/attorneys/partners"
+  },
+  {
+    "name": "Nader, Hayaux & Goebel",
+    "link": "https://www.nhg.mx/en_gb/about-us/our-team/partners/"
+  },
+  {
+    "name": "Fernández Secco",
+    "link": "https://fernandezsecco.com/en/equipo/"
+  },
+  {
+    "name": "Cervieri Monsuarez",
+    "link": "https://cervierimonsuarez.com/quienes-somos/"
+  },
+  {
+    "name": "Bragard",
+    "link": "https://www.bragard.com.uy/our-team"
+  },
+  {
+    "name": "Guyer & Regules",
+    "link": "https://www.guyer.com.uy/our-team"
+  },
+  {
+    "name": "Rodríguez Angobaldo",
+    "link": "https://er.com.pe/en/partners/"
+  },
+  {
+    "name": "Damma",
+    "link": "https://www.damma.com.pe/en/team/"
+  },
+  {
+    "name": "CPB",
+    "link": "https://www.cpb-abogados.com.pe/en/equipo/"
+  },
+  {
+    "name": "Amprimo",
+    "link": "https://amprimoabogados.com/directorio/?taxonomy=team_department&term=socios"
+  },
+  {
+    "name": "Zuzunaga & Assereto Abogados",
+    "link": "https://zyaabogados.com/en/abogados/"
+  },
+  {
+    "name": "Vinatea & Toyama",
+    "link": "https://vinateatoyama.com/en/our-team/",
+    "Note": "email formatt == (firstNameLetter)(lastName)@vinateatoyama.com",
+    "Ex.:": "Alexia Kountouri === akountouri@vinateatoyama.com"
+  },
+  {
+    "name": "Santivanez",
+    "link": "https://santivanez.com.pe/en/equipo/"
+  },
+  {
+    "name": "Rubio",
+    "link": "https://www.rubio.pe/en/socios/"
+  },
+  {
+    "name": "Rebaza, Alcázar & De Las Casas",
+    "link": "https://rebaza-alcazar.com/en/the-team/partners/"
+  },
+  {
+    "name": "Estudio Olaechea",
+    "link": "https://www.esola.com.pe/en/search/?search=&category=2",
+    "Note": "email formatt == (fullName)@esola.com.pe",
+    "Ex.:": "María Eugenia Yábar === mariaeugeniayabar@esola.com.pe"
+  },
+  {
+    "name": "Bullard, Falla, Ezcurra",
+    "link": "https://bullardfallaezcurra.com/en/our-team/",
+    "Note": "click on cv to see email"
+  },
+  {
+    "name": "Benites, Vargas & Ugaz",
+    "link": "https://bvu.pe/en/nuestro-equipo/?filter=true&tipo-de-equipo=socios"
+  },
+  {
+    "name": "BARLAW",
+    "link": "https://www.barlaw.com.pe/our_team_grid.html"
+  },
+  {
+    "name": "Rodrigo, Elías & Medrano Abogados",
+    "link": "https://www.estudiorodrigo.com/en/lawyers/"
+  },
+  {
+    "name": "Miranda & Amado",
+    "link": "https://mafirma.pe/en/abogados"
+  },
+  {
+    "name": "PSTBN",
+    "link": "https://www.pstbn.com.py/en/"
+  },
+  {
+    "name": "Gross Brown",
+    "link": "https://grossbrown.com.py/sobre-nosotros"
+  },
+  {
+    "name": "Patton, Moreno & Asvat",
+    "link": "https://www.pmalawyers.com/attorneys"
+  },
+  {
+    "name": "Benedetti CL",
+    "link": "https://benedettilaw.com.pa/en/attorneys/"
+  },
+  {
+    "name": "Galindo, Arias & López",
+    "link": "https://gala.com.pa/en/lawyers/?_tipo_asociado_en=partner"
+  },
+  {
+    "name": "AFRA",
+    "link": "https://www.afra.com/abogados-panama-afra-alfaro-ferrer-ramirez-abogados/"
+  },
+  {
+    "name": "ARIFA",
+    "link": "https://www.arifa.com/lawyers.html"
+  },
+  {
+    "name": "Santos-Elizondo",
+    "link": "https://www.santoselizondo.com/en/team/"
+  },
+  {
+    "name": "Sainz",
+    "link": "https://www.sainzmx.com/socios"
+  },
+  {
+    "name": "RGRH",
+    "link": "https://rgrhmx.com.mx/"
+  },
+  {
+    "name": "Perez Correa Gonzalez",
+    "link": "https://pcga.mx/en/our-firm/"
+  },
+  {
+    "name": "MGGL",
+    "link": "https://www.mggl.com.mx/eng/equipo/"
+  },
+  {
+    "name": "Malpica, Iturbe, Buj & Paredes",
+    "link": "https://mibp.com.mx/our-team/"
+  },
+  {
+    "name": "Goodrich Riquelme",
+    "link": "https://goodrichriquelme.com/our-people/"
+  },
+  {
+    "link": "Baker Tilly",
+    "name": "https://www.bakertilly.mx/english/team/",
+    "Note": "email formatt == (firstNameLetter)(lastName)@bakertilly.mx",
+    "Ex.:": "Ramiro Avalos - ravalos@bakertilly.mx"
+  },
+  {
+    "name": "Cuesta Campos",
+    "link": "https://www.cuestacampos.com/en/nosotros-secciones#equipo"
+  },
+  {
+    "name": "Cacheaux, Cavazos & Newton",
+    "link": "https://ccn-law.com/en/our-team/",
+    "Note": "Click to change pages"
+  },
+  {
+    "name": "BCB",
+    "link": "https://bcb.com.mx/en/directory/",
+    "Note": "skip first"
+  },
+  {
+    "name": "Anaya Diaz Ibanez",
+    "link": "https://anaya.law/en/nuestro-equipo/"
+  },
+  {
+    "name": "Acedo Santamarin",
+    "link": "https://www.acsan.mx/en/lawyers/"
+  },
+  {
+    "name": "Sierra Lawyers",
+    "link": "https://www.alegreysierra.com.mx/firm-profile"
+  },
+  {
+    "name": "Sierra Latam",
+    "link": "https://asyv.com/firm-profile/"
+  },
+  {
+    "name": "Von Wobeser",
+    "link": "https://vonwobeser.com/index.php/attorneys/partners"
+  },
+  {
+    "name": "SMPS Legal",
+    "link": "https://smpslegal.com/en/lawyers/",
+    "Note": "Check for the country of each lawyer"
+  },
+  {
+    "name": "Santamarina and Steta",
+    "link": "https://santamarinasteta.mx/en/equipo-sys/?_puesto_rol=socio"
+  },
+  {
+    "name": "Robles Miaja",
+    "link": "https://bufeteroblesmiaja.com.mx/english/abogados/abogados.html"
+  },
+  {
+    "name": "Kuri Breña Sanchez Ugarte and Aznar",
+    "link": "https://ksa.mx/en/team/team"
+  },
+  {
+    "name": "Jauregui and Del Valle",
+    "link": "https://jaureguiydelvalle.com/en/attorneys/"
+  },
+  {
+    "name": "De La Vega & Martínez Rojas",
+    "link": "https://dlvmr.com.mx/en/our-team/"
+  },
+  {
+    "name": "BASHAM",
+    "link": "https://basham.com.mx/en/our-team/"
+  },
+  {
+    "name": "Pérez-Llorca",
+    "link": "https://www.perezllorca.com/en-mx/?s=&post_type%5B%5D=abogado&tiposhiddenEquipo=partner&tipos=partner"
+  },
+  {
+    "name": "Galicia",
+    "link": "https://www.galicia.com.mx/links/en_nuestro-equipo?que=socios"
+  },
+  {
+    "name": "Abe",
+    "link": "https://abeadvogados.com.br/pessoas/"
+  },
+  {
+    "name": "Alegalis",
+    "link": "https://alegalis.com/en/team/"
+  },
+  {
+    "name": "Carrillo Law",
+    "link": "https://carrillolaw.com/en/equipo/"
+  },
+  {
+    "name": "Spingarn",
+    "link": "https://en.spingarn.ec/equipo"
+  },
+  {
+    "name": "Pino Elizalde",
+    "link": "https://pinoelizalde.com/equipo"
+  },
+  {
+    "name": "Noboa, Peña & Torres",
+    "link": "https://www.legalecuador.com/en/team/"
+  },
+  {
+    "name": "López Ribadeneira Mora",
+    "link": "https://www.lopezribadeneira.com/es/equipo"
+  },
+  {
+    "name": "Falconi Puig",
+    "link": "https://en.falconipuig.com/falconi-puig-team/"
+  },
+  {
+    "name": "Lexvalor",
+    "link": "https://www.lexvalor.com/equipo-profesional"
+  },
+  {
+    "name": "FBPH Law",
+    "link": "https://fbphlaw.com/nuestro-equipo/"
+  },
+  {
+    "name": "Coronel & Pérez",
+    "link": "https://coronelyperez.com/en/the-team-coronel-perez-ecuador/"
+  },
+  {
+    "name": "PBP",
+    "link": "https://www.pbplaw.com/en/team/"
+  },
+  {
+    "name": "Pellerano Nadal",
+    "link": "https://www.pellerano.com/en/team-v1"
+  },
+  {
+    "name": "Russin, Vecchi & Heredia Bonetti",
+    "link": "https://rvhb.com/our-team/"
+  },
+  {
+    "name": "Pellerano & Herrera",
+    "link": "https://phlaw.com/our-team/"
+  },
+  {
+    "name": "OMG",
+    "link": "https://www.omg.com.do/talentos?lang=en",
+    "Note": "click to change page"
+  },
+  {
+    "name": "Jiménez Peña",
+    "link": "https://jpadvisors.do/en/our-team/"
+  },
+  {
+    "name": "Lexincorp",
+    "link": "https://lexincorp.com/en/our-team/"
+  },
+  {
+    "name": "Hulbert Volio",
+    "link": "https://hulbertvolio.com/en/#socios"
+  },
+  {
+    "name": "Central Law",
+    "link": "https://central-law.com/en/our-team/"
+  },
+  {
+    "name": "Facio & Cañas",
+    "link": "https://fayca.com/en/partners/"
+  },
+  {
+    "name": "BDS Asesores",
+    "link": "https://www.bdsasesores.com/en/team/",
+    "Note": "each country has one phone"
+  },
+  {
+    "name": "Alta Batalla",
+    "link": "https://www.batalla.com/en/talent"
+  },
+  {
+    "name": "BLP",
+    "link": "https://blplegal.com/our-people/",
+    "Note": "check if the filter is working"
+  },
+  {
+    "name": "Aguilar Castillo Love",
+    "link": "https://www.aguilarcastillolove.com/our-people"
+  },
+  {
+    "name": "Zuleta",
+    "link": "https://zulegal.com/en/abogados/"
+  },
+  {
+    "name": "Uribe Henao",
+    "link": "https://www.uhabogados.com/socios"
+  },
+  {
+    "name": "Mendoza",
+    "link": "https://mendoza.com.co/people/"
+  },
+  {
+    "name": "Pusch Wahlig",
+    "link": "https://pwwl.de/en/koepfe/"
+  },
+  {
+    "name": "Durán & Osorio",
+    "link": "https://www.duranyosorio.com/en/team"
+  },
+  {
+    "name": "AMYA",
+    "link": "https://www.amya.com.co/en/our-team"
+  },
+  {
+    "name": "Lloreda Camacho & Co",
+    "link": "https://lloredacamacho.com/en/partners/"
+  },
+  {
+    "name": "Lewin & Wills",
+    "link": "https://lewinywills.com/en/miembros/"
+  },
+  {
+    "name": "Littler",
+    "link": "https://www.littler.com/location-global/colombia#people"
+  },
+  {
+    "name": "Castro Leiva Rendón",
+    "link": "https://castroleiva.com/en/nosotros/#equipo"
+  },
+  {
+    "name": "PHR Legal",
+    "link": "https://phrlegal.com/en/lawyers/?_sft_categoria-abogado=partners"
+  },
+  {
+    "name": "Uría Menéndez",
+    "link": "https://www.uria.com/en/abogados?page=4",
+    "Note": "page 4 - 51"
+  },
+  {
+    "name": "Bofill Mir",
+    "link": "https://www.bofillmir.cl/nuestro-equipo/?_sft_categoria-equipo=socios"
+  },
+  {
+    "name": "BBGS",
+    "link": "Genarate the link after the initialization",
+    "links": [
+      "https://www.bbgslegal.com/chile",
+      "https://www.bbgslegal.com/equipo-col",
+      "https://www.bbgslegal.com/mexico",
+      "https://www.bbgslegal.com/peru"
+    ]
+  },
+  {
+    "name": "Balmaceda, Cox & Piña",
+    "link": "https://bcp.cl/",
+    "Note": "navigate throw the menu sidebar"
+  },
+  {
+    "name": "Aninat",
+    "link": "https://aninat.cl/en/team/"
+  },
+  {
+    "name": "Albagli Zaliasnik",
+    "link": "https://www.az.cl/en/team/lawyers/"
+  },
+  {
+    "name": "Urenda Rencoret Orrego y Dörr",
+    "link": "https://www.urod.cl/nuestro-equipo/"
+  },
+  {
+    "name": "Silva",
+    "link": "https://silva.cl/en/nuestro_equipo"
+  },
+  {
+    "name": "Prieto",
+    "link": "https://www.prieto.cl/en/team/"
+  },
+  {
+    "name": "Larrain y Asociados",
+    "link": "https://larrain.cl/nuestro-equipo/socios/"
+  },
+  {
+    "name": "HD Legal",
+    "link": "https://www.hdgroup.cl/legal/en/our-team/"
+  },
+  {
+    "name": "Guerrero Olivos",
+    "link": "https://guerrero.cl/en/team/?",
+    "Note": "TRY find the position"
+  },
+  {
+    "name": "Garrigues",
+    "link": "https://www.garrigues.com/en_GB/team-office/1347?field_practice_area=All&field_position_target_id=135"
+  },
+  {
+    "name": "FerradaNehme",
+    "link": "https://fn.cl/en/people"
+  },
+  {
+    "name": "Clyde",
+    "link": "https://www.clydeco.com/en/people/listing?persons=on&persons[63704]=on"
+  },
+  {
+    "name": "Alessandri",
+    "link": "https://alessandri.legal/en/our-team/"
+  },
+  {
+    "name": "Morales & Besa",
+    "link": "https://www.moralesybesa.cl/en/our-firm/lawyers/"
+  },
+  {
+    "name": "Claro & Cía",
+    "link": "https://www.claro.cl/en/abogados/"
+  },
+  {
+    "name": "Cariola, Díez, Pérez-Cotapos",
+    "link": "https://www.cariola.cl/en/equipo/"
+  },
+  {
+    "name": "Carey",
+    "link": "https://www.carey.cl/en/our-team/"
+  },
+  {
+    "name": "Vieira Rezende Advogados",
+    "link": "https://www.vieirarezende.com.br/en/team"
+  },
+  {
+    "name": "Trench Rossi Watanabe",
+    "link": "https://www.trenchrossi.com/en/advogados/?nome=&cidade-advogado=&atuacao=&tipo-advogado=partner"
+  },
+  {
+    "name": "SiqueiraCastro",
+    "link": "https://siqueiracastro.com.br/nossa-equipe/socios/?lang=en"
+  },
+  {
+    "name": "Rolim Goulart",
+    "link": "https://www.rolim.com/en/professionals/"
+  },
+  {
+    "name": "Motta Fernandes",
+    "link": "https://mottafernandes.com.br/equipe/#socios"
+  },
+  {
+    "name": "Mello Torres",
+    "link": "https://mellotorres.com.br/lawyers/?letra-post=&cargo-post=partner&search="
+  },
+  {
+    "name": "Machado Associados",
+    "link": "https://www.machadoassociados.com.br/en/professionals/",
+    "Note": "New page to check if is an partner"
+  },
+  {
+    "name": "Lobo de Rizzo",
+    "link": "https://www.ldr.com.br/en/people/",
+    "Note": "Check if the filter of the site is valid, otherwise, discart this. Click to load more"
+  },
+  {
+    "name": "Levy & Salomão",
+    "link": "https://www.levysalomao.com.br/professionals"
+  },
+  {
+    "name": "L O Baptista",
+    "link": "https://www.baptista.com.br/our-professionals/?lang=en"
+  },
+  {
+    "name": "KLA",
+    "link": "https://klalaw.com.br/en/team/"
+  },
+  {
+    "name": "Gusmão & Labrunie",
+    "link": "https://www.glpi.com.br/equipe"
+  },
+  {
+    "name": "FreitasLeite",
+    "link": "https://www.freitasleite.com.br/en/our-team"
+  },
+  {
+    "name": "FCGD",
+    "link": "https://www.fcdg.com.br/lawyers/"
+  },
+  {
+    "name": "Dias Carneiro",
+    "link": "https://www.diascarneiro.com.br/en/lawyers/"
+  },
+  {
+    "name": "Dannemann Siemsen",
+    "link": "https://www.dannemann.com.br/time.html?&lang=en"
+  },
+  {
+    "name": "Azevedo Sette",
+    "link": "https://www.azevedosette.com.br/equipe/en"
+  },
+  {
+    "name": "Araújo e Policastro",
+    "link": "https://araujopolicastro.com.br/en/equipe/?cargo=partners"
+  },
+  {
+    "name": "TozziniFreire",
+    "link": "https://tozzinifreire.com.br/en/advogados"
+  },
+  {
+    "name": "Stocche Forbes",
+    "link": "https://www.stoccheforbes.com.br/en/s%C3%B3cio"
+  },
+  {
+    "name": "Ferrere",
+    "link": "https://www.ferrere.com/en/professionals/"
+  },
+  {
+    "name": "Moreno Baldivieso",
+    "link": "https://emba.com.bo/equipo/"
+  },
+  {
+    "name": "CRF Rojas",
+    "link": "https://rojas-lawfirm.com/abogados/"
+  },
+  {
+    "name": "BAQSN",
+    "link": "https://baqsn.bo/en/home/"
+  },
+  {
+    "name": "Cascione",
+    "link": "https://www.cascione.com.br/en/profissionais/?letter=A"
+  },
+  {
+    "name": "Severgnini, Robiola, Grinberg & Tombeur",
+    "link": "https://www.severgnini.com.ar/en/professionals"
+  },
+  {
+    "name": "Rosso Alba & Rougès",
+    "link": "https://www.rossoalba.com/professionals/"
+  },
+  {
+    "name": "Edwin Coe",
+    "link": "https://www.edwincoe.com/our-people/"
+  },
+  {
+    "name": "RCTZZ",
+    "link": "https://rctzz.com.ar/en/our-people/socios"
+  },
+  {
+    "name": "Noetinger & Armando",
+    "link": "https://noetingeryarmando.com/en/staff/"
+  },
+  {
+    "name": "HDS",
+    "link": "https://www.hds.com.ar/busqueda-alfa/?wpv_view_count=82&wpv-letra=0&wpv_filter_submit=See"
+  },
+  {
+    "name": "G Breuer",
+    "link": "https://www.gbreuer.com.ar/index.php/equipo/"
+  },
+  {
+    "name": "Estudio Bunge",
+    "link": "https://www.estudiobunge.com/nuestros-abogados/?lang=en"
+  },
+  {
+    "name": "EGFA",
+    "link": "http://www.egfa.com.ar/en/nuestra-firma/socios/"
+  },
+  {
+    "name": "Tanoira Cassagne",
+    "link": "https://www.tanoiracassagne.com/en/perfil/"
+  },
+  {
+    "name": "O'Farrell",
+    "link": "https://www.estudio-ofarrell.com/en/team/"
+  },
+  {
+    "name": "Brons & Salas",
+    "link": "https://brons.com.ar/en/our-team/"
+  },
+  {
+    "name": "Bomchil",
+    "link": "https://bomchil.com/en/equipo/",
+    "Note": "click partner opt"
+  },
+  {
+    "name": "Beretta Godoy",
+    "link": "https://www.berettagodoy.com/#Equipo"
+  },
+  {
+    "name": "Alfaro",
+    "link": "http://www.alfaromergers.com/members.php?len=en"
+  },
+  {
+    "name": "Marval",
+    "link": "https://www.marval.com/profesionales?lang=en"
+  },
+  {
+    "name": "Bruchou & Funes de Rioja",
+    "link": "https://bruchoufunes.com/en/profesionales/"
+  },
+  {
+    "name": "Nicholson & Cano",
+    "link": "https://nicholsonycano.com.ar/socios/"
+  },
+  {
+    "name": "PGLaw",
+    "link": "https://pg.law/equipe/"
+  },
+  {
+    "name": "Adriaanse van der Weel",
+    "link": "https://avdw.nl/ons-team"
+  },
+  {
+    "name": "GLIMSTEDT BERNOTAS & PARTNERS",
+    "link": "https://www.glimstedt.lt/en/lawyers/"
+  },
+  {
+    "name": "King Stubb & Kasiva",
+    "link": "https://ksandk.com/people/?_location=new-delhi"
+  },
+  {
+    "name": "HEDMAN PARTNERS",
+    "link": "https://hedmanpartners.fi/tiimi/"
+  },
+  {
+    "name": "BACH",
+    "link": "https://bachlaw.dk/en/employees/"
+  },
+  {
+    "name": "STADLER VÖLKEL",
+    "link": "https://sv.law/en/people"
+  },
+  {
+    "name": "SCHRADE & PARTNER",
+    "link": "https://schrade-partner.de/team/"
+  },
+  {
+    "name": "HAJDUK & PARTNERS",
+    "link": "https://www.hajduk.cz/en/team/"
+  },
+  {
+    "name": "Endors",
+    "link": "https://www.endors.cz/our-team"
+  },
+  {
+    "name": "Stentors",
+    "link": "https://stentors.eu/"
+  },
+  {
+    "name": "Wise 3",
+    "link": "https://wise3.sk/tim/"
+  },
+  {
+    "name": "PRK Partners",
+    "link": "https://www.prkpartners.com/our-team?search_advanced%5Bpersons_name%5D=a&search_advanced%5Bpersons_specs%5D=&search_advanced%5Bpersons_places%5D=&submit=submit#search_advanced",
+    "Note": "Send Keys"
+  },
+  {
+    "name": "Volterra Fietta",
+    "link": "https://volterrafietta.com/our-people#partners"
+  },
+  {
+    "name": "CBR & Associés",
+    "link": "https://www.cbr-law.com/en/#Team"
+  },
+  {
+    "name": "Licks",
+    "link": "https://www.lickslegal.com/our-team?position=Partner%2CFounding+Partner"
+  },
+  {
+    "name": "Rutland & Partners",
+    "link": "https://rutlandandpartners.com/en/meet-the-team/"
+  },
+  {
+    "name": "Del Rosario & Del Rosario",
+    "link": "https://www.delrosariolaw.com/en/the-firm/attorneys",
+    "Note": "Different phones for different locations, check this"
+  },
+  {
+    "name": "Cruz Marcelo & Tenefrancia",
+    "link": "https://cruzmarcelo.com/our-lawyers/",
+    "Note": "All seniors already registred. Might test this latter, to check if is true"
+  },
+  {
+    "name": "SyCip",
+    "link": "https://www.syciplaw.com/lawyers/partners"
+  },
+  {
+    "name": "Arceo & Tandoc",
+    "link": "https://tandoclawfirm.com/about-us/"
+  },
+  {
+    "name": "LORD LAW",
+    "link": "https://www.lordlaw.ph/our-team"
+  },
+  {
+    "name": "Chanis",
+    "link": "https://chanis.pa/?gad_source=1&gclid=CjwKCAiAp4O8BhAkEiwAqv2UqDHaxXHw71W_yI-RaJVKyBBxSN6wGBh7zchc31f2JCbEesDkxxj4fRoC3wAQAvD_BwE"
+  },
+  {
+    "name": "Elliott Duffy Garrett",
+    "link": "https://www.edglegal.com/our-people/"
+  },
+  {
+    "name": "Vidigal Neto Advogados",
+    "link": "https://en.vidigalneto.com.br/professionals"
+  },
+  {
+    "name": "Travieso Evans Arria Rengel & Paz",
+    "link": "https://www.traviesoevans.com/travieso/en/dt_team/"
+  },
+  {
+    "name": "Kuri Breña, Sanchez Ugarte and Aznar",
+    "link": "https://www.ksa.mx/en/team/team"
+  },
+  {
+    "name": "DHC",
+    "link": "https://dhclaw.pe/equipo/"
+  },
+  {
+    "name": "CorralRosales",
+    "link": "https://corralrosales.com/en/partners-2/"
+  },
+  {
+    "name": "Brons & Salas",
+    "link": "https://brons.com.ar/abogados/"
+  },
+  {
+    "name": "Cancio, Nadal & Rivera",
+    "link": "https://www.cnr.law/attorneys",
+    "Note": "email formatt == (firstName).(lastName)@cnr.law",
+    "Ex.:": "Carlos A. González Soler === cgonzales@cnr.law"
+  },
+  {
+    "name": "Vesco Giaretta",
+    "link": "https://www.vescogiaretta.com/professionisti/",
+    "Note": "email formatt == (firstName).(thirdName)@cnr.law",
+    "Ex.:": "Lisa Zausa === lisa.zausa@vescogiaretta.com"
+  },
+  {
+    "name": "Tassos Papadopoulos & Associates LLC",
+    "link": "https://www.tplawJersey.com.cy/people",
+    "Note": "email formatt == (firstNameLetter)(lastName)@tplaw.com.cy",
+    "Ex.:": "Alexia Kountouri === akountouri@tplaw.com.cy"
+  },
+  {
+    "name": "Studio Rock",
+    "link": "https://studiorock.net/en/professionals/"
+  },
+  {
+    "name": "SSW",
+    "link": "https://ssw.solutions/en/team/?_team_pos=partner"
+  },
+  {
+    "name": "Rowedder Zimmermann Hass",
+    "link": "https://www.rowedder.de/de/rechtsanwaelte"
+  },
+  {
+    "name": "Zdolsek",
+    "link": "https://zdolsek.com/lawyers/"
+  },
+  {
+    "name": "Z/C/H Legal v.o.s",
+    "link": "https://www.nirris.cz/en/team/"
+  },
+  {
+    "name": "YARDS",
+    "link": "https://yards-avocats.com/en/team/"
+  },
+  {
+    "name": "Voisin",
+    "link": "https://www.voisinlaw.com/people",
+    "Note": "Jersey"
+  },
+  {
+    "name": "Vainanidis, Economou & Associates Law Firm",
+    "link": "https://ve-legal.gr/en/people"
+  },
+  {
+    "name": "Trägårdh Advokatbyrå AB",
+    "link": "https://www.tragardh.se/en/employee/"
+  },
+  {
+    "name": "Tassos Papadopoulos & Associates LLC",
+    "link": "https://www.tplaw.com.cy/people"
+  },
+  {
+    "name": "SSW Pragmatic Solutions",
+    "link": "https://ssw.solutions/zespol/?_grupa_zepou=partner"
+  },
+  {
+    "name": "RWP Rechtsanwälte",
+    "link": "https://rwp.de/berater/duesseldorf/?lang=en",
+    "Note": "more pages in locations"
+  },
+  {
+    "name": "Rassers Advocaten",
+    "link": "https://rassers.nl/team/"
+  },
+  {
+    "name": "POROBIJA & ŠPOLJARIĆ",
+    "link": "https://www.psod.hr/en/team-members",
+    "Note": "aks for Juniors Part"
+  },
+  {
+    "name": "Popov, Arnaudov & Partners",
+    "link": "https://popovarnaudov.bg/en/our-team/"
+  },
+  {
+    "name": "Paul Q",
+    "link": "https://www.paulqlaw.com/en/our-lawyers"
+  },
+  {
+    "name": "MVVP",
+    "link": "https://www.mvvp.be/lawyers/"
+  },
+  {
+    "name": "LEADELL",
+    "link": "https://www.leadell.com/"
+  },
+  {
+    "name": "Kuit Steinart Levy",
+    "link": "https://www.kuits.com/meet-the-team/"
+  },
+  {
+    "name": "Kellerhals Carrard",
+    "link": "https://kellerhals-carrard.ch/en/team?position=161"
+  },
+  {
+    "name": "HH Partners",
+    "link": "https://www.hhpartners.fi/en/staff/"
+  },
+  {
+    "name": "Germus and Partners",
+    "link": "https://germus.hu/en/",
+    "Note": "email formatt == (firstName)(lastName)@germus.hu"
+  },
+  {
+    "name": "Gecic Law",
+    "link": "https://www.geciclaw.com/people/"
+  },
+  {
+    "name": "Fenech Farrugia Fiott",
+    "link": "https://www.fff-legal.com/our-people/",
+    "Note": "email formatt === (firstNameLetter)(lastName)@fff-legal.com. Check for partners",
+    "Ex.:": "Christian Farrugia === cfarrugia@fff-legal.com"
+  },
+  {
+    "name": "Espanha e Associados",
+    "link": "https://espanhaassociados.pt/team-2/?lang=en"
+  },
+  {
+    "name": "Ellul & Cruz",
+    "link": "https://www.ellulcruz.com/our-people"
+  },
+  {
+    "name": "Elliott Duffy Garrett",
+    "link": "https://www.edglegal.com/our-people/?pg=2"
+  },
+  {
+    "name": "DQ Advocates",
+    "link": "https://dq.im/legal-advisory/"
+  },
+  {
+    "name": "",
+    "link": "https://www.dialog.am/en/staff"
+  },
+  {
+    "name": "Burness Paull",
+    "link": "https://www.burnesspaull.com/people/?contentTags=2292%2C2053%2C1906%2C1928%2C2567"
+  },
+  {
+    "name": "Babbé",
+    "link": "https://www.babbelegal.com/people/"
+  },
+  {
+    "name": "B. Cremades y Asociados",
+    "link": "https://www.cremades.com/en/lawyers/"
+  },
+  {
+    "name": "Adam & Bleser",
+    "link": "https://www.adam-bleser.lu/our-people/ "
+  },
+  {
+    "name": "Henlin Gibson Henlin",
+    "link": "https://www.henlin.pro/team",
+    "Note": "email formatt == (firstName)(lastName)@henlin.pro"
+  },
+  {
+    "name": "GALA",
+    "link": "https://gala.com.pa/abogados/?_tipo_asociado=socio"
+  },
+  {
+    "name": "Delaney Partners",
+    "link": "https://delaneypartners.com/"
+  },
+  {
+    "name": "Cancio, Nadal & Rivera",
+    "link": "https://www.cnr.law/attorneys",
+    "Note": "email formatt === (firstNameLetter)(lastName)@cnr.law"
+  },
+  {
+    "name": "VSV",
+    "link": "https://vsvlegal.com/en/",
+    "Note": "all partners in the main page. email formatt === (firstNameLetter)(lastName)@altalegal.com",
+    "Ex.:": "Julio Valdés === jvaldes@altalegal.com"
+  },
+  {
+    "name": "Vivien Chan & Co",
+    "link": "https://www.vcclawservices.com/#menu2"
+  },
+  {
+    "name": "Yang & Co",
+    "link": "http://www.yangandco.com/"
+  },
+  {
+    "name": "Chuo Sogo LPC",
+    "link": "https://www.clo.jp/english/lawyers/",
+    "Note": "email formatt == (lastName)_(firstNameLetter)@clo.gr.jp",
+    "Ex.:": "Masahiro NAKATSUKASA - nakatsukasa_m@clo.gr.jp"
+  },
+  {
+    "name": "Adnan Sundra & Low",
+    "link": "https://www.asl.com.my/people/?_role_facet=partners"
+  },
+  {
+    "name": "Mboya Wangongu & Waiyaki Advocates",
+    "link": "https://lexgroupafrica.com/our-partners/"
+  },
+  {
+    "name": "Eldib & Co",
+    "link": "https://eldib.com/team/"
+  },
+  {
+    "name": "Cox Yeats",
+    "link": "https://www.coxyeats.co.za/Partners",
+    "Note": "email formatt == (firstNameLetter)(lastName)@coxyeats.co.za",
+    "Ex.:": "Andrew Clark - aclark@coxyeats.co.za"
+  },
+  {
+    "name": "H&G Chambers",
+    "link": "https://www.handgadvocates.com/people"
+  },
+  {
+    "name": "Erdem & Erdem",
+    "link": "https://www.erdem-erdem.av.tr/en/our-team/lawyers"
+  },
+  {
+    "name": "Agmon with Tulchinsky",
+    "link": "https://www.agmon-law.co.il/en/our-team/?role=40"
+  },
+  {
+    "name": "Surridge & Beecheno",
+    "link": "https://www.surridgeandbeecheno.com/our-people/"
+  },
+  {
+    "name": "Obeid & Partners",
+    "link": "https://obeidpartners.com/meet-the-team/"
+  },
+  {
+    "name": "Axis Law Chambers",
+    "link": "https://axislaw.pk/team"
+  },
+  {
+    "name": "Cornelius, Lane & Mufti (CLM)",
+    "link": "https://clm.com.pk/CLM-Partners.html"
+  },
+  {
+    "name": "Haidermota & Co",
+    "link": "https://www.hmco.com.pk/people/"
+  },
+  {
+    "name": "RIAA Barker Gillette",
+    "link": "https://riaabarkergillette.com/pk/our-team/"
+  },
+  {
+    "name": "ABL Partners LP",
+    "link": "https://ablpartnerslp.com/about/"
+  },
+  {
+    "name": "The Mediterranean Practice",
+    "link": "https://www.themediterraneanpractice.com/who-we-are/our-team-grid/"
+  },
+  {
+    "name": "J-K Gadzama LLP",
+    "link": "https://j-kgadzamallp.com/index.php/our-people/partners"
+  },
+  {
+    "name": "Pac Solicitors",
+    "link": "https://pacsolicitors.com/our-people/"
+  },
+  {
+    "name": "Detail Commercial Solicitors",
+    "link": "https://www.detailsolicitors.com/our-team/"
+  },
+  {
+    "name": "Livingspring Solicitors",
+    "link": "https://livingspringsolicitors.com/our-legal-team/"
+  },
+  {
+    "name": "Rosenut Solicitors",
+    "link": "https://rosenutsolicitors.com/team"
+  },
+  {
+    "name": "Afe Babalola & Co",
+    "link": "https://afebabalola.com/people/"
+  },
+  {
+    "name": "Kenna",
+    "link": "https://kennapartners.com/counsel/"
+  },
+  {
+    "name": "Banwo & Ighodalo",
+    "link": "https://www.banwo-ighodalo.com/people/partners"
+  },
+  {
+    "name": "Tri Nasr",
+    "link": "https://trinasr.com/our-team/"
+  },
+  {
+    "name": "Musibau Adetunbi & Co",
+    "link": "https://rajichambers.ng/legal-team/"
+  },
+  {
+    "name": "Punuka",
+    "link": "https://punuka.com/about/people/partners/"
+  },
+  {
+    "name": "Tope Adebayo LP",
+    "link": "https://topeadebayolp.com/our-people/"
+  },
+  {
+    "name": "Ukiri Lijadu",
+    "link": "https://www.ul-law.com/our-team/"
+  },
+  {
+    "name": "Nakudu Law Partners",
+    "link": "https://nakudulawpartners.com/nakudu--our-team.html"
+  },
+  {
+    "name": "Olaniwun Ajayi",
+    "link": "https://www.olaniwunajayi.net/lawyers/"
+  },
+  {
+    "name": "TNP",
+    "link": "https://tnp.com.ng/team",
+    "Note": "send key to load lawyers"
+  },
+  {
+    "name": "AJUMOGOBIA & OKEKE",
+    "link": "https://www.ajumogobiaokeke.com/people/"
+  },
+  {
+    "name": "Ojukwu Faotu & Yusuf",
+    "link": "https://ofy-lawyers.com/lawyers/"
+  },
+  {
+    "name": "CrestHall",
+    "link": "https://www.cresthall.legal/team"
+  },
+  {
+    "name": "Olisa Agbakoba Legal",
+    "link": "https://oal.law/people/"
+  },
+  {
+    "name": "PlasBossinade",
+    "link": "https://www.plasbossinade.nl/onze-mensen",
+    "Note": "only Notary"
+  },
+  {
+    "name": "Kooijman Autar",
+    "link": "https://www.kooijmanautar.nl/our-people",
+    "Note": "Notary === Partner?? Check"
+  },
+  {
+    "name": "Workx Attorneys",
+    "link": "https://www.workxadvocaten.nl/team/"
+  },
+  {
+    "name": "Van Diepen",
+    "link": "https://vandiepen.com/en/lawyer/",
+    "Note": "New page just to check if is an partner or not"
+  },
+  {
+    "name": "Boumans Advocaten",
+    "link": "https://boumansadvocaten.nl/over-ons/"
+  },
+  {
+    "name": "Den Hollander Advocaten",
+    "link": "https://www.denhollander.nl/ons-team"
+  },
+  {
+    "name": "Hekkelman",
+    "link": "https://www.hekkelman.nl/onze-mensen/?_gl=1*14sqxgw*_up*MQ..*_ga*MjA2MzI0Nzk4Ny4xNzM2MzQ3Nzgz*_ga_HYMGNW47FY*MTczNjM0Nzc4Mi4xLjAuMTczNjM0Nzc4Mi4wLjAuNTE0MDMyOTQ3",
+    "Note": "Check if is an valid firm - Notary and Officer"
+  },
+  {
+    "name": "Van Doorne",
+    "link": "https://www.vandoorne.com/en/our-people/"
+  },
+  {
+    "name": "Aantjes Zevenberg Advocaten",
+    "link": "https://www.aantjeszevenberg.nl/over-ons/"
+  },
+  {
+    "name": "Douffet Heuts",
+    "link": "https://www.douffetheuts.nl/advocaten"
+  },
+  {
+    "name": "Spreksel advocaten",
+    "link": "https://www.sprekseladvocaten.nl/eng/team"
+  },
+  {
+    "name": "LexQuire",
+    "link": "https://lexquire.nl/mensen/"
+  },
+  {
+    "name": "MEIJERS | Canatan",
+    "link": "https://www.meijerscanatan.nl/en/lawyers/"
+  },
+  {
+    "name": "Vanberkel",
+    "link": "https://www.vbprofs.nl/teamleden",
+    "Note": "AVOID: c.beelen@vbprofs.nl"
+  },
+  {
+    "name": "Kienhuis Legal",
+    "link": "https://www.kienhuislegal.nl/mensen?rolesArray=12651884&page=1"
+  },
+  {
+    "name": "Otis",
+    "link": "https://www.otisadvocaten.nl/ons-team-otis/"
+  },
+  {
+    "name": "Houthoff",
+    "link": "https://www.houthoff.com/search/our-people#functiongroup=Partner",
+    "Note": "Execute script to get the email response"
+  },
+  {
+    "name": "De Brauw Blackstone Westbroek",
+    "link": "https://www.debrauw.com/people?r=030&r=040&q="
+  },
+  {
+    "name": "Pioneer Law Associates",
+    "link": "https://pioneerlaw.com/teams/"
+  },
+  {
+    "name": "Mulla & Mulla & Craigie Blunt & Caroe",
+    "link": "https://mullas.net/people/"
+  },
+  {
+    "name": "IABF Law Firm",
+    "link": "https://iab-net.com/our-people/"
+  },
+  {
+    "name": "Robert Wang & Woo LLP",
+    "link": "https://www.rwwnet.com.sg/"
+  },
+  {
+    "name": "LCC Partners Law Firm",
+    "link": "https://www.lccpartners.com.tw/en/attorneys.php"
+  },
+  {
+    "name": "Caluwaerts Uytterhoeven",
+    "link": "https://www.legaloffice.be/team"
+  },
+  {
+    "name": "Global Law Office",
+    "link": "https://www.glo.com.cn/en/professionals/",
+    "Note": "check for partners"
+  },
+  {
+    "name": "Zirngibl",
+    "link": "https://zirngibl.de/lawyers/?lang=en",
+    "Note": "Email reverse"
+  },
+  {
+    "name": "NMCG Avocats Associés",
+    "link": "https://www.nmcg.fr/nos-avocats-experts/?status=4#filter"
+  },
+  {
+    "name": "Flynn O'Driscoll LLP",
+    "link": "https://www.fod.ie/people"
+  },
+  {
+    "name": "Net Craman Abogados",
+    "link": "https://net-craman.com/en/people/"
+  },
+  {
+    "name": "Lindsays",
+    "link": "https://www.lindsays.co.uk/our-people",
+    "Note": "avoid - helenkidd@lindsays.co.uk"
+  },
+  {
+    "name": "Gurulkan Çakır Günay",
+    "link": "https://www.gurulkan.com/people",
+    "Note":"Just 3. PHONE: +90 (212) 215 30 00"
+  },
+  {
+    "name": "Waldmann Petitpierre",
+    "link": "https://www.lawyers.ch/anwaelte/"
+  },
+  {
+    "name": "Montes, Olivos, Eyzaguirre & Arostegui",
+    "link": "https://gmoe.cl/equipo/"
+  },
+  {
+    "name": "Ramos, Ripoll & Schuster",
+    "link": "https://www.rrs.com.mx/english/equipo.php",
+    "Note": "11 PART"
+  },
+  {
+    "name": "VILA Abogados",
+    "link": "https://www.vila.com.mx/team"
+  },
+  {
+    "name": "Guerra González y Asociados",
+    "link": "https://www.guerragonzalez-abogados.com/abogados/"
+  },
+  {
+    "name": "Cervantes Abogados",
+    "link": "https://cervantesabogados.mx/abogados/"
+  },
+  {
+    "name": "Vega Guerrero",
+    "link": "https://vegaguerrero.com/our-team/?lang=en"
+  },
+  {
+    "name": "Creel",
+    "link": "https://www.creel.mx/en/our-lawyers/"
+  },
+  {
+    "name": "De Hoyos Aviles",
+    "link": "https://www.dha.mx/team-dha"
+  },
+  {
+    "name": "Bowmans",
+    "link": "https://bowmanslaw.com/our-people/"
+  },
+  {
+    "name": "BLC Robert & Associates Ltd",
+    "link": "https://www.blc.mu/team-members/"
+  },
+  {
+    "name": "Gowling WLG",
+    "link": "https://gowlingwlg.com/en/people?page=1&type=People&professional_title=Partner"
+  },
+  {
+    "name": "Fenech & Fenech Advocates",
+    "link": "https://fenechlaw.com/people/"
+  },
+  {
+    "name": "IURIS Law Firm",
+    "link": "https://iurismalta.com/about-us/#about_us_lawyers"
+  },
+  {
+    "name": "Mamo TCV Advocates",
+    "link": "https://www.mamotcv.com/our-people/"
+  },
+  {
+    "name": "WH Partners",
+    "link": "https://whpartners.eu/about/our-people/"
+  },
+  {
+    "name": "Chetcuti Cauchi Advocates",
+    "link": "https://www.ccmalta.com/our-people"
+  },
+  {
+    "name": "Milbank",
+    "link": "https://www.milbank.com/en/professionals/index.html?20012_name=Partner&t=20012&v=attorney&f=25&s=25"
+  },
+  {
+    "name": "Trowers",
+    "link": "https://www.trowers.com/people"
+  },
+  {
+    "name": "Shook Lin & Bok",
+    "link": "http://shooklin.com.my/lawyers/partners/"
+  },
+  {
+    "name": "Reddi & Co. Advocates",
+    "link": "https://reddi.com.my/our-team/"
+  },
+  {
+    "name": "Shearn Delamore & Co",
+    "link": "https://www.shearndelamore.com/our-people/partners/"
+  },
+  {
+    "name": "Shook Lin & Bok",
+    "link": "https://shooklin.com.my/lawyers/partners/"
+  },
+  {
+    "name": "Halim Hong & Quek",
+    "link": "https://hhq.com.my/partners/"
+  },
+  {
+    "name": "Azmi & Associates",
+    "link": "https://www.azmilaw.com/our-people/?relationship=Partner,Director"
+  },
+  {
+    "name": "Ritz Attorneys at Law",
+    "link": "https://www.ritzattorneys.com/team/"
+  },
+  {
+    "name": "ALN",
+    "link": "https://aln.africa/team/"
+  },
+  {
+    "name": "Loyens & Loeff",
+    "link": "https://www.loyensloeff.com/people/?Titles=Partner"
+  },
+  {
+    "name": "Elvinger Hoss Prussen",
+    "link": "https://elvingerhoss.lu/about-us/our-team?f%5B0%5D=categories%3A654"
+  },
+  {
+    "name": "Arendt & Medernach",
+    "link": "https://www.arendt.com/about-us/our-people/?_title_function=partner",
+    "Note": "Directors + 40"
+  },
+  {
+    "name": "Moyal & Simon",
+    "link": "https://moyal-simon.com/en/team/"
+  },
+  {
+    "name": "Motieka",
+    "link": "https://motieka.com/team/"
+  },
+  {
+    "name": "Bán, S. Szabó, Rausch & Partners Law Firm",
+    "link": "https://www.bansszabo.hu/en/our-team/"
+  },
+  {
+    "name": "KNP Law",
+    "link": "https://www.knplaw.com/en/lawyers/"
+  },
+  {
+    "name": "https://walless.com/the-team/",
+    "link": "Walless"
+  },
+  {
+    "name": "Reinhold Cohn Group",
+    "link": "https://rcip.co.il/team/?filterby=title&id=391"
+  },
+  {
+    "name": "TRINITI Law Firm",
+    "link": "https://triniti.eu/people/?_sft_person_positions=partner"
+  },
+  {
+    "name": "Glimstedt",
+    "link": "https://www.glimstedt.ee/en/lawyers/",
+    "Note": "click partner opt. Just 4"
+  },
+  {
+    "name": "Hedman",
+    "link": "https://hedman.legal/team/",
+    "Note": "just 4"
+  },
+  {
+    "name": "TGS Baltic",
+    "link": "https://www.tgsbaltic.com/en/lawyers/"
+  },
+  {
+    "name": "Bishops Barristers & Solicitors",
+    "link": "https://bishops.com.au/team",
+    "Note": "Just 3"
+  },
+  {
+    "name": "Mazzeo Lawyers",
+    "link": "https://www.mazzeolawyers.com.au/our-people/",
+    "Note": "Just 3"
+  },
+  {
+    "name": "Connolly Suthers",
+    "link": "https://www.connollysuthers.com.au/our-people/"
+  },
+  {
+    "name": "A J Law & Co",
+    "link": "https://ajandco.com.au/our-people/#partners"
+  },
+  {
+    "name": "DW Fox Tucker Lawyers",
+    "link": "https://www.dwfoxtucker.com.au/our-people"
+  },
+  {
+    "name": "Mellor Olsson",
+    "link": "https://www.molawyers.com.au/team?service=all&position=partner&office=all"
+  },
+  {
+    "name": "Finlaysons",
+    "link": "https://www.finlaysons.com.au/people/",
+    "Note": "The last partner acctually is a counsel, check in new page for more erros like this"
+  },
+  {
+    "name": "Hicksons",
+    "link": "https://www.hicksons.com.au/our-team",
+    "Note": "Send key partner"
+  },
+  {
+    "name": "IndusLaw",
+    "link": "https://induslaw.com/people/"
+  },
+  {
+    "name": "TillekeAndGibbins",
+    "link": "https://www.tilleke.com/professionals/",
+    "Note": "Driver outdated, dont kown how to fix this, standing by"
+  },
+  {
+    "name": "",
+    "link": ""
+  }
+]

@@ -15,9 +15,9 @@ import java.util.*;
 
 @Data
 public abstract class Site  {
-    protected final String name;
+    public final String name;
     protected final  String link;
-    protected  int lawyersRegistered;
+    public int lawyersRegistered;
     protected final int totalPages;
     protected final int maxLawyersForSite;
     protected Set<String> lastCountries = new HashSet<>();
@@ -122,8 +122,6 @@ public abstract class Site  {
             this.lastCountries.add(country);
         }
 
-        FirmsOfWeek.registerFirmWeek(lawyer.firm);
-
         this.lawyersRegistered ++;
     }
 
@@ -149,5 +147,5 @@ public abstract class Site  {
      * Lawyers who pass the validation are registered.
      *
      */
-    protected abstract void searchForLawyers();
+    public abstract void searchForLawyers();
 }

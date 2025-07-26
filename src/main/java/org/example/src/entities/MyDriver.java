@@ -19,7 +19,7 @@ public class MyDriver {
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-//             options.addArguments("--headless"); // Run Chrome in headless mode
+//            options.addArguments("--headless"); // Run Chrome in headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
@@ -37,12 +37,12 @@ public class MyDriver {
 
     /**
      * Waits for the current page to fully load by checking the `document.readyState`.
-     * Waits up to 2 minutes.
+     * Waits up to 4 minutes.
      */
     public static void waitForPageToLoad() {
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(2));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(4));
 
-        new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofMinutes(2))
+        new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofMinutes(4))
                 .until(webDriver -> ((JavascriptExecutor) webDriver)
                         .executeScript("return document.readyState")
                         .equals("complete"));
@@ -54,11 +54,11 @@ public class MyDriver {
      * @param timesToRollDown Number of times to scroll.
      * @param sleepTime       Sleep time in seconds between scrolls.
      */
-    public static void rollDown(int timesToRollDown, int sleepTime) throws InterruptedException {
+    public static void rollDown(int timesToRollDown, double sleepTime) throws InterruptedException {
         Actions actions = new Actions(driver);
 
         for (int i = 0; i < timesToRollDown; i++) {
-            Thread.sleep(sleepTime * 1000L);
+            Thread.sleep((long) (sleepTime * 1000L));
             actions.keyDown(Keys.CONTROL)
                     .sendKeys(Keys.END)
                     .keyUp(Keys.CONTROL)

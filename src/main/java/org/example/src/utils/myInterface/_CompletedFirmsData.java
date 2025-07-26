@@ -9,7 +9,9 @@ public class _CompletedFirmsData {
 
     public final static Site[] byPage = {
             new ALMTLegal(), new AlTamimi(), new AnandAndAnand(), new ApplebyGlobal(), new ArnoldAndPorter(),
-            new AronTadmorLevy(), new Ashurst(), new BaeKimAndLee()
+            new AronTadmorLevy(), new Ashurst(), new BaeKimAndLee(), new BNT(), new BonelliErede(),
+            new ByrneWallace(),
+
     };
 
 

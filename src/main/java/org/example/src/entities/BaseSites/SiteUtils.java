@@ -2,6 +2,7 @@ package org.example.src.entities.BaseSites;
 
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -112,6 +113,35 @@ public class SiteUtils {
         java.util.regex.Matcher matcher =
                 java.util.regex.Pattern.compile(">([^<>]+)<").matcher(tag);
         return matcher.find() ? matcher.group(1) : null;
+    }
+
+
+    /**
+     * Extracts content from inside an HTML tag.
+     *
+     * @param element WebElement containing the HTML tag.
+     * @return Content inside the tag or null if not found.
+     */
+    public String getContentFromTag(WebElement element) {
+        String tag = element.getAttribute("outerHTML");
+        java.util.regex.Matcher matcher =
+                java.util.regex.Pattern.compile(">([^<>]+)<").matcher(tag);
+        return matcher.find() ? matcher.group(1) : null;
+    }
+
+
+    /**
+     * Waits until 10sec for the presence of the add btn and then click on it.
+     * @param by direct path for the addBtn.
+     */
+    public void clickOnAddBtn(By by) {
+        try {
+            // Wait up to 10 seconds for elements to be present
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement btn = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+            btn.click();
+
+        } catch (Exception _) {}
     }
 
 }

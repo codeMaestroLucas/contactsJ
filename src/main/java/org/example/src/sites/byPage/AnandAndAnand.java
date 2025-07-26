@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +29,10 @@ public class AnandAndAnand extends ByPage {
         driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
+
+        if (index > 0) return;
+
+        siteUtl.clickOnAddBtn(By.cssSelector("button.ds-popup-close"));
     }
 
 

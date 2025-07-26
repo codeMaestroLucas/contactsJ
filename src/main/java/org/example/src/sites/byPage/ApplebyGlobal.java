@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +16,7 @@ public class ApplebyGlobal extends ByPage {
         super(
             "Appleby Global",
             "https://www.applebyglobal.com/people/page/1/",
-            13,
+            9,  // It has 13 pages, but the last 4 doesn't have any valid lawyer
             3
         );
     }
@@ -30,6 +29,10 @@ public class ApplebyGlobal extends ByPage {
         driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
+
+        if (index > 0) return;
+
+        siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
     }
 
 
@@ -90,7 +93,14 @@ public class ApplebyGlobal extends ByPage {
         };
 
         String country = siteUtl.iterateOverBy(byArray, lawyer).getText();
-        return country.charAt(0) + country.toLowerCase().substring(1);
+        if (country.trim().equalsIgnoreCase("bvi")) return "the British Virgin Islands";
+
+        StringBuilder countryToReturn = new StringBuilder();
+        // Capitalizing the first Char of each word
+        for (String word : country.split(" ")) {
+            countryToReturn.append(word.charAt(0)).append(word.toLowerCase().substring(1)).append(" ");
+        }
+        return countryToReturn.toString();
     }
 
 
@@ -122,5 +132,4 @@ public class ApplebyGlobal extends ByPage {
                 "phone", socials[1]
         );
     }
-
 }

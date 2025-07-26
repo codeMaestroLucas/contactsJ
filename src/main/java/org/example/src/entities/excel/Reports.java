@@ -1,5 +1,7 @@
 package org.example.src.entities.excel;
 
+import org.example.src.entities.BaseSites.Site;
+
 import java.util.Objects;
 
 public class Reports extends Excel {
@@ -21,9 +23,9 @@ public class Reports extends Excel {
     }
 
 
-    public void createReportRow(String firm, String time, Integer lawyersRegistered) {
+    public void createReportRow(Site site, String time) {
         try {
-            this.addContentOnRow(currentRow, firm, time, lawyersRegistered.toString());
+            this.addContentOnRow(currentRow, site.name, time, String.valueOf(site.lawyersRegistered));
             this.currentRow ++;
 
         } catch (Exception e) {

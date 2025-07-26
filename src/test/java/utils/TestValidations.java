@@ -3,6 +3,7 @@ package utils;
 import org.example.src.entities.Lawyer;
 import org.example.src.utils.Validations;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -69,7 +70,7 @@ public class TestValidations {
         return new ArrayList<>(List.of(lawyer1, lawyer2, lawyer3, lawyer4, lawyer5));
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String emailsOfMonthPath = "src/test/java/utils/testEmailsOfMonthPath.txt";
         String emailsToAvoidPath = "src/test/java/utils/testEmailsToAvoidPath.txt";
         Set<String> lastCountries = new HashSet<>(Set.of("England", "Brazil", "India"));

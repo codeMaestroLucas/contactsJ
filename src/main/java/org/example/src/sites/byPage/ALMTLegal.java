@@ -8,17 +8,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ALMTLegal extends ByPage {
     public ALMTLegal() {
         super(
-                "ALMTLegal",
-                "https://almtlegal.com/mumbai-partner/",
-                2,
-                1
+            "ALMTLegal",
+            "https://almtlegal.com/mumbai-partner/",
+            2,
+            1
         );
     }
 
@@ -70,7 +69,7 @@ public class ALMTLegal extends ByPage {
     }
 
 
-    private String[] getSocials(WebElement lawyer) throws Exception {
+    private String[] getSocials(WebElement lawyer) {
         var outerHTML = lawyer
                 .findElements(By.cssSelector("ul > li > a"));
         return super.getSocials(outerHTML);

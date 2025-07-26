@@ -38,7 +38,7 @@ public class EmailOfMonth {
     public static boolean isEmailRegisteredInMonth(String email, String emailFilePath) {
         try {
             String content = Files.readString(Path.of(emailFilePath));
-            return content.contains(email);
+            return content.toLowerCase().contains(email);
 
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());

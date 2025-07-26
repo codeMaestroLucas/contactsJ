@@ -13,11 +13,11 @@ public abstract class ByPage extends Site {
         //todo: passing LITERAL (1) instead of ``maxLawyersForSite`` because can't identify why no more than on lawyer has
         // been registered if i decide to collect just one for firm just need to remove the constructors ``maxLawyersForSite``
 
-        super(name, link, totalPages, 1, "byPage/");
+        super(name, link, totalPages, maxLawyersForSite, "byPage/");
     }
 
     @Override
-    protected void searchForLawyers() {
+    public void searchForLawyers() {
         for (int i = 0; i < this.totalPages; i++) {
             System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.totalPages);
 
