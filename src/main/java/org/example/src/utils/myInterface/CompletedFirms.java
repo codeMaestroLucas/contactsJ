@@ -40,12 +40,20 @@ public class CompletedFirms {
         int sizeHeader = (70 - title.length()) / 2;
         System.out.println("-".repeat(sizeHeader) + title + "-".repeat(sizeHeader));
 
-        System.out.println(" -  ByPage: " + byPage.length);
-        System.out.println(" -  ByNewPage: " + byNewPage.length);
-        System.out.println(" -  byFilter: " + byFilter.length);
-        System.out.println(" -  ByClick: " + byClick.length);
+        System.out.printf(" -  ByPage:    %-30s To Register: %d%n", byPage.length, countTotalMaxLawyer(byPage));
+        System.out.printf(" -  ByNewPage: %-30s To Register: %d%n", byNewPage.length, countTotalMaxLawyer(byNewPage));
+        System.out.printf(" -  ByFilter:  %-30s To Register: %d%n", byFilter.length, countTotalMaxLawyer(byFilter));
+        System.out.printf(" -  ByClick:   %-30s To Register: %d%n", byClick.length, countTotalMaxLawyer(byClick));
 
         System.out.println("-".repeat(70));
+    }
+
+    private static int countTotalMaxLawyer(Site[] firms) {
+        int total = 0;
+        for (Site firm : firms) {
+             total += firm.maxLawyersForSite;
+        }
+        return total;
     }
 
     public static void main(String[] args) {

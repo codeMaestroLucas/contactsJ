@@ -5,7 +5,6 @@ import org.example.src.entities.Lawyer;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.Sheet;
 import org.example.src.utils.EmailOfMonth;
-import org.example.src.utils.FirmsOfWeek;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -19,7 +18,7 @@ public abstract class Site  {
     protected final  String link;
     public int lawyersRegistered;
     protected final int totalPages;
-    protected final int maxLawyersForSite;
+    public final int maxLawyersForSite;
     protected Set<String> lastCountries = new HashSet<>();
     public final WebDriver driver = MyDriver.getINSTANCE();
     protected final SiteUtils siteUtl = SiteUtils.getINSTANCE();

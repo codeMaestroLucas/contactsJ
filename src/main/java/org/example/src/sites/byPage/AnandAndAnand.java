@@ -16,8 +16,7 @@ public class AnandAndAnand extends ByPage {
         super(
             "Anand And Anand",
             "https://www.anandandanand.com/our-team/page/1/",
-            2,
-            1
+            2
         );
     }
 

@@ -16,7 +16,6 @@ public class ByrneWallace extends ByPage {
         super(
             "Byrne Wallace",
             "https://byrnewallaceshields.com/about-us/our-team/",
-            1,
             1
         );
     }
@@ -24,8 +23,7 @@ public class ByrneWallace extends ByPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String url = (index == 0) ? this.link : "";
-        driver.get(url);
+        driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
 

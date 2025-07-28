@@ -18,6 +18,19 @@ public class Lawyer {
     public String email;
     public String phone;
 
+    private final String[] validRoles = {
+            "Partner",
+            "Counsel",
+            "Director",
+            "Founder",
+            "Founding",
+            "Managing",
+            "Advisor",
+            "Senior Associate",
+//                "Head",
+    };
+
+
     // Full constructor
     public Lawyer(String link, String name, String role, String firm, String country, String practiceArea, @org.jetbrains.annotations.NotNull String email, String phone) {
         this.link = link;
@@ -56,11 +69,9 @@ public class Lawyer {
                 .toLowerCase();
 
         // Remove common legal role terms
-        name = name.replace("partner", " ")
-                .replace("managing", " ")
-                .replace("counsel", " ")
-                .replace("associate", " ")
-                .replace("senior", " ");
+        for (String role : validRoles) {
+            name = name.replace(role.toLowerCase(), " ");
+        }
 
         // Abbreviations to remove
         Set<String> abbreviations = new HashSet<>(Arrays.asList(
@@ -119,18 +130,6 @@ public class Lawyer {
      * @return role formatted
      */
     private String treatRole(String role) {
-        String[] validRoles = {
-                "Partner",
-                "Counsel",
-                "Director",
-                "Founder",
-                "Founding",
-                "Managing",
-                "Advisor",
-                "Senior Associate",
-//                "Head",
-        };
-
         for (String validRole : validRoles) {
             if (role.toLowerCase().contains(validRole.toLowerCase())) {
                 return validRole;

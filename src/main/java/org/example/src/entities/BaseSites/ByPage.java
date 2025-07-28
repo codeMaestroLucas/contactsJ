@@ -10,10 +10,11 @@ import java.util.Map;
 public abstract class ByPage extends Site {
 
     protected ByPage(String name, String link, int totalPages, int maxLawyersForSite) {
-        //todo: passing LITERAL (1) instead of ``maxLawyersForSite`` because can't identify why no more than on lawyer has
-        // been registered if i decide to collect just one for firm just need to remove the constructors ``maxLawyersForSite``
-
         super(name, link, totalPages, maxLawyersForSite, "byPage/");
+    }
+
+    protected ByPage(String name, String link, int totalPages) {
+        super(name, link, totalPages, 1, "byPage/");
     }
 
     @Override
@@ -74,7 +75,7 @@ public abstract class ByPage extends Site {
                             map.get("role"),
                             map.get("firm"),
                             map.get("country"),
-                            map.get("practiceArea"),
+                            map.get("practice_area"),
                             map.get("email"),
                             map.get("phone")
                         );
@@ -106,7 +107,10 @@ public abstract class ByPage extends Site {
                             "Error reading %dth lawyer at the page %d of the firm %s.%nError: %s%n",
                             index + 1, i + 1, this.name, e.getMessage()
                     );
+                    System.out.println("#".repeat(70));
+                    e.getMessage();
                     e.printStackTrace();
+                    System.out.println("#".repeat(70) + "\n");
                     continue;
                 }
             }

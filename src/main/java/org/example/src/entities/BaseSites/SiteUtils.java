@@ -9,6 +9,8 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SiteUtils {
     private WebDriver driver;
@@ -34,6 +36,7 @@ public class SiteUtils {
                 index + 1, page + 1, firm);
         System.out.println("  Link: " + details.get("link"));
         System.out.println("  Name: " + details.get("name"));
+        System.out.println("  Practice Area: " + details.get("practice_area"));
         System.out.println("  Email: " + details.get("email"));
         System.out.println("  Phone: " + details.get("phone"));
         System.out.println("  Country: " + details.get("country"));
@@ -77,7 +80,6 @@ public class SiteUtils {
                                                    boolean byText, String[] validRoles) {
         List<WebElement> validLawyers = new ArrayList<>();
 
-
         for (WebElement lawyer : lawyersInPage) {
             try {
                 WebElement element = iterateOverBy(webRole, lawyer);
@@ -87,6 +89,8 @@ public class SiteUtils {
                         : element.getAttribute("outerHTML")
                         .replaceAll("[\\n\\t]", "");
                 role = role.toLowerCase().trim();
+
+                if (!byText) role = getContentFromTag(role);
 
                 for (String word : validRoles) {
                     if (role.contains(word.toLowerCase().trim())) {
@@ -110,8 +114,8 @@ public class SiteUtils {
      * @return Content inside the tag or null if not found.
      */
     public String getContentFromTag(String tag) {
-        java.util.regex.Matcher matcher =
-                java.util.regex.Pattern.compile(">([^<>]+)<").matcher(tag);
+        Matcher matcher =
+                Pattern.compile(">([^<>]+)<").matcher(tag);
         return matcher.find() ? matcher.group(1) : null;
     }
 
@@ -124,8 +128,8 @@ public class SiteUtils {
      */
     public String getContentFromTag(WebElement element) {
         String tag = element.getAttribute("outerHTML");
-        java.util.regex.Matcher matcher =
-                java.util.regex.Pattern.compile(">([^<>]+)<").matcher(tag);
+        Matcher matcher =
+                Pattern.compile(">([^<>]+)<").matcher(tag);
         return matcher.find() ? matcher.group(1) : null;
     }
 
@@ -144,4 +148,31 @@ public class SiteUtils {
         } catch (Exception _) {}
     }
 
+
+    /**
+     * Title-cases the string passed.
+     */
+    public String titleString(String text) {
+        if (text == null || text.isEmpty()) {
+            return text;
+        }
+
+        StringBuilder titleToReturn = new StringBuilder();
+        text = text.toLowerCase();
+
+        String[] words = text.split("\\s+");
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            if (!word.isEmpty()) {
+                titleToReturn
+                        .append(Character.toUpperCase(word.charAt(0)))
+                        .append(word.substring(1));
+            }
+            if (i < words.length - 1) {
+                titleToReturn.append(" ");
+            }
+        }
+
+        return titleToReturn.toString();
+    }
 }

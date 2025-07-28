@@ -17,7 +17,6 @@ public class BonelliErede extends ByPage {
         super(
             "BonelliErede",
             "https://www.belex.com/en/professional/",
-            1,
             1
         );
     }
@@ -25,9 +24,7 @@ public class BonelliErede extends ByPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "";
-        String url = (index == 0) ? this.link : otherUrl;
-        driver.get(url);
+        driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
 

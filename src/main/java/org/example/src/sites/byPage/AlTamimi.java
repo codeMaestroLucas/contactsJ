@@ -16,8 +16,7 @@ public class AlTamimi extends ByPage {
         super(
             "Al Tamimi",
             "https://www.tamimi.com/about-us/partners/",
-            12,
-            1
+            12
         );
     }
 

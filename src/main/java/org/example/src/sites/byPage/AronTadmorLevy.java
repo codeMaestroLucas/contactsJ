@@ -16,7 +16,6 @@ public class AronTadmorLevy extends ByPage {
         super(
             "Aron Tadmor Levy",
             "https://arnontl.com/people/",
-            1,
             1
         );
     }

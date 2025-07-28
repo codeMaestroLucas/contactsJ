@@ -119,7 +119,7 @@ public class _Template extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
 
-        Map<String, String> link1 = Map.of(
+        return Map.of(
                 "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
@@ -129,7 +129,6 @@ public class _Template extends ByPage {
                 "email", socials[0],
                 "phone", socials[1]
         );
-        return link1;
     }
 
 

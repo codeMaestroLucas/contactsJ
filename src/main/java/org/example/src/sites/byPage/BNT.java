@@ -24,8 +24,7 @@ public class BNT extends ByPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String url = (index == 0) ? this.link : "";
-        driver.get(url);
+        driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
 

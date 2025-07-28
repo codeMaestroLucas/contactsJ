@@ -16,8 +16,7 @@ public class ALMTLegal extends ByPage {
         super(
             "ALMTLegal",
             "https://almtlegal.com/mumbai-partner/",
-            2,
-            1
+            2
         );
     }
 

@@ -47,6 +47,7 @@ public class Sheet extends Excel {
 
         this.addContentOnRow(
                 this.currentRow,
+                lawyer.link,
                 lawyer.name,
                 lawyer.role,
                 firm,
