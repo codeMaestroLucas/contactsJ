@@ -19,14 +19,18 @@ public class Lawyer {
     public String phone;
 
     private final String[] validRoles = {
+            "Senior Associate",
+            "Of Counsel",
+            "Managing Partner",
+            "Managing Director",
+            "Founding Partner",
             "Partner",
+            "Shareholder",
             "Counsel",
             "Director",
             "Founder",
-            "Founding",
-            "Managing",
             "Advisor",
-            "Senior Associate",
+            "Principal",
 //                "Head",
     };
 

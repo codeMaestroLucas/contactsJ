@@ -4,6 +4,31 @@
     "link": ""
   },
   {
+    "name": "BWB LLP",
+    "link": "https://bwbllp.ca/our-lawyers"
+  },
+  {
+    "name": "BURCHELL MACDOUGALL LLP",
+    "link": "https://www.burchellmacdougall.com/people"
+  },
+  {
+    "name": "Davies Ward Phillips & Vineberg",
+    "link": "https://www.dwpv.com/our-people"
+  },
+  {
+    "name": "BCF Law",
+    "link": "https://www.bcf.ca/en/team"
+  },
+  {
+    "name": "Thompson Dorfman Sweatman",
+    "link": "https://www.tdslaw.com/people/lawyers/",
+    "Note": "new page to check if is a partner"
+  },
+  {
+    "name": "OWZW Lawyers",
+    "link": "https://owzw.com/our-team/"
+  },
+  {
     "name": "Dottir",
     "link": "https://www.dottirlaw.com/team/"
   },
@@ -5529,6 +5554,11 @@
     "name": "TillekeAndGibbins",
     "link": "https://www.tilleke.com/professionals/",
     "Note": "Driver outdated, dont kown how to fix this, standing by"
+  },
+  {
+    "name": "Patterson",
+    "link": "https://pattersonlaw.ca/people/?search=&area_of_law=&industry=&position=Lawyer&office=&filter-last-name=-1",
+    "Notes": "New page to check if has a valid lawyer"
   },
   {
     "name": "",

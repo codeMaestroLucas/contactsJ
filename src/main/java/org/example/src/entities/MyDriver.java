@@ -19,7 +19,7 @@ public class MyDriver {
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless"); // Run Chrome in headless mode
+//            options.addArguments("--headless"); // Run Chrome in headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
@@ -37,12 +37,12 @@ public class MyDriver {
 
     /**
      * Waits for the current page to fully load by checking the `document.readyState`.
-     * Waits up to 4 minutes.
+     * Waits up to 6 minutes.
      */
     public static void waitForPageToLoad() {
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(4));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(6));
 
-        new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofMinutes(4))
+        new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofMinutes(6))
                 .until(webDriver -> ((JavascriptExecutor) webDriver)
                         .executeScript("return document.readyState")
                         .equals("complete"));

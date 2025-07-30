@@ -8,18 +8,21 @@ import org.example.src.sites.byPage.*;
 public class _CompletedFirmsData {
 
     public final static Site[] byPage = {
-            new ALMTLegal(), new AlTamimi(), new AnandAndAnand(), new ApplebyGlobal(), new ArnoldAndPorter(),
-            new AronTadmorLevy(), new Ashurst(), new BaeKimAndLee(), new BNT(), new BonelliErede(),
-            new ByrneWallace(), new CampbellsLegal(), new CareyOlsen(), new CFNLaw(), new ClemensLaw(),
-            new CollasCrill(), new ConsortiumLegal(), new Conyers(), new DahlLaw(), new Deacons(),
-            new DechertLLP(), new DillonEustace(), new DittmarAndIndrenius(), new Foyen(), new GianniAndOrigoni()
+        new ALMTLegal(), new AlTamimi(), new AnandAndAnand(), new ApplebyGlobal(), new ArnoldAndPorter(),
+        new AronTadmorLevy(), new Ashurst(), new BaeKimAndLee(), new BonelliErede(), new MijaresAngoitiaCortesAndFuentes(),
+        new ByrneWallace(), new CampbellsLegal(), new CareyOlsen(), new CFNLaw(), new ClemensLaw(),
+        new CollasCrill(), new ConsortiumLegal(), new Conyers(), new DahlLaw(), new Deacons(),
+        new DechertLLP(), new DillonEustace(), new DittmarAndIndrenius(), new Foyen(), new GianniAndOrigoni(),
+        new Blakes(), new StikemanElliott(), new Cassels(), new McCarthyTetrault(), new GreenbergTraurig(),
+        new PeterAndKim(), new BNT(), new BennettJones(), new RitchMuellerAndNicolau(), new BLGLaw()
 
 
-            // No more lawyers to register
-            /**
-             * new FoxAndMandal()
-             *
-            */
+        // No more lawyers to register
+        /**
+         new FoxAndMandal()
+
+         *
+        */
     };
 
 
