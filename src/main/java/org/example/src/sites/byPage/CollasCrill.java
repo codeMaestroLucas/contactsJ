@@ -73,7 +73,7 @@ public class CollasCrill extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer.findElement(By.className("icons")).findElements(By.cssSelector("a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

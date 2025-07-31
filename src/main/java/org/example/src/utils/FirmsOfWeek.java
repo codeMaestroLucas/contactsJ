@@ -25,7 +25,7 @@ public class FirmsOfWeek {
     /**
      * Checks if the firm is already registered in the file for the current week.
      */
-    public static boolean getRegisteredFirmWeek(String firm) {
+    public static boolean isRegisteredInFirmWeek(String firm) {
         Path path = Path.of(basePath);
         try {
             // Create the file if doesn't exist

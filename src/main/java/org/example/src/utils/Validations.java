@@ -104,7 +104,7 @@ public class Validations {
 
         if (isAEmailToAvoid(email, emailsToAvoidPath)) return false;
 
-        if (FirmsOfWeek.getRegisteredFirmWeek(lawyer.firm)) return false;
+        if (FirmsOfWeek.isRegisteredInFirmWeek(lawyer.firm)) return false;
 
         if (isEmailAlreadyRegistered(email, emailsOfMonthPath)) return false;
 

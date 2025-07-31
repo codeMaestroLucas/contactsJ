@@ -86,27 +86,36 @@ public abstract class Site  {
 
 
     /**
-     *   * Function used to get the email and phone.
+     * Function used to get the email and phone.
      * @param socials web list of all the socials values to be iterated
+     * @param byText If true, extract text. If false, use the 'href' attribute.
      * @return Array[0] == email; Array[1] == phone
      */
-    protected String[] getSocials(List<WebElement> socials) {
+    protected String[] getSocials(List<WebElement> socials, boolean byText) {
         String email = "";
         String phone = "";
 
         for (WebElement social : socials) {
-            String href = social.getAttribute("href").toLowerCase().trim();
+            String value = byText
+                    ? social.getText().toLowerCase().trim()
+                    : social.getAttribute("href").toLowerCase().trim();
 
-            if (href.contains("mail") && email.isEmpty()) {
-                email = href;
-            } else if ((href.contains("tel") || href.contains("call")) && phone.isEmpty()) {
-                phone = href;
+            // Check if it's an email
+            if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {
+                email = value;
+            }
+            // Check if it's a valid phone number
+            else if ((value.contains("tel") || value.contains("+") || value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
+                String cleaned = value.replaceAll("[^0-9]", "");
+                if (cleaned.length() > 5) { // To prevent if an invalid value has been set to phone
+                    phone = cleaned;
+                }
             }
 
             if (!email.isEmpty() && !phone.isEmpty()) break;
         }
 
-        return new String[] { email, phone };
+        return new String[]{ email, phone };
     }
 
 

@@ -21,8 +21,7 @@ public class BennettJones extends ByPage {
         super(
             "Bennett Jones",
             "https://www.bennettjones.com/People-Search-Results/",
-            1,
-            100
+            1
         );
     }
 
@@ -101,7 +100,7 @@ public class BennettJones extends ByPage {
             List<WebElement> socials = lawyer
                     .findElement(By.className("contact"))
                     .findElements(By.cssSelector("a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

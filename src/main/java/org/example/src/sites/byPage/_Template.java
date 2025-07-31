@@ -12,8 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class _Template extends ByPage {
     private final By[] byRoleArray = {
-        By.className(""),
-        By.cssSelector("")
+            By.className(""),
+            By.cssSelector("")
     };
 
 
@@ -42,7 +42,7 @@ public class _Template extends ByPage {
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-            "partner"
+                "partner"
         };
 
         try {
@@ -63,8 +63,8 @@ public class _Template extends ByPage {
 
     private String getLink(WebElement lawyer) {
         By[] byArray = new By[]{
-            By.className(""),
-            By.cssSelector("")
+                By.className(""),
+                By.cssSelector("")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getAttribute("href");
@@ -73,8 +73,8 @@ public class _Template extends ByPage {
 
     private String getName(WebElement lawyer) {
         By[] byArray = new By[]{
-            By.className(""),
-            By.cssSelector("")
+                By.className(""),
+                By.cssSelector("")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getText();
@@ -89,8 +89,8 @@ public class _Template extends ByPage {
 
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{
-            By.className(""),
-            By.cssSelector("")
+                By.className(""),
+                By.cssSelector("")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getText();
@@ -100,9 +100,9 @@ public class _Template extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                    .findElement(By.className(""))
-                    .findElements(By.cssSelector(""));
-            return super.getSocials(socials);
+                        .findElement(By.className(""))
+                        .findElements(By.cssSelector(""));
+            return super.getSocials(socials, false);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

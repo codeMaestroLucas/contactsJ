@@ -45,7 +45,7 @@ public class ALMTLegal extends ByPage {
 
     private String[] getSocials(WebElement lawyer) {
         List<WebElement> outerHTML = lawyer.findElements(By.cssSelector("ul > li > a"));
-        return super.getSocials(outerHTML);
+        return super.getSocials(outerHTML, false);
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {

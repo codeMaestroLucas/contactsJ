@@ -58,7 +58,7 @@ public class DittmarAndIndrenius extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer.findElement(By.className("contact-row")).findElements(By.cssSelector("ul > li > a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

@@ -73,7 +73,7 @@ public class ApplebyGlobal extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer.findElements(By.cssSelector("p.u-font-size-14.u-line-height-22 > a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

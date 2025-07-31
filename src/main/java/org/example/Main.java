@@ -22,6 +22,8 @@ public class Main {
             for (Site site : sites) {
                 long initTimeFirm = System.currentTimeMillis();
 
+                if (FirmsOfWeek.isRegisteredInFirmWeek(site.name)) continue;
+
                 interfaceUtls.header(site.name);
 
                 site.searchForLawyers();

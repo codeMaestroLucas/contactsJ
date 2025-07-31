@@ -56,7 +56,7 @@ public class AlTamimi extends ByPage {
 
     private String[] getSocials(WebElement lawyer) {
         List<WebElement> socials = lawyer.findElements(By.cssSelector(".key-contact-info > a"));
-        return super.getSocials(socials);
+        return super.getSocials(socials, false);
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {

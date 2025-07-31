@@ -31,30 +31,50 @@ public class CompletedFirms {
         Collections.shuffle(collect); // Shuffle the list
         return collect;
     }
-
     /**
      * A log print to count all firms completed
      */
     public static void showCompletedFirmsPrint() {
         String title = "| COMPLETED |";
-        int sizeHeader = (70 - title.length()) / 2;
-        System.out.println("-".repeat(sizeHeader) + title + "-".repeat(sizeHeader));
+        int lineLength = 70;
+        int padding = (lineLength - title.length()) / 2;
 
-        System.out.printf(" -  ByPage:    %-30s To Register: %d%n", byPage.length, countTotalMaxLawyer(byPage));
-        System.out.printf(" -  ByNewPage: %-30s To Register: %d%n", byNewPage.length, countTotalMaxLawyer(byNewPage));
-        System.out.printf(" -  ByFilter:  %-30s To Register: %d%n", byFilter.length, countTotalMaxLawyer(byFilter));
-        System.out.printf(" -  ByClick:   %-30s To Register: %d%n", byClick.length, countTotalMaxLawyer(byClick));
+        System.out.println("-".repeat(padding) + title + "-".repeat(padding));
 
-        System.out.println("-".repeat(70));
+        Object[][] categories = {
+                { "ByPage",    byPage },
+                { "ByNewPage", byNewPage },
+                { "ByFilter",  byFilter },
+                { "ByClick",   byClick }
+        };
+
+        int grandTotal = 0;
+        int totalFirmsRegistered =0;
+
+        for (Object[] category : categories) {
+            String label = (String) category[0];
+            Site[] firms = (Site[]) category[1];
+
+            int totalToRegister = countTotalMaxLawyer(firms);
+            grandTotal += totalToRegister;
+            totalFirmsRegistered += firms.length;
+
+            System.out.printf(" -  %-10s %-30s To Register: %d%n", label + ":", firms.length, totalToRegister);
+        }
+
+        System.out.println("-".repeat(lineLength));
+        System.out.printf("  Total Firms: %-20d Total Lawyers to Register: %d%n", totalFirmsRegistered, grandTotal);
+        System.out.println("-".repeat(lineLength));
     }
 
     private static int countTotalMaxLawyer(Site[] firms) {
         int total = 0;
         for (Site firm : firms) {
-             total += firm.maxLawyersForSite;
+            total += firm.maxLawyersForSite;
         }
         return total;
     }
+
 
     public static void main(String[] args) {
         showCompletedFirmsPrint();

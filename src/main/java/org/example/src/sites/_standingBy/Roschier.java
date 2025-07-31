@@ -131,7 +131,7 @@ public class Roschier extends ByPage {
                     .findElement(By.className("card__contact"))
                     .findElement(By.className("card__contact__item"))
                     .findElements(By.cssSelector("a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

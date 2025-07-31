@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ClemensLaw extends ByPage {
     public ClemensLaw() {
-        super("Clemens Law", "https://clemenslaw.dk/en/medarbejdere/", 1, 1);
+        super("Clemens Law", "https://clemenslaw.dk/en/medarbejdere/", 1);
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -55,7 +55,7 @@ public class ClemensLaw extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

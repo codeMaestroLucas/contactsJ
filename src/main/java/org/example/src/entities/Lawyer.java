@@ -19,10 +19,12 @@ public class Lawyer {
     public String phone;
 
     private final String[] validRoles = {
+            "Senior Partner",
             "Senior Associate",
             "Of Counsel",
             "Managing Partner",
             "Managing Director",
+            "Managing Associate",
             "Founding Partner",
             "Partner",
             "Shareholder",

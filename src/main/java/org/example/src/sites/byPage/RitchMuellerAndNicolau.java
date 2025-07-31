@@ -24,8 +24,7 @@ public class RitchMuellerAndNicolau extends ByPage {
         super(
             "Ritch Mueller And Nicolau",
             "https://www.ritch.com.mx/en/team?filters=1&custom=&member_types%5B%5D=1&member_types%5B%5D=2&member_types%5B%5D=6&member_types%5B%5D=7",
-            3,
-            100
+            3
         );
     }
 
@@ -89,7 +88,7 @@ public class RitchMuellerAndNicolau extends ByPage {
         try {
             List<WebElement> socials = lawyer
                     .findElements(By.cssSelector("a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

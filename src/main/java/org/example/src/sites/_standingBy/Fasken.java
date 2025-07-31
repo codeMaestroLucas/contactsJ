@@ -121,7 +121,7 @@ public class Fasken extends ByPage {
             List<WebElement> socials = lawyer
                     .findElement(By.className("atomic-result-section-details"))
                     .findElements(By.cssSelector("a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

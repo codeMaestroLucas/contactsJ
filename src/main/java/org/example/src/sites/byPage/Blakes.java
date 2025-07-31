@@ -65,7 +65,7 @@ public class Blakes extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer.findElement(By.className("blk-card-item-description")).findElement(By.className("blk-card-item-description-link-list")).findElements(By.cssSelector("li > a"));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

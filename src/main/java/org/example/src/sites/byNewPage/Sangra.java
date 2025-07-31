@@ -105,7 +105,7 @@ public class Sangra extends ByPage {
             List<WebElement> socials = lawyer
                     .findElement(By.className(""))
                     .findElements(By.cssSelector(""));
-            return super.getSocials(socials);
+            return super.getSocials(socials, false);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
