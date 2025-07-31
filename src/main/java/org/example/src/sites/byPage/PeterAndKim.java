@@ -40,8 +40,7 @@ public class PeterAndKim extends ByPage {
     }
 
     private String getLink(WebElement lawyer) {
-        By[] byArray = new By[]{By.cssSelector("a:last-child")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+        WebElement element = driver.findElement(By.cssSelector("a[href^='https']"));
         return element.getAttribute("href");
     }
 

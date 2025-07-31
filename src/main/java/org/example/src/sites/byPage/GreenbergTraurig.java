@@ -65,6 +65,7 @@ public class GreenbergTraurig extends ByPage {
             entry("united arab emirates", "the UAE"),
             entry("warsaw", "Poland"),
             entry("washington, d.c.", "EUA"),
+            entry("washington dc", "EUA"),
             entry("west palm beach", "EUA"),
             entry("westchester county", "EUA")
     );

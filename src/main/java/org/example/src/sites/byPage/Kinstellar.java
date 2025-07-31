@@ -25,7 +25,7 @@ public class Kinstellar extends ByPage {
             "Kinstellar",
             "https://www.kinstellar.com/our-team?filter%5Bname%5D=&filter%5Bposition%5D=&filter%5Bexpertise%5D=&filter%5Blocation%5D=&filter%5Bsent%5D=true",
             1,
-            300
+            3
         );
     }
 
@@ -129,10 +129,5 @@ public class Kinstellar extends ByPage {
             "practice_area", "",
             "email", socials[0],
             "phone", socials[1]);
-    }
-
-    public static void main(String[] args) {
-        Kinstellar x = new Kinstellar();
-        x.searchForLawyers();
     }
 }

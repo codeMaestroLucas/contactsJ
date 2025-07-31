@@ -85,7 +85,7 @@ public class HFW extends ByPage {
                     )
             );
 
-            List<WebElement> lawyers = lawyersDiv.findElements(By.cssSelector("div.parent.relative.overflow-hidden.bg-white"));
+            List<WebElement> lawyers = lawyersDiv.findElements(By.cssSelector("div.facetwp-template > div > div.parent"));
 
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
