@@ -175,7 +175,6 @@ public class WhiteAndCase extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("lawyer-contact-info"))
                         .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 

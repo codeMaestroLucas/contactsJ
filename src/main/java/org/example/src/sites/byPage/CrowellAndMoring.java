@@ -29,6 +29,7 @@ public class CrowellAndMoring extends ByPage {
             entry("singapore (cga)", "Singapore"),
             entry("singapore", "Singapore"),
             entry("washington d c", "USA"),
+            entry("washington  d c", "USA"),
             entry("washington d c (cga)", "USA")
     );
 
