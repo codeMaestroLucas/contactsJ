@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PeterAndKim extends ByPage {
-    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of("geneva", "Switzerland", "perth", "Australia", "seoul", "Korea (South)", "singapore", "Singapore", "sydney", "Australia", "zurich", "Switzerland");
 
     public PeterAndKim() {
         super("Peter And Kim", "https://peterandkim.com/team/", 1, 2);
+        OFFICE_TO_COUNTRY = Map.of("geneva", "Switzerland", "perth", "Australia", "seoul", "Korea (South)", "singapore", "Singapore", "sydney", "Australia", "zurich", "Switzerland");
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -59,8 +59,7 @@ public class PeterAndKim extends ByPage {
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{By.cssSelector("div.flex.gap-2.items-center.self-start.mt-2.text-xs.uppercase.whitespace-nowrap.text-violet-950"), By.cssSelector("span:last-child")};
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().toLowerCase().trim();
-        return (String)OFFICE_TO_COUNTRY.getOrDefault(country, "");
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
     }
 
     private String[] getSocials(WebElement lawyer) {

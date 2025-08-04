@@ -4,95 +4,9 @@
     "link": ""
   },
   {
-    "name": "McInnes Cooper",
-    "link": "https://www.mcinnescooper.com/our-team/lawyers/"
-  },
-  {
-    "name": "Melling, Voitishkin & Partners",
-    "link": "https://mv.legal/en/team/"
-  },
-  {
-    "name": "Tuca Zbarcea",
-    "link": "https://www.tuca.ro/attorneys/"
-  },
-  {
-    "name": "Panetta Consulting Group",
-    "link": "https://panetta.it/en/people/"
-  },
-  {
-    "name": "Finreg 360",
-    "link": "https://finreg360.com/quienes-somos/"
-  },
-  {
-    "name": "Malley & Co",
-    "link": "https://www.malley.co.nz/team"
-  },
-  {
-    "name": "Reliance Corporate Advisors",
-    "link": "https://reliancecs.co/our-people/"
-  },
-  {
-    "name": "Tiruchelvam Associates",
-    "link": "https://www.tiruchelvam.com/our_team/"
-  },
-  {
-    "name": "Kochhar and Co.",
-    "link": "https://kochhar.com/people/"
-  },
-  {
-    "name": "Crowell & Moring",
-    "link": "https://www.crowell.com/en/professionals?po=34489"
-  },
-  {
-    "name": "Cassidy Levy Kent",
-    "links": [
-      "https://www.cassidylevy.com/team/?_offices=brussels",
-      "https://www.cassidylevy.com/team/?_offices=ottawa"
-    ]
-  },
-  {
-    "name": "Proximo Auditores SPA",
-    "link": "https://www.proximoauditores.cl/"
-  },
-  {
-    "name": "PGS Attorneys",
-    "link": "https://www.pgs.legal/meetourlawyers"
-  },
-  {
-    "name": "Abbantia",
-    "link": "https://abbantia.com/en/professionals/"
-  },
-  {
-    "name": "SST Attorneys",
-    "link": "https://sstlaw.co.za/our-people/"
-  },
-  {
-    "name": "MST Partners",
-    "link": "https://mstpartners.eu/?page_id=701&lang=en"
-  },
-  {
-    "name": "Alliott Hadi Shahid Chartered Accountants",
-    "link": "https://www.alliottuae.com/Auditors/OurTeam"
-  },
-  {
-    "name": "Titov & Partners",
-    "link": "https://www.titovlaw.se/en/17/8/our-people/"
-  },
-  {
-    "name": "Alliott Mauritius",
-    "link": "https://www.alliott-mauritius.com/key-people/"
-  },
-  {
-    "name": "VB Advocates",
-    "link": "https://www.vba.mt/our-people/"
-  },
-  {
-    "name": "PSP Peintner, Seidner & Partners",
-    "link": "https://www.psp-bz.it/en/about-us/team.html"
-  },
-  {
-    "name": "NPP Legal",
-    "link": "https://npp.de/ceemes/en/personen/geschaeftsfuehrung.html"
+    "name": "KochharAndCo",
+    "link": "https://kochhar.com/people/",
+    "note": "INDIAN"
   },
   {
     "name": "ETH Consulting Group",

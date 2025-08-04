@@ -21,6 +21,7 @@ public class Lawyer {
     private final String[] validRoles = {
             "Senior Partner",
             "Senior Associate",
+            "Senior Advisor",
             "Of Counsel",
             "Managing Partner",
             "Managing Director",
@@ -43,7 +44,7 @@ public class Lawyer {
         this.role = this.treatRole(role.trim());
         this.firm = firm;
         this.country = country.trim();
-        this.practiceArea = Objects.isNull(practiceArea) ? "-----" : practiceArea;
+        this.practiceArea = Objects.isNull(practiceArea) ? "-----" : practiceArea.trim();
         this.email = treatEmail(email);
         this.phone = treatPhone(phone);
 

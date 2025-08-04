@@ -12,10 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GianniAndOrigoni extends ByPage {
-    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(Map.entry("Rome", "Italy"), Map.entry("Milan", "Italy"), Map.entry("Bologna", "Italy"), Map.entry("Padua", "Italy"), Map.entry("Turin", "Italy"), Map.entry("Abu Dhabi", "the UAE"), Map.entry("Brussels", "Belgium"), Map.entry("London", "England"), Map.entry("New York", "USA"), Map.entry("Hong Kong", "Hong Kong"), Map.entry("Shanghai", "China"));
-
     public GianniAndOrigoni() {
         super("Gianni And Origoni", "https://www.gop.it/people.php?lang=eng", 1, 3);
+        OFFICE_TO_COUNTRY = Map.ofEntries(Map.entry("Rome", "Italy"), Map.entry("Milan", "Italy"), Map.entry("Bologna", "Italy"), Map.entry("Padua", "Italy"), Map.entry("Turin", "Italy"), Map.entry("Abu Dhabi", "the UAE"), Map.entry("Brussels", "Belgium"), Map.entry("London", "England"), Map.entry("New York", "USA"), Map.entry("Hong Kong", "Hong Kong"), Map.entry("Shanghai", "China"));
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -68,7 +67,7 @@ public class GianniAndOrigoni extends ByPage {
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{By.className("campotab5")};
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return (String)OFFICE_TO_COUNTRY.getOrDefault(element.getText().trim(), "Unknown");
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
     }
 
     private String getPracticeArea(WebElement lawyer) {

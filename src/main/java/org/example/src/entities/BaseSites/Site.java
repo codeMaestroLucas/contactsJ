@@ -25,6 +25,7 @@ public abstract class Site  {
     protected String emailsOfMonthPath;
     protected String emailsToAvoidPath;
 
+    protected static Map<String, String> OFFICE_TO_COUNTRY;
 
     protected Site(String name, String link, int totalPages, int maxLawyersForSite, String path) {
         this.name = name;

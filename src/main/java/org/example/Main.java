@@ -19,10 +19,9 @@ public class Main {
 
         // Processing Firms
         try {
+            // Already making the verification of Site.name registered in the Week firms in the constructor
             for (Site site : sites) {
                 long initTimeFirm = System.currentTimeMillis();
-
-                if (FirmsOfWeek.isRegisteredInFirmWeek(site.name)) continue;
 
                 interfaceUtls.header(site.name);
 

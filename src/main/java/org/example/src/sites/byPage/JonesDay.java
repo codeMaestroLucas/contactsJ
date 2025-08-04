@@ -140,9 +140,7 @@ public class JonesDay extends ByPage {
                     By.className("person__meta")
             };
             WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            String location = element.getText().trim();
-            String key = location.toLowerCase();
-            return OFFICE_TO_COUNTRY.getOrDefault(key, location);
+            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
         } catch (Exception e) {
             return "";
         }

@@ -137,9 +137,7 @@ public class HFW extends ByPage {
                 }
             }
         }
-        // Removing everthing that isn't a letter
-        country = country.replaceAll("[^a-zA-Z]+", " ").trim();
-        return OFFICE_TO_COUNTRY.getOrDefault(country, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
     }
 
 

@@ -102,8 +102,7 @@ public class HillDickinson extends ByPage {
                 By.cssSelector("div > div.u-flex-grow > div.u-mt-1.u-mb-2 > div > div")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().toLowerCase().trim();
-        return OFFICE_TO_COUNTRY.getOrDefault(country, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
     }
 
 

@@ -90,8 +90,6 @@ public class SiteUtils {
                         .replaceAll("[\\n\\t]", "");
                 role = role.toLowerCase().trim();
 
-                if (!byText) role = getContentFromTag(role);
-
                 for (String word : validRoles) {
                     if (role.contains(word.toLowerCase().trim())) {
                         validLawyers.add(lawyer);
@@ -101,6 +99,7 @@ public class SiteUtils {
 
             } catch (Exception ignored) {
                 throw ignored;
+//                System.out.println(ignored.getMessage());
             }
         }
         return validLawyers;
@@ -174,5 +173,20 @@ public class SiteUtils {
         }
 
         return titleToReturn.toString();
+    }
+
+    /**
+     * Returns the country name based on the given office location.
+     * This method cleans the input office name by removing all non-alphabetic characters,
+     * converting it to lowercase, and then uses it to look up the corresponding country
+     * in the provided {@code OFFICE_TO_COUNTRY} map.
+     *
+     * @param OFFICE_TO_COUNTRY a map that links cleaned office names to country names
+     * @param officeToCheck the original office name to be checked
+     * @return the country name if found in the map; otherwise, the cleaned office name itself
+     */
+    public String getCountryBasedInOffice(Map<String, String> OFFICE_TO_COUNTRY, String officeToCheck) {
+        officeToCheck = officeToCheck.replaceAll("[^A-Za-z]", " ").toLowerCase().trim();
+        return OFFICE_TO_COUNTRY.getOrDefault(officeToCheck, officeToCheck);
     }
 }

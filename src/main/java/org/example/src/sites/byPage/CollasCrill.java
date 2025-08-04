@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CollasCrill extends ByPage {
-    private final Map<String, String> countries = Map.of("bvi", "the British Virgin Islands", "cayman", "the Cayman Islands", "london", "England", "guernsey", "Guernsey", "jersey", "Jersey");
 
     public CollasCrill() {
         super("Collas Crill", "https://www.collascrill.com/people/all-locations/partners/all-practices/", 1, 3);
+        OFFICE_TO_COUNTRY = Map.of("bvi", "the British Virgin Islands", "cayman", "the Cayman Islands", "london", "England", "guernsey", "Guernsey", "jersey", "Jersey");
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -67,7 +67,7 @@ public class CollasCrill extends ByPage {
             country = this.siteUtl.getContentFromTag(element.getAttribute("outerHTML")).toLowerCase().trim();
         }
 
-        return (String)this.countries.getOrDefault(country.toLowerCase(), "-----");
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
     }
 
     private String[] getSocials(WebElement lawyer) {

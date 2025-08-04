@@ -2,11 +2,9 @@ package org.example.src.utils.myInterface;
 
 import lombok.Getter;
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.utils.FirmsOfWeek;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,16 +19,21 @@ public class CompletedFirms {
 
 
     /**
-     * Construct all firms and insert them in an array and then shuffle it.
+     * Construct all firms that are not inserted in the week file then insert the filter firms in the in an array and
+     * then shuffle it.
      */
     public static List<Site> constructFirms() {
         List<Site> collect = Stream.of(byPage, byNewPage, byFilter, byClick)
                 .flatMap(array -> Arrays.stream(array).filter(Objects::nonNull))
+                // Firms that aren't registered in the week file
+                .filter(site -> !FirmsOfWeek.isRegisteredInFirmWeek(site.name))
                 .collect(Collectors.toList());
 
         Collections.shuffle(collect); // Shuffle the list
         return collect;
     }
+
+
     /**
      * A log print to count all firms completed
      */
@@ -66,6 +69,7 @@ public class CompletedFirms {
         System.out.printf("  Total Firms: %-20d Total Lawyers to Register: %d%n", totalFirmsRegistered, grandTotal);
         System.out.println("-".repeat(lineLength));
     }
+
 
     private static int countTotalMaxLawyer(Site[] firms) {
         int total = 0;

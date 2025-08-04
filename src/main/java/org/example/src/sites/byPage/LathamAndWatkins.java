@@ -130,8 +130,7 @@ public class LathamAndWatkins extends ByPage {
                 By.cssSelector("span")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().trim().toLowerCase();
-        return OFFICE_TO_COUNTRY.getOrDefault(country, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
     }
 
 

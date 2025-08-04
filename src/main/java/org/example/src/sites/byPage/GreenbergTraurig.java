@@ -14,7 +14,7 @@ import java.util.Map;
 import static java.util.Map.entry;
 
 public class GreenbergTraurig extends ByPage {
-    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.<String, String>ofEntries(
             entry("albany", "EUA"),
             entry("amsterdam", "the Netherlands"),
             entry("atlanta", "EUA"),
@@ -65,7 +65,6 @@ public class GreenbergTraurig extends ByPage {
             entry("united arab emirates", "the UAE"),
             entry("warsaw", "Poland"),
             entry("washington, d.c.", "EUA"),
-            entry("washington dc", "EUA"),
             entry("west palm beach", "EUA"),
             entry("westchester county", "EUA")
     );
@@ -186,11 +185,7 @@ public class GreenbergTraurig extends ByPage {
             By.cssSelector("a")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText()
-                // Keeps only letters and spaces
-                .replaceAll("[^\\p{L} ]", "")
-                .trim().toLowerCase();
-        return OFFICE_TO_COUNTRY.getOrDefault(country, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
     }
 
 

@@ -5,6 +5,10 @@
 <!-- TOC -->
 
 ---
+GIT COMMAND:
+git add . ':!data/sites'
+
+---
 **NOTE:** Remember to remove the ``.gitignore`` for the data firms
 
 ---
