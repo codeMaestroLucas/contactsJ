@@ -18,14 +18,14 @@ public class _CompletedFirmsData {
         new HakunLaw(), new HannesSnellman(), new HavelPartners(), new SpencerWest(), new CassidyLevyKent(),
         new HowseWilliams(), new JonesDay(), new Kinstellar(), new Krogerus(), new KromannReumert(),
         new LathamAndWatkins(), new LeeAndKo(), new LEXLogmannsstofa(), new MagnussonLaw(), new Matheson(),
-        new MeitarLaw(), new MZMLegal(), new FoxAndMandal(), new McMillan(), new RelianceCorporateAdvisors(),
+        new MeitarLaw(), new MZMLegal(), new RelianceCorporateAdvisors(), new Ogier(), new DuncanCotterill(),
         new Pedersoli(), new RopesAndGray(), new Schoenherr(),new WatsonFarleyAndWilliams(), new ShinAndKim(),
         new SprusonAndFerguson(), new TaylorWessing(), new WhiteAndCase(), new SEUM(), new WhiteAndCase(),
         new WinstonAndStrawn(), new WolfTheiss(), new TucaZbarcea(), new PanettaConsultingGroup(), new Finreg360(),
         new MalleyAndCo(), new TiruchelvamAssociates(), new CrowellAndMoring(), new HFW(), new Njord(),
         new Titov(), new VBAdvocates(), new NPPLegal(), new GomezAceboAndPombo(), new WildeboerDellelce(),
         new HNA(), new Werksmans(), new JGSA(), new RDJ(), new MijaresAngoitiaCortesAndFuentes(),
-        new Ogier(), new DuncanCotterill(), new MinterEllisonRuddWatts(),
+        new MinterEllisonRuddWatts(),
 
 
         /** Indian Firms
@@ -36,6 +36,11 @@ public class _CompletedFirmsData {
 
         * No more lawyers to register
         new FoxAndMandal()
+
+        * Problems
+         1) new McMillan() has a CAPTCH that I can't pass through
+
+         *
         */
     };
 

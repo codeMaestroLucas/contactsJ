@@ -19,15 +19,14 @@ public class FoxAndMandal extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        if (index <= 0) {
-            MyDriver.clickOnElement(By.id("custom-accept"));
-        }
+
+        if (index == 0) MyDriver.clickOnElement(By.id("custom-accept"));
     }
 
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            return (List)wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("qDetails")));
+            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("qDetails")));
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }

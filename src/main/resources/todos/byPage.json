@@ -4,6 +4,11 @@
     "link": ""
   },
   {
+    "name": "Nanda & Associate",
+    "link": "https://nanda.ca/our-team/",
+    "note": "check if BARRISTER is a valid position"
+  },
+  {
     "name": "KochharAndCo",
     "link": "https://kochhar.com/people/",
     "note": "INDIAN"
@@ -157,16 +162,13 @@
     "name": "MSP",
     "link": "https://www.mspartner.de/team/unser-team/?lang=en"
   },
-
-
-
   {
     "name": "Hoefer & Partner",
     "link": "https://www.hoefer-pat.de/en/our-team/"
   },
   {
     "name": "Esche",
-    "link": "https://www.esche.de/team"
+    "link": "https://www.esche.de/en/team"
   },
   {
     "name": "Dompatent",
@@ -185,61 +187,30 @@
     "link": "https://xn--kosaar-bua.ee/en/team/#kalev-kaosaar"
   },
   {
-    "name": "AAA Legal",
-    "link": "https://aaa.ee/people"
-  },
-  {
     "name": "AWA",
     "link": "https://www.awa.com/en/people/"
   },
   {
     "name": "Arnesen IP Advokatfirma",
-    "link": "https://www.patrade.dk/om-os"
+    "link": "https://www.patrade.com/about"
   },
   {
     "name": "Aera",
     "link": "https://aera-ip.com/team/"
   },
   {
-    "name": "Budde Schou",
-    "link": "https://buddeschou.dk/en/our-experts/"
-  },
-  {
-    "name": "P. Angelides & Co",
-    "link": "https://www.angelides.law/people/"
-  },
-  {
-    "name": "Hraste&Partneri",
-    "link": "https://www.hraste-partneri.hr/en/#"
-  },
-  {
     "name": "Liedekerke",
-    "link": "https://liedekerke.com/en/lawyers/filter/status:partner"
-  },
-  {
-    "name": "Griss & Partners",
-    "link": "https://www.griss.at/en/team-2/"
-  },
-  {
-    "name": "Schwarz Schönherr",
-    "link": "https://schwarz-schoenherr.com/team"
-  },
-  {
-    "name": "DR & R Abogados",
-    "link": "https://drr-law.com/en/aboutus/"
-  },
-  {
-    "name": "Nanda & Associate",
-    "link": "https://nanda.ca/our-team/"
+    "link": "https://liedekerke.com/en/lawyers/filter"
   },
   {
     "name": "Mills & Mills LLP",
     "link": "https://www.millsandmills.ca/our-lawyers/"
   },
-  {
-    "name": "Levitt Di Lella Duggan & Chaplick LLP",
-    "link": "https://lddclawyers.com/team/"
-  },
+
+
+
+
+
   {
     "name": "Barriston Law",
     "link": "https://www.barristonlaw.com/lawyers/"

@@ -39,7 +39,10 @@ public class DittmarAndIndrenius extends ByPage {
     }
 
     private String getLink(WebElement lawyer) {
-        By[] byArray = new By[]{By.className("contact-row"), By.cssSelector("ul > li > a:last-child")};
+        By[] byArray = new By[]{
+                By.className("contact-row"),
+                By.cssSelector("a[href^='https://www.dittmar.fi/people/']")
+        };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getAttribute("href");
     }

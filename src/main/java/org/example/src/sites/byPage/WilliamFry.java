@@ -109,14 +109,20 @@ public class WilliamFry extends ByPage {
 
 
     private String getCountry(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("contact_details"),
-                By.className("location"),
-                By.className("list__common__link")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = siteUtl.getContentFromTag(element.getAttribute("outerHTML")).split("-")[0].trim();
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        try {
+            By[] byArray = new By[]{
+                    By.className("contact_details"),
+                    By.className("location"),
+                    By.className("list__common__link")
+            };
+            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+            String country = siteUtl.getContentFromTag(element.getAttribute("outerHTML")).split("-")[0].trim();
+            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return "";
+        }
     }
 
 

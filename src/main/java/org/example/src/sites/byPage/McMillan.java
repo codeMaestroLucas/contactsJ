@@ -21,9 +21,8 @@ public class McMillan extends ByPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(2500L);
-        if (index <= 0) {
-            MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
-        }
+
+        if (index == 0) MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
     }
 
     protected List<WebElement> getLawyersInPage() {
@@ -32,7 +31,7 @@ public class McMillan extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = (List)wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("lawyers-grid")));
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("lawyers-grid")));
             return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -70,5 +69,11 @@ public class McMillan extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of("link", this.getLink(lawyer), "name", this.getName(lawyer), "role", this.getRole(lawyer), "firm", this.name, "country", "Canada", "practice_area", "", "email", socials[0], "phone", socials[1]);
+    }
+
+
+    public static void main(String[] args) {
+        McMillan x = new McMillan();
+        x.searchForLawyers();
     }
 }

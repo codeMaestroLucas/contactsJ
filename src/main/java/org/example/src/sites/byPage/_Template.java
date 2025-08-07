@@ -102,7 +102,7 @@ public class _Template extends ByPage {
         try {
             List<WebElement> socials = lawyer
                         .findElement(By.className(""))
-                        .findElements(By.cssSelector(""));
+                        .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {

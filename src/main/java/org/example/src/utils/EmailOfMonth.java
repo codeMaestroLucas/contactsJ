@@ -5,16 +5,16 @@ import java.nio.file.*;
 import java.time.LocalDate;
 
 public class EmailOfMonth {
+    private static final String currentFormattedDate = String.format(
+            "%d/%d\n",LocalDate.now().getMonthValue(), LocalDate.now().getYear()
+    );
 
     /**
      * Formats the string line to be inserted in the file.
      */
     private static String generateStringToFile(String email) {
         int emptySpaces = 70 - email.length();
-        int month = LocalDate.now().getMonthValue();
-        int year = LocalDate.now().getYear();
-
-        return email + " ".repeat(emptySpaces) + month + "/" + year + "\n";
+        return email + " ".repeat(emptySpaces) + currentFormattedDate;
     }
 
 
