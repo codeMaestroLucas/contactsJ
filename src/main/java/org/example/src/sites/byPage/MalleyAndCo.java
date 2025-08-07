@@ -59,7 +59,7 @@ public class MalleyAndCo extends ByPage {
                 By.cssSelector("a")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return "https://www.malley.co.nz" + element.getAttribute("href");
+        return element.getAttribute("href");
     }
 
 

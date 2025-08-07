@@ -20,7 +20,7 @@ public class ByrneWallace extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.id("bwSubmitButton"));
+            MyDriver.clickOnElement(By.id("bwSubmitButton"));
         }
     }
 

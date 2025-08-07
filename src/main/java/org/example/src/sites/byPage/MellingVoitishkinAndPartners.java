@@ -33,7 +33,7 @@ public class MellingVoitishkinAndPartners extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.cssSelector("div.cookies__button > button.button.button_secondary"));
+        MyDriver.clickOnElement(By.cssSelector("div.cookies__button > button.button.button_secondary"));
     }
 
 

@@ -22,7 +22,7 @@ public class AlTamimi extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+            MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
         }
     }
 

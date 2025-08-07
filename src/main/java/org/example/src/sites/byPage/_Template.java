@@ -36,7 +36,8 @@ public class _Template extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.id(""));
+        // Click on add btn
+        MyDriver.clickOnElement(By.id(""));
     }
 
 

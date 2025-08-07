@@ -35,8 +35,8 @@ public class CassidyLevyKent extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.className("cmplz-accept"));
-        this.siteUtl.clickOnAddBtn(By.className("wp-popup-close-icon"));
+        MyDriver.clickOnElement(By.className("cmplz-accept"));
+        MyDriver.clickOnElement(By.className("wp-popup-close-icon"));
     }
 
 

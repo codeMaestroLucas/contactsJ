@@ -32,7 +32,7 @@ public class Oxera extends ByPage {
 
         if (index > 0) return;
 
-        siteUtl.clickOnAddBtn(By.cssSelector(""));
+        MyDriver.clickOnElement(By.cssSelector(""));
     }
 
 

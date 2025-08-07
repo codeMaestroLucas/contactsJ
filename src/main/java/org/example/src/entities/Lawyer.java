@@ -21,12 +21,17 @@ public class Lawyer {
     private final String[] validRoles = {
             "Senior Partner",
             "Senior Associate",
+            "Senior Director",
             "Senior Advisor",
+
             "Of Counsel",
+
             "Managing Partner",
             "Managing Director",
             "Managing Associate",
+
             "Founding Partner",
+
             "Partner",
             "Shareholder",
             "Counsel",
@@ -34,7 +39,7 @@ public class Lawyer {
             "Founder",
             "Advisor",
             "Principal",
-//                "Head",
+                "Head",
     };
 
 

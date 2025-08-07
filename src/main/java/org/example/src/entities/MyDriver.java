@@ -1,11 +1,11 @@
 package org.example.src.entities;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -42,7 +42,7 @@ public class MyDriver {
     public static void waitForPageToLoad() {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(6));
 
-        new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofMinutes(6))
+        new WebDriverWait(driver, Duration.ofMinutes(6))
                 .until(webDriver -> ((JavascriptExecutor) webDriver)
                         .executeScript("return document.readyState")
                         .equals("complete"));
@@ -65,6 +65,79 @@ public class MyDriver {
                     .perform();
         }
         Thread.sleep(1500);
+    }
+
+    /**
+     * Waits until 10sec to find a element and then perform a click.
+     * @param by locator for the element
+     */
+    public static void clickOnElement(By by) {
+        // Find element
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement elementToClick = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+
+        // Click on element
+        try {
+            elementToClick.click();
+
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
+        }
+    }
+
+
+    /**
+     * Perform a click on a element passed
+     * @param element to click
+     */
+    public static void clickOnElement(WebElement element) {
+        // Find element
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement elementToClick = wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        // Click on element
+        try {
+            elementToClick.click();
+
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
+        }
+    }
+
+
+    /**
+     * Clicks on the given element multiple times with a delay between each click.
+     *
+     * @param element            The element to click. Can be either a {@link By} locator or a {@link WebElement}.
+     * @param numberOfIterations Number of times the element should be clicked.
+     * @param sleepTime          Time in seconds to wait between clicks.
+     * @throws InterruptedException if the thread is interrupted during sleep.
+     * @throws IllegalArgumentException if the element is neither a By nor a WebElement.
+     */
+    public static void clickOnElementMultipleTimes(
+            Object element, int numberOfIterations, int sleepTime
+    ) throws InterruptedException {
+
+
+        int i = 0;
+        try {
+            for (i = 0; i < numberOfIterations; i++) {
+                if (element instanceof By) {
+                    clickOnElement((By) element);
+
+                } else if (element instanceof WebElement) {
+                    clickOnElement((WebElement) element);
+
+                } else {
+                    throw new IllegalArgumentException("Element must be either a By or WebElement");
+                }
+
+                Thread.sleep(1000L * sleepTime);
+            }
+        } catch (Exception e) {
+            System.out.printf("Stopped before completing all the %d clicks.\n", numberOfIterations);
+            System.out.printf("Performed only %d clicks.\n", i);
+        }
     }
 
 

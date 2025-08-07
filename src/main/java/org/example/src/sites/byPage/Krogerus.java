@@ -31,7 +31,7 @@ public class Krogerus extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        this.siteUtl.clickOnAddBtn(By.id("elc-accept-link"));
+        MyDriver.clickOnElement(By.id("elc-accept-link"));
     }
 
 

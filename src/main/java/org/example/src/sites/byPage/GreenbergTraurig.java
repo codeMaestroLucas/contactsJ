@@ -99,7 +99,7 @@ public class GreenbergTraurig extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index == 0) this.siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+        if (index == 0) MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
 
         // Click on load more btn
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

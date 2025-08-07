@@ -8,7 +8,7 @@ import org.example.src.sites.byPage.*;
 public class _CompletedFirmsData {
 
     public final static Site[] byPage = {
-        new AlTamimi(),  new ApplebyGlobal(), new ArnoldAndPorter(), new MijaresAngoitiaCortesAndFuentes(), new BNT(),
+        new AlTamimi(),  new ApplebyGlobal(), new ArnoldAndPorter(),  new BNT(), new WilliamFry(),
         new AronTadmorLevy(), new Ashurst(), new BaeKimAndLee(), new BonelliErede(), new Walkers(),
         new ByrneWallace(), new CampbellsLegal(), new CareyOlsen(), new CFNLaw(), new ClemensLaw(),
         new CollasCrill(), new ConsortiumLegal(), new Conyers(), new DahlLaw(), new Deacons(),
@@ -23,7 +23,9 @@ public class _CompletedFirmsData {
         new SprusonAndFerguson(), new TaylorWessing(), new WhiteAndCase(), new SEUM(), new WhiteAndCase(),
         new WinstonAndStrawn(), new WolfTheiss(), new TucaZbarcea(), new PanettaConsultingGroup(), new Finreg360(),
         new MalleyAndCo(), new TiruchelvamAssociates(), new CrowellAndMoring(), new HFW(), new Njord(),
-        new Titov(), new VBAdvocates(), new NPPLegal(),
+        new Titov(), new VBAdvocates(), new NPPLegal(), new GomezAceboAndPombo(), new WildeboerDellelce(),
+        new HNA(), new Werksmans(), new JGSA(), new RDJ(), new MijaresAngoitiaCortesAndFuentes(),
+        new Ogier(), new DuncanCotterill(), new MinterEllisonRuddWatts(),
 
 
         /** Indian Firms

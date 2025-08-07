@@ -32,7 +32,7 @@ public class SEUM extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        this.siteUtl.clickOnAddBtn(By.id(""));
+        MyDriver.clickOnElement(By.id(""));
     }
 
 

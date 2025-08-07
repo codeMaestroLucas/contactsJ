@@ -22,7 +22,7 @@ public class McCarthyTetrault extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(2500L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+            MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
         }
     }
 

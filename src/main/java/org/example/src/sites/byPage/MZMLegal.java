@@ -32,7 +32,7 @@ public class MZMLegal extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        this.siteUtl.clickOnAddBtn(By.id("wt-cli-accept-all-btn"));
+        MyDriver.clickOnElement(By.id("wt-cli-accept-all-btn"));
     }
 
 

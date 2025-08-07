@@ -62,7 +62,7 @@ public class Schoenherr extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        this.siteUtl.clickOnAddBtn(By.className("btn--cookie"));
+        MyDriver.clickOnElement(By.className("btn--cookie"));
     }
 
 

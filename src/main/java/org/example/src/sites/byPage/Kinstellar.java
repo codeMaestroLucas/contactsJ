@@ -37,7 +37,7 @@ public class Kinstellar extends ByPage {
 
         String value = driver.findElement(By.id("main_content_results_panel")).findElement(By.cssSelector("span")).getText();
         int numericValue = Integer.parseInt(value.replaceAll("[^0-9]", ""));
-        this.siteUtl.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+        MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
         MyDriver.rollDown((numericValue / 10) + 1, 0.5);
     }
 

@@ -20,7 +20,7 @@ public class FoxAndMandal extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.id("custom-accept"));
+            MyDriver.clickOnElement(By.id("custom-accept"));
         }
     }
 

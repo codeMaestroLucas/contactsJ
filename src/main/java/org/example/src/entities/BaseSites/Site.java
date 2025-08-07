@@ -105,8 +105,11 @@ public abstract class Site  {
             if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {
                 email = value;
             }
+
             // Check if it's a valid phone number
-            else if ((value.contains("tel") || value.contains("+") || value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
+            else if ((
+                    value.contains("tel") || value.contains("+") || value.contains("phone") ||
+                    value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
                 String cleaned = value.replaceAll("[^0-9]", "");
                 if (cleaned.length() > 5) { // To prevent if an invalid value has been set to phone
                     phone = cleaned;

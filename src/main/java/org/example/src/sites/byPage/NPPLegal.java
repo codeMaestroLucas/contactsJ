@@ -31,7 +31,7 @@ public class NPPLegal extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.cssSelector("button.cookie-btn.pull-right"));
+        MyDriver.clickOnElement(By.cssSelector("button.cookie-btn.pull-right"));
     }
 
 

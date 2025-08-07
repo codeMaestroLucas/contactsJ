@@ -73,7 +73,8 @@ public class WhiteAndCase extends ByPage {
             entry("united arab emirates", "the UAE"),
             entry("united states", "USA"),
             entry("warsaw", "Poland"),
-            entry("washington dc", "USA")
+            entry("washington dc", "USA"),
+            entry("washington", "USA")
     );
 
 
@@ -106,7 +107,7 @@ public class WhiteAndCase extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index == 0) this.siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+        if (index == 0) MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
 
         int resultsValue = Integer.parseInt(
                 driver.findElement(By.className("view-header"))

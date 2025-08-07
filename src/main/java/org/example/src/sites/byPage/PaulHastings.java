@@ -58,7 +58,7 @@ public class PaulHastings extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.cssSelector("button.dnqsUT"));
+        MyDriver.clickOnElement(By.cssSelector("button.dnqsUT"));
     }
 
 

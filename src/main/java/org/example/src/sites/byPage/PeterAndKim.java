@@ -22,7 +22,7 @@ public class PeterAndKim extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.cssSelector("button.cmplz-btn.cmplz-accept"));
+            MyDriver.clickOnElement(By.cssSelector("button.cmplz-btn.cmplz-accept"));
         }
     }
 

@@ -59,7 +59,7 @@ public class SpencerWest extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.className("cky-btn-accept"));
+        MyDriver.clickOnElement(By.className("cky-btn-accept"));
     }
 
 

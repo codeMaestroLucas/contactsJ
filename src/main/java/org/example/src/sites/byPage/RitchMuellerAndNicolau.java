@@ -38,7 +38,7 @@ public class RitchMuellerAndNicolau extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.id("agree-with-policy"));
+        MyDriver.clickOnElement(By.id("agree-with-policy"));
     }
 
 

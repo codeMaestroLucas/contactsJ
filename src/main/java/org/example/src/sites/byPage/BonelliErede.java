@@ -20,7 +20,7 @@ public class BonelliErede extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        this.siteUtl.clickOnAddBtn(By.className("action--bonelli-cookiebar-accept"));
+        MyDriver.clickOnElement(By.className("action--bonelli-cookiebar-accept"));
     }
 
     protected List<WebElement> getLawyersInPage() {

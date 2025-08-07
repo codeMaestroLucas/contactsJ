@@ -32,7 +32,7 @@ public class TiruchelvamAssociates extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        this.siteUtl.clickOnAddBtn(By.id("agree-btn"));
+        MyDriver.clickOnElement(By.id("agree-btn"));
     }
 
 

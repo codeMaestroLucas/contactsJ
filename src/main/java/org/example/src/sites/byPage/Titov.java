@@ -32,7 +32,7 @@ public class Titov extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        this.siteUtl.clickOnAddBtn(By.id("close-cookies-yes"));
+        MyDriver.clickOnElement(By.id("close-cookies-yes"));
     }
 
 

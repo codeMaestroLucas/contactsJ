@@ -31,7 +31,7 @@ public class Sangra extends ByPage {
 
         if (index > 0) return;
 
-        siteUtl.clickOnAddBtn(By.id(""));
+        MyDriver.clickOnElement(By.id(""));
     }
 
 

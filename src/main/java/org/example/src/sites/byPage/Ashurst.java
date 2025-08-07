@@ -22,7 +22,7 @@ public class Ashurst extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.xpath("//*[@id=\"termsfeed-com---nb\"]/div/div[3]/button[1]"));
+            MyDriver.clickOnElement(By.xpath("//*[@id=\"termsfeed-com---nb\"]/div/div[3]/button[1]"));
         }
     }
 

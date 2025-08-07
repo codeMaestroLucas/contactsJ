@@ -36,7 +36,7 @@ public class Njord extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.className("coi-banner__accept"));
+        MyDriver.clickOnElement(By.className("coi-banner__accept"));
     }
 
 

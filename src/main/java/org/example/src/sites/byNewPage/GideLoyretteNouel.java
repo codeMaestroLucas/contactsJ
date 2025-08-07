@@ -48,7 +48,7 @@ public class GideLoyretteNouel extends ByPage {
 
         // Click on filter to load lawyers
         if (index == 0) {
-            siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+            MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
 
             driver.findElement(By.className("filters"))
                   .findElement(By.className("list"))

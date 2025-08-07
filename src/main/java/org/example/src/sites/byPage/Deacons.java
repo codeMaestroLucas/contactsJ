@@ -20,7 +20,7 @@ public class Deacons extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.id("wt-cli-accept-all-btn"));
+            MyDriver.clickOnElement(By.id("wt-cli-accept-all-btn"));
         }
     }
 

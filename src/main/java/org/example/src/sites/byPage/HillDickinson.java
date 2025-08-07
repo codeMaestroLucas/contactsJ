@@ -53,7 +53,7 @@ public class HillDickinson extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.id("ccc-recommended-settings"));
+        MyDriver.clickOnElement(By.id("ccc-recommended-settings"));
     }
 
 

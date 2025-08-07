@@ -33,7 +33,7 @@ public class MagnussonLaw extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        this.siteUtl.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+        MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
 
         WebElement loadMoreBtn = driver.findElement(By.className("js-archive-load-more"));
         for (int i = 0; i < 10; i++) {

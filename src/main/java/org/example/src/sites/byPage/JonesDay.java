@@ -82,7 +82,7 @@ public class JonesDay extends ByPage {
                 .until(ExpectedConditions.presenceOfElementLocated(By.className("professional__container")));
 
         if (index == 0) {
-            this.siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+            MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
 
         } else {
             // It takes a long time to load more lawyers

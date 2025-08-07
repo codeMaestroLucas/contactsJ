@@ -98,8 +98,8 @@ public class SiteUtils {
                 }
 
             } catch (Exception ignored) {
-                throw ignored;
-//                System.out.println(ignored.getMessage());
+//                throw ignored;
+                System.out.println(ignored.getMessage());
             }
         }
         return validLawyers;
@@ -130,21 +130,6 @@ public class SiteUtils {
         Matcher matcher =
                 Pattern.compile(">([^<>]+)<").matcher(tag);
         return matcher.find() ? matcher.group(1) : null;
-    }
-
-
-    /**
-     * Waits until 10sec for the presence of the add btn and then click on it.
-     * @param by direct path for the addBtn.
-     */
-    public void clickOnAddBtn(By by) {
-        try {
-            // Wait up to 10 seconds for elements to be present
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement btn = wait.until(ExpectedConditions.presenceOfElementLocated(by));
-            btn.click();
-
-        } catch (Exception _) {}
     }
 
 

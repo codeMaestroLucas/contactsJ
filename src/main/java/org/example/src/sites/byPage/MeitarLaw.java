@@ -42,7 +42,7 @@ public class MeitarLaw extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.id(""));
+        MyDriver.clickOnElement(By.id(""));
     }
 
 

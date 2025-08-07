@@ -32,7 +32,7 @@ public class Fasken extends ByPage {
 
         if (index > 0) return;
 
-        siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
     }
 
 

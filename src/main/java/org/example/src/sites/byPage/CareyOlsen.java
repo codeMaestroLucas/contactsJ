@@ -20,7 +20,7 @@ public class CareyOlsen extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.id("ccc-recommended-settings"));
+            MyDriver.clickOnElement(By.id("ccc-recommended-settings"));
         }
     }
 

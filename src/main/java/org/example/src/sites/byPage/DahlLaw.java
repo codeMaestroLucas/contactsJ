@@ -20,7 +20,7 @@ public class DahlLaw extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            this.siteUtl.clickOnAddBtn(By.className("coi-banner__accept"));
+            MyDriver.clickOnElement(By.className("coi-banner__accept"));
             MyDriver.rollDown(2, (double)0.5F);
         }
     }

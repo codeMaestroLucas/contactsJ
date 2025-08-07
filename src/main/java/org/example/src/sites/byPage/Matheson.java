@@ -34,7 +34,7 @@ public class Matheson extends ByPage {
 
         if (index > 0) return;
 
-        this.siteUtl.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
     }
 
 
