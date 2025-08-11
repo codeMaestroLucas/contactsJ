@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
-        List<Site> sites = CompletedFirms.constructFirms();
+        List<Site> sites = CompletedFirms.constructFirms(50);
         Reports reports = Reports.getINSTANCE();
 
         long initTotalTime = System.currentTimeMillis();

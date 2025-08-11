@@ -25,7 +25,13 @@ public class _CompletedFirmsData {
         new MalleyAndCo(), new TiruchelvamAssociates(), new CrowellAndMoring(), new HFW(), new Njord(),
         new Titov(), new VBAdvocates(), new NPPLegal(), new GomezAceboAndPombo(), new WildeboerDellelce(),
         new HNA(), new Werksmans(), new JGSA(), new RDJ(), new MijaresAngoitiaCortesAndFuentes(),
-        new MinterEllisonRuddWatts(),
+        new MinterEllisonRuddWatts(), new JamesAndWells(), new MacphersonKelley(), new BankiHaddockFiora(), new MBIP(),
+        new LEFOSSE(), new DCCLaw(), new Andersen(), new SantamarinaAndSteta(), new AguayoEcclefieldAndMartinez(),
+        new Tavares(), new DaleAndLessmann(), new OyenWiggs(), new NelliganLaw(), new ClarkWilson(),
+        new RamdasAndWong(),  new StephensonHarwood(), new SFKSLaw(), new KISCHIP(), new VOPatentsAndTrademarks(),
+        new ZamfirescuRacotiPredoiu(), new LaszczukAndWspolnicy(), new DrzewieckiTomaszek(), new MASLaw(), new MSP(),
+        new VieringJentschuraAndPartner(), new Esche(), new Dompatent(), new BARDEHLEPAGENBERG(), new Kolster(),
+        new HammarskioldAndCo(), new AWA(),
 
 
         /** Indian Firms
@@ -63,5 +69,4 @@ public class _CompletedFirmsData {
     public final static Site[] byClick = {
 
     };
-
 }

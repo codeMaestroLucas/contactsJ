@@ -22,15 +22,22 @@ public class CompletedFirms {
      * Construct all firms that are not inserted in the week file then insert the filter firms in the in an array and
      * then shuffle it.
      */
-    public static List<Site> constructFirms() {
-        List<Site> collect = Stream.of(byPage, byNewPage, byFilter, byClick)
-                .flatMap(array -> Arrays.stream(array).filter(Objects::nonNull))
-                // Firms that aren't registered in the week file
-                .filter(site -> !FirmsOfWeek.isRegisteredInFirmWeek(site.name))
-                .collect(Collectors.toList());
+    public static List<Site> constructFirms(int maxFirmsToGet) {
+        Site[][] sites = new Site[][] {byPage, byNewPage, byFilter, byClick};
+        List<Site> filteredSites = new ArrayList<>();
 
-        Collections.shuffle(collect); // Shuffle the list
-        return collect;
+        // Filter all sites that weren't registered in the `week` file
+        for (Site[] category : sites) {
+            for (Site site : category) {
+                if (site != null
+                    && !FirmsOfWeek.isRegisteredInFirmWeek(site.name)) {
+                        filteredSites.add(site);
+                }
+            }
+        }
+
+        Collections.shuffle(filteredSites);
+        return filteredSites.subList(0, maxFirmsToGet);
     }
 
 
@@ -80,7 +87,5 @@ public class CompletedFirms {
     }
 
 
-    public static void main(String[] args) {
-        showCompletedFirmsPrint();
-    }
+    public static void main(String[] args) { showCompletedFirmsPrint(); }
 }
