@@ -23,12 +23,14 @@ public class Lawyer {
             "Senior Associate",
             "Senior Director",
             "Senior Advisor",
+            "Associate Principal",
 
             "Of Counsel",
 
             "Managing Partner",
             "Managing Director",
             "Managing Associate",
+            "Managing Principal",
 
             "Founding Partner",
 
@@ -39,7 +41,7 @@ public class Lawyer {
             "Founder",
             "Advisor",
             "Principal",
-                "Head",
+            "Head",
     };
 
 

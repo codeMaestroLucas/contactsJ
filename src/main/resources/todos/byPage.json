@@ -4,7 +4,7 @@
     "link": ""
   },
   {
-    "name": "Nanda & Associate",
+    "name": "NandaAndAssociate",
     "link": "https://nanda.ca/our-team/",
     "note": "check if BARRISTER is a valid position"
   },
@@ -18,178 +18,8 @@
     "link": "https://www.spcm.in/our-team",
     "note": "INDIA"
   },
-  {
-    "name": "James & Wells",
-    "link": "https://www.jamesandwells.com/intl/our-team/"
-  },
-  {
-    "name": "Chapman Tripp",
-    "link": "https://chapmantripp.com/our-people/"
-  },
-  {
-    "name": "Macpherson Kelley",
-    "link": "https://mk.com.au/people-profiles/?searchWords=&sentence=1&expertises%5B%5D=&industries%5B%5D=&levels%5B%5D=principal-lawyer&locations%5B%5D="
-  },
-  {
-    "name": "Banki Haddock Fiora",
-    "link": "https://www.bhf.com.au/people"
-  },
-  {
-    "name": "MBIP",
-    "link": "https://www.mbip.com.au/attorneys/"
-  },
-  {
-    "name": "LEFOSSE",
-    "link": "https://lefosse.com/en?post_type=advogados&s=&atuacao=&cargo=partner"
-  },
-  {
-    "name": "DCC Law",
-    "link": "https://dcc.com/people/"
-  },
-  {
-    "name": "Warde Advogados",
-    "link": "https://warde.com.br/team/"
-  },
-  {
-    "name": "Andersen",
-    "link": "https://uy.andersen.com/professionals.php"
-  },
-  {
-    "name": "Santamarina and Steta",
-    "link": "https://www.santamarinasteta.mx/equipo-sys/?_puesto_rol=socio"
-  },
-  {
-    "name": "Uhthoff",
-    "link": "https://uhthoff.com.mx/en/our-team/"
-  },
-  {
-    "name": "Calderon & De La Sierra",
-    "link": "https://cyslaw.mx/en/equipo/"
-  },
-  {
-    "name": "Aguayo, Ecclefield & Martinez",
-    "link": "https://www.aem.cl/nuestro-equipo/"
-  },
-  {
-    "name": "Tavares",
-    "link": "https://www.tavaresoffice.com.br/about-us/#our-team"
-  },
-  {
-    "name": "Dale & Lessmann",
-    "link": "https://www.dalelessmann.com/our-people/",
-    "Note": "Avoid the Counsel - too old"
-  },
-  {
-    "name": "Oyen Wiggs",
-    "link": "https://patentable.com/all-people/",
-    "Note": "Check if is an valid firm - Canada"
-  },
-  {
-    "name": "Nelligan Law",
-    "link": "https://nelliganlaw.ca/team/",
-    "Note": "Check if is an valid firm - Canada"
-  },
-  {
-    "name": "Clark Wilson LLP",
-    "link": "https://www.cwilson.com/team/lawyers/",
-    "Note": "Check if is an valid firm - Canada"
-  },
-  {
-    "name": "Ramdas & Wong",
-    "link": "https://www.ramdwong.com.sg/#lawyersprofile"
-  },
-  {
-    "name": "MAS Law",
-    "link": "https://maslaw.com/people/"
-  },
-  {
-    "name": "Abbas & Ngan",
-    "link": "https://abasan.my/lawyers/"
-  },
-  {
-    "name": "Nurmansyah& Muzdalifah",
-    "link": "https://nm-advocates.com/our-people/"
-  },
-  {
-    "name": "Stephenson Harwood",
-    "link": "https://www.stephensonharwood.com/people#searchtype=categories;type=All;"
-  },
-  {
-    "name": "SFKS - Sit, Fung, Kwong & Schum",
-    "link": "https://www.sfks.com.hk/en/members/member.php?id=5"
-  },
-  {
-    "name": "Janlea Patent Agency",
-    "link": "http://en.janlea.com/jingyingtuandui/"
-  },
-  {
-    "name": "KISCH IP",
-    "link": "https://www.kisch-ip.com/Directors"
-  },
-  {
-    "name": "Zamfirescu Racoti Predoiu",
-    "link": "https://zrvp.ro/ourpeople/partners/"
-  },
-  {
-    "name": "LDS Lazewski Depo & Partners",
-    "link": "https://www.lds-ip.pl/about-us/#team"
-  },
-  {
-    "name": "Laszczuk & Wspolnicy",
-    "link": "https://laszczuk.pl/en/aktualnosci/zespol/"
-  },
-  {
-    "name": "Drzewiecki, Tomaszek & Partners",
-    "link": "https://dt.com.pl/team/"
-  },
-  {
-    "name": "Onsagers",
-    "link": "https://www.acapo-onsagers.com/en/about-us/our-consultants?department=All+departments&office=All+offices"
-  },
-  {
-    "name": "V.O. Patents & Trademarks",
-    "link": "https://www.vo.eu/home/experts/"
-  },
-  {
-    "name": "Tomkins & Co",
-    "link": "https://www.tomkins.com/our-team/"
-  },
-  {
-    "name": "Viering, Jentschura & Partner",
-    "link": "https://www.vjp.de/en/team"
-  },
-  {
-    "name": "MSP",
-    "link": "https://www.mspartner.de/team/unser-team/?lang=en"
-  },
-  {
-    "name": "Hoefer & Partner",
-    "link": "https://www.hoefer-pat.de/en/our-team/"
-  },
-  {
-    "name": "Esche",
-    "link": "https://www.esche.de/en/team"
-  },
-  {
-    "name": "Dompatent",
-    "link": "https://www.dompatent.de/en/ip-experts/"
-  },
-  {
-    "name": "BARDEHLE PAGENBERG",
-    "link": "https://www.bardehle.com/en/team"
-  },
-  {
-    "name": "Kolster",
-    "link": "https://www.kolster.fi/en/experts"
-  },
-  {
-    "name": "Käosaar & Co.",
-    "link": "https://xn--kosaar-bua.ee/en/team/#kalev-kaosaar"
-  },
-  {
-    "name": "AWA",
-    "link": "https://www.awa.com/en/people/"
-  },
+
+
   {
     "name": "Arnesen IP Advokatfirma",
     "link": "https://www.patrade.com/about"
@@ -203,7 +33,7 @@
     "link": "https://liedekerke.com/en/lawyers/filter"
   },
   {
-    "name": "Mills & Mills LLP",
+    "name": "MillsAndMills LLP",
     "link": "https://www.millsandmills.ca/our-lawyers/"
   },
 
@@ -220,11 +50,11 @@
     "link": "https://www.pagenelson.co.uk/about/"
   },
   {
-    "name": "Blandy & Blandy",
+    "name": "BlandyAndBlandy",
     "link": "https://www.blandy.co.uk/about/find-a-solicitor/"
   },
   {
-    "name": "LindaWang Su & Boo",
+    "name": "LindaWang SuAndBoo",
     "link": "https://www.zicoip.com/our-team"
   },
   {
@@ -240,7 +70,7 @@
     "link": "https://www.allens.com.au/search/people/?q=&sort=&jtVals=168&jtVals=169&jtVals=12&jt=168%2C169%2C12&l=All&l=&s=All&s=&pr=All&pr=&i=All&i=&_t_dtq=true"
   },
   {
-    "name": "Thanathip & Partners",
+    "name": "ThanathipAndPartners",
     "link": "https://www.thanathippartners.com/our-team#partners-t2"
   },
   {
@@ -268,7 +98,7 @@
     "link": "https://www.anant-lawfirm.com/people/"
   },
   {
-    "name": "Abrahams Davidson & Co",
+    "name": "Abrahams DavidsonAndCo",
     "link": "https://www.adcobrunei.com/partners-main/"
   },
   {
@@ -288,20 +118,20 @@
     "link": "https://www.klpartners.com/attorneys-2/"
   },
   {
-    "name": "Choi & Kim",
+    "name": "ChoiAndKim",
     "link": "https://www.choikim.com/bbs/board.php?bo_table=lawyer_en"
   },
   {
-    "name": "DR & AJU",
+    "name": "DRAndAJU",
     "link": "https://www.draju.com/en/sub/people.html?sT=1?d_t_num=1&d_t_tit=All"
   },
   {
-    "name": "Peter & Kim",
+    "name": "PeterAndKim",
     "link": "https://peterandkim.com/team/",
     "Note": "Check if there's any more lawyer to register"
   },
   {
-    "name": "Shin & Kim",
+    "name": "ShinAndKim",
     "link": "https://www.shinkim.com/eng/member/list?bizCode=&name=a"
   },
   {
@@ -309,15 +139,15 @@
     "link": "https://sta-lawyers.com/en/ourteam/lawyer"
   },
   {
-    "name": "PC Woo & Co",
+    "name": "PC WooAndCo",
     "link": "https://www.pcwoo.com.hk/people.html"
   },
   {
-    "name": "Cocking & Co",
+    "name": "CockingAndCo",
     "link": "https://www.cockingco.com/ian-cocking/"
   },
   {
-    "name": "Eric Chow & Co",
+    "name": "Eric ChowAndCo",
     "link": "https://www.ericchow.com.hk/en/our_team"
   },
   {
@@ -329,7 +159,7 @@
     "link": "https://east-ip.com/"
   },
   {
-    "name": "Rita Ku & Ser",
+    "name": "Rita KuAndSer",
     "link": "https://rkslaws.com/solicitors/"
   },
   {
@@ -353,7 +183,7 @@
     "link": "https://www.shlegal.com/people#searchtype=categories;type=Partners;"
   },
   {
-    "name": "Steinmetz Haring Gurman & Co",
+    "name": "Steinmetz Haring GurmanAndCo",
     "link": "https://shg-law.co/the-team/#filter=.team_iso_6"
   },
   {
@@ -365,19 +195,19 @@
     "link": "https://www.siriusadvokater.dk/en/personer"
   },
   {
-    "name": "Simpson Thacher & Bartlett",
+    "name": "Simpson ThacherAndBartlett",
     "link": "https://www.stblaw.com/offices/beijing"
   },
   {
-    "name": "S Horowitz & Co",
+    "name": "S HorowitzAndCo",
     "link": "https://s-horowitz.com/our-team/?sl=1&position=partner"
   },
   {
-    "name": "Shonubi Musoke & Co",
+    "name": "Shonubi MusokeAndCo",
     "link": "https://www.shonubimusoke.co.ug/Our-people/Partners/Noah-Mwesigwa"
   },
   {
-    "name": "Shin & Kim",
+    "name": "ShinAndKim",
     "link": "https://www.shinkim.com/eng/member/list?page=4&size=10&name=A&bizCode="
   },
   {
@@ -397,7 +227,7 @@
     "link": "https://schindlerattorneys.com/en/team/"
   },
   {
-    "name": "SAL & Caldeira Advogados",
+    "name": "SALAndCaldeira Advogados",
     "link": "https://salcaldeira.com/index.php/en/team"
   },
   {
@@ -413,11 +243,11 @@
     "link": "https://sagalegal.in/pages/Team.html"
   },
   {
-    "name": "Russin & Vecchi",
+    "name": "RussinAndVecchi",
     "link": "https://russinvecchi.ru/team/"
   },
   {
-    "name": "Russi & Eguiguren | Quadrant",
+    "name": "RussiAndEguiguren | Quadrant",
     "link": "https://www.relegal.cl/corporate-practice.html"
   },
   {
@@ -445,15 +275,15 @@
     "link": "https://www.resourcelawasia.com/people/adrian-aw/"
   },
   {
-    "name": "Reff & Asociaţii",
+    "name": "ReffAndAsociaţii",
     "link": "https://www.reff-associates.ro/re/en/team/partners.html?icid=top_partners"
   },
   {
-    "name": "Rădulescu & Mușoi",
+    "name": "RădulescuAndMușoi",
     "link": "http://radulescu-musoi.ro/who-we-are/"
   },
   {
-    "name": "Rödl & Partner",
+    "name": "RödlAndPartner",
     "link": "https://www.roedl.lt/en/team/"
   },
   {
@@ -461,7 +291,7 @@
     "link": "https://quorus.ch/team"
   },
   {
-    "name": "Prica & Partners",
+    "name": "PricaAndPartners",
     "link": "https://pricapartners.com/people/"
   },
   {
@@ -485,15 +315,15 @@
     "link": "https://porwisz.pl/en/our-team/"
   },
   {
-    "name": "Popovici Niţu Stoica & Asociaţii",
+    "name": "Popovici Niţu StoicaAndAsociaţii",
     "link": "https://pnsa.ro/team/partn/partners.asp"
   },
   {
-    "name": "Popescu & Asociatii",
+    "name": "PopescuAndAsociatii",
     "link": "https://popescu-asociatii.ro/our-team/partners/"
   },
   {
-    "name": "Pollonais Blanc de la Bastide & Jacelon",
+    "name": "Pollonais Blanc de la BastideAndJacelon",
     "link": "https://polanc.com/lawyers/mark-j-laquis/"
   },
   {
@@ -505,7 +335,7 @@
     "link": "https://pfp.law/team/"
   },
   {
-    "name": "Peterka & Partners",
+    "name": "PeterkaAndPartners",
     "link": "https://www.peterkapartners.com/en/localteams/all/"
   },
   {
@@ -553,7 +383,7 @@
     "link": "https://www.olmedo.com.py/en/our-team.php"
   },
   {
-    "name": "Oldham Li & Nie",
+    "name": "Oldham LiAndNie",
     "link": "https://oln-law.com/our-people/"
   },
   {
@@ -613,7 +443,7 @@
     "link": "https://mnsattorneys.co.za/our-people/directors/"
   },
   {
-    "name": "Mitel & Asociaţii",
+    "name": "MitelAndAsociaţii",
     "link": "https://mitelpartners.ro/our-team/"
   },
   {
@@ -661,7 +491,7 @@
     "link": "https://www.mhcolaw.com/peoples"
   },
   {
-    "name": "Makarim & Taira S",
+    "name": "MakarimAndTaira S",
     "link": "https://makarim.com/lawyers#"
   },
   {
@@ -725,7 +555,7 @@
     "link": "https://legesadvokat.com/teams/"
   },
   {
-    "name": "Lee Choon Wan & Co",
+    "name": "Lee Choon WanAndCo",
     "link": "https://leecwco.com.my/people/lily-tan-chea-li"
   },
   {
@@ -749,7 +579,7 @@
     "link": "https://twk.bpsinternet.com.br/en/professionals/"
   },
   {
-    "name": "Knezović & Associates",
+    "name": "KnezovićAndAssociates",
     "link": "https://adriala.com/lawyers/"
   },
   {
@@ -777,7 +607,7 @@
     "link": "https://kwkr.pl/en/team-3/"
   },
   {
-    "name": "Kudun & Partners",
+    "name": "KudunAndPartners",
     "link": "https://www.kap.co.th/our-team/"
   },
   {
@@ -797,11 +627,11 @@
     "link": "https://sotofrugis.com.br/en/professionals/"
   },
   {
-    "name": "Konstantinovic & Miloševski",
+    "name": "KonstantinovicAndMiloševski",
     "link": "https://konstantinovic-milosevski.mk/our-team/"
   },
   {
-    "name": "Kochański & Partners",
+    "name": "KochańskiAndPartners",
     "link": "https://www.kochanski.pl/en/team/"
   },
   {
@@ -813,7 +643,7 @@
     "link": "https://paltheoberman.nl/en/our-staff/"
   },
   {
-    "name": "Villaraza & Angangco Law Office",
+    "name": "VillarazaAndAngangco Law Office",
     "link": "https://thefirmva.com/partners.do?p=partners"
   },
   {
@@ -821,11 +651,11 @@
     "link": "https://www.robortella.com.br/en/our-team/"
   },
   {
-    "name": "Khoshaim & Associates",
+    "name": "KhoshaimAndAssociates",
     "link": "https://www.khoshaim.com/team"
   },
   {
-    "name": "Khodeir & Partners",
+    "name": "KhodeirAndPartners",
     "link": "https://mkhodeir.com/partners.html"
   },
   {
@@ -833,15 +663,15 @@
     "link": "https://www.kecolegal.com/en/our-people"
   },
   {
-    "name": "Kasirye Byaruhanga & Co",
+    "name": "Kasirye ByaruhangaAndCo",
     "link": "https://lawyer.co.ug/kb-team/"
   },
   {
-    "name": "Kaplan & Stratton",
+    "name": "KaplanAndStratton",
     "link": "https://www.kaplanstratton.com/lawyers/"
   },
   {
-    "name": "Kantor & Immerman",
+    "name": "KantorAndImmerman",
     "link": "https://kantorimmerman.co.zw/partners/"
   },
   {
@@ -849,11 +679,11 @@
     "link": "https://kntr.se/team/"
   },
   {
-    "name": "Kanga & Co",
+    "name": "KangaAndCo",
     "link": "http://kangacompany.com/partners.html"
   },
   {
-    "name": "Kalo & Associates",
+    "name": "KaloAndAssociates",
     "link": "https://www.kalo-attorneys.com/partners/"
   },
   {
@@ -873,11 +703,11 @@
     "link": "https://rmadv.com.br/site/en/perfil/raphael-miranda/"
   },
   {
-    "name": "José Lupi & Associates",
+    "name": "José LupiAndAssociates",
     "link": "https://joselupi.com/en/people/"
   },
   {
-    "name": "Joksovic Stojanovic & Partners ",
+    "name": "Joksovic StojanovicAndPartners ",
     "link": "https://jsplaw.co.rs/partners/"
   },
   {
@@ -885,12 +715,12 @@
     "link": "https://jws.com.au/our-people/"
   },
   {
-    "name": "Johnson Camacho & Singh",
+    "name": "Johnson CamachoAndSingh",
     "link": "https://www.jcscaribbeanlaw.com/attorneys/",
     "Note": "Country === Trinidad and Tobago"
   },
   {
-    "name": "Joffe & Associés",
+    "name": "JoffeAndAssociés",
     "link": "https://www.joffeassocies.com/en/lawyers/"
   },
   {
@@ -898,19 +728,19 @@
     "link": "https://www.jsk.cz/en/team#partner"
   },
   {
-    "name": "JJ Roca & Asociados",
+    "name": "JJ RocaAndAsociados",
     "link": "https://www.jjrocalaw.com/english/",
     "Note": "Email format (firstNameLetter)(LastName)@jjrocalaw.com",
     "Ex.:": "Tomas Demo === tdemo@jjrocalaw.com"
   },
   {
-    "name": "Youssry Saleh & Partners",
+    "name": "Youssry SalehAndPartners",
     "link": "https://youssrysaleh.com/en/attorneys/",
     "Note": "Email format (firstNameLetter).(LastName)@youssrysaleh.com",
     "Ex.:": "Tomas Demo === t.demo@youssrysaleh.com"
   },
   {
-    "name": "Nunes & Asociados",
+    "name": "NunesAndAsociados",
     "link": "https://estudionunes.com.ar/english/#team",
     "Note": "Email format (firstNameLetter)(LastName)@estudionunes.com.ar",
     "Ex.:": "Tomas Demo === tdemo@estudionunes.com.ar"
@@ -922,13 +752,13 @@
     "Ex.:": "Tomas Demo === tdemo@rbk.ie"
   },
   {
-    "name": "J.J. Roca & Asociados",
+    "name": "J.J. RocaAndAsociados",
     "link": "https://jjrocalaw.com/english/",
     "Note": "Email format (firstNameLetter)(LastName)@jjrocalaw.com",
     "Ex.:": "Tomas Demo === tdemo@jjrocalaw.com"
   },
   {
-    "name": "Soteris Pittas & Co",
+    "name": "Soteris PittasAndCo",
     "link": "https://www.pittaslegal.com/en/firm-members",
     "Note": "Email format (firstNameLetter)(LastName)@pittaslegal.com",
     "Ex.:": "Tomas Demo === tdemo@pittaslegal.com"
@@ -940,7 +770,7 @@
     "Ex.:": "Tomas Demo === tdemo@knijff.com"
   },
   {
-    "name": "McDermott Will & Emery",
+    "name": "McDermott WillAndEmery",
     "link": "https://www.mwe.com/people/?law=&loc=1153,1156,1157,811,1161,1162,332&tit=140,49762,176",
     "Note": "Email format (firstNameLetter)(LastName)@mwe.com",
     "Ex.:": "Tomas Demo === tdemo@mwe.com"
@@ -958,7 +788,7 @@
     "Ex.:": "Tomas Demo === t.demo@molinarilex.it"
   },
   {
-    "name": "Jing & Partners",
+    "name": "JingAndPartners",
     "link": "https://jingpartners.com/our-team/"
   },
   {
@@ -966,7 +796,7 @@
     "link": "https://www.jiayuan-law.com/EN/Team.aspx?Lan=EN&MenuID=00000000000000000004"
   },
   {
-    "name": "Isailović & Partners",
+    "name": "IsailovićAndPartners",
     "link": "https://www.advokatskakancelarija.com/en/tim/"
   },
   {
@@ -994,11 +824,11 @@
     "link": "https://perdiz.adv.br/language/en/lawyer/"
   },
   {
-    "name": "Ilieva Voutcheva & Co",
+    "name": "Ilieva VoutchevaAndCo",
     "link": "https://ivlawfirm.com/en/team/"
   },
   {
-    "name": "Ali Sharif Zu’bi Advocates & Legal Consultants",
+    "name": "Ali Sharif Zu’bi AdvocatesAndLegal Consultants",
     "link": "https://www.zubilaw.com/team1.php"
   },
   {
@@ -1010,7 +840,7 @@
     "link": "https://liedekerke.com/en/lawyers"
   },
   {
-    "name": "Igeria & Ngugi Advocates",
+    "name": "IgeriaAndNgugi Advocates",
     "link": "https://www.attorneysafrica.com/?teamsearch=1&post_type=tm_team_member&s=&tm_team_group=partner"
   },
   {
@@ -1018,7 +848,7 @@
     "link": "https://www.ibrachy.com/?page_id=1562"
   },
   {
-    "name": "Nelson Wilians & Advogados",
+    "name": "Nelson WiliansAndAdvogados",
     "link": "https://nwadv.com.br/pt/profissionais/"
   },
   {
@@ -1026,15 +856,15 @@
     "link": "https://hppattorneys.com/experts/"
   },
   {
-    "name": "Hisham Sobri & Kadir",
+    "name": "Hisham SobriAndKadir",
     "link": "https://hsk.com.my/partners/"
   },
   {
-    "name": "H-F & Co",
+    "name": "H-FAndCo",
     "link": "https://h-f.co/"
   },
   {
-    "name": "Herzog Fox & Neeman",
+    "name": "Herzog FoxAndNeeman",
     "link": "https://herzoglaw.co.il/en/team/"
   },
   {
@@ -1046,7 +876,7 @@
     "link": "https://hayes-solicitors.ie/Partners"
   },
   {
-    "name": "Haxhia & Hajdari",
+    "name": "HaxhiaAndHajdari",
     "link": "https://lawfirmhh.com/our-people/"
   },
   {
@@ -1062,7 +892,7 @@
     "link": "https://www.hhl.co.nz/people"
   },
   {
-    "name": "Hadef & Partners",
+    "name": "HadefAndPartners",
     "link": "https://hadefpartners.com/people/"
   },
   {
@@ -1095,7 +925,7 @@
     "link": "https://grahamthompson.com/graham-thompson-attorneys/"
   },
   {
-    "name": "Gottlieb Gera Engel & Co",
+    "name": "Gottlieb Gera EngelAndCo",
     "link": "https://www.gottliebgera.com/our-team/"
   },
   {
@@ -1103,11 +933,11 @@
     "link": "https://www.goodwinlaw.com/en/people?levels=fcaee49ed1a0477ab11fc805c2f68e4d&offices=b0913383732c483a8630d87548c9b69d&page=0"
   },
   {
-    "name": "Gladei & Partners",
+    "name": "GladeiAndPartners",
     "link": "https://www.gladei.md/303.htm"
   },
   {
-    "name": "Gissin & Co",
+    "name": "GissinAndCo",
     "link": "https://gissinlaw.co.il/en/team/"
   },
   {
@@ -1119,7 +949,7 @@
     "link": "https://gsalegal.pe/equipo/"
   },
   {
-    "name": "García & Bodán",
+    "name": "GarcíaAndBodán",
     "link": "https://garciabodan.com/nuestro-equipo/"
   },
   {
@@ -1146,7 +976,7 @@
     "link": "https://www.foxmandal.in/people/"
   },
   {
-    "name": "Forgó Damjanovic & Partners",
+    "name": "Forgó DamjanovicAndPartners",
     "link": "https://fdlaw.hu/dr-forgo-zoltan-ugyved/"
   },
   {
@@ -1154,11 +984,11 @@
     "link": "https://forbeshare.com/people/"
   },
   {
-    "name": "Foong & Partners",
+    "name": "FoongAndPartners",
     "link": "https://foongpartners.com/people.php"
   },
   {
-    "name": "McKinney Bancroft & Hughes",
+    "name": "McKinney BancroftAndHughes",
     "link": "https://www.mckinney.com.bs/attorneys/"
   },
   {
@@ -1172,12 +1002,12 @@
     "Note": "Check if is an valid firm - Canada"
   },
   {
-    "name": "Smart & Biggar",
+    "name": "SmartAndBiggar",
     "link": "https://www.smartbiggar.ca/people",
     "Note": "Check if is an valid firm - Canada"
   },
   {
-    "name": "Osler Hoskin & Harcourt",
+    "name": "Osler HoskinAndHarcourt",
     "link": "https://www.osler.com/en/people/?s=&role%5B%5D=Partner",
     "Note": "Check if is an valid firm - Canada"
   },
@@ -1246,7 +1076,7 @@
     "link": "https://www.5rs.it/en/the-people/?findByName=Partner"
   },
   {
-    "name": "Fisher Quarmby & Pfeifer",
+    "name": "Fisher QuarmbyAndPfeifer",
     "link": "https://www.fqp.com.na/our-team/",
     "Note": "country === Namibia"
   },
@@ -1256,7 +1086,7 @@
     "Note": "Check if is an valid firm - Canada"
   },
   {
-    "name": "Filip & Company",
+    "name": "FilipAndCompany",
     "link": "https://filipandcompany.com/the-team/?jsf=epro-posts&tax=categories:29"
   },
   {
@@ -1264,7 +1094,7 @@
     "link": "https://www.fidal.com/en/nos-experts"
   },
   {
-    "name": "Ferchiou & Associés",
+    "name": "FerchiouAndAssociés",
     "link": "https://www.ferchioulaw.com/our-team.php?id=3"
   },
   {
@@ -1272,7 +1102,7 @@
     "link": "https://www.fasken.com/en/people/lawyer#sortCriteria=%40lastname%20ascending&f-peoplerole=Partner"
   },
   {
-    "name": "Faegre Drinker Biddle & Reath",
+    "name": "Faegre Drinker BiddleAndReath",
     "link": "https://www.faegredrinker.com/en/professionals?related=63615f19acba4d6286484237055b5577%7C20208f5bc608480b910952db3103669e&pageNum=3",
     "Note": "check if has any more lawyer to register"
   },
@@ -1309,7 +1139,7 @@
     "link": "https://elverdam.com/professionals.html"
   },
   {
-    "name": "Šelih & Partnerji",
+    "name": "ŠelihAndPartnerji",
     "link": "https://selih.si/en/"
   },
   {
@@ -1317,7 +1147,7 @@
     "link": "https://www.elareflaw.com/employee-search/"
   },
   {
-    "name": "E & G Economides",
+    "name": "EAndG Economides",
     "link": "https://www.economideslegal.com/en/team/"
   },
   {
@@ -1353,7 +1183,7 @@
     "link": "https://estudiobenedetti.com/en/our-team/"
   },
   {
-    "name": "Bull & Co",
+    "name": "BullAndCo",
     "link": "https://www.bull.no/en/people"
   },
   {
@@ -1361,7 +1191,7 @@
     "link": "https://www.heskethhenry.co.nz/our-people/"
   },
   {
-    "name": "Hoogenraad & Haak",
+    "name": "HoogenraadAndHaak",
     "link": "https://www.hoogenhaak.nl/en/bio-maarten-haak"
   },
   {
@@ -1392,7 +1222,7 @@
     "link": "https://www.mvvp.be/lawyers/"
   },
   {
-    "name": "Jeff Leong Poon & Wong",
+    "name": "Jeff Leong PoonAndWong",
     "link": "https://jlpw.com.my/team/",
     "Note": "Email format (firstName).(LastName)@jlpw.com.my",
     "Ex.:": "Tomas Demo === tomas.demo@jlpw.com.my"
@@ -1410,11 +1240,11 @@
     "Ex.:": "Tomas Demo === tomas.demo@lawfirm.at"
   },
   {
-    "name": "Dittmar & Indrenius",
+    "name": "DittmarAndIndrenius",
     "link": "https://www.dittmar.fi/people/?type=partners"
   },
   {
-    "name": "Dimitrov Petrov & Co",
+    "name": "Dimitrov PetrovAndCo",
     "link": "https://www.dpc.bg/team"
   },
   {
@@ -1434,7 +1264,7 @@
     "link": "https://digests.uz/team/"
   },
   {
-    "name": "Desai & Diwanji",
+    "name": "DesaiAndDiwanji",
     "link": "https://www.desaidiwanji.com/partners"
   },
   {
@@ -1442,15 +1272,15 @@
     "link": "https://www.willkie.com/professionals?position=09ab29d3-f410-40a8-ba9c-016194bab337&location=all&orderbyy=asc&ordername=office"
   },
   {
-    "name": "Delchev & Partners",
+    "name": "DelchevAndPartners",
     "link": "https://www.delchev-lawfirm.com/people/"
   },
   {
-    "name": "Del Castillo & Castro Abogados",
+    "name": "Del CastilloAndCastro Abogados",
     "link": "https://www.dc-ca.mx/nosotros"
   },
   {
-    "name": "Debevoise & Plimpton",
+    "name": "DebevoiseAndPlimpton",
     "link": "https://www.debevoise.com/professionals/?title=700527be-e6af-4013-a6ec-30e9fa6597f0"
   },
   {
@@ -1463,7 +1293,7 @@
     "Note": "Check if is an valid firm - Canada"
   },
   {
-    "name": "Dalgalarrando & Cía",
+    "name": "DalgalarrandoAndCía",
     "link": "https://dryc.cl/en/team/"
   },
   {
@@ -1477,7 +1307,7 @@
     "Ex.:": "Tomas Demo === tdemo@ganado.com"
   },
   {
-    "name": "Galante & Martins",
+    "name": "GalanteAndMartins",
     "link": "https://galantemartins.com/equipo/",
     "Note": "Email format (firstNameLetter)(LastName)@galantemartins.com",
     "Ex.:": "Tomas Demo === tdemo@galantemartins.com"
@@ -1514,7 +1344,7 @@
     "link": "https://consulegisabogados.com/en/team/"
   },
   {
-    "name": "Lacaz Martins, Pereira Neto, Gurevich & Schoueri",
+    "name": "Lacaz Martins, Pereira Neto, GurevichAndSchoueri",
     "link": "https://www.lacazmartins.com.br/en/equipe/"
   },
   {
@@ -1602,16 +1432,16 @@
     "Ex.:": "Tomas Demo === tomas.demo@cbalex.com"
   },
   {
-    "name": "Castrén & Snellman",
+    "name": "CastrénAndSnellman",
     "link": "https://www.castren.fi/people/",
     "Note": "click to show more"
   },
   {
-    "name": "Caspi & Co",
+    "name": "CaspiAndCo",
     "link": "https://caspilaw.com/attorneys/?flr_search=&flr_title=35&flr_name=&flr_specialization="
   },
   {
-    "name": "Carrillo & Asociados",
+    "name": "CarrilloAndAsociados",
     "link": "https://carrillolaw.com/equipo/"
   },
   {
@@ -1619,7 +1449,7 @@
     "link": "https://www.crccdlex.com/professionisti/"
   },
   {
-    "name": "Callenders & Co",
+    "name": "CallendersAndCo",
     "link": "https://callenders-law.com/attorneys/"
   },
   {
@@ -1627,11 +1457,11 @@
     "link": "https://www.calaw.mu/our-people/"
   },
   {
-    "name": "Byenkya Kihika & Co",
+    "name": "Byenkya KihikaAndCo",
     "link": "https://byenkyakihika.co.ug/about-the-firm/"
   },
   {
-    "name": "Buterin & Partners",
+    "name": "ButerinAndPartners",
     "link": "https://buterin-partneri.hr/en/lawyers/"
   },
   {
@@ -1639,7 +1469,7 @@
     "link": "https://bustamantefabara.com/en/our-team/"
   },
   {
-    "name": "Burnet Duckworth & Palmer",
+    "name": "Burnet DuckworthAndPalmer",
     "link": "https://www.bdplaw.com/team?keyword=&industry=&practiceArea=&role=Partner"
   },
   {
@@ -1679,13 +1509,13 @@
     "link": "https://www.broseta.com/en/our-team/"
   },
   {
-    "name": "Albar & Partners",
+    "name": "AlbarAndPartners",
     "link": "https://www.albar.com.my/partners.html",
     "Notes": "Email formatt (firstName)@khaitanco.com",
     "Ex.:": "Tomas Demo === tomas@khaitanco.com"
   },
   {
-    "name": "Juslaws & Consult",
+    "name": "JuslawsAndConsult",
     "link": "https://www.juslaws.com/our-people",
     "Notes": "Email formatt (firstName)@juslaws.com",
     "Ex.:": "Tomas Demo === tomas@juslaws.com"
@@ -1721,13 +1551,13 @@
     "Ex.:": "Tomas Demo === tomas.demo@alliotts.com"
   },
   {
-    "name": "Ramsay & Partners",
+    "name": "RamsayAndPartners",
     "link": "https://ramsayandpartners.com/team",
     "Notes": "Email formatt (lastName)@ramsayandpartners.com  ",
     "Ex.:": "Tomas Demo === demo@ramsayandpartners.com"
   },
   {
-    "name": "SORA & ASSOCIATES",
+    "name": "SORAAndASSOCIATES",
     "link": "https://www.sora.ro/team/",
     "Notes": "Email formatt (firstName)(lastName)@radusora.ro",
     "Ex.:": "Tomas Demo === tomasdemo@radusora.ro"
@@ -1745,7 +1575,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@salaw.com"
   },
   {
-    "name": "Greiter, Pegger, Kofler & Partners Law",
+    "name": "Greiter, Pegger, KoflerAndPartners Law",
     "link": "https://www.lawfirm.at/en/team#partners",
     "Notes": "Email formatt (firstName).(lastName)@lawfirm.at",
     "Ex.:": "Tomas Demo === tomas.demo@lawfirm.at"
@@ -1781,7 +1611,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@kewlaw.co.uk"
   },
   {
-    "name": "Khaitan & Co",
+    "name": "KhaitanAndCo",
     "link": "https://www.khaitanco.com/people",
     "Notes": "Email formatt (firstName).(lastName)@khaitanco.com",
     "Ex.:": "Tomas Demo === tomas.demo@khaitanco.com"
@@ -1793,13 +1623,13 @@
     "Ex.:": "Tomas Demo === tomas.demo@samadovlaw.com"
   },
   {
-    "name": "Sok Siphana & Associates",
+    "name": "Sok SiphanaAndAssociates",
     "link": "https://www.soksiphana.com/people/",
     "Notes": "Email formatt (firstName).(lastName)@soksiphana.com",
     "Ex.:": "Tomas Demo === tomas.demo@soksiphana.com"
   },
   {
-    "name": "Siahaan Irdamis Andarumi & Rekan",
+    "name": "Siahaan Irdamis AndarumiAndRekan",
     "link": "https://siarlegal.com/partners/",
     "Notes": "Email formatt (firstName).(lastName)@siarlegal.com",
     "Ex.:": "Tomas Demo === tomas.demo@siarlegal.com"
@@ -1811,13 +1641,13 @@
     "Ex.:": "Tomas Demo === tomas.demo@russellmcveagh.com"
   },
   {
-    "name": "Miura & Partners",
+    "name": "MiuraAndPartners",
     "link": "https://www.miura-partners.com/en/lawyers/",
     "Notes": "Email formatt (firstName).(lastName)@miura-partners.com",
     "Ex.:": "Tomas Demo === tomas.demo@miura-partners.com"
   },
   {
-    "name": "Genio Atyanto & Partners",
+    "name": "Genio AtyantoAndPartners",
     "link": "https://atyantolaw.com/our-team/",
     "Notes": "Email formatt (firstName).(lastName)@atyantolaw.com",
     "Ex.:": "Tomas Demo === tomas.demo@atyantolaw.com"
@@ -1829,7 +1659,7 @@
     "Ex.:": "Tomas Demo Ben === tomasdemoben@leeandli.com"
   },
   {
-    "name": "Brinkmann & Partner",
+    "name": "BrinkmannAndPartner",
     "link": "https://www.brinkmann-partner.de/wir/partner/"
   },
   {
@@ -1857,7 +1687,7 @@
     "link": "https://www.boyanov.com/lawyers/"
   },
   {
-    "name": "Gruenbaum, Possinhas & Teixeira",
+    "name": "Gruenbaum, PossinhasAndTeixeira",
     "link": "https://gruenbaum.com.br/en/professionals/"
   },
   {
@@ -1865,7 +1695,7 @@
     "link": "https://goulartpenteado.com.br/en/team/"
   },
   {
-    "name": "Gaia Silva Gaede & Associados",
+    "name": "Gaia Silva GaedeAndAssociados",
     "link": "https://gsga.com.br/en/profissionais/?filtro=true&filter_name=&cargo=partner"
   },
   {
@@ -1889,11 +1719,11 @@
     "link": "https://www.ava-law.com/membre/jose-arilla/?lang=en"
   },
   {
-    "name": "Bharucha & Partners",
+    "name": "BharuchaAndPartners",
     "link": "https://www.bharucha.in/people/"
   },
   {
-    "name": "Bezen & Partners",
+    "name": "BezenAndPartners",
     "link": "https://www.bezenpartners.com/our-partners.php"
   },
   {
@@ -1944,7 +1774,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@elmeouchi.com"
   },
   {
-    "name": "Šavorić & Partners",
+    "name": "ŠavorićAndPartners",
     "link": "https://www.elmeouchi.com/team",
     "Note": "Email format (firstName).(LastName)@savoric.com",
     "Ex.:": "Tomas Demo === tomas.demo@savoric.com"
@@ -1962,7 +1792,7 @@
     "Ex.:": "Tomas Demo === tdemo@tmilaw.com.mx"
   },
   {
-    "name": "Clarke, Modet & Cо",
+    "name": "Clarke, ModetAndCо",
     "link": "https://www.clarkemodet.com/en/our-experts/",
     "Note": "Email format (firstNameLetter)(LastName)@clarkemodet.com",
     "Ex.:": "Tomas Demo === tdemo@clarkemodet.com"
@@ -1974,7 +1804,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@ashcliffordchance.com"
   },
   {
-    "name": "Atai & Associates",
+    "name": "AtaiAndAssociates",
     "link": "https://www.ataiassociates.com/our-people/",
     "Note": "Email format (firstName).(LastName)@ataiassociates.com",
     "Ex.:": "Tomas Demo === tomas.demo@ataiassociates.com"
@@ -1996,7 +1826,7 @@
     "link": "https://www.flha.com.br/socios/"
   },
   {
-    "name": "Finocchio & Ustra",
+    "name": "FinocchioAndUstra",
     "link": "https://www.fius.com.br/en/team/",
     "Note": "Check if is an Np or a P -> partner validation"
   },
@@ -2009,11 +1839,11 @@
     "link": "https://www.farrocoabreu.com.br/en/advogados/"
   },
   {
-    "name": "Araoz & Rueda",
+    "name": "AraozAndRueda",
     "link": "https://www.araozyrueda.com/en/partners/"
   },
   {
-    "name": "Apostolska Aleksandrovski & Partners",
+    "name": "Apostolska AleksandrovskiAndPartners",
     "link": "https://aap.law/team"
   },
   {
@@ -2051,21 +1881,21 @@
     "link": "https://amoryssolicitors.com/meet-our-team/?gad_source=1&gclid=CjwKCAiAneK8BhAVEiwAoy2HYeFDywxj8cxZ7zyGKG2m5nFVma_hH0CZ7UvCNbnZPiHFdxtziWzn4BoCkRwQAvD_BwE"
   },
   {
-    "name": "Amit, Pollak, Matalon & Co",
+    "name": "Amit, Pollak, MatalonAndCo",
     "link": "https://www.apm.law/team/"
   },
   {
-    "name": "Aman & Partners",
+    "name": "AmanAndPartners",
     "link": "https://www.aaclo.com/about/#our_people"
   },
   {
-    "name": "Amadagana & Partners",
+    "name": "AmadaganaAndPartners",
     "link": "https://amadaganapartners.com/distinctions-1",
     "Note": "Email format (firstName).(LastName)@aaclo.com",
     "Ex.:": "Tomas Demo === tomas.demo@aaclo.com"
   },
   {
-    "name": "ALSTON & BIRD LLP",
+    "name": "ALSTONAndBIRD LLP",
     "link": "https://www.alston.com/en/professionals?office=c8a737cf-f50c-403f-8afe-12ae745f9b9a&level=ca7cb4b4-b9fd-4f74-a2f8-632a2ced023e&skip=10&reload=false&scroll=3010"
   },
   {
@@ -2085,7 +1915,7 @@
     "link": "https://www.bsalaw.com/people/"
   },
   {
-    "name": "ALP NG & Co",
+    "name": "ALP NGAndCo",
     "link": "https://www.alp.company/our-people"
   },
   {
@@ -2101,11 +1931,11 @@
     "link": "https://hossamlegal.com/our-team"
   },
   {
-    "name": "Alexiou Knowles & Co",
+    "name": "Alexiou KnowlesAndCo",
     "link": "https://bahamaslaw.com/our-team/"
   },
   {
-    "name": "Alem & Associates",
+    "name": "AlemAndAssociates",
     "link": "https://www.alemlaw.com/people"
   },
   {
@@ -2113,7 +1943,7 @@
     "link": "https://www.sharqlawfirm.com/our-legal-team/"
   },
   {
-    "name": "Al-Ansari & Associates",
+    "name": "Al-AnsariAndAssociates",
     "link": "https://www.alansarilaw.com/people-type/partners/"
   },
   {
@@ -2186,7 +2016,7 @@
     "link": "https://chanis.pa/lawyers/ricardo-chanis/"
   },
   {
-    "name": "Carlsson & Partners",
+    "name": "CarlssonAndPartners",
     "link": "https://carlrev.se/medarbetare/"
   },
   {
@@ -2198,16 +2028,12 @@
     "link": "https://www.bodstrom.se/medarbetare/"
   },
   {
-    "name": "Groth & Co",
+    "name": "GrothAndCo",
     "link": "https://www.groth.eu/employees"
   },
   {
     "name": "EZ Legal",
     "link": "https://ezlegal.se/om-oss/medarbetare/"
-  },
-  {
-    "name": "Hammarskiöld & Co",
-    "link": "https://hammarskiold.se/team/?filter=gt_contact_department%3Dpartner"
   },
   {
     "name": "Hansen",
@@ -2222,7 +2048,7 @@
     "link": "https://www.citiusadvocaten.nl/en/team/"
   },
   {
-    "name": "Arnold & Siedsma",
+    "name": "ArnoldAndSiedsma",
     "link": "https://www.arnold-siedsma.com/about-us/the-specialists/?search=specialist&establishment=&function=partner&department=&specialization=&text="
   },
   {
@@ -2236,7 +2062,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@hoyngrokh.com"
   },
   {
-    "name": "Savoric & Partners",
+    "name": "SavoricAndPartners",
     "link": "https://www.savoric.com/odvjetnici/",
     "Notes": "Email formatt (firstName).(lastName)@savoric.com",
     "Ex.:": "Tomas Demo === tomas.demo@savoric.com"
@@ -2310,7 +2136,7 @@
     "link": "http://bizlink.vn/partners/nguyen-duc-manh.html"
   },
   {
-    "name": "Vision & Associates",
+    "name": "VisionAndAssociates",
     "link": "https://vision-associates.com/our-people/our_people/partners/"
   },
   {
@@ -2332,7 +2158,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@taiwanlaw.com"
   },
   {
-    "name": "Tsar & Tsai",
+    "name": "TsarAndTsai",
     "link": "https://www.tsartsai.com.tw/team?lang=en",
     "Notes": "Email formatt (firstName)(lastName)@tsartsai.com.tw",
     "Ex.:": "Tomas Demo === tomasdemo@tsartsai.com.tw"
@@ -2342,11 +2168,11 @@
     "link": "https://leglobal.law/about-l-e-global/people/?_filter_people_level=partner"
   },
   {
-    "name": "Orr, Dignam & Co.",
+    "name": "Orr, DignamAndCo.",
     "link": "https://www.orrdignam.com/team-4-2/"
   },
   {
-    "name": "DR & AJU LLC",
+    "name": "DRAndAJU LLC",
     "link": "https://www.draju.com/en/sub/people.html?sP=L01&d_t_tit=All&d_t_tit=All&sT=1?d_t_num=1"
   },
   {
@@ -2359,7 +2185,7 @@
     "Notes": "Send keys for the name to load the lawyers"
   },
   {
-    "name": "Rajah & Tann",
+    "name": "RajahAndTann",
     "link": "https://mm.rajahtannasia.com/our-partners/"
   },
   {
@@ -2367,15 +2193,15 @@
     "link": "https://mahwengkwai.com/lawyers/"
   },
   {
-    "name": "Zaid Ibrahim & Co",
+    "name": "Zaid IbrahimAndCo",
     "link": "https://www.ziclegal.com/people"
   },
   {
-    "name": "Rahmat Lim & Partners",
+    "name": "Rahmat LimAndPartners",
     "link": "https://www.rahmatlim.com/partners/"
   },
   {
-    "name": "Raja Darryl & Loh",
+    "name": "Raja DarrylAndLoh",
     "link": "https://rajadarrylloh.com/our-people/"
   },
   {
@@ -2418,12 +2244,12 @@
     "link": "https://www.resourcelawasia.com/people/adrian-aw/"
   },
   {
-    "name": "Drew & Napier",
+    "name": "DrewAndNapier",
     "link": "https://www.drewnapier.com/Our-Lawyers?name=a&practice=",
     "Note": "Send keys or using the link of commitees"
   },
   {
-    "name": "Allen & Gledhill",
+    "name": "AllenAndGledhill",
     "link": "https://www.allenandgledhill.com/partners/"
   },
   {
@@ -2435,7 +2261,7 @@
     "link": "https://gulapalaw.com/lawyers/"
   },
   {
-    "name": "Villaraza & Angangco",
+    "name": "VillarazaAndAngangco",
     "link": "https://www.thefirmva.com/partners.do"
   },
   {
@@ -2455,15 +2281,15 @@
     "link": "https://akhundforbes.com/our-people/"
   },
   {
-    "name": "Chima & Ibrahim",
+    "name": "ChimaAndIbrahim",
     "link": "https://chima-ibrahim.com/team-leadership/"
   },
   {
-    "name": "Mohsin Tayebaly & Co",
+    "name": "Mohsin TayebalyAndCo",
     "link": "https://mtclaw.com.pk/our-team/"
   },
   {
-    "name": "Vellani & Vellani",
+    "name": "VellaniAndVellani",
     "link": "https://www.vellani.com/search?name=&practice_area_id=+&designation=1&city=+&search=SEARCH"
   },
   {
@@ -2480,13 +2306,13 @@
     "link": "https://bvzadvogados.com.br/en/#our-team"
   },
   {
-    "name": "Oh-Ebashi LPC & Partners",
+    "name": "Oh-Ebashi LPCAndPartners",
     "link": "https://www.ohebashi.com/en/lawyers/position.php#p01",
     "Notes": "Email formatt (firstName).(lastName)@ohebashi.com",
     "Ex.:": "Tomas Demo === tomas.demo@ohebashi.com"
   },
   {
-    "name": "Atsumi & Sakai",
+    "name": "AtsumiAndSakai",
     "link": "https://www.aplawjapan.com/en/professionals?f=&p=34&o=",
     "Notes": "Email formatt (firstName).(lastName)@aplaw.jp",
     "Ex.:": "Tomas Demo === tomas.demo@aplaw.jp"
@@ -2510,25 +2336,25 @@
     "Ex.:": "Tomas Demo === tomas.demo@city-yuwa.com"
   },
   {
-    "name": "Momo-o Matsuo & Namba",
+    "name": "Momo-o MatsuoAndNamba",
     "link": "https://www.mmn-law.gr.jp/en/lawyers/index.html",
     "Notes": "Email formatt (lastName)@mmn-law.gr.jp",
     "Ex.:": "Tomas Demo === demo@mmn-law.gr.jp"
   },
   {
-    "name": "Nishimura & Asahi",
+    "name": "NishimuraAndAsahi",
     "link": "https://www.nishimura.com/en/people/list?search_keywords_all=&job_title_aggregated_field=971&field_member_office_all=All&field_member_job_language_all=All",
     "Notes": "Email formatt (firstNameLetter).(lastName)@nishimura.com",
     "Ex.:": "Tomas Demo === t.demo@nishimura.com"
   },
   {
-    "name": "Nagashima Ohno & Tsunematsu",
+    "name": "Nagashima OhnoAndTsunematsu",
     "link": "https://www.noandt.com/en/lawyers/",
     "Notes": "Email formatt (firstName)_(lastName)@noandt.com",
     "Ex.:": "Tomas Demo === tomas_demo@noandt.com"
   },
   {
-    "name": "Mori Hamada & Matsumoto",
+    "name": "Mori HamadaAndMatsumoto",
     "link": "https://www.morihamada.com/en/people?keywords=&sort=&jaorder=&practices=&location=&supportlang=&position=2411",
     "Note": "Try-catch email"
   },
@@ -2539,7 +2365,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@amt-law.com"
   },
   {
-    "name": "Bagus Enrico & Partners",
+    "name": "Bagus EnricoAndPartners",
     "link": "https://bagusenrico.com/member/"
   },
   {
@@ -2565,7 +2391,7 @@
     "Ex.:": "Tomas Demo === tomas.demo@ahp.id"
   },
   {
-    "name": "Hiswara Bunjamin & Tandjung",
+    "name": "Hiswara BunjaminAndTandjung",
     "link": "https://www.hbtlaw.com/our-people"
   },
   {
@@ -2573,19 +2399,19 @@
     "link": "https://www.abnrlaw.com/profiles/partners"
   },
   {
-    "name": "Solomon & Co",
+    "name": "SolomonAndCo",
     "link": "https://solomonco.in/lawyers-in-fort-mumbai/",
     "Notes": "Email formatt (firstName).(lastName)@slmnco.in",
     "Ex.:": "Tomas Demo === tomas.demo@slmnco.in"
   },
   {
-    "name": "Dhaval Vussonji & Associates",
+    "name": "Dhaval VussonjiAndAssociates",
     "link": "https://dvassociates.co.in/partners/",
     "Notes": "Email formatt (firstName).(lastName)@dvassociates.co.in",
     "Ex.:": "Tomas Demo === tomas.demo@dvassociates.co.in"
   },
   {
-    "name": "Chadha & Co",
+    "name": "ChadhaAndCo",
     "link": "https://chadha-co.com/key-contacts/namita-chadha/",
     "Note": "Start from this"
   },
@@ -2598,7 +2424,7 @@
     "link": "https://www.amicusservices.in/team"
   },
   {
-    "name": "AP & Partners",
+    "name": "APAndPartners",
     "link": "https://appartners.in/team",
     "Note": "The href email and the real email are !="
   },
@@ -2630,7 +2456,7 @@
     "Note": "filter by role !== Civil"
   },
   {
-    "name": "Dhir & Dhir",
+    "name": "DhirAndDhir",
     "link": "https://www.dhirassociates.com/the-team/",
     "Notes": "Email formatt (firstName).(lastName)@dhirassociates.com",
     "Ex.:": "Tomas Demo === tomas.demo@dhirassociates.com"
@@ -2640,7 +2466,7 @@
     "link": "https://www.pslchambers.com/our-team/"
   },
   {
-    "name": "Singhania & Partners",
+    "name": "SinghaniaAndPartners",
     "link": "https://singhania.in/our-people"
   },
   {
@@ -2648,7 +2474,7 @@
     "link": "https://www.duaassociates.com/our-people/"
   },
   {
-    "name": "Karanjawala & Co",
+    "name": "KaranjawalaAndCo",
     "link": "https://karanjawala.in/about-us/#our-team"
   },
   {
@@ -2660,12 +2486,12 @@
     "link": "https://robsols.co.uk/our-team/?tx_member_position=director"
   },
   {
-    "name": "Hugill & Ip",
+    "name": "HugillAndIp",
     "link": "https://www.hugillandip.com/solicitors/caroline-mcnally/",
     "Notes": "Start from this"
   },
   {
-    "name": "Stevenson Wong & Co",
+    "name": "Stevenson WongAndCo",
     "link": "https://www.sw-hk.com/our-people/"
   },
   {
@@ -2679,15 +2505,15 @@
     "link": "https://www.grandwaylaw.com/en/zhuanyetuandui/?kwd=&job=partner&t6=&t2="
   },
   {
-    "name": "King & Capital",
+    "name": "KingAndCapital",
     "link": "http://en.king-capital.com/en/team.html"
   },
   {
-    "name": "East & Concord",
+    "name": "EastAndConcord",
     "link": "http://en.east-concord.com/tuandui/index.html"
   },
   {
-    "name": "Jincheng Tongda & Neal",
+    "name": "Jincheng TongdaAndNeal",
     "link": "https://www.jtn.com/EN/lawyers_more.aspx?Lan=EN&PageUrl=lawyers"
   },
   {
@@ -2707,23 +2533,23 @@
     "link": "https://www.cbs.adv.br/en/people"
   },
   {
-    "name": "D. L. & F. De Saram",
+    "name": "D. L.AndF. De Saram",
     "link": "https://www.desaram.com/people/"
   },
   {
-    "name": "F. J. & G. De Saram",
+    "name": "F. J.AndG. De Saram",
     "link": "https://www.fjgdesaram.com/our-people"
   },
   {
-    "name": "Montaury Pimenta, Machado & Vieira de Mello",
+    "name": "Montaury Pimenta, MachadoAndVieira de Mello",
     "link": "https://www.montaury.com.br/en/professionals"
   },
   {
-    "name": "Gruenbaum, Possinhas & Teixeira",
+    "name": "Gruenbaum, PossinhasAndTeixeira",
     "link": "https://gruenbaum.com.br/en/professionals/"
   },
   {
-    "name": "JOHANSSON & LANGLOIS",
+    "name": "JOHANSSONAndLANGLOIS",
     "link": "https://jl.cl/en/team/"
   },
   {
@@ -2735,11 +2561,11 @@
     "link": "https://www.shieldadvocates.com/attorneys/"
   },
   {
-    "name": "KUHNEN & WACKER",
+    "name": "KUHNENAndWACKER",
     "link": "https://kuhnen-wacker.com/en/team/"
   },
   {
-    "name": "BOEHMERT & BOEHMERT",
+    "name": "BOEHMERTAndBOEHMERT",
     "link": "https://www.boehmert.de/en/our-team/?_sf_s=partner",
     "Notes": "Email formatt(lastName)@boehmert.de",
     "Ex.:": "Tomas Demo === demo@boehmert.de"
@@ -2756,7 +2582,7 @@
     "Ex.:": "Tomas Demo === t.demo@ta-ng.com"
   },
   {
-    "name": "Scavia & Scavia",
+    "name": "ScaviaAndScavia",
     "link": "https://en.scavialaw.com/nuestro-equipo/",
     "Notes": "Email formatt (firstNameLetter)(lastName)@scavialaw.com",
     "Ex.:": "Tomas Demo === tdemo@scavialaw.com"
@@ -2778,7 +2604,7 @@
     "link": "https://www.logos.is/en/people?tag=Partner"
   },
   {
-    "name": "Dinova Rusev & Partners",
+    "name": "Dinova RusevAndPartners",
     "link": "https://drp-legal.com/team/"
   },
   {
@@ -2851,11 +2677,11 @@
     "link": "https://www.blcattorneys.co.za/team/"
   },
   {
-    "name": "Travieso Evans Arria & Rengel",
+    "name": "Travieso Evans ArriaAndRengel",
     "link": "https://www.traviesoevans.com/travieso/en/partners/"
   },
   {
-    "name": "Rodriguez & Mendoza",
+    "name": "RodriguezAndMendoza",
     "link": "https://romen.com/en/abogados/"
   },
   {
@@ -2863,7 +2689,7 @@
     "link": "https://www.menpa.com/en/attorneys/"
   },
   {
-    "name": "Hoet & Partners",
+    "name": "HoetAndPartners",
     "link": "https://www.hoetpartners.com/en/ourpeople/"
   },
   {
@@ -2875,7 +2701,7 @@
     "link": "https://asbz.com.br/en/our-team/"
   },
   {
-    "name": "Blanco & Etcheverry",
+    "name": "BlancoAndEtcheverry",
     "link": "https://blancoetcheverry.com/equipo/"
   },
   {
@@ -2884,11 +2710,11 @@
     "Notes": "get the cv URL"
   },
   {
-    "name": "Hughes & Hughes",
+    "name": "HughesAndHughes",
     "link": "https://www.hughes.com.uy/our_people"
   },
   {
-    "name": "Barrios & Fuentes",
+    "name": "BarriosAndFuentes",
     "link": "https://www.bafur.com.pe/en/members-of-the-firm/"
   },
   {
@@ -2896,7 +2722,7 @@
     "link": "https://www.cvmabogados.com.pe/equipo/"
   },
   {
-    "name": "Hernández & Cía",
+    "name": "HernándezAndCía",
     "link": "https://www.ehernandez.com.pe/en/el-equipo/?cargo=partner&buscar="
   },
   {
@@ -2912,7 +2738,7 @@
     "link": "https://www.vouga.com.py/en/equipo/"
   },
   {
-    "name": "Pontoons & Ledesma",
+    "name": "PontoonsAndLedesma",
     "link": "https://pontonesyledesma.com/en/socios/"
   },
   {
@@ -2948,15 +2774,15 @@
     "link": "https://www.mijares.mx/en/equipo"
   },
   {
-    "name": "Mayora & Mayora",
+    "name": "MayoraAndMayora",
     "link": "https://mayora-mayora.com/en/team/"
   },
   {
-    "name": "Benjamin Valdez & Associates",
+    "name": "Benjamin ValdezAndAssociates",
     "link": "https://bvaldezlaw.com/en/our-team"
   },
   {
-    "name": "García & Bodán",
+    "name": "GarcíaAndBodán",
     "link": "https://garciabodan.com/en/our-team/",
     "Notes": "check if the site filter is working"
   },
@@ -3031,7 +2857,7 @@
     "link": "https://vgcabogados.cl/en/equipo/"
   },
   {
-    "name": "Barros & Errázuriz",
+    "name": "BarrosAndErrázuriz",
     "link": "https://www.bye.cl/team/?lang=en&laywer&position=abogado_socio&practice-area&industry"
   },
   {
@@ -3047,7 +2873,7 @@
     "link": "https://www.ulhoacanto.com.br/en/lawyers/"
   },
   {
-    "name": "Tauil & Chequer",
+    "name": "TauilAndChequer",
     "link": "https://www.tauilchequer.com.br/en/people?sortCriteria=%40alphasort%20ascending&f-peopletitle=Partner&numberOfResults=48"
   },
   {
@@ -3077,7 +2903,7 @@
     "link": "https://bermudes.com.br/advogados/?posicao=socio&filtro=true"
   },
   {
-    "name": "Arap, Nishi & Uyeda",
+    "name": "Arap, NishiAndUyeda",
     "link": "https://arapnishi.com.br/#socios"
   },
   {
@@ -3151,7 +2977,7 @@
     "link": "https://zbv.com.ar/profesionales/"
   },
   {
-    "name": "Tavarone, Rovelli, Salim & Miani",
+    "name": "Tavarone, Rovelli, SalimAndMiani",
     "link": "https://www.trsym.com/?lang=en#staff"
   },
   {
@@ -3163,7 +2989,7 @@
     "link": "https://www.ojambf.com/en/team/"
   },
   {
-    "name": "Allende & Brea",
+    "name": "AllendeAndBrea",
     "link": "https://allende.com/en/lawyers/?filtro=partners"
   },
   {
@@ -3185,7 +3011,7 @@
     "link": "https://beccarvarela.com/en/team/"
   },
   {
-    "name": "CORRALES & ASSOCIATES",
+    "name": "CORRALESAndASSOCIATES",
     "link": "https://corralesyasociados.com/nuestra-firma/"
   },
   {
@@ -3201,7 +3027,7 @@
     "link": "https://bspz.law/profissionais/"
   },
   {
-    "name": "Hriadel-Heger & Partners",
+    "name": "Hriadel-HegerAndPartners",
     "link": "https://www.hriadelheger.eu/o-nas/"
   },
   {
@@ -3227,7 +3053,7 @@
     "link": "PROSMAN and PAVLOVIČ"
   },
   {
-    "name": "BKF & CO",
+    "name": "BKFAndCO",
     "link": "https://bkf.co.uk/people/"
   },
   {
@@ -3235,19 +3061,19 @@
     "link": "https://euclid-law.eu/our-team/"
   },
   {
-    "name": "Covington & Burling LLP",
+    "name": "CovingtonAndBurling LLP",
     "link": "https://www.cov.com/en/professionals#sort=%40titlesort%20descending&f:Offices=[Frankfurt,Dubai,London,Brussels,Johannesburg,Beijing,Shanghai,Seoul]&f:ProfessionalLevel=[Partner]"
   },
   {
-    "name": "Konecna & Zacha",
+    "name": "KonecnaAndZacha",
     "link": "https://www.konecna-zacha.com/en/people/"
   },
   {
-    "name": "Follosco Morallos & Herce",
+    "name": "Follosco MorallosAndHerce",
     "link": "https://fmh.ph/the-team/#top"
   },
   {
-    "name": "Agcaoili & Associates",
+    "name": "AgcaoiliAndAssociates",
     "link": "https://www.avaslaw.com/jose-luis-v-agcaoili/"
   },
   {
@@ -3295,7 +3121,7 @@
     "link": "https://www.aumento.dk/en/people"
   },
   {
-    "name": "Headrick Rizik Alvarez & Fernández",
+    "name": "Headrick Rizik AlvarezAndFernández",
     "link": "https://headrick.com.do/our-people/"
   },
   {
@@ -3333,15 +3159,15 @@
     "link": "http://fazleghani.com/people/"
   },
   {
-    "name": "Ijaz Ahmed & Associates",
+    "name": "Ijaz AhmedAndAssociates",
     "link": "https://iaa.com.pk/team/"
   },
   {
-    "name": "ABS & Co.",
+    "name": "ABSAndCo.",
     "link": "https://absco.pk/lawyers/"
   },
   {
-    "name": "Country Hill Attorneys & Solicitors",
+    "name": "Country Hill AttorneysAndSolicitors",
     "link": "https://countryhillattorneys.com.ng/our-team/"
   },
   {
@@ -3387,7 +3213,7 @@
     "link": "https://www.stibbe.com/people?alphabetic-filter=All&role[27]=27"
   },
   {
-    "name": "Rada & Partner",
+    "name": "RadaAndPartner",
     "link": "https://radapartner.cz/en/team-and-career/"
   },
   {
@@ -3436,11 +3262,11 @@
     "link": "https://zampapartners.com/about/#leadership"
   },
   {
-    "name": "Bonn & Schmitt",
+    "name": "BonnAndSchmitt",
     "link": "https://bonnschmitt.lu/team/"
   },
   {
-    "name": "Seeger, Frick & Partner AG",
+    "name": "Seeger, FrickAndPartner AG",
     "link": "https://www.sfp.law/team",
     "Notes": "Country == Liechtenstein"
   },
@@ -3463,7 +3289,7 @@
     "Notes": "all the partners are from Estonia - DDD = 372 6603800"
   },
   {
-    "name": "Yoon & Yang",
+    "name": "YoonAndYang",
     "link": "https://yoonyang.co.kr/eng/professionals/members?lang=en",
     "Notes": "Send keys for the name to load the lawyers"
   },
@@ -3493,11 +3319,11 @@
     "link": "https://www.tglaw.com.au/our-people"
   },
   {
-    "name": "Butler McIntyre & Butler",
+    "name": "Butler McIntyreAndButler",
     "link": "https://bmbtas.com/our-team"
   },
   {
-    "name": "Moray & Agnew Lawyers",
+    "name": "MorayAndAgnew Lawyers",
     "link": "https://www.moray.com.au/people?RefineModule=620&StartTax=104&StartDate=&Keywords=&RefineParent=1"
   },
   {
@@ -3513,7 +3339,7 @@
     "link": "https://www.criminal-lawyers.com.au/meet-our-lawyers"
   },
   {
-    "name": "Holland & Knight",
+    "name": "HollandAndKnight",
     "link": "https://www.hklaw.com/en/professionals?level=9ad6fc29-4f0a-41f6-8376-00ff78aa09e2&office=66402548-5b18-4c1b-a862-c1b810f0baf6"
   },
   {

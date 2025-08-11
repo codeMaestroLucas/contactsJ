@@ -33,8 +33,6 @@ public class MyDriver {
         return driver;
     }
 
-// HOW SHOULD I CALL THIS FUNCTIONS IN OTHER CLASSES
-
     /**
      * Waits for the current page to fully load by checking the `document.readyState`.
      * Waits up to 6 minutes.
