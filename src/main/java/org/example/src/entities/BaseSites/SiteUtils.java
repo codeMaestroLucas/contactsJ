@@ -167,7 +167,25 @@ public class SiteUtils {
      * in the provided {@code OFFICE_TO_COUNTRY} map.
      *
      * @param OFFICE_TO_COUNTRY a map that links cleaned office names to country names
-     * @param officeToCheck the original office name to be checked
+     * @param element element to collect the text by text or HTML
+     * @return the country name if found in the map; otherwise, the cleaned office name itself
+     */
+    public String getCountryBasedInOffice(Map<String, String> OFFICE_TO_COUNTRY, WebElement element) {
+        String officeToCheck = element.getText();
+        if (officeToCheck.isEmpty() || officeToCheck.equals(" ")) officeToCheck = getContentFromTag(element.getAttribute("outerHTML"));
+
+        officeToCheck = officeToCheck.replaceAll("[^A-Za-z]", " ").toLowerCase().trim();
+        return OFFICE_TO_COUNTRY.getOrDefault(officeToCheck, officeToCheck);
+    }
+
+    /**
+     * Returns the country name based on the given office location.
+     * This method cleans the input office name by removing all non-alphabetic characters,
+     * converting it to lowercase, and then uses it to look up the corresponding country
+     * in the provided {@code OFFICE_TO_COUNTRY} map.
+     *
+     * @param OFFICE_TO_COUNTRY a map that links cleaned office names to country names
+     * @param officeToCheck txt of the office
      * @return the country name if found in the map; otherwise, the cleaned office name itself
      */
     public String getCountryBasedInOffice(Map<String, String> OFFICE_TO_COUNTRY, String officeToCheck) {

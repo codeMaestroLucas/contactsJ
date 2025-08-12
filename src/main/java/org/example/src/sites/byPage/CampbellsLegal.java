@@ -11,6 +11,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CampbellsLegal extends ByPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
+            "1284", "the British Virgin Islands",
+            "1345", "the Cayman Islands",
+            "852",  "Hong Kong"
+    );
+
+
     public CampbellsLegal() {
         super("Campbells Legal", "https://www.campbellslegal.com/people/", 1, 3);
     }
@@ -57,25 +64,12 @@ public class CampbellsLegal extends ByPage {
     }
 
     private String getCountry(String phone) {
-        String normalized = phone.replace("tel:", "").replace("+", "").trim();
-        String country;
-        if (normalized.startsWith("1 345")) {
-            country = "the Cayman Islands";
-        } else if (normalized.startsWith("1 284")) {
-            country = "the British Virgin Islands";
-        } else if (normalized.startsWith("852")) {
-            country = "Hong Kong";
-        } else {
-            System.out.println("Couldn't find the country with the phone: " + phone);
-            country = "------";
-        }
-
-        return country;
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, phone);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElement(By.className("meta")).findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

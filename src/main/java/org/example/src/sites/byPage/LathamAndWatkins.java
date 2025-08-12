@@ -129,8 +129,9 @@ public class LathamAndWatkins extends ByPage {
                 By.className("contacts__card-detail"),
                 By.cssSelector("span")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
 

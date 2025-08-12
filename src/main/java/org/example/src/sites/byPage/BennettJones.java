@@ -30,10 +30,6 @@ public class BennettJones extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        if (index > 0) return;
-
-        MyDriver.clickOnElement(By.id(""));
     }
 
 

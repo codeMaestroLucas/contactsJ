@@ -4,6 +4,7 @@ import java.io.PrintStream;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.BaseSites.ByPage;
 import org.openqa.selenium.By;
@@ -14,16 +15,28 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class GianniAndOrigoni extends ByPage {
     public GianniAndOrigoni() {
         super("Gianni And Origoni", "https://www.gop.it/people.php?lang=eng", 1, 3);
-        OFFICE_TO_COUNTRY = Map.ofEntries(Map.entry("Rome", "Italy"), Map.entry("Milan", "Italy"), Map.entry("Bologna", "Italy"), Map.entry("Padua", "Italy"), Map.entry("Turin", "Italy"), Map.entry("Abu Dhabi", "the UAE"), Map.entry("Brussels", "Belgium"), Map.entry("London", "England"), Map.entry("New York", "USA"), Map.entry("Hong Kong", "Hong Kong"), Map.entry("Shanghai", "China"));
+        OFFICE_TO_COUNTRY = Map.ofEntries(
+                Map.entry("rome", "Italy"),
+                Map.entry("milan", "Italy"),
+                Map.entry("bologna", "Italy"),
+                Map.entry("padua", "Italy"),
+                Map.entry("turin", "Italy"),
+                Map.entry("abu dhabi", "the UAE"),
+                Map.entry("brussels", "Belgium"),
+                Map.entry("london", "England"),
+                Map.entry("new york", "USA"),
+                Map.entry("hong kong", "Hong Kong"),
+                Map.entry("shanghai", "China")
+        );
     }
+
 
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-        ((WebElement)wait.until(ExpectedConditions.elementToBeClickable(By.className("bottone_people")))).click();
-        MyDriver.waitForPageToLoad();
+
+        MyDriver.clickOnElement(By.className("bottone_people"));
     }
 
     protected List<WebElement> getLawyersInPage() {
@@ -32,7 +45,7 @@ public class GianniAndOrigoni extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = (List)wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("tabella_risu")));
+            List<WebElement> lawyers = (List) wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("tabella_risu")));
             return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -51,7 +64,7 @@ public class GianniAndOrigoni extends ByPage {
         String[] nameParts = element.getText().split(" ");
         StringBuilder name = new StringBuilder();
 
-        for(int i = nameParts.length - 1; i >= 0; --i) {
+        for (int i = nameParts.length - 1; i >= 0; --i) {
             name.append(nameParts[i] + " ");
         }
 
@@ -66,8 +79,9 @@ public class GianniAndOrigoni extends ByPage {
 
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{By.className("campotab5")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
     private String getPracticeArea(WebElement lawyer) {

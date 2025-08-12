@@ -139,8 +139,9 @@ public class JonesDay extends ByPage {
                     By.cssSelector("div.person__row:nth-child(2)"),
                     By.className("person__meta")
             };
-            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+            return siteUtl.getCountryBasedInOffice(
+                OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+            );
         } catch (Exception e) {
             return "";
         }

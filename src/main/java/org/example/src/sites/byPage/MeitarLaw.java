@@ -39,10 +39,6 @@ public class MeitarLaw extends ByPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        if (index > 0) return;
-
-        MyDriver.clickOnElement(By.id(""));
     }
 
 

@@ -101,8 +101,9 @@ public class HillDickinson extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("div > div.u-flex-grow > div.u-mt-1.u-mb-2 > div > div")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
 

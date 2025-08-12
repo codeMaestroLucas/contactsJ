@@ -120,24 +120,11 @@ public class HFW extends ByPage {
 
 
     private String getCountry(WebElement lawyer) {
-        List<WebElement> links = lawyer.findElements(By.cssSelector("a"));
-        String country = "";
-
-        for (WebElement link : links) {
-            String href = link.getAttribute("href").toLowerCase();
-            if (href.contains("our-locations")) {
-                Pattern pattern = Pattern.compile(".*/our-locations/([^/]+)/?");
-                Matcher matcher = pattern.matcher(href);
-
-                if (matcher.find()) {
-                    country = matcher.group(1);
-                    break;
-                } else {
-                    country = href;
-                }
-            }
-        }
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY,
+            lawyer.findElement(By.cssSelector("a[href^='https://www.hfw.com/about-us/our-locations/']")
+            )
+        );
     }
 
 

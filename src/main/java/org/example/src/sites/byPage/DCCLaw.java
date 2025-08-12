@@ -112,7 +112,7 @@ public class DCCLaw extends ByPage {
         if (country.toLowerCase().contains("australia")) {
             return "Australia";
         } else {
-            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element);
         }
     }
 

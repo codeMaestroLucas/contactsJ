@@ -184,8 +184,9 @@ public class GreenbergTraurig extends ByPage {
             By.className("upper-info"),
             By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
 

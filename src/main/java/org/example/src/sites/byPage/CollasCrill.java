@@ -14,7 +14,13 @@ public class CollasCrill extends ByPage {
 
     public CollasCrill() {
         super("Collas Crill", "https://www.collascrill.com/people/all-locations/partners/all-practices/", 1, 3);
-        OFFICE_TO_COUNTRY = Map.of("bvi", "the British Virgin Islands", "cayman", "the Cayman Islands", "london", "England", "guernsey", "Guernsey", "jersey", "Jersey");
+        OFFICE_TO_COUNTRY = Map.of(
+                "bvi", "the British Virgin Islands",
+                "cayman", "the Cayman Islands",
+                "london", "England",
+                "guernsey","Guernsey",
+                "jersey", "Jersey"
+        );
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -61,14 +67,10 @@ public class CollasCrill extends ByPage {
 
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{By.className("location")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText();
-        if (country.isEmpty()) {
-            country = this.siteUtl.getContentFromTag(element.getAttribute("outerHTML")).toLowerCase().trim();
-        }
-
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
-    }
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
+}
 
     private String[] getSocials(WebElement lawyer) {
         try {

@@ -19,7 +19,7 @@ public class DaleAndLessmann extends ByPage {
 
     public DaleAndLessmann() {
         super(
-            "DaleAndLessmann",
+            "Dale And Lessmann",
             "https://www.dalelessmann.com/our-people/",
             1
         );

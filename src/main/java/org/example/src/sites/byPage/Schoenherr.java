@@ -117,8 +117,9 @@ public class Schoenherr extends ByPage {
         By[] byArray = new By[]{
                 By.className("people-card-location")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
 

@@ -100,7 +100,7 @@ public class SFKSLaw extends ByPage {
             }
         }
 
-        return new String[]{phone, email};
+        return new String[]{ phone, email };
     }
 
 

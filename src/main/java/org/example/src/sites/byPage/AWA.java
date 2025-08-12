@@ -14,7 +14,6 @@ import java.util.Map;
 import static java.util.Map.entry;
 
 public class AWA extends ByPage {
-    //todo: already completed. just check all the pages
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("45", "Denmark"),
             entry("86", "China"),
@@ -22,7 +21,7 @@ public class AWA extends ByPage {
             entry("41", "Switzerland"),
             entry("46", "Sweden"),
             entry("852", "Hong Kong"),
-            entry(" 47", "Norway")
+            entry("47", "Norway")
     );
 
 
@@ -35,8 +34,8 @@ public class AWA extends ByPage {
         super(
             "AWA",
             "https://www.awa.com/en/people/",
-            29,
-            1000
+            28,
+            3
         );
     }
 
@@ -138,10 +137,5 @@ public class AWA extends ByPage {
             "email", socials[0],
             "phone", socials[1]
         );
-    }
-
-    public static void main(String[] args) {
-        AWA x = new AWA();
-        x.searchForLawyers();
     }
 }

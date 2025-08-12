@@ -18,7 +18,7 @@ public class RopesAndGray extends ByPage {
             entry("boston", "EUA"),
             entry("chicago", "EUA"),
             entry("dublin", "Ireland"),
-            entry("hongkong", "Hong Kong"),
+            entry("hong kong", "Hong Kong"),
             entry("london", "England"),
             entry("los angeles", "EUA"),
             entry("new york", "EUA"),
@@ -110,8 +110,9 @@ public class RopesAndGray extends ByPage {
                 By.className("BaseContactCard_contact-card__details__wApVI"),
                 By.cssSelector("span")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
 

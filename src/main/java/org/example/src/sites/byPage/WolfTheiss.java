@@ -109,8 +109,9 @@ public class WolfTheiss extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("div.card__details > div.card__detail")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
 

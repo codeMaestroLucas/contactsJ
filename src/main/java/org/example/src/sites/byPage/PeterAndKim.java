@@ -58,8 +58,9 @@ public class PeterAndKim extends ByPage {
 
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{By.cssSelector("div.flex.gap-2.items-center.self-start.mt-2.text-xs.uppercase.whitespace-nowrap.text-violet-950"), By.cssSelector("span:last-child")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(
+            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
+        );
     }
 
     private String[] getSocials(WebElement lawyer) {

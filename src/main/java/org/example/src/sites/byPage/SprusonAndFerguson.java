@@ -127,12 +127,16 @@ public class SprusonAndFerguson extends ByPage {
 
 
     private String getPracticeArea(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("post-details"),
-                By.className("practice")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        try {
+            By[] byArray = new By[]{
+                    By.className("post-details"),
+                    By.className("practice")
+            };
+            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+            return element.getText();
+        } catch (Exception e) {
+            return "";
+        }
     }
 
 
