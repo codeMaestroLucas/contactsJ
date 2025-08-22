@@ -1,7 +1,9 @@
 package org.example.src.utils.myInterface;
 
 import lombok.Getter;
+import org.apache.poi.hssf.record.GutsRecord;
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byNewPage.*;
 import org.example.src.sites.byPage.*;
 
 @Getter
@@ -31,7 +33,10 @@ public class _CompletedFirmsData {
         new RamdasAndWong(),  new StephensonHarwood(), new SFKSLaw(), new KISCHIP(), new VOPatentsAndTrademarks(),
         new ZamfirescuRacotiPredoiu(), new LaszczukAndWspolnicy(), new DrzewieckiTomaszek(), new MASLaw(), new MSP(),
         new VieringJentschuraAndPartner(), new Esche(), new Dompatent(), new BARDEHLEPAGENBERG(), new Kolster(),
-        new HammarskioldAndCo(), new AWA(),
+        new HammarskioldAndCo(), new AWA(), new ArnesenIP(), new Aera(), new Liedekerke(),
+        new BarristonLaw(), new Chattertons(), new BlandyAndBlandy(), new Allens(), new HerbertSmithFreehillsKramer(),
+        new Helmsman(), new K1Chamber(), new DRAndAJU(), new ZhongziLaw(), new TahotaLaw(),
+        new GrandwayLaw(), new StewartMcKelvey(), new SIRIUS(), new Roschier(), new DBHLaw(),
 
 
         /** Indian Firms
@@ -53,7 +58,11 @@ public class _CompletedFirmsData {
 
 
     public final static Site[] byNewPage = {
-
+        new ALGoodbody(), new Frontier(), new Oxera(), new GuantaoLaw(), new Sangra(),
+        new NurmansyahAndMuzdalifah(), new Onsagers(), new TompkinsWake(), new BWBLLP(), new BCFLaw(),
+        new DaviesWardPhillipsAndVineberg(), new ThompsonDorfmanSweatman(), new Dottir(), new OgletreeDeakins(), new CovenantChambers(),
+        new ControlRisks(), new ArthurCox(), new AsafoAndCo(), new BarneaAndCo(), new Beauchamps(),
+        new Borenius(), new BrigrardUrrutia(), new CarneluttiLaw(), new Cobalt(), new Dentons()
     };
 
 

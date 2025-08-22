@@ -1,21 +1,61 @@
 package org.example;
 
+import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.MyDriver;
+import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.entities.excel.Reports;
 import org.example.src.utils.FirmsOfWeek;
 import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
-    public static void main(String[] args) {
-        MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
-        List<Site> sites = CompletedFirms.constructFirms(50);
-        Reports reports = Reports.getINSTANCE();
+    private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
 
-        long initTotalTime = System.currentTimeMillis();
+    /**
+     * Calculates the execution time of a given block of code.
+     * @param taskToRun The code to execute, passed as a Runnable.
+     */
+    private static void calculateTimeOfExecution(Runnable taskToRun) {
+        // Use nanoTime for better precision
+        long startTime = System.currentTimeMillis();
+        System.out.println("=".repeat(70));
+
+        try {
+            // Execute the code passed into the method
+            taskToRun.run();
+        } catch (Exception e) {
+            System.err.println("An error occurred during execution: " + e.getMessage());
+            e.printStackTrace(); // It's good practice to print the stack trace
+        } finally {
+            long endTime = System.currentTimeMillis();
+
+            // Final output
+            System.out.println();
+            System.out.println("=".repeat(70));
+
+            String formattedTime = interfaceUtls.calculateTime(startTime, endTime);
+            // Using a simple duration calculation here, adjust if your method does something different
+            System.out.println("\nTotal time: " + formattedTime + "\n\n");
+        }
+    }
+
+    private static void runFilteredFirmsSearch() {
+        System.out.println("Starting: Filtering previously registered lawyers...");
+        ContactsAlreadyRegisteredSheet contactsSheet = new ContactsAlreadyRegisteredSheet();
+        contactsSheet.filterLawyrsRegistered();
+        System.out.println("Completed: Filtering and processing complete.");
+    }
+
+    private static void runSearchLawyers() {
+        System.out.println("Starting: Searching for new lawyers...");
+        int totalLawyersRegistered = 0;
+
+        List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET);
+        Reports reports = Reports.getINSTANCE();
 
         // Processing Firms
         try {
@@ -24,7 +64,6 @@ public class Main {
                 long initTimeFirm = System.currentTimeMillis();
 
                 interfaceUtls.header(site.name);
-
                 site.searchForLawyers();
 
                 long finalTimeFirm = System.currentTimeMillis();
@@ -35,22 +74,26 @@ public class Main {
 
                 reports.createReportRow(site, time);
 
-                if (site.lawyersRegistered > 0) FirmsOfWeek.registerFirmWeek(site.name);
+                if (site.lawyersRegistered > 0) {
+                    FirmsOfWeek.registerFirmWeek(site.name);
+                    totalLawyersRegistered += site.lawyersRegistered;
+                }
+
+                if (totalLawyersRegistered > CONFIG.LAWYERS_IN_SHEET) break;
             }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
-
+            System.err.println("An error occurred while searching for lawyers: " + e.getMessage());
+            e.printStackTrace();
         } finally {
-            long finalTotalTime = System.currentTimeMillis();
-
-            // Final output
-            System.out.println();
-            System.out.println("=".repeat(70));
-            System.out.println("\nTotal time: " + interfaceUtls.calculateTime(initTotalTime, finalTotalTime) + "\n\n");
-
             MyDriver.quitDriver();
         }
+        System.out.println("Completed: Lawyer search finished.");
+    }
 
+
+    public static void main(String[] args) {
+        calculateTimeOfExecution(Main::runFilteredFirmsSearch);
+        calculateTimeOfExecution(Main::runSearchLawyers);
     }
 }

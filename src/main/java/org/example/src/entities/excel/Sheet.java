@@ -1,5 +1,6 @@
 package org.example.src.entities.excel;
 
+import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 
 import java.util.Objects;
@@ -12,7 +13,7 @@ public class Sheet extends Excel {
     private int currentRow;
 
     private Sheet() {
-        super("src/main/resources/baseFiles/excel/Sheet.xlsx");
+        super(CONFIG.SHEET_FILE);
         this.currentRow = 1;
         this.lastFirm = "";
         this.lastCountry = "";
@@ -33,29 +34,24 @@ public class Sheet extends Excel {
      * @param lawyer to be registered
      */
     public void addLawyer(Lawyer lawyer) {
-        String firm = lawyer.firm;
+        String firm = lawyer.getFirm();
+        String country = lawyer.getCountry();
 
-        String country = lawyer.country;
-        String practiceArea = lawyer.practiceArea.isEmpty() ? "-----" : lawyer.practiceArea;
-
-        if (this.lastCountry.equalsIgnoreCase(country) && this.lastFirm.equalsIgnoreCase(firm)) {
-            System.out.printf(
-                    "The firm %s already has a lawyer in the country %s registered in the sheet.\n",
-                    this.lastFirm, this.lastCountry);
-            return;
-        }
+        // Just a fallBack, should never happen
+        if (this.lastCountry.equalsIgnoreCase(country) && this.lastFirm.equalsIgnoreCase(firm)) return;
 
         this.addContentOnRow(
                 this.currentRow,
-                lawyer.link,
-                lawyer.name,
-                lawyer.role,
-                firm,
+                lawyer.getName(),
+                lawyer.getEmail(),
+                lawyer.getPhone(),
                 country,
-                "-----",                 // Empty for nationality
-                practiceArea,
-                lawyer.email,
-                lawyer.phone
+                lawyer.getPracticeArea(),
+                lawyer.getLink(),
+                "Karine Frois",               // Manager Column (G)
+                lawyer.getSpecialism(),       // Specialism Column (H)
+                lawyer.getRole(),
+                firm
         );
 
         if (!Objects.isNull(country)) {

@@ -36,6 +36,7 @@ public class SiteUtils {
                 index + 1, page + 1, firm);
         System.out.println("  Link: " + details.get("link"));
         System.out.println("  Name: " + details.get("name"));
+        System.out.println("  Role: " + details.get("role"));
         System.out.println("  Practice Area: " + details.get("practice_area"));
         System.out.println("  Email: " + details.get("email"));
         System.out.println("  Phone: " + details.get("phone"));
@@ -67,6 +68,23 @@ public class SiteUtils {
         return current;
     }
 
+    /**
+     * Checks if a determinate role is inside the valid roles Array
+     * @param role string to be verified
+     * @param validRoles array of valid roles
+     * @return true if exists, false if not
+     */
+    public boolean isValidPosition(String role, String[] validRoles) {
+        role = role.toLowerCase().trim();
+
+        for (String validRole : validRoles) {
+            if (role.contains(validRole)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     /**
      * Filters lawyers from the provided list based on their role, returning only valid lawyers.
@@ -86,9 +104,14 @@ public class SiteUtils {
 
                 String role = byText
                         ? element.getText()
-                        : element.getAttribute("outerHTML")
-                        .replaceAll("[\\n\\t]", "");
-                role = role.toLowerCase().trim();
+                        : element.getAttribute("outerHTML");
+
+
+                role = role
+                        .replaceAll("[\\n\\t]", "") // Remove all "\n\t"
+                        .replace("-", " ")       // Remove all "-"
+                        .replaceAll("\\s+", " ")   // Remove all empty duplicated spaces between words
+                        .toLowerCase().trim();
 
                 for (String word : validRoles) {
                     if (role.contains(word.toLowerCase().trim())) {
@@ -180,16 +203,68 @@ public class SiteUtils {
 
     /**
      * Returns the country name based on the given office location.
-     * This method cleans the input office name by removing all non-alphabetic characters,
-     * converting it to lowercase, and then uses it to look up the corresponding country
-     * in the provided {@code OFFICE_TO_COUNTRY} map.
-     *
-     * @param OFFICE_TO_COUNTRY a map that links cleaned office names to country names
-     * @param officeToCheck txt of the office
-     * @return the country name if found in the map; otherwise, the cleaned office name itself
+     * @param officeToCountry a map that links normalized office names to country names
+     * @param officeToCheck   the office name to check
+     * @return the country name if found in the map; otherwise, the normalized office name itself
      */
-    public String getCountryBasedInOffice(Map<String, String> OFFICE_TO_COUNTRY, String officeToCheck) {
-        officeToCheck = officeToCheck.replaceAll("[^A-Za-z]", " ").toLowerCase().trim();
-        return OFFICE_TO_COUNTRY.getOrDefault(officeToCheck, officeToCheck);
+    public String getCountryBasedInOffice(Map<String, String> officeToCountry, String officeToCheck) {
+        if (officeToCheck == null || officeToCheck.isBlank()) {
+            return "";
+        }
+
+        String normalizedOffice = officeToCheck
+                .replaceAll("[^A-Za-z]", " ")
+                .replace("nbsp", " ")
+                .toLowerCase()
+                .trim()
+                .replaceAll("\\s+", " "); // collapse multiple spaces
+
+        // 1. Try full match
+        if (officeToCountry.containsKey(normalizedOffice)) {
+            return officeToCountry.get(normalizedOffice);
+        }
+
+        // 2. Try word-by-word
+        String[] words = normalizedOffice.split(" ");
+        for (String word : words) {
+            if (officeToCountry.containsKey(word)) {
+                return officeToCountry.get(word);
+            }
+        }
+
+        // 3. Nothing found, return normalized string
+        return normalizedOffice;
     }
+
+
+    /**
+     * Returns the country name based on the prefix of a phone number.
+     * After normalization, the method checks if the phone number starts with any
+     * of the prefixes defined in {@code officeToCountry}. If a match is found,
+     * the corresponding country is returned. Otherwise, the {@code defaultValue}
+     * is returned (if provided), or the cleaned phone number itself.
+     *
+     * @param officeToCountry a map that links phone number prefixes to country names
+     * @param phone           the phone number to check
+     * @param defaultValue    a fallback value to return when no match is found;
+     *                        often used for the most common country to avoid
+     *                        overpopulating the map
+     * @return the country name if a prefix match is found; otherwise {@code defaultValue}
+     *         (if not empty), or the cleaned phone number itself
+     */
+    public String getCountryBasedInOfficeByPhone(Map<String, String> officeToCountry, String phone, String defaultValue) {
+        // Remove all non-digit characters and leading zeros
+        phone = phone.replaceAll("\\D", "").replaceFirst("^0+", "");
+
+        String toReturn = defaultValue.isEmpty() ? phone : defaultValue;
+
+        for (String key : officeToCountry.keySet()) {
+            if (phone.startsWith(key)) {
+                toReturn = officeToCountry.get(key);
+                break;
+            }
+        }
+        return toReturn;
+    }
+
 }

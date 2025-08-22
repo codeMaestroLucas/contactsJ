@@ -1,6 +1,6 @@
 package org.example.src.sites._standingBy;
 
-import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,54 +10,66 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
-public class Fasken extends ByPage {
+import static java.util.Map.entry;
+
+public class Fasken extends ByNewPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("calgary", "Canada"),
+            entry("johannesburg", "South Africa"),
+            entry("london", "England"),
+            entry("montreal", "Canada"),
+            entry("ottawa", "Canada"),
+            entry("quebec city", "Canada"),
+            entry("surrey", "Canada"),
+            entry("toronto", "Canada"),
+            entry("tsuutina", "Canada"),
+            entry("vancouver", "Canada")
+    );
+
+    String[] validRoles = {
+            "partner",
+            "counsel",
+            "senior associate"
+    };
+
+
     public Fasken() {
         super(
             "Fasken",
             "https://www.fasken.com/en/people",
             5,
-            1
+            1000
         );
     }
 
 
-    @Override
     protected void accessPage(int index) throws InterruptedException {
         String otherUrl = "https://www.fasken.com/en/people#firstResult=" + (15 * index);
-        String url = (index == 0) ? this.link : otherUrl;
-        driver.get(url);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
-        Thread.sleep(1000);
+        Thread.sleep(1000L);
 
         if (index > 0) return;
 
+        // Click on add btn
         MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
     }
 
 
-    @Override
     protected List<WebElement> getLawyersInPage() {
-        By[] webRole = {
-                By.className("atomic-result-section-details"),
-                By.className("title-metadata-people-role"),
-                By.cssSelector("ul > li > slot")
-        };
-
-        String[] validRoles = {
-                "partner",
-                "counsel",
-                "senior associate"
-        };
-
         try {
-            // Wait up to 10 seconds for elements to be present
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("#layout-wrapper > atomic-layout-section:nth-of-type(4) > atomic-layout-section:nth-of-type(1) > atomic-result-list div div div:nth-of-type(1) atomic-result div:nth-of-type(1) div div div div"))
-            );
+            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            return siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
+            // Can't locale the elements
+            List<WebElement> until = wait.until(
+                    ExpectedConditions.presenceOfAllElementsLocatedBy(
+                            By.cssSelector("div[part=\"result-list\"] > div")
+                    )
+            );
+            return until;
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -65,62 +77,46 @@ public class Fasken extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
-        By[] byArray = {
-            By.className("atomic-result-tile-link")
-        };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+    public void openNewTab(WebElement lawyer) {
+        MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
 
     private String getName(WebElement lawyer) {
-        By[] byArray = {
-                By.className("atomic-result-section-details"),
-                By.className("notranslate")
+        By[] byArray = new By[]{
+                By.className("name")
         };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getText();
     }
 
 
     private String getRole(WebElement lawyer) {
-        By[] byArray = {
-                By.className("atomic-result-section-details"),
-                By.className("title-metadata-people-role"),
-                By.cssSelector("ul > li > slot")
+        By[] byArray = new By[]{
+                By.className("jobtitle")
         };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+
+        String role = element.getText();
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 
 
     private String getCountry(WebElement lawyer) {
-        By[] byArray = {
-                By.className("hydrated"),
-                By.className("bottom-metadata-location"),
-                By.cssSelector("ul > li > slot")
+        By[] byArray = new By[]{
+                By.cssSelector("div.category:last-child")
         };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
-    }
-
-    private String getPracticeArea(WebElement lawyer) {
-        By[] byArray = {
-                By.className("atomic-result-section-details"),
-                By.className("title-metadata-people-role"),
-                By.cssSelector("ul > li > slot")
-        };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText().split("\\|")[1];
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                    .findElement(By.className("atomic-result-section-details"))
-                    .findElements(By.cssSelector("a"));
+                        .findElement(By.className("values"))
+                        .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -130,22 +126,27 @@ public class Fasken extends ByPage {
     }
 
 
-    @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
+        this.openNewTab(lawyer);
+
+        WebElement div = driver.findElement(By.className("content"));
+
+        String role = this.getRole(div);
+        if (role.equals("Invalid Role")) return "Invalid Role";
+
+        String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", this.getLink(lawyer),
-                "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
-                "firm", this.name,
-                "country", this.getCountry(lawyer),
-                "practice_area", this.getPracticeArea(lawyer),
-                "email", socials[0],
-                "phone", socials[1]
+            "link", Objects.requireNonNull(driver.getCurrentUrl()),
+            "name", this.getName(div),
+            "role", role,
+            "firm", this.name,
+            "country", this.getCountry(div),
+            "practice_area", "",
+            "email", socials[0],
+            "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
-
 
     public static void main(String[] args) {
         Fasken x = new Fasken();

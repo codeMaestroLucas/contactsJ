@@ -8,24 +8,34 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MyDriver {
     private static WebDriver driver;
 
-    private MyDriver() {
-        // Private constructor to prevent instantiation
-    }
+    // Private constructor to prevent instantiation
+    private MyDriver() {}
 
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless"); // Run Chrome in headless mode
+//            options.addArguments("--headless"); // Run Chrome in headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
             options.addArguments("--allow-insecure-localhost");
             options.addArguments("--no-proxy-server");
             options.addArguments("--disable-features=IsolateOrigins,site-per-process");
+
+            // Make browser appear more human-like
+            options.addArguments("--disable-blink-features=AutomationControlled");
+            options.setExperimentalOption("excludeSwitches", List.of("enable-automation"));
+            options.setExperimentalOption("useAutomationExtension", false);
+
+            // Add realistic user agent
+            options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
 
             driver = new ChromeDriver(options);
         }
@@ -65,41 +75,58 @@ public class MyDriver {
         Thread.sleep(1500);
     }
 
+
     /**
-     * Waits until 10sec to find a element and then perform a click.
+     * Perform a unique click on a element.
+     * 1st it tryes to click on the element.
+     * If it fails it hovers it for 0.5 seconds and then try to click on it.
+     * If it fails again perform a last try click
+     */
+    private static void performUniqueClick(WebElement elementToClick) {
+        // Click on element
+        try {
+            elementToClick.click();
+        } catch (Exception e) {
+            try {
+                // Hover over the element first
+                Actions actions = new Actions(driver);
+                actions.moveToElement(elementToClick).perform();
+
+                // Small pause to let hover effects take place
+                Thread.sleep(500);
+
+                // Then try JavaScript click
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
+            } catch (Exception hoverException) {
+                // If hover + JS click fails, try direct JS click as final fallback
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
+                System.out.println("Used direct JS click as final fallback");
+            }
+        }
+    }
+
+
+    /**
+     * Waits until 10sec to find an element and then perform a click.
      * @param by locator for the element
      */
     public static void clickOnElement(By by) {
         // Find element
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement elementToClick = wait.until(ExpectedConditions.presenceOfElementLocated(by));
-
-        // Click on element
-        try {
-            elementToClick.click();
-
-        } catch (Exception e) {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
-        }
+        performUniqueClick(elementToClick);
     }
 
 
     /**
-     * Perform a click on a element passed
+     * Perform a click on an element passed
      * @param element to click
      */
     public static void clickOnElement(WebElement element) {
         // Find element
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement elementToClick = wait.until(ExpectedConditions.elementToBeClickable(element));
-
-        // Click on element
-        try {
-            elementToClick.click();
-
-        } catch (Exception e) {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
-        }
+        performUniqueClick(elementToClick);
     }
 
 
@@ -109,14 +136,13 @@ public class MyDriver {
      * @param element            The element to click. Can be either a {@link By} locator or a {@link WebElement}.
      * @param numberOfIterations Number of times the element should be clicked.
      * @param sleepTime          Time in seconds to wait between clicks.
-     * @throws InterruptedException if the thread is interrupted during sleep.
      * @throws IllegalArgumentException if the element is neither a By nor a WebElement.
      */
     public static void clickOnElementMultipleTimes(
-            Object element, int numberOfIterations, int sleepTime
-    ) throws InterruptedException {
-
-
+            Object element,
+            int numberOfIterations,
+            int sleepTime)
+    {
         int i = 0;
         try {
             for (i = 0; i < numberOfIterations; i++) {
@@ -138,7 +164,33 @@ public class MyDriver {
         }
     }
 
+    /**
+     * Oppen a new tab with the passing url
+     */
+    public static void openNewTab(String url) {
+        driver.switchTo().newWindow(WindowType.TAB).get(url);
+        waitForPageToLoad();
+    }
 
+    /**
+     * Swtich to a new tab in the index passen
+     */
+    public static void switchToTab(int index) {
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(index));
+        waitForPageToLoad();
+    }
+
+    /**
+     * Close the current tab
+     */
+    public static void closeCurrentTab() {
+        driver.close();
+        switchToTab(0); // default to first tab
+        waitForPageToLoad();
+    }
+
+    
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();

@@ -1,6 +1,7 @@
 package org.example.src.entities.BaseSites;
 
 import lombok.Data;
+import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.Sheet;
@@ -26,6 +27,7 @@ public abstract class Site  {
     protected String emailsToAvoidPath;
 
     protected static Map<String, String> OFFICE_TO_COUNTRY;
+    protected static String[] validRoles;
 
     protected Site(String name, String link, int totalPages, int maxLawyersForSite, String path) {
         this.name = name;
@@ -52,8 +54,8 @@ public abstract class Site  {
      */
     private void generateEmailPaths(String folderPath) {
         String sanitizedPath = this.name.trim().replaceAll("\\s+", "");
-        this.emailsOfMonthPath = "data/sites/" +  folderPath + sanitizedPath + ".txt";
-        this.emailsToAvoidPath = "data/_toAvoid/" + folderPath + sanitizedPath + ".txt";
+        this.emailsOfMonthPath = CONFIG.EMAILS_MONTH_FOLDER_FILE +  folderPath + sanitizedPath + ".txt";
+        this.emailsToAvoidPath = CONFIG.EMAILS_TO_AVOID_FOLDER_FILE + folderPath + sanitizedPath + ".txt";
 
         ensureFileExists(this.emailsOfMonthPath);
         ensureFileExists(this.emailsToAvoidPath);
@@ -108,9 +110,10 @@ public abstract class Site  {
 
             // Check if it's a valid phone number
             else if ((
-                    value.contains("tel") || value.contains("+") || value.contains("phone") ||
+                    value.contains("tel") || value.contains("cal")  || value.contains("+") || value.contains("phone") ||
                     value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
                 String cleaned = value.replaceAll("[^0-9]", "");
+
                 if (cleaned.length() > 5) { // To prevent if an invalid value has been set to phone
                     phone = cleaned;
                 }

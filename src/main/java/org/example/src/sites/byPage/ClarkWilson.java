@@ -74,13 +74,13 @@ public class ClarkWilson extends ByPage {
                 By.className("entry-title")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return siteUtl.getContentFromTag(element);
     }
 
 
     private String getRole(WebElement lawyer) {
         WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return siteUtl.getContentFromTag(element);
     }
 
 

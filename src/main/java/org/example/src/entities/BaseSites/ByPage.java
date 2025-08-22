@@ -1,5 +1,6 @@
 package org.example.src.entities.BaseSites;
 
+import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 import org.example.src.utils.Validations;
 import org.openqa.selenium.WebElement;
@@ -10,11 +11,11 @@ import java.util.Map;
 public abstract class ByPage extends Site {
 
     protected ByPage(String name, String link, int totalPages, int maxLawyersForSite) {
-        super(name, link, totalPages, maxLawyersForSite, "byPage/");
+        super(name, link, totalPages, maxLawyersForSite, CONFIG.BY_PAGE_FILE);
     }
 
     protected ByPage(String name, String link, int totalPages) {
-        super(name, link, totalPages, 1, "byPage/");
+        super(name, link, totalPages, 1, CONFIG.BY_PAGE_FILE);
     }
 
     @Override
@@ -69,16 +70,18 @@ public abstract class ByPage extends Site {
                             continue;
                         }
 
-                        Lawyer lawyerToRegister = new Lawyer(
-                            map.get("link"),
-                            map.get("name"),
-                            map.get("role"),
-                            map.get("firm"),
-                            map.get("country"),
-                            map.get("practice_area"),
-                            map.get("email"),
-                            map.get("phone")
-                        );
+
+                        Lawyer lawyerToRegister = Lawyer.builder()
+                                .link(map.get("link"))
+                                .name(map.get("name"))
+                                .email(map.get("email"))
+                                .phone(map.get("phone"))
+                                .country(map.get("country"))
+                                .role(map.get("role"))
+                                .firm(map.get("firm"))
+                                .practiceArea(map.get("practice_area"))
+                                .build();
+
 
                         //todo: maybe add a PROXY here to identify why the validation failed
                         boolean canRegister = Validations.makeValidations(

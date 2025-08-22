@@ -85,7 +85,7 @@ public class RDJ extends ByPage {
 
     private String getRole(WebElement lawyer) {
         WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return siteUtl.getContentFromTag(element);
     }
 
 

@@ -72,7 +72,7 @@ public class BARDEHLEPAGENBERG extends ByPage {
                 By.cssSelector("a > p > b")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return siteUtl.getContentFromTag(element);
     }
 
 

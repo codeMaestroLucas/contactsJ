@@ -1,5 +1,6 @@
 package org.example.src.entities.excel;
 
+import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 
 import java.util.Objects;
@@ -10,7 +11,7 @@ public class Reports extends Excel {
     private int currentRow;
 
     private Reports() {
-        super("src/main/resources/baseFiles/excel/Reports.xlsx");
+        super(CONFIG.REPORTS_FILE);
         this.currentRow = 1;
         this.eraseLastSheet();
     }

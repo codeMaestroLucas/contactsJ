@@ -2,6 +2,7 @@ package org.example.src.utils.myInterface;
 
 import lombok.Getter;
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.entities.MyDriver;
 import org.example.src.utils.FirmsOfWeek;
 
 import java.util.*;
@@ -69,11 +70,11 @@ public class CompletedFirms {
             grandTotal += totalToRegister;
             totalFirmsRegistered += firms.length;
 
-            System.out.printf(" -  %-10s %-30s To Register: %d%n", label + ":", firms.length, totalToRegister);
+            System.out.printf(" - %-10s \u001B[33m%-30s\u001B[0m To Register: \u001B[34m%d\u001B[0m%n", label + ":", firms.length, totalToRegister);
         }
 
         System.out.println("-".repeat(lineLength));
-        System.out.printf("  Total Firms: %-20d Total Lawyers to Register: %d%n", totalFirmsRegistered, grandTotal);
+        System.out.printf("  Total Firms: \u001B[1;33m%-20d\u001B[0m Total Lawyers to Register: \u001B[1;34m%d\u001B[0m%n", totalFirmsRegistered, grandTotal);
         System.out.println("-".repeat(lineLength));
     }
 
@@ -87,5 +88,8 @@ public class CompletedFirms {
     }
 
 
-    public static void main(String[] args) { showCompletedFirmsPrint(); }
+    public static void main(String[] args) {
+        MyDriver.quitDriver();
+        showCompletedFirmsPrint();
+    }
 }

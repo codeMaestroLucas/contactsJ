@@ -77,7 +77,7 @@ public class Njord extends ByPage {
                 By.className("employee-name")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return siteUtl.getContentFromTag(element);
     }
 
 

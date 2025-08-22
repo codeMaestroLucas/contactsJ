@@ -1,5 +1,6 @@
 package org.example.src.entities;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Arrays;
@@ -17,15 +18,19 @@ public class Lawyer {
     public String practiceArea;
     public String email;
     public String phone;
+    public String specialism;
 
     private final String[] validRoles = {
             "Senior Partner",
             "Senior Associate",
             "Senior Director",
             "Senior Advisor",
+
             "Associate Principal",
+            "Associate Counsel",
 
             "Of Counsel",
+            "Special Counsel",
 
             "Managing Partner",
             "Managing Director",
@@ -35,25 +40,27 @@ public class Lawyer {
             "Founding Partner",
 
             "Partner",
-            "Shareholder",
             "Counsel",
             "Director",
             "Founder",
-            "Advisor",
             "Principal",
+            "Advisor",
+            "Manager",
+            "Shareholder",
             "Head",
+            "Chair",
     };
 
-
-    // Full constructor
+    @Builder
     public Lawyer(String link, String name, String role, String firm, String country, String practiceArea, @org.jetbrains.annotations.NotNull String email, String phone) {
         this.link = link;
-        this.role = this.treatRole(role.trim());
+        this.role = this.treatRole(role.trim().toLowerCase());
         this.firm = firm;
         this.country = country.trim();
         this.practiceArea = Objects.isNull(practiceArea) ? "-----" : practiceArea.trim();
         this.email = treatEmail(email);
         this.phone = treatPhone(phone);
+        this.specialism = treatSpecialism();
 
         // Move down so the email be treated and then used for the function `getNameFromEmail`
         this.name = treatName(name);
@@ -115,6 +122,8 @@ public class Lawyer {
      * @return email formatted
      */
     private String treatEmail(String email) {
+        email = email.replaceAll("\\?.*$", ""); // remove everything from "?" onwards
+
         return email.toLowerCase()
                 .replace("mailto", "")
                 .replace(":", "")
@@ -145,12 +154,22 @@ public class Lawyer {
      */
     private String treatRole(String role) {
         for (String validRole : validRoles) {
-            if (role.toLowerCase().contains(validRole.toLowerCase())) {
+            if (role.contains(validRole.toLowerCase())) {
                 return validRole;
             }
         }
 
         return role;
+    }
+
+
+    private String treatSpecialism() {
+        String specialism = "Advisor";
+        String roleToCheck = this.role.toLowerCase();
+
+        if (!roleToCheck.equals("manager") || !roleToCheck.contains("advisor")) specialism = "Legal";
+
+        return specialism;
     }
 
 

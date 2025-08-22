@@ -65,7 +65,7 @@ public class Finreg360 extends ByPage {
                 By.cssSelector("strong")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return siteUtl.getContentFromTag(element);
     }
 
 

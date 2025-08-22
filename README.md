@@ -5,15 +5,14 @@
 <!-- TOC -->
 
 ---
-GIT COMMAND:
+GIT COMMANDs:
 git add . ':!data/sites'
+git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java'
 
----
-**NOTE:** Remember to remove the ``.gitignore`` for the data firms
 
 ---
 # Ideas
-1. 
+1. todo: fix Roschier 
 2. 
 
 ---
