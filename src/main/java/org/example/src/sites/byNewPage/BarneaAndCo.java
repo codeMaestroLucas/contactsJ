@@ -2,6 +2,7 @@ package org.example.src.sites.byNewPage;
 
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
+import org.example.src.sites.byPage.WildeboerDellelce;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;

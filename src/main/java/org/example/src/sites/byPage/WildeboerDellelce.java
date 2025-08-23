@@ -71,7 +71,7 @@ public class WildeboerDellelce extends ByPage {
                 By.cssSelector("a")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return siteUtl.getContentFromTag(element);
     }
 
 

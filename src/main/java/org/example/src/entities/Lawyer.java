@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Data
-public class Lawyer {
+public final class Lawyer {
     public String link;
     public String name;
     public String role;
@@ -19,6 +19,12 @@ public class Lawyer {
     public String email;
     public String phone;
     public String specialism;
+
+    // Abbreviations to remove
+    final Set<String> abbreviations = new HashSet<>(Arrays.asList(
+            "mr", "ms", "mx", "dr", "prof", "mrs", "miss",
+            "master", "sir", "esq", "rev", "att", "llm", "kc"
+    ));
 
     private final String[] validRoles = {
             "Senior Partner",
@@ -86,7 +92,6 @@ public class Lawyer {
         name = name.replace("\n", " ")
                 .replaceAll("[.,]", " ")
                 .replaceAll("[\"']", " ")
-                // .replaceAll("\\*", " ") // Uncomment if needed
                 .toLowerCase();
 
         // Remove common legal role terms
@@ -94,18 +99,12 @@ public class Lawyer {
             name = name.replace(role.toLowerCase(), " ");
         }
 
-        // Abbreviations to remove
-        Set<String> abbreviations = new HashSet<>(Arrays.asList(
-                "mr", "ms", "mx", "dr", "prof", "mrs", "miss",
-                "master", "sir", "esq", "rev", "att", "llm", "kc"
-        ));
-
         // Split and filter
         String[] words = name.trim().split("\\s+");
         StringBuilder fullName = new StringBuilder();
 
         for (String word : words) {
-            if (!word.isBlank() && !abbreviations.contains(word)) {
+            if (!word.isBlank()) {
                 fullName.append(Character.toUpperCase(word.charAt(0)))
                         .append(word.substring(1))
                         .append(" ");
@@ -137,13 +136,9 @@ public class Lawyer {
      * @return phone formatted
      */
     private String treatPhone(String phone) {
-        // Remove all non-digit characters
-        String treatedPhone = phone.replaceAll("\\D", "");
-
-        // Remove leading zeros
-        treatedPhone = treatedPhone.replaceFirst("^0+", "");
-
-        return treatedPhone;
+        // Remove all non-digit characters and leading zeros
+        return phone.replaceAll("\\D", "")
+                    .replaceFirst("^0+", "");
     }
 
 
@@ -158,7 +153,6 @@ public class Lawyer {
                 return validRole;
             }
         }
-
         return role;
     }
 
@@ -179,7 +173,7 @@ public class Lawyer {
      * @param email Email string.
      * @return Extracted name followed by *****.
      */
-    protected String getNameFromEmail(String email) {
+    private String getNameFromEmail(String email) {
         String sanitizedEmail = email
                 .replaceAll("(?i)mailto", "")
                 .replaceAll("(?i):", "")

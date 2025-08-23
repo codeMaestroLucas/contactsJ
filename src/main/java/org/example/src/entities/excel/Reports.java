@@ -5,7 +5,7 @@ import org.example.src.entities.BaseSites.Site;
 
 import java.util.Objects;
 
-public class Reports extends Excel {
+public final class Reports extends Excel {
     private static Reports INSTANCE;
 
     private int currentRow;

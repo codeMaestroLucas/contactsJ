@@ -6,7 +6,7 @@
     import java.util.Objects;
 
 
-    public class Contacts extends Excel{
+    public final class Contacts extends Excel{
         private static Contacts INSTANCE;
 
         private Contacts() {

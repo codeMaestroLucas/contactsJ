@@ -5,7 +5,8 @@ public class CONFIG {
     public static String SHEET_FILE = "src/main/resources/baseFiles/excel/Sheet.xlsx";
     public static String CONTACTS_FILE = "src/main/resources/baseFiles/excel/Contacts.xlsx";
     public static String REPORTS_FILE = "src/main/resources/baseFiles/excel/Reports.xlsx";
-    public static String FILTERED_ACTIVE_CONTACTS_FILE = "src/main/resources/baseFiles/excel/filteredActiveContacts.xlsx";
+    public static String FILTERED_ACTIVE_CONTACTS_FILE = "src/main/resources/baseFiles/excel/filteredCollectedContacts.xlsx";
+    public static String LAST_FIRM_REGISTERED_FILE = "src/main/resources/baseFiles/lastFirmRegisteredInContacts.txt";
 
     public static String EMAILS_MONTH_FOLDER_FILE = "data/sites/";
     public static String EMAILS_TO_AVOID_FOLDER_FILE = "data/_toAvoid/";

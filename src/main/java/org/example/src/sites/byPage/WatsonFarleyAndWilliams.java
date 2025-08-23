@@ -2,6 +2,7 @@ package org.example.src.sites.byPage;
 
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
+import org.example.src.sites.byNewPage.BarneaAndCo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -121,13 +122,13 @@ public class WatsonFarleyAndWilliams extends ByPage {
                 By.cssSelector("a")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return siteUtl.getContentFromTag(element);
     }
 
 
     private String getRole(WebElement lawyer) {
         WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+        return siteUtl.getContentFromTag(element.getText());
     }
 
 

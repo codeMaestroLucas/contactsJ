@@ -12,7 +12,7 @@ git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java
 
 ---
 # Ideas
-1. todo: fix Roschier 
+1. todo: 
 2. 
 
 ---
@@ -26,8 +26,3 @@ git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java
 ![img.png](images/UML_diagram.png)
 
 ---
-
-# Check
-* GetLawyers -
-* Attributes -
-  * 

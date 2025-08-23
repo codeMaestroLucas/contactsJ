@@ -31,9 +31,9 @@ public class MSP extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("_brlbs-btn-accept-all"));
         MyDriver.rollDown(1, 0.1);
+        // Click on add btn
+        MyDriver.clickOnElement(By.id("CookieBoxSaveButton"));
     }
 
 

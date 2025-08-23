@@ -118,7 +118,7 @@ public class GuantaoLaw extends ByNewPage {
                 By.className("gt_team_bannercr_ltitle")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return element.getText().split("\\|")[0];
     }
 
 
@@ -137,15 +137,16 @@ public class GuantaoLaw extends ByNewPage {
                 By.className("gt_team_bannercr_ly")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return element.getText().split("·")[0];
     }
 
 
     private String getEmail(WebElement lawyer) {
-        return lawyer
+        String text = lawyer
                 .findElement(By.className("gt_team_bannercr_tag"))
                 .findElement(By.className("gt_team_bannercr_tag_item_text"))
                 .getText();
+        return text;
     }
 
 

@@ -2,6 +2,7 @@ package org.example.src.sites.byNewPage;
 
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
+import org.example.src.sites.byPage.Liedekerke;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,7 +34,7 @@ public class BrigrardUrrutia extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        MyDriver.clickOnElementMultipleTimes(By.className("btn-arrow"), 6, 1);
+        MyDriver.clickOnElementMultipleTimes(By.className("btn-arrow"), 6, 3);
     }
 
 

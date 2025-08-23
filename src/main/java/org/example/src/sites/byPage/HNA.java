@@ -2,6 +2,7 @@ package org.example.src.sites.byPage;
 
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
+import org.example.src.sites.byNewPage._Template;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -40,7 +41,9 @@ public class HNA extends ByPage {
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner"
+                "partner",
+                "manager", // TODO: Check if "auditor" is a valid role
+                ""
         };
 
         try {

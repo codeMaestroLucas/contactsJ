@@ -24,7 +24,7 @@ public class BonelliErede extends ByPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = new ArrayList();
+        List<WebElement> lawyers = new ArrayList<>();
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));

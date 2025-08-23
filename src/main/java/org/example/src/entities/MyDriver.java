@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MyDriver {
+public final class MyDriver {
     private static WebDriver driver;
 
     // Private constructor to prevent instantiation

@@ -3,21 +3,19 @@ package org.example.src.entities.excel;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
-public class Sheet extends Excel {
+public final class Sheet extends Excel {
     private static Sheet INSTANCE;
 
-    private String lastCountry;
-    private String lastFirm;
-    private int currentRow;
+    private Set<String> lastCountries = new HashSet<>();
+    private String lastFirm = "";
+    private int currentRow = 1;
 
     private Sheet() {
         super(CONFIG.SHEET_FILE);
-        this.currentRow = 1;
-        this.lastFirm = "";
-        this.lastCountry = "";
-
         this.eraseLastSheet();
     }
 
@@ -32,13 +30,14 @@ public class Sheet extends Excel {
     /**
      * Adds the lawyer in the sheet
      * @param lawyer to be registered
+     * @param showMsg parameter to check if want to show the msg of "Lawyer added successfully!" when registering lawyers
      */
-    public void addLawyer(Lawyer lawyer) {
+    public boolean addLawyer(Lawyer lawyer, boolean showMsg) {
         String firm = lawyer.getFirm();
         String country = lawyer.getCountry();
 
         // Just a fallBack, should never happen
-        if (this.lastCountry.equalsIgnoreCase(country) && this.lastFirm.equalsIgnoreCase(firm)) return;
+        if (this.lastCountries.contains((country.toLowerCase())) && this.lastFirm.equalsIgnoreCase(firm)) return false;
 
         this.addContentOnRow(
                 this.currentRow,
@@ -54,13 +53,11 @@ public class Sheet extends Excel {
                 firm
         );
 
-        if (!Objects.isNull(country)) {
-            this.lastCountry = country;
-        }
-
+        this.lastCountries.add((country.toLowerCase()));
         this.lastFirm = firm;
         this.currentRow ++;
 
-        System.out.println("Lawyer added successfully!");
+        if (showMsg) System.out.println("Lawyer added successfully!");
+        return true;
     }
 }

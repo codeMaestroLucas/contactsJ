@@ -2,6 +2,7 @@ package org.example.src.sites.byPage;
 
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
+import org.example.src.sites.byNewPage.GuantaoLaw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -76,10 +77,18 @@ public class RDJ extends ByPage {
     private String getName(WebElement lawyer) {
         By[] byArray = new By[]{
                 By.className("people-name"),
-                By.cssSelector("h3 > a")
+                By.className("first-name")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        String firstName = siteUtl.getContentFromTag(element);
+
+        byArray = new By[]{
+                By.className("people-name"),
+                By.className("middle-name")
+        };
+        element = this.siteUtl.iterateOverBy(byArray, lawyer);
+        String secondName = siteUtl.getContentFromTag(element);
+        return firstName + " " + secondName;
     }
 
 

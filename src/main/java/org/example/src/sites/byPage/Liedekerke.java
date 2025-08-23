@@ -30,8 +30,7 @@ public class Liedekerke extends ByPage {
         super(
             "Liedekerke",
             "https://liedekerke.com/en/lawyers",
-            6,
-            2
+            6
         );
     }
 
@@ -100,11 +99,10 @@ public class Liedekerke extends ByPage {
 
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.cssSelector("div.card__info-block i.far.fa-map-marker-alt + ul.list-unstyled li")
+                By.cssSelector("i.far.fa-map-marker-alt + ul > li")
         };
-        return siteUtl.getCountryBasedInOffice(
-            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
-        );
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
     }
 
 

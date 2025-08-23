@@ -37,7 +37,7 @@ public class ArnesenIP extends ByPage {
 
             return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.employee__item > div.employee__text")
+                            By.className("employee__text")
                     )
             );
 

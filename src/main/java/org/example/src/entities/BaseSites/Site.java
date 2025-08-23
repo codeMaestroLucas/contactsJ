@@ -128,7 +128,7 @@ public abstract class Site  {
 
         protected void addLawyer(Lawyer lawyer) {
         Sheet sheet = Sheet.getINSTANCE();
-        sheet.addLawyer(lawyer);
+        sheet.addLawyer(lawyer, true);
 
         EmailOfMonth.registerEmailOfMonth(lawyer.email, this.emailsOfMonthPath);
 

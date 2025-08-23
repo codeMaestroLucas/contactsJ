@@ -60,12 +60,18 @@ public class TiruchelvamAssociates extends ByPage {
 
 
     private String getLink(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("mem-socials-block"),
-                By.cssSelector("a:last-child")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        String link = this.link;
+
+        try {
+            By[] byArray = new By[]{
+                    By.className("mem-socials-block"),
+                    By.cssSelector("a[href^='https://www.tiruchelvam.com/our_team/']")
+            };
+            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+            link = element.getAttribute("href");
+        } catch (Exception _) {}
+
+        return link;
     }
 
 

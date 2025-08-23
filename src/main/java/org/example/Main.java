@@ -10,7 +10,6 @@ import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
@@ -25,11 +24,11 @@ public class Main {
         System.out.println("=".repeat(70));
 
         try {
-            // Execute the code passed into the method
+            // Execute the function passed into the method
             taskToRun.run();
         } catch (Exception e) {
             System.err.println("An error occurred during execution: " + e.getMessage());
-            e.printStackTrace(); // It's good practice to print the stack trace
+            e.printStackTrace();
         } finally {
             long endTime = System.currentTimeMillis();
 
@@ -43,14 +42,14 @@ public class Main {
         }
     }
 
-    private static void runFilteredFirmsSearch() {
-        System.out.println("Starting: Filtering previously registered lawyers...");
+    private static void getRegisteredContacts() {
+        System.out.println("Starting: Collecting previously registered lawyers...");
         ContactsAlreadyRegisteredSheet contactsSheet = new ContactsAlreadyRegisteredSheet();
-        contactsSheet.filterLawyrsRegistered();
+        contactsSheet.collectLawyersRegistered();
         System.out.println("Completed: Filtering and processing complete.");
     }
 
-    private static void runSearchLawyers() {
+    private static void serachLawyersInWeb() {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
 
@@ -93,7 +92,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        calculateTimeOfExecution(Main::runFilteredFirmsSearch);
-        calculateTimeOfExecution(Main::runSearchLawyers);
+        calculateTimeOfExecution(Main::getRegisteredContacts);
+        calculateTimeOfExecution(Main::serachLawyersInWeb);
     }
 }

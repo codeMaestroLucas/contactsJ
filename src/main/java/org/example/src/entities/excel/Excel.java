@@ -3,6 +3,7 @@ import lombok.Getter;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.example.src.entities.Lawyer;
 
 
 import java.io.FileInputStream;
@@ -46,7 +47,7 @@ public class Excel {
     /**
      * Save the changes back to the file.
      */
-    protected void saveSheet() {
+    public void saveSheet() {
         try (FileOutputStream file = new FileOutputStream(filePath)) {
             workbook.write(file);
             file.flush();

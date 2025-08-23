@@ -33,10 +33,10 @@ public class _CompletedFirmsData {
         new RamdasAndWong(),  new StephensonHarwood(), new SFKSLaw(), new KISCHIP(), new VOPatentsAndTrademarks(),
         new ZamfirescuRacotiPredoiu(), new LaszczukAndWspolnicy(), new DrzewieckiTomaszek(), new MASLaw(), new MSP(),
         new VieringJentschuraAndPartner(), new Esche(), new Dompatent(), new BARDEHLEPAGENBERG(), new Kolster(),
-        new HammarskioldAndCo(), new AWA(), new ArnesenIP(), new Aera(), new Liedekerke(),
-        new BarristonLaw(), new Chattertons(), new BlandyAndBlandy(), new Allens(), new HerbertSmithFreehillsKramer(),
+        new HammarskioldAndCo(), new AWA(), new ArnesenIP(), new Aera(), new HerbertSmithFreehillsKramer(),
+        new BarristonLaw(), new Chattertons(), new BlandyAndBlandy(), new Allens(), new DBHLaw(),
         new Helmsman(), new K1Chamber(), new DRAndAJU(), new ZhongziLaw(), new TahotaLaw(),
-        new GrandwayLaw(), new StewartMcKelvey(), new SIRIUS(), new Roschier(), new DBHLaw(),
+        new GrandwayLaw(), new StewartMcKelvey(), new SIRIUS(), new Roschier(), new Liedekerke(),
 
 
         /** Indian Firms
@@ -46,7 +46,7 @@ public class _CompletedFirmsData {
         new MellingVoitishkinAndPartners()
 
         * No more lawyers to register
-        new FoxAndMandal()
+        new FoxAndMandal(),
 
         * Problems
          1) new McMillan() has a CAPTCH that I can't pass through
