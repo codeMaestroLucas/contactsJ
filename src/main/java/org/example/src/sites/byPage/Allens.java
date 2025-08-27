@@ -124,7 +124,7 @@ public class Allens extends ByPage {
                     By.className("compact-link-list__item")
             };
             WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+            return this.siteUtl.getContentFromTag(element);
         } catch (Exception e) {
             return "";
         }

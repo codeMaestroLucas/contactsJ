@@ -1,6 +1,6 @@
-package org.example.src.sites.byPage;
+package org.example.src.sites.byNewPage;
 
-import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,27 +10,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
-public class WilliamFry extends ByPage {
-    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
-            "cork", "Ireland",
-            "dublin head office", "Ireland",
-            "dublin", "Ireland",
-            "london", "England",
-            "new york", "USA",
-            "san francisco", "USA"
-    );
-
-
+public class Ellex extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className("role")
+            By.className("person-item__info")
     };
 
 
-    public WilliamFry() {
+    public Ellex() {
         super(
-            "William Fry",
-            "https://www.williamfry.com/search-people/",
+            "Ellex",
+            "https://ellex.legal/lawyers/",
             1,
             2
         );
@@ -42,29 +33,17 @@ public class WilliamFry extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
-
-        String loadMoreButtonTxt = driver.findElement(By.className("load_more_button")).getText();
-        int timesToRollDown = Integer.parseInt(loadMoreButtonTxt.replaceAll("[^0-9]", "")) / 10;
-
-        for (int i = 0; i < timesToRollDown; i++) {
-            try {
-                MyDriver.clickOnElement(By.className("load_more_button"));
-                Thread.sleep(1000L);
-
-            } catch (Exception e) {
-                break;
-            }
-        }
+        // Click on add btn
+        MyDriver.clickOnElement(By.className("cky-btn-accept"));
     }
 
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
                 "partner",
-                "chairperson",
-                "managing associate",
-                "senior associate",
+                "expert",
+                "counsel",
+                "senior associate"
         };
 
         try {
@@ -72,7 +51,7 @@ public class WilliamFry extends ByPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("content")
+                            By.className("person-item__content")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -83,19 +62,18 @@ public class WilliamFry extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public void openNewTab(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.cssSelector("a")
+                By.className("person-item__name")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        MyDriver.openNewTab(element.getAttribute("href"));
     }
 
 
     private String getName(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.cssSelector("a"),
-                By.className("title"),
+                By.className("expert-hero__name")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getText();
@@ -103,24 +81,33 @@ public class WilliamFry extends ByPage {
 
 
     private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
+        By[] byArray = new By[]{
+                By.className("expert-hero__position")
+        };
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getText();
     }
 
 
     private String getCountry(WebElement lawyer) {
-        try {
-            By[] byArray = new By[]{
-                    By.className("contact_details"),
-                    By.className("location"),
-                    By.className("list__common__link")
-            };
-            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            String country = this.siteUtl.getContentFromTag(element).split("-")[0].trim();
-            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        By[] byArray = new By[]{
+                By.className("expert-hero__location")
+        };
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+        return element.getText();
+    }
 
+
+    private String getPracticeArea() {
+        try {
+            WebElement div = driver.findElement(By.className("main__side"));
+            By[] byArray = new By[]{
+                    By.className("main__links"),
+                    By.className("links__link")
+            };
+            WebElement element = this.siteUtl.iterateOverBy(byArray, div);
+            return element.getText();
         } catch (Exception e) {
-            System.err.println(e.getMessage());
             return "";
         }
     }
@@ -129,7 +116,7 @@ public class WilliamFry extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("contact_details"))
+                        .findElement(By.className("expert-hero__contact-info"))
                         .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
@@ -141,16 +128,21 @@ public class WilliamFry extends ByPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
+        this.openNewTab(lawyer);
+
+        WebElement div = driver.findElement(By.className("expert-hero__container"));
+
+        String[] socials = this.getSocials(div);
+
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
+            "link", Objects.requireNonNull(driver.getCurrentUrl()),
+            "name", this.getName(div),
+            "role", this.getRole(div),
             "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
+            "country", this.getCountry(div),
+            "practice_area", this.getPracticeArea(),
             "email", socials[0],
-            "phone", socials[1]
+            "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
 }

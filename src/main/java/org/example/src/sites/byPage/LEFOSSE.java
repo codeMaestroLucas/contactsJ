@@ -111,7 +111,7 @@ public class LEFOSSE extends ByPage {
                         .findElements(By.cssSelector("p"));
 
             for (WebElement social : socials) {
-                String value = siteUtl.getContentFromTag(social.getAttribute("outerHTML")).toLowerCase().trim();
+                String value = this.siteUtl.getContentFromTag(social).toLowerCase().trim();
 
                 // Check if it's an email
                 if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {

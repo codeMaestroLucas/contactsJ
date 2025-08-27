@@ -17,5 +17,6 @@ public class CONFIG {
     // OTHERS
     public static int TOTAL_LAWYERS_TO_GET = 250;
     public static int LAWYERS_IN_SHEET = 100;
-    public static int LAWYERS_IN_FILTER = TOTAL_LAWYERS_TO_GET - LAWYERS_IN_SHEET;
+    public static int LAWYERS_IN_FILTER = TOTAL_LAWYERS_TO_GET - LAWYERS_IN_SHEET + 195;
+    // just to collect the other that i've failed to collect last time
 }

@@ -83,7 +83,6 @@ public abstract class ByPage extends Site {
                                 .build();
 
 
-                        //todo: maybe add a PROXY here to identify why the validation failed
                         boolean canRegister = Validations.makeValidations(
                                 lawyerToRegister,
                                 this.lastCountries,

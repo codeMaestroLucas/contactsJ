@@ -81,13 +81,13 @@ public class Roschier extends ByPage {
                 By.className("card__title")
         };
         WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return this.siteUtl.getContentFromTag(element);
     }
 
 
     private String getRole(WebElement lawyer) {
         WebElement element = siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return this.siteUtl.getContentFromTag(element);
     }
 
 

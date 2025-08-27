@@ -12,17 +12,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Sangra extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className("text"),
-            By.className("text__title")
-    };
-
-
-    public Sangra() {
+public class Madrona extends ByNewPage {
+    public Madrona() {
         super(
-            "Sangra",
-            "https://www.sangra.com/people/",
+            "Madrona",
+            "https://madronaadvogados.com.br/en/our-lawyers/",
             1
         );
     }
@@ -34,25 +28,20 @@ public class Sangra extends ByNewPage {
         Thread.sleep(1000L);
 
         // Click on add btn
-        MyDriver.clickOnElement(By.cssSelector("a[aria-label='dismiss cookie message']"));
+        MyDriver.clickOnElement(By.id("popup"));
     }
 
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel"
-        };
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("profile")
+                            By.cssSelector("div.w-full > a[href^='/en/our-lawyers/']")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -61,38 +50,38 @@ public class Sangra extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("link")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
 
     private String getName(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.className("title"),
+                By.cssSelector("img")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return this.siteUtl.getContentFromTag(element);
+        return element.getAttribute("alt");
     }
 
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("sub-title")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getPracticeArea(WebElement lawyer) {
+        try {
+            By[] byArray = new By[]{
+                    By.cssSelector("a[href^='/en/practice-areas/']")
+            };
+            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+            return element.getText();
+        } catch (Exception e) {
+            return "";
+        }
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("contact"))
-                        .findElements(By.cssSelector("a"));
-            return super.getSocials(socials, false);
+                        .findElement(By.cssSelector("ul.mt-4"))
+                        .findElements(By.cssSelector("li"));
+            return super.getSocials(socials, true);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
@@ -104,18 +93,19 @@ public class Sangra extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("profile"));
+        WebElement div = driver.findElement(By.xpath("//*[@id=\"__next\"]/main/div/main/div[3]/div/div[1]"));
 
         String[] socials = this.getSocials(div);
+
         return Map.of(
             "link", Objects.requireNonNull(driver.getCurrentUrl()),
             "name", this.getName(div),
-            "role", this.getRole(div),
+            "role", "Partner",
             "firm", this.name,
-            "country", "Canada",
-            "practice_area", "",
+            "country", "Brazil",
+            "practice_area", this.getPracticeArea(div),
             "email", socials[0],
-            "phone", socials[1].isEmpty() ? "6046628808" : socials[1]
+            "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
 }

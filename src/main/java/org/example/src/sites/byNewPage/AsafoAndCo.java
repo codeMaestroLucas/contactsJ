@@ -93,7 +93,7 @@ public class AsafoAndCo extends ByNewPage {
                 By.cssSelector("h1")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML")).trim();
+        return this.siteUtl.getContentFromTag(element).trim();
     }
 
 
@@ -104,7 +104,7 @@ public class AsafoAndCo extends ByNewPage {
                 By.className("poste")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML")).trim();
+        return this.siteUtl.getContentFromTag(element).trim();
     }
 
 
@@ -114,7 +114,7 @@ public class AsafoAndCo extends ByNewPage {
                 By.className("poste"),
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = siteUtl.getContentFromTag(element.getAttribute("outerHTML")).trim();
+        String country = this.siteUtl.getContentFromTag(element).trim();
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
     }
 
@@ -125,7 +125,7 @@ public class AsafoAndCo extends ByNewPage {
                 By.className("poste")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML")).trim();
+        return this.siteUtl.getContentFromTag(element).trim();
     }
 
 

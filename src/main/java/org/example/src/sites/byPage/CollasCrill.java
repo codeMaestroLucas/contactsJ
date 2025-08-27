@@ -55,14 +55,14 @@ public class CollasCrill extends ByPage {
         By[] byArray = new By[]{By.className("name-desktop")};
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         String textToReturn = element.getText();
-        return textToReturn.isEmpty() ? this.siteUtl.getContentFromTag(element.getAttribute("outerHTML")) : textToReturn;
+        return textToReturn.isEmpty() ? this.siteUtl.getContentFromTag(element) : textToReturn;
     }
 
     private String getRole(WebElement lawyer) {
         By[] byArray = new By[]{By.className("title")};
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         String textToReturn = element.getText();
-        return textToReturn.isEmpty() ? this.siteUtl.getContentFromTag(element.getAttribute("outerHTML")) : textToReturn;
+        return textToReturn.isEmpty() ? this.siteUtl.getContentFromTag(element) : textToReturn;
     }
 
     private String getCountry(WebElement lawyer) {

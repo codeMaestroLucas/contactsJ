@@ -1,11 +1,10 @@
-package org.example.src.sites.byNewPage;
+package org.example.src.sites._standingBy;
 
 import org.example.src.entities.BaseSites.ByNewPage;
-import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -71,12 +70,15 @@ public class GideLoyretteNouel extends ByNewPage {
             Thread.sleep(5000);
 
         } else { // Click on next page
+            //todo: fix this
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            elementToClick = driver
-                    .findElement(By.xpath("//*[@id=\"strates\"]/section/div/div[2]/button[2]"));
 
-            wait.until(ExpectedConditions.elementToBeClickable(elementToClick));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
+            WebElement nextBtn = wait.until(
+                    ExpectedConditions.elementToBeClickable(By.cssSelector(".pagination .next"))
+            );
+            Actions actions = new Actions(driver);
+            actions.moveToElement(nextBtn).pause(Duration.ofMillis(200)).click().perform();
+
         }
 
     }
@@ -90,7 +92,7 @@ public class GideLoyretteNouel extends ByNewPage {
                 By.className("function"),
         };
 
-        String[] validRoles = {
+        String[] validRoles = new String[]{
                 "partner",
                 "counsel"
         };
@@ -102,7 +104,7 @@ public class GideLoyretteNouel extends ByNewPage {
                     ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("card-avocat"))
             );
 
-            return null;
+             return null;
 //            return siteUtl.filterLawyersInPage(lawyers, webRole, false, validRoles);
 
         } catch (Exception e) {

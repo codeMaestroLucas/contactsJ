@@ -98,7 +98,7 @@ public class BARDEHLEPAGENBERG extends ByPage {
                         .findElements(By.cssSelector("a"));
 
             for (WebElement social : socials) {
-                String link = siteUtl.getContentFromTag(social.getAttribute("outerHTML"));
+                String link = this.siteUtl.getContentFromTag(social);
 
                 if (email.isEmpty() && link.contains("(at)")) email = link.replace("(at)", "@");
                 else if (phone.isEmpty() && link.contains("+")) phone = link;

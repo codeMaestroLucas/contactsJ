@@ -19,25 +19,22 @@ public class Main {
      * @param taskToRun The code to execute, passed as a Runnable.
      */
     private static void calculateTimeOfExecution(Runnable taskToRun) {
-        // Use nanoTime for better precision
         long startTime = System.currentTimeMillis();
         System.out.println("=".repeat(70));
 
         try {
-            // Execute the function passed into the method
             taskToRun.run();
+
         } catch (Exception e) {
             System.err.println("An error occurred during execution: " + e.getMessage());
             e.printStackTrace();
+
         } finally {
             long endTime = System.currentTimeMillis();
 
-            // Final output
-            System.out.println();
-            System.out.println("=".repeat(70));
+            System.out.println("\n" + "=".repeat(70));
 
             String formattedTime = interfaceUtls.calculateTime(startTime, endTime);
-            // Using a simple duration calculation here, adjust if your method does something different
             System.out.println("\nTotal time: " + formattedTime + "\n\n");
         }
     }
@@ -78,21 +75,28 @@ public class Main {
                     totalLawyersRegistered += site.lawyersRegistered;
                 }
 
-                if (totalLawyersRegistered > CONFIG.LAWYERS_IN_SHEET) break;
+                if (totalLawyersRegistered >= CONFIG.LAWYERS_IN_SHEET) break;
             }
 
         } catch (Exception e) {
             System.err.println("An error occurred while searching for lawyers: " + e.getMessage());
             e.printStackTrace();
+
         } finally {
             MyDriver.quitDriver();
         }
+
         System.out.println("Completed: Lawyer search finished.");
     }
 
 
-    public static void main(String[] args) {
+    private static void performCompleteSearch() {
         calculateTimeOfExecution(Main::getRegisteredContacts);
         calculateTimeOfExecution(Main::serachLawyersInWeb);
+        System.out.println("\n\n" + "=".repeat(70));
+    }
+
+    public static void main(String[] args) {
+        calculateTimeOfExecution(Main::performCompleteSearch);
     }
 }

@@ -35,7 +35,7 @@ public class FoxAndMandal extends ByPage {
     private String getName(WebElement lawyer) {
         By[] byArray = new By[]{By.cssSelector("h5")};
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return this.siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return this.siteUtl.getContentFromTag(element);
     }
 
     private String[] getSocials(WebElement lawyer) {

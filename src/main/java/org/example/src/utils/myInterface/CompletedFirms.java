@@ -1,13 +1,16 @@
 package org.example.src.utils.myInterface;
 
 import lombok.Getter;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.MyDriver;
+import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.utils.FirmsOfWeek;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Getter
 public class CompletedFirms {
@@ -30,11 +33,7 @@ public class CompletedFirms {
         // Filter all sites that weren't registered in the `week` file
         for (Site[] category : sites) {
             for (Site site : category) {
-                if (site != null
-                    && !FirmsOfWeek.isRegisteredInFirmWeek(site.name)) {
-                        filteredSites.add(site);
-                }
-            }
+                if (site != null && !FirmsOfWeek.isRegisteredInFirmWeek(site.name)) filteredSites.add(site);            }
         }
 
         Collections.shuffle(filteredSites);
@@ -43,10 +42,10 @@ public class CompletedFirms {
 
 
     /**
-     * A log print to count all firms completed
+     * A log print to count all sites completed
      */
-    public static void showCompletedFirmsPrint() {
-        String title = "| COMPLETED |";
+    private static int showSitesCompleted() {
+        String title = "| SITES COMPLETED |";
         int lineLength = 70;
         int padding = (lineLength - title.length()) / 2;
 
@@ -76,6 +75,8 @@ public class CompletedFirms {
         System.out.println("-".repeat(lineLength));
         System.out.printf("  Total Firms: \u001B[1;33m%-20d\u001B[0m Total Lawyers to Register: \u001B[1;34m%d\u001B[0m%n", totalFirmsRegistered, grandTotal);
         System.out.println("-".repeat(lineLength));
+
+        return grandTotal;
     }
 
 
@@ -87,9 +88,58 @@ public class CompletedFirms {
         return total;
     }
 
+    /**
+     * A log print to count all filtered lawyers
+     */
+    private static int showFilteredContacts() {
+        ContactsAlreadyRegisteredSheet sheet = new ContactsAlreadyRegisteredSheet();
+        int lastRow = sheet.getSheet().getLastRowNum();
+        int nonEmptyRows = 0;
+
+        for (int i = 0; i <= lastRow; i++) {
+            Row row = sheet.getSheet().getRow(i);
+            if (row == null) continue; // skip empty rows
+
+            for (Cell cell : row) {
+                if (cell.getCellType() != CellType.BLANK && cell.getCellType() != CellType._NONE) {
+                    nonEmptyRows++;
+                    break;
+                }
+            }
+        }
+
+        String title = "| FILTERED LAWYERS |";
+        int lineLength = 70;
+        int padding = Math.max(0, (lineLength - title.length()) / 2);
+
+        System.out.println("-".repeat(padding) + title + "-".repeat(lineLength - padding - title.length()));
+        System.out.println(" - Filtered Lawyers:" + " ".repeat(38)  + "\u001B[34m" + nonEmptyRows + "\u001B[0m");
+        System.out.println("-".repeat(lineLength));
+
+        return nonEmptyRows;
+    }
+
+
+    /**
+     * Perform a log of the total of lawyers registered by the Search in Web and by the Filtered Contacts file.
+     * Then it shows the total amount of lawyers registered
+     */
+    private static void showAllFirmsCompleted() {
+        System.out.println("\n\n");
+        int totalMaxLawyers = showFilteredContacts();
+        totalMaxLawyers += showSitesCompleted();
+
+        String title = "| TOTAL |";
+        int lineLength = 70;
+        int padding = Math.max(0, (lineLength - title.length()) / 2);
+
+        System.out.println("=".repeat(padding) + title + "=".repeat(lineLength - padding - title.length()));
+        System.out.println(" - Total Lawyers:" + " ".repeat(41)  + "\u001B[34m" + totalMaxLawyers + "\u001B[0m");
+        System.out.println("=".repeat(lineLength));
+    }
+
 
     public static void main(String[] args) {
         MyDriver.quitDriver();
-        showCompletedFirmsPrint();
-    }
-}
+        showAllFirmsCompleted();
+    }}

@@ -1,7 +1,6 @@
 package org.example.src.utils.myInterface;
 
 import lombok.Getter;
-import org.apache.poi.hssf.record.GutsRecord;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.sites.byPage.*;
@@ -60,9 +59,21 @@ public class _CompletedFirmsData {
     public final static Site[] byNewPage = {
         new ALGoodbody(), new Frontier(), new Oxera(), new GuantaoLaw(), new Sangra(),
         new NurmansyahAndMuzdalifah(), new Onsagers(), new TompkinsWake(), new BWBLLP(), new BCFLaw(),
-        new DaviesWardPhillipsAndVineberg(), new ThompsonDorfmanSweatman(), new Dottir(), new OgletreeDeakins(), new CovenantChambers(),
+        new ThompsonDorfmanSweatman(), new Dottir(), new OgletreeDeakins(), new EBN(), new Ellex(),
         new ControlRisks(), new ArthurCox(), new AsafoAndCo(), new BarneaAndCo(), new Beauchamps(),
-        new Borenius(), new BrigrardUrrutia(), new CarneluttiLaw(), new Cobalt(), new Dentons()
+        new Borenius(), new BrigrardUrrutia(), new CarneluttiLaw(), new Cobalt(), new Dentons(),
+        new TEMPLARS(), new Madrona(), new Sherrards(), new EllisonsSolicitors(), new HYLeungAndCo(),
+        new DWFoxTucker(), new FangdaPartners(), new CovenantChambers(), new Gadens(), new DaviesWardPhillipsAndVineberg(),
+        new GittiAndPartners(), new GORG(), new GornitzkyAndCo(), new HiggsAndJohnson(), new Horten()
+
+
+
+        /**
+         * INDIAN
+         * - to complete
+         * new DSKLegal(), new HSAAdvocates()
+         *
+        */
     };
 
 

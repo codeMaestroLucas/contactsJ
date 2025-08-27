@@ -12,17 +12,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Sangra extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className("text"),
-            By.className("text__title")
+public class EBN extends ByNewPage {
+    String[] validRoles = new String[]{
+            "partner",
+            "counsel",
+            "director",
+            "senior associate"
     };
 
 
-    public Sangra() {
+    public EBN() {
         super(
-            "Sangra",
-            "https://www.sangra.com/people/",
+            "EBN",
+            "https://www.ebnlaw.co.il/team-members/",
             1
         );
     }
@@ -32,27 +34,14 @@ public class Sangra extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        // Click on add btn
-        MyDriver.clickOnElement(By.cssSelector("a[aria-label='dismiss cookie message']"));
     }
 
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("profile")
-                    )
-            );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.member > a")));
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -61,36 +50,50 @@ public class Sangra extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("link")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
 
     private String getName(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.className("title"),
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return this.siteUtl.getContentFromTag(element);
-    }
-
-
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("sub-title")
+                By.className("team-member-masthead__info"),
+                By.className("team-member-masthead__name")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getText();
     }
 
 
+    private String getRole(WebElement lawyer) {
+        By[] byArray = new By[]{
+                By.className("team-member-masthead__info"),
+                By.className("team-member-masthead__position")
+        };
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+        String role = element.getText();
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
+    }
+
+
+    private String getPracticeArea(WebElement lawyer) {
+        try {
+            By[] byArray = new By[]{
+                    By.className("hero__practice-areas"),
+                    By.cssSelector("a[href^='https://www.ebnlaw.co.il/practice-areas/']")
+            };
+            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+            return element.getText();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("contact"))
+                        .findElement(By.className("team-member-masthead__contact"))
                         .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
@@ -104,18 +107,22 @@ public class Sangra extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("profile"));
+        WebElement div = driver.findElement(By.className("team-member-masthead__container"));
+
+        String role = this.getRole(div);
+        if (role.equals("Invalid Role")) return "Invalid Role";
 
         String[] socials = this.getSocials(div);
+
         return Map.of(
             "link", Objects.requireNonNull(driver.getCurrentUrl()),
             "name", this.getName(div),
-            "role", this.getRole(div),
+            "role", role,
             "firm", this.name,
-            "country", "Canada",
-            "practice_area", "",
+            "country", "Israel",
+            "practice_area", this.getPracticeArea(div),
             "email", socials[0],
-            "phone", socials[1].isEmpty() ? "6046628808" : socials[1]
+            "phone", socials[1].isEmpty() ? "97237770111" : socials[1]
         );
     }
 }

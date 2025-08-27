@@ -91,7 +91,7 @@ public class Chattertons extends ByPage {
                 By.cssSelector("li")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return this.siteUtl.getContentFromTag(element);
     }
 
 

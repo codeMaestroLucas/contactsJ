@@ -12,17 +12,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Sangra extends ByNewPage {
+public class HYLeungAndCo extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className("text"),
-            By.className("text__title")
+            By.className("team-members-list-indi-title")
     };
 
 
-    public Sangra() {
+    public HYLeungAndCo() {
         super(
-            "Sangra",
-            "https://www.sangra.com/people/",
+            "HY Leung And Co",
+            "https://hyleung.com/our-team-members/",
             1
         );
     }
@@ -34,14 +33,14 @@ public class Sangra extends ByNewPage {
         Thread.sleep(1000L);
 
         // Click on add btn
-        MyDriver.clickOnElement(By.cssSelector("a[aria-label='dismiss cookie message']"));
+//        MyDriver.clickOnElement(By.id(""));
     }
 
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
                 "partner",
-                "counsel"
+                "director"
         };
 
         try {
@@ -49,7 +48,7 @@ public class Sangra extends ByNewPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("profile")
+                            By.className("team-members-list-indi-row2-wrapper")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -62,7 +61,7 @@ public class Sangra extends ByNewPage {
 
     public void openNewTab(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.className("link")
+                By.className("team-members-list-indi-arrow-wrapper")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         MyDriver.openNewTab(element.getAttribute("href"));
@@ -71,16 +70,20 @@ public class Sangra extends ByNewPage {
 
     private String getName(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.className("title"),
+                By.className("team-member-name-large")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return this.siteUtl.getContentFromTag(element);
+        WebElement name1 = this.siteUtl.iterateOverBy(byArray, lawyer);
+        byArray = new By[]{
+                By.className("team-member-name-small")
+        };
+        WebElement name2 = this.siteUtl.iterateOverBy(byArray, lawyer);
+        return name1.getText() + " " + name2.getText();
     }
 
 
     private String getRole(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.className("sub-title")
+                By.className("team-member-title")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return element.getText();
@@ -90,9 +93,8 @@ public class Sangra extends ByNewPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("contact"))
-                        .findElements(By.cssSelector("a"));
-            return super.getSocials(socials, false);
+                        .findElements(By.className("team-member-contact-right"));
+            return super.getSocials(socials, true);
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
@@ -104,18 +106,20 @@ public class Sangra extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("profile"));
+        WebElement header = driver.findElement(By.className("team-member-name-title-wrapper"));
+        WebElement div = driver.findElement(By.className("team-member-contact-wrapper"));
 
         String[] socials = this.getSocials(div);
+
         return Map.of(
             "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", this.getRole(div),
+            "name", this.getName(header),
+            "role", this.getRole(header),
             "firm", this.name,
-            "country", "Canada",
+            "country", "Hong Kong",
             "practice_area", "",
             "email", socials[0],
-            "phone", socials[1].isEmpty() ? "6046628808" : socials[1]
+            "phone", socials[1].isEmpty() ? "85235654945" : socials[1]
         );
     }
 }

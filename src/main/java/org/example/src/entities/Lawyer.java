@@ -27,34 +27,17 @@ public final class Lawyer {
     ));
 
     private final String[] validRoles = {
-            "Senior Partner",
-            "Senior Associate",
-            "Senior Director",
-            "Senior Advisor",
+        "Senior Partner", "Senior Associate", "Senior Director", "Senior Advisor",
 
-            "Associate Principal",
-            "Associate Counsel",
+        "Associate Principal", "Associate Counsel",
 
-            "Of Counsel",
-            "Special Counsel",
+        "Of Counsel", "Special Counsel",
 
-            "Managing Partner",
-            "Managing Director",
-            "Managing Associate",
-            "Managing Principal",
+        "Managing Partner", "Managing Director", "Managing Associate", "Managing Principal", "Managing Counsel",
+        "Founding Partner",
 
-            "Founding Partner",
-
-            "Partner",
-            "Counsel",
-            "Director",
-            "Founder",
-            "Principal",
-            "Advisor",
-            "Manager",
-            "Shareholder",
-            "Head",
-            "Chair",
+        "Partner", "Counsel", "Director", "Founder", "Principal", "Advisor", "Manager", "Shareholder",
+        "Head", "Chair",
     };
 
     @Builder
@@ -63,7 +46,7 @@ public final class Lawyer {
         this.role = this.treatRole(role.trim().toLowerCase());
         this.firm = firm;
         this.country = country.trim();
-        this.practiceArea = Objects.isNull(practiceArea) ? "-----" : practiceArea.trim();
+        this.practiceArea = treatPracticeArea(practiceArea);
         this.email = treatEmail(email);
         this.phone = treatPhone(phone);
         this.specialism = treatSpecialism();
@@ -74,11 +57,28 @@ public final class Lawyer {
 
 
     /**
+     * Treats lawyers practice area
+     *
+     * @param practiceArea original practice area
+     * @return practice area treated
+     */
+    private String treatPracticeArea(String practiceArea) {
+        if (Objects.isNull(practiceArea)) return "-----";
+
+        return practiceArea
+                .replace("law", "").replace("Law", "")
+                .replace("specialist", "").replace("Specialist", "")
+                .replace("service", "").replace("Service", "")
+                .replace("services", "").replace("Services", "")
+                .trim();
+    }
+
+
+    /**
      * This function is used to treat a Lawyer name by removing abbreviations
      * and returning the cleaned name.
      * Also, if the name is empty, it calls
      * the function `getNameFromEmail`.
-     *
      *
      * @param name original name
      * @return treated name
@@ -117,6 +117,7 @@ public final class Lawyer {
 
     /**
      * Treat lawyer email
+     *
      * @param email email to be treated
      * @return email formatted
      */
@@ -132,6 +133,7 @@ public final class Lawyer {
 
     /**
      * Treat lawyer phone
+     * 
      * @param phone phone to be treated
      * @return phone formatted
      */
@@ -144,6 +146,7 @@ public final class Lawyer {
 
     /**
      * Treat lawyer role
+     *
      * @param role role to be treated
      * @return role formatted
      */

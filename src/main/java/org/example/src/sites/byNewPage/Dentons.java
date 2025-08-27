@@ -323,7 +323,7 @@ public class Dentons extends ByNewPage {
                 By.id("mobiletop")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return this.siteUtl.getContentFromTag(element);
     }
 
 
@@ -333,7 +333,7 @@ public class Dentons extends ByNewPage {
                 By.cssSelector("small")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        return this.siteUtl.getContentFromTag(element);
     }
 
 
@@ -344,7 +344,7 @@ public class Dentons extends ByNewPage {
                 By.cssSelector("span")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = siteUtl.getContentFromTag(element.getAttribute("outerHTML"));
+        String country = this.siteUtl.getContentFromTag(element);
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
     }
 
