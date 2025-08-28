@@ -115,7 +115,7 @@ public class AsafoAndCo extends ByNewPage {
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         String country = this.siteUtl.getContentFromTag(element).trim();
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
     }
 
 

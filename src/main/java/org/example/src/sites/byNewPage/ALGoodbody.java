@@ -104,7 +104,7 @@ public class ALGoodbody extends ByNewPage {
                 By.cssSelector("p:nth-child(3)")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        String country = siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "");
         return country.toLowerCase().contains("northen ireland") ? "England" : country;
     }
 

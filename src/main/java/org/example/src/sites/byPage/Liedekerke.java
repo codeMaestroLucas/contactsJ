@@ -102,7 +102,7 @@ public class Liedekerke extends ByPage {
                 By.cssSelector("i.far.fa-map-marker-alt + ul > li")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText());
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "");
     }
 
 

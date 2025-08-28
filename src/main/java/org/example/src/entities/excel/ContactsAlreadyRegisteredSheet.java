@@ -121,6 +121,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
 
             if (!firm.equals(lastFirm)) totalLawyersPerFirm = 0;
+
             totalLawyersPerFirm++;
             lastFirm = firm;
         }
@@ -132,6 +133,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
             maxReRuns--;
             if (maxReRuns > 0) {
+                System.out.println("\n\u001B[32mRe-running registered Lawyers filtering\u001B[0m.\n");
                 this.collectLawyersRegistered();
             }
         }

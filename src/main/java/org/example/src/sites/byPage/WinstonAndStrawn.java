@@ -112,7 +112,7 @@ public class WinstonAndStrawn extends ByPage {
             country = matcher.group(1);
         }
 
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
     }
 
     private String[] getSocials(WebElement lawyer) {

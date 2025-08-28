@@ -119,7 +119,7 @@ public class Ogier extends ByPage {
     private String getCountry(WebElement lawyer) {
         List<WebElement> elements = lawyer.findElements(By.cssSelector("p.body3"));
         String country = elements.getLast().getText();
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
     }
 
     private String getPracticeArea(WebElement lawyer) {

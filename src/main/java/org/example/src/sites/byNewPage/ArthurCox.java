@@ -102,7 +102,7 @@ public class ArthurCox extends ByNewPage {
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         String country = element.getText().split("\\|")[1];
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
     }
 
 

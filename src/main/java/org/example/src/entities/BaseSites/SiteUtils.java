@@ -195,7 +195,7 @@ public class SiteUtils {
      */
     public String getCountryBasedInOffice(Map<String, String> OFFICE_TO_COUNTRY, WebElement element) {
         String officeToCheck = element.getText();
-        if (officeToCheck.isEmpty() || officeToCheck.equals(" ")) officeToCheck = getContentFromTag(element.getAttribute("outerHTML"));
+        if (officeToCheck.isEmpty() || officeToCheck.equals(" ")) officeToCheck = getContentFromTag(element);
 
         officeToCheck = officeToCheck.replaceAll("[^A-Za-z]", " ").toLowerCase().trim();
         return OFFICE_TO_COUNTRY.getOrDefault(officeToCheck, officeToCheck);
@@ -207,7 +207,7 @@ public class SiteUtils {
      * @param officeToCheck   the office name to check
      * @return the country name if found in the map; otherwise, the normalized office name itself
      */
-    public String getCountryBasedInOffice(Map<String, String> officeToCountry, String officeToCheck) {
+    public String getCountryBasedInOffice(Map<String, String> officeToCountry, String officeToCheck, String defaultValue) {
         if (officeToCheck == null || officeToCheck.isBlank()) {
             return "";
         }
@@ -216,8 +216,8 @@ public class SiteUtils {
                 .replaceAll("[^A-Za-z]", " ")
                 .replace("nbsp", " ")
                 .toLowerCase()
-                .trim()
-                .replaceAll("\\s+", " "); // collapse multiple spaces
+                .replaceAll("\\s+", " ") // collapse multiple spaces
+                .trim();
 
         // 1. Try full match
         if (officeToCountry.containsKey(normalizedOffice)) {
@@ -232,8 +232,8 @@ public class SiteUtils {
             }
         }
 
-        // 3. Nothing found, return normalized string
-        return normalizedOffice;
+        // 3. Nothing found, return normalized string or the default value
+        return defaultValue.isEmpty() ? normalizedOffice : defaultValue;
     }
 
 

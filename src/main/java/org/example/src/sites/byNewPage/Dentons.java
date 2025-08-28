@@ -345,7 +345,7 @@ public class Dentons extends ByNewPage {
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         String country = this.siteUtl.getContentFromTag(element);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
     }
 
 

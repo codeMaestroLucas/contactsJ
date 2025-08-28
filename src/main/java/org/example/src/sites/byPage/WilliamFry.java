@@ -117,7 +117,7 @@ public class WilliamFry extends ByPage {
             };
             WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
             String country = this.siteUtl.getContentFromTag(element).split("-")[0].trim();
-            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
 
         } catch (Exception e) {
             System.err.println(e.getMessage());

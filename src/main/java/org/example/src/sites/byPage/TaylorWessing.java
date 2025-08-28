@@ -125,7 +125,7 @@ public class TaylorWessing extends ByPage {
         linkToLawyer = linkToLawyer
                 .replace("https://www.taylorwessing.com/en/people/", "")
                 .split("/")[0];
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, linkToLawyer);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, linkToLawyer, "");
     }
 
 

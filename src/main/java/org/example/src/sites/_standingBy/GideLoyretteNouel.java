@@ -145,7 +145,7 @@ public class GideLoyretteNouel extends ByNewPage {
         };
         WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
         String country = element.getText().split("\n")[0].trim();
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
     }
 
 
