@@ -15,22 +15,12 @@ import static java.util.Map.entry;
 
 public class CrowellAndMoring extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("boston", "USA"),
             entry("brussels", "Belgium"),
-            entry("chicago", "USA"),
-            entry("denver", "USA"),
             entry("doha", "the UAE"),
             entry("london", "England"),
-            entry("los angeles", "USA"),
-            entry("new york", "USA"),
-            entry("orange county", "USA"),
-            entry("san francisco", "USA"),
             entry("shanghai", "China"),
             entry("singapore (cga)", "Singapore"),
-            entry("singapore", "Singapore"),
-            entry("washington d c", "USA"),
-            entry("washington  d c", "USA"),
-            entry("washington d c (cga)", "USA")
+            entry("singapore", "Singapore")
     );
 
 
@@ -114,13 +104,12 @@ public class CrowellAndMoring extends ByPage {
 
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{
-                By.cssSelector("div[class^='styles__listingsContainer']"),
-                By.cssSelector("ul[class^='styles__officesListingContainer']"),
+                By.cssSelector("div[class*='styles__listingsContainer']"),
+                By.cssSelector("ul[class*='styles__officesListingContainer']"),
                 By.cssSelector("div.color-navy-blue > a")
         };
-        return siteUtl.getCountryBasedInOffice(
-            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
-        );
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "USA");
     }
 
 

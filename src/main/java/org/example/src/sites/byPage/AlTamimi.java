@@ -32,7 +32,7 @@ public class AlTamimi extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = (List)wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("key-contact-detail")));
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("key-contact-detail")));
             return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -61,6 +61,7 @@ public class AlTamimi extends ByPage {
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
+        //todo: check if the country is an empty value1
         return Map.of("link", this.getLink(lawyer), "name", this.getName(lawyer), "role", this.getRole(lawyer), "firm", this.name, "country", "", "practice_area", "", "email", socials[0], "phone", this.link.contains("mumbai") ? "+91 22 400 10000" : "+91 80 4016 0000");
     }
 }

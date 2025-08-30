@@ -101,15 +101,6 @@ public class DaviesWardPhillipsAndVineberg extends ByNewPage {
     }
 
 
-    private String getCountry(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("link--secondary")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
-    }
-
-
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer

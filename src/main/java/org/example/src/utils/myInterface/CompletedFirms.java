@@ -4,11 +4,10 @@ import lombok.Getter;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
-import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
-import org.example.src.utils.FirmsOfWeek;
+import org.example.src.utils.FirmsOMonth;
 
 import java.util.*;
 
@@ -23,21 +22,25 @@ public class CompletedFirms {
 
 
     /**
-     * Construct all firms that are not inserted in the week file then insert the filter firms in the in an array and
+     * Construct all firms that are not inserted in the  file then insert the filter firms in the in an array and
      * then shuffle it.
      */
     public static List<Site> constructFirms(int maxFirmsToGet) {
         Site[][] sites = new Site[][] {byPage, byNewPage, byFilter, byClick};
         List<Site> filteredSites = new ArrayList<>();
 
-        // Filter all sites that weren't registered in the `week` file
+        // Filter all sites that weren't registered in the `` file
         for (Site[] category : sites) {
             for (Site site : category) {
-                if (site != null && !FirmsOfWeek.isRegisteredInFirmWeek(site.name)) filteredSites.add(site);            }
+                if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) filteredSites.add(site);            }
         }
 
         Collections.shuffle(filteredSites);
-        return filteredSites.subList(0, maxFirmsToGet);
+
+        // Prevent an error that might be caused by not having the amount of firms needed to fill the desired amount
+        // of lawyers to register
+        int toIndex = Math.min(maxFirmsToGet, filteredSites.size());
+        return filteredSites.subList(0, toIndex);
     }
 
 
@@ -52,10 +55,10 @@ public class CompletedFirms {
         System.out.println("-".repeat(padding) + title + "-".repeat(padding));
 
         Object[][] categories = {
-                { "ByPage",    byPage },
+                { "ByPage",    byPage    },
                 { "ByNewPage", byNewPage },
-                { "ByFilter",  byFilter },
-                { "ByClick",   byClick }
+                { "ByFilter",  byFilter  },
+                { "ByClick",   byClick   }
         };
 
         int grandTotal = 0;

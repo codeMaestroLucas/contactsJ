@@ -18,8 +18,8 @@ public abstract class Site  {
     public final String name;
     protected final  String link;
     public int lawyersRegistered;
-    protected final int totalPages;
-    public final int maxLawyersForSite;
+    protected int totalPages;
+    public int maxLawyersForSite;
     protected Set<String> lastCountries = new HashSet<>();
     public final WebDriver driver = MyDriver.getINSTANCE();
     protected final SiteUtils siteUtl = SiteUtils.getINSTANCE();

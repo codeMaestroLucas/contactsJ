@@ -89,11 +89,41 @@
 
 
 
-
-
+  {
+    "name": "GarciaBodan",
+    "link": "https://garciabodan.com/en/profesionals/?posicion=senior-associate/"
+  },
+  {
+    "name": "Kavanagh Gorozpe",
+    "link": "https://www.k-g.com.mx/en/nuestro-equipo/"
+  },
+  {
+    "name": "Ibañez Parkman ",
+    "link": "https://i-parkman.mx/nuestro-equipo/"
+  },
+  {
+    "name": "Kuri Breña Sánchez Ugarte & Aznar",
+    "link": "https://ksa.mx/es/equipo/equipo"
+  },
+  {
+    "name": "Santamarina y Steta",
+    "link": "https://www.santamarinasteta.mx/en/equipo-sys/?_puesto_rol=socio"
+  },
+  {
+    "name": "Ritch Mueller y Nicolau",
+    "link": "https://www.ritch.com.mx/es/team?filters=1&custom=&member_types%5B%5D=1"
+  },
+  {
+    "name": "Nader, HayauxAndGoebel",
+    "link": "https://www.nhg.mx/en_gb/about-us/our-team/partners/"
+  },
   {
     "name": "Deutsch Miller",
     "link": "https://www.deutschmiller.com/our-people/"
+  },
+  {
+    "name": "Basham Ringe & Correa",
+    "link": "https://basham.com.mx/nuestro-equipo/"
   },
   {
     "name": "Allan Hall",
@@ -1110,10 +1140,6 @@
     "name": "AS PapadimitriouAndPartners",
     "link": "https://saplegal.gr/people/",
     "Note": "Check if there's any more lawyer to register"
-  },
-  {
-    "name": "Santamarina y Steta",
-    "link": "https://www.santamarinasteta.mx/en/equipo-sys/?_puesto_rol=socio"
   },
   {
     "name": "Sangra Moller LLP",
@@ -4066,10 +4092,6 @@
   {
     "name": "Sánchez Devanny",
     "link": "https://sanchezdevanny.com/en/attorneys/partners"
-  },
-  {
-    "name": "Nader, HayauxAndGoebel",
-    "link": "https://www.nhg.mx/en_gb/about-us/our-team/partners/"
   },
   {
     "name": "Fernández Secco",

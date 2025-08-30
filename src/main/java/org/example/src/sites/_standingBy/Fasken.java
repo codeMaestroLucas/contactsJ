@@ -16,16 +16,8 @@ import static java.util.Map.entry;
 
 public class Fasken extends ByNewPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("calgary", "Canada"),
             entry("johannesburg", "South Africa"),
-            entry("london", "England"),
-            entry("montreal", "Canada"),
-            entry("ottawa", "Canada"),
-            entry("quebec city", "Canada"),
-            entry("surrey", "Canada"),
-            entry("toronto", "Canada"),
-            entry("tsuutina", "Canada"),
-            entry("vancouver", "Canada")
+            entry("london", "England")
     );
 
     String[] validRoles = {
@@ -108,7 +100,7 @@ public class Fasken extends ByNewPage {
                 By.cssSelector("div.category:last-child")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "");
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "Canada");
     }
 
 
@@ -144,7 +136,8 @@ public class Fasken extends ByNewPage {
             "country", this.getCountry(div),
             "practice_area", "",
             "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+            "phone", socials[1].isEmpty() ? "15143977400" : socials[1]
+
         );
     }
 

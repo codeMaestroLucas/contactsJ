@@ -5,7 +5,7 @@ import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.entities.excel.Reports;
-import org.example.src.utils.FirmsOfWeek;
+import org.example.src.utils.FirmsOMonth;
 import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 
@@ -20,7 +20,6 @@ public class Main {
      */
     private static void calculateTimeOfExecution(Runnable taskToRun) {
         long startTime = System.currentTimeMillis();
-        System.out.println("=".repeat(70));
 
         try {
             taskToRun.run();
@@ -55,7 +54,7 @@ public class Main {
 
         // Processing Firms
         try {
-            // Already making the verification of Site.name registered in the Week firms in the constructor
+            // Already making the verification of Site.name registered in the`monthFirms.txt` in the constructor
             for (Site site : sites) {
                 long initTimeFirm = System.currentTimeMillis();
 
@@ -71,7 +70,7 @@ public class Main {
                 reports.createReportRow(site, time);
 
                 if (site.lawyersRegistered > 0) {
-                    FirmsOfWeek.registerFirmWeek(site.name);
+                    FirmsOMonth.registerFirmMonth(site.name);
                     totalLawyersRegistered += site.lawyersRegistered;
                 }
 

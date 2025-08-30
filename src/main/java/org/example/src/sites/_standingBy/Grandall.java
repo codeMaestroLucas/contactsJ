@@ -163,7 +163,7 @@ public class Grandall extends ByNewPage {
             "country", this.getCountry(div),
             "practice_area", this.getPracticeArea(div),
             "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+            "phone", socials[1].isEmpty() ? "861066216823" : socials[1]
         );
     }
 

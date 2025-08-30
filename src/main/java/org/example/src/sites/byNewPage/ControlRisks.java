@@ -125,7 +125,7 @@ public class ControlRisks extends ByNewPage {
                 By.className("bio--banner__title")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return siteUtl.getContentFromTag(element);
     }
 
 
@@ -146,7 +146,8 @@ public class ControlRisks extends ByNewPage {
                 By.className("btn__geo")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "");
+        String country = siteUtl.getContentFromTag(element);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country   , "");
     }
 
 

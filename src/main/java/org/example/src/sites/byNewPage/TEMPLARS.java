@@ -73,7 +73,7 @@ public class TEMPLARS extends ByNewPage {
                 By.cssSelector("h1")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return siteUtl.getContentFromTag(element);
     }
 
 
@@ -82,7 +82,7 @@ public class TEMPLARS extends ByNewPage {
                 By.cssSelector("p")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return siteUtl.getContentFromTag(element);
     }
 
 

@@ -18,10 +18,7 @@ public class ALGoodbody extends ByNewPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("belfast", "England"),
             entry("dublin", "Ireland"),
-            entry("london", "England"),
-            entry("new york", "USA"),
-            entry("palo alto", "USA"),
-            entry("san francisco", "USA")
+            entry("london", "England")
     );
 
     private final String[] validRoles = {
@@ -104,7 +101,7 @@ public class ALGoodbody extends ByNewPage {
                 By.cssSelector("p:nth-child(3)")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "");
+        String country = siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "USA");
         return country.toLowerCase().contains("northen ireland") ? "England" : country;
     }
 
@@ -122,6 +119,17 @@ public class ALGoodbody extends ByNewPage {
     }
 
 
+    private String getDefaultPhone(String country) {
+        String phone = "";
+        if (country.equals("Ireland")) {
+            phone = "35316492000";
+        } else { // England
+            phone = "442073820800";
+        }
+
+        return phone;
+    }
+
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
@@ -130,16 +138,18 @@ public class ALGoodbody extends ByNewPage {
 
         if (role.equalsIgnoreCase("invalid role")) return "Invalid Role";
 
+        String country = this.getCountry(div);
+
         String[] socials = this.getSocials(div);
         return Map.of(
             "link", Objects.requireNonNull(driver.getCurrentUrl()),
             "name", this.getName(div),
             "role", role,
             "firm", this.name,
-            "country", this.getCountry(div),
+            "country", country,
             "practice_area", this.getPracticeArea(div),
             "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+            "phone", socials[1].isEmpty() ? this.getDefaultPhone(country) : socials[1]
         );
     }
 }

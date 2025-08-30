@@ -1,6 +1,7 @@
 package org.example.src.utils;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 import org.example.src.entities.Lawyer;
 
 import java.io.IOException;
@@ -89,7 +90,7 @@ public class Validations {
     public static boolean makeValidations(
             Lawyer lawyer, Set<String> setOfLastCountries,
             String emailsOfMonthPath, String emailsToAvoidPath
-    ) throws IOException {
+    ) {
 
         if (lawyer.email == null || lawyer.email.isEmpty()) {
             System.out.println("Incomplete lawyer data, skipping...\n");
@@ -104,7 +105,7 @@ public class Validations {
 
         if (isAEmailToAvoid(email, emailsToAvoidPath)) return false;
 
-        if (FirmsOfWeek.isRegisteredInFirmWeek(lawyer.firm)) return false;
+        if (FirmsOMonth.isFirmRegisteredInMonth(lawyer.firm)) return false;
 
         if (isEmailAlreadyRegistered(email, emailsOfMonthPath)) return false;
 
@@ -116,12 +117,9 @@ public class Validations {
     /**
      * Helper class to represent country data from JSON.
      */
+    @Getter
     public static class CountryData {
         @JsonProperty("Country")
         private String Country;
-
-        public String getCountry() {
-            return Country.toString();
-        }
     }
 }

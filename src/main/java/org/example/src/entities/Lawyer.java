@@ -42,17 +42,17 @@ public final class Lawyer {
 
     @Builder
     public Lawyer(String link, String name, String role, String firm, String country, String practiceArea, @org.jetbrains.annotations.NotNull String email, String phone) {
-        this.link = link;
-        this.role = this.treatRole(role.trim().toLowerCase());
-        this.firm = firm;
-        this.country = country.trim();
+        this.link =         link;
+        this.role =         treatRole(role.trim().toLowerCase());
+        this.firm =         firm;
+        this.country =      country.trim();
         this.practiceArea = treatPracticeArea(practiceArea);
-        this.email = treatEmail(email);
-        this.phone = treatPhone(phone);
-        this.specialism = treatSpecialism();
+        this.email =        treatEmail(email);
+        this.phone =        treatPhone(phone);
+        this.specialism =   treatSpecialism();
 
         // Move down so the email be treated and then used for the function `getNameFromEmail`
-        this.name = treatName(name);
+        this.name =         treatName(name);
     }
 
 
@@ -66,6 +66,7 @@ public final class Lawyer {
         if (Objects.isNull(practiceArea)) return "-----";
 
         return practiceArea
+                .replace("&amp", "")
                 .replace("law", "").replace("Law", "")
                 .replace("specialist", "").replace("Specialist", "")
                 .replace("service", "").replace("Service", "")
@@ -89,10 +90,10 @@ public final class Lawyer {
         }
 
         // Remove punctuation and convert to lowercase
-        name = name.replace("\n", " ")
+        name = name
                 .replaceAll("[.,]", " ")
                 .replaceAll("[\"']", " ")
-                .toLowerCase();
+                .trim().toLowerCase();
 
         // Remove common legal role terms
         for (String role : validRoles) {

@@ -1,14 +1,15 @@
 package org.example.src.entities.excel;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 
 import java.io.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 
 public final class ContactsAlreadyRegisteredSheet extends Excel{
@@ -16,7 +17,8 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
     private int totalLawyersPerFirm = 3;
     private int totalLawyers = 0;
     private int lastFirmRow;
-    private int maxReRuns = 2;
+    private int maxReRuns = 1;
+    private Set<String> lawFirmsCollected = new HashSet<>();
 
     // Sheet to write data
     private final Sheet destinationSheet = Sheet.getINSTANCE();
@@ -32,7 +34,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
     /**
      * Returns the (last row collected + 1) in the previous execution of the function
-     * in the file `lastFirmRegisteredInContacts.txt` to start the iteration.
+     * in the file `lastRowRegisteredInContacts.txt` to start the iteration.
      * @return row of the last firm
      */
     private int getLastFirmCollectedRow() {
@@ -48,7 +50,23 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
 
     /**
-     * Register the row of the last firm collected in the file `lastFirmRegisteredInContacts.txt`.
+     * Write all the firms collected in the file `monthFirms.txt` to prevent duplicates on main execution
+     */
+    private void registerFirmsCollected() {
+        for (String lawFirm :lawFirmsCollected) {
+
+            try (BufferedWriter br = new BufferedWriter(new FileWriter(CONFIG.MONTH_FILE))){
+                br.write(String.valueOf(lawFirm));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+    }
+
+
+    /**
+     * Register the row of the last firm collected in the file `lastRowRegisteredInContacts.txt`.
      */
     private void registerLastFirmCollectedRow(int rowOfLastFirm) {
         try (BufferedWriter br = new BufferedWriter(new FileWriter(CONFIG.LAST_FIRM_REGISTERED_FILE))){
@@ -62,7 +80,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
     /**
      * Collect the lawyers registered in the file `filteredCollectedContacts.xlsx`.
      * If it runs and don't collect all the necessary lawyer it clears the file
-     * `lastFirmRegisteredInContacts.txt` and re-run it-self.
+     * `lastRowRegisteredInContacts.txt` and re-run it-self.
      */
     public void collectLawyersRegistered() {
         int i;
@@ -70,7 +88,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
         // Start from the row of the last row registered + 1
         for (i = this.lastFirmRow; i <= this.getSheet().getLastRowNum(); i++) {
 
-            if (totalLawyers >= CONFIG.LAWYERS_IN_FILTER) break;
+            if (totalLawyers == CONFIG.LAWYERS_IN_FILTER) break;
 
 
             Row row = this.getSheet().getRow(i);
@@ -86,7 +104,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                 continue;
             }
 
-            if (firm.equals(lastFirm) && totalLawyersPerFirm >= 2) continue;
+            if (firm.equals(lastFirm) && totalLawyersPerFirm == 3) continue;
 
             if (contacts.isEmailRegistered(email)) {
                 System.out.println("Email '" + email + "' is already registered. Cleaning up.");
@@ -131,8 +149,8 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             this.lastFirm = "";
             this.lastFirmRow = 0;
 
-            maxReRuns--;
             if (maxReRuns > 0) {
+                maxReRuns--;
                 System.out.println("\n\u001B[32mRe-running registered Lawyers filtering\u001B[0m.\n");
                 this.collectLawyersRegistered();
             }
@@ -141,6 +159,8 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
         this.registerLastFirmCollectedRow(i);
 
         this.saveSheet();
+
+        this.registerFirmsCollected();
     }
 
 
@@ -162,10 +182,12 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                 }
                 yield Double.toString(cell.getNumericCellValue());
             }
+
             case BOOLEAN -> Boolean.toString(cell.getBooleanCellValue());
+
             case FORMULA -> cell.getCellFormula();
+
             default -> "";
         };
     }
-
 }

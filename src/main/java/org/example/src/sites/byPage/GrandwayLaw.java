@@ -20,10 +20,9 @@ public class GrandwayLaw extends ByPage {
 
     public GrandwayLaw() {
         super(
-            "GrandwayLaw",
+            "Grandway Law",
             "https://www.grandwaylaw.com/en/zhuanyetuandui/?kwd=&job=&t6=&t2=",
-            12,
-            2
+            12
         );
     }
 
@@ -34,11 +33,6 @@ public class GrandwayLaw extends ByPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        if (index > 0) return;
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
     }
 
 

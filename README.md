@@ -15,7 +15,8 @@ git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java
 1. todo:
    1. maybe add a PROXY in `makeValidations` to identify why the validation failed
       1. Or even create a Error class to throw specific errors
-2. 
+2. Fix the empty phone ("phone", socials[1]) and replace then with the firm phones 
+3. Use the pattern Strategy for the search lawyers
 
 ---
 # Useful Commentaries
@@ -29,7 +30,7 @@ git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java
 
 ---
 
-- Last time clearing `weekFirms.txt` == 22/07/25
+- Last time clearing `monthFirms.txt` == 22/07/25
 
   **Clean it in 2 and 2 months**
 

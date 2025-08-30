@@ -122,7 +122,6 @@ public abstract class ByNewPage extends Site {
                     e.getMessage();
                     e.printStackTrace();
                     System.out.println("#".repeat(70) + "\n");
-                    continue;
                 } finally {
                     MyDriver.closeCurrentTab();
                 }

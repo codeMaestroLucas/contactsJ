@@ -110,10 +110,7 @@ public class SpencerWest extends ByPage {
 
 
     private String getCountry(String phone) {
-        for (String key : OFFICE_TO_COUNTRY.keySet()) {
-            if (phone.startsWith(key)) return OFFICE_TO_COUNTRY.get(key);
-        }
-        return "------";
+        return siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "");
     }
 
 
