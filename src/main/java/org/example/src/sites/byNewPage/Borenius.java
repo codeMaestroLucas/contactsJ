@@ -46,14 +46,8 @@ public class Borenius extends ByNewPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.gap-y-18> a.focus-outline-red")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.gap-y-18> a.focus-outline-red")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -69,7 +63,7 @@ public class Borenius extends ByNewPage {
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {
+        By[] byArray = new By[]{
                 By.cssSelector("div[class*='Hero-module--min-height']"),
                 By.cssSelector("h1")
         };
@@ -78,7 +72,7 @@ public class Borenius extends ByNewPage {
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {
+        By[] byArray = new By[]{
                 By.cssSelector("div[class*='Hero-module--min-height']"),
                 By.cssSelector("p")
         };
@@ -86,9 +80,11 @@ public class Borenius extends ByNewPage {
     }
 
 
-    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+    private String getPracticeArea(WebElement lawyer) {
         try {
-            By[] byArray = {By.cssSelector("ul > li > a[href^='/services/']")};
+            By[] byArray = new By[]{
+                    By.cssSelector("ul > li > a[href^='/services/']")
+            };
             return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
         } catch (Exception e) {
             return "";
@@ -97,10 +93,8 @@ public class Borenius extends ByNewPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                    .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -112,7 +106,6 @@ public class Borenius extends ByNewPage {
         this.openNewTab(lawyer);
 
         WebElement div = driver.findElement(By.cssSelector("main#content > div.container"));
-
         String[] socials = this.getSocials(div);
 
         return Map.of(

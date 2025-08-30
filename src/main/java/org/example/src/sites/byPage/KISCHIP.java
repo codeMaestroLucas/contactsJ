@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -15,9 +16,9 @@ import java.util.Objects;
 public class KISCHIP extends ByPage {
     public KISCHIP() {
         super(
-            "KISCH IP",
-            "https://www.kisch-ip.com/Directors",
-            2
+                "KISCH IP",
+                "https://www.kisch-ip.com/Directors",
+                2
         );
     }
 
@@ -31,7 +32,6 @@ public class KISCHIP extends ByPage {
 
         if (index > 0) return;
 
-        // Click on add btn
         MyDriver.clickOnElement(By.className("accept"));
     }
 
@@ -39,58 +39,50 @@ public class KISCHIP extends ByPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
             return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.className("MemberBlock")
                     )
             );
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("MemberName")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole() {
-        return Objects.requireNonNull(
-                driver.getCurrentUrl()).toLowerCase().contains("director")
+        return Objects.requireNonNull(driver.getCurrentUrl()).toLowerCase().contains("director")
                 ? "Director" : "Senior Associate";
     }
 
 
     private String getCountry(String phone) {
-        return phone
-                .replaceFirst("\\+", "")
-                .startsWith("27")
+        if (phone == null || phone.isBlank()) return "Not Found";
+        return phone.replaceFirst("\\+", "").startsWith("27")
                 ? "South Africa" : "Jersey";
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -101,14 +93,14 @@ public class KISCHIP extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(),
-            "firm", this.name,
-            "country", this.getCountry(socials[1]),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(),
+                "firm", this.name,
+                "country", this.getCountry(socials[1]),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

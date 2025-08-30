@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SIRIUS extends ByPage {
     private final By[] byRoleArray = {
@@ -17,12 +19,11 @@ public class SIRIUS extends ByPage {
     };
 
 
-    // Did my best
     public SIRIUS() {
         super(
-            "SIRIUS",
-            "https://www.siriusadvokater.dk/en/personer",
-            1
+                "SIRIUS",
+                "https://www.siriusadvokater.dk/en/personer",
+                1
         );
     }
 
@@ -33,8 +34,6 @@ public class SIRIUS extends ByPage {
         Thread.sleep(1000L);
 
         if (index > 0) return;
-
-        // Click on add btn
         MyDriver.clickOnElement(By.cssSelector("button[data-hook='consent-banner-apply-button']"));
     }
 
@@ -46,66 +45,59 @@ public class SIRIUS extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div[data-testid='mesh-container-content']")));
 
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div[data-testid='mesh-container-content']")
-                    )
-            );
+            // Filter out the first 10 elements and any that are not valid lawyers
+            List<WebElement> filteredLawyers = lawyers.stream()
+                    .filter(e -> e.findElements(By.cssSelector("h2")).size() > 0) // Basic check for a lawyer element
+                    .collect(Collectors.toList());
 
-            // Removing the first 10
-            for (int i = 0; i < 10 && !lawyers.isEmpty(); i++) {
-                lawyers.removeFirst();
-            }
-
-
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
+            return this.siteUtl.filterLawyersInPage(filteredLawyers, byRoleArray, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("mGoGm2")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("h2")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getEmail(WebElement lawyer) {
-        return lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
+    private String getEmail(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.cssSelector("a[href^='mailto:']")
+        };
+        return extractor.extractLawyerAttribute(lawyer, byArray, "EMAIL", "href", LawyerExceptions::emailException);
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Denmark",
-            "practice_area", "",
-            "email", this.getEmail(lawyer),
-            "phone", "4588888585"
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Denmark",
+                "practice_area", "",
+                "email", this.getEmail(lawyer),
+                "phone", "4588888585"
         );
     }
 }

@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -19,10 +20,10 @@ public class CassidyLevyKent extends ByPage {
 
     public CassidyLevyKent() {
         super(
-            "Cassidy Levy Kent",
-            "https://www.cassidylevy.com/team/?_offices=brussels",
-            2,
-            2
+                "Cassidy Levy Kent",
+                "https://www.cassidylevy.com/team/?_offices=brussels",
+                2,
+                2
         );
     }
 
@@ -63,27 +64,25 @@ public class CassidyLevyKent extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
-        return lawyer.getAttribute("href");
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerAttribute(lawyer, new By[]{}, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("name")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry() {
         return driver.getCurrentUrl().toLowerCase().contains("brussels") ? "Belgium" : "Canada";
     }
 
@@ -92,8 +91,7 @@ public class CassidyLevyKent extends ByPage {
         try {
             String email = lawyer.findElement(By.className("email")).getText();
             String phone = lawyer.findElement(By.className("phone")).getText();
-
-            return new String[]{ email, phone};
+            return new String[]{email, phone};
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
@@ -104,14 +102,14 @@ public class CassidyLevyKent extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

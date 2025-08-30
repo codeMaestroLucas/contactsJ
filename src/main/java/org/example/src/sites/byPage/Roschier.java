@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -19,9 +20,9 @@ public class Roschier extends ByPage {
 
     public Roschier() {
         super(
-            "Roschier",
-            "https://www.roschier.com/people",
-            1
+                "Roschier",
+                "https://www.roschier.com/people",
+                1
         );
     }
 
@@ -32,10 +33,7 @@ public class Roschier extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
 
-
         MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
-
-        // Actually it has more than 30
         MyDriver.clickOnElementMultipleTimes(
                 By.cssSelector(".text-center .wp-block-button .wp-block-button__link"),
                 5, 5
@@ -52,42 +50,33 @@ public class Roschier extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("card--person")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("card--person")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {
                 By.cssSelector("a[href^='https://www.roschier.com/people/']")
         };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {
                 By.className("card__body"),
                 By.className("card__title")
         };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return this.siteUtl.getContentFromTag(element);
+        return this.extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return this.siteUtl.getContentFromTag(element);
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return this.extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "outerHTML", LawyerExceptions::roleException);
     }
 
 
@@ -98,7 +87,6 @@ public class Roschier extends ByPage {
                     .findElement(By.className("card__contact"))
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

@@ -27,7 +27,7 @@ public class PaulHastings extends ByPage {
             "Paul Hastings",
             "https://www.paulhastings.com/professionals?refinementList%5Boffices.title%5D%5B0%5D=Beijing&refinementList%5Boffices.title%5D%5B1%5D=Brussels&refinementList%5Boffices.title%5D%5B2%5D=Frankfurt&refinementList%5Boffices.title%5D%5B3%5D=Hong%20Kong&refinementList%5Boffices.title%5D%5B4%5D=London&refinementList%5Boffices.title%5D%5B5%5D=Paris&refinementList%5Boffices.title%5D%5B6%5D=Seoul&refinementList%5Boffices.title%5D%5B7%5D=Shanghai&refinementList%5Boffices.title%5D%5B8%5D=Tokyo&refinementList%5Boffices.title%5D%5B9%5D=S%C3%A3o%20Paulo&refinementList%5Boffices.title%5D%5B10%5D=Abu%20Dhabi",
             12,
-            1000
+            3
         );
 
         OFFICE_TO_COUNTRY = Map.ofEntries(
@@ -112,6 +112,12 @@ public class PaulHastings extends ByPage {
         return element.getText();
     }
 
+    private String getPracticeArea(WebElement lawyer) {
+        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
+        String[] split = element.getText().split(",");
+        return split[split.length - 1];
+    }
+
 
     private String getCountry(WebElement lawyer) {
         By[] byArray = new By[]{
@@ -145,7 +151,7 @@ public class PaulHastings extends ByPage {
             "role", this.getRole(lawyer),
             "firm", this.name,
             "country", this.getCountry(lawyer),
-            "practice_area", "",
+            "practice_area", this.getPracticeArea(lawyer),
             "email", socials[0],
             "phone", socials[1]);
     }

@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MijaresAngoitiaCortesAndFuentes extends ByPage {
-    private By[] byRoleArray = {
+    private final By[] byRoleArray = {
             By.cssSelector("div"),
             By.className("text-block-24")
     };
@@ -55,28 +56,25 @@ public class MijaresAngoitiaCortesAndFuentes extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("wood-component-link")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("div"),
                 By.className("heading-12")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
@@ -84,9 +82,7 @@ public class MijaresAngoitiaCortesAndFuentes extends ByPage {
         try {
             String phone = lawyer.findElement(By.cssSelector("div:nth-child(2) > div.phone")).getText();
             String email = lawyer.findElement(By.cssSelector("div:nth-child(2) > div.mail")).getText();
-
-            return new String[] { email, phone };
-
+            return new String[]{email, phone};
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -104,6 +100,7 @@ public class MijaresAngoitiaCortesAndFuentes extends ByPage {
                 "country", "Mexico",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1]);
+                "phone", socials[1]
+        );
     }
 }

@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -24,15 +25,11 @@ public class Ogier extends ByPage {
             entry("ireland", "Ireland"),
             entry("jersey", "Jersey"),
             entry("london", "England"),
-            entry("luxembourg", "Luxembourg"),
-            entry("luxembourg corporate and fund services", "Luxembourg"),
-            entry("luxembourg  corporate and fund services", "Luxembourg"),
-            entry("luxembourg legal services", "Luxembourg"),
-            entry("luxembourg  legal services", "Luxembourg"),
             entry("shanghai", "China"),
             entry("singapore", "Singapore"),
             entry("tokyo", "Japan")
     );
+
 
 
     private final By[] byRoleArray = {
@@ -42,10 +39,10 @@ public class Ogier extends ByPage {
 
     public Ogier() {
         super(
-            "Ogier",
-            "https://www.ogier.com/people/?pageSize=48",
-            1,
-            3
+                "Ogier",
+                "https://www.ogier.com/people/?pageSize=48",
+                1,
+                3
         );
     }
 
@@ -55,9 +52,7 @@ public class Ogier extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
         MyDriver.clickOnElement(By.id("checkAll"));
-
         for (int i = 0; i < 9; i++) {
             MyDriver.clickOnElement(By.cssSelector("div.pagination--component > button.button--component"));
         }
@@ -66,74 +61,69 @@ public class Ogier extends ByPage {
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner",
-                "director",
-                "counsel",
-                "managing associate",
-                "associate director",
-                "senior associate",
+                "partner", "director", "counsel", "managing associate",
+                "associate director", "senior associate",
         };
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("card-content")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("card-content")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("card-heading"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("card-heading"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String getCountry(WebElement lawyer) {
-        List<WebElement> elements = lawyer.findElements(By.cssSelector("p.body3"));
-        String country = elements.getLast().getText();
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
+        try {
+            List<WebElement> elements = lawyer.findElements(By.cssSelector("p.body3"));
+            String office = elements.getLast().getText();
+            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "Luxembourg");
+        } catch (Exception e) {
+            System.err.println("Could not extract country: " + e.getMessage());
+            return "";
+        }
     }
 
     private String getPracticeArea(WebElement lawyer) {
-        List<WebElement> elements = lawyer.findElements(By.cssSelector("p.body3"));
-        return elements.get(1).getText();
+        try {
+            List<WebElement> elements = lawyer.findElements(By.cssSelector("p.body3"));
+            return elements.get(1).getText();
+        } catch (Exception e) {
+            System.err.println("Could not extract practice area: " + e.getMessage());
+            return "";
+        }
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -144,14 +134,14 @@ public class Ogier extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", this.getPracticeArea(lawyer),
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", this.getPracticeArea(lawyer),
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

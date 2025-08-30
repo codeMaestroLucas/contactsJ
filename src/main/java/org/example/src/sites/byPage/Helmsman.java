@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -20,9 +21,9 @@ public class Helmsman extends ByPage {
 
     public Helmsman() {
         super(
-            "Helmsman",
-            "https://www.helmsmanlaw.com/people",
-            1
+                "Helmsman",
+                "https://www.helmsmanlaw.com/people",
+                1
         );
     }
 
@@ -59,26 +60,28 @@ public class Helmsman extends ByPage {
     }
 
 
-    private String getName(WebElement lawyer) {
+    public String getLink(WebElement lawyer) {
+        return this.link;
+    }
+
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("views-field-title"),
                 By.cssSelector("h3")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -91,14 +94,14 @@ public class Helmsman extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.link,
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Singapore",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "6568166660" : socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Singapore",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "6568166660" : socials[1]
         );
     }
 }

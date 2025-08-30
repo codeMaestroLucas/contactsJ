@@ -19,7 +19,7 @@ public class CarneluttiLaw extends ByNewPage {
             "senior associate"
     };
 
-    // Lawyer 41 is invalid - no email or phone
+    // 41th lawyer is a invalid one - no email
     public CarneluttiLaw() {
         super(
                 "Carnelutti Law",
@@ -39,13 +39,11 @@ public class CarneluttiLaw extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
             return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.cssSelector("a[href^='https://www.carnelutti.com/people/']")
                     )
             );
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -61,16 +59,18 @@ public class CarneluttiLaw extends ByNewPage {
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("span:nth-child(2)")};
+        By[] byArray = new By[]{
+                By.cssSelector("span:nth-child(2)")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("text-center")};
-        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
-        return validPosition ? role : "Invalid Role";
+        By[] byArray = new By[]{
+                By.className("text-center")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
@@ -81,7 +81,6 @@ public class CarneluttiLaw extends ByNewPage {
                     .findElement(By.className("modal-body"))
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -91,18 +90,13 @@ public class CarneluttiLaw extends ByNewPage {
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-
         WebElement div = driver.findElement(By.className("inner-title"));
-
-        String role = this.getRole(div);
-        if (role.equals("Invalid Role")) return "Invalid Role";
-
         String[] socials = this.getSocials();
 
         return Map.of(
                 "link", this.getLink(),
                 "name", this.getName(div),
-                "role", role,
+                "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Italy",
                 "practice_area", "",

@@ -1,18 +1,24 @@
 package org.example.src.sites.byPage;
 
-import java.time.Duration;
-import java.util.List;
-import java.util.Map;
-import org.example.src.entities.MyDriver;
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+
 public class McMillan extends ByPage {
     public McMillan() {
-        super("McMillan", "https://mcmillan.ca/people/", 30);
+        super(
+                "McMillan",
+                "https://mcmillan.ca/people/",
+                30
+        );
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -21,12 +27,13 @@ public class McMillan extends ByPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(2500L);
-
         if (index == 0) MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
     }
 
     protected List<WebElement> getLawyersInPage() {
-        By[] webRole = new By[]{By.className("position")};
+        By[] webRole = new By[]{
+                By.className("position")
+        };
         String[] validRoles = new String[]{"partner", "counsel"};
 
         try {
@@ -38,22 +45,25 @@ public class McMillan extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) {
-        By[] byArray = new By[]{By.cssSelector("h6 > a")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.cssSelector("h6 > a")
+        };
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{By.cssSelector("h6 > a")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.cssSelector("h6 > a")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{By.className("position")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("position")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -68,6 +78,15 @@ public class McMillan extends ByPage {
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
-        return Map.of("link", this.getLink(lawyer), "name", this.getName(lawyer), "role", this.getRole(lawyer), "firm", this.name, "country", "Canada", "practice_area", "", "email", socials[0], "phone", socials[1]);
+        return Map.of(
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Canada",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
+        );
     }
 }

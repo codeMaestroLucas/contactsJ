@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,8 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Finreg360 extends ByPage {
     private final By[] byRoleArray = {
@@ -21,9 +20,9 @@ public class Finreg360 extends ByPage {
 
     public Finreg360() {
         super(
-            "Finreg 360",
-            "https://finreg360.com/quienes-somos/",
-            1
+                "Finreg 360",
+                "https://finreg360.com/quienes-somos/",
+                1
         );
     }
 
@@ -37,7 +36,7 @@ public class Finreg360 extends ByPage {
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "soci", "soci",
+                "socia", "socio",
                 "director",
                 "sénior",
                 "principal"
@@ -58,45 +57,37 @@ public class Finreg360 extends ByPage {
         }
     }
 
+    public String getLink(WebElement lawyer) {
+        return this.link;
+    }
 
-    private String getName(WebElement lawyer) {
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("row"),
                 By.cssSelector("strong")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        String position = element.getAttribute("outerHTML")
-                .split("<br>\n")[1]
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        String position = extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "outerHTML", LawyerExceptions::roleException)
+                .split("<br>")[1]
                 .trim().toLowerCase();
 
-        switch (position) {
-            case "socio", "socia":
-                return "Partner";
-
-            case "director", "directora":
-                return "Director";
-
-            case "sénior":
-                return "Senior Associate";
-
-            case "principal":
-                return "Principal Associate";
-
-            default:
-                return position;
-        }
+        return switch (position) {
+            case "socio", "socia" -> "Partner";
+            case "director", "directora" -> "Director";
+            case "sénior" -> "Senior Associate";
+            case "principal" -> "Principal Associate";
+            default -> position;
+        };
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -109,14 +100,14 @@ public class Finreg360 extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.link,
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Spain",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", "34910496459"
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Spain",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", "34910496459"
         );
     }
 }

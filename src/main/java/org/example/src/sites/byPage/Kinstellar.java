@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -11,8 +12,6 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.Map.entry;
-
 public class Kinstellar extends ByPage {
     private final By[] byRoleArray = {
             By.className("table_fiter_nameposition"),
@@ -22,10 +21,10 @@ public class Kinstellar extends ByPage {
 
     public Kinstellar() {
         super(
-            "Kinstellar",
-            "https://www.kinstellar.com/our-team?filter%5Bname%5D=&filter%5Bposition%5D=&filter%5Bexpertise%5D=&filter%5Blocation%5D=&filter%5Bsent%5D=true",
-            1,
-            3
+                "Kinstellar",
+                "https://www.kinstellar.com/our-team?filter%5Bname%5D=&filter%5Bposition%5D=&filter%5Bexpertise%5D=&filter%5Blocation%5D=&filter%5Bsent%5D=true",
+                1,
+                3
         );
     }
 
@@ -52,53 +51,43 @@ public class Kinstellar extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("table_row")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("table_row")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.className("table_fiter_nameposition"),
-            By.cssSelector("div > div > a")
+                By.className("table_fiter_nameposition"),
+                By.cssSelector("div > div > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.className("table_fiter_nameposition"),
-            By.cssSelector("div > div > a")
+                By.className("table_fiter_nameposition"),
+                By.cssSelector("div > div > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("table_fiter_location"),
                 By.cssSelector("div > div > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().split("\\|")[0].trim();
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException).split("\\|")[0].trim();
         if (country.equalsIgnoreCase("czech republic")) return "the Czech Republic";
         return country;
     }
@@ -107,8 +96,8 @@ public class Kinstellar extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("table_fiter_location"))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className("table_fiter_location"))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -121,13 +110,14 @@ public class Kinstellar extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]);
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
+        );
     }
 }

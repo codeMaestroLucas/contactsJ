@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -18,19 +19,9 @@ import static java.util.Map.entry;
 public class WinstonAndStrawn extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("brussels", "Belgium"),
-            entry("charlotte", "USA"),
-            entry("chicago", "USA"),
-            entry("dallas", "USA"),
-            entry("houston", "USA"),
             entry("london", "England"),
-            entry("los angeles", "USA"),
-            entry("miami", "USA"),
-            entry("new york", "USA"),
             entry("paris", "France"),
-            entry("san francisco", "USA"),
-            entry("sao paulo", "Brazil"),
-            entry("silicon valley", "USA"),
-            entry("washington dc", "USA")
+            entry("sao paulo", "Brazil")
     );
 
 
@@ -42,10 +33,10 @@ public class WinstonAndStrawn extends ByPage {
 
     public WinstonAndStrawn() {
         super(
-            "Winston And Strawn",
-            "https://www.winston.com/en/professionals?of=5103%2C278%2C1039905%2C286%2C282&po=1000002%2C1000001",
-            3,
-            2
+                "Winston And Strawn",
+                "https://www.winston.com/en/professionals?of=5103%2C278%2C1039905%2C286%2C282&po=1000002%2C1000001",
+                3,
+                2
         );
     }
 
@@ -74,45 +65,38 @@ public class WinstonAndStrawn extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.cssSelector("a[href^='/en/professionals/']")
+                By.cssSelector("a[href^='/en/professionals/']")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.cssSelector("a[href^='/en/professionals/']"),
-            By.cssSelector("img")
+                By.cssSelector("a[href^='/en/professionals/']"),
+                By.cssSelector("img")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("alt");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "alt", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String getCountry(WebElement lawyer) {
-        String country = "";
-
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a[href^='/en/locations/']")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String href = element.getAttribute("href");
-
-        assert href != null;
+        String href = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "href", LawyerExceptions::countryException);
 
         Matcher matcher = Pattern.compile("/en/locations/([a-z\\-]+)").matcher(href);
+        String countryKey = "";
         if (matcher.find()) {
-            country = matcher.group(1);
+            countryKey = matcher.group(1);
         }
 
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, countryKey, "USA");
     }
 
     private String[] getSocials(WebElement lawyer) {

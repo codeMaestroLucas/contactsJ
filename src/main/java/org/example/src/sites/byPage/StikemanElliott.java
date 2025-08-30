@@ -5,6 +5,8 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.BaseSites.ByPage;
 import org.openqa.selenium.By;
@@ -13,8 +15,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class StikemanElliott extends ByPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
+            "london", "England",
+            "new york", "England"
+    );
+
     public StikemanElliott() {
-        super("Stikeman Elliott", "https://stikeman.com/en-ca/people#sort=%40biosortfield%20ascending&numberOfResults=90&f:PositionFacet=[Lawyer]", 7);
+        super(
+                "Stikeman Elliott",
+                "https://stikeman.com/en-ca/people#sort=%40biosortfield%20ascending&numberOfResults=90&f:PositionFacet=[Lawyer]",
+                7
+        );
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -41,33 +52,25 @@ public class StikemanElliott extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{By.className("CoveoResultLink")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{By.className("CoveoResultLink")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) {
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{By.className("Coveo-biopositionname")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{By.className("DirectoryEntry-office")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().trim();
-        if (country.equalsIgnoreCase("london")) {
-            return "England";
-        } else {
-            return country.equalsIgnoreCase("new york") ? "England" : "Canada";
-        }
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException).trim();
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "Canada");
     }
 
     private String[] getSocials(WebElement lawyer) {

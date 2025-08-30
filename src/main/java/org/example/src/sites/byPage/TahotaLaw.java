@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -16,38 +17,12 @@ import static java.util.Map.entry;
 public class TahotaLaw extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("bangkok", "Thailand"),
-            entry("beijing", "China"),
-            entry("changsha", "China"),
-            entry("chengdu", "China"),
-            entry("chongqing", "China"),
-            entry("fuzhou", "China"),
-            entry("guangzhou", "China"),
-            entry("guiyang", "China"),
-            entry("haikou", "China"),
-            entry("hangzhou", "China"),
-            entry("harbin", "China"),
             entry("hong kong", "Hong Kong"),
-            entry("jinan", "China"),
-            entry("kunming", "China"),
-            entry("lhasa", "China"),
-            entry("nanchang", "China"),
-            entry("nanjing", "China"),
             entry("nepal", "Nepal"),
             entry("pakistan", "Pakistan"),
-            entry("qingdao", "China"),
-            entry("shanghai", "China"),
-            entry("shenzhen", "China"),
-            entry("suzhou", "China"),
             entry("sydney", "Australia"),
-            entry("taiyuan", "China"),
-            entry("tianjin", "China"),
-            entry("urumqi", "China"),
             entry("vientiane", "Laos"),
-            entry("washington", "USA"),
-            entry("wuhan", "China"),
-            entry("xian", "China"),
-            entry("xining", "China"),
-            entry("zhengzhou", "China")
+            entry("washington", "USA")
     );
 
 
@@ -59,9 +34,9 @@ public class TahotaLaw extends ByPage {
 
     public TahotaLaw() {
         super(
-            "Tahota Law",
-            "https://www.tahota.com/EN/05.aspx?",
-            11
+                "Tahota Law",
+                "https://www.tahota.com/EN/05.aspx?",
+                11
         );
     }
 
@@ -84,64 +59,53 @@ public class TahotaLaw extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.team_list > ul > li > div.padding15")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.team_list > ul > li > div.padding15")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("lawyer_txt"),
                 By.cssSelector("h2")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        String role = element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        String role = extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
         return role.toLowerCase().contains("adviser") ? "Advisor" : role;
     }
 
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("lawyer_txt"),
                 By.cssSelector("em")
         };
-        return siteUtl.getCountryBasedInOffice(
-            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
-        );
+        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "China");
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("lawyer_txt"))
-                        .findElements(By.cssSelector("p"));
+                    .findElement(By.className("lawyer_txt"))
+                    .findElements(By.cssSelector("p"));
             return super.getSocials(socials, true);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -152,14 +116,14 @@ public class TahotaLaw extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "862886625656" : socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "862886625656" : socials[1]
         );
     }
 }

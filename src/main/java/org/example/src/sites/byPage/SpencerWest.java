@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -7,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.sql.SQLOutput;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +16,9 @@ import static java.util.Map.entry;
 
 public class SpencerWest extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("1", "USA, Bahamas, British Virgin Islands, Cayman Islands"),
+            entry("1242", "Bahamas"),
+            entry("1284", "the British Virgin Islands"),
+            entry("1345", "the Cayman Islands"),
             entry("27", "South Africa"),
             entry("32", "Belgium"),
             entry("33", "France"),
@@ -42,10 +44,10 @@ public class SpencerWest extends ByPage {
 
     public SpencerWest() {
         super(
-            "Spencer West",
-            "https://www.spencer-west.com/team/",
-            23,
-            3
+                "Spencer West",
+                "https://www.spencer-west.com/team/",
+                23,
+                3
         );
     }
 
@@ -71,56 +73,44 @@ public class SpencerWest extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("person-card__content")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("person-card__content")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("person-card__name")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("person-card__name")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String getCountry(String phone) {
-        return siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "");
+        if (phone == null || phone.isBlank()) return "Not Found";
+        return siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "USA");
     }
 
 
-
-    private String getPracticeArea(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("person-card__job-description")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String[] elements = element.getText().split("-");
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        String text = extractor.extractLawyerText(lawyer, byRoleArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        String[] elements = text.split("-");
         return elements[elements.length - 1];
     }
 
@@ -128,10 +118,9 @@ public class SpencerWest extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("person-card__social-links"))
-                        .findElements(By.className("social-link"));
+                    .findElement(By.className("person-card__social-links"))
+                    .findElements(By.className("social-link"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -142,13 +131,14 @@ public class SpencerWest extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(socials[1]),
-            "practice_area", this.getPracticeArea(lawyer),
-            "email", socials[0],
-            "phone", socials[1]);
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(socials[1]),
+                "practice_area", this.getPracticeArea(lawyer),
+                "email", socials[0],
+                "phone", socials[1]
+        );
     }
 }

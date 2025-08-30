@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -37,7 +38,7 @@ public class TaylorWessing extends ByPage {
             entry("uae", "the UAE"),
             entry("uk", "England"),
             entry("ukraine", "Ukraine"),
-            entry("usa", "EUA"),
+            entry("usa", "USA"),
             entry("united kingdom", "England"),
             entry("united states", "USA"),
             entry("the netherlands", "the Netherlands"),
@@ -53,10 +54,10 @@ public class TaylorWessing extends ByPage {
 
     public TaylorWessing() {
         super(
-            "Taylor Wessing",
-            "https://www.taylorwessing.com/en/people",
-            60,
-            3
+                "Taylor Wessing",
+                "https://www.taylorwessing.com/en/people",
+                60,
+                3
         );
     }
 
@@ -97,27 +98,24 @@ public class TaylorWessing extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("title");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "title", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
@@ -157,17 +155,17 @@ public class TaylorWessing extends ByPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
         String myLink = this.getLink(lawyer);
+        String[] socials = this.getSocials(lawyer);
 
         return Map.of(
-            "link", myLink,
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(myLink),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]);
+                "link", myLink,
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(myLink),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]);
     }
 }

@@ -36,6 +36,7 @@ public class _CompletedFirmsData {
         new BarristonLaw(), new Chattertons(), new BlandyAndBlandy(), new Allens(), new DBHLaw(),
         new Helmsman(), new K1Chamber(), new DRAndAJU(), new ZhongziLaw(), new TahotaLaw(),
         new GrandwayLaw(), new StewartMcKelvey(), new SIRIUS(), new Roschier(), new Liedekerke(),
+        new McMillan(),
 
 
         /** Indian Firms
@@ -48,8 +49,6 @@ public class _CompletedFirmsData {
         new FoxAndMandal(),
 
         * Problems
-         1) new McMillan() has a CAPTCH that I can't pass through
-
          *
         */
     };

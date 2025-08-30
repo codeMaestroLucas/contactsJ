@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -20,11 +21,9 @@ public class WhiteAndCase extends ByPage {
             entry("australia", "Australia"),
             entry("beijing", "China"),
             entry("berlin", "Germany"),
-            entry("boston", "USA"),
             entry("brussels", "Belgium"),
             entry("cairo", "Egypt"),
             entry("canada", "Canada"),
-            entry("chicago", "USA"),
             entry("china", "China"),
             entry("doha", "Qatar"),
             entry("dubai", "the UAE"),
@@ -38,43 +37,34 @@ public class WhiteAndCase extends ByPage {
             entry("hamburg", "Germany"),
             entry("helsinki", "Finland"),
             entry("hong kong sar", "Hong Kong"),
-            entry("houston", "USA"),
             entry("india", "India"),
             entry("israel", "Israel"),
             entry("istanbul", "Turkey"),
             entry("johannesburg", "South Africa"),
             entry("london", "England"),
-            entry("los angeles", "USA"),
             entry("luxembourg", "Luxembourg"),
             entry("madrid", "Spain"),
             entry("manila global operations center", "the Philippines"),
             entry("melbourne", "Australia"),
             entry("mexico city", "Mexico"),
-            entry("miami", "USA"),
             entry("milan", "Italy"),
             entry("muscat", "Oman"),
-            entry("new york", "USA"),
             entry("paris", "France"),
             entry("prague", "the Czech Republic"),
             entry("riyadh", "Saudi Arabia"),
             entry("são paulo", "Brazil"),
             entry("seoul", "Korea (South)"),
             entry("shanghai", "China"),
-            entry("silicon valley", "USA"),
             entry("singapore", "Singapore"),
             entry("stockholm", "Sweden"),
             entry("sydney", "Australia"),
             entry("switzerland", "Switzerland"),
             entry("taiwan", "Taiwan"),
-            entry("tampa global operations center", "USA"),
             entry("tashkent", "Uzbekistan"),
             entry("thailand", "Thailand"),
             entry("tokyo", "Japan"),
             entry("united arab emirates", "the UAE"),
-            entry("united states", "USA"),
-            entry("warsaw", "Poland"),
-            entry("washington dc", "USA"),
-            entry("washington", "USA")
+            entry("warsaw", "Poland")
     );
 
 
@@ -93,10 +83,10 @@ public class WhiteAndCase extends ByPage {
 
     public WhiteAndCase() {
         super(
-            "White And Case",
-            "https://www.whitecase.com/people/all/partner/all/all/all/all/search_api_relevance/DESC",
-            5,
-            3
+                "White And Case",
+                "https://www.whitecase.com/people/all/partner/all/all/all/all/search_api_relevance/DESC",
+                5,
+                3
         );
     }
 
@@ -116,7 +106,6 @@ public class WhiteAndCase extends ByPage {
                         .replace("results", "")
                         .trim()
         );
-
         MyDriver.rollDown((resultsValue / 20) + 1, 4);
     }
 
@@ -124,61 +113,47 @@ public class WhiteAndCase extends ByPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            return wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("bio-body")
-                    )
-            );
-
+            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("bio-body")));
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("lawyer-name"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("lawyer-name"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("lawyer-role-offices")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().split(",")[1];
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        String text = extractor.extractLawyerText(lawyer, byRoleArray, "COUNTRY", LawyerExceptions::countryException);
+        String office = text.split(",")[1];
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -189,14 +164,14 @@ public class WhiteAndCase extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].replaceFirst("2", "").trim()
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].replaceFirst("2", "").trim()
         );
     }
 }

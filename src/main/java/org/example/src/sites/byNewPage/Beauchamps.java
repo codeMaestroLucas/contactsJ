@@ -63,7 +63,9 @@ public class Beauchamps extends ByNewPage {
 
     public void openNewTab(WebElement lawyer) {
         try {
-            By[] byArray = {By.cssSelector("a")};
+            By[] byArray = new By[]{
+                    By.cssSelector("a")
+            };
             String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
             MyDriver.openNewTab(link);
         } catch (LawyerExceptions e) {
@@ -76,19 +78,25 @@ public class Beauchamps extends ByNewPage {
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h1")};
+        By[] byArray = new By[]{
+                By.cssSelector("h1")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("legend")};
+        By[] byArray = new By[]{
+                By.cssSelector("legend")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h3")};
+        By[] byArray = new By[]{
+                By.cssSelector("h3")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 

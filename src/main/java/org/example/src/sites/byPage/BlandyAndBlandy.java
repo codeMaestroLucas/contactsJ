@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -20,9 +21,9 @@ public class BlandyAndBlandy extends ByPage {
 
     public BlandyAndBlandy() {
         super(
-            "Blandy And Blandy",
-            "https://www.blandy.co.uk/about/find-a-solicitor/",
-            1
+                "Blandy And Blandy",
+                "https://www.blandy.co.uk/about/find-a-solicitor/",
+                1
         );
     }
 
@@ -59,64 +60,69 @@ public class BlandyAndBlandy extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='about/find-a-solicitor/']")
+                By.cssSelector("a[href^='/about/find-a-solicitor/']")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        String partialLink = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+        return "https://www.blandy.co.uk" + partialLink;
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("teamsummary"),
                 By.cssSelector("h3")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getPracticeArea(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText().split(",")[1].trim();
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        String text = extractor.extractLawyerText(lawyer, byRoleArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        return text.split(",")[1].trim();
     }
 
 
     private String[] getSocials(WebElement lawyer) {
-        String email = ""; String phone = "";
+        String email = "";
+        String phone = "";
 
         try {
             email = lawyer.findElement(By.className("email")).getAttribute("href");
         } catch (Exception e) {
-            email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
+            try {
+                email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
+            } catch (Exception ex) {
+                System.err.println("Could not extract email.");
+            }
+        }
+        try {
+            phone = lawyer.findElement(By.cssSelector("div.teamsummary + p")).getText();
+        } catch (Exception e) {
+            System.err.println("Could not extract phone.");
         }
 
-        // Find the <p> that contains an <a> with class "email email-link"
-        phone = lawyer.findElement(By.cssSelector("div.teamsummary + p")).getText();
-
-        return new String[] { email, phone };
+        return new String[]{email, phone};
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "England",
-            "practice_area", this.getPracticeArea(lawyer),
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "England",
+                "practice_area", this.getPracticeArea(lawyer),
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
 }

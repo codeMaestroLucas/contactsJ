@@ -1,8 +1,8 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
-import org.example.src.sites.byNewPage.GuantaoLaw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,9 +21,9 @@ public class RDJ extends ByPage {
 
     public RDJ() {
         super(
-            "RDJ",
-            "https://www.rdj.ie/our-people/p1",
-            8
+                "RDJ",
+                "https://www.rdj.ie/our-people/p1",
+                8
         );
     }
 
@@ -36,8 +36,6 @@ public class RDJ extends ByPage {
         Thread.sleep(1000L);
 
         if (index > 0) return;
-
-        // Click on add btn
         MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
     }
 
@@ -50,66 +48,56 @@ public class RDJ extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("peoples-profile-inner")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("peoples-profile-inner")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("people-name"),
                 By.cssSelector("h3 > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byFirstName = new By[]{
                 By.className("people-name"),
                 By.className("first-name")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String firstName = siteUtl.getContentFromTag(element);
+        String firstName = extractor.extractLawyerAttribute(lawyer, byFirstName, "FIRST NAME", "outerHTML", LawyerExceptions::nameException);
 
-        byArray = new By[]{
+        By[] byLastName = new By[]{
                 By.className("people-name"),
                 By.className("middle-name")
         };
-        element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String secondName = siteUtl.getContentFromTag(element);
-        return firstName + " " + secondName;
+        String lastName = extractor.extractLawyerAttribute(lawyer, byLastName, "LAST NAME", "outerHTML", LawyerExceptions::nameException);
+        return firstName + " " + lastName;
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return siteUtl.getContentFromTag(element);
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "outerHTML", LawyerExceptions::roleException);
     }
 
 
     private String getCountry(String phone) {
+        if (phone == null || phone.isBlank()) return "Not Found";
         return phone.replace("+", "").startsWith("44") ? "England" : "Ireland";
-     }
+    }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("image-wrapper"))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className("image-wrapper"))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -120,14 +108,14 @@ public class RDJ extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(socials[1]),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(socials[1]),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

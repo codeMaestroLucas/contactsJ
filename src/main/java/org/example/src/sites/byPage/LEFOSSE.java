@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -53,26 +54,24 @@ public class LEFOSSE extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a[href^='https://lefosse.com/en/advogado/']")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a[href^='https://lefosse.com/en/advogado/']")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("title");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "title", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        return Objects.requireNonNull(driver.getCurrentUrl()).toLowerCase().contains("partner") ? "Partner" : "Counsel";
+    private String getRole() {
+        return driver.getCurrentUrl().toLowerCase().contains("partner") ? "Partner" : "Counsel";
     }
 
 
@@ -82,23 +81,16 @@ public class LEFOSSE extends ByPage {
                     By.className("font-xsmall"),
                     By.cssSelector("p")
             };
-            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            String html = element.getAttribute("outerHTML");
-
+            String html = extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "outerHTML", LawyerExceptions::practiceAreaException);
             Pattern pattern = Pattern.compile("partner for</span>.*?<span[^>]*>(.*?)</span>", Pattern.CASE_INSENSITIVE);
-            assert html != null;
-
             Matcher matcher = pattern.matcher(html);
-
             if (matcher.find()) {
                 return matcher.group(1);
             }
-
-            return "";
-
         } catch (Exception e) {
-            return "";
+            System.err.println("Could not extract practice area: " + e.getMessage());
         }
+        return "";
     }
 
 
@@ -106,51 +98,37 @@ public class LEFOSSE extends ByPage {
         String email = "";
         String phone = "";
         try {
-            List<WebElement> socials = lawyer
-                        .findElement(By.className("adv-info"))
-                        .findElements(By.cssSelector("p"));
-
+            List<WebElement> socials = lawyer.findElement(By.className("adv-info")).findElements(By.cssSelector("p"));
             for (WebElement social : socials) {
                 String value = this.siteUtl.getContentFromTag(social).toLowerCase().trim();
-
-                // Check if it's an email
                 if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {
                     email = value;
-                }
-
-                // Check if it's a valid phone number
-                else if ((
-                        value.contains("tel") || value.contains("+") || value.contains("phone") ||
-                                value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
+                } else if ((value.contains("tel") || value.contains("+") || value.contains("phone") || value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
                     String cleaned = value.replaceAll("[^0-9]", "");
-                    if (cleaned.length() > 5) { // To prevent if an invalid value has been set to phone
+                    if (cleaned.length() > 5) {
                         phone = cleaned;
                     }
                 }
-
                 if (!email.isEmpty() && !phone.isEmpty()) break;
             }
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
-            return new String[] { email, phone };
-
         }
-        return new String[] { email, phone };
+        return new String[]{email, phone};
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Brazil",
-            "practice_area", this.getPracticeArea(lawyer),
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(),
+                "firm", this.name,
+                "country", "Brazil",
+                "practice_area", this.getPracticeArea(lawyer),
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

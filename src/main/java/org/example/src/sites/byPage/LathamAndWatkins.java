@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -15,36 +16,23 @@ import static java.util.Map.entry;
 
 public class LathamAndWatkins extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("austin", "EUA"),
             entry("beijing", "China"),
-            entry("boston", "EUA"),
             entry("brussels", "Belgium"),
-            entry("century city", "EUA"),
-            entry("chicago", "EUA"),
             entry("dubai", "the UAE"),
             entry("düsseldorf", "Germany"),
             entry("frankfurt", "Germany"),
             entry("hamburg", "Germany"),
             entry("hong kong", "Hong Kong"),
-            entry("houston", "EUA"),
             entry("london", "England"),
-            entry("los angeles", "EUA"),
-            entry("los angeles gso", "EUA"),
             entry("madrid", "Spain"),
             entry("milan", "Italy"),
             entry("munich", "Germany"),
-            entry("new york", "EUA"),
-            entry("orange county", "EUA"),
             entry("paris", "France"),
             entry("riyadh", "Saudi Arabia"),
-            entry("san diego", "EUA"),
-            entry("san francisco", "EUA"),
             entry("seoul", "Korea (South)"),
-            entry("silicon valley", "EUA"),
             entry("singapore", "Singapore"),
             entry("tel aviv", "Israel"),
-            entry("tokyo", "Japan"),
-            entry("washington, d.c.", "EUA")
+            entry("tokyo", "Japan")
     );
 
 
@@ -56,10 +44,10 @@ public class LathamAndWatkins extends ByPage {
 
     public LathamAndWatkins() {
         super(
-            "Latham And Watkins",
-            "https://www.lw.com/en/people#sort=%40peoplerankbytitle%20ascending%3B%40peoplelastname%20ascending&f:@peopleoffices=[Beijing,Brussels,Dubai,D%C3%BCsseldorf,Frankfurt,Hamburg,Hong%20Kong,London,Madrid,Milan,Munich,Orange%20County,Paris,Riyadh,Seoul,Singapore,Tel%20Aviv,Tokyo]",
-            62,
-            3
+                "Latham And Watkins",
+                "https://www.lw.com/en/people#sort=%40peoplerankbytitle%20ascending%3B%40peoplelastname%20ascending&f:@peopleoffices=[Beijing,Brussels,Dubai,D%C3%BCsseldorf,Frankfurt,Hamburg,Hong%20Kong,London,Madrid,Milan,Munich,Orange%20County,Paris,Riyadh,Seoul,Singapore,Tel%20Aviv,Tokyo]",
+                62,
+                3
         );
     }
 
@@ -72,7 +60,6 @@ public class LathamAndWatkins extends ByPage {
         Thread.sleep(1000L);
 
         if (index > 0) return;
-
         MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
     }
 
@@ -86,79 +73,71 @@ public class LathamAndWatkins extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.className("contacts__card-content")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("h3 > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("h3  > a > span")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("contacts__card-detail"),
                 By.cssSelector("span")
         };
-        return siteUtl.getCountryBasedInOffice(
-            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
-        );
+        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
     }
 
 
     private String[] getSocials(WebElement lawyer) {
+        String email = "";
+        String phone = "";
         try {
-            String email = driver.findElement(By.cssSelector("p[data-field='@peopleemailaddress'] > span")).getText();
-            String phone = driver.findElement(By.cssSelector("p[data-field='@peopledirectdialnumber'] > span")).getText();
-
-
-            return new String[]{ email, phone };
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
+            email = lawyer.findElement(By.cssSelector("p[data-field='@peopleemailaddress'] > span")).getText();
+            phone = lawyer.findElement(By.cssSelector("p[data-field='@peopledirectdialnumber'] > span")).getText();
+        } catch (Exception ignored) {
         }
+        return new String[]{email, phone};
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]);
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
+        );
     }
 }

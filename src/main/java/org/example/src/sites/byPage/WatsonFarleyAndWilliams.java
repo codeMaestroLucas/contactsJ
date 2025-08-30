@@ -1,8 +1,8 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
-import org.example.src.sites.byNewPage.BarneaAndCo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +12,6 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.Map.copyOf;
 import static java.util.Map.entry;
 
 public class WatsonFarleyAndWilliams extends ByPage {
@@ -22,13 +21,8 @@ public class WatsonFarleyAndWilliams extends ByPage {
             entry("bangkok", "Thailand"),
             entry("china", "China"),
             entry("dubai", "the UAE"),
-            entry("dusseldorf", "Germany"),
-            entry("d sseldorf", "Germany"),
             entry("france", "France"),
-            entry("frankfurt", "Germany"),
-            entry("germany", "Germany"),
             entry("greece", "Greece"),
-            entry("hamburg", "Germany"),
             entry("hanoi", "Vietnam"),
             entry("hong kong", "Hong Kong"),
             entry("italy", "Italy"),
@@ -36,7 +30,6 @@ public class WatsonFarleyAndWilliams extends ByPage {
             entry("london", "England"),
             entry("madrid", "Spain"),
             entry("milan", "Italy"),
-            entry("munich", "Germany"),
             entry("new york", "USA"),
             entry("paris", "France"),
             entry("republic of korea", "Korea (South)"),
@@ -61,10 +54,10 @@ public class WatsonFarleyAndWilliams extends ByPage {
 
     public WatsonFarleyAndWilliams() {
         super(
-            "Watson Farley And Williams",
-            "https://www.wfw.com/people/?reset=yes",
-            37,
-            3
+                "Watson Farley And Williams",
+                "https://www.wfw.com/people/?reset=yes",
+                37,
+                3
         );
     }
 
@@ -106,47 +99,43 @@ public class WatsonFarleyAndWilliams extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("h3_styler"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("h3_styler"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element);
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return siteUtl.getContentFromTag(element.getText());
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("people_left_stats_job"),
                 By.cssSelector("a")
         };
-        return siteUtl.getCountryBasedInOffice(
-            OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
-        );
+        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "Germany");
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -159,14 +148,14 @@ public class WatsonFarleyAndWilliams extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

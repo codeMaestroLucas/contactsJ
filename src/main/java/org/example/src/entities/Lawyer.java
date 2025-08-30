@@ -69,6 +69,7 @@ public final class Lawyer {
                 .replace("&amp", "")
                 .replace("law", "").replace("Law", "")
                 .replace("specialist", "").replace("Specialist", "")
+                .replace("department", "").replace("Department", "")
                 .replace("service", "").replace("Service", "")
                 .replace("services", "").replace("Services", "")
                 .trim();

@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -20,9 +21,9 @@ public class TucaZbarcea extends ByPage {
 
     public TucaZbarcea() {
         super(
-            "Tuca Zbarcea",
-            "https://www.tuca.ro/attorneys/",
-            11
+                "Tuca Zbarcea",
+                "https://www.tuca.ro/attorneys/",
+                11
         );
     }
 
@@ -46,62 +47,54 @@ public class TucaZbarcea extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("col-attorney")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("col-attorney")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
-        return lawyer.getAttribute("href");
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerAttribute(lawyer, new By[]{}, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("attorney-info"),
                 By.className("attorney-name")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String[] getSocials(WebElement lawyer) {
+    private String[] getSocials(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("attorney-info"),
                 By.className("attorney-email")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return new String[] {element.getText(), "40212048890" };
+        String email = extractor.extractLawyerText(lawyer, byArray, "EMAIL", LawyerExceptions::emailException);
+        return new String[]{email, "40212048890"};
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Romania",
-            "practice_area", "",
-            "email", socials[0].replace("[at]", "@"),
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Romania",
+                "practice_area", "",
+                "email", socials[0].replace("[at]", "@"),
+                "phone", socials[1]
         );
     }
 }

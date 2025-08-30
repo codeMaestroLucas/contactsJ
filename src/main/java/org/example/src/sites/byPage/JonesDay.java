@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -17,46 +18,28 @@ public class JonesDay extends ByPage {
 
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("amsterdam", "the Netherlands"),
-            entry("atlanta", "USA"),
             entry("beijing", "China"),
-            entry("boston", "USA"),
             entry("brisbane", "Australia"),
             entry("brussels", "Belgium"),
-            entry("chicago", "USA"),
-            entry("cleveland", "USA"),
-            entry("columbus", "USA"),
-            entry("dallas", "USA"),
-            entry("detroit", "USA"),
             entry("dubai", "the UAE"),
             entry("düsseldorf", "Germany"),
             entry("frankfurt", "Germany"),
             entry("hong kong", "Hong Kong"),
-            entry("houston", "USA"),
-            entry("irvine", "USA"),
             entry("london", "England"),
-            entry("los angeles", "USA"),
             entry("madrid", "Spain"),
             entry("melbourne", "Australia"),
             entry("mexico city", "Mexico"),
-            entry("miami", "USA"),
             entry("milan", "Italy"),
-            entry("minneapolis", "USA"),
             entry("munich", "Germany"),
-            entry("new york", "USA"),
             entry("paris", "France"),
             entry("perth", "Australia"),
-            entry("pittsburgh", "USA"),
-            entry("san diego", "USA"),
-            entry("san francisco", "USA"),
             entry("são paulo", "Brazil"),
             entry("shanghai", "China"),
-            entry("silicon valley", "USA"),
             entry("singapore", "Singapore"),
             entry("sydney", "Australia"),
             entry("taipei", "Taiwan"),
-            entry("tokyo", "Japan"),
-            entry("washington", "USA")
-    );
+            entry("tokyo", "Japan")
+           );
 
     private final By[] byRoleArray = {
             By.className("professional__column--right"),
@@ -83,11 +66,8 @@ public class JonesDay extends ByPage {
 
         if (index == 0) {
             MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
-
         } else {
-            // It takes a long time to load more lawyers
             Thread.sleep(3500L);
-
         }
     }
 
@@ -102,12 +82,8 @@ public class JonesDay extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) {
-        try {
-            return lawyer.getAttribute("href");
-        } catch (Exception e) {
-            return "";
-        }
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerAttribute(lawyer, new By[]{}, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) {
@@ -116,8 +92,7 @@ public class JonesDay extends ByPage {
                     By.className("professional__column--right"),
                     By.className("person__name")
             };
-            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            return element.getText();
+            return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
         } catch (Exception e) {
             return "";
         }
@@ -125,8 +100,7 @@ public class JonesDay extends ByPage {
 
     private String getRole(WebElement lawyer) {
         try {
-            WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-            return element.getText();
+            return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
         } catch (Exception e) {
             return "";
         }
@@ -139,9 +113,8 @@ public class JonesDay extends ByPage {
                     By.cssSelector("div.person__row:nth-child(2)"),
                     By.className("person__meta")
             };
-            return siteUtl.getCountryBasedInOffice(
-                OFFICE_TO_COUNTRY, this.siteUtl.iterateOverBy(byArray, lawyer)
-            );
+            String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+            return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
         } catch (Exception e) {
             return "";
         }
@@ -150,7 +123,6 @@ public class JonesDay extends ByPage {
 
     private String getPracticeArea(WebElement lawyer) {
         try {
-            // Find the element containing the practice area text.
             WebElement element = lawyer.findElement(By.xpath("//span[contains(text(), 'Practice:')]"));
             return element.getText().replace("Practice:", "").trim().split(";")[0];
         } catch (Exception e) {
@@ -162,19 +134,16 @@ public class JonesDay extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         String email = "";
         String phone = "";
-
         try {
-            email = lawyer.findElement(By.xpath("//span[contains(text(), '@')]")).getText();
+            email = lawyer.findElement(By.xpath(".//span[contains(text(), '@')]")).getText();
             phone = lawyer.findElement(By.className("person__phone-listing")).getText();
-
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
-
         return new String[]{email, phone};
     }
 
 
-    public Object getLawyer(WebElement lawyer) {
+    public Object getLawyer(WebElement lawyer) throws LawyerExceptions {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
                 "link", this.getLink(lawyer),

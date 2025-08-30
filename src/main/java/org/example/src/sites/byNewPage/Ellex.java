@@ -64,7 +64,9 @@ public class Ellex extends ByNewPage {
 
     public void openNewTab(WebElement lawyer) {
         try {
-            By[] byArray = {By.className("person-item__name")};
+            By[] byArray = new By[]{
+                    By.className("person-item__name")
+            };
             String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
             MyDriver.openNewTab(link);
         } catch (LawyerExceptions e) {
@@ -77,19 +79,25 @@ public class Ellex extends ByNewPage {
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("expert-hero__name")};
+        By[] byArray = new By[]{
+                By.className("expert-hero__name")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("expert-hero__position")};
+        By[] byArray = new By[]{
+                By.className("expert-hero__position")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("expert-hero__location")};
+        By[] byArray = new By[]{
+                By.className("expert-hero__location")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
 
@@ -97,7 +105,10 @@ public class Ellex extends ByNewPage {
     private String getPracticeArea() {
         try {
             WebElement div = driver.findElement(By.className("main__side"));
-            By[] byArray = {By.className("main__links"), By.className("links__link")};
+            By[] byArray = new By[]{
+                    By.className("main__links"),
+                    By.className("links__link")
+            };
             return extractor.extractLawyerText(div, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
         } catch (Exception e) {
             return "";

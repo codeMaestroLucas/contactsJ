@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -13,15 +14,15 @@ import java.util.Map;
 
 public class HannesSnellman extends ByPage {
     private final By[] byRoleArray = {
-        By.cssSelector("div")
+            By.cssSelector("div")
     };
 
 
     public HannesSnellman() {
         super(
-            "Hannes Snellman",
-            "https://www.hannessnellman.com/people/",
-            19
+                "Hannes Snellman",
+                "https://www.hannessnellman.com/people/",
+                19
         );
     }
 
@@ -41,9 +42,9 @@ public class HannesSnellman extends ByPage {
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-            "partner",
-            "counsel",
-            "senior associate"
+                "partner",
+                "counsel",
+                "senior associate"
         };
 
         try {
@@ -62,42 +63,34 @@ public class HannesSnellman extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.className("person-card__title"),
-            By.cssSelector("a")
+                By.className("person-card__title"),
+                By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.className("person-card__title"),
-            By.cssSelector("a")
+                By.className("person-card__title"),
+                By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            String email = lawyer.findElement(By.className("person-card-email"))
-                    .getText();
-
-            String phone = lawyer.findElement(By.cssSelector("div:last-child"))
-                    .getText();
-
-            return new String[] { email, phone };
-
+            String email = lawyer.findElement(By.className("person-card-email")).getText();
+            String phone = lawyer.findElement(By.cssSelector("div:last-child")).getText();
+            return new String[]{email, phone};
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -108,13 +101,13 @@ public class HannesSnellman extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Finland",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]);
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Finland",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]);
     }
 }

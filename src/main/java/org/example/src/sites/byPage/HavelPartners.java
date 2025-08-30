@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -13,15 +14,15 @@ import java.util.Map;
 
 public class HavelPartners extends ByPage {
     private final By[] byRoleArray = {
-        By.cssSelector("div > span")
+            By.cssSelector("div > span")
     };
 
 
     public HavelPartners() {
         super(
-            "Havel Partners",
-            "https://www.havelpartners.com/team/",
-            8
+                "Havel Partners",
+                "https://www.havelpartners.com/team/",
+                8
         );
     }
 
@@ -37,10 +38,10 @@ public class HavelPartners extends ByPage {
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-            "partner",
-            "counsel",
-            "senior associate",
-            "managing associate"
+                "partner",
+                "counsel",
+                "senior associate",
+                "managing associate"
         };
 
         try {
@@ -59,44 +60,30 @@ public class HavelPartners extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.cssSelector("a")
+                By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-            By.cssSelector("a > h3 > span")
+                By.cssSelector("a > h3 > span")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
-    }
-
-
-    private String getCountry(WebElement lawyer) {
-        By[] byArray = new By[]{
-            By.className(""),
-            By.cssSelector("")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                    .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -109,13 +96,14 @@ public class HavelPartners extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "the Czech Republic",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]);
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "the Czech Republic",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
+        );
     }
 }

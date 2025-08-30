@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -19,10 +20,10 @@ public class Njord extends ByPage {
 
     public Njord() {
         super(
-            "Njord",
-            "https://www.njordlaw.com/people",
-            5,
-            2
+                "Njord",
+                "https://www.njordlaw.com/people",
+                5,
+                2
         );
     }
 
@@ -48,55 +49,44 @@ public class Njord extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("employee-list-item")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("employee-list-item")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("employee-link")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("employee-title-office"),
                 By.className("employee-name")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getAttribute("outerHTML");
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "outerHTML", LawyerExceptions::roleException);
     }
 
 
     private String getCountry(String phone) {
-        String country = phone; // to check if all the phones are registered
-
-        if (phone.startsWith("45")) country = "Denmark";
-        else if (phone.startsWith("46")) country = "Sweden";
-        else if (phone.startsWith("370")) country = "Lithuania";
-        else if (phone.startsWith("371")) country = "Latvia";
-        else if (phone.startsWith("372")) country = "Estonia";
-
-        return country;
+        if (phone == null || phone.isBlank()) return "Not Found";
+        if (phone.startsWith("45")) return "Denmark";
+        if (phone.startsWith("46")) return "Sweden";
+        if (phone.startsWith("370")) return "Lithuania";
+        if (phone.startsWith("371")) return "Latvia";
+        if (phone.startsWith("372")) return "Estonia";
+        return "Not Found";
     }
 
 
@@ -105,18 +95,11 @@ public class Njord extends ByPage {
             List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             String[] socialLinks = super.getSocials(socials, true);
 
-            if (socialLinks[1].isEmpty()) { // Email is empty
+            if (socialLinks[1].isEmpty()) { // Phone is empty
                 socialLinks = super.getSocials(socials, false);
-                // Removing the "tel:%28%2B" from the phone
-                socialLinks[1] = socialLinks[1]
-                        .replace("282", "")
-                        // Just a safeguard that all the invalid number were removed
-                        .replaceFirst("2", "")
-                        .replaceFirst("8", "")
-                        .replaceFirst("2", "");
+                socialLinks[1] = socialLinks[1].replaceAll("[^0-9]", "");
             }
             return socialLinks;
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -134,6 +117,7 @@ public class Njord extends ByPage {
                 "country", this.getCountry(socials[1]),
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1]);
+                "phone", socials[1]
+        );
     }
 }

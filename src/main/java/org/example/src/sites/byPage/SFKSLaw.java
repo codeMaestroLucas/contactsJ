@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -25,9 +26,9 @@ public class SFKSLaw extends ByPage {
 
     public SFKSLaw() {
         super(
-            "SFKS Law",
-            "https://www.sfks.com.hk/en/members/member.php?id=5",
-            13
+                "SFKS Law",
+                "https://www.sfks.com.hk/en/members/member.php?id=5",
+                13
         );
     }
 
@@ -63,19 +64,18 @@ public class SFKSLaw extends ByPage {
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.id("mainStatus"),
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String[] split = element.getText().split(">");
+        String text = extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        String[] split = text.split(">");
         return split[split.length - 1];
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
@@ -90,6 +90,7 @@ public class SFKSLaw extends ByPage {
 
         // Regex to capture phone and email
         Pattern pattern = Pattern.compile("(\\d{4}\\s\\d{4})|([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,})");
+        assert socials != null;
         Matcher matcher = pattern.matcher(socials);
 
         while (matcher.find()) {
@@ -100,21 +101,21 @@ public class SFKSLaw extends ByPage {
             }
         }
 
-        return new String[]{ phone, email };
+        return new String[]{ email, phone };
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Hong Kong",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Hong Kong",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

@@ -1,18 +1,24 @@
 package org.example.src.sites.byPage;
 
-import java.time.Duration;
-import java.util.List;
-import java.util.Map;
-import org.example.src.entities.MyDriver;
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+
 public class Blakes extends ByPage {
     public Blakes() {
-        super("Blakes", "https://www.blakes.com/people/find-a-person/?fc=or%7C%7Cbiopositiongroup%7C%7C9;or%7C%7Cbiopositiongroup%7C%7C8;or%7C%7Cbiocities%7C%7CToronto;or%7C%7Cbiocities%7C%7CCalgary;or%7C%7Cbiocities%7C%7CMontr%C3%A9al;or%7C%7Cbiocities%7C%7CVancouver;or%7C%7Cbiocities%7C%7COttawa;or%7C%7Cbiocities%7C%7CLondon", 1);
+        super(
+                "Blakes",
+                "https://www.blakes.com/people/find-a-person/?fc=or%7C%7Cbiopositiongroup%7C%7C9;or%7C%7Cbiopositiongroup%7C%7C8;or%7C%7Cbiocities%7C%7CToronto;or%7C%7Cbiocities%7C%7CCalgary;or%7C%7Cbiocities%7C%7CMontr%C3%A9al;or%7C%7Cbiocities%7C%7CVancouver;or%7C%7Cbiocities%7C%7COttawa;or%7C%7Cbiocities%7C%7CLondon",
+                1
+        );
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -27,39 +33,47 @@ public class Blakes extends ByPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            return (List)wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("blk-card-item-inner")));
+            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("blk-card-item-inner")));
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
-    private String getLink(WebElement lawyer) {
-        By[] byArray = new By[]{By.className("blk-card-item-name")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("blk-card-item-name")
+        };
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{By.className("blk-card-item-name")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("blk-card-item-name")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{By.className("blk-card-item-description"), By.className("blk-card-item-description-inner")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("blk-card-item-description"),
+                By.className("blk-card-item-description-inner")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String getCountry(WebElement lawyer) {
-        By[] byArray = new By[]{By.className("blk-card-item-description"), By.className("blk-card-item-description-inner")};
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().split(" \\| ")[1];
-        if (country.equalsIgnoreCase("new york")) {
-            return "EUA";
-        } else {
-            return country.equalsIgnoreCase("london") ? "England" : "Canada";
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("blk-card-item-description"),
+                By.className("blk-card-item-description-inner")
+        };
+        String text = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String office = text.split(" \\| ")[1].trim().toLowerCase();
+        if (office.equalsIgnoreCase("new york")) {
+            return "USA";
+        } else if (office.equalsIgnoreCase("london")) {
+            return "England";
         }
+        return "Canada";
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -74,6 +88,15 @@ public class Blakes extends ByPage {
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
-        return Map.of("link", this.getLink(lawyer), "name", this.getName(lawyer), "role", this.getRole(lawyer), "firm", this.name, "country", this.getCountry(lawyer), "practice_area", "", "email", socials[0], "phone", socials[1]);
+        return Map.of(
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
+        );
     }
 }

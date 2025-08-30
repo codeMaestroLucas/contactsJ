@@ -1,22 +1,24 @@
 package org.example.src.sites.byPage;
 
-import java.time.Duration;
-import java.util.List;
-import java.util.Map;
-
 import org.example.exceptions.LawyerExceptions;
-import org.example.src.entities.MyDriver;
 import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class _Template extends ByPage {
     private final By[] byRoleArray = {
             By.className(""),
             By.cssSelector("")
     };
+
 
     public _Template() {
         super(
@@ -26,6 +28,7 @@ public class _Template extends ByPage {
                 1000
         );
     }
+
 
     protected void accessPage(int index) throws InterruptedException {
         String otherUrl = "";
@@ -40,9 +43,12 @@ public class _Template extends ByPage {
         MyDriver.clickOnElement(By.id(""));
     }
 
+
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner"
+                "partner",
+                "counsel",
+                "senior associate"
         };
 
         try {
@@ -64,29 +70,37 @@ public class _Template extends ByPage {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
+
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
-    private String getName(WebElement lawyer) throws LawyerExceptions {
+    private String getName(WebElement container) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerText(container, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
-    }
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+    private String getRole(WebElement container) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return extractor.extractLawyerText(container, byArray, "ROLE", LawyerExceptions::roleException);
     }
+
+
+    private String getCountry(WebElement container) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className(""),
+                By.cssSelector("")
+        };
+        return extractor.extractLawyerText(container, byArray, "COUNTRY", LawyerExceptions::countryException);
+    }
+
 
     private String[] getSocials(WebElement lawyer) {
         try {
@@ -101,10 +115,12 @@ public class _Template extends ByPage {
         }
     }
 
+
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
+
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,

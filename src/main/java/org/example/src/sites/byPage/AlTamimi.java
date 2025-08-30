@@ -1,18 +1,39 @@
 package org.example.src.sites.byPage;
 
-import java.time.Duration;
-import java.util.List;
-import java.util.Map;
-import org.example.src.entities.MyDriver;
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+
+import static java.util.Map.entry;
+
 public class AlTamimi extends ByPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("20", "Egypt"),
+            entry("212", "Morocco"),
+            entry("962", "Jordan"),
+            entry("964", "Iraq"),
+            entry("965", "Kuwait"),
+            entry("966", "Saudi Arabia"),
+            entry("968", "Oman"),
+            entry("971", "the UAE"),
+            entry("973", "Bahrain"),
+            entry("974", "Qatar")
+    );
+
     public AlTamimi() {
-        super("Al Tamimi", "https://www.tamimi.com/about-us/partners/", 12);
+        super(
+                "Al Tamimi",
+                "https://www.tamimi.com/about-us/partners/",
+                12
+        );
     }
 
     protected void accessPage(int index) throws InterruptedException {
@@ -27,7 +48,9 @@ public class AlTamimi extends ByPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        By[] webRole = new By[]{By.className("key-designation")};
+        By[] webRole = new By[]{
+                By.className("key-designation")
+        };
         String[] validRoles = new String[]{"chairman", "partner"};
 
         try {
@@ -39,29 +62,52 @@ public class AlTamimi extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) {
-        By[] byArray = new By[]{By.cssSelector("a:first-child")};
-        return this.siteUtl.iterateOverBy(byArray, lawyer).getAttribute("href");
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.cssSelector("a:first-child")
+        };
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{By.cssSelector("a:first-child")};
-        return this.siteUtl.iterateOverBy(byArray, lawyer).getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.cssSelector("a:first-child")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{By.className("key-designation")};
-        return this.siteUtl.iterateOverBy(byArray, lawyer).getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("key-designation")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+    }
+
+    private String getCountry(String phone) throws LawyerExceptions {
+        return this.siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "");
     }
 
     private String[] getSocials(WebElement lawyer) {
-        List<WebElement> socials = lawyer.findElements(By.cssSelector(".key-contact-info > a"));
-        return super.getSocials(socials, false);
+        try {
+            List<WebElement> socials = lawyer.findElements(By.cssSelector(".key-contact-info > a"));
+            return super.getSocials(socials, false);
+        } catch (Exception e) {
+            System.err.println("Error getting socials: " + e.getMessage());
+            return new String[]{"", ""};
+        }
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
-        //todo: check if the country is an empty value1
-        return Map.of("link", this.getLink(lawyer), "name", this.getName(lawyer), "role", this.getRole(lawyer), "firm", this.name, "country", "", "practice_area", "", "email", socials[0], "phone", this.link.contains("mumbai") ? "+91 22 400 10000" : "+91 80 4016 0000");
+        return Map.of(
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(socials[1]),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
+        );
     }
 }

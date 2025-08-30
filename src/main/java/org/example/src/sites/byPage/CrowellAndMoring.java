@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -31,10 +32,10 @@ public class CrowellAndMoring extends ByPage {
 
     public CrowellAndMoring() {
         super(
-            "Crowell And Moring",
-            "https://www.crowell.com/en/professionals",
-            26,
-            3
+                "Crowell And Moring",
+                "https://www.crowell.com/en/professionals",
+                26,
+                3
         );
     }
 
@@ -76,40 +77,37 @@ public class CrowellAndMoring extends ByPage {
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("p[class^='styles__type__personName']"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("p[class^='styles__type__personName']"),
                 By.cssSelector("a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("div[class*='styles__listingsContainer']"),
                 By.cssSelector("ul[class*='styles__officesListingContainer']"),
                 By.cssSelector("div.color-navy-blue > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, element.getText(), "USA");
+        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
     }
 
 
@@ -120,11 +118,10 @@ public class CrowellAndMoring extends ByPage {
                     By.cssSelector("ul[class^='styles__servicesListingContainer']"),
                     By.cssSelector("li > p > a")
             };
-            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            return element.getText();
+            return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return "------";
+            System.err.println("Could not get practice area: " + e.getMessage());
+            return "";
         }
     }
 
@@ -132,8 +129,8 @@ public class CrowellAndMoring extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.cssSelector("div[class^='styles__listingsContainer']"))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.cssSelector("div[class^='styles__listingsContainer']"))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -146,14 +143,14 @@ public class CrowellAndMoring extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", this.getPracticeArea(lawyer),
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", this.getPracticeArea(lawyer),
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

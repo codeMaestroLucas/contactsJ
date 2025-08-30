@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -11,25 +12,24 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Dompatent extends ByPage {
-    private List<String> links = new ArrayList<>();
+    private final List<String> links = new ArrayList<>();
 
     private final By[] byRoleArray = {
-        By.className("modal-header"),
-        By.cssSelector("h1"),
-        By.className("team-job")
+            By.className("modal-header"),
+            By.cssSelector("h1"),
+            By.className("team-job")
     };
 
 
     public Dompatent() {
         super(
-            "Dompatent",
-            "https://www.dompatent.de/en/ip-experts/",
-            15
+                "Dompatent",
+                "https://www.dompatent.de/en/ip-experts/",
+                15
         );
     }
 
@@ -57,31 +57,37 @@ public class Dompatent extends ByPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
             return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.id("coach-internal")
                     )
             );
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("modal-header"),
-                By.cssSelector("h1")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String html = element.getAttribute("outerHTML");
-        Pattern pattern = Pattern.compile("<h1>\\s*([^<]+?)\\s*<span");
-        Matcher matcher = pattern.matcher(html);
+    public String getLink(WebElement lawyer) {
+        return driver.getCurrentUrl();
+    }
 
-        if (matcher.find()) {
-            return matcher.group(1);
+
+    private String getName(WebElement lawyer) {
+        try {
+            By[] byArray = new By[]{
+                    By.className("modal-header"),
+                    By.cssSelector("h1")
+            };
+            String html = extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException);
+            Pattern pattern = Pattern.compile("<h1>\\s*([^<]+?)\\s*<span");
+            Matcher matcher = pattern.matcher(html);
+
+            if (matcher.find()) {
+                return matcher.group(1).trim();
+            }
+        } catch (Exception e) {
+            System.err.println("Could not extract name: " + e.getMessage());
         }
         return "";
     }
@@ -89,8 +95,7 @@ public class Dompatent extends ByPage {
 
     private String getRole(WebElement lawyer) {
         try {
-            WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-            return element.getText();
+            return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
         } catch (Exception e) {
             return "Invalid role";
         }
@@ -100,8 +105,8 @@ public class Dompatent extends ByPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("contact-box"))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className("contact-box"))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -118,14 +123,14 @@ public class Dompatent extends ByPage {
 
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(lawyer),
-            "role", role,
-            "firm", this.name,
-            "country", "Germany",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", role,
+                "firm", this.name,
+                "country", "Germany",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

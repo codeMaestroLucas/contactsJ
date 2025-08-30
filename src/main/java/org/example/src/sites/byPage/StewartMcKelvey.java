@@ -1,5 +1,6 @@
 package org.example.src.sites.byPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -19,9 +20,9 @@ public class StewartMcKelvey extends ByPage {
 
     public StewartMcKelvey() {
         super(
-            "StewartMcKelvey",
-            "https://stewartmckelvey.com/our-team/",
-            1
+                "StewartMcKelvey",
+                "https://stewartmckelvey.com/our-team/",
+                1
         );
     }
 
@@ -44,67 +45,65 @@ public class StewartMcKelvey extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("card-team")
-                    )
-            );
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("card-team")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
 
-    private String getLink(WebElement lawyer) {
+    public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("h3 > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("h3 > a")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+    }
+
+
+    private String getCountry(String phone) {
+        if (phone == null || phone.isBlank()) return "Not Found";
+        return phone.replace("+", "").startsWith("44") ? "England" : "Canada";
     }
 
 
     private String[] getSocials(WebElement lawyer) {
-        List<WebElement> elements = lawyer
-                .findElement(By.className("card-info-list"))
-                .findElements(By.cssSelector("li"));
-
-        String phone = elements.get(1).getText();
-        String email = elements.getLast().findElement(By.cssSelector("a")).getAttribute("href");
-
-        return new String[] { email, phone };
+        try {
+            List<WebElement> elements = lawyer.findElement(By.className("card-info-list")).findElements(By.cssSelector("li"));
+            String phone = elements.get(1).getText();
+            String email = elements.getLast().findElement(By.cssSelector("a")).getAttribute("href");
+            return new String[]{email, phone};
+        } catch (Exception e) {
+            System.err.println("Error getting socials: " + e.getMessage());
+            return new String[]{"", ""};
+        }
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", "Canada",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(socials[1]),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1]
         );
     }
 }

@@ -38,13 +38,11 @@ public class BWBLLP extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
             return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.className("field-content")
                     )
             );
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -53,7 +51,9 @@ public class BWBLLP extends ByNewPage {
 
     public void openNewTab(WebElement lawyer) {
         try {
-            By[] byArray = {By.cssSelector("a")};
+            By[] byArray = new By[]{
+                    By.cssSelector("a")
+            };
             String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
             MyDriver.openNewTab(link);
         } catch (LawyerExceptions e) {
@@ -66,20 +66,20 @@ public class BWBLLP extends ByNewPage {
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h1")};
+        By[] byArray = new By[]{
+                By.cssSelector("h1")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {
+        By[] byArray = new By[]{
                 By.className("title_language_container"),
                 By.cssSelector("h2")
         };
         String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-
-        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
-        return validPosition ? role : "Invalid Role";
+        return siteUtl.isValidPosition(role, validRoles) ? role : "Invalid Role";
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -88,7 +88,6 @@ public class BWBLLP extends ByNewPage {
                     .findElement(By.className("people__hero-contact-lawyer"))
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
-
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -98,11 +97,8 @@ public class BWBLLP extends ByNewPage {
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-
         WebElement div = driver.findElement(By.className("people__hero__left-container"));
-
         String role = this.getRole(div);
-
         if (role.equals("Invalid Role")) return "Invalid Role";
 
         String[] socials = this.getSocials(div);
