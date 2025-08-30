@@ -59,7 +59,7 @@ public class Main {
                 long initTimeFirm = System.currentTimeMillis();
 
                 interfaceUtls.header(site.name);
-                site.searchForLawyers();
+                site.searchForLawyers(false);
 
                 long finalTimeFirm = System.currentTimeMillis();
                 String time = interfaceUtls.calculateTime(initTimeFirm, finalTimeFirm);

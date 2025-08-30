@@ -1,8 +1,8 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
-import org.example.src.sites.byPage.WildeboerDellelce;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,14 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class BarneaAndCo extends ByNewPage {
     public BarneaAndCo() {
         super(
-            "Barnea And Co",
-            "https://barlaw.co.il/the-team/",
-            1
+                "Barnea And Co",
+                "https://barlaw.co.il/the-team/",
+                1
         );
     }
 
@@ -27,9 +26,6 @@ public class BarneaAndCo extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
     }
 
 
@@ -37,7 +33,7 @@ public class BarneaAndCo extends ByNewPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = new java.util.ArrayList<>(List.of());
+            List<WebElement> lawyers = new java.util.ArrayList<>();
             lawyers.addAll(wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.cssSelector("div.leftSideblockText.partners_text.light > div.leftSideblockTextLink")
@@ -62,37 +58,40 @@ public class BarneaAndCo extends ByNewPage {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a")).getAttribute("href"));
     }
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("rightSideTitle")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("rightSideTitle")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole() {
-        String role = driver.findElement(By.className("breadcrumb")).getText();
-        return role.toLowerCase().contains("partner") ? "Partner" : "Counsel";
+    private String getRole() throws LawyerExceptions {
+        try {
+            String roleText = driver.findElement(By.className("breadcrumb")).getText();
+            return roleText.toLowerCase().contains("partner") ? "Partner" : "Counsel";
+        } catch (Exception e) {
+            throw LawyerExceptions.roleException("Could not find role element (breadcrumb)");
+        }
     }
 
 
-    private String getPracticeArea(WebElement lawyer) {
-        By[] byArray = new By[]{
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {
                 By.className("single-attorneys-practice-areas"),
                 By.className("leftSideblockTextLink")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("mo_mobile2"))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className("mo_mobile2"))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -111,14 +110,14 @@ public class BarneaAndCo extends ByNewPage {
         String[] socials = this.getSocials(leftDiv);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(rightDiv),
-            "role", this.getRole(),
-            "firm", this.name,
-            "country", "Israel",
-            "practice_area", this.getPracticeArea(leftDiv),
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(rightDiv),
+                "role", this.getRole(),
+                "firm", this.name,
+                "country", "Israel",
+                "practice_area", this.getPracticeArea(leftDiv),
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
 }

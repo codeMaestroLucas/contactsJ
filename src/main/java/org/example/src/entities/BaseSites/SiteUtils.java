@@ -31,9 +31,7 @@ public class SiteUtils {
     /**
      * Prints an error when lawyer details are invalid.
      */
-    public void printInvalidLawyer(Map<String, String> details, int index, int page, String firm) {
-        System.out.printf("Error reading %dth lawyer at page %d of firm %s.%nSkipping...%n",
-                index + 1, page + 1, firm);
+    public void printInvalidLawyer(Map<String, String> details) {
         System.out.println("  Link: " + details.get("link"));
         System.out.println("  Name: " + details.get("name"));
         System.out.println("  Role: " + details.get("role"));

@@ -137,9 +137,4 @@ public class _Template extends ByNewPage {
             "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
-
-    public static void main(String[] args) {
-        _Template x = new _Template();
-        x.searchForLawyers();
-    }
 }

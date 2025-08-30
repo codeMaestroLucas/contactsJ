@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class HYLeungAndCo extends ByNewPage {
     private final By[] byRoleArray = {
@@ -20,9 +20,9 @@ public class HYLeungAndCo extends ByNewPage {
 
     public HYLeungAndCo() {
         super(
-            "HY Leung And Co",
-            "https://hyleung.com/our-team-members/",
-            1
+                "HY Leung And Co",
+                "https://hyleung.com/our-team-members/",
+                1
         );
     }
 
@@ -31,9 +31,6 @@ public class HYLeungAndCo extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
     }
 
 
@@ -60,40 +57,39 @@ public class HYLeungAndCo extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("team-members-list-indi-arrow-wrapper")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        try {
+            By[] byArray = {By.className("team-members-list-indi-arrow-wrapper")};
+            String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+            MyDriver.openNewTab(link);
+        } catch (LawyerExceptions e) {
+            System.err.println("Failed to open new tab: " + e.getMessage());
+        }
+    }
+
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byName1 = {By.className("team-member-name-large")};
+        By[] byName2 = {By.className("team-member-name-small")};
+
+        String name1 = extractor.extractLawyerText(lawyer, byName1, "NAME PART 1", LawyerExceptions::nameException);
+        String name2 = extractor.extractLawyerText(lawyer, byName2, "NAME PART 2", LawyerExceptions::nameException);
+        return name1 + " " + name2;
     }
 
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("team-member-name-large")
-        };
-        WebElement name1 = this.siteUtl.iterateOverBy(byArray, lawyer);
-        byArray = new By[]{
-                By.className("team-member-name-small")
-        };
-        WebElement name2 = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return name1.getText() + " " + name2.getText();
-    }
-
-
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("team-member-title")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("team-member-title")};
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElements(By.className("team-member-contact-right"));
+                    .findElements(By.className("team-member-contact-right"));
             return super.getSocials(socials, true);
 
         } catch (Exception e) {
@@ -112,14 +108,14 @@ public class HYLeungAndCo extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(header),
-            "role", this.getRole(header),
-            "firm", this.name,
-            "country", "Hong Kong",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "85235654945" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(header),
+                "role", this.getRole(header),
+                "firm", this.name,
+                "country", "Hong Kong",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "85235654945" : socials[1]
         );
     }
 }

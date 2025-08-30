@@ -3,6 +3,8 @@ package org.example.src.sites.byPage;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.BaseSites.ByPage;
 import org.openqa.selenium.By;
@@ -16,16 +18,14 @@ public class _Template extends ByPage {
             By.cssSelector("")
     };
 
-
     public _Template() {
         super(
-            "",
-            "",
-            1,
-            1000
+                "",
+                "",
+                1,
+                1000
         );
     }
-
 
     protected void accessPage(int index) throws InterruptedException {
         String otherUrl = "";
@@ -39,7 +39,6 @@ public class _Template extends ByPage {
         // Click on add btn
         MyDriver.clickOnElement(By.id(""));
     }
-
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
@@ -61,48 +60,39 @@ public class _Template extends ByPage {
         }
     }
 
-
-    private String getLink(WebElement lawyer) {
+    private String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getAttribute("href");
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
-
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
-
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
-
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className(""))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className(""))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -111,23 +101,17 @@ public class _Template extends ByPage {
         }
     }
 
-
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-            "link", this.getLink(lawyer),
-            "name", this.getName(lawyer),
-            "role", this.getRole(lawyer),
-            "firm", this.name,
-            "country", this.getCountry(lawyer),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", this.getCountry(lawyer),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "" : socials[1]
         );
-    }
-
-    public static void main(String[] args) {
-        _Template x = new _Template();
-        x.searchForLawyers();
     }
 }

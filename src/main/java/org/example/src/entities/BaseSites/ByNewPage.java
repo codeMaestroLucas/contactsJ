@@ -1,20 +1,10 @@
 package org.example.src.entities.BaseSites;
 
 import org.example.src.CONFIG;
-import org.example.src.entities.Lawyer;
 import org.example.src.entities.MyDriver;
-import org.example.src.utils.Validations;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public abstract class ByNewPage extends Site {
 
@@ -29,7 +19,7 @@ public abstract class ByNewPage extends Site {
 
 
     @Override
-    public void searchForLawyers() {
+    public void searchForLawyers(boolean showLogs) {
         for (int i = 0; i < this.totalPages; i++) {
             System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.totalPages);
 
@@ -65,53 +55,10 @@ public abstract class ByNewPage extends Site {
 
                     // Invalid Lawyer
                     if (lawyerDetails instanceof String) {
-//                        System.out.println("Invalid role"); // to annoying
                         continue;
                     }
 
-                    // Valid Lawyer
-                    if (lawyerDetails instanceof Map<?, ?>) {
-                        Map<String, String> map = (Map<String, String>) lawyerDetails;
-
-                        if (map.get("link") == null || map.get("link").isEmpty() ||
-                            map.get("email") == null || map.get("email").isEmpty()) {
-                            siteUtl.printInvalidLawyer(map, index, i, this.name);
-                            continue;
-                        }
-
-
-                        Lawyer lawyerToRegister = Lawyer.builder()
-                                .link(map.get("link"))
-                                .name(map.get("name"))
-                                .email(map.get("email"))
-                                .phone(map.get("phone"))
-                                .country(map.get("country"))
-                                .role(map.get("role"))
-                                .firm(map.get("firm"))
-                                .practiceArea(map.get("practice_area"))
-                                .build();
-
-
-                        boolean canRegister = Validations.makeValidations(
-                                lawyerToRegister,
-                                this.lastCountries,
-                                this.emailsOfMonthPath,
-                                this.emailsToAvoidPath
-                        );
-
-                        if (!canRegister) continue;
-
-                        this.addLawyer(lawyerToRegister);
-
-                        if (this.lawyersRegistered == this.maxLawyersForSite) {
-                            System.out.printf("No more than %d lawyer(s) needed for the firm %s.%n",
-                                    this.maxLawyersForSite, this.name);
-                            return;
-                        }
-
-                    } else {
-                        System.out.println("Invalid lawyer data structure.");
-                    }
+                    this.registerValidLawyer(lawyerDetails, index, i, showLogs);
 
                 } catch (Exception e) {
                     System.out.printf(
@@ -119,7 +66,6 @@ public abstract class ByNewPage extends Site {
                             index + 1, i + 1, this.name, e.getMessage()
                     );
                     System.out.println("#".repeat(70));
-                    e.getMessage();
                     e.printStackTrace();
                     System.out.println("#".repeat(70) + "\n");
                 } finally {

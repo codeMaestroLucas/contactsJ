@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -8,24 +9,29 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+
+import static java.util.Map.entry;
 
 public class LewissSilkin extends ByNewPage {
-//    todo: make a map
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("dublin", "Ireland"),
+            entry("hong kong", "Hong Kong")
+    );
+
     private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+            By.cssSelector("span[class*='ExpertCard_card-expert__job']")
     };
 
 
     public LewissSilkin() {
         super(
-            "Lewiss Silkin",
-            "https://www.lewissilkin.com/experts?all_offices=Belfast%253BCardiff%253BDublin%253BGlasgow%253BHong%2520Kong%253BLeeds%253BLondon%253BManchester%253BOxford",
-            1,
-            1000
+                "Lewiss Silkin",
+                "https://www.lewissilkin.com/experts?all_offices=Belfast%253BCardiff%253BDublin%253BGlasgow%253BHong%2520Kong%253BLeeds%253BLondon%253BManchester%253BOxford",
+                1,
+                3
         );
     }
 
@@ -38,7 +44,11 @@ public class LewissSilkin extends ByNewPage {
         // Click on add btn
         MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
 
-//        MyDriver.rollDown();
+        MyDriver.clickOnElementMultipleTimes(
+                By.cssSelector("button[class*='LoadMoreButton_more']"),
+                10, // More than 30
+                1
+        );
     }
 
 
@@ -70,34 +80,33 @@ public class LewissSilkin extends ByNewPage {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("Heading_heading__ez5Tv")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("Heading_heading__ez5Tv")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("ProfileCardRender_profile-card__role__gUeph")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("ProfileCardRender_profile-card__role__gUeph")};
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(String phone) {
-        return this.siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "");
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("ProfileCardRender_profile-card__location__jHo_L")};
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::roleException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "England");
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -115,19 +124,14 @@ public class LewissSilkin extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", this.getRole(div),
-            "firm", this.name,
-            "country", this.getCountry(socials[1]),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(div),
+                "role", this.getRole(div),
+                "firm", this.name,
+                "country", this.getCountry(div),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "" : socials[1]
         );
-    }
-
-    public static void main(String[] args) {
-        LewissSilkin x = new LewissSilkin();
-        x.searchForLawyers();
     }
 }

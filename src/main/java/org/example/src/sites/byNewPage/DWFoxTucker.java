@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class DWFoxTucker extends ByNewPage {
     String[] validRoles = new String[]{
@@ -23,9 +23,9 @@ public class DWFoxTucker extends ByNewPage {
     public DWFoxTucker() {
 
         super(
-            "DW Fox Tucker",
-            "https://www.dwfoxtucker.com.au/our-people",
-            1
+                "DW Fox Tucker",
+                "https://www.dwfoxtucker.com.au/our-people",
+                1
         );
     }
 
@@ -53,22 +53,19 @@ public class DWFoxTucker extends ByNewPage {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("h1")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.cssSelector("h1")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("breadcrumb")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String role = element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("breadcrumb")};
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
     }
@@ -77,7 +74,7 @@ public class DWFoxTucker extends ByNewPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("a"));
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -90,24 +87,23 @@ public class DWFoxTucker extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver
-                .findElement(By.cssSelector("main"));
+        WebElement div = driver.findElement(By.cssSelector("main"));
 
         String role = this.getRole(div);
-        if (role.equals("Invalid Position")) return "Invalid Position";
+        if (role.equals("Invalid Role")) return "Invalid Role";
 
         WebElement socialDiv = driver.findElement(By.className("staff-related"));
         String[] socials = this.getSocials(socialDiv);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", role,
-            "firm", this.name,
-            "country", "Australia",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "61881241811" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(div),
+                "role", role,
+                "firm", this.name,
+                "country", "Australia",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "61881241811" : socials[1]
         );
     }
 }

@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class ThompsonDorfmanSweatman extends ByNewPage {
     String[] validRoles = new String[]{
@@ -22,9 +22,9 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
 
     public ThompsonDorfmanSweatman() {
         super(
-            "Thompson Dorfman Sweatman",
-            "https://www.tdslaw.com/people/lawyers/",
-            1
+                "Thompson Dorfman Sweatman",
+                "https://www.tdslaw.com/people/lawyers/",
+                1
         );
     }
 
@@ -33,9 +33,6 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
         MyDriver.rollDown(1, 5);
     }
 
@@ -57,32 +54,28 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("a[href^='https://www.tdslaw.com/lawyers/']")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        try {
+            By[] byArray = {By.cssSelector("a[href^='https://www.tdslaw.com/lawyers/']")};
+            String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+            MyDriver.openNewTab(link);
+        } catch (LawyerExceptions e) {
+            System.err.println("Failed to open new tab: " + e.getMessage());
+        }
+    }
+
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("_name-header"), By.cssSelector("h1")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("_name-header"),
-                By.cssSelector("h1")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
-    }
-
-
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("_flex-content"),
-                By.cssSelector("h2 ~ p:nth-of-type(2)")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-
-        String role = element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("_flex-content"), By.cssSelector("h2 ~ p:nth-of-type(2)")};
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
     }
@@ -90,12 +83,11 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
 
     private String getPracticeArea(WebElement lawyer) {
         try {
-            By[] byArray = new By[]{
+            By[] byArray = {
                     By.className("_flex-sidebar"),
                     By.cssSelector("a[href^='https://www.tdslaw.com/services/']")
             };
-            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            return element.getText();
+            return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
         } catch (Exception e) {
             return "";
         }
@@ -105,8 +97,8 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("_flex-container"))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className("_flex-container"))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -120,7 +112,7 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
         this.openNewTab(lawyer);
 
         WebElement divOuter = driver.findElement(By.className("_general-content"));
-        String role =  this.getRole(divOuter);
+        String role = this.getRole(divOuter);
         if (role.equals("Invalid Role")) return "Invalid Role";
 
         WebElement divContent = driver.findElement(By.className("_single-people"));
@@ -128,14 +120,14 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
         String[] socials = this.getSocials(divContent);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(divContent),
-            "role", role,
-            "firm", this.name,
-            "country", "Canada",
-            "practice_area", this.getPracticeArea(divOuter),
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "2049571930" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(divContent),
+                "role", role,
+                "firm", this.name,
+                "country", "Canada",
+                "practice_area", this.getPracticeArea(divOuter),
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "2049571930" : socials[1]
         );
     }
 }

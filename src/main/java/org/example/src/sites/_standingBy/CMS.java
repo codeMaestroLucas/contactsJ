@@ -149,9 +149,4 @@ public class CMS extends ByNewPage {
             "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
-
-    public static void main(String[] args) {
-        CMS x = new CMS();
-        x.searchForLawyers();
-    }
 }

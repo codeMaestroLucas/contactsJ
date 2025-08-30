@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,21 +11,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class Fischer extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+    String[] validRoles = new String[]{
+            "partner",
+            "counsel",
+            "senior associate"
     };
-
 
     public Fischer() {
         super(
-            "Fischer",
-            "https://www.fbclawyers.com/team/",
-            1,
-            1000
+                "Fischer",
+                "https://www.fbclawyers.com/team/",
+                1,
+                1000
         );
     }
 
@@ -33,26 +33,18 @@ public class Fischer extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
     }
 
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("")
+                            By.cssSelector("a[href^='https://www.fbclawyers.com/lawyer/']")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -64,46 +56,46 @@ public class Fischer extends ByNewPage {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("h1")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.cssSelector("h1")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("h2")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.cssSelector("h2")};
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 
 
-    private String getPracticeArea(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("practice")};
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
-        try {
-            List<WebElement> socials = lawyer
-                        .findElement(By.className(""))
-                        .findElements(By.cssSelector("a"));
-            return super.getSocials(socials, false);
+        String email; String phone;
 
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
-        }
+        String div = lawyer
+                .findElement(By.className("blue-box"))
+                .findElement(By.className("second"))
+                .findElement(By.cssSelector("p"))
+                .getAttribute("outerHTML");
+
+        String[] split = div.split("<br>");
+
+        phone = split[0].split("T +")[1];
+        email = siteUtl.getContentFromTag(split[split.length - 1]);
+
+
+        return new String[] { email, phone };
     }
 
 
@@ -121,19 +113,14 @@ public class Fischer extends ByNewPage {
 
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", role,
-            "firm", this.name,
-            "country", "Israel",
-            "practice_area", this.getPracticeArea(div)  ,
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(div),
+                "role", role,
+                "firm", this.name,
+                "country", "Israel",
+                "practice_area", this.getPracticeArea(div),
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "" : socials[1]
         );
-    }
-
-    public static void main(String[] args) {
-        Fischer x = new Fischer();
-        x.searchForLawyers();
     }
 }

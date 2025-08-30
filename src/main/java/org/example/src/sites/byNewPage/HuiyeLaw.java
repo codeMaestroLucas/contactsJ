@@ -1,8 +1,8 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
-import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,24 +11,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static java.util.Map.entry;
 
 public class HuiyeLaw extends ByNewPage {
     String[] validRoles = new String[]{
             "partner", "伙伴", "高级合伙人"
     };
 
-
-    // All site in Chinese
     public HuiyeLaw() {
         super(
-            "Huiye Law",
-            "https://www.huiyelaw.com/zyry.html",
-            17
+                "Huiye Law",
+                "https://www.huiyelaw.com/zyry.html",
+                17
         );
     }
 
@@ -59,68 +54,58 @@ public class HuiyeLaw extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("a")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        try {
+            By[] byArray = {By.cssSelector("a")};
+            String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+            MyDriver.openNewTab(link);
+        } catch (LawyerExceptions e) {
+            System.err.println("Failed to open new tab: " + e.getMessage());
+        }
+    }
+
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.cssSelector("h2.title:nth-of-type(2) > em")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("h2.title:nth-of-type(2) > em")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
-    }
-
-
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("h2.title > em")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String role = element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.cssSelector("h2.title > em")};
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
     }
 
-//
-//    private String getPracticeArea() {
-//        WebElement lawyer = driver.findElement(By.className("hotlist"));
-//        By[] byArray = new By[]{
-//                By.cssSelector("ul > li")
-//        };
-//        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-//        return element.getText();
-//    }
-
-
     private String[] getSocials(WebElement lawyer) {
-        String email = ""; String phone = "";
+        String email = "";
+        String phone = "";
 
         try {
             String[] text = lawyer.findElement(By.cssSelector("p"))
                     .getAttribute("outerHTML")
                     .split("<br>");
 
-            email = text[0];
+            String emailText = text[0];
             Pattern pattern = Pattern.compile("[\\w.-]+@[\\w.-]+");
-            Matcher matcher = pattern.matcher(email);
+            Matcher matcher = pattern.matcher(emailText);
 
             if (matcher.find()) {
                 email = matcher.group();
             }
 
-            phone = text[1];
-
+            if (text.length > 1) {
+                phone = text[1].replaceAll("\\D", "");
+            }
 
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
         }
 
-        return new String[] { email, phone };
+        return new String[]{email, phone};
     }
 
 
@@ -135,14 +120,14 @@ public class HuiyeLaw extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", "Partner*****",
-            "firm", this.name,
-            "country", "China",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(div),
+                "role", "",
+                "firm", this.name,
+                "country", "China",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
 }

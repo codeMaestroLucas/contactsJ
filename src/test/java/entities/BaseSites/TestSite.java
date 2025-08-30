@@ -1,18 +1,35 @@
 package entities.BaseSites;
 
+import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byNewPage.*;
 
-import org.example.src.sites.byNewPage.Cobalt;
+import java.lang.reflect.Field;
 
 /**
- * New Page test for a site
+ * Class used to test a new Site
  */
-class MyTestPage extends Cobalt {
-    @Override
+class MyTestPage extends LewissSilkin {
+    /**
+     * Change the values of MaxLawyersForSite and totalPages and show the logs
+     */
     public void searchForLawyers() {
-        this.totalPages = 100;
-        this.maxLawyersForSite = 100;
+        try {
+            // Access fields from the correct class (Site)
+            Field totalPagesField = Site.class.getDeclaredField("totalPages");
+            totalPagesField.setAccessible(true);
 
-        super.searchForLawyers();
+            Field maxLawyersField = Site.class.getDeclaredField("maxLawyersForSite");
+            maxLawyersField.setAccessible(true);
+
+            // Note: These might still fail if the fields are final
+            totalPagesField.setInt(this, 100);
+            maxLawyersField.setInt(this, 100);
+
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+
+        super.searchForLawyers(true);
     }
 }
 

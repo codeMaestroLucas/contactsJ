@@ -210,9 +210,4 @@ public class Ecija extends ByNewPage {
             "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
-
-    public static void main(String[] args) {
-        Ecija x = new Ecija();
-        x.searchForLawyers();
-    }
 }

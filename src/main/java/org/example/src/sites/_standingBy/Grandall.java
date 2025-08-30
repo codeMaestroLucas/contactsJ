@@ -166,9 +166,4 @@ public class Grandall extends ByNewPage {
             "phone", socials[1].isEmpty() ? "861066216823" : socials[1]
         );
     }
-
-    public static void main(String[] args) {
-        Grandall x = new Grandall();
-        x.searchForLawyers();
-    }
 }

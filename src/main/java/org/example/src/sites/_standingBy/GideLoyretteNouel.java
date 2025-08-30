@@ -191,10 +191,4 @@ public class GideLoyretteNouel extends ByNewPage {
                 "phone", socials[1]
         );
     }
-
-
-    public static void main(String[] args) {
-        GideLoyretteNouel x = new GideLoyretteNouel();
-        x.searchForLawyers();
-    }
 }

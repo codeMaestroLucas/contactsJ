@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import static java.util.Map.entry;
 
@@ -22,26 +22,21 @@ public class ControlRisks extends ByNewPage {
             entry("basra", "Iraq"),
             entry("berlin", "Germany"),
             entry("bogota", "Colombia"),
-            entry("chicago", "USA"),
             entry("copenhagen", "Denmark"),
             entry("dakar", "Senegal"),
             entry("delhi", "India"),
             entry("dubai", "the UAE"),
             entry("frankfurt", "Germany"),
             entry("hong kong", "Hong Kong"),
-            entry("houston", "USA"),
             entry("johannesburg", "South Africa"),
             entry("lagos", "Nigeria"),
             entry("london", "England"),
-            entry("los angeles", "USA"),
             entry("madrid", "Spain"),
             entry("maputo", "Mozambique"),
             entry("mexico city", "Mexico"),
             entry("mumbai", "India"),
             entry("nairobi", "Kenya"),
-            entry("new york", "USA"),
             entry("paris", "France"),
-            entry("san francisco", "USA"),
             entry("sao paulo", "Brazil"),
             entry("seoul", "Korea (South)"),
             entry("shanghai", "China"),
@@ -49,9 +44,7 @@ public class ControlRisks extends ByNewPage {
             entry("singapore", "Singapore"),
             entry("sydney", "Australia"),
             entry("tokyo", "Japan"),
-            entry("toronto", "Canada"),
-            entry("washington dc", "USA"),
-            entry("washington  dc", "USA")
+            entry("toronto", "Canada")
     );
 
     String[] validRoles = new String[]{
@@ -110,55 +103,44 @@ public class ControlRisks extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("bio-card--expert__title"),
-                By.cssSelector("a")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        try {
+            By[] byArray = {By.className("bio-card--expert__title"), By.cssSelector("a")};
+            String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+            MyDriver.openNewTab(link);
+        } catch (LawyerExceptions e) {
+            System.err.println("Failed to open new tab: " + e.getMessage());
+        }
+    }
+
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("bio--banner__container-title"), By.className("bio--banner__title")};
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException);
     }
 
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("bio--banner__container-title"),
-                By.className("bio--banner__title")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return siteUtl.getContentFromTag(element);
-    }
-
-
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("bio--banner__container-title"),
-                By.className("bio--banner__subtitle")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String role = element.getAttribute("outerHTML");
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("bio--banner__container-title"), By.className("bio--banner__subtitle")};
+        String role = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "outerHTML", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
     }
 
 
-    private String getCountry(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("btn__geo")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = siteUtl.getContentFromTag(element);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country   , "");
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("btn__geo")};
+        String office = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "outerHTML", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
     }
 
 
     private String getPracticeArea(WebElement lawyer) {
         try {
-            By[] byArray = new By[]{
-                    By.className("bio__tags"),
-                    By.className("bio__list__tag")
-            };
-            WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-            return element.getText();
+            By[] byArray = {By.className("bio__tags"), By.className("bio__list__tag")};
+            return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
         } catch (Exception e) {
             return "";
         }
@@ -190,7 +172,7 @@ public class ControlRisks extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", this.getLink(),
                 "name", this.getName(div),
                 "role", role,
                 "firm", this.name,

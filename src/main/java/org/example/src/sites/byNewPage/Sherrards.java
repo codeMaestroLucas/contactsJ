@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class Sherrards extends ByNewPage {
     private final By[] byRoleArray = {
@@ -20,9 +20,9 @@ public class Sherrards extends ByNewPage {
 
     public Sherrards() {
         super(
-            "Sherrards  ",
-            "https://sherrards.com/people/",
-            1
+                "Sherrards",
+                "https://sherrards.com/people/",
+                1
         );
     }
 
@@ -63,34 +63,35 @@ public class Sherrards extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("link_border")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        try {
+            By[] byArray = {By.className("link_border")};
+            String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+            MyDriver.openNewTab(link);
+        } catch (LawyerExceptions e) {
+            System.err.println("Failed to open new tab: " + e.getMessage());
+        }
+    }
+
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.cssSelector("h1")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.cssSelector("h1")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
-    }
-
-
-    private String getRole(WebElement lawyer) {
-        WebElement element = this.siteUtl.iterateOverBy(byRoleArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className("people_stats_contact"))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className("people_stats_contact"))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -108,14 +109,14 @@ public class Sherrards extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", this.getRole(div),
-            "firm", this.name,
-            "country", "England",
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "4401727832830" : socials[1]
+                "link", this.getLink(),
+                "name", this.getName(div),
+                "role", this.getRole(div),
+                "firm", this.name,
+                "country", "England",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "4401727832830" : socials[1]
         );
     }
 }

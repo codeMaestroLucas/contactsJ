@@ -1,8 +1,8 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
-import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import static java.util.Map.entry;
 import static org.openqa.selenium.By.cssSelector;
@@ -37,10 +36,10 @@ public class Oxera extends ByNewPage {
 
     public Oxera() {
         super(
-            "Oxera",
-            "https://www.oxera.com/people/",
-            1,
-            2
+                "Oxera",
+                "https://www.oxera.com/people/",
+                1,
+                2
         );
     }
 
@@ -83,53 +82,47 @@ public class Oxera extends ByNewPage {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("header-banner__contentContainer"),
-                By.className("title")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("header-banner__contentContainer"), By.className("title")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("header-banner__contentContainer"),
-                By.className("header-banner__jobTitle")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("header-banner__contentContainer"), By.className("header-banner__jobTitle")};
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
-
-    //todo: test it latter
-    private @Nullable String getCountry(String phone) {
+    private String getCountry(String phone) {
+        if (phone == null || phone.isBlank()) return "Not Found";
         return this.siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "");
     }
 
 
-
     private String[] getSocials(WebElement lawyer) {
-        String phone = ""; String email = "";
+        String phone = "";
+        String email = "";
         WebElement div = lawyer.findElement(By.className("wrap-content-center"));
 
         try {
             phone = div.findElement(cssSelector("p:nth-child(4)")).getText();
             // Remove all non-numeric chars
             phone = phone.replaceAll("\\D", "");
-            if (phone.isEmpty()) throw new Exception("Phone number is empty");
+        } catch (Exception _) {}
+
+        try {
+            email = div
+                    .findElement(cssSelector("ul > li > a[href^='mailto:']"))
+                    .getAttribute("href");
         } catch (Exception e) {
-            // Some phone isn't in the new page
-            phone = "4402077766600";
+            System.err.println("Could not extract email: " + e.getMessage());
         }
 
-        email = div
-                .findElement(cssSelector("ul > li > a[href^='mailto:']"))
-                .getAttribute("href");
-
-        return new String[] { email, phone };
+        return new String[]{email, phone};
     }
 
 
@@ -141,14 +134,14 @@ public class Oxera extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", this.getLink(),
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", this.getCountry(socials[1]),
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "" : socials[1]
+                "phone", socials[1].isEmpty() ? "4402077766600" : socials[1]
         );
     }
 }

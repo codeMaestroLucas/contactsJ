@@ -140,9 +140,4 @@ public class Fasken extends ByNewPage {
 
         );
     }
-
-    public static void main(String[] args) {
-        Fasken x = new Fasken();
-        x.searchForLawyers();
-    }
 }

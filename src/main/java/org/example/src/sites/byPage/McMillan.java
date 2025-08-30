@@ -70,10 +70,4 @@ public class McMillan extends ByPage {
         String[] socials = this.getSocials(lawyer);
         return Map.of("link", this.getLink(lawyer), "name", this.getName(lawyer), "role", this.getRole(lawyer), "firm", this.name, "country", "Canada", "practice_area", "", "email", socials[0], "phone", socials[1]);
     }
-
-
-    public static void main(String[] args) {
-        McMillan x = new McMillan();
-        x.searchForLawyers();
-    }
 }

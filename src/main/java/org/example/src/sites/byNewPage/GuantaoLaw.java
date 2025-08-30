@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,45 +11,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import static java.util.Map.entry;
 
 public class GuantaoLaw extends ByNewPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("beijing", "China"),
-            entry("chengdu", "China"),
-            entry("chongqing", "China"),
-            entry("dalian", "China"),
-            entry("fuzhou", "China"),
-            entry("guangzhou", "China"),
-            entry("haikou", "China"),
-            entry("hangzhou", "China"),
-            entry("hefei", "China"),
             entry("hong kong", "Hong Kong"),
-            entry("jinan", "China"),
-            entry("ji nan", "China"),
-            entry("kunming", "China"),
-            entry("luolong", "China"),
-            entry("nanchang", "China"),
-            entry("nanjing", "China"),
             entry("new york", "USA"),
-            entry("ningbo", "China"),
-            entry("qingdao", "China"),
-            entry("shanghai", "China"),
-            entry("shenzhen", "China"),
-            entry("suzhou", "China"),
             entry("sydney", "Australia"),
-            entry("taiyuan", "China"),
-            entry("tianjin", "China"),
-            entry("toronto", "Canada"),
-            entry("wenzhou", "China"),
-            entry("wuhan", "China"),
-            entry("wuxi", "China"),
-            entry("xiamen", "China"),
-            entry("xian", "China"),
-            entry("xi an", "China"),
-            entry("zhengzhou", "China")
+            entry("toronto", "Canada")
     );
 
 
@@ -57,13 +28,12 @@ public class GuantaoLaw extends ByNewPage {
     };
 
 
-    // In the Future, evaluate if the 2 lawyers is valid
     public GuantaoLaw() {
         super(
-            "Guantao Law",
-            "https://www.guantao.com/en/column41?ly=0&bg=0&zw=0&py=&key=&go=goto26",
-            30,
-            2
+                "Guantao Law",
+                "https://www.guantao.com/en/column41?ly=0&bg=0&zw=0&py=&key=&go=goto26",
+                30,
+                2
         );
     }
 
@@ -103,50 +73,44 @@ public class GuantaoLaw extends ByNewPage {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("gt_team_bannercr_title")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("gt_team_bannercr_title")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("gt_team_bannercr_ltitle")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText().split("\\|")[0];
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("gt_team_bannercr_ltitle")};
+        String text = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return text.split("\\|")[0].trim();
     }
 
 
-    private String getCountry(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("gt_team_bannercr_ltitle")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        String country = element.getText().split("\\|")[1];
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "");
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("gt_team_bannercr_ltitle")};
+        String text = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String office = text.split("\\|")[1].trim();
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "China");
     }
 
 
-    private String getPracticeArea(WebElement lawyer) {
-        By[] byArray = new By[]{
-                By.className("gt_team_bannercr_ly")
-        };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText().split("·")[0];
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("gt_team_bannercr_ly")};
+        String text = extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        return text.split("·")[0].trim();
     }
 
 
-    private String getEmail(WebElement lawyer) {
-        String text = lawyer
-                .findElement(By.className("gt_team_bannercr_tag"))
-                .findElement(By.className("gt_team_bannercr_tag_item_text"))
-                .getText();
-        return text;
+    private String getEmail(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {
+                By.className("gt_team_bannercr_tag"),
+                By.className("gt_team_bannercr_tag_item_text")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "EMAIL", LawyerExceptions::emailException);
     }
 
 
@@ -156,14 +120,14 @@ public class GuantaoLaw extends ByNewPage {
         WebElement div = driver.findElement(By.className("gt_team_bannercr"));
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", this.getRole(div),
-            "firm", this.name,
-            "country", this.getCountry(div),
-            "practice_area", this.getPracticeArea(div),
-            "email", this.getEmail(div),
-            "phone", ""
+                "link", this.getLink(),
+                "name", this.getName(div),
+                "role", this.getRole(div),
+                "firm", this.name,
+                "country", this.getCountry(div),
+                "practice_area", this.getPracticeArea(div),
+                "email", this.getEmail(div),
+                "phone", ""
         );
     }
 }

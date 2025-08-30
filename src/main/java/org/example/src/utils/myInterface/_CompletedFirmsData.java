@@ -65,7 +65,7 @@ public class _CompletedFirmsData {
         new TEMPLARS(), new Madrona(), new Sherrards(), new EllisonsSolicitors(), new HYLeungAndCo(),
         new DWFoxTucker(), new FangdaPartners(), new CovenantChambers(), new Gadens(), new DaviesWardPhillipsAndVineberg(),
         new GittiAndPartners(), new GORG(), new GornitzkyAndCo(), new HiggsAndJohnson(), new Horten(),
-        new HuiyeLaw(),
+        new HuiyeLaw(), new LewissSilkin(),
 
 
 

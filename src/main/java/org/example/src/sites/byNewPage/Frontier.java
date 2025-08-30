@@ -1,5 +1,6 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+
 import static java.util.Map.entry;
 
 public class Frontier extends ByNewPage {
@@ -26,10 +27,10 @@ public class Frontier extends ByNewPage {
 
     public Frontier() {
         super(
-            "Frontier",
-            "https://www.frontier-economics.com/uk/en/about/people/",
-            34,
-            2
+                "Frontier",
+                "https://www.frontier-economics.com/uk/en/about/people/",
+                34,
+                2
         );
     }
 
@@ -81,26 +82,23 @@ public class Frontier extends ByNewPage {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
 
-    private String getName(WebElement lawyer) {
-        By[] byArray = {
-                By.className("person-profile-banner-name")
-        };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("person-profile-banner-name")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
-        By[] byArray = {
-                By.className("person-profile-banner-title")
-        };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("person-profile-banner-title")};
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private Object getCountry(String phone) {
+    private String getCountry(String phone) {
         // Remove all non-numeric chars
         phone = phone.replaceAll("\\D", "");
 
@@ -109,19 +107,21 @@ public class Frontier extends ByNewPage {
                 return OFFICE_TO_COUNTRY.get(key);
             }
         }
-
-        return phone;
+        return "Not Found";
     }
 
 
     private String[] getSocials(WebElement lawyer) {
-        String email = ""; String phone = "";
-        WebElement socialsDiv = lawyer.findElement(By.className("banner-contact-details"));
-
-        phone = socialsDiv.findElement(By.cssSelector("li")).getText();
-        email = socialsDiv.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
-
-        return new String[] { email, phone };
+        String email = "";
+        String phone = "";
+        try {
+            WebElement socialsDiv = lawyer.findElement(By.className("banner-contact-details"));
+            phone = socialsDiv.findElement(By.cssSelector("li")).getText();
+            email = socialsDiv.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
+        } catch (Exception e) {
+            System.err.println("Error getting socials: " + e.getMessage());
+        }
+        return new String[]{email, phone};
     }
 
 
@@ -133,7 +133,7 @@ public class Frontier extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", this.getLink(),
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,
