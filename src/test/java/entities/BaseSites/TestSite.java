@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 /**
  * Class used to test a new Site
  */
-class MyTestPage extends RopesAndGray {
+class MyTestPage extends DaviesWardPhillipsAndVineberg {
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */

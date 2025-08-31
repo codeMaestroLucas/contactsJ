@@ -184,11 +184,11 @@ public abstract class Site {
 
             } catch (ValidationExceptions e) {
                 if (showLogs) {
-                    System.err.println("#".repeat(70));
+                    System.err.println("#".repeat(100));
                     System.err.printf("Error reading %dth lawyer at page %d of firm %s.%nSkipping...%n",
                             index + 1, i + 1, this.getName());
                     System.err.println("Validation error " + e.getMessage());
-                    System.err.println("#".repeat(70) + "\n");
+                    System.err.println("#".repeat(100) + "\n");
 
                     siteUtl.printInvalidLawyer(map);
                 }

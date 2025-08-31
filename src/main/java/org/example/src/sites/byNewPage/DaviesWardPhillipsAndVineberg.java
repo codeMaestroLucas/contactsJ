@@ -91,7 +91,7 @@ public class DaviesWardPhillipsAndVineberg extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("people-detail-masthead__location-and-title")};
-        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "outerHTML", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
 
