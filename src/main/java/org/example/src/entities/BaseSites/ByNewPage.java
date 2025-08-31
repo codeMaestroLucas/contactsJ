@@ -16,25 +16,22 @@ public abstract class ByNewPage extends Site {
         super(name, link, totalPages, 1, CONFIG.BY_NEW_PAGE_FILE);
     }
 
-
-
     @Override
-    public void searchForLawyers(boolean showLogs) {
-        for (int i = 0; i < this.totalPages; i++) {
-            System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.totalPages);
+    public void searchForLawyers(boolean showLogs) throws Exception {
+        // Use labeled break to exit both loops
+        pageLoop: for (int i = 0; i < this.getTotalPages(); i++) {
+            System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.getTotalPages());
 
             try {
                 this.accessPage(i);
-
             } catch (Exception e) {
                 System.out.println("Error accessing page " + (i + 1) + ": " + e.getMessage());
-                continue; // Skip this page on error
+                continue;
             }
 
             List<WebElement> lawyersInPage;
             try {
                 lawyersInPage = this.getLawyersInPage();
-
             } catch (Exception e) {
                 System.out.println("Error fetching lawyers on page " + (i + 1) + ": " + e.getMessage());
                 continue;
@@ -42,8 +39,8 @@ public abstract class ByNewPage extends Site {
 
             if (lawyersInPage == null || lawyersInPage.isEmpty()) {
                 System.out.printf("No search results found on page %d of the firm %s%n",
-                        i + 1, this.name);
-                continue; // Skip this page
+                        i + 1, this.getName());
+                continue;
             }
 
             // Iterate through lawyers
@@ -53,12 +50,15 @@ public abstract class ByNewPage extends Site {
                 try {
                     Object lawyerDetails = getLawyer(lawyer);
 
-                    // Invalid Lawyer
                     if (lawyerDetails instanceof String) {
                         continue;
                     }
 
-                    this.registerValidLawyer(lawyerDetails, index, i, showLogs);
+                    boolean shouldStop = this.registerValidLawyer(lawyerDetails, index, i, showLogs);
+
+                    if (shouldStop) {
+                        break pageLoop; // Break out of both loops
+                    }
 
                 } catch (Exception e) {
                     System.out.printf(
@@ -75,16 +75,11 @@ public abstract class ByNewPage extends Site {
         }
     }
 
-
     // ABSTRACT METHODS
     @Override
     protected abstract List<WebElement> getLawyersInPage();
-
     public abstract void openNewTab(WebElement lawyer);
-
     @Override
     protected abstract Object getLawyer(WebElement lawyer) throws Exception;
-
     protected abstract void accessPage(int index) throws InterruptedException;
-
 }

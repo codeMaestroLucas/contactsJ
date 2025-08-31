@@ -1,12 +1,9 @@
 package org.example.src.entities.BaseSites;
 
 import org.example.src.CONFIG;
-import org.example.src.entities.Lawyer;
-import org.example.src.utils.Validations;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
-import java.util.Map;
 
 public abstract class ByPage extends Site {
 
@@ -19,22 +16,21 @@ public abstract class ByPage extends Site {
     }
 
     @Override
-    public void searchForLawyers(boolean showLogs) {
-        for (int i = 0; i < this.totalPages; i++) {
-            System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.totalPages);
+    public void searchForLawyers(boolean showLogs) throws Exception {
+        // Use labeled break to exit both loops
+        pageLoop: for (int i = 0; i < this.getTotalPages(); i++) {
+            System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.getTotalPages());
 
             try {
                 this.accessPage(i);
-
             } catch (Exception e) {
                 System.out.println("Error accessing page " + (i + 1) + ": " + e.getMessage());
-                continue; // Skip this page on error
+                continue;
             }
 
             List<WebElement> lawyersInPage;
             try {
                 lawyersInPage = this.getLawyersInPage();
-
             } catch (Exception e) {
                 System.out.println("Error fetching lawyers on page " + (i + 1) + ": " + e.getMessage());
                 continue;
@@ -42,30 +38,32 @@ public abstract class ByPage extends Site {
 
             if (lawyersInPage == null || lawyersInPage.isEmpty()) {
                 System.out.printf("No search results found on page %d of the firm %s%n",
-                        i + 1, this.name);
-                continue; // Skip this page
+                        i + 1, this.getName());
+                continue;
             }
 
             // Iterate through lawyers
             for (int index = 0; index < lawyersInPage.size(); index++) {
                 WebElement lawyer = lawyersInPage.get(index);
 
-
                 try {
                     Object lawyerDetails = getLawyer(lawyer);
 
-                    // Invalid Lawyer
                     if (lawyerDetails instanceof String) {
                         System.out.println("Invalid role");
                         continue;
                     }
 
-                    this.registerValidLawyer(lawyerDetails, index, i, showLogs);
+                    boolean shouldStop = this.registerValidLawyer(lawyerDetails, index, i, showLogs);
+
+                    if (shouldStop) {
+                        break pageLoop; // Break out of both loops
+                    }
 
                 } catch (Exception e) {
                     System.out.printf(
                             "Error reading %dth lawyer at the page %d of the firm %s.%nError: %s%n",
-                            index + 1, i + 1, this.name, e.getMessage()
+                            index + 1, i + 1, this.getName(), e.getMessage()
                     );
                     System.out.println("#".repeat(70));
                     e.printStackTrace();
@@ -75,14 +73,10 @@ public abstract class ByPage extends Site {
         }
     }
 
-
     // ABSTRACT METHODS
     @Override
     protected abstract List<WebElement> getLawyersInPage();
-
     @Override
     protected abstract Object getLawyer(WebElement lawyer) throws Exception;
-
     protected abstract void accessPage(int index) throws InterruptedException;
-
 }

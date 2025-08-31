@@ -51,26 +51,15 @@ public abstract class Site {
         this.generateEmailPaths(path);
     }
 
-    /**
-     * Creates the emailsOfMonthPath and emailsToAvoidPath based on the given name.
-     * It sanitizes the name by trimming spaces and removing all whitespace.
-     *
-     */
     private void generateEmailPaths(String folderPath) {
         String sanitizedPath = this.name.trim().replaceAll("\\s+", "");
         this.emailsOfMonthPath = CONFIG.EMAILS_MONTH_FOLDER_FILE + folderPath + sanitizedPath + ".txt";
         this.emailsToAvoidPath = CONFIG.EMAILS_TO_AVOID_FOLDER_FILE + folderPath + sanitizedPath + ".txt";
 
-        ensureFileExists(this.emailsOfMonthPath);
-        ensureFileExists(this.emailsToAvoidPath);
+        ensureFileExists(this.getEmailsOfMonthPath());
+        ensureFileExists(this.getEmailsToAvoidPath());
     }
 
-
-    /**
-     * Ensures that the file exists, creating it if necessary (including parent directories).
-     *
-     * @param path Path to the file.
-     */
     private static void ensureFileExists(String path) {
         File file = new File(path);
         try {
@@ -84,21 +73,12 @@ public abstract class Site {
                 if (!fileCreated) {
                     throw new IOException("Could not create file: " + file.getAbsolutePath());
                 }
-            } else {
             }
         } catch (IOException e) {
             throw new RuntimeException("Error ensuring file exists: " + path, e);
         }
     }
 
-
-    /**
-     * Function used to get the email and phone.
-     *
-     * @param socials web list of all the socials values to be iterated
-     * @param byText  If true, extract text. If false, use the 'href' attribute.
-     * @return Array[0] == email; Array[1] == phone
-     */
     protected String[] getSocials(List<WebElement> socials, boolean byText) {
         String email = "";
         String phone = "";
@@ -108,18 +88,14 @@ public abstract class Site {
                     ? social.getText().toLowerCase().trim()
                     : Objects.requireNonNull(social.getAttribute("href")).toLowerCase().trim();
 
-            // Check if it's an email
             if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {
                 email = value;
             }
-
-            // Check if it's a valid phone number
-            else if ((
-                    value.contains("tel") || value.contains("cal") || value.contains("+") || value.contains("phone") ||
-                            value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
+            else if ((value.contains("tel") || value.contains("cal") || value.contains("+") ||
+                    value.contains("phone") || value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
                 String cleaned = value.replaceAll("[^0-9]", "");
 
-                if (cleaned.length() > 5) { // To prevent if an invalid value has been set to phone
+                if (cleaned.length() > 5) {
                     phone = cleaned;
                 }
             }
@@ -130,30 +106,30 @@ public abstract class Site {
         return new String[]{email, phone};
     }
 
-
     protected void addLawyer(Lawyer lawyer) {
         Sheet sheet = Sheet.getINSTANCE();
         sheet.addLawyer(lawyer, true);
 
-        EmailOfMonth.registerEmailOfMonth(lawyer.email, this.emailsOfMonthPath);
+        EmailOfMonth.registerEmailOfMonth(lawyer.getEmail(), this.getEmailsOfMonthPath());
 
-        String country = lawyer.country;
-        if (!country.equals("Not Found") || !country.equals("-----")) {
+        String country = lawyer.getCountry();
+        // Fixed: Use && instead of ||
+        if (!country.equals("Not Found") && !country.equals("-----")) {
             this.lastCountries.add(country);
         }
 
         this.lawyersRegistered++;
     }
 
-
-    protected void registerValidLawyer(Object lawyerDetails, int index, int i, boolean showLogs) {
+    // Updated to return boolean to indicate if processing should stop
+    protected boolean registerValidLawyer(Object lawyerDetails, int index, int i, boolean showLogs) {
         if (lawyerDetails instanceof Map<?, ?>) {
             Map<String, String> map = (Map<String, String>) lawyerDetails;
 
             if (map.get("link") == null || map.get("link").isEmpty() ||
-                map.get("email") == null || map.get("email").isEmpty())
-            {
+                    map.get("email") == null || map.get("email").isEmpty()) {
                 siteUtl.printInvalidLawyer(map);
+                return false; // Continue processing
             }
 
             Lawyer lawyerToRegister = Lawyer.builder()
@@ -170,50 +146,39 @@ public abstract class Site {
             try {
                 Validations.makeValidations(
                         lawyerToRegister,
-                        this.lastCountries,
-                        this.emailsOfMonthPath,
-                        this.emailsToAvoidPath
+                        this.getLastCountries(),
+                        this.getEmailsOfMonthPath(),
+                        this.getEmailsToAvoidPath()
                 );
 
                 this.addLawyer(lawyerToRegister);
 
-                if (this.lawyersRegistered == this.maxLawyersForSite) {
+                if (this.getLawyersRegistered() >= this.getMaxLawyersForSite()) {
                     System.out.printf("No more than %d lawyer(s) needed for the firm %s.%n",
-                            this.maxLawyersForSite, this.name);
+                            this.getMaxLawyersForSite(), this.getName());
+                    return true; // Signal to stop processing
                 }
 
             } catch (ValidationExceptions e) {
                 if (showLogs) {
                     System.err.println("#".repeat(100));
                     System.err.printf("Error reading %dth lawyer at page %d of firm %s.%nSkipping...%n",
-                            index + 1, i + 1, this.getName());
+                            index + 1, i + 1, this.name);
                     System.err.println("Validation error " + e.getMessage());
                     System.err.println("#".repeat(100) + "\n");
 
                     siteUtl.printInvalidLawyer(map);
                 }
-
             }
-
         } else {
             System.out.println("Invalid lawyer data structure.");
         }
+
+        return false; // Continue processing
     }
 
-
     // ABSTRACT METHODS
-
-    /**
-     * Collect all lawyers in the current page.
-     */
     protected abstract List<WebElement> getLawyersInPage();
-
-    /**
-     * Get the lawyer info.
-     *
-     * @return HashMap<String, String> if the Lawyer Data is found || String == "Not Found" if no Lawyer Data.
-     */
     protected abstract Object getLawyer(WebElement lawyer) throws Exception;
-
     public abstract void searchForLawyers(boolean showLogs) throws Exception;
 }
