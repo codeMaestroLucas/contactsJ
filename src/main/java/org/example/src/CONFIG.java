@@ -17,6 +17,6 @@ public class CONFIG {
 
     // OTHERS
     public static int TOTAL_LAWYERS_TO_GET = 250;
-    public static int LAWYERS_IN_SHEET = 100 * 2;
+    public static int LAWYERS_IN_SHEET = 300;
     public static int LAWYERS_IN_FILTER = TOTAL_LAWYERS_TO_GET - LAWYERS_IN_SHEET;
 }

@@ -90,7 +90,7 @@ public class Main {
 
 
     private static void performCompleteSearch() {
-        calculateTimeOfExecution(Main::getRegisteredContacts);
+//        calculateTimeOfExecution(Main::getRegisteredContacts);
         calculateTimeOfExecution(Main::serachLawyersInWeb);
         System.out.println("\n\n" + "=".repeat(70));
     }
