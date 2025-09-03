@@ -50,7 +50,7 @@ public abstract class ByPage extends Site {
                     Object lawyerDetails = getLawyer(lawyer);
 
                     if (lawyerDetails instanceof String) {
-                        System.out.println("Invalid role");
+//                        System.out.println("Invalid Role");
                         continue;
                     }
 

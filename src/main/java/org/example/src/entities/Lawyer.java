@@ -2,6 +2,7 @@ package org.example.src.entities;
 
 import lombok.Builder;
 import lombok.Data;
+import org.apache.poi.hssf.record.LabelRecord;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -99,6 +100,13 @@ public final class Lawyer {
         // Remove common legal role terms
         for (String role : validRoles) {
             name = name.replace(role.toLowerCase(), " ");
+        }
+
+        // Remove common abbreviation
+        for (String abbreviation : abbreviations) {
+            if (name.contains(abbreviation)) {
+                name = name.replace(abbreviation, " ");
+            }
         }
 
         // Split and filter

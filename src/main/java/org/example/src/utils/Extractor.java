@@ -59,13 +59,17 @@ public class Extractor {
             }
 
             if (value == null || value.isBlank()) {
-                throw exceptionSupplier.apply("Invalid " + fieldName + ": " + value);
+                throw exceptionSupplier.apply(value);
             }
 
 
             return value;
 
         } catch (LawyerExceptions e) {
+            if (fieldName.equals("PRACTICE AREA")) {
+                System.err.println(e.getMessage());
+                return "";
+            }
             throw e;
 
         } catch (Exception e) {

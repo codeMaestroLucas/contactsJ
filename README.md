@@ -12,11 +12,9 @@ git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java
 
 ---
 # Ideas
-1. todo:
-   1. maybe add a PROXY in `makeValidations` to identify why the validation failed
-      1. Or even create a Error class to throw specific errors
-2. Fix the empty phone ("phone", socials[1]) and replace then with the firm phones 
-3. Use the pattern Strategy for the search lawyers
+1. todo's:
+   1. Create a INVALID instead of "Invalid Role" 
+   2. Create a filter used to filter by more than one element - eg.: role & country
 
 ---
 # Useful Commentaries
@@ -29,8 +27,12 @@ git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java
 ![img.png](images/UML_diagram.png)
 
 ---
+# Collected Data Info
+- Last time clearing `monthFirms.txt` == 26/08/25 (NEXT ON 26/10/25)
+  
+    **Clean it in 2 in 2 months**  
 
-- Last time clearing `monthFirms.txt` == 22/07/25
+- Last time clearing collected data == 26/08/25 (NEXT ON 26/12/25)
 
-  **Clean it in 2 and 2 months**
+    **Clean it in 4 in 4 months**
 

@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class _Template extends ByPage {
     private final By[] byRoleArray = {
@@ -22,10 +21,10 @@ public class _Template extends ByPage {
 
     public _Template() {
         super(
-                "",
-                "",
-                1,
-                1000
+            "",
+            "",
+            1,
+            1
         );
     }
 
@@ -66,6 +65,7 @@ public class _Template extends ByPage {
         }
     }
 
+
     private String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
@@ -74,6 +74,7 @@ public class _Template extends ByPage {
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
+
 
     private String getName(WebElement container) throws LawyerExceptions {
         By[] byArray = new By[]{
@@ -85,11 +86,7 @@ public class _Template extends ByPage {
 
 
     private String getRole(WebElement container) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
-        };
-        return extractor.extractLawyerText(container, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerText(container, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
@@ -120,7 +117,7 @@ public class _Template extends ByPage {
         String[] socials = this.getSocials(lawyer);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,

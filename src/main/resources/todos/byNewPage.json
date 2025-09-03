@@ -84,66 +84,9 @@
     "name": "ADCOLaw",
     "link": "https://adcolaw.com/our-team"
   },
-
-
-
-
-
-  {
-    "name": "GarciaBodan",
-    "link": "https://garciabodan.com/en/profesionals/?posicion=senior-associate/"
-  },
-  {
-    "name": "Kavanagh Gorozpe",
-    "link": "https://www.k-g.com.mx/en/nuestro-equipo/"
-  },
-  {
-    "name": "Ibañez Parkman ",
-    "link": "https://i-parkman.mx/nuestro-equipo/"
-  },
-  {
-    "name": "Kuri Breña Sánchez Ugarte & Aznar",
-    "link": "https://ksa.mx/es/equipo/equipo"
-  },
-  {
-    "name": "Santamarina y Steta",
-    "link": "https://www.santamarinasteta.mx/en/equipo-sys/?_puesto_rol=socio"
-  },
-  {
-    "name": "Ritch Mueller y Nicolau",
-    "link": "https://www.ritch.com.mx/es/team?filters=1&custom=&member_types%5B%5D=1"
-  },
-  {
-    "name": "Nader, HayauxAndGoebel",
-    "link": "https://www.nhg.mx/en_gb/about-us/our-team/partners/"
-  },
-  {
-    "name": "Deutsch Miller",
-    "link": "https://www.deutschmiller.com/our-people/"
-  },
-  {
-    "name": "Basham Ringe & Correa",
-    "link": "https://basham.com.mx/nuestro-equipo/"
-  },
   {
     "name": "Allan Hall",
     "link": "https://allanhall.com.au/our-directors/"
-  },
-  {
-    "name": "Baumgartners",
-    "link": "https://www.baumgartners.com.au/people"
-  },
-  {
-    "name": "PrasadAndCompany",
-    "link": "https://www.prasadcpa.com/our-team/"
-  },
-  {
-    "name": "ENS Africa",
-    "link": "https://www.ensafrica.com/people"
-  },
-  {
-    "name": "JMW",
-    "link": "https://www.jmw.co.uk/people"
   },
   {
     "name": "Stach Rechtsanwälte",
@@ -154,29 +97,19 @@
     "link": "https://gilligansheppard.co.nz/about-us/meet-the-team/"
   },
   {
-    "name": "Belluzzo",
-    "link": "https://belluzzo.net/en/company/professionals"
-  },
-  {
     "name": "EppingerAndKolarova Legal",
     "link": "https://www.eak.legal/en/team/"
-  },
-  {
-    "name": "One Essex Court",
-    "link": "https://www.oeclaw.co.uk/mediators"
   },
   {
     "name": "Greens List",
     "link": "https://www.greenslist.com.au/s/mediators",
     "Note": "Check if is an valid firm"
   },
-  {
-    "name": "Young List",
-    "links": [
-      "https://www.youngslist.com.au/the-list/?_counsel=27",
-      "https://www.youngslist.com.au/the-list/?_counsel=28"
-    ]
-  },
+
+
+
+
+
   {
     "name": "35 West Chambers",
     "link": "https://35westchambers.com/barristers/"

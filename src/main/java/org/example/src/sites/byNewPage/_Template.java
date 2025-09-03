@@ -1,7 +1,7 @@
 package org.example.src.sites.byNewPage;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
-import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,17 +19,17 @@ public class _Template extends ByNewPage {
             By.cssSelector("")
     };
 
-
     public _Template() {
         super(
             "",
             "",
             1,
-            1000
+            1
         );
     }
 
 
+    @Override
     protected void accessPage(int index) throws InterruptedException {
         String otherUrl = "";
         String url = index == 0 ? this.link : otherUrl;
@@ -44,9 +44,12 @@ public class _Template extends ByNewPage {
     }
 
 
+    @Override
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner"
+                "partner",
+                "counsel",
+                "senior associate"
         };
 
         try {
@@ -65,51 +68,48 @@ public class _Template extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) {
+    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        MyDriver.openNewTab(element.getAttribute("href"));
+        String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+        MyDriver.openNewTab(link);
     }
 
 
-    private String getName(WebElement lawyer) {
+    private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
-    private String getRole(WebElement lawyer) {
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) {
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
-        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
-        return element.getText();
+        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                        .findElement(By.className(""))
-                        .findElements(By.cssSelector("a"));
+                    .findElement(By.className(""))
+                    .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -119,6 +119,7 @@ public class _Template extends ByNewPage {
     }
 
 
+    @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
@@ -127,14 +128,14 @@ public class _Template extends ByNewPage {
         String[] socials = this.getSocials(div);
 
         return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
-            "name", this.getName(div),
-            "role", this.getRole(div),
-            "firm", this.name,
-            "country", this.getCountry(div),
-            "practice_area", "",
-            "email", socials[0],
-            "phone", socials[1].isEmpty() ? "" : socials[1]
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "name", this.getName(div),
+                "role", this.getRole(div),
+                "firm", this.name,
+                "country", this.getCountry(div),
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }
 }

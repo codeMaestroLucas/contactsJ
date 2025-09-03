@@ -21,7 +21,7 @@ public final class MyDriver {
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless"); // Run Chrome in headless mode
+//            options.addArguments("--headless"); // Run Chrome in headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
@@ -100,7 +100,7 @@ public final class MyDriver {
             } catch (Exception hoverException) {
                 // If hover + JS click fails, try direct JS click as final fallback
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
-                System.out.println("Used direct JS click as final fallback");
+//                System.out.println("Used direct JS click as final fallback");
             }
         }
     }
@@ -141,7 +141,7 @@ public final class MyDriver {
     public static void clickOnElementMultipleTimes(
             Object element,
             int numberOfIterations,
-            int sleepTime)
+            double sleepTime)
     {
         int i = 0;
         try {
@@ -156,7 +156,7 @@ public final class MyDriver {
                     throw new IllegalArgumentException("Element must be either a By or WebElement");
                 }
 
-                Thread.sleep(1000L * sleepTime);
+                Thread.sleep((long) (1000L * sleepTime));
             }
         } catch (Exception e) {
             System.out.printf("Stopped before completing all the %d clicks.\n", numberOfIterations);

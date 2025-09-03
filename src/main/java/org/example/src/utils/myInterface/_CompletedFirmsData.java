@@ -36,7 +36,10 @@ public class _CompletedFirmsData {
         new BarristonLaw(), new Chattertons(), new BlandyAndBlandy(), new Allens(), new DBHLaw(),
         new Helmsman(), new K1Chamber(), new DRAndAJU(), new ZhongziLaw(), new TahotaLaw(),
         new GrandwayLaw(), new StewartMcKelvey(), new SIRIUS(), new Roschier(), new Liedekerke(),
-        new McMillan(),
+        new CliffordChance(), new MorganLewis(), new SheppardMullin(), new Skadden(), new McMillan(),
+        new GarciaBodan(),
+
+
 
 
         /** Indian Firms
@@ -64,14 +67,26 @@ public class _CompletedFirmsData {
         new TEMPLARS(), new Madrona(), new Sherrards(), new EllisonsSolicitors(), new HYLeungAndCo(),
         new DWFoxTucker(), new FangdaPartners(), new CovenantChambers(), new Gadens(), new DaviesWardPhillipsAndVineberg(),
         new GittiAndPartners(), new GORG(), new GornitzkyAndCo(), new HiggsAndJohnson(), new Horten(),
-        new HuiyeLaw(), new LewissSilkin(),
+        new HuiyeLaw(), new LewissSilkin(), new IbanezParkman(), new KuriBrena(), new NaderHayauxAndGoebel(),
+        new Baumgartners(), new PrasadAndCompany(), new ENSAfrica(), new OneEssexCourt(), new YoungList(),
+        new LangsethAdvokat(), new LatamLex(), new Legalis(), new Legance(), new LexCaribbean(),
+        new LonganLaw(), new MeyerKoring(), new MishconKaras(), new Mourant(), new TCLaw(),
+        new KeystoneLaw(), new KRBLaw(), new Kvale(),
 
+
+        // TEST IT
+//        new MyersFletcherAndGordon(), new Noerr(), new PaviaAndAnsaldo(), new PearlCohen(), new PortolanoCavallo(),
+//
+//
+//        new Poulschmith(), new Pulegal(), new SimmonsAndSimmons(), new SimmonsWolfhagen(), new Sorainen(),
+//        new Szecskay(), new TannerDeWitt(), new Thommessen(), new Wiersholm(), new WikborgRein(),
+//        new ZeposAndYannopoulos(),
 
 
         /**
          * INDIAN
          * - to complete
-         * new DSKLegal(), new HSAAdvocates()
+         * new DSKLegal(), new HSAAdvocates(), new RemfryAndSagar(), new SamvadPartners()
          *
         */
     };

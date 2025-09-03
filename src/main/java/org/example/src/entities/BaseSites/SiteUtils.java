@@ -32,13 +32,13 @@ public class SiteUtils {
      * Prints an error when lawyer details are invalid.
      */
     public void printInvalidLawyer(Map<String, String> details) {
-        System.out.println("  Link: " + details.get("link"));
-        System.out.println("  Name: " + details.get("name"));
-        System.out.println("  Role: " + details.get("role"));
-        System.out.println("  Practice Area: " + details.get("practice_area"));
-        System.out.println("  Email: " + details.get("email"));
-        System.out.println("  Phone: " + details.get("phone"));
-        System.out.println("  Country: " + details.get("country"));
+        System.err.println("  Link: " + details.get("link"));
+        System.err.println("  Name: " + details.get("name"));
+        System.err.println("  Role: " + details.get("role"));
+        System.err.println("  Practice Area: " + details.get("practice_area"));
+        System.err.println("  Email: " + details.get("email"));
+        System.err.println("  Phone: " + details.get("phone"));
+        System.err.println("  Country: " + details.get("country"));
     }
 
 
@@ -106,9 +106,9 @@ public class SiteUtils {
 
 
                 role = role
-                        .replaceAll("[\\n\\t]", "") // Remove all "\n\t"
-                        .replace("-", " ")       // Remove all "-"
-                        .replaceAll("\\s+", " ")   // Remove all empty duplicated spaces between words
+                        .replaceAll("[\\n\\t]", "")  // Remove all "\n\t"
+                        .replace("-", " ")          // Remove all "-"
+                        .replaceAll("\\s+", " ")     // Remove all empty duplicated spaces between words
                         .toLowerCase().trim();
 
                 for (String word : validRoles) {

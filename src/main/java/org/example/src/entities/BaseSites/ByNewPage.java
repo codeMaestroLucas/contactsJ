@@ -1,5 +1,6 @@
 package org.example.src.entities.BaseSites;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.src.CONFIG;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.WebElement;
@@ -78,7 +79,7 @@ public abstract class ByNewPage extends Site {
     // ABSTRACT METHODS
     @Override
     protected abstract List<WebElement> getLawyersInPage();
-    public abstract void openNewTab(WebElement lawyer);
+    public abstract void openNewTab(WebElement lawyer) throws LawyerExceptions;
     @Override
     protected abstract Object getLawyer(WebElement lawyer) throws Exception;
     protected abstract void accessPage(int index) throws InterruptedException;

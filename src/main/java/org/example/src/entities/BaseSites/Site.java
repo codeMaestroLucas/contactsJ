@@ -90,14 +90,11 @@ public abstract class Site {
 
             if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {
                 email = value;
-            }
-            else if ((value.contains("tel") || value.contains("cal") || value.contains("+") ||
-                    value.contains("phone") || value.matches(".*\\d{5,}.*")) && phone.isEmpty()) {
-                String cleaned = value.replaceAll("[^0-9]", "");
 
-                if (cleaned.length() > 5) {
-                    phone = cleaned;
-                }
+                } else if (phone.isEmpty()) {
+                // Remove all non-digits values
+                String cleaned = value.replaceAll("[^0-9]", "");
+                if (cleaned.length() > 5) phone = cleaned;
             }
 
             if (!email.isEmpty() && !phone.isEmpty()) break;
@@ -165,9 +162,10 @@ public abstract class Site {
                     System.err.printf("Error reading %dth lawyer at page %d of firm %s.%nSkipping...%n",
                             index + 1, i + 1, this.name);
                     System.err.println("Validation error " + e.getMessage());
-                    System.err.println("#".repeat(100) + "\n");
 
                     siteUtl.printInvalidLawyer(map);
+
+                    System.err.println("#".repeat(100) + "\n");
                 }
             }
         } else {
