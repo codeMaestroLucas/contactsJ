@@ -38,6 +38,7 @@ public class Pedersoli extends ByPage {
         if (index > 0) return;
 
         MyDriver.clickOnElement(By.className("iubenda-cs-accept-btn"));
+        MyDriver.rollDown(1, 0.3);
     }
 
 
@@ -50,8 +51,9 @@ public class Pedersoli extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("cardProfessionista")));
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            WebElement div = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/main/div/div[4]")));
+            List<WebElement> lawyers = div.findElements(By.className("cardProfessionista"));
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -70,12 +72,12 @@ public class Pedersoli extends ByPage {
         By[] byArray = new By[]{
                 By.className("linkTitolo")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 

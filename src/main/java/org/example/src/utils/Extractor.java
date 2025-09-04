@@ -66,7 +66,7 @@ public class Extractor {
             return value;
 
         } catch (LawyerExceptions e) {
-            if (fieldName.equals("PRACTICE AREA")) {
+            if ((fieldName.equals("PRACTICE AREA")) || (fieldName.equals("NAME"))) {
                 System.err.println(e.getMessage());
                 return "";
             }
@@ -86,7 +86,7 @@ public class Extractor {
             java.util.function.Function<String, LawyerExceptions> exceptionSupplier)
             throws LawyerExceptions
     {
-        return extractLawyerField(lawyer, locators, fieldName, false, null, exceptionSupplier);
+        return extractLawyerField(lawyer, locators, fieldName, false, null, exceptionSupplier).trim();
     }
 
 
@@ -98,6 +98,6 @@ public class Extractor {
             java.util.function.Function<String, LawyerExceptions> exceptionSupplier)
             throws LawyerExceptions
     {
-        return extractLawyerField(lawyer, locators, fieldName, true, attributeName, exceptionSupplier);
+        return extractLawyerField(lawyer, locators, fieldName, true, attributeName, exceptionSupplier).trim();
     }
 }

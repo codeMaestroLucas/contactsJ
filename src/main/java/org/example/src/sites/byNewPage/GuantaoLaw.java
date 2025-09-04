@@ -108,9 +108,8 @@ public class GuantaoLaw extends ByNewPage {
     private String getEmail(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {
                 By.className("gt_team_bannercr_tag"),
-                By.className("gt_team_bannercr_tag_item_text")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "EMAIL", LawyerExceptions::emailException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "EMAIL", "textContent", LawyerExceptions::emailException).trim();
     }
 
 

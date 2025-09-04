@@ -66,8 +66,7 @@ public class CollasCrill extends ByPage {
         By[] byArray = new By[]{
                 By.className("name-desktop")
         };
-        String name = extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
-        return name.isEmpty() ? extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException) : name;
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {

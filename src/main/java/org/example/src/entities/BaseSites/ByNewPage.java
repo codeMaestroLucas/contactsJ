@@ -18,7 +18,7 @@ public abstract class ByNewPage extends Site {
     }
 
     @Override
-    public void searchForLawyers(boolean showLogs) throws Exception {
+    public Runnable searchForLawyers(boolean showLogs) throws Exception {
         // Use labeled break to exit both loops
         pageLoop: for (int i = 0; i < this.getTotalPages(); i++) {
             System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.getTotalPages());
@@ -74,6 +74,7 @@ public abstract class ByNewPage extends Site {
                 }
             }
         }
+        return null;
     }
 
     // ABSTRACT METHODS

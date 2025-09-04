@@ -14,6 +14,7 @@ import java.util.Map;
 
 import static java.util.Map.entry;
 
+/// First 2 are invalid - ok
 public class PeterAndKim extends ByPage {
 
     public PeterAndKim() {
@@ -40,7 +41,9 @@ public class PeterAndKim extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            MyDriver.clickOnElement(By.cssSelector("button.cmplz-btn.cmplz-accept"));
+            try {
+                MyDriver.clickOnElement(By.cssSelector("button.cmplz-btn.cmplz-accept"));
+            } catch (Exception _) {}
         }
     }
 
@@ -53,7 +56,7 @@ public class PeterAndKim extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.flex.flex-col.max-w-full > div.flex.flex-col.w-full")));
+                List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.flex.flex-col.max-w-full")));
             return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -62,7 +65,7 @@ public class PeterAndKim extends ByPage {
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='https://peterandkim.com/team/']")
+                By.cssSelector("a[href*='https://peterandkim.com/team/']")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }

@@ -15,25 +15,43 @@ import java.util.concurrent.*;
 public class Main {
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
     private static final long TIMEOUT_MINUTES = 10;
+    private static final Reports reports = Reports.getINSTANCE();
+
+
+    /**
+     * Calculates the execution time of a given block of code (no timeout).
+     */
+    private static void calculateTimeOfExecution(Runnable taskToRun) {
+        long startTime = System.currentTimeMillis();
+
+        try {
+            taskToRun.run();
+        } catch (Exception e) {
+            System.err.println("An error occurred during execution: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            long endTime = System.currentTimeMillis();
+            String formattedTime = interfaceUtls.calculateTime(startTime, endTime);
+
+            System.out.println("\n" + "=".repeat(70));
+            System.out.println("\nTotal time: " + formattedTime);
+            System.out.println();
+        }
+    }
 
     /**
      * Calculates the execution time of a given block of code with a 10-minute timeout.
-     * @param taskToRun The code to execute, passed as a Runnable.
      */
-    private static void calculateTimeOfExecution(Runnable taskToRun) {
+    private static void calculateTimeOfExecutionWithTimeout(Runnable taskToRun, Site site) {
         long startTime = System.currentTimeMillis();
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         try {
-            // Submit the task to the executor
             Future<?> future = executor.submit(taskToRun);
-
-            // Wait for completion or timeout (10 minutes)
             future.get(TIMEOUT_MINUTES, TimeUnit.MINUTES);
 
         } catch (TimeoutException e) {
             System.err.println("Execution timed out after " + TIMEOUT_MINUTES + " minutes. Stopping execution.");
-            // Cancel the running task
             executor.shutdownNow();
 
         } catch (ExecutionException e) {
@@ -42,20 +60,26 @@ public class Main {
 
         } catch (InterruptedException e) {
             System.err.println("Execution was interrupted: " + e.getMessage());
-            Thread.currentThread().interrupt(); // Restore interrupted status
+            Thread.currentThread().interrupt();
 
         } finally {
-            // Ensure executor is shut down
             if (!executor.isShutdown()) {
                 executor.shutdown();
             }
 
             long endTime = System.currentTimeMillis();
-            long elapsedTime = endTime - startTime;
-
+            long elapsedTime   = endTime - startTime;
             System.out.println("\n" + "=".repeat(70));
 
-            // Check if we hit the timeout
+            String time = interfaceUtls.calculateTime(startTime, endTime);
+
+            System.out.println("\n  - Time: " + time);
+            System.out.println("  - Lawyers registered: " + site.lawyersRegistered + "\n");
+
+
+            reports.createReportRow(site, time);
+
+
             if (elapsedTime >= TimeUnit.MINUTES.toMillis(TIMEOUT_MINUTES)) {
                 System.out.println("\nExecution stopped due to timeout after " + TIMEOUT_MINUTES + " minutes");
             } else {
@@ -73,40 +97,36 @@ public class Main {
         System.out.println("Completed: Filtering and processing complete.");
     }
 
-    private static void serachLawyersInWeb() {
+    private static void searchLawyersInWeb() {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
 
-        List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET);
-        Reports reports = Reports.getINSTANCE();
+        List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET + 20);
 
-        // Processing Firms
         try {
-            // Already making the verification of Site.name registered in the`monthFirms.txt` in the constructor
             for (Site site : sites) {
-                // Check if current thread is interrupted (timeout occurred)
                 if (Thread.currentThread().isInterrupted()) {
                     System.out.println("Execution interrupted - stopping lawyer search.");
                     break;
                 }
 
-                long initTimeFirm = System.currentTimeMillis();
-
                 interfaceUtls.header(site.name);
-                site.searchForLawyers(false);
 
-                long finalTimeFirm = System.currentTimeMillis();
-                String time = interfaceUtls.calculateTime(initTimeFirm, finalTimeFirm);
+                // Measure time + stop if > 10 minutes
+                calculateTimeOfExecutionWithTimeout(() -> {
+                    try {
+                        site.searchForLawyers(false);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                }, site);
 
-                System.out.println("\n  - Time: " + time);
-                System.out.println("  - Lawyers registered: " + site.lawyersRegistered + "\n");
-
-                reports.createReportRow(site, time);
 
                 if (site.lawyersRegistered > 0) {
                     FirmsOMonth.registerFirmMonth(site.name);
                     totalLawyersRegistered += site.lawyersRegistered;
                 }
+
 
                 if (totalLawyersRegistered >= CONFIG.LAWYERS_IN_SHEET) break;
             }
@@ -120,15 +140,18 @@ public class Main {
         }
 
         System.out.println("Completed: Lawyer search finished.");
+        System.out.println("Total lawyers collected in web:" + totalLawyersRegistered);
+        System.out.println();
     }
 
     private static void performCompleteSearch() {
         calculateTimeOfExecution(Main::getRegisteredContacts);
-        calculateTimeOfExecution(Main::serachLawyersInWeb);
+        calculateTimeOfExecution(Main::searchLawyersInWeb);
+
         System.out.println("\n\n" + "=".repeat(70));
     }
 
     public static void main(String[] args) {
-        calculateTimeOfExecution(Main::performCompleteSearch);
+        performCompleteSearch();
     }
 }

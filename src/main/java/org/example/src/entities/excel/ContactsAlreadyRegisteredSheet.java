@@ -84,12 +84,12 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
      */
     public void collectLawyersRegistered() {
         int i;
+        int addedThisRun = 0; // Track how many lawyers were actually registered this run
 
         // Start from the row of the last row registered + 1
         for (i = this.lastFirmRow; i <= this.getSheet().getLastRowNum(); i++) {
 
             if (totalLawyers == CONFIG.LAWYERS_IN_FILTER) break;
-
 
             Row row = this.getSheet().getRow(i);
             if (row == null) continue; // Skip empty rows
@@ -101,14 +101,19 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             // Skip empty rows
             if (email.isEmpty() || name.isEmpty()) {
                 sheet.removeRow(row);
+                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1); // Compact rows
+                i--; // Stay on same index since rows shifted
                 continue;
             }
 
-            if (firm.equals(lastFirm) && totalLawyersPerFirm == 3) continue;
+            // Cap per-firm lawyers
+            if (firm.equals(lastFirm) && totalLawyersPerFirm >= 3) continue;
 
             if (contacts.isEmailRegistered(email)) {
                 System.out.println("Email '" + email + "' is already registered. Cleaning up.");
                 sheet.removeRow(row);
+                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
+                i--;
                 continue;
             }
 
@@ -129,23 +134,28 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                     .practiceArea(practiceArea)
                     .build();
 
-
             // Bool to avoid repeated countries
-            boolean successfullyRegistered =  destinationSheet.addLawyer(lawyer, false);
+            boolean successfullyRegistered = destinationSheet.addLawyer(lawyer, false);
             if (successfullyRegistered) {
                 sheet.removeRow(row);
+                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
+                i--;
+
                 totalLawyers++;
+                addedThisRun++;
             }
 
-
-            if (!firm.equals(lastFirm)) totalLawyersPerFirm = 0;
-
+            // Reset per-firm counter when firm changes
+            if (!firm.equals(lastFirm)) {
+                totalLawyersPerFirm = 0;
+            }
             totalLawyersPerFirm++;
+
             lastFirm = firm;
         }
 
-        // Re-run the function until reach the total limit of lawyers
-        if (totalLawyers < CONFIG.LAWYERS_IN_FILTER) {
+        // Re-run the function only if we made progress
+        if (totalLawyers < CONFIG.LAWYERS_IN_FILTER && addedThisRun > 0) {
             this.lastFirm = "";
             this.lastFirmRow = 0;
 
@@ -157,9 +167,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
         }
 
         this.registerLastFirmCollectedRow(i);
-
         this.saveSheet();
-
         this.registerFirmsCollected();
     }
 

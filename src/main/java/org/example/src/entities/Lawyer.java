@@ -38,7 +38,7 @@ public final class Lawyer {
         "Founding Partner",
 
         "Partner", "Counsel", "Director", "Founder", "Principal", "Advisor", "Manager", "Shareholder",
-        "Head", "Chair",
+        "Head", "Chair", "Legal"
     };
 
     @Builder
@@ -48,12 +48,12 @@ public final class Lawyer {
         this.firm =         firm;
         this.country =      country.trim();
         this.practiceArea = treatPracticeArea(practiceArea);
-        this.email =        treatEmail(email);
-        this.phone =        treatPhone(phone);
+        this.email =        treatEmail(email.trim());
+        this.phone =        treatPhone(phone.trim());
         this.specialism =   treatSpecialism();
 
         // Move down so the email be treated and then used for the function `getNameFromEmail`
-        this.name =         treatName(name);
+        this.name =         treatName(name.trim());
     }
 
 
@@ -102,19 +102,13 @@ public final class Lawyer {
             name = name.replace(role.toLowerCase(), " ");
         }
 
-        // Remove common abbreviation
-        for (String abbreviation : abbreviations) {
-            if (name.contains(abbreviation)) {
-                name = name.replace(abbreviation, " ");
-            }
-        }
 
-        // Split and filter
+        // Split and filter & Remove common abbreviation
         String[] words = name.trim().split("\\s+");
         StringBuilder fullName = new StringBuilder();
 
         for (String word : words) {
-            if (!word.isBlank()) {
+            if (!word.isBlank() && !abbreviations.contains(word)) {
                 fullName.append(Character.toUpperCase(word.charAt(0)))
                         .append(word.substring(1))
                         .append(" ");
@@ -143,7 +137,7 @@ public final class Lawyer {
 
     /**
      * Treat lawyer phone
-     * 
+     *
      * @param phone phone to be treated
      * @return phone formatted
      */

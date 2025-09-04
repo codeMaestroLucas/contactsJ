@@ -46,7 +46,7 @@ public class MBIP extends ByPage {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.elementor-element-2101083 > div.elementor-widget-container")
+                            By.className("category-attorney")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);

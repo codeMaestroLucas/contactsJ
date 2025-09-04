@@ -57,7 +57,7 @@ public class Finreg360 extends ByPage {
         }
     }
 
-    public String getLink(WebElement lawyer) {
+    public String getLink() {
         return this.link;
     }
 
@@ -72,9 +72,10 @@ public class Finreg360 extends ByPage {
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        String position = extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "outerHTML", LawyerExceptions::roleException)
-                .split("<br>")[1]
-                .trim().toLowerCase();
+        String position = extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "outerHTML", LawyerExceptions::roleException);
+
+        String[] split = position.split("<br>");
+        position = split[split.length - 1].trim().toLowerCase();
 
         return switch (position) {
             case "socio", "socia" -> "Partner";
@@ -100,7 +101,7 @@ public class Finreg360 extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", this.getLink(),
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,

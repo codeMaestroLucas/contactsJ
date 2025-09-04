@@ -1,11 +1,8 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites._standingBy.Kennedys;
-import org.example.src.sites.byPage.CliffordChance;
-import org.example.src.sites.byPage.MorganLewis;
-import org.example.src.sites.byPage.SheppardMullin;
-import org.example.src.sites.byPage.Skadden;
+import org.example.src.sites.byNewPage.*;
+import org.example.src.sites.byPage.*;
 
 import java.lang.reflect.Field;
 
@@ -13,7 +10,7 @@ import java.lang.reflect.Field;
  * Class used to test a new Site
  */
 
-    class MyTestPage extends CliffordChance {
+    class MyTestPage extends DaviesWardPhillipsAndVineberg {
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */

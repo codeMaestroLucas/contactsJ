@@ -85,7 +85,7 @@ public class DaviesWardPhillipsAndVineberg extends ByNewPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("people-detail-masthead__full-name")};
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 

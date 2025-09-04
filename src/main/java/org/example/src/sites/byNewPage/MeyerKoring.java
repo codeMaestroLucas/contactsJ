@@ -59,7 +59,7 @@ public class MeyerKoring extends ByNewPage {
             List<WebElement> lawyers = div.findElements(
                     By.cssSelector("a[href^='https://www.meyer-koering.de/anwaelte/']")
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -89,7 +89,8 @@ public class MeyerKoring extends ByNewPage {
     }
 
 
-    private String[] getSocials(WebElement lawyer) {
+    private String[] getSocials() {
+        WebElement lawyer = driver.findElement(By.cssSelector("aside.sticky__sidebar"));
         try {
             List<WebElement> socials = lawyer
                     .findElements(By.cssSelector("a"));
@@ -106,9 +107,9 @@ public class MeyerKoring extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.cssSelector(".divcol-md-6.d-flex.col__cv"));
+        WebElement div = driver.findElement(By.xpath("/html/body/main/section/div[1]/div[2]/div/div[1]"));
 
-        String[] socials = this.getSocials(div);
+        String[] socials = this.getSocials();
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),

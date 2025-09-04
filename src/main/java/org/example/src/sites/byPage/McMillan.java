@@ -56,7 +56,7 @@ public class McMillan extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("h6 > a")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {

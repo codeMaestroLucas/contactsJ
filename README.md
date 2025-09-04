@@ -1,7 +1,7 @@
 <!-- TOC -->
 * [Ideas](#ideas)
 * [Useful Commentaries](#useful-commentaries)
-* [Check](#check)
+* [Collected Data Info](#collected-data-info)
 <!-- TOC -->
 
 ---

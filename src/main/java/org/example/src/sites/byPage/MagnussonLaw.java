@@ -92,10 +92,10 @@ public class MagnussonLaw extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("people-list-post-body"),
-                By.cssSelector("p > a[href^='https://www.magnussonlaw.com/offices/']")
+                By.className("entry-content"),
+                By.cssSelector("p > a[href^='https://www.magnussonlaw.com/']")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "title",LawyerExceptions::countryException);
     }
 
 

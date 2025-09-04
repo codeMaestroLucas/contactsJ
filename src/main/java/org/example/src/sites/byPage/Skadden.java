@@ -115,7 +115,8 @@ public class Skadden extends ByPage {
 
     private String getPracticeArea(WebElement container) throws LawyerExceptions {
         String PA = extractor.extractLawyerText(container, byRoleArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
-        return PA.split("-")[1].trim();
+        String[] split = PA.split("-");
+        return split[split.length - 1].trim();
     }
 
 

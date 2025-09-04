@@ -158,14 +158,12 @@ public abstract class Site {
 
             } catch (ValidationExceptions e) {
                 if (showLogs) {
-                    System.err.println("#".repeat(100));
                     System.err.printf("Error reading %dth lawyer at page %d of firm %s.%nSkipping...%n",
                             index + 1, i + 1, this.name);
                     System.err.println("Validation error " + e.getMessage());
 
                     siteUtl.printInvalidLawyer(map);
 
-                    System.err.println("#".repeat(100) + "\n");
                 }
             }
         } else {
@@ -178,5 +176,5 @@ public abstract class Site {
     // ABSTRACT METHODS
     protected abstract List<WebElement> getLawyersInPage();
     protected abstract Object getLawyer(WebElement lawyer) throws Exception;
-    public abstract void searchForLawyers(boolean showLogs) throws Exception;
+    public abstract Runnable searchForLawyers(boolean showLogs) throws Exception;
 }

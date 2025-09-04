@@ -39,6 +39,7 @@ public class SiteUtils {
         System.err.println("  Email: " + details.get("email"));
         System.err.println("  Phone: " + details.get("phone"));
         System.err.println("  Country: " + details.get("country"));
+        System.out.println("\n\n");
     }
 
 
@@ -102,7 +103,7 @@ public class SiteUtils {
 
                 String role = byText
                         ? element.getText()
-                        : element.getAttribute("outerHTML");
+                        : element.getAttribute("textContent");
 
 
                 role = role
