@@ -30,8 +30,7 @@ public class DGKV extends ByNewPage {
         super(
                 "DGKV",
                 "https://dgkv.com/lawyers?first_name=&last_name=&position=2&practice_area=&industry=&language=#results",
-                3,
-                1000
+                3
         );
     }
 
@@ -44,8 +43,7 @@ public class DGKV extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("c-p-bn"));
+        MyDriver.clickOnAddBtn(By.id("c-p-bn"));
     }
 
 

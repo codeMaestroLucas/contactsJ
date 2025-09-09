@@ -36,7 +36,7 @@ public class GianniAndOrigoni extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        MyDriver.clickOnElement(By.className("bottone_people"));
+        MyDriver.clickOnAddBtn(By.className("bottone_people"));
     }
 
     protected List<WebElement> getLawyersInPage() {

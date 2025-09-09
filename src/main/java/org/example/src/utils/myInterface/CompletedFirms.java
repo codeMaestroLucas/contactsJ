@@ -29,10 +29,9 @@ public class CompletedFirms {
         Site[][] sites = new Site[][] {byPage, byNewPage, byFilter, byClick};
         List<Site> filteredSites = new ArrayList<>();
 
-        // Filter all sites that weren't registered in the `` file
+        // Filter all sites that weren't registered in the `monthsFirms.txt` file
         for (Site[] category : sites) {
-            for (Site site : category) {
-                if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) filteredSites.add(site);            }
+            for (Site site : category) if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) filteredSites.add(site);
         }
 
         Collections.shuffle(filteredSites);

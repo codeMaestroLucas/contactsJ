@@ -29,8 +29,7 @@ public class LangsethAdvokat extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+        MyDriver.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
     }
 
 

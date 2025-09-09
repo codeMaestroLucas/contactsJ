@@ -33,6 +33,8 @@ public class HavelPartners extends ByPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
+
+        MyDriver.clickOnAddBtn(By.className("cm__btn"));
     }
 
 

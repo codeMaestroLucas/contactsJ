@@ -25,8 +25,7 @@ public class HSAAdvocates extends ByNewPage {
         super(
                 "",
                 "",
-                1,
-                1000
+                1
         );
     }
 

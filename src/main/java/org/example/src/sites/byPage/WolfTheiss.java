@@ -58,7 +58,7 @@ public class WolfTheiss extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.className("cmplz-accept"));
+        MyDriver.clickOnAddBtn(By.className("cmplz-accept"));
     }
 
 

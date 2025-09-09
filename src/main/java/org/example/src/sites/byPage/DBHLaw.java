@@ -34,7 +34,7 @@ public class DBHLaw extends ByPage {
             MyDriver.waitForPageToLoad();
             Thread.sleep(1000L);
         } else {
-            MyDriver.clickOnElement(By.cssSelector("a.next.page-numbers"));
+            MyDriver.clickOnAddBtn(By.cssSelector("a.next.page-numbers"));
         }
 
         MyDriver.rollDown(1, 0.5);

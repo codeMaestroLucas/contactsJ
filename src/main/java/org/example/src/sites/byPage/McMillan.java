@@ -27,7 +27,7 @@ public class McMillan extends ByPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(2500L);
-        if (index == 0) MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        if (index == 0) MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
     }
 
     protected List<WebElement> getLawyersInPage() {

@@ -52,7 +52,8 @@ public class Ogier extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        MyDriver.clickOnElement(By.id("checkAll"));
+        MyDriver.clickOnAddBtn(By.id("checkAll"));
+
         for (int i = 0; i < 9; i++) {
             MyDriver.clickOnElement(By.cssSelector("div.pagination--component > button.button--component"));
         }

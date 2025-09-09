@@ -59,7 +59,7 @@ public class Skadden extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index == 0) MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        if (index == 0) MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
 
         MyDriver.clickOnElementMultipleTimes(
                 By.className("professionals-landing-results-load-more"),

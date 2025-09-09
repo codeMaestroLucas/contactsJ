@@ -35,8 +35,7 @@ public class VieringJentschuraAndPartner extends ByPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("cc-dismiss"));
+        MyDriver.clickOnAddBtn(By.className("cc-dismiss"));
     }
 
 

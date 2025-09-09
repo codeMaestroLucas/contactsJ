@@ -46,8 +46,7 @@ public class SheppardMullin extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("cookieClose"));
+        MyDriver.clickOnAddBtn(By.id("cookieClose"));
     }
 
 

@@ -45,10 +45,10 @@ public class Dottir extends ByNewPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.team-people--grid > a")
+                            By.cssSelector("a[href^='/team/']")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -72,7 +72,7 @@ public class Dottir extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("sans-xs")};
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 

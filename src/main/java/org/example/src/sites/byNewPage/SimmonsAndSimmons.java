@@ -15,14 +15,13 @@ import java.util.Objects;
 
 public class SimmonsAndSimmons extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+            By.cssSelector("p.contact-card_text")
     };
 
     public SimmonsAndSimmons() {
         super(
             "Simmons And Simmons",
-            "https://www.simmons-simmons.com/en/people",
+            "https://www.simmons-simmons.com/en/people?query=&filters=false&type=all&sectors=&services=&office=#noScroll",
             1
         );
     }
@@ -30,17 +29,11 @@ public class SimmonsAndSimmons extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "";
-        String url = index == 0 ? this.link : otherUrl;
-        this.driver.get(url);
+        this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index > 0) return;
-
-        // Click on add btn
-        MyDriver.clickOnElement(By.xpath("//*[@id=\"website\"]/div[2]/section/div[2]/button[1]"));
-        MyDriver.rollDown(20, 0.4); // 258 rolls, 3 lawyers for roll
+        MyDriver.rollDown(5, 0.4); // 258 rolls, 3 lawyers for roll
     }
 
 
@@ -57,7 +50,7 @@ public class SimmonsAndSimmons extends ByNewPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("contact-card")
+                            By.cssSelector("div.contacts-grid > a[href^='/en/people/']")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -75,18 +68,16 @@ public class SimmonsAndSimmons extends ByNewPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector(".content.content--small.space-no-spacing"),
-                By.cssSelector("h1")
+                By.xpath("//*[@id=\"content\"]/div/section[1]/div/div[2]/h1")
         };
-        //todo: check if is text or outerHTML
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.xpath("//*[@id=\"content\"]/div/section[1]/div/div[2]/p")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
@@ -94,19 +85,18 @@ public class SimmonsAndSimmons extends ByNewPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.xpath("//*[@id=\"content\"]/div/section[1]/div/div[2]/a")
         };
+        WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
 
 
-    private String[] getSocials(WebElement lawyer) {
+    private String[] getSocials() {
         String email = ""; String phone = "";
 
-        WebElement socialsDiv = lawyer.findElement(By.cssSelector(".col--secondary.space-sm.mobile-primary"));
+        WebElement socialsDiv = driver.findElement(By.cssSelector("aside"));
         email = socialsDiv.findElement(By.cssSelector("a[href^='mailto']")).getAttribute("href");
-        //todo: check
         phone = socialsDiv.findElement(By.cssSelector("div")).getText();
 
         return new String[]{ email, phone };
@@ -117,10 +107,9 @@ public class SimmonsAndSimmons extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        //todo
-        WebElement div = driver.findElement(By.className(""));
+        WebElement div = driver.findElement(By.cssSelector("body"));
 
-        String[] socials = this.getSocials(div);
+        String[] socials = this.getSocials();
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),

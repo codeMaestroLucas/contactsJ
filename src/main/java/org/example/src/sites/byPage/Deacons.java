@@ -26,7 +26,7 @@ public class Deacons extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            MyDriver.clickOnElement(By.id("wt-cli-accept-all-btn"));
+            MyDriver.clickOnAddBtn(By.id("wt-cli-accept-all-btn"));
         }
     }
 

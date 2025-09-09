@@ -32,8 +32,7 @@ public class DaleAndLessmann extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.cssSelector("div#cookie-bar a.cb-enable"));
+        MyDriver.clickOnAddBtn(By.cssSelector("div#cookie-bar a.cb-enable"));
     }
 
 

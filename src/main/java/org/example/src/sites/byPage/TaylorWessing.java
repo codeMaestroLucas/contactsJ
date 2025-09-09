@@ -71,7 +71,7 @@ public class TaylorWessing extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+        MyDriver.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
     }
 
 

@@ -33,8 +33,7 @@ public class Chattertons extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("ccc-notify-accept"));
+        MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
     }
 
 

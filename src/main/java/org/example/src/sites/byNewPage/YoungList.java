@@ -12,13 +12,21 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 public class YoungList extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
-    };
     private String currentRole;
+    private final String[] roles = new String[] {
+            "Mediator",
+            "Arbitrator",
+            "Silk"
+    };
+    private final String[] links = new String[] {
+            "",
+            "https://www.youngslist.com.au/the-list/?_counsel=27",
+            "https://www.youngslist.com.au/the-list/?_counsel=28",
+    };
+
 
     public YoungList() {
         super(
@@ -32,9 +40,9 @@ public class YoungList extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "https://www.youngslist.com.au/the-list/?_counsel=28";
+        String otherUrl = this.links[index];
+        this.currentRole = this.roles[index];
         String url = index == 0 ? this.link : otherUrl;
-        this.currentRole = index == 0 ? "Mediator" : "Arbitrator";
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);

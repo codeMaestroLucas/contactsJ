@@ -49,7 +49,7 @@ public class CrowellAndMoring extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
     }
 
 

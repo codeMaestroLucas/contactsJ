@@ -32,8 +32,7 @@ public class DuncanCotterill extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("cn-accept-cookie"));
+        MyDriver.clickOnAddBtn(By.id("cn-accept-cookie"));
 
         MyDriver.rollDown(4, 5);
     }

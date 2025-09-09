@@ -74,8 +74,8 @@ public class HYLeungAndCo extends ByNewPage {
         By[] byName1 = {By.className("team-member-name-large")};
         By[] byName2 = {By.className("team-member-name-small")};
 
-        String name1 = extractor.extractLawyerText(lawyer, byName1, "NAME PART 1", LawyerExceptions::nameException);
-        String name2 = extractor.extractLawyerText(lawyer, byName2, "NAME PART 2", LawyerExceptions::nameException);
+        String name1 = extractor.extractLawyerAttribute(lawyer, byName1, "NAME PART 1", "textContent", LawyerExceptions::nameException);
+        String name2 = extractor.extractLawyerAttribute(lawyer, byName2, "NAME PART 2", "textContent", LawyerExceptions::nameException);
         return name1 + " " + name2;
     }
 

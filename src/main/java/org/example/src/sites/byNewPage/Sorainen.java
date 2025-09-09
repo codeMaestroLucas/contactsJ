@@ -15,36 +15,31 @@ import java.util.Objects;
 
 public class Sorainen extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+            By.className("pList__position")
     };
 
     public Sorainen() {
         super(
             "Sorainen",
             "https://www.sorainen.com/people/",
-            1
+            1,
+            3
         );
     }
 
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "";
-        String url = index == 0 ? this.link : otherUrl;
-        this.driver.get(url);
+        this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index > 0) return;
-
-        // Click on add btn
-        MyDriver.clickOnElement(By.xpath("/html/body/div[2]/div/div/div/div[2]/button[2]"));
+        MyDriver.clickOnAddBtn(By.className("cky-btn-accept"));
 
         MyDriver.clickOnElementMultipleTimes(
                 By.id("sorainen_loadmore"),
-                3, 1
-        );
+                20, 2.5
+        ); // More than 20
     }
 
 
@@ -61,7 +56,7 @@ public class Sorainen extends ByNewPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("#sorainen_posts_wrap > li > a")
+                            By.cssSelector("li.pList__item > a.pList__link")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -87,8 +82,7 @@ public class Sorainen extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("personHeader__title")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
@@ -96,17 +90,25 @@ public class Sorainen extends ByNewPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.cssSelector("div.personHeader__field:last-child")
         };
         return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+    }
+
+
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("personHeader__expe"),
+                By.cssSelector("a")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                    .findElement(By.className("personHeader__field personHeader__field--l"))
+                    .findElement(By.className("personHeader__field--l"))
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
@@ -131,7 +133,7 @@ public class Sorainen extends ByNewPage {
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", this.getCountry(div),
-                "practice_area", "",
+                "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

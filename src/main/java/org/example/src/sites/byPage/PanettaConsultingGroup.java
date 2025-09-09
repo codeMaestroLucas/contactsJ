@@ -35,7 +35,7 @@ public class PanettaConsultingGroup extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.className("ch2-allow-all-btn"));
+        MyDriver.clickOnAddBtn(By.className("ch2-allow-all-btn"));
     }
 
 

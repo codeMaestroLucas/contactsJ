@@ -22,14 +22,14 @@ public class RemfryAndSagar extends ByNewPage {
         super(
             "RemfryAndSagar",
             "https://www.remfry.com/our-team/",
-            3 //todo: check for more pages
+            6
         );
     }
 
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "";//todo check
+        String otherUrl = "https://www.remfry.com/our-team/page/" + (index + 1) + "/";
         String url = index == 0 ? this.link : otherUrl;
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
@@ -37,8 +37,7 @@ public class RemfryAndSagar extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id(""));
+        MyDriver.clickOnAddBtn(By.xpath("/html/body/div[2]/div[2]/div/div[2]/a"));
     }
 
 
@@ -46,7 +45,7 @@ public class RemfryAndSagar extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
                 "partner",
-                "counsel",
+                "managing associate",
                 "senior associate"
         };
 
@@ -58,7 +57,7 @@ public class RemfryAndSagar extends ByNewPage {
                             By.cssSelector("li.xxx > a.block")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -81,19 +80,19 @@ public class RemfryAndSagar extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("color_right_box")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("addui-Accordion"),
+                By.className("addui-Accordion-content"),
+                By.cssSelector("p")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 
@@ -115,7 +114,7 @@ public class RemfryAndSagar extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className(""));
+        WebElement div = driver.findElement(By.className("right_box"));
 
         String[] socials = this.getSocials(div);
 
@@ -125,7 +124,7 @@ public class RemfryAndSagar extends ByNewPage {
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", "India",
-                "practice_area", this.getCountry(div),
+                "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
                 "phone", "911242806100"
         );

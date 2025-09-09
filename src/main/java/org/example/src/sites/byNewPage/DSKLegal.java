@@ -22,8 +22,7 @@ public class DSKLegal extends ByNewPage {
         super(
                 "DSKLegal",
                 "https://dsklegal.com/team-member//",
-                1,
-                1000
+                1
         );
     }
 

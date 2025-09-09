@@ -38,7 +38,7 @@ public final class Lawyer {
         "Founding Partner",
 
         "Partner", "Counsel", "Director", "Founder", "Principal", "Advisor", "Manager", "Shareholder",
-        "Head", "Chair", "Legal"
+        "Head", "Chair", "Legal", "Silk"
     };
 
     @Builder

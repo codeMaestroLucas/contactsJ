@@ -99,7 +99,7 @@ public class PearlCohen extends ByNewPage {
                 By.cssSelector("li:last-child")
         };
         String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, country);//todo: run and see if any error appears
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "USA");
     }
 
 

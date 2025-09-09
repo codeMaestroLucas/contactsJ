@@ -14,10 +14,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class OneEssexCourt extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
-    };
     private String currentRole;
 
     public OneEssexCourt() {

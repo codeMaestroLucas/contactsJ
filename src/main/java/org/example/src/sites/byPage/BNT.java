@@ -26,7 +26,7 @@ public class BNT extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        MyDriver.clickOnElement(By.className("cc_bottom_info"));
+        MyDriver.clickOnAddBtn(By.className("cc_bottom_info"));
         MyDriver.rollDown(1, 0.5);
     }
 

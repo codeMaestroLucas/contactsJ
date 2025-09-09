@@ -32,7 +32,7 @@ public class NelliganLaw extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        MyDriver.clickOnElement(By.className("cky-btn-accept"));
+        MyDriver.clickOnAddBtn(By.className("cky-btn-accept"));
         Thread.sleep(2000L);
         MyDriver.clickOnElementMultipleTimes(By.id("load_more"), 4, 2);
     }

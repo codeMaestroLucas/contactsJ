@@ -34,7 +34,7 @@ public class VeritasLegal extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.id("wpdp-close"));
+        MyDriver.clickOnAddBtn(By.id("wpdp-close"));
     }
 
 

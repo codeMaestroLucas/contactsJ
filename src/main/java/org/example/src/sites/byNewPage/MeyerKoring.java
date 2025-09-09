@@ -33,8 +33,7 @@ public class MeyerKoring extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("cookie_action_accept"));
+        MyDriver.clickOnAddBtn(By.id("cookie_action_accept"));
 
         MyDriver.rollDown(4, 0.5);
     }

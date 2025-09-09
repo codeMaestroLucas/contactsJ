@@ -32,8 +32,7 @@ public class Tavares extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("moove-gdpr-infobar-allow-all"));
+        MyDriver.clickOnAddBtn(By.className("moove-gdpr-infobar-allow-all"));
     }
 
 

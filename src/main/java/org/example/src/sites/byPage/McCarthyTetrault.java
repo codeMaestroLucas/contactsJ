@@ -28,7 +28,7 @@ public class McCarthyTetrault extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(2500L);
         if (index <= 0) {
-            MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+            MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
         }
     }
 

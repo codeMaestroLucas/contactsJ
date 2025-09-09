@@ -106,8 +106,7 @@ public class Dentons extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
 
         // More than 10 pages (IDK how many, but a lot)
         MyDriver.clickOnElementMultipleTimes(By.className("loadmore-professionals"), 10, 4);

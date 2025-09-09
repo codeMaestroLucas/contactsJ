@@ -32,8 +32,7 @@ public class Horten extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("coi-banner__accept"));
+        MyDriver.clickOnAddBtn(By.className("coi-banner__accept"));
     }
 
 

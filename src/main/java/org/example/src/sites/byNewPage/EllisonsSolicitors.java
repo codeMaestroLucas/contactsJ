@@ -36,8 +36,7 @@ public class EllisonsSolicitors extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("wt-cli-accept-all-btn"));
+        MyDriver.clickOnAddBtn(By.id("wt-cli-accept-all-btn"));
     }
 
 

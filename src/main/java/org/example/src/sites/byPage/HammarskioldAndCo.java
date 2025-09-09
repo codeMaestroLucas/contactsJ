@@ -32,8 +32,7 @@ public class HammarskioldAndCo extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("gen-cookie-notice-btn-accept-all"));
+        MyDriver.clickOnAddBtn(By.className("gen-cookie-notice-btn-accept-all"));
     }
 
 

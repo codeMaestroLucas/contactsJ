@@ -37,8 +37,7 @@ public class Legance extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("iubenda-cs-accept-btn"));
+        MyDriver.clickOnAddBtn(By.className("iubenda-cs-accept-btn"));
     }
 
 

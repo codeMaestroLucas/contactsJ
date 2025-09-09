@@ -42,20 +42,12 @@ public class WilliamFry extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
 
         String loadMoreButtonTxt = driver.findElement(By.className("load_more_button")).getText();
         int timesToRollDown = Integer.parseInt(loadMoreButtonTxt.replaceAll("[^0-9]", "")) / 10;
 
-        for (int i = 0; i < timesToRollDown; i++) {
-            try {
-                MyDriver.clickOnElement(By.className("load_more_button"));
-                Thread.sleep(1000L);
-
-            } catch (Exception e) {
-                break;
-            }
-        }
+        MyDriver.clickOnElementMultipleTimes(By.className("load_more_button"),timesToRollDown, 1);
     }
 
 
@@ -111,7 +103,7 @@ public class WilliamFry extends ByPage {
                 By.className("location"),
                 By.className("list__common__link")
         };
-        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException).split("-")[0].trim();
+        String office = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "textContent", LawyerExceptions::countryException).split("-")[0].trim();
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "Ireland");
     }
 

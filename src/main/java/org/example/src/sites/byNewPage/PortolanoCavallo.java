@@ -14,9 +14,9 @@ import java.util.Map;
 import java.util.Objects;
 
 public class PortolanoCavallo extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className("app-text"),
-            By.className("app-role")
+    private final String[] validRoles = new String[]{
+            "partner",
+            "counsel"
     };
 
     public PortolanoCavallo() {
@@ -34,27 +34,21 @@ public class PortolanoCavallo extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("app-acceptall"));
+        MyDriver.clickOnAddBtn(By.className("app-acceptall"));
+        MyDriver.rollDown(1, 0.2);
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("app-person-block-small")
+                            By.cssSelector("a[href^='/en/people/']")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -63,17 +57,13 @@ public class PortolanoCavallo extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.cssSelector("a[href^='/en/people/']")
-        };
-        String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-        MyDriver.openNewTab(link);
+        MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("h1")
+                By.xpath("/html/body/div[2]/div/h1")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
@@ -81,9 +71,11 @@ public class PortolanoCavallo extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("app-main-content-subtitle")
+                By.xpath("/html/body/div[2]/div/div[1]")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 
 
@@ -95,7 +87,7 @@ public class PortolanoCavallo extends ByNewPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                    .findElement(By.className("app-contacts"))
+                    .findElement(By.xpath("/html/body/div[2]/div/div[2]/div[1]/ul"))
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
@@ -112,6 +104,9 @@ public class PortolanoCavallo extends ByNewPage {
 
         WebElement div = driver.findElement(By.className("app-main-wrapper"));
 
+        String role = this.getRole(div);
+        if (role.equals("Invalid Role")) return "Invalid Role";
+
         String[] socials = this.getSocials(div);
 
         String country = this.getCountry(socials[1]);
@@ -120,7 +115,7 @@ public class PortolanoCavallo extends ByNewPage {
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
-                "role", this.getRole(div),
+                "role", role,
                 "firm", this.name,
                 "country", "Italy",
                 "practice_area", country,

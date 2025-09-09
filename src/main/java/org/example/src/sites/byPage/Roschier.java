@@ -33,7 +33,7 @@ public class Roschier extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000);
 
-        MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+        MyDriver.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
         MyDriver.clickOnElementMultipleTimes(
                 By.cssSelector(".text-center .wp-block-button .wp-block-button__link"),
                 5, 5

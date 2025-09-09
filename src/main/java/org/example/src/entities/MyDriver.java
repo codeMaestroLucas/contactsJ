@@ -131,6 +131,24 @@ public final class MyDriver {
 
 
     /**
+     * Perform a click on an element passed
+     * @param buttonToClick to click
+     */
+    public static void clickOnAddBtn(Object buttonToClick) {
+        // Find element
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement elementToClick = wait.until(
+                    ExpectedConditions.elementToBeClickable(
+                            (By) buttonToClick
+                    )
+            );
+            performUniqueClick(elementToClick);
+        } catch (Exception _) {} // Ignore exceptions
+    }
+
+
+    /**
      * Clicks on the given element multiple times with a delay between each click.
      *
      * @param element            The element to click. Can be either a {@link By} locator or a {@link WebElement}.

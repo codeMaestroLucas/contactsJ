@@ -41,8 +41,7 @@ public class LewissSilkin extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
 
         MyDriver.clickOnElementMultipleTimes(
                 By.cssSelector("button[class*='LoadMoreButton_more']"),
@@ -103,25 +102,22 @@ public class LewissSilkin extends ByNewPage {
     }
 
 
-    private String[] getSocials(WebElement lawyer) {
-        try {
-            List<WebElement> socials = lawyer
-                    .findElements(By.cssSelector("a"));
-            return super.getSocials(socials, false);
+    private String[] getSocials() {
+        String email = ""; String phone = "";
 
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
-        }
+        phone = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/div[1]/div/div/div[3]/div/a[1]")).getAttribute("href");
+        email = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/div[1]/div/div/div[3]/div/a[2]")).getAttribute("href");
+
+        return new String[] { email, phone };
     }
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("ProfileCardRender_profile-card__oc_sn"));
+        WebElement div = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/div[1]/div/div"));
 
-        String[] socials = this.getSocials(div);
+        String[] socials = this.getSocials();
 
         return Map.of(
                 "link", this.getLink(),

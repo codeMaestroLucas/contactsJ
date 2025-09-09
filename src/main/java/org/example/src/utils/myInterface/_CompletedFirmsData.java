@@ -25,7 +25,7 @@ public class _CompletedFirmsData {
         new WinstonAndStrawn(), new WolfTheiss(), new TucaZbarcea(), new PanettaConsultingGroup(), new Finreg360(),
         new MalleyAndCo(), new TiruchelvamAssociates(), new CrowellAndMoring(), new HFW(), new Njord(),
         new Titov(), new VBAdvocates(), new NPPLegal(), new GomezAceboAndPombo(), new WildeboerDellelce(),
-        new HNA(), new Werksmans(), new JGSA(), new RDJ(), new MijaresAngoitiaCortesAndFuentes(),
+        new HNA(), new JGSA(), new RDJ(), new MijaresAngoitiaCortesAndFuentes(), new GarciaBodan(),
         new MinterEllisonRuddWatts(), new JamesAndWells(), new MacphersonKelley(), new BankiHaddockFiora(), new MBIP(),
         new LEFOSSE(), new DCCLaw(), new Andersen(), new SantamarinaAndSteta(), new AguayoEcclefieldAndMartinez(),
         new Tavares(), new DaleAndLessmann(), new OyenWiggs(), new NelliganLaw(), new ClarkWilson(),
@@ -37,7 +37,6 @@ public class _CompletedFirmsData {
         new Helmsman(), new K1Chamber(), new DRAndAJU(), new ZhongziLaw(), new TahotaLaw(),
         new GrandwayLaw(), new StewartMcKelvey(), new SIRIUS(), new Roschier(), new Liedekerke(),
         new CliffordChance(), new MorganLewis(), new SheppardMullin(), new Skadden(), new McMillan(),
-        new GarciaBodan(),
 
 
 
@@ -71,24 +70,27 @@ public class _CompletedFirmsData {
         new Baumgartners(), new PrasadAndCompany(), new ENSAfrica(), new OneEssexCourt(), new YoungList(),
         new LangsethAdvokat(), new LatamLex(), new Legalis(), new Legance(), new LexCaribbean(),
         new LonganLaw(), new MeyerKoring(), new MishconKaras(), new Mourant(), new TCLaw(),
-        new KeystoneLaw(), new KRBLaw(), new Kvale(),
+        new KeystoneLaw(), new KRBLaw(), new Kvale(), new Werksmans(), new DeutschMiller(),
+        new DGKV(), new Fischer(), new MyersFletcherAndGordon(), new RemfryAndSagar(), new WikborgRein(),
+        new Noerr(), new PaviaAndAnsaldo(), new PearlCohen(), new PortolanoCavallo(),
+        new Pulegal(),  new Sorainen(), new Thommessen(), new Wiersholm(),
+
 
 
         // TEST IT
-//        new MyersFletcherAndGordon(), new Noerr(), new PaviaAndAnsaldo(), new PearlCohen(), new PortolanoCavallo(),
-//
-//
-//        new Poulschmith(), new Pulegal(), new SimmonsAndSimmons(), new SimmonsWolfhagen(), new Sorainen(),
-//        new Szecskay(), new TannerDeWitt(), new Thommessen(), new Wiersholm(), new WikborgRein(),
-//        new ZeposAndYannopoulos(),
+//        new Szecskay(), new TannerDeWitt(), new ZeposAndYannopoulos(),
 
 
-        /**
-         * INDIAN
-         * - to complete
-         * new DSKLegal(), new HSAAdvocates(), new RemfryAndSagar(), new SamvadPartners()
-         *
-        */
+            /**
+             * INDIAN
+             * - completed
+             * new DSKLegal(),
+             *
+             * - to complete
+             * new HSAAdvocates(), new SamvadPartners(), new JSA()
+             * new Poulschmith(), new SimmonsAndSimmons(), new SimmonsWolfhagen(),
+             *
+            */
     };
 
 

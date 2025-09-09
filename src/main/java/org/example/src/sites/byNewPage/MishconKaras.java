@@ -33,8 +33,7 @@ public class MishconKaras extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("ucCookie_butCookieClose"));
+        MyDriver.clickOnAddBtn(By.id("ucCookie_butCookieClose"));
     }
 
 

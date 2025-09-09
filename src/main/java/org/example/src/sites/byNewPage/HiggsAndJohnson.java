@@ -32,8 +32,7 @@ public class HiggsAndJohnson extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("cmplz-accept"));
+        MyDriver.clickOnAddBtn(By.className("cmplz-accept"));
     }
 
 

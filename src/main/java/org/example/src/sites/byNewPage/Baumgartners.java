@@ -32,9 +32,6 @@ public class Baumgartners extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
     }
 
     @Override

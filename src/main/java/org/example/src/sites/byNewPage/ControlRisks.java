@@ -74,8 +74,7 @@ public class ControlRisks extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
 
         MyDriver.clickOnElementMultipleTimes(
                 By.className("load-more__action"),

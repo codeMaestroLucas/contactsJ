@@ -27,8 +27,7 @@ public class Madrona extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("popup"));
+        MyDriver.clickOnAddBtn(By.id("popup"));
     }
 
 

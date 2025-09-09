@@ -35,8 +35,7 @@ public class ZamfirescuRacotiPredoiu extends ByPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("cookie_action_close_header"));
+        MyDriver.clickOnAddBtn(By.id("cookie_action_close_header"));
     }
 
 

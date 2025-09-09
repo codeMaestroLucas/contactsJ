@@ -33,8 +33,7 @@ public class Ellex extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("cky-btn-accept"));
+        MyDriver.clickOnAddBtn(By.className("cky-btn-accept"));
     }
 
 

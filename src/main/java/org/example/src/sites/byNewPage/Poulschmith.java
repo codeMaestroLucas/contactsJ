@@ -6,6 +6,7 @@ import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -15,8 +16,7 @@ import java.util.Objects;
 
 public class Poulschmith extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+            By.className("employee-card__job-title")
     };
 
     public Poulschmith() {
@@ -30,16 +30,19 @@ public class Poulschmith extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "";
-        String url = index == 0 ? this.link : otherUrl;
-        this.driver.get(url);
+        this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index > 0) return;
+        MyDriver.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+
+        Select select = (Select) driver
+                .findElement(By.className("search-params"))
+                .findElement(By.className("dropdown"));
+        select.selectByVisibleText("Partners");
+
+        Thread.sleep(1000L);
 
         MyDriver.clickOnElementMultipleTimes(
                 By.cssSelector("button.button.button--block.mb-3.mx-auto.d-block"),
@@ -50,21 +53,14 @@ public class Poulschmith extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("employee-card__link")
+                            By.cssSelector("employee-card__link")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -87,17 +83,16 @@ public class Poulschmith extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("hero__subtitle")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+    private String getPracticeArea() throws LawyerExceptions {
+        WebElement lawyer = driver.findElement(By.xpath("/html/body/main/section[3]/div/div/div[2]/article/div"));
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("link")
         };
         return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
@@ -121,7 +116,7 @@ public class Poulschmith extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className(""));
+        WebElement div = driver.findElement(By.className("container"));
 
         String[] socials = this.getSocials(div);
 
@@ -131,7 +126,7 @@ public class Poulschmith extends ByNewPage {
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Denmark",
-                "practice_area", this.getCountry(div),
+                "practice_area", this.getPracticeArea(),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

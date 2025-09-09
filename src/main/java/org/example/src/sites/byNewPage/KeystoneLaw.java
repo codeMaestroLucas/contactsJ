@@ -38,8 +38,7 @@ public class KeystoneLaw extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("ccc-notify-accept"));
+        MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
     }
 
 

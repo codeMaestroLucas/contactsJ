@@ -33,8 +33,7 @@ public class CovenantChambers extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("sqs-cookie-banner-v2-accept"));
+        MyDriver.clickOnAddBtn(By.className("sqs-cookie-banner-v2-accept"));
     }
 
 

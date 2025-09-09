@@ -74,8 +74,7 @@ public class MorganLewis extends ByPage {
         Thread.sleep(1000L);
 
         if (index == 0) {
-            // Click on add btn
-            MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+            MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
 
 //            this.tryToFilter();
 

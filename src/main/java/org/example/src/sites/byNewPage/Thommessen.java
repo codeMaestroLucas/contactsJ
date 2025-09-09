@@ -14,9 +14,11 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Thommessen extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+    private final String[] validRoles = new String[]{
+            "partner",
+            "counsel",
+            "senior associate",
+            "managing associate"
     };
 
     public Thommessen() {
@@ -34,35 +36,22 @@ public class Thommessen extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index > 0) return;
+        MyDriver.clickOnAddBtn(By.className("coi-consent-banner__agree-button"));
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id(""));
-
-
-        //todo: check how to operate
-
-        MyDriver.rollDown(5, 0.3);
+        MyDriver.rollDown(13, 0.3);
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("ul.GridList__main > li > a")
+                            By.cssSelector("ul.GridList__main > li > a.GridList__person-link")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -85,19 +74,30 @@ public class Thommessen extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.cssSelector("header > h1"),
+                By.className("person__position"),
+                By.className("separate-after")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 
 
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("person__contact-office")
+        };
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return country.toLowerCase().contains("london") ? "England" : "Norway";
+    }
+
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("expertise-list__main"),
+                By.cssSelector("li > a")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 
@@ -121,14 +121,17 @@ public class Thommessen extends ByNewPage {
         WebElement div = driver.findElement(By.className("person__main"));
         WebElement socialsDiv = driver.findElement(By.className("person__contact"));
 
+        String role = this.getRole(div);
+        if (role.equals("Invalid Role")) return "Invalid Role";
+
         String[] socials = this.getSocials(socialsDiv);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
-                "role", this.getRole(div),
+                "role", role,
                 "firm", this.name,
-                "country", "Norway",
+                "country", this.getCountry(div),
                 "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]

@@ -148,7 +148,7 @@ public abstract class Site {
                         this.getEmailsToAvoidPath()
                 );
 
-                this.addLawyer(lawyerToRegister);
+                 this.addLawyer(lawyerToRegister);
 
                 if (this.getLawyersRegistered() >= this.getMaxLawyersForSite()) {
                     System.out.printf("No more than %d lawyer(s) needed for the firm %s.%n",

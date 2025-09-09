@@ -32,7 +32,7 @@ public class StewartMcKelvey extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        MyDriver.clickOnElement(By.cssSelector("div.btn-holder > button"));
+        MyDriver.clickOnAddBtn(By.cssSelector("div.btn-holder > button"));
     }
 
 

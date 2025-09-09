@@ -34,11 +34,6 @@ public class ENSAfrica extends ByNewPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        if (index > 0) return;
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
     }
 
     @Override

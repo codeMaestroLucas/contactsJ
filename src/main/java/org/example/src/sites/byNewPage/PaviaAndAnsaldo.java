@@ -45,8 +45,7 @@ public class PaviaAndAnsaldo extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.className("cmplz-accept"));
+        MyDriver.clickOnAddBtn(By.className("cmplz-accept"));
     }
 
 
@@ -63,7 +62,7 @@ public class PaviaAndAnsaldo extends ByNewPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("a[href^='https://www.pavia-ansaldo.it/en/']")
+                            By.className("extp-exlink")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -73,26 +72,16 @@ public class PaviaAndAnsaldo extends ByNewPage {
         }
     }
 
-
     public void openNewTab(WebElement lawyer) throws LawyerExceptions {
-        MyDriver.openNewTab(lawyer.getAttribute("href"));
+        MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href^='https://www.pavia-ansaldo.it/en/']")).getAttribute("href"));
     }
 
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        WebElement nameDiv = lawyer.findElement(By.className("wpb_wrapper"));
-        String firstName = nameDiv.findElement(By.cssSelector("p > i")).getText();
-        String lastName = nameDiv.findElement(By.cssSelector("h1")).getText();
-
-        return firstName + " " +  lastName;
-    }
-
-
-    private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.xpath("//*[@id=\"vc_row-68a3e46410dd9\"]/div[2]/div/div/div[3]/div/div/div/div/div/h3")
+        By[] byArray = {
+            By.className("wpb_wrapper")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
@@ -101,23 +90,13 @@ public class PaviaAndAnsaldo extends ByNewPage {
     }
 
 
-    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.cssSelector("a[href^='https://www.pavia-ansaldo.it/en/departments/']")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
-    }
-
-
-    private String[] getSocials(WebElement lawyer) {
+    private String[] getSocials() {
         String email = ""; String phone = "";
-
-        WebElement div = lawyer.findElement(By.xpath("//*[@id=\"vc_row-68a3e46410dd9\"]/div[2]/div/div/div[5]/div/div/div"));
 
         try {
 
-            email = div.findElement(By.cssSelector("href^='mailto:']")).getAttribute("href");
-            phone = div.findElement(By.xpath("//*[@id=\"vc_row-68a3e46410dd9\"]/div[2]/div/div/div[5]/div/div/div/a[3]/div/div[2]/div/div/div/div/p/span")).getText();
+            email = driver.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
+            phone = driver.findElement(By.cssSelector("a[href^='tel:']")).getAttribute("href");
 
 
         } catch (Exception e) {
@@ -131,17 +110,15 @@ public class PaviaAndAnsaldo extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("wpb_wrapper"));
-
-        String[] socials = this.getSocials(div);
+        String[] socials = this.getSocials();
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", this.getName(div),
-                "role", this.getRole(div),
+                "name", "", // Hard to find it
+                "role", "",     // Hard to find it
                 "firm", this.name,
                 "country", this.getCountry(socials[1]),
-                "practice_area", this.getPracticeArea(div),
+                "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

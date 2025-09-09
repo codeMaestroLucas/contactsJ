@@ -34,7 +34,7 @@ public class SIRIUS extends ByPage {
         Thread.sleep(1000L);
 
         if (index > 0) return;
-        MyDriver.clickOnElement(By.cssSelector("button[data-hook='consent-banner-apply-button']"));
+        MyDriver.clickOnAddBtn(By.cssSelector("button[data-hook='consent-banner-apply-button']"));
     }
 
 
@@ -45,14 +45,14 @@ public class SIRIUS extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div[data-testid='mesh-container-content']")));
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div[role='listitem']")));
 
             // Filter out the first 10 elements and any that are not valid lawyers
             List<WebElement> filteredLawyers = lawyers.stream()
                     .filter(e -> e.findElements(By.cssSelector("h2")).size() > 0) // Basic check for a lawyer element
                     .collect(Collectors.toList());
 
-            return this.siteUtl.filterLawyersInPage(filteredLawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(filteredLawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -76,7 +76,7 @@ public class SIRIUS extends ByPage {
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 

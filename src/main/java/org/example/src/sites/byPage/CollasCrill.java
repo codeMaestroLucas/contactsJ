@@ -36,7 +36,7 @@ public class CollasCrill extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            MyDriver.clickOnElement(By.className("cky-btn-accept"));
+            MyDriver.clickOnAddBtn(By.className("cky-btn-accept"));
         }
     }
 

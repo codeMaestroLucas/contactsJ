@@ -26,7 +26,7 @@ public class FoxAndMandal extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index == 0) MyDriver.clickOnElement(By.id("custom-accept"));
+        if (index == 0) MyDriver.clickOnAddBtn(By.id("custom-accept"));
     }
 
     protected List<WebElement> getLawyersInPage() {

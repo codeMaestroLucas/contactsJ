@@ -32,7 +32,7 @@ public class MSP extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         MyDriver.rollDown(1, 0.1);
-        MyDriver.clickOnElement(By.id("CookieBoxSaveButton"));
+        MyDriver.clickOnAddBtn(By.id("CookieBoxSaveButton"));
     }
 
 

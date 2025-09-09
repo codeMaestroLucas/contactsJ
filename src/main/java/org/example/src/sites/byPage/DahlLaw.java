@@ -26,7 +26,7 @@ public class DahlLaw extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         if (index <= 0) {
-            MyDriver.clickOnElement(By.className("coi-banner__accept"));
+            MyDriver.clickOnAddBtn(By.className("coi-banner__accept"));
             MyDriver.rollDown(2, 0.5);
         }
     }

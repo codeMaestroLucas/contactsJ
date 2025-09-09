@@ -34,8 +34,7 @@ public class Cobalt extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("CookieBoxSaveButton"));
+        MyDriver.clickOnAddBtn(By.id("CookieBoxSaveButton"));
     }
 
 

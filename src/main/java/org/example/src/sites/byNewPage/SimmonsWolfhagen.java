@@ -14,9 +14,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class SimmonsWolfhagen extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+    private final String[] validRoles = new String[]{
+            "director",
+            "counsel",
+            "senior associate"
     };
 
     public SimmonsWolfhagen() {
@@ -34,28 +35,23 @@ public class SimmonsWolfhagen extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
+        MyDriver.clickOnElementMultipleTimes(
+                By.xpath("//*[@id=\"hx-posts-data\"]/div/button"),
+                3, 0.4
+        );
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("team-preview__image-container")
+                            By.cssSelector("a[href^='https://www.simwolf.com.au/team_member/']")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -64,11 +60,7 @@ public class SimmonsWolfhagen extends ByNewPage {
 
 
     public void openNewTab(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.cssSelector("a")
-        };
-        String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-        MyDriver.openNewTab(link);
+        MyDriver.openNewTab(lawyer.getAttribute("href"));
     }
 
 
@@ -82,19 +74,11 @@ public class SimmonsWolfhagen extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("banner__tag")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-    }
-
-
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 
 
@@ -117,16 +101,18 @@ public class SimmonsWolfhagen extends ByNewPage {
         this.openNewTab(lawyer);
 
         WebElement div = driver.findElement(By.cssSelector("div.scaling-column.scaling-column.banner__content"));
+        String role = this.getRole(div);
+        if (role.equals("Invalid Role")) return "Invalid Role";
 
         String[] socials = this.getSocials(div);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
-                "role", this.getRole(div),
+                "role", role,
                 "firm", this.name,
                 "country", "Australia",
-                "practice_area", this.getCountry(div),
+                "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

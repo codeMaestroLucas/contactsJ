@@ -40,7 +40,7 @@ public class _Template extends ByNewPage {
         if (index > 0) return;
 
         // Click on add btn
-        MyDriver.clickOnElement(By.id(""));
+        MyDriver.clickOnAddBtn(By.id(""));
     }
 
 

@@ -33,8 +33,7 @@ public class ClarkWilson extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.cssSelector("button.button.accept"));
+        MyDriver.clickOnAddBtn(By.cssSelector("button.button.accept"));
     }
 
 

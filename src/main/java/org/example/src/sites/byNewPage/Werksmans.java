@@ -1,6 +1,7 @@
-package org.example.src.sites.byPage;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
+import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -12,9 +13,9 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class Werksmans extends ByPage {
+public class Werksmans extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className("ppf-role")
+            By.className("gs-member-desig")
     };
 
 
@@ -31,15 +32,6 @@ public class Werksmans extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        if (index > 0) return;
-
-        MyDriver.clickOnElement(By.id("cn-accept-cookie"));
-
-        for (int i = 0; i < 2; i++) {
-            MyDriver.clickOnElement(By.cssSelector("div#moreresults > a"));
-            Thread.sleep(2000L);
-        }
     }
 
 
@@ -56,7 +48,7 @@ public class Werksmans extends ByPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("ppf-right-col")
+                            By.className("gs_member_info")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -66,33 +58,44 @@ public class Werksmans extends ByPage {
         }
     }
 
-
-    public String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("pg-blog-category"),
-                By.cssSelector("a")
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+    @Override
+    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+        MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href^='https://werksmans.com/team-members/']")).getAttribute("href"));
     }
 
 
+    public String getLink() {
+        return driver.getCurrentUrl();
+    }
+
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("ppf-title")
+                By.className("gs-sin-mem-name")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        By[] byArray = new By[]{
+                By.className("gs-sin-mem-desig")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+    }
+
+    private String getPracticeArea() throws LawyerExceptions {
+        WebElement lawyer = driver.findElement(By.xpath("//*[@id=\"gs_team_single\"]/div/div[2]/div[2]/ul"));
+        By[] byArray = new By[]{
+                By.cssSelector("ul > li")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                    .findElement(By.className("ppf-details"))
+                    .findElement(By.className("gstm-details"))
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
@@ -104,14 +107,18 @@ public class Werksmans extends ByPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
+        this.openNewTab(lawyer);
+
+        WebElement div = driver.findElement(By.className("gs-team-single-content"));
+
+        String[] socials = this.getSocials(div);
         return Map.of(
-                "link", this.getLink(lawyer),
-                "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
+                "link", this.getLink(),
+                "name", this.getName(div),
+                "role", this.getRole(div),
                 "firm", this.name,
                 "country", "South Africa",
-                "practice_area", "",
+                "practice_area", this.getPracticeArea(),
                 "email", socials[0],
                 "phone", socials[1]
         );

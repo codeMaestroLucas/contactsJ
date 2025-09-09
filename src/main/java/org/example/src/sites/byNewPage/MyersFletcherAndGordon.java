@@ -30,9 +30,7 @@ public class MyersFletcherAndGordon extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = ""; //TODO: CHECK
-        String url = index == 0 ? this.link : otherUrl;
-        this.driver.get(url);
+        this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
     }
@@ -89,7 +87,7 @@ public class MyersFletcherAndGordon extends ByNewPage {
                 By.className("terms-list"),
                 By.cssSelector("span")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
     }
 
 

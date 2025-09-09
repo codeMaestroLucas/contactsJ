@@ -49,7 +49,7 @@ public class AsafoAndCo extends ByNewPage {
         if (index > 0) return;
 
         // Click on add btn
-        MyDriver.clickOnElement(By.id("cookie_action_close_header"));
+        MyDriver.clickOnAddBtn((By.id("cookie_action_close_header")));
     }
 
 

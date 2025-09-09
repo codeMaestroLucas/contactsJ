@@ -44,8 +44,7 @@ public class ArthurCox extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnAddBtn((By.id("onetrust-accept-btn-handler")));
     }
 
 

@@ -14,9 +14,12 @@ import java.util.Map;
 import java.util.Objects;
 
 public class WikborgRein extends ByNewPage {
-    private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+    private final String[] validRoles = new String[]{
+            "partner",
+            "counsel",
+            "director",
+            "managing associate",
+            "senior associate"
     };
 
     public WikborgRein() {
@@ -34,29 +37,21 @@ public class WikborgRein extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
-        MyDriver.rollDown(8, 0.3); //todo: check
+        MyDriver.clickOnAddBtn(By.className("coi-banner__accept"));
+        MyDriver.rollDown( 10, 0.3);
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("a[href^='']")//todo
+                            By.cssSelector("a[href^='/en/people/']")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -80,28 +75,30 @@ public class WikborgRein extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("mb-10"),
+                By.cssSelector("h2")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.cssSelector("a[href^='/en/expertise/']")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 
-    private String[] getSocials(WebElement lawyer) {
+    private String[] getSocials() {
         String email = ""; String phone = "";
 
-        WebElement socialsDiv = driver.findElement(By.xpath("//*[@id=\"main-content\"]/section/div/div/div[2]/div[2]/div/div[3]/div[1]/"));
+        WebElement socialsDiv = driver.findElement(By.xpath("//*[@id=\"main-content\"]/section/div/div/div[2]/div[2]/div/div[3]/div[1]"));
         email = socialsDiv.findElement(By.cssSelector("a[href*='mailto:']")).getAttribute("href");
-        phone = socialsDiv.findElement(By.cssSelector("div > div:nth-of-type(2)")).getText();
+        phone = socialsDiv.findElement(By.cssSelector("div > div:last-child")).getText();
 
         return new String[] { email, phone };
     }
@@ -111,17 +108,19 @@ public class WikborgRein extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className(""));
+        WebElement div = driver.findElement(By.className("-mx-6"));
+        String role = this.getRole(div);
+        if (role.equals("Invalid Role")) return "Invalid Role";
 
-        String[] socials = this.getSocials(div);
+        String[] socials = this.getSocials();
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
-                "role", this.getRole(div),
+                "role", role,
                 "firm", this.name,
                 "country", "Norway",
-                "practice_area", this.getCountry(div),
+                "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

@@ -33,8 +33,7 @@ public class Sangra extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.cssSelector("a[aria-label='dismiss cookie message']"));
+        MyDriver.clickOnAddBtn(By.cssSelector("a[aria-label='dismiss cookie message']"));
     }
 
 

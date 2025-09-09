@@ -36,8 +36,7 @@ public class GORG extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.cssSelector("button.button.accept"));
+        MyDriver.clickOnAddBtn(By.cssSelector("button.button.accept"));
     }
 
 

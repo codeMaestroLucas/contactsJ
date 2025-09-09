@@ -63,14 +63,15 @@ public class Extractor {
             }
 
 
-            return value;
+            return value.replaceAll("[\\t\\n]", "").trim();
 
         } catch (LawyerExceptions e) {
-            if ((fieldName.equals("PRACTICE AREA")) || (fieldName.equals("NAME"))) {
+            if ((fieldName.equals("EMAIL"))) {
+                throw e;
+            } else {
                 System.err.println(e.getMessage());
                 return "";
             }
-            throw e;
 
         } catch (Exception e) {
             throw exceptionSupplier.apply("Element not found for " + fieldName);
@@ -86,7 +87,7 @@ public class Extractor {
             java.util.function.Function<String, LawyerExceptions> exceptionSupplier)
             throws LawyerExceptions
     {
-        return extractLawyerField(lawyer, locators, fieldName, false, null, exceptionSupplier).trim();
+        return extractLawyerField(lawyer, locators, fieldName, false, null, exceptionSupplier);
     }
 
 
@@ -98,6 +99,6 @@ public class Extractor {
             java.util.function.Function<String, LawyerExceptions> exceptionSupplier)
             throws LawyerExceptions
     {
-        return extractLawyerField(lawyer, locators, fieldName, true, attributeName, exceptionSupplier).trim();
+        return extractLawyerField(lawyer, locators, fieldName, true, attributeName, exceptionSupplier);
     }
 }

@@ -53,8 +53,7 @@ public class Noerr extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+        MyDriver.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
     }
 
 
@@ -65,7 +64,7 @@ public class Noerr extends ByNewPage {
 
             return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("MuiTypography-root")
+                            By.cssSelector("a[href^='/en/professionals/']")
                     )
             );
 
@@ -82,7 +81,7 @@ public class Noerr extends ByNewPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("MuiTypography-h2")
+                By.cssSelector("h1.MuiTypography-h2")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
@@ -90,7 +89,7 @@ public class Noerr extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("p")
+                By.cssSelector("p.MuiTypography-body2")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
@@ -127,7 +126,7 @@ public class Noerr extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.cssSelector("div.MuiContainer-root.MuiContainer-maxWidthXl.css-vvmory"));
+        WebElement div = driver.findElement(By.xpath("//*[@id=\"__next\"]/div/main/div/section[1]/div/div/div[1]"));
 
         String[] socials = this.getSocials(div);
 

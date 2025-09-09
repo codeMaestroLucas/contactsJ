@@ -37,7 +37,7 @@ public class Pedersoli extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.className("iubenda-cs-accept-btn"));
+        MyDriver.clickOnAddBtn(By.className("iubenda-cs-accept-btn"));
         MyDriver.rollDown(1, 0.3);
     }
 

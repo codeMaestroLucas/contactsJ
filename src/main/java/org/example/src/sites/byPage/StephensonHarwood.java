@@ -47,7 +47,7 @@ public class StephensonHarwood extends ByPage {
             this.driver.get(this.link);
             MyDriver.waitForPageToLoad();
             Thread.sleep(1000L);
-            MyDriver.clickOnElement(By.id("ccc-notify-accept"));
+            MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
             return;
         }
 

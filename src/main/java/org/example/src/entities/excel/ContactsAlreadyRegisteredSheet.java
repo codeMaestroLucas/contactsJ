@@ -78,35 +78,31 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
 
     /**
-     * Collect the lawyers registered in the file `filteredCollectedContacts.xlsx`.
-     * If it runs and don't collect all the necessary lawyer it clears the file
-     * `lastRowRegisteredInContacts.txt` and re-run it-self.
+     * Collect and register lawyers into the destination sheet.
+     * Removes duplicates, enforces per-firm limits, and re-runs if necessary.
      */
     public void collectLawyersRegistered() {
         int i;
-        int addedThisRun = 0; // Track how many lawyers were actually registered this run
+        int addedThisRun = 0;
 
-        // Start from the row of the last row registered + 1
         for (i = this.lastFirmRow; i <= this.getSheet().getLastRowNum(); i++) {
 
             if (totalLawyers == CONFIG.LAWYERS_IN_FILTER) break;
 
             Row row = this.getSheet().getRow(i);
-            if (row == null) continue; // Skip empty rows
+            if (row == null) continue;
 
             String name = getCellValue(row.getCell(4));
             String firm = getCellValue(row.getCell(13));
             String email = getCellValue(row.getCell(5));
 
-            // Skip empty rows
             if (email.isEmpty() || name.isEmpty()) {
                 sheet.removeRow(row);
-                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1); // Compact rows
-                i--; // Stay on same index since rows shifted
+                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
+                i--;
                 continue;
             }
 
-            // Cap per-firm lawyers
             if (firm.equals(lastFirm) && totalLawyersPerFirm >= 3) continue;
 
             if (contacts.isEmailRegistered(email)) {
@@ -117,6 +113,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                 continue;
             }
 
+            // collect full lawyer info
             String phone = getCellValue(row.getCell(6));
             String country = getCellValue(row.getCell(7));
             String practiceArea = getCellValue(row.getCell(8));
@@ -134,7 +131,6 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                     .practiceArea(practiceArea)
                     .build();
 
-            // Bool to avoid repeated countries
             boolean successfullyRegistered = destinationSheet.addLawyer(lawyer, false);
             if (successfullyRegistered) {
                 sheet.removeRow(row);
@@ -145,20 +141,17 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                 addedThisRun++;
             }
 
-            // Reset per-firm counter when firm changes
             if (!firm.equals(lastFirm)) {
                 totalLawyersPerFirm = 0;
             }
             totalLawyersPerFirm++;
-
             lastFirm = firm;
         }
 
-        // Re-run the function only if we made progress
+        // re-run if needed
         if (totalLawyers < CONFIG.LAWYERS_IN_FILTER && addedThisRun > 0) {
             this.lastFirm = "";
             this.lastFirmRow = 0;
-
             if (maxReRuns > 0) {
                 maxReRuns--;
                 System.out.println("\n\u001B[32mRe-running registered Lawyers filtering\u001B[0m.\n");
@@ -171,6 +164,29 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
         this.registerFirmsCollected();
     }
 
+    /**
+     * Only filters the contacts in the sheet (removes invalid or duplicate rows).
+     */
+    public void filterContactsOnly() {
+        //change the number if needed
+        for (int i = 0; i <= 300; i++) {
+            Row row = this.getSheet().getRow(i);
+            if (row == null) continue;
+
+            String name = getCellValue(row.getCell(4));
+            String email = getCellValue(row.getCell(5));
+
+            if (email.isEmpty() || name.isEmpty()) continue;
+
+            if (contacts.isEmailRegistered(email)) {
+                System.out.println("Email '" + email + "' is already registered. Cleaning up.");
+                sheet.removeRow(row);
+                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
+                i--;
+            }
+        }
+        this.saveSheet();
+    }
 
     /**
      * Helper method to safely get a cell's string value as a string.
@@ -197,5 +213,12 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
             default -> "";
         };
+    }
+
+
+    public static void main(String[] args) {
+        // Remember to change the LastRow to 0
+        ContactsAlreadyRegisteredSheet sheet1 = new ContactsAlreadyRegisteredSheet();
+        sheet1.filterContactsOnly();
     }
 }

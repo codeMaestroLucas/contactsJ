@@ -82,7 +82,7 @@ public class HerbertSmithFreehillsKramer extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.id("ccc-recommended-settings"));
+        MyDriver.clickOnAddBtn(By.id("ccc-recommended-settings"));
     }
 
 

@@ -36,8 +36,7 @@ public class VOPatentsAndTrademarks extends ByPage {
 
         if (index > 0) return;
 
-        // Click on addbtn
-        MyDriver.clickOnElement(By.id("ppms_cm_agree-to-all"));
+        MyDriver.clickOnAddBtn(By.id("ppms_cm_agree-to-all"));
     }
 
 

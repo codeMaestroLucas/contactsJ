@@ -15,31 +15,26 @@ import java.util.Objects;
 
 public class Wiersholm extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+            By.className("wp-block-group"),
+            By.cssSelector("p")
     };
 
     public Wiersholm() {
         super(
             "Wiersholm",
             "https://www.wiersholm.no/mennesker",
-            1
+            38
         );
     }
 
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        String otherUrl = "https://wiersholm.no/mennesker/?query-0-page=" + (index + 1);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
-
-        WebElement loadMoreBtn = driver.findElement(By.className("footer-load"))
-                .findElement(By.className("Button__ButtonWrapper-sc-nd9pfz-0"));
-        MyDriver.clickOnElementMultipleTimes(loadMoreBtn, 7, 0.3);
     }
 
 
@@ -48,15 +43,17 @@ public class Wiersholm extends ByNewPage {
         String[] validRoles = new String[]{
                 "partner",
                 "counsel",
-                "senior associate"
+                "senior associate",
+                "managing associate"
         };
+
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.people-blocks > a.item")
+                            By.className("t2-post-link")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -74,7 +71,7 @@ public class Wiersholm extends ByNewPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("employee-title")
+                By.className("wp-block-t2-post-title")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
@@ -82,26 +79,16 @@ public class Wiersholm extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.cssSelector("p")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-    }
-
-
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer
-                    .findElement(By.className("contact-info"))
+                    .findElement(By.className("contact-information"))
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
@@ -116,7 +103,7 @@ public class Wiersholm extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("person-info"));
+        WebElement div = driver.findElement(By.className("wp-block-media-text__content"));
 
         String[] socials = this.getSocials(div);
 
@@ -126,9 +113,9 @@ public class Wiersholm extends ByNewPage {
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Norway",
-                "practice_area", this.getCountry(div),
+                "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "" : socials[1]
+                "phone", socials[1].isEmpty() ? "4721021000" : socials[1]
         );
     }
 }

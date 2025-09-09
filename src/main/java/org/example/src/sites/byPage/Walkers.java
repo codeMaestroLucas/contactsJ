@@ -51,7 +51,7 @@ public class Walkers extends ByPage {
             this.driver.get(this.link);
             MyDriver.waitForPageToLoad();
             Thread.sleep(1000L);
-            MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+            MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
         } else {
             WebElement nextButton = driver.findElement(By.className("SearchPagination")).findElement(By.cssSelector("button.button.button--secondary.button-right.button-blue"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", nextButton);

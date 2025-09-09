@@ -23,8 +23,7 @@ public class Fischer extends ByNewPage {
         super(
                 "Fischer",
                 "https://www.fbclawyers.com/team/",
-                1,
-                1000
+                1
         );
     }
 

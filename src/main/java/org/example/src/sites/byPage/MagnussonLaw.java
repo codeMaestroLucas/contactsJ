@@ -95,7 +95,7 @@ public class MagnussonLaw extends ByPage {
                 By.className("entry-content"),
                 By.cssSelector("p > a[href^='https://www.magnussonlaw.com/']")
         };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "title",LawyerExceptions::countryException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "title", LawyerExceptions::countryException);
     }
 
 

@@ -50,7 +50,7 @@ public class WinstonAndStrawn extends ByPage {
 
         if (index > 0) return;
 
-        MyDriver.clickOnElement(By.xpath("//*[@id=\"app\"]/section/div/div/div/div/div/div[2]/button"));
+        MyDriver.clickOnAddBtn(By.xpath("//*[@id=\"app\"]/section/div/div/div/div/div/div[2]/button"));
     }
 
 
