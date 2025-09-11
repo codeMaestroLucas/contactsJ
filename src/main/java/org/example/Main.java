@@ -29,7 +29,7 @@ public class Main {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
 
-        List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET + 20);
+        List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET + 70);
 
         try {
             for (Site site : sites) {

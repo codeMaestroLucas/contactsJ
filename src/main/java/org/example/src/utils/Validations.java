@@ -21,7 +21,7 @@ public class Validations {
     /**
      * Checks if a given country is in the "countriesToAvoid.json" file.
      */
-    private static boolean isACountryToAvoid(String country) {
+    public static boolean isACountryToAvoid(String country) {
         Path filePath = Paths.get("src/main/resources/baseFiles/json/countriesToAvoid.json");
         ObjectMapper mapper = new ObjectMapper();
 

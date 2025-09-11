@@ -1,7 +1,9 @@
 package org.example.src.entities.excel;
 
+import org.apache.commons.lang3.Validate;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
+import org.example.src.utils.Validations;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -37,7 +39,11 @@ public final class Sheet extends Excel {
         String country = lawyer.getCountry();
 
         // Just a fallBack, should never happen
-        if (this.lastCountries.contains((country.toLowerCase())) && this.lastFirm.equalsIgnoreCase(firm)) return false;
+        if (
+            this.lastCountries.contains((country.toLowerCase())) &&
+            this.lastFirm.equalsIgnoreCase(firm) &&
+            Validations.isACountryToAvoid(country)
+        ) return false;
 
         this.addContentOnRow(
                 this.currentRow,

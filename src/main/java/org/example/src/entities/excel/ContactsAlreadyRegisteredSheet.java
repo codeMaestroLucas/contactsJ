@@ -5,6 +5,7 @@ import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
+import org.example.src.utils.Validations;
 
 import java.io.*;
 import java.util.HashSet;
@@ -95,6 +96,9 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             String name = getCellValue(row.getCell(4));
             String firm = getCellValue(row.getCell(13));
             String email = getCellValue(row.getCell(5));
+            String country = getCellValue(row.getCell(7));
+
+            if (Validations.isACountryToAvoid(country)) continue;
 
             if (email.isEmpty() || name.isEmpty()) {
                 sheet.removeRow(row);
@@ -115,7 +119,6 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
             // collect full lawyer info
             String phone = getCellValue(row.getCell(6));
-            String country = getCellValue(row.getCell(7));
             String practiceArea = getCellValue(row.getCell(8));
             String link = getCellValue(row.getCell(9));
             String role = getCellValue(row.getCell(12));

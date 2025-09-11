@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
  * Class used to test a new Site
  */
 
-    class MyTestPage extends TannerDeWitt {
+    class MyTestPage extends Dompatent {
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */

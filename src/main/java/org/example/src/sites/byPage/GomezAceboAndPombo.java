@@ -15,15 +15,10 @@ import static java.util.Map.entry;
 
 public class GomezAceboAndPombo extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("barcelona", "Spain"),
-            entry("bilbao", "Spain"),
             entry("brussels", "Belgium"),
             entry("lisbon", "Portugal"),
             entry("london", "England"),
-            entry("madrid", "Spain"),
-            entry("new york", "USA"),
-            entry("valencia", "Spain"),
-            entry("vigo", "Spain")
+            entry("new york", "USA")
     );
 
 

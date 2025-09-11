@@ -73,23 +73,12 @@ public class Dompatent extends ByPage {
     }
 
 
-    private String getName(WebElement lawyer) {
-        try {
-            By[] byArray = new By[]{
-                    By.className("modal-header"),
-                    By.cssSelector("h1")
-            };
-            String html = extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException);
-            Pattern pattern = Pattern.compile("<h1>\\s*([^<]+?)\\s*<span");
-            Matcher matcher = pattern.matcher(html);
-
-            if (matcher.find()) {
-                return matcher.group(1).trim();
-            }
-        } catch (Exception e) {
-            System.err.println("Could not extract name: " + e.getMessage());
-        }
-        return "";
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("modal-header"),
+                By.cssSelector("h1")
+        };
+        return this.siteUtl.iterateOverBy(byArray, lawyer).getAttribute("innerHTML").split("<span")[0];
     }
 
 
