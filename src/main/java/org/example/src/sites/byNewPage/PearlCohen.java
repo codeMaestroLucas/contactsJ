@@ -109,7 +109,8 @@ public class PearlCohen extends ByNewPage {
                 By.cssSelector("li")
         };
         String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-        return role.split(",")[1];
+        String[] split = role.split(",");
+        return split[split.length - 1];
     }
 
 
