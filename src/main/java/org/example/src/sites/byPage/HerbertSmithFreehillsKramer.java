@@ -16,43 +16,43 @@ import static java.util.Map.entry;
 
 public class HerbertSmithFreehillsKramer extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("africa", "Africa"),
-            entry("africa group", "Africa Group"),
+            entry("africa", "South Africa"),
+            entry("africa group", "South Africa"),
             entry("americas", "Americas"),
             entry("asia", "Asia"),
             entry("bangkok", "Thailand"),
             entry("belfast", "England"),
             entry("brussels", "Belgium"),
-            entry("central asia group", "Central Asia Group"),
+            entry("central asia group", "Central Asia"),
             entry("dubai", "the UAE"),
             entry("europe", "Europe"),
             entry("germany", "Germany"),
             entry("hong kong", "Hong Kong"),
-            entry("india group", "India Group"),
-            entry("israel group", "Israel Group"),
+            entry("india group", "India"),
+            entry("israel group", "Israel"),
             entry("jakarta", "Indonesia"),
             entry("johannesburg", "South Africa"),
-            entry("kazakhstan group", "Kazakhstan Group"),
-            entry("korea group", "Korea Group"),
-            entry("latin america group", "Latin America Group"),
+            entry("kazakhstan group", "Kazakhstan"),
+            entry("korea group", "Korea (South)"),
+            entry("latin america group", "Latin America"),
             entry("london", "England"),
             entry("london canary wharf", "England"),
             entry("luxembourg", "Luxembourg"),
             entry("madrid", "Spain"),
             entry("mainland china", "China"),
-            entry("malaysia group", "Malaysia Group"),
+            entry("malaysia group", "Malaysia"),
             entry("middle east", "Middle East"),
             entry("milan", "Italy"),
             entry("new york", "USA"),
-            entry("nordic group", "Nordic Group"),
+            entry("nordic group", "Nordic"),
             entry("paris", "France"),
             entry("riyadh", "Saudi Arabia"),
             entry("silicon valley", "USA"),
             entry("singapore", "Singapore"),
-            entry("switzerland group", "Switzerland Group"),
+            entry("switzerland group", "Switzerland"),
             entry("tokyo", "Japan"),
-            entry("ukraine group", "Ukraine Group"),
-            entry("vietnam group", "Vietnam Group"),
+            entry("ukraine group", "Ukraine"),
+            entry("vietnam group", "Vietnam"),
             entry("washington dc", "USA"),
             entry("us", "USA")
     );
@@ -123,20 +123,8 @@ public class HerbertSmithFreehillsKramer extends ByPage {
 
 
     private String getCountry(WebElement lawyer) {
-        try {
-            String text = lawyer.findElement(By.className("desc")).getText();
-            String[] parts = text.split(",");
-            if (parts.length < 2) return "";
-
-            String[] officeParts = parts[1].replace("and", " ").replaceAll("[,./]", "").trim().split("\\s+");
-
-            for (String part : officeParts) {
-                return OFFICE_TO_COUNTRY.getOrDefault(part.toLowerCase(), "Australia");
-            }
-        } catch (Exception e) {
-            System.err.println("Could not determine country: " + e.getMessage());
-        }
-        return "";
+        String country = lawyer.findElement(By.className("desc")).getText();
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, country);
     }
 
 

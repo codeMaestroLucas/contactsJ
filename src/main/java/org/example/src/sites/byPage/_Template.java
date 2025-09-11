@@ -38,7 +38,6 @@ public class _Template extends ByPage {
 
         if (index > 0) return;
 
-        // Click on add btn
         MyDriver.clickOnAddBtn(By.id(""));
     }
 

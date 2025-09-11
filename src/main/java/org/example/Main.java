@@ -2,7 +2,6 @@ package org.example;
 
 import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.entities.excel.Reports;
 import org.example.src.utils.FirmsOMonth;
@@ -13,9 +12,12 @@ import java.util.List;
 import java.util.concurrent.*;
 
 import static org.example.src.utils.TimeCalculator.calculateTimeOfExecution;
-import static org.example.src.utils.TimeCalculator.calculateTimeOfExecutionWithTimeout;
 
 public class Main {
+    private static final Reports reports = Reports.getINSTANCE();
+    private static final MyInterfaceUtls instance = MyInterfaceUtls.getINSTANCE();
+
+
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
 
     private static void getRegisteredContacts() {
@@ -41,16 +43,17 @@ public class Main {
 
             interfaceUtls.header(site.name);
 
+            long initTime = System.currentTimeMillis();
+
             // A tarefa que será executada com timeout
             Future<Void> future = executor.submit(() -> {
-                // Cada site tem seu próprio driver para garantir o isolamento
                 site.searchForLawyers(false);
                 return null; // Callable precisa retornar um valor
             });
 
             try {
                 // Define o timeout. Aqui, estou usando 10 minutos.
-                future.get(10, TimeUnit.MINUTES);
+                future.get(1, TimeUnit.MINUTES);
 
                 if (site.lawyersRegistered > 0) {
                     FirmsOMonth.registerFirmMonth(site.name);
@@ -68,6 +71,10 @@ public class Main {
                 if (e.getCause() != null) {
                     e.getCause().printStackTrace();
                 }
+
+            } finally {
+                long endTime = System.currentTimeMillis();
+                reports.createReportRow(site, instance.calculateTime(initTime, endTime));
             }
         }
 
@@ -79,7 +86,7 @@ public class Main {
 
 
     private static void performCompleteSearch() {
-//        calculateTimeOfExecution(Main::getRegisteredContacts);
+        calculateTimeOfExecution(Main::getRegisteredContacts);
         calculateTimeOfExecution(Main::searchLawyersInWeb);
 
         System.out.println("\n\n" + "=".repeat(70));

@@ -1,12 +1,14 @@
 package org.example.src.entities.BaseSites;
 
 import lombok.Data;
+import org.example.exceptions.LawyerExceptions;
 import org.example.exceptions.ValidationExceptions;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.Sheet;
 import org.example.src.utils.EmailOfMonth;
+import org.example.src.utils.ErrorLogger;
 import org.example.src.utils.Extractor;
 import org.example.src.utils.Validations;
 import org.openqa.selenium.WebDriver;
@@ -27,6 +29,7 @@ public abstract class Site {
     public final WebDriver driver = MyDriver.getINSTANCE();
     protected final SiteUtils siteUtl = SiteUtils.getINSTANCE();
     protected final Extractor extractor = Extractor.getINSTANCE();
+    protected final ErrorLogger errorLogger = ErrorLogger.getINSTANCE(); // Instância do Logger
     protected String emailsOfMonthPath;
     protected String emailsToAvoidPath;
 
@@ -91,8 +94,7 @@ public abstract class Site {
             if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {
                 email = value;
 
-                } else if (phone.isEmpty()) {
-                // Remove all non-digits values
+            } else if (phone.isEmpty()) {
                 String cleaned = value.replaceAll("[^0-9]", "");
                 if (cleaned.length() > 5) phone = cleaned;
             }
@@ -110,7 +112,6 @@ public abstract class Site {
         EmailOfMonth.registerEmailOfMonth(lawyer.getEmail(), this.getEmailsOfMonthPath());
 
         String country = lawyer.getCountry();
-        // Fixed: Use && instead of ||
         if (!country.equals("Not Found") && !country.equals("-----")) {
             this.lastCountries.add(country);
         }
@@ -118,15 +119,16 @@ public abstract class Site {
         this.lawyersRegistered++;
     }
 
-    // Updated to return boolean to indicate if processing should stop
-    protected boolean registerValidLawyer(Object lawyerDetails, int index, int i, boolean showLogs) {
+    protected boolean registerValidLawyer(Object lawyerDetails, int index, int i, boolean showLogs)  {
         if (lawyerDetails instanceof Map<?, ?>) {
             Map<String, String> map = (Map<String, String>) lawyerDetails;
 
             if (map.get("link") == null || map.get("link").isEmpty() ||
                     map.get("email") == null || map.get("email").isEmpty()) {
-                siteUtl.printInvalidLawyer(map);
-                return false; // Continue processing
+                if (showLogs) {
+                    siteUtl.printInvalidLawyer(map);
+                }
+                return false;
             }
 
             Lawyer lawyerToRegister = Lawyer.builder()
@@ -148,33 +150,33 @@ public abstract class Site {
                         this.getEmailsToAvoidPath()
                 );
 
-                 this.addLawyer(lawyerToRegister);
+                this.addLawyer(lawyerToRegister);
 
                 if (this.getLawyersRegistered() >= this.getMaxLawyersForSite()) {
                     System.out.printf("No more than %d lawyer(s) needed for the firm %s.%n",
                             this.getMaxLawyersForSite(), this.getName());
-                    return true; // Signal to stop processing
+                    return true;
                 }
 
             } catch (ValidationExceptions e) {
                 if (showLogs) {
-                    System.err.printf("Error reading %dth lawyer at page %d of firm %s.%nSkipping...%n",
-                            index + 1, i + 1, this.name);
-                    System.err.println("Validation error " + e.getMessage());
-
                     siteUtl.printInvalidLawyer(map);
-
+                    System.out.println(e.getMessage());
+                    System.out.println("\n\n");
                 }
+            } catch (Exception e) {
+                // Log all other exceptions
+                errorLogger.log(this.name, e, showLogs);
             }
         } else {
             System.out.println("Invalid lawyer data structure.");
         }
 
-        return false; // Continue processing
+        return false;
     }
 
     // ABSTRACT METHODS
     protected abstract List<WebElement> getLawyersInPage();
     protected abstract Object getLawyer(WebElement lawyer) throws Exception;
-    public abstract Runnable searchForLawyers(boolean showLogs) throws Exception;
+    public abstract Runnable searchForLawyers(boolean showLogs);
 }

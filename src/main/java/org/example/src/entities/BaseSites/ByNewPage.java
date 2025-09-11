@@ -1,8 +1,10 @@
 package org.example.src.entities.BaseSites;
 
 import org.example.exceptions.LawyerExceptions;
+import org.example.exceptions.ValidationExceptions;
 import org.example.src.CONFIG;
 import org.example.src.entities.MyDriver;
+import org.example.src.utils.ErrorLogger;
 import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.WebElement;
 
@@ -19,7 +21,7 @@ public abstract class ByNewPage extends Site {
     }
 
     @Override
-    public Runnable searchForLawyers(boolean showLogs) throws Exception {
+    public Runnable searchForLawyers(boolean showLogs) {
         // Use labeled break to exit both loops
         pageLoop: for (int i = 0; i < this.getTotalPages(); i++) {
             System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.getTotalPages());
@@ -61,17 +63,20 @@ public abstract class ByNewPage extends Site {
                     if (shouldStop) {
                         break pageLoop; // Break out of both loops
                     }
-
                 } catch (Exception e) {
                     System.out.printf(
                             "Error reading %dth lawyer at the page %d of the firm %s.%nError: %s%n",
                             index + 1, i + 1, this.name, e.getMessage()
                     );
-                    System.out.println("#".repeat(70));
-                    e.printStackTrace();
-                    System.out.println("#".repeat(70) + "\n");
+                    if (showLogs) {
+                        System.out.println("#".repeat(70));
+                        e.printStackTrace();
+                        System.out.println("#".repeat(70) + "\n");
+                    } else {
+                        errorLogger.log(this.name, e, false);
+                    }
                 } finally {
-                    MyDriver.closeCurrentTab();
+                    if (driver.getWindowHandles().size() >1) MyDriver.closeCurrentTab();
                 }
             }
         }

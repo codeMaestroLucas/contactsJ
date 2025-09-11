@@ -1,5 +1,7 @@
 package org.example.src.entities.BaseSites;
 
+import org.example.exceptions.LawyerExceptions;
+import org.example.exceptions.ValidationExceptions;
 import org.example.src.CONFIG;
 import org.openqa.selenium.WebElement;
 
@@ -16,7 +18,7 @@ public abstract class ByPage extends Site {
     }
 
     @Override
-    public Runnable searchForLawyers(boolean showLogs) throws Exception {
+    public Runnable searchForLawyers(boolean showLogs) {
         // Use labeled break to exit both loops
         pageLoop: for (int i = 0; i < this.getTotalPages(); i++) {
             System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.getTotalPages());
@@ -50,7 +52,6 @@ public abstract class ByPage extends Site {
                     Object lawyerDetails = getLawyer(lawyer);
 
                     if (lawyerDetails instanceof String) {
-//                        System.out.println("Invalid Role");
                         continue;
                     }
 
@@ -65,9 +66,13 @@ public abstract class ByPage extends Site {
                             "Error reading %dth lawyer at the page %d of the firm %s.%nError: %s%n",
                             index + 1, i + 1, this.getName(), e.getMessage()
                     );
-                    System.out.println("#".repeat(70));
-                    e.printStackTrace();
-                    System.out.println("#".repeat(70) + "\n");
+                    if (showLogs) {
+                        System.out.println("#".repeat(70));
+                        e.printStackTrace();
+                        System.out.println("#".repeat(70) + "\n");
+                    } else {
+                        errorLogger.log(this.name, e, false);
+                    }
                 }
             }
         }
