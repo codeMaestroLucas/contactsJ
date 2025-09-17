@@ -34,7 +34,7 @@ public class _CompletedFirmsData {
             new HerbertSmithFreehillsKramer(), new BarristonLaw(), new Chattertons(), new BlandyAndBlandy(), new Allens(),
             new DBHLaw(), new Helmsman(), new DRAndAJU(), new TahotaLaw(), new StewartMcKelvey(),
             new SIRIUS(), new Roschier(), new Liedekerke(), new CliffordChance(), new MorganLewis(),
-            new SheppardMullin(), new Skadden(), new McMillan(), new SteinmetzHaringGurman(),
+            new SheppardMullin(), new Skadden(), new McMillan(), new SteinmetzHaringGurman(), new FluegelPreissner(),
 
             /* Await firms - Countries to avoid for now ...
             new BaeKimAndLee(),
@@ -85,8 +85,10 @@ public class _CompletedFirmsData {
             new Wiersholm(), new ABGIP(), new AOil(), new Belgravia(), new EProint(), new FCMLimited(),
             new Ferrere(), new HamsoPatentybra(), new Holmes(), new JacksonEttiAndEdu(), new Kondrat(),
             new LatinAlliance(), new LePooleBekema(), new SabaAndCo(), new SargentAndKrahn(), new WardynskiAndPartners(),
-
-
+            new DumontBergmanBider(), new MBM(), new MarksAndClerk(), new HansOffiaAndAssociates(), new PortaAndConsulentiAssociati(),
+            new EPAndC(), new Hamso(), new JWP(), new ACAndR(), new KennedyVanderLaan(),
+            new METIDA(), new PhilippeAndPartners(), new SBGK(), new DANUBIAPatentAndLaw(), new ReinhardSkuhraWeiseAndPartnerGbR(),
+            new PrinzAndPartner(), new PrueferAndPartner(), new FPSLaw(),
 
             /* Await firms - Countries to avoid for now ...
             new NurmansyahAndMuzdalifah(),

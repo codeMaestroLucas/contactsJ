@@ -21,7 +21,7 @@ public final class MyDriver {
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless"); // Run Chrome in headless mode
+//            options.addArguments("--headless"); // Run Chrome in headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
@@ -63,17 +63,15 @@ public final class MyDriver {
      * @param sleepTime       Sleep time in seconds between scrolls.
      */
     public static void rollDown(int timesToRollDown, double sleepTime) throws InterruptedException {
-        Actions actions = new Actions(driver);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
         for (int i = 0; i < timesToRollDown; i++) {
             Thread.sleep((long) (sleepTime * 1000L));
-            actions.keyDown(Keys.CONTROL)
-                    .sendKeys(Keys.END)
-                    .keyUp(Keys.CONTROL)
-                    .perform();
+            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         }
         Thread.sleep(1500);
     }
+
 
 
     /**

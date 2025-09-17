@@ -23,7 +23,7 @@ public final class Lawyer {
 
     // Abbreviations to remove
     final Set<String> abbreviations = new HashSet<>(Arrays.asList(
-            "mr", "ms", "mx", "dr", "prof", "mrs", "miss",
+            "mr", "ms", "mx", "dr", "prof", "mrs", "miss", "php",
             "master", "sir", "esq", "rev", "att", "llm", "kc"
     ));
 
@@ -38,7 +38,7 @@ public final class Lawyer {
         "Founding Partner",
 
         "Partner", "Counsel", "Director", "Founder", "Principal", "Advisor", "Manager", "Shareholder",
-        "Head", "Chair", "Legal", "Silk"
+        "Head", "Chair", "Legal", "Silk", "Dipl."
     };
 
     @Builder

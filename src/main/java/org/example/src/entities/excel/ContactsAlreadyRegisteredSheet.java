@@ -176,10 +176,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             Row row = this.getSheet().getRow(i);
             if (row == null) continue;
 
-            String name = getCellValue(row.getCell(4));
             String email = getCellValue(row.getCell(5));
-
-            if (email.isEmpty() || name.isEmpty()) continue;
 
             if (contacts.isEmailRegistered(email)) {
                 System.out.println("Email '" + email + "' is already registered. Cleaning up.");

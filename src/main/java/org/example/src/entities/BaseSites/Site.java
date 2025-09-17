@@ -102,7 +102,7 @@ public abstract class Site {
             if (!email.isEmpty() && !phone.isEmpty()) break;
         }
 
-        return new String[]{email, phone};
+        return new String[]{ email, phone };
     }
 
     protected void addLawyer(Lawyer lawyer) {

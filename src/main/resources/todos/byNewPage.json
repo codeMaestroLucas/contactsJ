@@ -4,6 +4,59 @@
     "link": ""
   },
   {
+    "name": "Kovári and Partners",
+    "link": "https://kovaripatent.com/team/"
+  },
+  {
+    "name": "Gödölle, Kékes, MészárosAndSzabó",
+    "link": "https://godollepat.hu/en/attorneys-2/",
+    "Note": "Check if there's any more lawyer to register"
+  },
+  {
+    "name": "Greyhills Rechtsanwälte",
+    "link": "https://www.greyhills.com/en/success-team/"
+  },
+  {
+    "name": "NotarbartoloAndGervasi",
+    "link": "https://www.ngpatent.it/en/NG-Team"
+  },
+  {
+    "name": "Freylinger",
+    "link": "https://www.freylinger.com/our-team/"
+  },
+  {
+    "name": "Cruickshank",
+    "link": "https://cruickshank.ie/our-people"
+  },
+  {
+    "name": "Arnason Faktor",
+    "link": "https://arnasonfaktor.is/en/about-us-about-us/about-us"
+  },
+  {
+    "name": "AbenryAndCompany",
+    "link": "https://abenry.co.tz/"
+  },
+  {
+    "name": "Enpora",
+    "link": "https://enpora.com/about-us/our-experts/"
+  },
+  {
+    "name": "ACOPAT ID",
+    "link": "https://www.acopat.com/en/team"
+  },
+  {
+    "name": "Otello",
+    "link": "https://otello.dk/en/medarbejdere"
+  },
+  {
+    "name": "Vemma Consult",
+    "link": "https://vemmaattorneys.co.tz/our-people/"
+  },
+  {
+    "name": "Estudio Delion",
+    "link": "https://www.estudiodelion.com.pe/our-team/"
+  },
+  {
     "name": "BTG Advaya",
     "link": "https://www.btgadvaya.com/our-people",
     "note": "INDIA"
@@ -89,6 +142,10 @@
     "link": "https://allanhall.com.au/our-directors/"
   },
   {
+  "name": "CameronAndShepherd",
+  "link": "https://cameronandshepherd.com/our-team"
+  },
+  {
     "name": "Stach Rechtsanwälte",
     "link": "https://stach.ch/en/team-2/"
   },
@@ -105,7 +162,10 @@
     "link": "https://www.greenslist.com.au/s/mediators",
     "Note": "Check if is an valid firm"
   },
-
+  {
+    "name": "Nieto Patents and Trademark",
+    "link": "https://nietonieto.com/en/our-partners/"
+  },
 
 
 
@@ -193,22 +253,6 @@
     "Note": "Country: Nevis. Avoid the first partner"
   },
   {
-    "name": "Ferrere",
-    "link": "https://www.ferrere.com/es/profesionales/"
-  },
-  {
-    "name": "Estudio Delion",
-    "link": "https://www.estudiodelion.com.pe/our-team/"
-  },
-  {
-    "name": "Dumont Bergman Bider",
-    "link": "https://www.dumont.mx/our-team/"
-  },
-  {
-    "name": "CameronAndShepherd",
-    "link": "https://cameronandshepherd.com/our-team"
-  },
-  {
     "name": "Stellex",
     "link": "https://stellexlaw.com/en/professionals.html"
   },
@@ -217,51 +261,16 @@
     "link": "https://www.pcwoo.com.hk/people.html"
   },
   {
-    "name": "East IP",
-    "link": "https://east-ip.com/"
-  },
-  {
-    "name": "Steinmetz Haring GurmanAndCo",
-    "link": "https://shg-law.co/the-team/#filter=.team_iso_6"
-  },
-  {
-    "name": "Legalsa",
-    "link": "https://www.legalsa.com/socios/"
-  },
-  {
-    "name": "LatinAlliance",
-    "link": "https://latinalliance.co/en/expertoslegal/"
-  },
-  {
-    "name": "EProint",
-    "link": "https://eproint.com/what-we-do-best/#ourPeople"
-  },
-  {
-    "name": "SargentAndKrahn",
-    "link": "https://www.sargent.cl/en/our-team/?filter_tax_326=partner,partner-en"
-  },
-  {
-    "name": "Nieto Patents and Trademark",
-    "link": "https://nietonieto.com/en/our-partners/"
-  },
-  {
-    "name": "MBM Intellectual Property Law",
-    "link": "http://www.mbm.com/en/our-team"
-  },
-  {
     "name": "HSM Group",
-    "link": "https://hsmllpcas.com/profiles/",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://hsmllpcas.com/profiles/"
   },
   {
     "name": "Cameron IP",
-    "link": "https://cameronintellectualproperty.com/team/",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://cameronintellectualproperty.com/team/"
   },
   {
     "name": "Riches, McKenzieAndHerbert",
-    "link": "https://www.patents-toronto.com/people/",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://www.patents-toronto.com/people/"
   },
   {
     "name": "KIBLAF LLC",
@@ -300,16 +309,12 @@
     "link": "https://natl.com.my/our-people/"
   },
   {
-    "name": "Marks&Clerk",
-    "link": "https://www.marks-clerk.com/our-people/"
-  },
-  {
     "name": "FPA Patent",
     "link": "https://www.fpapatents.com/our-attorneys/"
   },
   {
-    "name": "HastingsAndCo",
-    "link": "https://hastings-hk.com/our-people/"
+  "name": "HastingsAndCo",
+  "link": "https://hastings-hk.com/our-people/"
   },
   {
     "name": "Fairbairn Catley LowAndKong",
@@ -343,139 +348,13 @@
     "name": "DAI TINAndASSOCIATES",
     "link": "https://daitin.com.vn/our-team/partners/"
   },
-  {
-    "name": "Vemma Consult",
-    "link": "https://vemmaattorneys.co.tz/our-people/"
-  },
-  {
-    "name": "AbenryAndCompany",
-    "link": "https://abenry.co.tz/partners/"
-  },
-  {
-    "name": "Hans OffiaAndAssociates",
-    "link": "https://hansoffialawfirm.com/team/"
-  },
-  {
-    "name": "Jackson, EttiAndEdu",
-    "link": "https://www.jee.africa/people"
-  },
-  {
-    "name": "PortaAndConsulenti Associati",
-    "link": "https://www.pcapatlaw.it/en/about-us/"
-  },
-  {
-    "name": "Enpora",
-    "link": "https://enpora.com/about-us/our-experts/"
-  },
-  {
-    "name": "ACOPAT ID",
-    "link": "https://www.acopat.com/en/team"
-  },
-  {
-    "name": "Kondrat",
-    "link": "https://kondrat.pl/en/home/"
-  },
-  {
-    "name": "WardyńskiAndPartners ",
-    "link": "https://wardynski.com.pl/en/lawyers"
-  },
-  {
-    "name": "JWP",
-    "link": "https://www.jwp-poland.com/team/"
-  },
-  {
-    "name": "Otello",
-    "link": "https://otello.dk/en/medarbejdere"
-  },
-  {
-    "name": "Hamso Patentybra",
-    "link": "https://www.patent.no/en/our-employees/"
-  },
-  {
-    "name": "EP&C",
-    "link": "https://www.epc.nl/en/employees"
-  },
-  {
-    "name": "Le Poole Bekema",
-    "link": "https://acr.amsterdam/en/#people"
-  },
-  {
-    "name": "Kennedy Van der Laan",
-    "link": "https://kvdl.com/en/our-team@job-function:attorney-at-law"
-  },
-  {
-    "name": "PhilippeAndPartners",
-    "link": "https://philippelaw.eu/en/lawyers/"
-  },
-  {
-    "name": "Freylinger",
-    "link": "https://www.freylinger.com/our-team/"
-  },
-  {
-    "name": "METIDA",
-    "link": "https://metida.com/all-team/#"
-  },
-  {
-    "name": "Cruickshank",
-    "link": "https://cruickshank.ie/our-people"
-  },
-  {
-    "name": "Arnason Faktor",
-    "link": "https://arnasonfaktor.is/en/about-us-about-us/about-us"
-  },
-  {
-    "name": "SBGK",
-    "link": "https://sbgk.hu/en/our_people"
-  },
-  {
-    "name": "MSA IP Law",
-    "link": "https://msa-iplaw.com/people/"
-  },
-  {
-    "name": "Kovári and Partners",
-    "link": "https://kovaripatent.com/team/"
-  },
-  {
-    "name": "Gödölle, Kékes, MészárosAndSzabó",
-    "link": "https://godollepat.hu/en/attorneys-2/",
-    "Note": "Check if there's any more lawyer to register"
-  },
-  {
-    "name": "DANUBIA PatentAndLaw",
-    "link": "https://www.danubia.com/danubia-patent-and-law-office/#our-people"
-  },
-  {
-    "name": "RGTH",
-    "link": "https://rgth.de/en/team-2/"
-  },
-  {
-    "name": "Reinhard Skuhra WeiseAndPartner GbR",
-    "link": "https://www.isarpatent.com/team/partner-von-isarpatent/"
-  },
-  {
-    "name": "PrinzAndPartner",
-    "link": "https://www.prinz.eu/en/team"
-  },
-  {
-    "name": "PrüferAndPartner",
-    "link": "https://pruefer.eu/en/team/"
-  },
-  {
-    "name": "NotarbartoloAndGervasi",
-    "link": "https://www.ngpatent.it/en/NG-Team"
-  },
-  {
-    "name": "Greyhills Rechtsanwälte",
-    "link": "https://www.greyhills.com/en/success-team/"
-  },
-  {
-    "name": "FPS Law",
-    "link": "https://fps-law.de/de/experten"
-  },
-  {
-    "name": "Flügel Preissner",
-    "link": "https://fluegelpreissner.com/en/start/#!/team"
-  },
+
+
+
+
+
+
+
   {
     "name": "BettenAndResch",
     "link": "https://www.bettenresch.com/en-frontpage#our_team"
@@ -1786,18 +1665,15 @@
   },
   {
     "name": "Lavery",
-    "link": "https://www.lavery.ca/en/team.html",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://www.lavery.ca/en/team.html"
   },
   {
     "name": "Robertson Stromberg",
-    "link": "https://www.rslaw.com/lawyers/",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://www.rslaw.com/lawyers/"
   },
   {
     "name": "Pitblado",
-    "link": "https://www.pitblado.com/our-people",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://www.pitblado.com/our-people"
   },
   {
     "name": "Lavelle Partners",
@@ -2577,8 +2453,7 @@
   },
   {
     "name": "Harris",
-    "link": "https://harrisco.com/lawyers/",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://harrisco.com/lawyers/"
   },
   {
     "name": "Divjak Topić BahtijarevićAndKrka Law",
@@ -2869,8 +2744,7 @@
   },
   {
     "name": "BoyneClarke",
-    "link": "https://boyneclarke.com/lawyers/",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://boyneclarke.com/lawyers/"
   },
   {
     "name": "BossAndYoung",
@@ -2950,8 +2824,7 @@
   },
   {
     "name": "Benson Buffett",
-    "link": "https://www.bensonbuffett.com/lawyers",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://www.bensonbuffett.com/lawyers"
   },
   {
     "name": "BennaniAndAssocies",
@@ -3104,8 +2977,7 @@
   },
   {
     "name": "Benson Buffett",
-    "link": "https://bensonbuffett.com/lawyers",
-    "Note": "Canada, check if is an valid firm"
+    "link": "https://bensonbuffett.com/lawyers"
   },
   {
     "name": "Corcoran",
