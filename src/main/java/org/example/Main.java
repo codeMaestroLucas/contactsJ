@@ -5,6 +5,7 @@ import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.entities.excel.Reports;
 import org.example.src.utils.FirmsOMonth;
+import org.example.src.utils.NoSleep;
 import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 
@@ -93,6 +94,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        performCompleteSearch();
+        NoSleep.preventSleep(); // block sleep
+        try {
+            performCompleteSearch();
+        } finally {
+            NoSleep.allowSleep(); // allow sleep again when finished
+        }
     }
 }

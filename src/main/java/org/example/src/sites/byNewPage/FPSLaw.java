@@ -66,7 +66,6 @@ public class FPSLaw extends ByNewPage {
                 By.className("about__subtitle")
         };
         String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-        System.out.println(role);
         return siteUtl.isValidPosition(role, validRoles) ? role : "Invalid Role";
     }
 

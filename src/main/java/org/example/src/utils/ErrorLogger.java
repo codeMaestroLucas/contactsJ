@@ -35,8 +35,8 @@ public class ErrorLogger {
         // Initialize the log file for the new session. This will overwrite the old file.
         try (FileWriter fw = new FileWriter(LOG_FILE_PATH, false); // 'false' for overwrite mode
              PrintWriter pw = new PrintWriter(fw)) {
-            pw.println("===== LOG SESSION STARTED =====");
-            pw.println("====================================================\n");
+            pw.println("=============== LOG SESSION STARTED ===============");
+            pw.printf("Session started at: %s%n%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         } catch (IOException e) {
             System.err.println("FATAL: Could not initialize log file.");
             e.printStackTrace(System.err);
@@ -71,22 +71,31 @@ public class ErrorLogger {
         // Initialize the set for the firm if it doesn't exist
         loggedErrorsByFirm.putIfAbsent(firmName, new HashSet<>());
 
-        // If this specific error type has already been logged for this firm, do nothing.
-        if (loggedErrorsByFirm.get(firmName).contains(errorIdentifier)) return;
+        // Get the set of logged errors for this specific firm
+        Set<String> firmErrors = loggedErrorsByFirm.get(firmName);
 
-        // Add the identifier to the set to prevent future duplicate logs for this session
-        loggedErrorsByFirm.get(firmName).add(errorIdentifier);
+        // If this specific error type has already been logged for THIS firm, do nothing.
+        if (firmErrors.contains(errorIdentifier)) {
+            return;
+        }
+
+        // Add the identifier to the set to prevent future duplicate logs for this firm
+        firmErrors.add(errorIdentifier);
 
         // Write the unique error to the log file in append mode.
         try (FileWriter fw = new FileWriter(LOG_FILE_PATH, true);
              PrintWriter pw = new PrintWriter(fw)) {
+
             pw.println("------------------------------------------------------------");
             pw.printf("Firm: %s%n", firmName);
+            pw.printf("Timestamp: %s%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
             pw.printf("Error Type: %s%n", e.getClass().getName());
+            pw.printf("Error Identifier: %s%n", errorIdentifier);
             pw.printf("Message: %s%n", e.getMessage());
             pw.println("Stack trace:");
             e.printStackTrace(pw);
             pw.println("------------------------------------------------------------\n");
+
         } catch (IOException ioException) {
             System.err.println("FATAL: Could not write to log file.");
             ioException.printStackTrace(System.err);
@@ -110,6 +119,7 @@ public class ErrorLogger {
                     return "WebDriverException: " + matcher.group(0).trim();
                 }
             }
+            return "WebDriverException: " + (message != null ? message.substring(0, Math.min(50, message.length())) : "Unknown");
         }
         if (e instanceof TimeoutException) {
             return "TimeoutException";
@@ -117,5 +127,31 @@ public class ErrorLogger {
         // For other exceptions, use the class name as the identifier.
         return e.getClass().getSimpleName();
     }
-}
 
+    /**
+     * Method to get the current logged errors for debugging purposes.
+     * @return A copy of the current logged errors by firm.
+     */
+    public Map<String, Set<String>> getLoggedErrorsByFirm() {
+        Map<String, Set<String>> copy = new HashMap<>();
+        for (Map.Entry<String, Set<String>> entry : loggedErrorsByFirm.entrySet()) {
+            copy.put(entry.getKey(), new HashSet<>(entry.getValue()));
+        }
+        return copy;
+    }
+
+    /**
+     * Method to clear logged errors for a specific firm (useful for testing).
+     * @param firmName The firm name to clear errors for.
+     */
+    public void clearErrorsForFirm(String firmName) {
+        loggedErrorsByFirm.remove(firmName);
+    }
+
+    /**
+     * Method to clear all logged errors (useful for testing).
+     */
+    public void clearAllErrors() {
+        loggedErrorsByFirm.clear();
+    }
+}
