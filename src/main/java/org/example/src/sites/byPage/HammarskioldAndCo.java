@@ -48,7 +48,7 @@ public class HammarskioldAndCo extends ByPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("gtc-content")
+                            By.cssSelector("div.gtc-item-card > div.gtc-content")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);

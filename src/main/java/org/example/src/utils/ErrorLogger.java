@@ -1,6 +1,5 @@
 package org.example.src.utils;
 
-import org.example.exceptions.LawyerExceptions;
 import org.example.exceptions.ValidationExceptions;
 import org.openqa.selenium.WebDriverException;
 
@@ -89,17 +88,76 @@ public class ErrorLogger {
 
             pw.println("------------------------------------------------------------");
             pw.printf("Firm: %s%n", firmName);
-            pw.printf("\tError Type: %s%n", e.getClass().getName());
-            pw.printf("\tError Identifier: %s%n", errorIdentifier);
-            pw.printf("\tMessage: %s%n", e.getMessage());
+            pw.printf("Timestamp: %s%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+            pw.printf("Error Type: %s%n", e.getClass().getName());
+            pw.printf("Error Identifier: %s%n", errorIdentifier);
+            pw.printf("Message: %s%n", e.getMessage());
 
             // Only print stack trace if NOT a LawyerExceptions
-            if (!(e instanceof LawyerExceptions)) {
-                pw.println("\tStack trace:");
+            if (!(e instanceof org.example.exceptions.LawyerExceptions)) {
+                pw.println("Stack trace:");
                 e.printStackTrace(pw);
             }
 
-            e.printStackTrace(pw);
+            pw.println("------------------------------------------------------------\n");
+
+        } catch (IOException ioException) {
+            System.err.println("FATAL: Could not write to log file.");
+            ioException.printStackTrace(System.err);
+        }
+    }
+
+    /**
+     * Overloaded method to log errors with additional context information
+     * @param firmName The name of the firm where the error occurred.
+     * @param e The exception to log.
+     * @param showLogs If true, prints the full stack trace to the console. If false, logs a summary to the file.
+     * @param context Additional context information (e.g., "Error accessing page 3", "Error fetching lawyers on page 2")
+     */
+    public void log(String firmName, Exception e, boolean showLogs, String context) {
+        if (showLogs) {
+            System.err.printf("Error while processing firm %s: %s%n", firmName, context);
+            e.printStackTrace(System.err);
+            return;
+        }
+
+        // Do not log validation exceptions to the file.
+        if (e instanceof ValidationExceptions) return;
+
+        String errorIdentifier = getExceptionIdentifier(e) + " (" + context + ")";
+
+        // Initialize the set for the firm if it doesn't exist
+        loggedErrorsByFirm.putIfAbsent(firmName, new HashSet<>());
+
+        // Get the set of logged errors for this specific firm
+        Set<String> firmErrors = loggedErrorsByFirm.get(firmName);
+
+        // If this specific error type has already been logged for THIS firm, do nothing.
+        if (firmErrors.contains(errorIdentifier)) {
+            return;
+        }
+
+        // Add the identifier to the set to prevent future duplicate logs for this firm
+        firmErrors.add(errorIdentifier);
+
+        // Write the unique error to the log file in append mode.
+        try (FileWriter fw = new FileWriter(LOG_FILE_PATH, true);
+             PrintWriter pw = new PrintWriter(fw)) {
+
+            pw.println("------------------------------------------------------------");
+            pw.printf("Firm: %s%n", firmName);
+            pw.printf("Context: %s%n", context);
+            pw.printf("Timestamp: %s%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+            pw.printf("Error Type: %s%n", e.getClass().getName());
+            pw.printf("Error Identifier: %s%n", errorIdentifier);
+            pw.printf("Message: %s%n", e.getMessage());
+
+            // Only print stack trace if NOT a LawyerExceptions
+            if (!(e instanceof org.example.exceptions.LawyerExceptions)) {
+                pw.println("Stack trace:");
+                e.printStackTrace(pw);
+            }
+
             pw.println("------------------------------------------------------------\n");
 
         } catch (IOException ioException) {

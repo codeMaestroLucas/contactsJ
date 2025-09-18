@@ -29,7 +29,12 @@ public abstract class ByNewPage extends Site {
             try {
                 this.accessPage(i);
             } catch (Exception e) {
-                System.out.println("Error accessing page " + (i + 1) + ": " + e.getMessage());
+                String context = "Error accessing page " + (i + 1);
+                if (showLogs) {
+                    System.out.println(context + ": " + e.getMessage());
+                } else {
+                    errorLogger.log(this.name, e, false, context);
+                }
                 continue;
             }
 
@@ -37,7 +42,12 @@ public abstract class ByNewPage extends Site {
             try {
                 lawyersInPage = this.getLawyersInPage();
             } catch (Exception e) {
-                System.out.println("Error fetching lawyers on page " + (i + 1) + ": " + e.getMessage());
+                String context = "Error fetching lawyers on page " + (i + 1);
+                if (showLogs) {
+                    System.out.println(context + ": " + e.getMessage());
+                } else {
+                    errorLogger.log(this.name, e, false, context);
+                }
                 continue;
             }
 
@@ -64,16 +74,21 @@ public abstract class ByNewPage extends Site {
                         break pageLoop; // Break out of both loops
                     }
                 } catch (Exception e) {
-                    System.out.printf(
-                            "Error reading %dth lawyer at the page %d of the firm %s.%nError: %s%n",
-                            index + 1, i + 1, this.name, e.getMessage()
+                    String context = String.format(
+                            "Error reading %dth lawyer at page %d",
+                            index + 1, i + 1
                     );
+
                     if (showLogs) {
+                        System.out.printf(
+                                "Error reading %dth lawyer at the page %d of the firm %s.%nError: %s%n",
+                                index + 1, i + 1, this.name, e.getMessage()
+                        );
                         System.out.println("#".repeat(70));
                         e.printStackTrace();
                         System.out.println("#".repeat(70) + "\n");
                     } else {
-                        errorLogger.log(this.name, e, false);
+                        errorLogger.log(this.name, e, false, context);
                     }
                 } finally {
                     if (driver.getWindowHandles().size() >1) MyDriver.closeCurrentTab();

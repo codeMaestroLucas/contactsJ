@@ -1,3 +1,29 @@
 =============== LOG SESSION STARTED ===============
-Session started at: 2025-09-17 21:55:08
+Session started at: 2025-09-17 22:04:46
+
+------------------------------------------------------------
+Firm: Ashurst
+	Error Type: java.lang.ArrayIndexOutOfBoundsException
+	Error Identifier: ArrayIndexOutOfBoundsException
+	Message: Index 1 out of bounds for length 1
+	Stack trace:
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at org.example.src.sites.byPage.Ashurst.getRole(Ashurst.java:83)
+	at org.example.src.sites.byPage.Ashurst.getLawyer(Ashurst.java:110)
+	at org.example.src.entities.BaseSites.ByPage.searchForLawyers(ByPage.java:52)
+	at org.example.Main.lambda$searchLawyersInWeb$0(Main.java:47)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1095)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:619)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at org.example.src.sites.byPage.Ashurst.getRole(Ashurst.java:83)
+	at org.example.src.sites.byPage.Ashurst.getLawyer(Ashurst.java:110)
+	at org.example.src.entities.BaseSites.ByPage.searchForLawyers(ByPage.java:52)
+	at org.example.Main.lambda$searchLawyersInWeb$0(Main.java:47)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1095)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:619)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
+------------------------------------------------------------
 

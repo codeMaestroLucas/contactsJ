@@ -109,7 +109,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             }
 
             if (firm.equals(lastFirm)) {
-                if (totalLawyersPerFirm >= 3 &&
+                if (totalLawyersPerFirm >= 3 ||
                     setOfCountriesCollectPerFirm.contains(country)
                 ) continue;
             }
@@ -147,7 +147,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
                 totalLawyers++;
                 addedThisRun++;
-                setOfCountriesCollectPerFirm.add(lawyer.getCountry());
+                setOfCountriesCollectPerFirm.add(country);
             }
 
             if (!firm.equals(lastFirm)) {

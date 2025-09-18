@@ -17,8 +17,8 @@ public class _CompletedFirmsData {
             new McCarthyTetrault(), new GreenbergTraurig(), new PeterAndKim(), new BennettJones(), new RitchMuellerAndNicolau(),
             new BLGLaw(), new HillDickinson(), new HakunLaw(), new HannesSnellman(), new HavelPartners(),
             new SpencerWest(), new CassidyLevyKent(), new HowseWilliams(), new JonesDay(), new Kinstellar(),
-            new Krogerus(), new KromannReumert(), new LathamAndWatkins(), new LeeAndKo(), new LEXLogmannsstofa(),
-            new MagnussonLaw(), new Matheson(), new MeitarLaw(), new MZMLegal(), new RelianceCorporateAdvisors(),
+            new Krogerus(), new KromannReumert(), new LathamAndWatkins(), new LEXLogmannsstofa(),
+            new MagnussonLaw(), new Matheson(), new MeitarLaw(), new RelianceCorporateAdvisors(),
             new Ogier(), new DuncanCotterill(), new Pedersoli(), new RopesAndGray(), new Schoenherr(),
             new WatsonFarleyAndWilliams(), new ShinAndKim(), new SprusonAndFerguson(), new TaylorWessing(), new WhiteAndCase(),
             new SEUM(), new WhiteAndCase(), new WinstonAndStrawn(), new WolfTheiss(), new TucaZbarcea(),
@@ -49,6 +49,8 @@ public class _CompletedFirmsData {
             new K1Chamber(),
             new ZhongziLaw(),
             new GrandwayLaw(),
+            new LeeAndKo(),
+            new MZMLegal(),
             */
 
             /** Indian Firms
@@ -73,7 +75,7 @@ public class _CompletedFirmsData {
             new OgletreeDeakins(), new EBN(), new Ellex(), new ControlRisks(), new ArthurCox(),
             new AsafoAndCo(), new BarneaAndCo(), new Beauchamps(), new Borenius(), new BrigrardUrrutia(),
             new CarneluttiLaw(), new Cobalt(), new Dentons(), new TEMPLARS(), new Madrona(),
-            new Sherrards(), new EllisonsSolicitors(), new HYLeungAndCo(), new DWFoxTucker(), new CovenantChambers(),
+            new Sherrards(), new EllisonsSolicitors(),
             new Gadens(), new DaviesWardPhillipsAndVineberg(), new GittiAndPartners(), new GORG(), new GornitzkyAndCo(),
             new HiggsAndJohnson(), new Horten(), new HuiyeLaw(), new LewissSilkin(), new IbanezParkman(),
             new KuriBrena(), new NaderHayauxAndGoebel(), new Baumgartners(), new PrasadAndCompany(), new ENSAfrica(),
@@ -98,6 +100,9 @@ public class _CompletedFirmsData {
             new MishconKaras(),
             new TCLaw(),
             new DeutschMiller(),
+            new CovenantChambers(),
+            new DWFoxTucker(),
+            new HYLeungAndCo(),
             */
 
             // TEST IT

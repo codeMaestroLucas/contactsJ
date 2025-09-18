@@ -14,15 +14,31 @@ import java.util.Map;
 
 public class Ashurst extends ByPage {
     Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            Map.entry("abu dhabi", "the UAE"), Map.entry("austin", "USA"), Map.entry("beijing", "China"),
-            Map.entry("brussels", "Belgium"), Map.entry("dubai", "the UAE"), Map.entry("dublin", "Ireland"), Map.entry("frankfurt", "Germany"),
-            Map.entry("glasgow", "England"), Map.entry("hong kong", "Hong Kong"), Map.entry("jakarta", "Indonesia"),
-            Map.entry("jeddah", "Saudi Arabia"), Map.entry("london", "England"), Map.entry("los angeles", "USA"),
-            Map.entry("luxembourg", "Luxembourg"), Map.entry("madrid", "Spain"),
-            Map.entry("milan", "Italy"), Map.entry("munich", "Germany"), Map.entry("new york", "USA"),
-            Map.entry("paris", "France"), Map.entry("port moresby", "Papua New Guinea"),
-            Map.entry("riyadh", "the UAE"), Map.entry("seoul", "Korea (South)"), Map.entry("shanghai", "China"),
-            Map.entry("singapore", "Singapore"), Map.entry("tokyo", "Japan")
+            Map.entry("abu dhabi", "the UAE"),
+            Map.entry("austin", "USA"),
+            Map.entry("beijing", "China"),
+            Map.entry("brussels", "Belgium"),
+            Map.entry("dubai", "the UAE"),
+            Map.entry("dublin", "Ireland"),
+            Map.entry("frankfurt", "Germany"),
+            Map.entry("glasgow", "England"),
+            Map.entry("hong kong", "Hong Kong"),
+            Map.entry("jakarta", "Indonesia"),
+            Map.entry("jeddah", "Saudi Arabia"),
+            Map.entry("london", "England"),
+            Map.entry("los angeles", "USA"),
+            Map.entry("luxembourg", "Luxembourg"),
+            Map.entry("madrid", "Spain"),
+            Map.entry("milan", "Italy"),
+            Map.entry("munich", "Germany"),
+            Map.entry("new york", "USA"),
+            Map.entry("paris", "France"),
+            Map.entry("port moresby", "Papua New Guinea"),
+            Map.entry("riyadh", "the UAE"),
+            Map.entry("seoul", "Korea (South)"),
+            Map.entry("shanghai", "China"),
+            Map.entry("singapore", "Singapore"),
+            Map.entry("tokyo", "Japan")
     );
     public Ashurst() {
         super(
@@ -80,7 +96,8 @@ public class Ashurst extends ByPage {
                 By.className("people-info")
         };
         String text = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-        return text.split("\\n")[1];
+        String[] split = text.split("\\n");
+        return split.length >= 1 ? split[1] : split[0];
     }
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {

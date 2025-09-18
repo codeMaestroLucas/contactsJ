@@ -18,8 +18,6 @@ import static org.example.src.utils.TimeCalculator.calculateTimeOfExecution;
 public class Main {
     private static final Reports reports = Reports.getINSTANCE();
     private static final MyInterfaceUtls instance = MyInterfaceUtls.getINSTANCE();
-
-
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
 
     private static void getRegisteredContacts() {
@@ -29,12 +27,11 @@ public class Main {
         System.out.println("Completed: Filtering and processing complete.");
     }
 
-    private static void searchLawyersInWeb() throws InterruptedException {
+    private static void searchLawyersInWeb() {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
 
         List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET + 70);
-        // Executor para gerenciar a thread e o timeout
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         for (Site site : sites) {
@@ -44,17 +41,14 @@ public class Main {
             }
 
             interfaceUtls.header(site.name);
-
             long initTime = System.currentTimeMillis();
 
-            // A tarefa que será executada com timeout
             Future<Void> future = executor.submit(() -> {
                 site.searchForLawyers(false);
-                return null; // Callable precisa retornar um valor
+                return null;
             });
 
             try {
-                // Define o timeout.
                 future.get(CONFIG.TIMEOUT_MINUTES, TimeUnit.MINUTES);
 
                 if (site.lawyersRegistered > 0) {
@@ -64,12 +58,15 @@ public class Main {
 
             } catch (TimeoutException e) {
                 System.err.println("Timeout exceeded for site: " + site.name);
-                future.cancel(true); // Tenta interromper a thread em execução
+                future.cancel(true);
 
-            } catch (InterruptedException | ExecutionException e) {
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Search interrupted for site: " + site.name);
+
+            } catch (ExecutionException e) {
                 System.err.println("An error occurred while searching in " + site.name + ": " + e.getMessage());
-                future.cancel(true); // Tenta interromper a thread em execução
-                // Se a causa for uma exceção da automação, imprima o stack trace dela
+                future.cancel(true);
                 if (e.getCause() != null) {
                     e.getCause().printStackTrace();
                 }
@@ -79,20 +76,31 @@ public class Main {
                 reports.createReportRow(site, instance.calculateTime(initTime, endTime));
             }
 
-            Thread.sleep(200);
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Sleep interrupted between sites.");
+            }
         }
 
-        executor.shutdownNow(); // Encerra o executor service
+        executor.shutdownNow();
         System.out.println("Completed: Lawyer search finished.");
         System.out.println("Total lawyers collected in web: " + totalLawyersRegistered);
         System.out.println();
     }
 
-
     @SneakyThrows
     private static void performCompleteSearch() {
-        calculateTimeOfExecution(Main::getRegisteredContacts);
-        calculateTimeOfExecution(Main::searchLawyersInWeb);
+        // Wrap methods that throw InterruptedException in lambdas
+        calculateTimeOfExecution(() -> getRegisteredContacts());
+        calculateTimeOfExecution(() -> {
+            try {
+                searchLawyersInWeb();
+            } catch (Exception e) {
+                throw new RuntimeException(e); // wrap checked exception
+            }
+        });
 
         System.out.println("\n\n" + "=".repeat(70));
     }
