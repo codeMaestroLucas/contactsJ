@@ -20,6 +20,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
     private int lastFirmRow;
     private int maxReRuns = 1;
     private Set<String> lawFirmsCollected = new HashSet<>();
+    private Set<String> setOfCountriesCollectPerFirm = new HashSet<>();
 
     // Sheet to write data
     private final Sheet destinationSheet = Sheet.getINSTANCE();
@@ -107,7 +108,11 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                 continue;
             }
 
-            if (firm.equals(lastFirm) && totalLawyersPerFirm >= 3) continue;
+            if (firm.equals(lastFirm)) {
+                if (totalLawyersPerFirm >= 3 &&
+                    setOfCountriesCollectPerFirm.contains(country)
+                ) continue;
+            }
 
             if (contacts.isEmailRegistered(email)) {
                 System.out.println("Email '" + email + "' is already registered. Cleaning up.");
@@ -142,11 +147,14 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
                 totalLawyers++;
                 addedThisRun++;
+                setOfCountriesCollectPerFirm.add(lawyer.getCountry());
             }
 
             if (!firm.equals(lastFirm)) {
                 totalLawyersPerFirm = 0;
+                setOfCountriesCollectPerFirm.clear();
             }
+
             totalLawyersPerFirm++;
             lastFirm = firm;
         }

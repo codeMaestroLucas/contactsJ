@@ -1,5 +1,6 @@
 package org.example.src.utils;
 
+import org.example.exceptions.LawyerExceptions;
 import org.example.exceptions.ValidationExceptions;
 import org.openqa.selenium.WebDriverException;
 
@@ -88,11 +89,16 @@ public class ErrorLogger {
 
             pw.println("------------------------------------------------------------");
             pw.printf("Firm: %s%n", firmName);
-            pw.printf("Timestamp: %s%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-            pw.printf("Error Type: %s%n", e.getClass().getName());
-            pw.printf("Error Identifier: %s%n", errorIdentifier);
-            pw.printf("Message: %s%n", e.getMessage());
-            pw.println("Stack trace:");
+            pw.printf("\tError Type: %s%n", e.getClass().getName());
+            pw.printf("\tError Identifier: %s%n", errorIdentifier);
+            pw.printf("\tMessage: %s%n", e.getMessage());
+
+            // Only print stack trace if NOT a LawyerExceptions
+            if (!(e instanceof LawyerExceptions)) {
+                pw.println("\tStack trace:");
+                e.printStackTrace(pw);
+            }
+
             e.printStackTrace(pw);
             pw.println("------------------------------------------------------------\n");
 

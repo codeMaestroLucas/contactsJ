@@ -1,5 +1,6 @@
 package org.example;
 
+import lombok.SneakyThrows;
 import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
@@ -28,7 +29,7 @@ public class Main {
         System.out.println("Completed: Filtering and processing complete.");
     }
 
-    private static void searchLawyersInWeb() {
+    private static void searchLawyersInWeb() throws InterruptedException {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
 
@@ -53,8 +54,8 @@ public class Main {
             });
 
             try {
-                // Define o timeout. Aqui, estou usando 10 minutos.
-                future.get(1, TimeUnit.MINUTES);
+                // Define o timeout.
+                future.get(CONFIG.TIMEOUT_MINUTES, TimeUnit.MINUTES);
 
                 if (site.lawyersRegistered > 0) {
                     FirmsOMonth.registerFirmMonth(site.name);
@@ -77,6 +78,8 @@ public class Main {
                 long endTime = System.currentTimeMillis();
                 reports.createReportRow(site, instance.calculateTime(initTime, endTime));
             }
+
+            Thread.sleep(200);
         }
 
         executor.shutdownNow(); // Encerra o executor service
@@ -86,6 +89,7 @@ public class Main {
     }
 
 
+    @SneakyThrows
     private static void performCompleteSearch() {
         calculateTimeOfExecution(Main::getRegisteredContacts);
         calculateTimeOfExecution(Main::searchLawyersInWeb);

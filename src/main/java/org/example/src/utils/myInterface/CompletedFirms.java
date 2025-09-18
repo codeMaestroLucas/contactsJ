@@ -35,11 +35,12 @@ public class CompletedFirms {
         }
 
         Collections.shuffle(filteredSites);
-
+        return filteredSites;
+//        Commented just to avoid fill less firms
         // Prevent an error that might be caused by not having the amount of firms needed to fill the desired amount
         // of lawyers to register
-        int toIndex = Math.min(maxFirmsToGet, filteredSites.size());
-        return filteredSites.subList(0, toIndex);
+//        int toIndex = Math.min(maxFirmsToGet, filteredSites.size());
+//        return filteredSites.subList(0, toIndex);
     }
 
 

@@ -82,13 +82,13 @@ public class _CompletedFirmsData {
             new KRBLaw(), new Kvale(), new Werksmans(), new DGKV(), new Fischer(),
             new MyersFletcherAndGordon(), new RemfryAndSagar(), new WikborgRein(), new Noerr(), new PaviaAndAnsaldo(),
             new PearlCohen(), new PortolanoCavallo(), new Pulegal(), new Sorainen(), new Thommessen(),
-            new Wiersholm(), new ABGIP(), new AOil(), new Belgravia(), new EProint(), new FCMLimited(),
+            new Wiersholm(), new AOil(), new Belgravia(), new EProint(), new FCMLimited(), new FPSLaw(),
             new Ferrere(), new HamsoPatentybra(), new Holmes(), new JacksonEttiAndEdu(), new Kondrat(),
             new LatinAlliance(), new LePooleBekema(), new SabaAndCo(), new SargentAndKrahn(), new WardynskiAndPartners(),
             new DumontBergmanBider(), new MBM(), new MarksAndClerk(), new HansOffiaAndAssociates(), new PortaAndConsulentiAssociati(),
             new EPAndC(), new Hamso(), new JWP(), new ACAndR(), new KennedyVanderLaan(),
             new METIDA(), new PhilippeAndPartners(), new SBGK(), new DANUBIAPatentAndLaw(), new ReinhardSkuhraWeiseAndPartnerGbR(),
-            new PrinzAndPartner(), new PrueferAndPartner(), new FPSLaw(),
+            new PrinzAndPartner(), new PrueferAndPartner(),
 
             /* Await firms - Countries to avoid for now ...
             new NurmansyahAndMuzdalifah(),
