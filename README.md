@@ -15,6 +15,8 @@ git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java
 1. todo's:
    1. Create a INVALID instead of "Invalid Role" 
    2. Create a filter used to filter by more than one element - eg.: role & country
+   3. Fix the files in the C.txt
+   4. Improve the FilteredContacts file search - getting more than one lawyer per time of the same firm
 
 ---
 # Useful Commentaries

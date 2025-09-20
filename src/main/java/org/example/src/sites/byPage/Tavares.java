@@ -96,7 +96,7 @@ public class Tavares extends ByPage {
                 "country", "Brazil",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1]
+                "phone", socials[1].isEmpty() ? "552122166350" : socials[1]
         );
     }
 }

@@ -64,12 +64,12 @@ public class WildeboerDellelce extends ByPage {
                 By.className("h4"),
                 By.cssSelector("a")
         };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "outerHTML", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 

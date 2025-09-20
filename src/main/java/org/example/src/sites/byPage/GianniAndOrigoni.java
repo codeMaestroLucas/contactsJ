@@ -91,10 +91,14 @@ public class GianniAndOrigoni extends ByPage {
     }
 
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("campotab3")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        try {
+            By[] byArray = new By[]{
+                    By.className("campotab3")
+            };
+            return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        } catch (LawyerExceptions e) {
+            return "";
+        }
     }
 
     private String[] getSocials(WebElement lawyer) {

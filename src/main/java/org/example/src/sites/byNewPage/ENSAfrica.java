@@ -113,7 +113,7 @@ public class ENSAfrica extends ByNewPage {
                 "country", "South Africa",
                 "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "" : socials[1]
+                "phone", socials[1].isEmpty() ? "27214102500" : socials[1]
         );
     }
 }

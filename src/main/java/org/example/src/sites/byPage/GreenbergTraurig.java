@@ -107,12 +107,12 @@ public class GreenbergTraurig extends ByPage {
                 By.className("upper-info"),
                 By.className("name"),
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 
@@ -123,7 +123,7 @@ public class GreenbergTraurig extends ByPage {
                     By.className("lower-info"),
                     By.cssSelector("a")
             };
-            return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+            return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
         } catch (Exception e) {
             return "";
         }

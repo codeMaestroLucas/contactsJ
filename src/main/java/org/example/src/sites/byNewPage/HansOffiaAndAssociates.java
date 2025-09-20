@@ -20,7 +20,7 @@ public class HansOffiaAndAssociates extends ByNewPage {
 
     public HansOffiaAndAssociates() {
         super(
-                "Hans Offia & Associates",
+                "Hans Offia And Associates",
                 "https://hansoffialawfirm.com/team/",
                 1
         );
@@ -64,14 +64,14 @@ public class HansOffiaAndAssociates extends ByNewPage {
         By[] byArray = new By[]{
                 By.cssSelector(".elementor-element-3a7110a h2")
         };
-        return extractor.extractLawyerText(container, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(container, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement container) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector(".elementor-element-b3bbfa7 h3")
         };
-        return extractor.extractLawyerText(container, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(container, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 

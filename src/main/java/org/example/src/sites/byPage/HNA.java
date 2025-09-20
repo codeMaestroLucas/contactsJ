@@ -32,7 +32,9 @@ public class HNA extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         MyDriver.rollDown(1, 1);
-        MyDriver.clickOnElement(By.id("onetrust-accept-btn-handler"));
+        MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
+
+        MyDriver.rollDown(10, 0.2);
     }
 
 
@@ -44,13 +46,11 @@ public class HNA extends ByPage {
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
+            WebElement div = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"specialists\"]/div/ul")));
+            List<WebElement> lawyers = div.findElements(
                             By.className("card__content")
-                    )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -71,12 +71,12 @@ public class HNA extends ByPage {
         By[] byArray = new By[]{
                 By.className("specialist__name__text")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME",  "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE",  "textContent", LawyerExceptions::roleException);
     }
 
 

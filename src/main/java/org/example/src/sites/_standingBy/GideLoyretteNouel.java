@@ -25,7 +25,7 @@ public class GideLoyretteNouel extends ByNewPage {
             entry("casablanca", "Morocco"),
             entry("istanbul", "Turkey"),
             entry("london", "England"),
-            entry("new york city", "EUA"),
+            entry("new york city", "USA"),
             entry("paris", "France"),
             entry("shanghai", "China"),
             entry("tunis", "Tunisia"),

@@ -45,23 +45,12 @@ public class DaviesWardPhillipsAndVineberg extends ByNewPage {
 
 
     protected List<WebElement> getLawyersInPage() {
-        // Filtering by COUNTRY
-        String[] validOffices = new String[]{
-                "toronto",
-                "montréal",
-                "montreal"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("team-landing__results-item")
-                    )
+            return wait.until(
+                    ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("team-landing__results-item"))
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validOffices);
-
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -88,12 +77,26 @@ public class DaviesWardPhillipsAndVineberg extends ByNewPage {
     }
 
 
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        String[] validOffices = new String[]{
+                "toronto",
+                "montréal",
+                "montreal"
+        };
+        By[] byArray = {By.className("people-detail-masthead__full-name")};
+        String office = extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
+        for (String validOffice : validOffices) {
+            if (office.toLowerCase().contains(validOffice)) return "Canada";
+        }
+        return "USA";
+    }
+
+
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("people-detail-masthead__location-and-title")};
-        String role = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "outerHTML", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
-
     }
 
 
@@ -127,7 +130,7 @@ public class DaviesWardPhillipsAndVineberg extends ByNewPage {
                 "name", this.getName(div),
                 "role", role,
                 "firm", this.name,
-                "country", "Canada",
+                "country", this.getCountry(div),
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "4168630900" : socials[1]

@@ -58,7 +58,7 @@ public class Legance extends ByNewPage {
                             By.className("professional-item")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -76,7 +76,7 @@ public class Legance extends ByNewPage {
                 By.className("professional-banner-header"),
                 By.className("entry-title")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME",  "textContent",LawyerExceptions::nameException);
     }
 
 
@@ -85,7 +85,7 @@ public class Legance extends ByNewPage {
                 By.className("professional-banner-header"),
                 By.className("text-uppercase"),
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE",  "textContent",LawyerExceptions::roleException);
     }
 
 
@@ -94,7 +94,7 @@ public class Legance extends ByNewPage {
                 By.className("professional-banner-header"),
                 By.cssSelector("a[href^='https://www.legance.com/office/']")
         };
-        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String country = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY",  "textContent",LawyerExceptions::countryException);
         return country.toLowerCase().contains("london") ? "England" : "Italy";
     }
 
@@ -104,7 +104,7 @@ public class Legance extends ByNewPage {
         By[] byArray = new By[]{
                 By.className("font-weight-normal")
         };
-           return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+           return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA",  "textContent",LawyerExceptions::practiceAreaException);
     }
 
 

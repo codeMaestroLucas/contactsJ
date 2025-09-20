@@ -92,7 +92,7 @@ public class JonesDay extends ByPage {
                     By.className("professional__column--right"),
                     By.className("person__name")
             };
-            return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+            return extractor.extractLawyerAttribute(lawyer, byArray, "NAME",  "textContent",LawyerExceptions::nameException);
         } catch (Exception e) {
             return "";
         }
@@ -100,7 +100,7 @@ public class JonesDay extends ByPage {
 
     private String getRole(WebElement lawyer) {
         try {
-            return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+            return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE",  "textContent",LawyerExceptions::roleException);
         } catch (Exception e) {
             return "";
         }
@@ -113,7 +113,7 @@ public class JonesDay extends ByPage {
                     By.cssSelector("div.person__row:nth-child(2)"),
                     By.className("person__meta")
             };
-            String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+            String office = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY",  "textContent",LawyerExceptions::countryException);
             return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
         } catch (Exception e) {
             return "";

@@ -39,7 +39,6 @@ public class SiteUtils {
         System.err.println("  Email: " + details.get("email"));
         System.err.println("  Phone: " + details.get("phone"));
         System.err.println("  Country: " + details.get("country"));
-        System.out.println("\n\n");
     }
 
 

@@ -75,7 +75,7 @@ public class Holmes extends ByNewPage {
         By[] byArray = new By[]{
                 By.className("banner__title")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
@@ -83,7 +83,7 @@ public class Holmes extends ByNewPage {
         By[] byArray = new By[]{
                 By.className("banner__subheading")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 

@@ -96,7 +96,7 @@ public class Dentons extends ByNewPage {
                 "Dentons",
                 "https://www.dentons.com/en/our-professionals",
                 1,
-                4
+                3
         );
     }
 

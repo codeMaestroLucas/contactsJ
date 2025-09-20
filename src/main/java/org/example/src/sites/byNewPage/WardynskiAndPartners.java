@@ -80,8 +80,6 @@ public class WardynskiAndPartners extends ByNewPage {
         };
         String role = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
-        //todo: remove before checking
-        System.out.println("----------- " + role);
         return validPosition ? role : "Invalid Role";
     }
 

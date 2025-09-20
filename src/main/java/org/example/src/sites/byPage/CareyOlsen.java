@@ -12,11 +12,18 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.Map.entry;
+
 public class CareyOlsen extends ByPage {
-    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
-            "london", "England",
-            "cayman islands", "the Cayman Islands",
-            "british virgin islands", "the British Virgin Islands"
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("bermuda", "Bermuda"),
+            entry("british virgin islands", "the British Virgin Islands"),
+            entry("cayman islands", "the Cayman Islands"),
+            entry("guernsey", "Guernsey"),
+            entry("hong kong sar", "Hong Kong"),
+            entry("jersey", "Jersey"),
+            entry("london", "England"),
+            entry("singapore", "Singapore")
     );
 
     public CareyOlsen() {
@@ -46,7 +53,7 @@ public class CareyOlsen extends ByPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("generic-content")));
-            return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, webRole, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -80,6 +87,8 @@ public class CareyOlsen extends ByPage {
                 By.className("position-location")
         };
         String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        int pause = country.indexOf(",");
+        country = country.substring(pause + 2); // ", "
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, country);
     }
 

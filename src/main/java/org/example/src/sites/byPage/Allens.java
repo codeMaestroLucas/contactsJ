@@ -101,7 +101,7 @@ public class Allens extends ByPage {
         By[] byArray = {
                 By.className("location-contact__city")
         };
-        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String office = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY",  "textContent", LawyerExceptions::countryException);
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "Australia");
     }
 

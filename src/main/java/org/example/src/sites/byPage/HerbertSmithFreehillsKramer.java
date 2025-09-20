@@ -94,7 +94,7 @@ public class HerbertSmithFreehillsKramer extends ByPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("profile-info")));
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }

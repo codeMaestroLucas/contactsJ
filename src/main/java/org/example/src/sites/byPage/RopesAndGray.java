@@ -15,20 +15,20 @@ import static java.util.Map.entry;
 
 public class RopesAndGray extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
-            entry("boston", "EUA"),
-            entry("chicago", "EUA"),
+            entry("boston", "USA"),
+            entry("chicago", "USA"),
             entry("dublin", "Ireland"),
             entry("hong kong", "Hong Kong"),
             entry("london", "England"),
-            entry("los angeles", "EUA"),
-            entry("new york", "EUA"),
+            entry("los angeles", "USA"),
+            entry("new york", "USA"),
             entry("paris", "France"),
-            entry("san francisco", "EUA"),
+            entry("san francisco", "USA"),
             entry("seoul", "Korea (South)"),
-            entry("silicon valley", "EUA"),
+            entry("silicon valley", "USA"),
             entry("singapore", "Singapore"),
             entry("tokyo", "Japan"),
-            entry("washington dc", "EUA")
+            entry("washington dc", "USA")
     );
 
 

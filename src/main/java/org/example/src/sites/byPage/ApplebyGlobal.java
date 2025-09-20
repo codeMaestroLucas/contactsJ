@@ -12,15 +12,35 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.Map.entry;
+
 public class ApplebyGlobal extends ByPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("bermuda", "Bermuda"),
+            entry("bvi", "the British Virgin Islands"),
+            entry("cayman islands", "the Cayman Islands"),
+            entry("guernsey", "Guernsey"),
+            entry("hong kong", "Hong Kong"),
+            entry("isle of man", "Isle of Man"),
+            entry("jersey", "Jersey"),
+            entry("mauritius", "Mauritius"),
+            entry("seychelles", "Seychelles"),
+            entry("shanghai", "China")
+    );
+
     public ApplebyGlobal() {
         super(
                 "Appleby Global",
-                "httpa://www.applebyglobal.com/people/page/1/",
+                "https://www.applebyglobal.com/people/page/1/",
                 9,
                 3
         );
     }
+
+    By[] byRoleArray = new By[]{
+            By.cssSelector("div")
+    };
+
 
     protected void accessPage(int index) throws InterruptedException {
         String otherUrl = "https://www.applebyglobal.com/people/page/" + (index + 1) + "/";
@@ -28,21 +48,19 @@ public class ApplebyGlobal extends ByPage {
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        if (index <= 0) {
-            MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
-        }
+        if (index == 0) MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
     }
 
     protected List<WebElement> getLawyersInPage() {
-        By[] webRole = new By[]{
-                By.cssSelector(".u-font-size-12.u-font-weight-normal.u-uppercase.u-letter-spacing-supersmall.u-margin-bottom-10")
-        };
         String[] validRoles = new String[]{"partner", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("grid-item__content")));
-            return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
+            WebElement div = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ajax-container")));
+
+            List<WebElement> lawyers =  div.findElements(By.className("grid-item__content"));
+
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -50,35 +68,28 @@ public class ApplebyGlobal extends ByPage {
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a.u-decoration-none")
+                By.cssSelector("a[href*='https://www.applebyglobal.com/people/']")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a.u-decoration-none")
+                By.cssSelector("a[href*='https://www.applebyglobal.com/people/']")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.cssSelector(".u-font-size-12.u-font-weight-normal.u-uppercase.u-letter-spacing-supersmall.u-margin-bottom-10")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("u-margin-bottom-0")
+                By.cssSelector("a[href*='https://www.applebyglobal.com/locations/']")
         };
-        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-
-        if (office.trim().equalsIgnoreCase("bvi")) {
-            return "the British Virgin Islands";
-        }
-        return office;
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, country);
     }
 
     private String[] getSocials(WebElement lawyer) {

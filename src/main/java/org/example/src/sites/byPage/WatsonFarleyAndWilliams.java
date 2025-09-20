@@ -113,12 +113,12 @@ public class WatsonFarleyAndWilliams extends ByPage {
                 By.className("h3_styler"),
                 By.cssSelector("a")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE",  "textContent", LawyerExceptions::roleException);
     }
 
 
@@ -127,7 +127,7 @@ public class WatsonFarleyAndWilliams extends ByPage {
                 By.className("people_left_stats_job"),
                 By.cssSelector("a")
         };
-        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String office = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY",  "textContent", LawyerExceptions::countryException);
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "Germany");
     }
 

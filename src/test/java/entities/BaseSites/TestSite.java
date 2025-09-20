@@ -1,10 +1,8 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byNewPage.ABGIP;
-import org.example.src.sites.byNewPage.PortolanoCavallo;
-import org.example.src.sites.byPage.Cassels;
-import org.example.src.sites.byPage.FluegelPreissner;
+import org.example.src.sites.byNewPage.*;
+import org.example.src.sites.byPage.*;
 
 
 import java.lang.reflect.Field;
@@ -13,7 +11,7 @@ import java.lang.reflect.Field;
  * Class used to test a new Site
  */
 
-    class MyTestPage extends ABGIP {
+class MyTestPage extends BarneaAndCo {
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */

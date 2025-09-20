@@ -96,7 +96,7 @@ public abstract class Site {
 
             } else if (phone.isEmpty()) {
                 String cleaned = value.replaceAll("[^0-9]", "");
-                if (cleaned.length() > 5) phone = cleaned;
+                if (cleaned.length() >= 7) phone = cleaned;
             }
 
             if (!email.isEmpty() && !phone.isEmpty()) break;
@@ -160,16 +160,18 @@ public abstract class Site {
 
             } catch (ValidationExceptions e) {
                 if (showLogs) {
+                    System.err.println("#".repeat(100));
                     siteUtl.printInvalidLawyer(map);
-                    System.out.println(e.getMessage());
-                    System.out.println("\n\n");
+                    System.err.println(e.getMessage());
+                    System.err.println("#".repeat(100));
+                    System.err.println("\n\n");
                 }
             } catch (Exception e) {
                 // Log all other exceptions
                 errorLogger.log(this.name, e, showLogs);
             }
         } else {
-            System.out.println("Invalid lawyer data structure.");
+            System.err.println("Invalid lawyer data structure.");
         }
 
         return false;

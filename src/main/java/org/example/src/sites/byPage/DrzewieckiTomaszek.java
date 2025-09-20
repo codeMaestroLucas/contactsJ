@@ -63,7 +63,7 @@ public class DrzewieckiTomaszek extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("a > h3")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 

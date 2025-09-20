@@ -71,7 +71,7 @@ public class SIRIUS extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("h2")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 

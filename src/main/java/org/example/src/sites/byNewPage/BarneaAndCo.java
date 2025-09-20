@@ -64,7 +64,7 @@ public class BarneaAndCo extends ByNewPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("rightSideTitle")};
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
@@ -83,7 +83,7 @@ public class BarneaAndCo extends ByNewPage {
                 By.className("single-attorneys-practice-areas"),
                 By.className("leftSideblockTextLink")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
     }
 
 

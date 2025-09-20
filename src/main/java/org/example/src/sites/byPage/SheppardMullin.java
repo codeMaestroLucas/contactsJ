@@ -92,12 +92,12 @@ public class SheppardMullin extends ByPage {
                 By.className("title"),
                 By.cssSelector("a")
         };
-        return extractor.extractLawyerText(container, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(container, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement container) throws LawyerExceptions {
-        return extractor.extractLawyerText(container, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(container, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 
@@ -110,7 +110,7 @@ public class SheppardMullin extends ByPage {
         };
         // Some lawyers don't have the country opt - retired or invalid
         try {
-            country = extractor.extractLawyerText(container, byArray, "COUNTRY", LawyerExceptions::countryException);
+            country = extractor.extractLawyerAttribute(container, byArray, "COUNTRY", "textContent", LawyerExceptions::countryException);
         } catch (LawyerExceptions _) {}
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "USA");
     }
@@ -130,9 +130,6 @@ public class SheppardMullin extends ByPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String country = this.getCountry(lawyer);
-        if (country.equals("USA")) return "Invalid Role";
-
 
         String[] socials = this.getSocials(lawyer);
 
@@ -141,7 +138,7 @@ public class SheppardMullin extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", country,
+                "country", this.getCountry(lawyer),
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]

@@ -78,7 +78,7 @@ public class KeystoneLaw extends ByNewPage {
         By[] byArray = new By[]{
                 By.className("name")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
@@ -86,7 +86,7 @@ public class KeystoneLaw extends ByNewPage {
         By[] byArray = new By[]{
                 By.className("jobtitle")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContentplaw", LawyerExceptions::roleException);
     }
 
 

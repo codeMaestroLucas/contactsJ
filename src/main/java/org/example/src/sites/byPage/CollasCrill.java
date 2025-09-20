@@ -73,15 +73,14 @@ public class CollasCrill extends ByPage {
         By[] byArray = new By[]{
                 By.className("title")
         };
-        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-        return role.isEmpty() ? extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "outerHTML", LawyerExceptions::roleException) : role;
+        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("location")
         };
-        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String office = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "textContent", LawyerExceptions::countryException);
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, office);
     }
 

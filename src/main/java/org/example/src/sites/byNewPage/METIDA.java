@@ -74,14 +74,14 @@ public class METIDA extends ByNewPage {
         By[] byArray = new By[]{
                 By.className("stw-title-name")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("stw-position")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 
@@ -89,7 +89,7 @@ public class METIDA extends ByNewPage {
         By[] byArray = new By[]{
                 By.className("tbp-country")
         };
-        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String country = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "textContent", LawyerExceptions::countryException);
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, country);
     }
 

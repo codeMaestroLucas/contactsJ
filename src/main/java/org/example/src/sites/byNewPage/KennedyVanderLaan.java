@@ -74,10 +74,14 @@ public class KennedyVanderLaan extends ByNewPage {
     }
 
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.cssSelector("a[href*='https://kvdl.com/en/expertise-industries/']")
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
+        try {
+            By[] byArray = new By[]{
+                    By.cssSelector("a[href*='https://kvdl.com/en/expertise-industries/']")
+            };
+            return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
+        } catch (LawyerExceptions e) {
+            return "";
+        }
     }
 
     private String[] getSocials(WebElement lawyer) {

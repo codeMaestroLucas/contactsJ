@@ -107,8 +107,7 @@ public class Chattertons extends ByPage {
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String office = lawyer.findElement(By.className("office")).getText();
-        boolean isFromUs = office.toLowerCase().contains("boston");
-        if (isFromUs) return "Invalid Role";
+        office = office.toLowerCase().contains("boston") ? "USA" : "England";
 
         String[] socials = this.getSocials(lawyer);
         return Map.of(
@@ -116,7 +115,7 @@ public class Chattertons extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "England",
+                "country", office,
                 "practice_area", this.getPracticeArea(lawyer),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "2078715755" : socials[1]

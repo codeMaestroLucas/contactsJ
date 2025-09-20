@@ -64,7 +64,7 @@ public class Ellex extends ByNewPage {
     public void openNewTab(WebElement lawyer) {
         try {
             By[] byArray = new By[]{
-                    By.className("person-item__name")
+                    By.cssSelector("a[href*='https://ellex.legal/expert/']")
             };
             String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
             MyDriver.openNewTab(link);

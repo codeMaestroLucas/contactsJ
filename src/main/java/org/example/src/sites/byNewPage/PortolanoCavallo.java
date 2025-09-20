@@ -109,16 +109,13 @@ public class PortolanoCavallo extends ByNewPage {
 
         String[] socials = this.getSocials(div);
 
-        String country = this.getCountry(socials[1]);
-        if (country.equals("USA")) return "Invalid Role";
-
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
                 "role", role,
                 "firm", this.name,
-                "country", "Italy",
-                "practice_area", country,
+                "country", this.getCountry(socials[1]),
+                "practice_area", "",
                 "email", socials[0].replace("//", ""),
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

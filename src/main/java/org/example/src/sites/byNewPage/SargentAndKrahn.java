@@ -72,7 +72,7 @@ public class SargentAndKrahn extends ByNewPage {
         By[] byArray = new By[]{
                 By.cssSelector("h1")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 

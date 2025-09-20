@@ -32,6 +32,8 @@ public class BlandyAndBlandy extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
+
+        MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
     }
 
 
@@ -59,7 +61,7 @@ public class BlandyAndBlandy extends ByPage {
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='/about/find-a-solicitor/']")
+                By.cssSelector("a[href*='about/find-a-solicitor/']")
         };
         String partialLink = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         return "https://www.blandy.co.uk" + partialLink;
@@ -105,7 +107,7 @@ public class BlandyAndBlandy extends ByPage {
             System.err.println("Could not extract phone.");
         }
 
-        return new String[]{email, phone};
+        return new String[]{ email, phone };
     }
 
 
