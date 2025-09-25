@@ -88,7 +88,7 @@ public abstract class Site {
 
         for (WebElement social : socials) {
             String value = byText
-                    ? social.getText().toLowerCase().trim()
+                    ? Objects.requireNonNull(social.getAttribute("textContent")).toLowerCase().trim()
                     : Objects.requireNonNull(social.getAttribute("href")).toLowerCase().trim();
 
             if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {

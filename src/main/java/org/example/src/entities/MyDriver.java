@@ -21,7 +21,7 @@ public final class MyDriver {
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless"); // Run Chrome in headless mode
+//            options.addArguments("--headless"); // Run Chrome in headless mode
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
@@ -173,6 +173,7 @@ public final class MyDriver {
                 }
 
                 Thread.sleep((long) (1000L * sleepTime));
+                MyDriver.rollDown(1, 0.1);
             }
         } catch (Exception e) {
             System.out.printf("Stopped before completing all the %d clicks.\n", numberOfIterations);

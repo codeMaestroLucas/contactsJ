@@ -1,5 +1,0 @@
-use the command:
-
-touch src/main/java/org/example/src/sites/to_test/name.java
-
-to create a file inside this folder to test it

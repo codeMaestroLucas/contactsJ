@@ -35,13 +35,16 @@ public class _CompletedFirmsData {
             new DBHLaw(), new Helmsman(), new TahotaLaw(), new StewartMcKelvey(),
             new SIRIUS(), new Roschier(), new Liedekerke(), new CliffordChance(), new MorganLewis(),
             new SheppardMullin(), new Skadden(), new McMillan(), new SteinmetzHaringGurman(), new FluegelPreissner(),
+            new Secretariat(), new NautaDutilh(), new SHorowitzAndCo(), new ShahidLaw(), new Selmer(),
+            new Sintons(), new HjulmandCaptain(), new Odigo(), new Paksoy(), new PAGBAM(),
+            new SchindlerAttorneys(), new RonanDalyJermyn(), new NielsenNorager(),
 
             /* Await firms - Countries to avoid for now ...
             new BaeKimAndLee(), new DRAndAJU() new Deacons(), new CFNLaw(), new MalleyAndCo(),
             new TiruchelvamAssociates(), new MinterEllisonRuddWatts(), new MacphersonKelley(), new DCCLaw(), new MASLaw(),
             new ZhongziLaw(), new GrandwayLaw(), new LeeAndKo(), new MZMLegal(), new SprusonAndFerguson(),
             new K1Chamber(), new ShinAndKim(), new Allens(), new SFKSLaw(), new AlTamimi(),
-            new DuncanCotterill(),
+            new DuncanCotterill(), new OldhamLiAndNie(),
             */
 
             /** Indian Firms
@@ -81,7 +84,8 @@ public class _CompletedFirmsData {
             new DumontBergmanBider(), new MBM(), new MarksAndClerk(), new HansOffiaAndAssociates(), new PortaAndConsulentiAssociati(),
             new EPAndC(), new Hamso(), new JWP(), new ACAndR(), new KennedyVanderLaan(),
             new METIDA(), new PhilippeAndPartners(), new SBGK(), new DANUBIAPatentAndLaw(), new ReinhardSkuhraWeiseAndPartnerGbR(),
-            new PrinzAndPartner(), new PrueferAndPartner(),
+            new PrinzAndPartner(), new PrueferAndPartner(), new SZA(), new QuinEmanuel(), new Houthoof(),
+            new RocaJunyent(), new Cuatrecasas(),
 
             /* Await firms - Countries to avoid for now ...
             new NurmansyahAndMuzdalifah(), new TompkinsWake(), new FangdaPartners(), new LonganLaw(), new MishconKaras(),
