@@ -14,6 +14,15 @@ import java.util.Map;
 
 public class NautaDutilh extends ByPage {
 
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
+            "31", "the Netherlands",
+            "32", "Belgium",
+            "44", "England",
+            "352", "Luxembourg",
+            "1", "USA"
+    );
+
+
     private final By[] byRoleArray = {
             By.className("card__employee-subtitle")
     };
@@ -21,7 +30,7 @@ public class NautaDutilh extends ByPage {
     public NautaDutilh() {
         super(
                 "Nauta Dutilh",
-                "https://www.nautadutilh.com/en/our-people/",
+                "https://www.nautadutilh.com/en/our-people/?cnt=414",
                 1
         );
     }
@@ -32,13 +41,12 @@ public class NautaDutilh extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         MyDriver.clickOnAddBtn(By.cssSelector("button[data-do='accept']"));
-        MyDriver.clickOnElementMultipleTimes(By.className("filter-results__load-btn"), 14, 0.5);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner", "counsel", "director", "senior associate"
+                "advisor", "partner", "counsel", "director", "senior associate"
         };
 
         try {
@@ -48,7 +56,7 @@ public class NautaDutilh extends ByPage {
                             By.className("card--employee")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -70,6 +78,11 @@ public class NautaDutilh extends ByPage {
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
+    private String getCountry(String phone) {
+        return this.siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, phone);
+    }
+
+
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer.findElement(By.className("card__employee-meta")).findElements(By.tagName("a"));
@@ -89,10 +102,10 @@ public class NautaDutilh extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "the Netherlands",
+                "country", this.getCountry(socials[1]),
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "<I'll fill this if necessary>" : socials[1]
+                "phone", socials[1]
         );
     }
 }

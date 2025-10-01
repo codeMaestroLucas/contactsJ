@@ -110,8 +110,8 @@ public class QuinEmanuel extends ByNewPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            String email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
-            String phone = lawyer.findElement(By.cssSelector("a[href^='tel:']")).getAttribute("href");
+            String email = lawyer.findElement(By.cssSelector("a[href*='mailto:']")).getAttribute("href");
+            String phone = lawyer.findElement(By.cssSelector("a[href*='tel:']")).getAttribute("href");
             return new String[]{email, phone};
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

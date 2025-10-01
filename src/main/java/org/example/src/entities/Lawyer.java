@@ -24,7 +24,8 @@ public final class Lawyer {
     // Abbreviations to remove
     final Set<String> abbreviations = new HashSet<>(Arrays.asList(
             "mr", "ms", "mx", "dr", "prof", "mrs", "miss", "php",
-            "master", "sir", "esq", "rev", "att", "llm", "kc"
+            "master", "sir", "esq", "rev", "att", "llm", "kc", "ll m",
+            "msc", "llb", "nbsp"
     ));
 
     private final String[] validRoles = {
@@ -94,7 +95,7 @@ public final class Lawyer {
 
         // Remove punctuation and convert to lowercase
         name = name
-                .replaceAll("[.,]", " ")
+                .replaceAll("[.,;*ˆ:`]", " ")
                 .replaceAll("[\"']", " ")
                 .trim().toLowerCase();
 

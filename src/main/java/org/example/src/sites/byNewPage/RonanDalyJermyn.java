@@ -15,20 +15,22 @@ import java.util.Map;
 public class RonanDalyJermyn extends ByPage {
 
     private final By[] byRoleArray = {
-            By.cssSelector("div.overlay-text li:first-child")
+            By.cssSelector("div.overlay-text li")
     };
 
     public RonanDalyJermyn() {
         super(
                 "Ronan Daly Jermyn",
                 "https://www.rdj.ie/our-people",
-                1
+                40
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        String otherUrl = "https://www.rdj.ie/our-people/p" + (index + 1);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
     }
@@ -36,7 +38,7 @@ public class RonanDalyJermyn extends ByPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner", "consultant"
+                "partner", "advisor", "counsel", "senior associate"
         };
 
         try {
@@ -46,7 +48,7 @@ public class RonanDalyJermyn extends ByPage {
                             By.className("peoples-profile-inner")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }

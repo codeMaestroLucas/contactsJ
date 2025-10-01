@@ -72,21 +72,21 @@ public class CareyOlsen extends ByPage {
                 By.cssSelector("h3"),
                 By.cssSelector("a")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("position-location")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.className("position-location")
         };
-        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String country = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "textContent", LawyerExceptions::countryException);
         int pause = country.indexOf(",");
         country = country.substring(pause + 2); // ", "
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, country);

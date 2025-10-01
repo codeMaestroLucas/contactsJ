@@ -79,7 +79,6 @@ public class TimeCalculator {
                 String formattedTime = interfaceUtls.calculateTime(startTime, endTime);
                 System.out.println("\nTotal time: " + formattedTime);
             }
-            System.out.println();
         }
     }
 }

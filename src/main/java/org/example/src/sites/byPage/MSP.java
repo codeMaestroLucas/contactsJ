@@ -75,9 +75,7 @@ public class MSP extends ByPage {
 
 
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
-        String text = extractor.extractLawyerText(lawyer, byRoleArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
-        String[] split = text.split("\\n");
-        return split[2].trim();
+        return extractor.extractLawyerText(lawyer, byRoleArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
 

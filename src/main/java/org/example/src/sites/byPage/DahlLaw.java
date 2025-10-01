@@ -40,7 +40,7 @@ public class DahlLaw extends ByPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("employeecard__content")));
-            return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, webRole, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }

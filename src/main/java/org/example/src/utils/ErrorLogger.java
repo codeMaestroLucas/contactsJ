@@ -9,38 +9,31 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Singleton class to handle error logging.
- * It prevents duplicate error logging for the same firm within a session
- * and directs output to a file when not in debug mode.
+ * Singleton class to handle error logging with grouped output per firm.
+ * Collects errors during processing and outputs them in a clean format at the end of each firm.
  */
 public class ErrorLogger {
-
     private static ErrorLogger INSTANCE;
-    private final Map<String, Set<String>> loggedErrorsByFirm = new HashMap<>();
+    
+    // Map<FirmName, Map<ErrorDescription, Count>>
+    private final Map<String, Map<String, Integer>> firmErrors = new ConcurrentHashMap<>();
+    
     private static final String LOG_FILE_PATH = "log.txt";
+    private static final String SEPARATOR = "=".repeat(100);
 
     /**
      * Private constructor to prevent instantiation.
-     * It clears the log file at the beginning of a new session by opening it in overwrite mode.
+     * Initializes the log file for a new session.
      */
     private ErrorLogger() {
-        // Initialize the log file for the new session. This will overwrite the old file.
-        try (FileWriter fw = new FileWriter(LOG_FILE_PATH, false); // 'false' for overwrite mode
-             PrintWriter pw = new PrintWriter(fw)) {
-            pw.println("=============== LOG SESSION STARTED ===============");
-            pw.printf("Session started at: %s%n%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-        } catch (IOException e) {
-            System.err.println("FATAL: Could not initialize log file.");
-            e.printStackTrace(System.err);
-        }
+        initializeLogFile();
     }
 
     public static synchronized ErrorLogger getINSTANCE() {
@@ -51,171 +44,186 @@ public class ErrorLogger {
     }
 
     /**
-     * Logs an error, either to the console or to a file, avoiding duplicates for the same firm.
-     * @param firmName The name of the firm where the error occurred.
-     * @param e The exception to log.
-     * @param showLogs If true, prints the full stack trace to the console. If false, logs a summary to the file.
+     * Initializes the log file, overwriting any existing content.
+     */
+    private void initializeLogFile() {
+        try (FileWriter fw = new FileWriter(LOG_FILE_PATH, false);
+             PrintWriter pw = new PrintWriter(fw)) {
+            pw.printf("LOG SESSION STARTED - %s%n%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        } catch (IOException e) {
+            System.err.println("FATAL: Could not initialize log file.");
+            e.printStackTrace(System.err);
+        }
+    }
+
+    /**
+     * Logs an error for a specific firm. Errors are collected and will be written 
+     * when flushErrorsForFirm() is called.
+     * 
+     * @param firmName The name of the firm where the error occurred
+     * @param e The exception to log
+     * @param showLogs If true, prints to console instead of collecting for file
      */
     public void log(String firmName, Exception e, boolean showLogs) {
         if (showLogs) {
-            System.err.printf("Error while processing firm %s:%n", firmName);
-            e.printStackTrace(System.err);
+            System.err.printf("Error while processing firm %s: %s%n", firmName, e.getMessage());
             return;
         }
 
-        // Do not log validation exceptions to the file.
-        if (e instanceof ValidationExceptions) return;
-
-        String errorIdentifier = getExceptionIdentifier(e);
-
-        // Initialize the set for the firm if it doesn't exist
-        loggedErrorsByFirm.putIfAbsent(firmName, new HashSet<>());
-
-        // Get the set of logged errors for this specific firm
-        Set<String> firmErrors = loggedErrorsByFirm.get(firmName);
-
-        // If this specific error type has already been logged for THIS firm, do nothing.
-        if (firmErrors.contains(errorIdentifier)) {
+        // Skip validation exceptions
+        if (e instanceof ValidationExceptions) {
             return;
         }
 
-        // Add the identifier to the set to prevent future duplicate logs for this firm
-        firmErrors.add(errorIdentifier);
-
-        // Write the unique error to the log file in append mode.
-        try (FileWriter fw = new FileWriter(LOG_FILE_PATH, true);
-             PrintWriter pw = new PrintWriter(fw)) {
-
-            pw.println("------------------------------------------------------------");
-            pw.printf("Firm: %s%n", firmName);
-            pw.printf("Timestamp: %s%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-            pw.printf("Error Type: %s%n", e.getClass().getName());
-            pw.printf("Error Identifier: %s%n", errorIdentifier);
-            pw.printf("Message: %s%n", e.getMessage());
-
-            // Only print stack trace if NOT a LawyerExceptions
-            if (!(e instanceof org.example.exceptions.LawyerExceptions)) {
-                pw.println("Stack trace:");
-                e.printStackTrace(pw);
-            }
-
-            pw.println("------------------------------------------------------------\n");
-
-        } catch (IOException ioException) {
-            System.err.println("FATAL: Could not write to log file.");
-            ioException.printStackTrace(System.err);
-        }
+        String errorDescription = getErrorDescription(e);
+        
+        // Get or create the error map for this firm
+        firmErrors.putIfAbsent(firmName, new HashMap<>());
+        Map<String, Integer> errors = firmErrors.get(firmName);
+        
+        // Increment the count for this error type
+        errors.put(errorDescription, errors.getOrDefault(errorDescription, 0) + 1);
     }
 
     /**
-     * Overloaded method to log errors with additional context information
-     * @param firmName The name of the firm where the error occurred.
-     * @param e The exception to log.
-     * @param showLogs If true, prints the full stack trace to the console. If false, logs a summary to the file.
-     * @param context Additional context information (e.g., "Error accessing page 3", "Error fetching lawyers on page 2")
+     * Overloaded method that ignores the context parameter for backwards compatibility.
      */
     public void log(String firmName, Exception e, boolean showLogs, String context) {
-        if (showLogs) {
-            System.err.printf("Error while processing firm %s: %s%n", firmName, context);
-            e.printStackTrace(System.err);
+        log(firmName, e, showLogs);
+    }
+
+    /**
+     * Writes all collected errors for a firm to the log file in the specified format
+     * and clears the errors for that firm from memory.
+     * 
+     * @param firmName The name of the firm to flush errors for
+     */
+    public void flushErrorsForFirm(String firmName) {
+        Map<String, Integer> errors = firmErrors.get(firmName);
+        
+        // If no errors for this firm, don't write anything
+        if (errors == null || errors.isEmpty()) {
             return;
         }
 
-        // Do not log validation exceptions to the file.
-        if (e instanceof ValidationExceptions) return;
-
-        String errorIdentifier = getExceptionIdentifier(e) + " (" + context + ")";
-
-        // Initialize the set for the firm if it doesn't exist
-        loggedErrorsByFirm.putIfAbsent(firmName, new HashSet<>());
-
-        // Get the set of logged errors for this specific firm
-        Set<String> firmErrors = loggedErrorsByFirm.get(firmName);
-
-        // If this specific error type has already been logged for THIS firm, do nothing.
-        if (firmErrors.contains(errorIdentifier)) {
-            return;
-        }
-
-        // Add the identifier to the set to prevent future duplicate logs for this firm
-        firmErrors.add(errorIdentifier);
-
-        // Write the unique error to the log file in append mode.
         try (FileWriter fw = new FileWriter(LOG_FILE_PATH, true);
              PrintWriter pw = new PrintWriter(fw)) {
-
-            pw.println("------------------------------------------------------------");
-            pw.printf("Firm: %s%n", firmName);
-            pw.printf("Context: %s%n", context);
-            pw.printf("Timestamp: %s%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-            pw.printf("Error Type: %s%n", e.getClass().getName());
-            pw.printf("Error Identifier: %s%n", errorIdentifier);
-            pw.printf("Message: %s%n", e.getMessage());
-
-            // Only print stack trace if NOT a LawyerExceptions
-            if (!(e instanceof org.example.exceptions.LawyerExceptions)) {
-                pw.println("Stack trace:");
-                e.printStackTrace(pw);
+            
+            // Write the formatted output
+            pw.println(SEPARATOR);
+            pw.println(firmName);
+            pw.println();
+            pw.println("Errors:");
+            
+            // Write each error with its count
+            for (Map.Entry<String, Integer> entry : errors.entrySet()) {
+                String errorDescription = entry.getKey();
+                Integer count = entry.getValue();
+                pw.printf("    - %s %dx%n", errorDescription, count);
             }
-
-            pw.println("------------------------------------------------------------\n");
+            
+            pw.println(SEPARATOR);
+            pw.println();
 
         } catch (IOException ioException) {
             System.err.println("FATAL: Could not write to log file.");
             ioException.printStackTrace(System.err);
         }
+
+        // Clear the errors for this firm
+        firmErrors.remove(firmName);
     }
 
     /**
-     * Generates a unique identifier for an exception to prevent duplicate logging.
-     * For WebDriverExceptions, it tries to extract a specific error code.
-     * @param e The exception.
-     * @return A string identifier for the error type.
+     * Flushes errors for all firms that still have pending errors.
+     * Useful for cleanup at the end of the session.
      */
-    private String getExceptionIdentifier(Exception e) {
+    public void flushAllPendingErrors() {
+        for (String firmName : firmErrors.keySet()) {
+            flushErrorsForFirm(firmName);
+        }
+    }
+
+    /**
+     * Generates a short, readable error description from an exception.
+     * 
+     * @param e The exception
+     * @return A short description of the error
+     */
+    private String getErrorDescription(Exception e) {
         if (e instanceof WebDriverException) {
             String message = e.getMessage();
             if (message != null) {
-                // Extracts specific, recurring error patterns to treat them as one type.
-                Pattern pattern = Pattern.compile("(net::[A-Z_]+)|(no such window)|(target window already closed)");
-                Matcher matcher = pattern.matcher(message);
+                // Try to extract specific WebDriver error patterns
+                Pattern pattern = Pattern.compile("(net::[A-Z_]+)|(no such window)|(target window already closed)|(element not found)|(timeout)");
+                Matcher matcher = pattern.matcher(message.toLowerCase());
                 if (matcher.find()) {
-                    return "WebDriverException: " + matcher.group(0).trim();
+                    String match = matcher.group(0);
+                    return "WebDriver Error: " + formatErrorText(match);
+                }
+                
+                // Extract first meaningful part of the message
+                String[] parts = message.split("\\n")[0].split("\\.");
+                if (parts.length > 0) {
+                    String firstPart = parts[0].trim();
+                    if (firstPart.length() > 50) {
+                        firstPart = firstPart.substring(0, 47) + "...";
+                    }
+                    return "WebDriver Error: " + firstPart;
                 }
             }
-            return "WebDriverException: " + (message != null ? message.substring(0, Math.min(50, message.length())) : "Unknown");
+            return "WebDriver Error: Unknown issue";
         }
+        
         if (e instanceof TimeoutException) {
-            return "TimeoutException";
+            return "Timeout: Element or page took too long to load";
         }
-        // For other exceptions, use the class name as the identifier.
-        return e.getClass().getSimpleName();
-    }
-
-    /**
-     * Method to get the current logged errors for debugging purposes.
-     * @return A copy of the current logged errors by firm.
-     */
-    public Map<String, Set<String>> getLoggedErrorsByFirm() {
-        Map<String, Set<String>> copy = new HashMap<>();
-        for (Map.Entry<String, Set<String>> entry : loggedErrorsByFirm.entrySet()) {
-            copy.put(entry.getKey(), new HashSet<>(entry.getValue()));
+        
+        if (e instanceof RuntimeException) {
+            String message = e.getMessage();
+            if (message != null && !message.isEmpty()) {
+                if (message.length() > 60) {
+                    message = message.substring(0, 57) + "...";
+                }
+                return "Runtime Error: " + message;
+            }
+            return "Runtime Error: " + e.getClass().getSimpleName();
         }
-        return copy;
+        
+        // For other exceptions, use class name and short message
+        String className = e.getClass().getSimpleName();
+        String message = e.getMessage();
+        
+        if (message != null && !message.isEmpty()) {
+            if (message.length() > 40) {
+                message = message.substring(0, 37) + "...";
+            }
+            return className + ": " + message;
+        }
+        
+        return className;
     }
 
     /**
-     * Method to clear logged errors for a specific firm (useful for testing).
-     * @param firmName The firm name to clear errors for.
+     * Formats error text to be more readable.
      */
-    public void clearErrorsForFirm(String firmName) {
-        loggedErrorsByFirm.remove(firmName);
+    private String formatErrorText(String text) {
+        return text.replace("_", " ").toLowerCase().trim();
     }
 
     /**
-     * Method to clear all logged errors (useful for testing).
+     * Gets the current count of pending firms with errors.
+     * Useful for debugging or monitoring.
      */
-    public void clearAllErrors() {
-        loggedErrorsByFirm.clear();
+    public int getPendingFirmsCount() {
+        return firmErrors.size();
+    }
+
+    /**
+     * Checks if a specific firm has any pending errors.
+     */
+    public boolean hasPendingErrors(String firmName) {
+        Map<String, Integer> errors = firmErrors.get(firmName);
+        return errors != null && !errors.isEmpty();
     }
 }

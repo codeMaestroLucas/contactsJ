@@ -65,7 +65,6 @@ public class SZA extends ByNewPage {
                 By.cssSelector("div.intro__contact > p.c4")
         };
         String role = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE",  "textContent",LawyerExceptions::roleException);
-        System.out.println(role);
         return siteUtl.isValidPosition(role, validRoles) ? role : "Invalid Role";
     }
 

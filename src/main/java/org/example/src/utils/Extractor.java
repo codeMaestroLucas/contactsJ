@@ -63,7 +63,7 @@ public class Extractor {
             }
 
 
-            return value.replaceAll("[\\t\\n]", "").trim();
+            return value.replaceAll("[\\t\\n]", " ").trim();
 
         } catch (LawyerExceptions e) {
             if ((fieldName.equals("EMAIL"))) {
@@ -87,7 +87,12 @@ public class Extractor {
             java.util.function.Function<String, LawyerExceptions> exceptionSupplier)
             throws LawyerExceptions
     {
-        return extractLawyerField(lawyer, locators, fieldName, false, null, exceptionSupplier);
+        String value = extractLawyerField(lawyer, locators, fieldName, false, null, exceptionSupplier);
+        if (value.isBlank()) {
+            System.out.println("\t$$ Could not extract lawyer text for " + fieldName);
+            value = extractLawyerAttribute(lawyer, locators, fieldName, "textContent", exceptionSupplier);
+        }
+        return value;
     }
 
 

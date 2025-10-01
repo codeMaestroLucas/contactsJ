@@ -25,7 +25,7 @@ public class Cassels extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        MyDriver.rollDown(21, 2.5);
+        MyDriver.rollDown(21, 3.5);
     }
 
     protected List<WebElement> getLawyersInPage() {

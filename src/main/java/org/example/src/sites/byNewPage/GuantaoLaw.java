@@ -79,28 +79,27 @@ public class GuantaoLaw extends ByNewPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("gt_team_bannercr_title")};
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("gt_team_bannercr_ltitle")};
-        String text = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        String text = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
         return text.split("\\|")[0].trim();
     }
 
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("gt_team_bannercr_ltitle")};
-        String text = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-        String office = text.split("\\|")[1].trim();
+        String office = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "textContent", LawyerExceptions::countryException);
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "China");
     }
 
 
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("gt_team_bannercr_ly")};
-        String text = extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        String text = extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
         return text.split("·")[0].trim();
     }
 

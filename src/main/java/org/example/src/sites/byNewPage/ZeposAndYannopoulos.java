@@ -38,8 +38,7 @@ public class ZeposAndYannopoulos extends ByNewPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
+        MyDriver.clickOnAddBtn(By.className("coi-banner__decline"));
     }
 
 
@@ -69,7 +68,7 @@ public class ZeposAndYannopoulos extends ByNewPage {
 
     public void openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='']")//todo
+                By.cssSelector("a[href*='/our-people/']")
         };
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
@@ -86,19 +85,18 @@ public class ZeposAndYannopoulos extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("page-subtitle")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("practice-areas"),
+                By.cssSelector("div.content > ul > li > a")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
     }
 
 
@@ -120,7 +118,8 @@ public class ZeposAndYannopoulos extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className(""));
+        MyDriver.clickOnAddBtn(By.className("js-modal-page-ok-button"));
+        WebElement div = driver.findElement(By.className("person"));
 
         String[] socials = this.getSocials(div);
 
@@ -130,7 +129,7 @@ public class ZeposAndYannopoulos extends ByNewPage {
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Greece",
-                "practice_area", this.getCountry(div),
+                "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

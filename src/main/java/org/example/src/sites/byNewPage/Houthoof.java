@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Houthoof extends ByNewPage {
+public class  Houthoof extends ByNewPage {
     private String[] validRoles = new String[]{
             "partner", "counsel", "senior associate"
     };
@@ -48,11 +48,14 @@ public class Houthoof extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            return wait.until(
+            List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div[data-name='template_people'] > a[href*='https://www.houthoff.com/people/']")
+                            By.cssSelector("a[href*='https://www.houthoff.com/people/']")
                     )
             );
+            // Remove the first 4 elements
+            lawyers.subList(0, 4).clear();
+            return lawyers;
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }

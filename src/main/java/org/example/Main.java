@@ -10,7 +10,10 @@ import org.example.src.utils.NoSleep;
 import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.*;
 
 import static org.example.src.utils.TimeCalculator.calculateTimeOfExecution;
@@ -27,9 +30,10 @@ public class Main {
         System.out.println("Completed: Filtering and processing complete.");
     }
 
-    private static void searchLawyersInWeb() {
+    private static void searchLawyersInWeb() throws InterruptedException {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
+        int redo = 0;
 
         List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET + 70);
         ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -71,34 +75,34 @@ public class Main {
                     e.getCause().printStackTrace();
                 }
 
+            if (totalLawyersRegistered == 0 && redo == 0) {
+                System.out.println("REDOING FIRM IN THE FUTURE");
+                sites.add(site);
+                redo = 1;
+            }
+
             } finally {
                 long endTime = System.currentTimeMillis();
                 reports.createReportRow(site, instance.calculateTime(initTime, endTime));
-            }
+                redo = 0;
+                Thread.sleep(2500);
 
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                System.err.println("Sleep interrupted between sites.");
             }
         }
 
         executor.shutdownNow();
-        System.out.println("Completed: Lawyer search finished.");
-        System.out.println("Total lawyers collected in web: " + totalLawyersRegistered);
-        System.out.println();
+        System.out.println("\n\nCompleted: Lawyer search finished.");
+        System.out.println("\tTotal lawyers collected in web: \u001B[1;31m" + totalLawyersRegistered + "\u001B[0;0m");
     }
 
     @SneakyThrows
     private static void performCompleteSearch() {
-        // Wrap methods that throw InterruptedException in lambdas
-        calculateTimeOfExecution(() -> getRegisteredContacts());
+        calculateTimeOfExecution(Main::getRegisteredContacts);
         calculateTimeOfExecution(() -> {
             try {
                 searchLawyersInWeb();
             } catch (Exception e) {
-                throw new RuntimeException(e); // wrap checked exception
+                throw new RuntimeException(e);
             }
         });
 

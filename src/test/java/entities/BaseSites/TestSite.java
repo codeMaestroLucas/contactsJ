@@ -1,7 +1,8 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byPage.PAGBAM;
+import org.example.src.sites.byPage.RBK;
+
 
 import java.lang.reflect.Field;
 
@@ -9,7 +10,7 @@ import java.lang.reflect.Field;
  * Class used to test a new Site
  */
 
-class MyTestPage extends PAGBAM {
+class MyTestPage extends RBK {
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */
