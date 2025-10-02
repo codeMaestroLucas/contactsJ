@@ -93,7 +93,7 @@ public abstract class ByPage extends Site {
         }
         
         // Flush all collected errors for this firm to the log file
-        errorLogger.flushErrorsForFirm(this.name);
+        errorLogger.flushFirmLogs(this.name);
         
         return null;
     }

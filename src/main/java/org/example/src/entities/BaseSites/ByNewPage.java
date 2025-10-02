@@ -95,6 +95,10 @@ public abstract class ByNewPage extends Site {
                 }
             }
         }
+        
+        // Flush all collected errors for this firm to the log file
+        errorLogger.flushFirmLogs(this.name);
+        
         return null;
     }
 

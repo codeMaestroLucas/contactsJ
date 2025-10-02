@@ -1,6 +1,7 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byPage.Esche;
 import org.example.src.sites.byPage.RBK;
 
 
@@ -10,7 +11,7 @@ import java.lang.reflect.Field;
  * Class used to test a new Site
  */
 
-class MyTestPage extends RBK {
+class MyTestPage extends Esche {
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */

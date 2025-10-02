@@ -16,7 +16,7 @@ public class _CompletedFirmsData {
             new CareyOlsen(), new Cassels(), new CassidyLevyKent(), new Chattertons(), new ClarkWilson(),
             new ClemensLaw(), new CliffordChance(), new CollasCrill(), new ConsortiumLegal(), new Conyers(),
             new CrowellAndMoring(), new DahlLaw(), new DaleAndLessmann(), new DechertLLP(), new DillonEustace(),
-            new DittmarAndIndrenius(), new Dompatent(), new DrzewieckiTomaszek(), new Esche(), new Finreg360(),
+            new DittmarAndIndrenius(), new Dompatent(), new DrzewieckiTomaszek(), new Finreg360(),
             new FluegelPreissner(), new Foyen(), new GarciaBodan(), new GianniAndOrigoni(), new GomezAceboAndPombo(),
             new GreenbergTraurig(), new HammarskioldAndCo(), new HannesSnellman(), new HavelPartners(), new HerbertSmithFreehillsKramer(),
             new HFW(), new HillDickinson(), new HjulmandCaptain(), new HNA(), new JGSA(),
@@ -89,7 +89,7 @@ public class _CompletedFirmsData {
             new Sangra(), new SargentAndKrahn(), new SBGK(), new Sherrards(), new Sorainen(),
             new SZA(), new TEMPLARS(), new Thommessen(), new ThompsonDorfmanSweatman(), new WardynskiAndPartners(),
             new Werksmans(), new Wiersholm(), new WikborgRein(), new RMADVAdvogados(), new LambadariosLaw(),
-            new HaslingerNagele(), new ZeposAndYannopoulos(),
+            new HaslingerNagele(), new ZeposAndYannopoulos(), new Esche()
 
 
             /* Await firms - Countries to avoid for now ...

@@ -24,23 +24,23 @@ public final class Lawyer {
     // Abbreviations to remove
     final Set<String> abbreviations = new HashSet<>(Arrays.asList(
             "mr", "ms", "mx", "dr", "prof", "mrs", "miss", "php",
-            "master", "sir", "esq", "rev", "att", "llm", "kc", "ll m",
+            "master", "sir", "esq", "rev", "att", "llm", "kc",
             "msc", "llb", "nbsp"
     ));
 
     private final String[] validRoles = {
-        "Senior Partner", "Senior Associate", "Senior Director", "Senior Advisor",
+            "senior partner", "senior associate", "senior director", "senior advisor",
 
-        "Associate Principal", "Associate Counsel", "Associate Director", "Associate Advisor", "Associate Partner",
+            "associate principal", "associate counsel", "associate director", "associate advisor", "associate partner",
 
-        "Of Counsel", "Special Counsel",
+            "of counsel", "special counsel",
 
-        "Managing Partner", "Managing Director", "Managing Associate", "Managing Principal", "Managing Counsel",
+            "managing partner", "managing director", "managing associate", "managing principal", "managing counsel",
 
-        "Founding Partner", "Co Founder",
+            "founding partner", "co founder",
 
-        "Partner", "Counsel", "Director", "Founder", "Principal", "Advisor", "Manager", "Shareholder",
-        "Head", "Chair", "Legal", "Silk", "Dipl."
+            "partner", "counsel", "director", "founder", "principal", "advisor", "manager", "shareholder",
+            "head", "chair", "legal", "silk", "dipl."
     };
 
     @Builder
@@ -97,11 +97,13 @@ public final class Lawyer {
         name = name
                 .replaceAll("[.,;*ˆ:`]", " ")
                 .replaceAll("[\"']", " ")
-                .trim().toLowerCase();
+                .toLowerCase()
+                .replace("ll m", "")
+                .trim();
 
         // Remove common legal role terms
         for (String role : validRoles) {
-            name = name.replace(role.toLowerCase(), " ");
+            name = name.replace(role, " ");
         }
 
 

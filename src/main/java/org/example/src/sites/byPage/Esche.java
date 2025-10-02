@@ -1,6 +1,7 @@
 package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
+import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
@@ -11,11 +12,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
-public class Esche extends ByPage {
+public class Esche extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className("person-img"),
-            By.className("person-img-assoc")
+            By.cssSelector("a[href*='/en/personalities/'] > span")
     };
 
 
@@ -32,13 +33,15 @@ public class Esche extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
+        MyDriver.clickOnAddBtn(By.id("cmpbntyestxt"));
     }
 
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
                 "partner",
-                "counsel"
+                "counsel",
+                "advisor"
         };
 
         try {
@@ -46,46 +49,40 @@ public class Esche extends ByPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("person-list-card")
+                            By.className("person-card")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
-
-    public String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("person-img"),
-                By.className("person-img-link"),
-                By.cssSelector("a")
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+    @Override
+    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+        MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href*='/en/personalities/']")).getAttribute("href"));
     }
-
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("person-card-details"),
-                By.className("person-name"),
+                By.tagName("h1"),
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        By[] byArray = new By[]{
+                By.cssSelector("span.rounded-md"),
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                    .findElement(By.className("person-card-details"))
-                    .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.tagName("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -96,11 +93,16 @@ public class Esche extends ByPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
+        this.openNewTab(lawyer);
+
+        WebElement div = driver.findElement(By.className("person-profile"));
+
+        String[] socials = this.getSocials(div);
+
         return Map.of(
-                "link", this.getLink(lawyer),
-                "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "name", this.getName(div),
+                "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Germany",
                 "practice_area", "",

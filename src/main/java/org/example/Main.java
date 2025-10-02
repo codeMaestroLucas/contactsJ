@@ -5,15 +5,13 @@ import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.entities.excel.Reports;
+import org.example.src.utils.ErrorLogger;
 import org.example.src.utils.FirmsOMonth;
 import org.example.src.utils.NoSleep;
 import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.*;
 
 import static org.example.src.utils.TimeCalculator.calculateTimeOfExecution;
@@ -114,6 +112,8 @@ public class Main {
         try {
             performCompleteSearch();
         } finally {
+            // Write any remaining logs that weren't flushed
+            ErrorLogger.getINSTANCE().flushAllLogs();
             NoSleep.allowSleep(); // allow sleep again when finished
         }
     }
