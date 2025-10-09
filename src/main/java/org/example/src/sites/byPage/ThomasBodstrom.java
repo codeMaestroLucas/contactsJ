@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,61 +12,54 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class MAQS extends ByPage {
-    private final By[] webRole = {
-            By.className("person__title")
-    };
+public class ThomasBodstrom extends ByPage {
+    private final By[] byArray = { By.className("dipl_team_member_designation") };
 
-    public MAQS() {
+    public ThomasBodstrom() {
+
         super(
-                "MAQS",
-                "https://maqs.com/en/people?f%5B0%5D=title%3A33",
-                7
+                "Thomas Bodström",
+                "https://www.bodstrom.se/medarbetare/",
+                1
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "https://maqs.com/en/people?f%5B0%5D=title%3A33&page=" + index;
-        String url = index == 0 ? this.link : otherUrl;
-        this.driver.get(url);
+        this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner", "director", "counsel","senior associate"};
+        String[] validRoles = {"delägare", "grundare"};
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("person-teaser__inner")
+                            By.className("dipl_team_content_wrapper")
                     )
             );
-            return siteUtl.filterLawyersInPage(lawyers, webRole, false, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byArray, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
-    private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = { By.cssSelector("a[href*='/en/person/']") };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "href", LawyerExceptions::nameException);
-    }
-
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = { By.className("person__name") };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
+        By[] byArray = { By.className("dipl_team_member_name") };
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerAttribute(lawyer, webRole, "ROLE", "textContent", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return role.trim().toLowerCase().contains("grundare") ? "Founder" : "Partner";
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.tagName("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a[href^='mailto:']"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             return new String[] { "", "" };
@@ -76,16 +69,15 @@ public class MAQS extends ByPage {
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
-
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", this.link,
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
                 "country", "Sweden",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "46102657300" : socials[1]
+                "phone", "xxxxxx"
         );
     }
 }

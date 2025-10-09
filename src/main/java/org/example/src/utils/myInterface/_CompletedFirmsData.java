@@ -4,7 +4,6 @@ import lombok.Getter;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.sites.byPage.*;
-import org.example.src.sites.to_test.*;
 
 @Getter
 public class _CompletedFirmsData {
@@ -53,16 +52,10 @@ public class _CompletedFirmsData {
             new AraozAndRueda(), new Ashitiva(), new BancilaDiaconuSiAsociatii(), new BARENTSKRANS(),
             new BrinkmannAndPartner(), new Broseta(), new BurnetDuckworthAndPalmer(), new Delcade(), new HBNLaw(),
             new Hugel(), new KewLaw(), new KienhuisLegal(), new LEGlobal(), new LemstraVanDerKorst(),
+            new MAQS(), new NovaLaw(), new Penta(), new Ploum(), new RitchMueller(),
+            new ThomasBodstrom(),
 
 
-//bypage
-            new MAQS(),
-            new NovaLaw(),
-            new Penta(), new Ploum(), new RahmatLimAndPartners(), new RajahAndTann(), new RitchMueller(),
-            new ThomasBodstromLawFirm(),
-
-//bynewpage
-            new MdME(), new MSBSolicitors(), new OsborneClarke()
 
 
 
@@ -115,6 +108,7 @@ public class _CompletedFirmsData {
             new Werksmans(), new Wiersholm(), new WikborgRein(), new RMADVAdvogados(), new LambadariosLaw(),
             new HaslingerNagele(), new ZeposAndYannopoulos(), new Esche(), new Fylgia(), new Vischer(),
             new Astrea(), new BurgesSalmon(), new CRCCD(), new Ekelmans(), new MillerThomsonLLP(),
+            new MdME(), new MSBSolicitors(), new OsborneClarke(),
 
 
 

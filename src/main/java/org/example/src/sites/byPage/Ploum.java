@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,11 +12,13 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class RitchMueller extends ByPage {
-    public RitchMueller() {
+public class Ploum extends ByPage {
+    private final By[] byArray = { By.className("card__meta") };
+
+    public Ploum() {
         super(
-                "Ritch Mueller",
-                "https://www.ritch.com.mx/en/team?filters=1&member_types%5B%5D=1",
+                "Ploum",
+                "https://ploum.nl/en/specialists#Specialist",
                 1
         );
     }
@@ -30,36 +32,41 @@ public class RitchMueller extends ByPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
+        String[] validRoles = {"partner", "counsel", "senior associate"};
+
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            return wait.until(
+            List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.content.member")
+                            By.className("card__body")
                     )
             );
+            return siteUtl.filterLawyersInPage(lawyers, byArray,true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = { By.cssSelector("h1.title a") };
+        By[] byArray = { By.className("card__button") };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = { By.cssSelector("h1.title a") };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        By[] byArray = { By.className("card__title") };
+        String name = extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return name.replace("\n", " ");
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = { By.cssSelector("p.auxiliary-text-2") };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.cssSelector("p.auxiliary-text > a"));
+            List<WebElement> socials = lawyer
+                    .findElement(By.className("detailed__contacts"))
+                    .findElements(By.tagName("a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             return new String[] { "", "" };
@@ -74,10 +81,10 @@ public class RitchMueller extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "Mexico",
+                "country", "the Netherlands",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1].isEmpty() ? "31104406440" : socials[1]
         );
     }
 }

@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;

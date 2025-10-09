@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites._standingBy.toAvoidForNow;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,69 +12,61 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class Penta extends ByPage {
+public class RahmatLimAndPartners extends ByPage {
 
-    private final By[] byRoleArray = {
-            By.className("title")
-    };
-
-    public Penta() {
+    public RahmatLimAndPartners() {
         super(
-                "Penta",
-                "https://penta.dk/medarbejdere/?omraade=partnere",
-                1
+                "Rahmat Lim And Partners",
+                "https://www.rahmatlim.com/partners/",
+                1,
+                3
         );
     }
 
     @Override
-    protected void accessPage(int index) throws InterruptedException {
+    protected void accessPage(int index) {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
-        Thread.sleep(1000L);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner"
-        };
-
-        try {
-            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("employee_detail")
-                    )
-            );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to find lawyer elements", e);
-        }
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+        return wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("card-body"))
+        );
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{By.cssSelector("h2 > a")};
+        By[] byArray = {By.cssSelector("h2.heading a")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.tagName("h2")
-        };
+        By[] byArray = {By.cssSelector("h2.heading a")};
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.tagName("p")};
+        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.tagName("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.addr-item a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
+        }
+    }
+
+    private String getPhone(WebElement lawyer) {
+        try {
+            return lawyer.findElement(By.className("tel")).getText();
+        } catch (Exception e) {
+            return "";
         }
     }
 
@@ -85,12 +77,12 @@ public class Penta extends ByPage {
         return Map.of(
                 "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
+                "role", "Partner",
                 "firm", this.name,
-                "country", "Denmark",
+                "country", this.getCountry(lawyer),
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", this.getPhone(lawyer)
         );
     }
 }

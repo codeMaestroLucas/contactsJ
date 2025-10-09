@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites._standingBy.toAvoidForNow;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,14 +12,17 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class RahmatLimAndPartners extends ByPage {
+public class RajahAndTann extends ByPage {
+    private final By[] byRoleArray = {
+            By.className("our-partners-excerpt")
+    };
 
-    public RahmatLimAndPartners() {
+    public RajahAndTann() {
         super(
-                "Rahmat Lim And Partners",
-                "https://www.rahmatlim.com/partners/",
+                "Rajah And Tann",
+                "https://mm.rajahtannasia.com/our-partners/",
                 1,
-                3
+                2
         );
     }
 
@@ -31,30 +34,36 @@ public class RahmatLimAndPartners extends ByPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
+        String[] validRoles = {"partner", "head"};
         WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-        return wait.until(
-                ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("card-body"))
+        List<WebElement> lawyers = wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("our-partners-search-column"))
         );
+        return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h2.heading a")};
+        By[] byArray = {By.cssSelector("h3.our-partners-title a")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h2.heading a")};
+        By[] byArray = {By.cssSelector("h3.our-partners-title a")};
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+    }
+
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.tagName("p")};
+        By[] byArray = {By.className("our-partners-country")};
         return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.addr-item a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector(".our-partners-term-meta a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
@@ -64,7 +73,7 @@ public class RahmatLimAndPartners extends ByPage {
 
     private String getPhone(WebElement lawyer) {
         try {
-            return lawyer.findElement(By.className("tel")).getText();
+            return lawyer.findElement(By.className("our-partners-term-phone")).getText();
         } catch (Exception e) {
             return "";
         }
@@ -77,7 +86,7 @@ public class RahmatLimAndPartners extends ByPage {
         return Map.of(
                 "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
-                "role", "Partner",
+                "role", this.getRole(lawyer),
                 "firm", this.name,
                 "country", this.getCountry(lawyer),
                 "practice_area", "",
