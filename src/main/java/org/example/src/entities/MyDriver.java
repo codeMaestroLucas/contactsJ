@@ -57,26 +57,31 @@ public final class MyDriver {
     }
 
     /**
-     * Scroll down the page to load more elements.
+     * Scrolls down the page to load more elements.
+     * Works on any OS or browser using JavaScript-based scrolling.
      *
-     * @param timesToRollDown Number of times to scroll.
-     * @param sleepTime       Sleep time in seconds between scrolls.
+     * @param timesToScroll Number of scroll attempts
+     * @param sleepTime     Delay in seconds between scrolls
+     * @throws InterruptedException if thread sleep is interrupted
      */
-    public static void rollDown(int timesToRollDown, double sleepTime) throws InterruptedException {
+    public static void rollDown(int timesToScroll, double sleepTime)
+            throws InterruptedException {
+
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        for (int i = 0; i < timesToRollDown; i++) {
+        for (int i = 0; i < timesToScroll; i++) {
+            js.executeScript("window.scrollBy(0, window.innerHeight);");
             Thread.sleep((long) (sleepTime * 1000L));
-            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         }
+
+        // Extra delay for lazy-loaded content
         Thread.sleep(1500);
     }
 
 
-
     /**
-     * Perform a unique click on a element.
-     * 1st it tryes to click on the element.
+     * Perform a unique click on an element.
+     * 1st it tries to click on the element.
      * If it fails it hovers it for 0.5 seconds and then try to click on it.
      * If it fails again perform a last try click
      */
@@ -182,7 +187,7 @@ public final class MyDriver {
     }
 
     /**
-     * Oppen a new tab with the passing url
+     * Open a new tab with the passing url
      */
     public static void openNewTab(String url) {
         driver.switchTo().newWindow(WindowType.TAB).get(url);

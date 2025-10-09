@@ -1,0 +1,100 @@
+package org.example.src.sites.byPage;
+
+import org.example.exceptions.LawyerExceptions;
+import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.MyDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+
+public class DeethWilliamsWall extends ByPage {
+    private final By[] webRole = {
+            By.className("teaser--summary")
+    };
+
+    public DeethWilliamsWall() {
+        super(
+                "Deeth Williams Wall",
+                "https://www.dww.com/professionals",
+                1
+        );
+    }
+
+    @Override
+    protected void accessPage(int index) throws InterruptedException {
+        this.driver.get(this.link);
+        MyDriver.waitForPageToLoad();
+        Thread.sleep(1000L);
+    }
+
+    @Override
+    protected List<WebElement> getLawyersInPage() {
+        String[] validRoles = {"founding", "partner", "counsel"};
+        try {
+            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+            List<WebElement> lawyers = wait.until(
+                    ExpectedConditions.presenceOfAllElementsLocatedBy(
+                            By.className("teaser--info")
+                    )
+            );
+            return siteUtl.filterLawyersInPage(lawyers, webRole, false, validRoles);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to find lawyer elements", e);
+        }
+    }
+
+    private String getLink(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{By.cssSelector("h2 > a")};
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+    }
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.cssSelector("span[property='schema:name']")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+    }
+
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, webRole, "ROLE", LawyerExceptions::roleException);
+    }
+
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.className("related_pa_primary")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+    }
+
+    private String[] getSocials(WebElement lawyer) {
+        try {
+            String email = lawyer.findElement(By.cssSelector("span[property='schema:email'] a")).getAttribute("href");
+            String phone = lawyer.findElement(By.cssSelector("span[property='schema:telephone']")).getText();
+            return new String[]{email, phone};
+        } catch (Exception e) {
+            System.err.println("Error getting socials: " + e.getMessage());
+            return new String[]{"", ""};
+        }
+    }
+
+    @Override
+    public Object getLawyer(WebElement lawyer) throws Exception {
+        String[] socials = this.getSocials(lawyer);
+
+        return Map.of(
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Canada",
+                "practice_area", this.getPracticeArea(lawyer),
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+        );
+    }
+}

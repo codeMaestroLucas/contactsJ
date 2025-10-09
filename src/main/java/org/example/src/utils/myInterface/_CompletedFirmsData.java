@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.sites.byPage.*;
+import org.example.src.sites.to_test.*;
 
 @Getter
 public class _CompletedFirmsData {
@@ -39,7 +40,30 @@ public class _CompletedFirmsData {
             new Kanter(), new KantorAndImmerman(), new KochanskiAndPartners(), new MorogluArseven(),
             new JoksovicStojanovicAndPartners(), new JoffeAndAssocies(), new RBK(), new Molinari(), new GorrissenFederspiel(),
             new NelsonWiliansAndAdvogados(), new HPPAttorneys(), new HFAndCo(), new Hayes(), new HabrakenRutten(),
-            new Haavind(),
+            new Haavind(), new McCarthyTetrault(), new MLTAikins(), new McMillan(), new McKercher(),
+            new JoksovicStojanovicAndPartners(), new JoffeAndAssocies(), new RBK(), new Molinari(), new GorrissenFederspiel(),
+            new NelsonWiliansAndAdvogados(), new HPPAttorneys(), new HFAndCo(), new Hayes(), new HabrakenRutten(),
+            new Haavind(), new Goodmans(), new SmartAndBiggar(), new OslerHoskinAndHarcourt(), new StikemanElliott(),
+            new McDougallGauley(), new FaegreDrinkerBiddleAndReath(), new Fidal(), new FilipAndCompany(),
+            new FoglerRubinoff(), new Langlois(), new FIVERS(), new FisherQuarmbyAndPfeifer(), new FillmoreRiley(),
+            new DZPLaw(), new BullAndCo(), new CLPLaw(), new Cirio(),
+            new DimitrovPetrovAndCo(), new Willkie(), new Alliotts(), new Amorys(),
+            new BussMurtonLaw(), new GanadoAdvocates(), new RPCLegal(),
+            new Norens(), new CBA(), new CastrenAndSnellman(), new AGPAdvokater(),
+            new AraozAndRueda(), new Ashitiva(), new BancilaDiaconuSiAsociatii(), new BARENTSKRANS(),
+            new BrinkmannAndPartner(), new Broseta(), new BurnetDuckworthAndPalmer(), new Delcade(), new HBNLaw(),
+            new Hugel(), new KewLaw(), new KienhuisLegal(), new LEGlobal(), new LemstraVanDerKorst(),
+
+
+//bypage
+            new MAQS(),
+            new NovaLaw(),
+            new Penta(), new Ploum(), new RahmatLimAndPartners(), new RajahAndTann(), new RitchMueller(),
+            new ThomasBodstromLawFirm(),
+
+//bynewpage
+            new MdME(), new MSBSolicitors(), new OsborneClarke()
+
 
 
 
@@ -89,7 +113,9 @@ public class _CompletedFirmsData {
             new Sangra(), new SargentAndKrahn(), new SBGK(), new Sherrards(), new Sorainen(),
             new SZA(), new TEMPLARS(), new Thommessen(), new ThompsonDorfmanSweatman(), new WardynskiAndPartners(),
             new Werksmans(), new Wiersholm(), new WikborgRein(), new RMADVAdvogados(), new LambadariosLaw(),
-            new HaslingerNagele(), new ZeposAndYannopoulos(), new Esche()
+            new HaslingerNagele(), new ZeposAndYannopoulos(), new Esche(), new Fylgia(), new Vischer(),
+            new Astrea(), new BurgesSalmon(), new CRCCD(), new Ekelmans(), new MillerThomsonLLP(),
+
 
 
             /* Await firms - Countries to avoid for now ...

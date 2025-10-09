@@ -1258,12 +1258,6 @@
     "Ex.:": "Tomas Demo === tomas.demo@ccwpartnership.com"
   },
   {
-    "name": "CBA",
-    "link": "https://www.cbalex.com/en/professionals-search?title=&field_professional_position_tid_i18n=1&field_professional_office_value_i18n=All&field_professional_practice_tid_i18n=All&field_industry_tid_i18n=All",
-    "Note": "Email format (firstName).(LastName)@cbalex.com",
-    "Ex.:": "Tomas Demo === tomas.demo@cbalex.com"
-  },
-  {
     "name": "CastrénAndSnellman",
     "link": "https://www.castren.fi/people/",
     "Note": "click to show more"

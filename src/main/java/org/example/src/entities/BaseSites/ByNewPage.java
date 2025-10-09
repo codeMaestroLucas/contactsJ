@@ -1,11 +1,8 @@
 package org.example.src.entities.BaseSites;
 
 import org.example.exceptions.LawyerExceptions;
-import org.example.exceptions.ValidationExceptions;
 import org.example.src.CONFIG;
 import org.example.src.entities.MyDriver;
-import org.example.src.utils.ErrorLogger;
-import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
