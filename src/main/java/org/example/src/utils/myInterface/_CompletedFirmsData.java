@@ -53,8 +53,8 @@ public class _CompletedFirmsData {
             new BrinkmannAndPartner(), new Broseta(), new BurnetDuckworthAndPalmer(), new Delcade(), new HBNLaw(),
             new Hugel(), new KewLaw(), new KienhuisLegal(), new LEGlobal(), new LemstraVanDerKorst(),
             new MAQS(), new NovaLaw(), new Penta(), new Ploum(), new RitchMueller(),
+            new AddleshawGoddardLLP(), new CWAAssociates(), new Logos(), new Lydian(), new Vinge(),
             new ThomasBodstrom(),
-
 
 
 
