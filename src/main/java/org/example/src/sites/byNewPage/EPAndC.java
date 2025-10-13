@@ -99,7 +99,7 @@ public class EPAndC extends ByNewPage {
                 "firm", this.name,
                 "country", "the Netherlands",
                 "practice_area", "",
-                "email", socials[0],
+                "email", socials[0].replace("%20", ""),
                 "phone", socials[1]
         );
     }

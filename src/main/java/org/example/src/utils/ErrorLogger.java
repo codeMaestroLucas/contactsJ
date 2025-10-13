@@ -173,6 +173,13 @@ public class ErrorLogger {
             } else {
                 description.append("Unknown error");
             }
+            
+            // Add method and line info from stack trace
+            String stackInfo = extractStackInfo(e);
+            if (stackInfo != null) {
+                description.append(" at ").append(stackInfo);
+            }
+            
         } else if (e instanceof TimeoutException) {
             description.append("Timeout Error");
             if (e.getMessage() != null) {
@@ -187,6 +194,13 @@ public class ErrorLogger {
             } else {
                 description.append(e.getClass().getSimpleName());
             }
+            
+            // Add method info from stack trace
+            String stackInfo = extractStackInfo(e);
+            if (stackInfo != null) {
+                description.append(" at ").append(stackInfo);
+            }
+            
         } else {
             // Generic exception handling
             description.append(e.getClass().getSimpleName());
@@ -194,6 +208,11 @@ public class ErrorLogger {
                 description.append(": ").append(
                     e.getMessage().length() > 60 ? e.getMessage().substring(0, 60) : e.getMessage()
                 );
+            }
+            
+            String stackInfo = extractStackInfo(e);
+            if (stackInfo != null) {
+                description.append(" at ").append(stackInfo);
             }
         }
 
@@ -203,5 +222,57 @@ public class ErrorLogger {
         }
 
         return description.toString();
+    }
+    
+    /**
+     * Extracts the most relevant stack trace information to identify where the error occurred.
+     * Looks for the first site class method (e.g., getName, getEmail, getSocials).
+     * @param e The exception.
+     * @return A string with method name and line number, or null if not found.
+     */
+    private String extractStackInfo(Exception e) {
+        StackTraceElement[] stackTrace = e.getStackTrace();
+        
+        if (stackTrace == null || stackTrace.length == 0) {
+            return null;
+        }
+        
+        // Look for the first relevant stack trace element from our site classes
+        for (StackTraceElement element : stackTrace) {
+            String className = element.getClassName();
+            String methodName = element.getMethodName();
+            
+            // Skip internal Java, Selenium, and utility classes
+            if (className.startsWith("java.") || 
+                className.startsWith("org.openqa.selenium.") ||
+                className.startsWith("sun.") ||
+                className.contains("$Proxy") ||
+                methodName.equals("log") ||
+                methodName.equals("searchForLawyers") ||
+                methodName.equals("registerValidLawyer") ||
+                methodName.equals("getLawyer")) {
+                continue;
+            }
+            
+            // Found relevant method - extract method name only (cleaner)
+            if (className.contains(".sites.")) {
+                // Extract just the method name, which usually indicates what was being accessed
+                // e.g., getName(), getEmail(), getRole(), getSocials()
+                return methodName + "():" + element.getLineNumber();
+            }
+        }
+        
+        // If no site class found, return first non-internal frame
+        for (StackTraceElement element : stackTrace) {
+            String className = element.getClassName();
+            if (!className.startsWith("java.") && 
+                !className.startsWith("org.openqa.selenium.") &&
+                !className.startsWith("sun.") &&
+                !className.contains("$Proxy")) {
+                return element.getMethodName() + "():" + element.getLineNumber();
+            }
+        }
+        
+        return null;
     }
 }

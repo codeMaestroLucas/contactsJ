@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class StikemanElliott extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
             "london", "England",
-            "new york", "England"
+            "new york", "USA"
     );
 
     public StikemanElliott() {

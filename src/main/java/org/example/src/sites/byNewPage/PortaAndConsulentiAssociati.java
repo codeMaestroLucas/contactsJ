@@ -60,14 +60,14 @@ public class PortaAndConsulentiAssociati extends ByNewPage {
         By[] byArray = new By[]{
                 By.cssSelector("div.fusion-text-1 h5 strong")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("div.fusion-text-2 > p")
         };
-        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
         return siteUtl.isValidPosition(role, validRoles) ? role : "Invalid Role";
     }
 
@@ -75,7 +75,7 @@ public class PortaAndConsulentiAssociati extends ByNewPage {
         By[] byArray = new By[]{
                 By.xpath("//h3[contains(., 'Technical areas')]/following-sibling::p[1]")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
     }
 
     private String[] getSocials(WebElement lawyer) {

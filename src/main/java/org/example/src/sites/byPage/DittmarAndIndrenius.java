@@ -13,6 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 public class DittmarAndIndrenius extends ByPage {
+    private final By[] webRole = new By[]{
+            By.className("person-content"),
+            By.className("title")
+    };
+
     public DittmarAndIndrenius() {
         super(
                 "Dittmar And Indrenius",
@@ -25,22 +30,18 @@ public class DittmarAndIndrenius extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        if (index <= 0) {
-            MyDriver.clickOnAddBtn(By.id("ccc-recommended-settings"));
-        }
+        MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
     }
 
     protected List<WebElement> getLawyersInPage() {
-        By[] webRole = new By[]{
-                By.className("person--main"),
-                By.className("person-title"),
-                By.cssSelector("div")
-        };
-        String[] validRoles = new String[]{"partner", "counsel", "senior associate"};
+        String[] validRoles = new String[]{"partner", "counsel"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("person--data")));
+            List<WebElement> lawyers = wait.until(
+                    ExpectedConditions.presenceOfAllElementsLocatedBy(
+                            By.cssSelector("div.grid-person > a[href*='https://www.dittmar.fi/people/']"))
+            );
             return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -48,34 +49,29 @@ public class DittmarAndIndrenius extends ByPage {
     }
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("contact-row"),
-                By.cssSelector("a[href^='https://www.dittmar.fi/people/']")
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+        return lawyer.getAttribute("href");
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("person--main"),
-                By.className("entry-title")
+                By.className("person-content"),
+                By.cssSelector("h4")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("person--main"),
-                By.className("person-title"),
-                By.cssSelector("div")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerText(lawyer, webRole, "ROLE", LawyerExceptions::roleException);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElement(By.className("contact-row")).findElements(By.cssSelector("ul > li > a"));
-            return super.getSocials(socials, false);
+            String[] socials = lawyer
+                    .findElement(By.className("person-content"))
+                    .findElement(By.className("phone-email"))
+                    .getAttribute("innerHTML")
+                    .split("<br>");
+            return socials;
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

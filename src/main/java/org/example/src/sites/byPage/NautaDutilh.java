@@ -71,11 +71,11 @@ public class NautaDutilh extends ByPage {
         By[] byArray = new By[]{
                 By.className("card__title")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME",  "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE",  "textContent", LawyerExceptions::roleException);
     }
 
     private String getCountry(String phone) {

@@ -18,18 +18,18 @@ public final class TreatLawyerParams {
     ));
 
     private static final String[] VALID_ROLES = {
-            "senior partner", "senior associate", "senior director", "senior advisor",
+            "Senior Partner", "Senior Associate", "Senior Director", "Senior Advisor",
 
-            "associate principal", "associate counsel", "associate director", "associate advisor", "associate partner",
+            "Associate Principal", "Associate Counsel", "Associate Director", "Associate Advisor", "Associate Partner",
 
-            "of counsel", "special counsel",
+            "Of Counsel", "Special Counsel",
 
-            "managing partner", "managing director", "managing associate", "managing principal", "managing counsel",
+            "Managing Partner", "Managing Director", "Managing Associate", "Managing Principal", "Managing Counsel",
 
-            "founding partner", "co founder",
+            "Founding Partner", "Co Founder",
 
-            "partner", "counsel", "director", "founder", "principal", "advisor", "manager", "shareholder",
-            "head", "chair", "legal", "silk", "dipl."
+            "Partner", "Counsel", "Director", "Founder", "Principal", "Advisor", "Manager", "Shareholder",
+            "Head", "Chair", "Legal", "Silk", "Dipl."
     };
 
     /**
@@ -120,11 +120,11 @@ public final class TreatLawyerParams {
         if (role == null) return "";
         String lowerCaseRole = role.trim().toLowerCase();
         for (String validRole : VALID_ROLES) {
-            if (lowerCaseRole.contains(validRole)) {
+            if (lowerCaseRole.contains(validRole.toLowerCase())) {
                 return validRole;
             }
         }
-        return lowerCaseRole;
+        return role;
     }
 
 

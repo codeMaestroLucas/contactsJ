@@ -44,16 +44,11 @@ public class Norens extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) {
-        // No individual link on the card
-        return "https://norens.se/en/about-norens/people/";
-    }
-
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.tagName("h4")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "tetContent", LawyerExceptions::nameException);
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -72,7 +67,7 @@ public class Norens extends ByPage {
         String[] socials = this.getSocials(lawyer);
 
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", this.link,
                 "name", this.getName(lawyer),
                 "role", "", // To check manually,
                 "firm", this.name,

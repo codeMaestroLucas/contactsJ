@@ -86,7 +86,7 @@ public class Milbank extends ByPage {
                 By.className("card__office-name")
         };
         String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, office);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
     }
 
     private String[] getSocials(WebElement lawyer) {

@@ -139,7 +139,7 @@ public class ControlRisks extends ByNewPage {
     private String getPracticeArea(WebElement lawyer) {
         try {
             By[] byArray = {By.className("bio__tags"), By.className("bio__list__tag")};
-            return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+            return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA", "textContent ", LawyerExceptions::practiceAreaException);
         } catch (Exception e) {
             return "";
         }

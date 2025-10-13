@@ -44,7 +44,7 @@ public class Cuatrecasas extends ByNewPage {
                 "Cuatrecasas",
                 "https://www.cuatrecasas.com/en/global/lawyers",
                 5,
-                3
+                1 // The great majority of this site is a South America lawyers
         );
     }
 

@@ -23,9 +23,7 @@ public class Ekelmans extends ByNewPage {
         );
     }
 
-    private final By[] webRole = {
-            By.className("pt-cv-ctf-value")
-    };
+    private final String[] validRoles = {"partner", "director", "counsel"};
 
     @Override
     protected void accessPage(int index) {
@@ -35,14 +33,12 @@ public class Ekelmans extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner", "director", "counsel"};
         WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-        List<WebElement> lawyers = wait.until(
+        return wait.until(
                 ExpectedConditions.presenceOfAllElementsLocatedBy(
-                        By.className("pt-cv-href-thumbnail")
+                        By.cssSelector("a[href*='https://www.bld-ekelmans.com/en/team/']")
                 )
         );
-        return siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
     }
 
     @Override
@@ -58,7 +54,9 @@ public class Ekelmans extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("field-functie")};
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -76,12 +74,15 @@ public class Ekelmans extends ByNewPage {
         this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("grve-column-wrapper-inner"));
 
+        String role = this.getRole(container);
+        if (role.equals("Invalid Role")) return "Invalid Role";
+
         String[] socials = this.getSocials(container);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(container),
-                "role", this.getRole(container),
+                "role", role,
                 "firm", this.name,
                 "country", "the Netherlands",
                 "practice_area", "",

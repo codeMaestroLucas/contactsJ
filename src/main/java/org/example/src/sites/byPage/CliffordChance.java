@@ -58,7 +58,7 @@ public class CliffordChance extends ByPage {
 
     public CliffordChance() {
         super(
-            "CliffordChance",
+            "Clifford Chance",
             "https://www.cliffordchance.com/people_and_places.html?_charset_=UTF-8&pageitems=50&partnersview=true#partners",
             15,
             3
@@ -106,7 +106,8 @@ public class CliffordChance extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("a[href^='/people_and_places/people/']")
         };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException).toLowerCase();
+        // To lowerCase necessary
     }
 
 

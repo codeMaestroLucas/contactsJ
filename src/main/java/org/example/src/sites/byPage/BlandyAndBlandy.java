@@ -63,8 +63,7 @@ public class BlandyAndBlandy extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("a[href*='about/find-a-solicitor/']")
         };
-        String partialLink = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-        return "https://www.blandy.co.uk" + partialLink;
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 

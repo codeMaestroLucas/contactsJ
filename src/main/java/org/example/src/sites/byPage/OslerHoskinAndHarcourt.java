@@ -55,7 +55,7 @@ public class OslerHoskinAndHarcourt extends ByPage {
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{By.cssSelector("h4 > a")};
+        By[] byArray = new By[]{By.cssSelector("a")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 

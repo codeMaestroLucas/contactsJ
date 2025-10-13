@@ -32,9 +32,7 @@ public class DillonEustace extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-        if (index <= 0) {
-            MyDriver.clickOnAddBtn(By.id("cookiescript_accept"));
-        }
+        MyDriver.clickOnAddBtn(By.id("cookiescript_accept"));
     }
 
     protected List<WebElement> getLawyersInPage() {
