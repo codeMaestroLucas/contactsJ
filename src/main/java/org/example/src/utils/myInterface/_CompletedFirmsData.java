@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.sites.byPage.*;
+import org.example.src.sites.to_test.*;
 
 @Getter
 public class _CompletedFirmsData {
@@ -52,6 +53,16 @@ public class _CompletedFirmsData {
             new VBAdvocates(), new VieringJentschuraAndPartner(), new Vinge(), new VOPatentsAndTrademarks(), new Walkers(),
             new WatsonFarleyAndWilliams(), new WhiteAndCase(), new WildeboerDellelce(), new WilliamFry(), new Willkie(),
             new WinstonAndStrawn(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
+            new AlukoAndOyebode(), new HuntonAndrewsKurth(),
+
+
+            // ByPage
+//            new MccannFitzGerald(),
+//            new BYRO(),
+//            new DavisPolkAndWardwell(), new DebevoiseAndPlimpton(), new PillsburyWinthropShawPittman(), new ProskauerRose(), new SimpsonThacher(),
+//
+//            // ByNewPage
+//            new Provida(), new Vaneps(),
 
             /* Await firms - Countries to avoid for now ...
             new BaeKimAndLee(), new DRAndAJU() new Deacons(), new CFNLaw(), new MalleyAndCo(),
@@ -102,7 +113,7 @@ public class _CompletedFirmsData {
             new ReinhardSkuhraWeiseAndPartnerGbR(), new RocaJunyent(), new Sangra(), new SargentAndKrahn(), new SBGK(),
             new Sherrards(), new Sorainen(), new SZA(), new TEMPLARS(), new Thommessen(),
             new ThompsonDorfmanSweatman(), new Vischer(), new WardynskiAndPartners(), new Werksmans(), new Wiersholm(),
-            new WikborgRein(), new ZeposAndYannopoulos(),
+            new WikborgRein(), new ZeposAndYannopoulos(), new BDO(),
 
 
 

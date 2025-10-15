@@ -1,0 +1,32 @@
+  {
+    "name": "Faegre Drinker BiddleAndReath",
+    "link": "https://www.faegredrinker.com/en/professionals?related=63615f19acba4d6286484237055b5577&pageNum=6",
+    "lawyers":
+    <li class="peoplelist-item ng-scope" ng-repeat="result in results">
+    <a class="peoplelist-image" ng-href="/en/professionals/n/nilson-claire-d" ng-show="result.ImageUrl !== ''" href="/en/professionals/n/nilson-claire-d">
+    <img ng-src="/-/media/images/professionals/n/clairenilson.jpg?mw=640&amp;rev=e65d6feb8edc440389c8df0d67b86d5e&amp;hash=B7CF7CB24A0E5DCECBDFFB48B2CDF8FD" alt="Claire D Nilson" src="/-/media/images/professionals/n/clairenilson.jpg?mw=640&amp;rev=e65d6feb8edc440389c8df0d67b86d5e&amp;hash=B7CF7CB24A0E5DCECBDFFB48B2CDF8FD">
+    </a>
+    <div class="peoplelist-meta">
+    <div class="name-block">
+    <!--related-contact class used for GTM-->
+    <a class="solid-link peoplelist-link-pro related-contact" ng-href="/en/professionals/n/nilson-claire-d" ng-click="onResultLink($event, result.Url)" href="/en/professionals/n/nilson-claire-d">
+    <h3 class="peoplelist-name ng-binding" ng-show="result.Name !== ''">Claire D Nilson</h3>
+    </a>
+    <span class="h5 peoplelist-role ng-binding" ng-show="result.Role !== ''">Counsel</span>
+    </div>
+    <div class="meta-block">
+    <span class="meta-item location" ng-show="result.Location.Id !== ''"><a ng-href="/en/locations/london" class="ng-binding" href="/en/locations/london">London</a></span>
+    <div class="meta-item-divider ng-hide" ng-show="result.SecondaryLocation !== null &amp;&amp; result.SecondaryLocation.Id !== ''"></div>
+    <span class="meta-item location ng-hide" ng-show="result.SecondaryLocation !== null &amp;&amp; result.SecondaryLocation.Id !== ''"><a class="ng-binding"></a></span>
+    </div>
+    <div class="meta-block">
+    <span class="meta-item phone" ng-show="result.Phone !== ''"><a href="tel:+44(0)2074504592" class="ng-binding">+44 (0) 20 7450 4592</a></span>
+    <div class="meta-item-divider ng-hide" ng-show="result.SecondaryPhone !== ''"></div>
+    <span class="meta-item phone ng-hide" ng-show="result.SecondaryPhone !== ''"><a href="tel:" class="ng-binding"></a></span>
+    </div>
+    <div class="meta-block">
+    <span class="meta-item email" ng-show="result.Email !== ''"><a href="javascript:emailDisclaimer(&quot;claire.nilson&quot;, &quot;faegredrinker.com&quot;)" class="ng-binding">claire.nilson@faegredrinker.com</a></span>
+    </div>
+    </div>
+    </li>
+  },

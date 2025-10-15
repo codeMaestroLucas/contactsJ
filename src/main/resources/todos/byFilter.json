@@ -4,85 +4,18 @@
     "link": ""
   },
   {
-    "name": "Hunton Andrews Kurth",
-    "link": "https://www.hunton.com/people#form-search-results"
-  },
-  {
     "name": "AJU Kim ChangAndLee",
     "link": "https://www.ajupatent.com/en/professionals/search?keyword=a"
   },
+
   {
-    "name": "Simpson Thacher",
-    "link": "https://www.stblaw.com/our-team?searchId=896284e9-2181-4b38-bc0b-6d68bcf96cbf&directory=lawyers"
-  },
-  {
-    "name": "DebevoiseAndPlimpton",
-    "link": "https://www.debevoise.com/professionals/?keyword=partner"
-  },
-  {
-    "name": "Davis PolkAndWardwell",
-    "link": "https://www.davispolk.com/lawyers?lawyer_search_en%5Bpage%5D=2&lawyer_search_en%5BrefinementList%5D%5Bjob_title%5D%5B0%5D=Partner"
-  },
-  {
-    "name": "RopesAndGray",
-    "link": "https://www.ropesgray.com/en/people?titles=3d2d8586-9b9f-4ffe-b068-a18c666337e6&page=0"
-  },
-  {
-    "name": "Proskauer Rose",
-    "link": "https://www.proskauer.com/professionals?general=no&prefix=&key_contact=&practice_group=&practices=&industries=&market_solutions=&offices=&languages=&titles=3&educations=&schools=&degrees=&sort=&search=&search-mobile="
-  },
-  {
-    "name": "Pillsbury Winthrop Shaw Pittman",
-    "link": "https://www.pillsburylaw.com/en/lawyers/?v=attorney&pg=1034559"
-  },
-  {
-    "name": "Paul Weiss Rifkind WhartonAndGarrison",
-    "link": "https://www.paulweiss.com/professionalsearchresult?lname=&fname=&key=&pract=&pos=Partner&loc=&sch="
-  },
-  {
-    "name": "MorrisonAndFoerster",
-    "link": "https://www.mofo.com/people?office=Amsterdam"
-  },
-  {
-    "name": "Baker Botts",
-    "link": "https://www.bakerbotts.com/people/?offices=d5c77aa9-8129-4c29-a429-d436dbeb3dc6,16c76a92-e1a1-4e77-93b5-24c85d31edc8&sort=1&reload=false&scroll=0"
-  },
-  {
-    "name": "KirklandAndEllis",
-    "link": "https://www.kirkland.com/lawyers?level=9ff51805-f16d-4d64-9794-6cff75200182&office=0db671c4-73ac-4eac-b935-4eee1db2a32a"
-  },
-  {
-    "name": "KingAndSpalding",
-    "link": "https://www.kslaw.com/people?locale=en&q=&title_id=Partner&school_id=&office_id=&capability_id=&starts_with=&per_page=12"
+    "name": "Ogletree",
+    "link": "https://ogletree.com/people/",
+    "note": "msm situação da BDN - muitos paises em diferentes sites"
   },
   {
     "name": "HUNTON",
     "link": "https://www.hunton.com/people?do_item_search=1&position=20027&office=847#form-search-results"
-  },
-  {
-    "name": "GIDE",
-    "link": "https://www.gide.com/en/lawyers/?"
-  },
-  {
-    "name": "Gibson DunnAndCrutcher",
-    "link": "https://www.gibsondunn.com/people/?_people_title=000_partner"
-  },
-  {
-    "name": "Fried Frank",
-    "link": "https://www.friedfrank.com/our-people?position=Partner&office=London"
-  },
-  {
-    "name": "Foley",
-    "link": "https://www.foley.com/people/",
-    "Note": "Click on partner opt and country opt"
-  },
-  {
-    "name": "Drummond Woodsum",
-    "link": "https://dwmlaw.com/professionals/?firstname=&lastname=&licensedin=all&office=447&affiliation=all&submit=submit"
-  },
-  {
-    "name": "Faegre Drinker BiddleAndReath",
-    "link": "https://www.faegredrinker.com/en/professionals?related=20208f5bc608480b910952db3103669e%7C63615f19acba4d6286484237055b5577&pageNum=2"
   },
   {
     "name": "Davis PolkAndWardwell",
@@ -122,10 +55,6 @@
     "link": "https://www.squirepattonboggs.com/en/professionals/?PageNumber=2&Level=3a58482b-1181-4de5-b193-19f88461ece0"
   },
   {
-    "name": "CliffordChance",
-    "link": "https://www.cliffordchance.com/people_and_places.html"
-  },
-  {
     "name": "Simpson ThacherAndBartlett LLP",
     "link": "https://www.stblaw.com/our-team?searchId=e58e82a0-ab70-4a0a-be94-e6e00052cf5e&directory=lawyers"
   },
@@ -146,21 +75,12 @@
     "link": "https://www.mayerbrown.com/en/people"
   },
   {
-    "name": "CampbellsLegal",
-    "link": "https://www.campbellslegal.com/people/"
-  },
-  {
     "name": "DebevoiseAndPlimpton LLP",
     "link": "https://www.debevoise.com/professionals/?region=a4f9edc3-8be4-42cf-ae17-74f929d961c3"
   },
   {
     "name": "KingAndWood Mallesons",
     "link": "https://www.kwm.com/cn/en/people.html",
-    "Note": "This firm is a mist of Filter and NewPage"
-  },
-  {
-    "name": "FTI Consulting",
-    "link": "https://www.fticonsulting.com/experts#sort=relevancy&numberOfResults=12",
     "Note": "This firm is a mist of Filter and NewPage"
   },
   {
@@ -172,16 +92,8 @@
     "link": "https://www.curtis.com/our-people?menu%5BattorneyTitle%5D=Partner"
   },
   {
-    "name": "HollandAndKnight",
-    "link": "https://www.hklaw.com/en/professionals?level=9ad6fc29-4f0a-41f6-8376-00ff78aa09e2"
-  },
-  {
     "name": "Orrick",
     "link": "https://www.orrick.com/People?t=personnel&q=partner"
-  },
-  {
-    "name": "Dechert",
-    "link": "https://www.dechert.com/people-search.html?cq=151#position=Partner"
   },
   {
     "name": "Watson FarleyAndWilliams",
@@ -192,36 +104,8 @@
     "link": "https://www.fieldfisher.com/en/people"
   },
   {
-    "name": "Ogletree Deakins",
-    "link": "https://ogletree.com/people/"
-  },
-  {
-    "name": "Noerr",
-    "link": "https://www.noerr.com/en/professionals?p-fc-roles=Partner%2CAssociated+Partner%2CPartner+emeritus"
-  },
-  {
-    "name": "Ashurst",
-    "link": "https://www.ashurst.com/en/people/#e=0"
-  },
-  {
-    "name": "Herbert Smith Freehills",
-    "link": "https://herbertsmithfreehills.com/our-people?position=partner"
-  },
-  {
-    "name": "Dechert",
-    "link": "https://www.dechert.com/people-search.html?cq=151#position=Partner"
-  },
-  {
-    "name": "Ogletree",
-    "link": "https://ogletree.com/people/"
-  },
-  {
     "name": "Goerg",
     "link": "https://www.goerg.de/en/our-people?positions[]=4"
-  },
-  {
-    "name": "Ashurst",
-    "link": "https://www.ashurst.com/en/people/#e=0"
   },
   {
     "name": "GiambroneAndPartners",
@@ -255,10 +139,6 @@
   {
     "name": "DWF",
     "link": "https://dwfgroup.com/en/people"
-  },
-  {
-    "name": "GianniAndOrigoni",
-    "link": "https://www.gop.it/people.php?lang=eng"
   },
   {
     "name": "",
