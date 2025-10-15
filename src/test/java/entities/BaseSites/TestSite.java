@@ -1,11 +1,7 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byNewPage.WikborgRein;
-import org.example.src.sites.byPage.Kinstellar;
-import org.example.src.sites.byPage.LEXLogmannsstofa;
-import org.example.src.sites.byPage.OslerHoskinAndHarcourt;
-import org.example.src.sites.byPage.RBK;
+import org.example.src.sites.to_test.*;
 
 
 import java.lang.reflect.Field;
@@ -14,7 +10,7 @@ import java.lang.reflect.Field;
  * Class used to test a new Site
  */
 
-    class MyTestPage extends WikborgRein {
+    class MyTestPage extends _Template {
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */
