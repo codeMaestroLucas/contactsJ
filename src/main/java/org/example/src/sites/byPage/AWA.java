@@ -50,8 +50,7 @@ public class AWA extends ByPage {
 
         if (index > 0) return;
 
-        // Click on add btn
-        MyDriver.clickOnElement(By.id("cookies-agree"));
+        MyDriver.clickOnAddBtn(By.id("cmplz-btn cmplz-accept"));
     }
 
 

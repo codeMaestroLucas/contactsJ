@@ -52,10 +52,6 @@ public class KantorAndImmerman extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) throws LawyerExceptions {
-        // No individual profile links, returning the main partners page
-        return "https://kantorimmerman.co.zw/partners/";
-    }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
@@ -83,7 +79,7 @@ public class KantorAndImmerman extends ByPage {
         String[] socials = this.getSocials(lawyer);
 
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", this.link,
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,

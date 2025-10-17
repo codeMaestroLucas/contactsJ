@@ -69,8 +69,8 @@ public class CLPLaw extends ByPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            String email = lawyer.findElement(By.cssSelector("p:last-of-type")).getText();
-            return new String[]{email, ""};
+            List<WebElement> socials = lawyer.findElements(By.tagName("p"));
+            return super.getSocials(socials, true);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};

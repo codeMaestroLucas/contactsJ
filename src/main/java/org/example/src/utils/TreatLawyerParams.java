@@ -18,7 +18,7 @@ public final class TreatLawyerParams {
     ));
 
     private static final String[] VALID_ROLES = {
-            "Senior Partner", "Senior Associate", "Senior Director", "Senior Advisor",
+            "Senior Partner", "Senior Associate", "Senior Director", "Senior Advisor", "Senior Counsel",
 
             "Associate Principal", "Associate Counsel", "Associate Director", "Associate Advisor", "Associate Partner",
 

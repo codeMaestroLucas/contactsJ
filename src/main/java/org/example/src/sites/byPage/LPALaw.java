@@ -17,7 +17,7 @@ public class LPALaw extends ByPage {
             Map.entry("algiers", "Algeria"),
             Map.entry("casablanca", "Morocco"),
             Map.entry("douala/yaoundé", "Cameroon"),
-            Map.entry("dubai", "UAE"),
+            Map.entry("dubai", "the UAE"),
             Map.entry("hanoi", "Vietnam"),
             Map.entry("ho chi minh city", "Vietnam"),
             Map.entry("hong kong", "Hong Kong"),

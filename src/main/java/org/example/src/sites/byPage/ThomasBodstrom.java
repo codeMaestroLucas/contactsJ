@@ -77,7 +77,7 @@ public class ThomasBodstrom extends ByPage {
                 "country", "Sweden",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", "xxxxxx"
+                "phone", "0103300033"
         );
     }
 }

@@ -104,16 +104,12 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
             if (email.isEmpty() || name.isEmpty()) {
                 sheet.removeRow(row);
-                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
-                i--;
                 continue;
             }
 
             if (contacts.isEmailRegistered(email)) {
                 System.out.println("Email '" + email + "' is already registered. Cleaning up.");
                 sheet.removeRow(row);
-                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
-                i--;
                 continue;
             }
 
@@ -142,8 +138,6 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             boolean successfullyRegistered = destinationSheet.addLawyer(lawyer, false);
             if (successfullyRegistered) {
                 sheet.removeRow(row);
-                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
-                i--;
 
                 totalLawyers++;
                 addedThisRun++;
@@ -188,8 +182,6 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             if (contacts.isEmailRegistered(email)) {
                 System.out.println("Email '" + email + "' is already registered. Cleaning up.");
                 sheet.removeRow(row);
-                sheet.shiftRows(i + 1, this.getSheet().getLastRowNum(), -1);
-                i--;
             }
         }
         this.saveSheet();
