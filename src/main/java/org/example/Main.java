@@ -114,6 +114,8 @@ public class Main {
         } finally {
             // Write any remaining logs that weren't flushed
             ErrorLogger.getINSTANCE().flushAllLogs();
+            // Close the reports workbook to ensure all data is saved
+            reports.closeWorkbook();
             NoSleep.allowSleep(); // allow sleep again when finished
         }
     }

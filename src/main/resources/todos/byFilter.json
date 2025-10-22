@@ -8,11 +8,7 @@
     "link": "https://www.ajupatent.com/en/professionals/search?keyword=a"
   },
 
-  {
-    "name": "Ogletree",
-    "link": "https://ogletree.com/people/",
-    "note": "msm situação da BDN - muitos paises em diferentes sites"
-  },
+
   {
     "name": "HUNTON",
     "link": "https://www.hunton.com/people?do_item_search=1&position=20027&office=847#form-search-results"
@@ -22,24 +18,8 @@
     "link": "https://www.davispolk.com/lawyers?lawyer_search_en%5BrefinementList%5D%5Bjob_title%5D%5B0%5D=Partner"
   },
   {
-    "name": "BCLP Law",
-    "link": "https://www.bclplaw.com/en-US/people/index.html?po=1505045"
-  },
-  {
-    "name": "Duane Morris",
-    "link": "https://www.duanemorris.com/site/listings/peoplesearch.html"
-  },
-  {
-    "name": "Cuatrecasas",
-    "link": "https://www.cuatrecasas.com/en/global/lawyers?lawyerType=partner"
-  },
-  {
     "name": "Norton Rose Fulbright",
     "link": "https://www.nortonrosefulbright.com/en-br/people#sort=%40cvpositionpriority%20descending&numberOfResults=100&f:position=[Partner]"
-  },
-  {
-    "name": "Sidley",
-    "link": "https://www.sidley.com/en/global/people/?title=7edd3db1-13ee-4179-b1bf-1af97383aebf&offices=74036203-100b-42c2-b719-116dce959809&currentviewid=83e3dcaa-1264-4226-8ee6-380c20e95bea&reload=false&scroll=311.20001220703125"
   },
   {
     "name": "Reed Smith",
@@ -49,10 +29,6 @@
   {
     "name": "A&O Shearman",
     "link": "https://www.aoshearman.com/en/people-search"
-  },
-  {
-    "name": "Squire Patton Boggs",
-    "link": "https://www.squirepattonboggs.com/en/professionals/?PageNumber=2&Level=3a58482b-1181-4de5-b193-19f88461ece0"
   },
   {
     "name": "Simpson ThacherAndBartlett LLP",
@@ -67,57 +43,13 @@
     "link": "https://www.gtlaw.com/en/professionals?keyword=partner"
   },
   {
-    "name": "Orrick",
-    "link": "https://www.orrick.com/People?"
-  },
-  {
-    "name": "Mayer Brown",
-    "link": "https://www.mayerbrown.com/en/people"
-  },
-  {
-    "name": "DebevoiseAndPlimpton LLP",
-    "link": "https://www.debevoise.com/professionals/?region=a4f9edc3-8be4-42cf-ae17-74f929d961c3"
+    "name": "Morrison Foester",
+    "link": "https://www.mofo.com/people"
   },
   {
     "name": "KingAndWood Mallesons",
     "link": "https://www.kwm.com/cn/en/people.html",
     "Note": "This firm is a mist of Filter and NewPage"
-  },
-  {
-    "name": "Morrison Foester",
-    "link": "https://www.mofo.com/people"
-  },
-  {
-    "name": "Curtis",
-    "link": "https://www.curtis.com/our-people?menu%5BattorneyTitle%5D=Partner"
-  },
-  {
-    "name": "Orrick",
-    "link": "https://www.orrick.com/People?t=personnel&q=partner"
-  },
-  {
-    "name": "Watson FarleyAndWilliams",
-    "link": "https://www.wfw.com/people/?_sft_role=partner"
-  },
-  {
-    "name": "Fieldfisher",
-    "link": "https://www.fieldfisher.com/en/people"
-  },
-  {
-    "name": "Goerg",
-    "link": "https://www.goerg.de/en/our-people?positions[]=4"
-  },
-  {
-    "name": "GiambroneAndPartners",
-    "link": "https://www.giambronelaw.com/site/people/senior-lawyers/"
-  },
-  {
-    "name": "Cleary Gottlieb",
-    "link": "https://www.clearygottlieb.com/professionals?name=&location=0&position=c34ba8454e8c4514bc0e30118bc532d4&experience=0&lawSchool=&keyword=&start=0&num=10"
-  },
-  {
-    "name": "Mayer Brown",
-    "link": "https://www.mayerbrown.com/en/people?sortCriteria=%40alphasort%20ascending&f-peopletitle=Partner"
   },
   {
     "name": "Freshfields",
@@ -128,18 +60,8 @@
     "name": "Linklaters",
     "link": "https://www.linklaters.com/"
   },
-  {
-    "name": "LK Shields",
-    "link": "https://www.lkshields.ie/people"
-  },
-  {
-    "name": "SullivanAndWorcester",
-    "link": "https://www.sullivanlaw.com/people?search%5Bpost_type%5D=person&search%5Bposition%5D=16"
-  },
-  {
-    "name": "DWF",
-    "link": "https://dwfgroup.com/en/people"
-  },
+
+
   {
     "name": "",
     "link": ""

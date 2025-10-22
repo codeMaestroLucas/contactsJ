@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -13,6 +13,15 @@ import java.util.List;
 import java.util.Map;
 
 public class HuntonAndrewsKurth extends ByPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            Map.entry("66", "Thailand"),
+            Map.entry("86", "China"),
+            Map.entry("32", "Belgium"),
+            Map.entry("971", "the UAE"),
+            Map.entry("44", "England"),
+            Map.entry("81", "Japan")
+    );
+
     private final By[] byRoleArray = {
             By.className("position")
     };
@@ -21,17 +30,21 @@ public class HuntonAndrewsKurth extends ByPage {
         super(
                 "Hunton Andrews Kurth",
                 "https://www.hunton.com/people?do_item_search=1&office=853#form-search-results",
-                1
+                // Latter change the URL, use this links to avoid USA and other asian countries
+                2,
+                2
         );
     }
 
     protected void accessPage(int index) {
-        this.driver.get(this.link);
+        String otherUrl = "https://www.hunton.com/people?do_item_search=1&office=858#form-search-results";
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"counsel"};
+        String[] validRoles = {"partner", "counsel"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -56,6 +69,10 @@ public class HuntonAndrewsKurth extends ByPage {
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
+    private String getCountry(String phone) throws LawyerExceptions {
+        return this.siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "USA");
+    }
+
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
@@ -73,7 +90,7 @@ public class HuntonAndrewsKurth extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String phone = "";
         try {
-            phone = lawyer.findElement(By.className("phone")).getText();
+            phone = lawyer.findElement(By.className("phone")).getAttribute("textContent");
         } catch (Exception e) {
             // Phone not found
         }
@@ -84,7 +101,7 @@ public class HuntonAndrewsKurth extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "Belgium",
+                "country", this.getCountry(phone),
                 "practice_area", "",
                 "email", socials[0],
                 "phone", phone.isEmpty() ? "xxxxxx" : phone

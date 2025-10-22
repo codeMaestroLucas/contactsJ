@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -13,6 +13,15 @@ import java.util.List;
 import java.util.Map;
 
 public class DebevoiseAndPlimpton extends ByPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            Map.entry("london", "England"),
+            Map.entry("paris", "France"),
+            Map.entry("frankfurt", "Germany"),
+            Map.entry("luxembourg", "Luxembourg"),
+            Map.entry("hong kong", "Hong Kong"),
+            Map.entry("shanghai", "China")
+    );
+
     private final By[] byRoleArray = {
             By.className("prof__title")
     };
@@ -21,7 +30,8 @@ public class DebevoiseAndPlimpton extends ByPage {
         super(
                 "Debevoise And Plimpton",
                 "https://www.debevoise.com/professionals/?region=c2b1d718-1bf0-4dec-afb0-3007580f6fdc",
-                1
+                1,
+                2
         );
     }
 
@@ -31,7 +41,7 @@ public class DebevoiseAndPlimpton extends ByPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -62,9 +72,8 @@ public class DebevoiseAndPlimpton extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("prof__office")};
-        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-        if (office.equalsIgnoreCase("London")) return "England";
-        return office;
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "USA");
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -73,9 +82,7 @@ public class DebevoiseAndPlimpton extends ByPage {
         try {
             email = lawyer.findElement(By.cssSelector("a.read-more")).getAttribute("href");
             phone = lawyer.findElement(By.className("phone-item")).getText();
-        } catch (Exception e) {
-            // Social not found, ignore
-        }
+        } catch (Exception e) {}
         return new String[]{email, phone};
     }
 

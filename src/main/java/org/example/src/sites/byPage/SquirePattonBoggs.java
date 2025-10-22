@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,32 +12,60 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class ProskauerRose extends ByPage {
+public class SquirePattonBoggs extends ByPage {
     private final By[] byRoleArray = {
-            By.className("careers__function")
+            By.className("professional-title")
     };
 
-    public ProskauerRose() {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            Map.entry("1", "USA"),
+            Map.entry("7", "Kazakhstan"),
+            Map.entry("31", "the Netherlands"),
+            Map.entry("32", "Belgium"),
+            Map.entry("33", "France"),
+            Map.entry("34", "Spain"),
+            Map.entry("39", "Italy"),
+            Map.entry("41", "Switzerland"),
+            Map.entry("44", "England"),
+            Map.entry("48", "Poland"),
+            Map.entry("49", "Germany"),
+            Map.entry("61", "Australia"),
+            Map.entry("65", "Singapore"),
+            Map.entry("81", "Japan"),
+            Map.entry("86", "China"),
+            Map.entry("353", "Ireland"),
+            Map.entry("420", "the Czech Republic"),
+            Map.entry("421", "Slovakia"),
+            Map.entry("852", "Hong Kong"),
+            Map.entry("961", "Lebanon"),
+            Map.entry("966", "Saudi Arabia"),
+            Map.entry("971", "the UAE")
+    );
+
+    public SquirePattonBoggs() {
         super(
-                "Proskauer Rose",
-                "https://www.proskauer.com/professionals?general=no&prefix=&key_contact=&practice_group=&practices=&industries=&market_solutions=&offices=11%2C12%2C1%2C10&languages=&titles=&educations=&schools=&degrees=&sort=&search=&search-mobile=",
-                1
+                "Squire Patton Boggs",
+                "https://www.squirepattonboggs.com/en/professionals/?PageNumber=1",
+                1,
+                3
         );
     }
 
     protected void accessPage(int index) {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        // More than 40
+        MyDriver.clickOnElementMultipleTimes(By.xpath("/html/body/div[1]/div/section[2]/button"), 10, 1);
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"director", "partner", "counsel", "principal", "advisor", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("careers__block-content")
+                            By.className("person")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -47,12 +75,12 @@ public class ProskauerRose extends ByPage {
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("p.careers__name > a")};
+        By[] byArray = {By.cssSelector("h2.name > a")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("p.careers__name > a")};
+        By[] byArray = {By.className("name")};
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
@@ -60,15 +88,17 @@ public class ProskauerRose extends ByPage {
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
+    private String getCountry(String phone) throws LawyerExceptions {
+        return this.siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "Not Found");
+    }
+
     private String[] getSocials(WebElement lawyer) {
         String email = "";
         String phone = "";
         try {
-            email = lawyer.findElement(By.className("icon-email")).getAttribute("href");
-            phone = lawyer.findElement(By.cssSelector("p.careers__tel > a")).getAttribute("href");
-        } catch (Exception e) {
-            // Social not found, ignore
-        }
+            email = lawyer.findElement(By.cssSelector("span.email > a")).getAttribute("href");
+            phone = lawyer.findElement(By.className("office-phone")).getAttribute("href");
+        } catch (Exception e) {}
         return new String[]{email, phone};
     }
 
@@ -79,7 +109,7 @@ public class ProskauerRose extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "France",
+                "country", this.getCountry(socials[1]),
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1]

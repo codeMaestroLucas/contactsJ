@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -14,6 +14,13 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Vaneps extends ByNewPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            Map.entry("297", "Aruba"),
+            Map.entry("599", "Curaçao"),
+            Map.entry("597", "Suriname"),
+            Map.entry("1721", "St. Maarten")
+    );
+
     private final By[] byRoleArray = {
             By.className("specialism")
     };
@@ -32,7 +39,7 @@ public class Vaneps extends ByNewPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"senior associate"};
+        String[] validRoles = {"partner", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -61,6 +68,10 @@ public class Vaneps extends ByNewPage {
         return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
+    private String getCountry(String phone) throws LawyerExceptions {
+        return this.siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, phone, "the Netherlands");
+    }
+
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> socials = lawyer.findElements(By.cssSelector(".c-contactinfo__text li a"));
@@ -83,10 +94,10 @@ public class Vaneps extends ByNewPage {
                 "name", name,
                 "role", "Senior associate",
                 "firm", this.name,
-                "country", "Curaçao",
+                "country", this.getCountry(socials[1]),
                 "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1]
         );
     }
 }

@@ -17,29 +17,50 @@ import java.util.concurrent.TimeoutException;
  */
 public class ErrorLogger {
     private static ErrorLogger INSTANCE;
+    private static ErrorLogger TEST_INSTANCE;
     private final Map<String, Map<String, Integer>> errorCountsByFirm = new HashMap<>();
     private static final String LOG_FILE_PATH = "log.txt";
+    private static final String TEST_LOG_FILE_PATH = "test_log.txt";
     private static final String SEPARATOR = "=".repeat(100);
+    private final String logFilePath;
 
     /**
      * Private constructor to prevent instantiation.
      * Initializes the log file at the beginning of a new session.
+     * @param logPath Path to the log file to use
      */
-    private ErrorLogger() {
-        try (FileWriter fw = new FileWriter(LOG_FILE_PATH, false);
+    private ErrorLogger(String logPath) {
+        this.logFilePath = logPath;
+        try (FileWriter fw = new FileWriter(logFilePath, false);
              PrintWriter pw = new PrintWriter(fw)) {
             pw.printf("LOG SESSION STARTED - %s%n%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         } catch (IOException e) {
-            System.err.println("FATAL: Could not initialize log file.");
+            System.err.println("FATAL: Could not initialize log file: " + logFilePath);
             e.printStackTrace(System.err);
         }
     }
 
+    /**
+     * Gets the main production logger instance.
+     * @return The main ErrorLogger instance
+     */
     public static synchronized ErrorLogger getINSTANCE() {
         if (INSTANCE == null) {
-            INSTANCE = new ErrorLogger();
+            INSTANCE = new ErrorLogger(LOG_FILE_PATH);
         }
         return INSTANCE;
+    }
+
+    /**
+     * Gets a test logger instance that writes to a separate log file.
+     * Use this in test classes to avoid affecting production logs.
+     * @return The test ErrorLogger instance
+     */
+    public static synchronized ErrorLogger getTestInstance() {
+        if (TEST_INSTANCE == null) {
+            TEST_INSTANCE = new ErrorLogger(TEST_LOG_FILE_PATH);
+        }
+        return TEST_INSTANCE;
     }
 
     /**
@@ -105,7 +126,7 @@ public class ErrorLogger {
             return;
         }
 
-        try (FileWriter fw = new FileWriter(LOG_FILE_PATH, true);
+        try (FileWriter fw = new FileWriter(logFilePath, true);
              PrintWriter pw = new PrintWriter(fw)) {
 
             pw.println(SEPARATOR);

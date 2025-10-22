@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites._standingBy.otherIssues;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -13,6 +13,16 @@ import java.util.List;
 import java.util.Map;
 
 public class SimpsonThacher extends ByPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            Map.entry("beijing", "China"),
+            Map.entry("brussels", "Belgium"),
+            Map.entry("hong kong", "Hong Kong"),
+            Map.entry("london", "England"),
+            Map.entry("luxembourg", "Luxembourg"),
+            Map.entry("são paulo", "Brazil"),
+            Map.entry("tokyo", "Japan")
+    );
+
     private final By[] byRoleArray = {
             By.className("contact-title")
     };
@@ -28,10 +38,20 @@ public class SimpsonThacher extends ByPage {
     protected void accessPage(int index) {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+
+        MyDriver.clickOnAddBtn(By.className("cm-btn-success"));
+
+        WebElement filter = driver.findElement(By.id("filter_offices"));
+        filter
+                .findElement(By.cssSelector("option[value='fc35cc0e-743d-6a02-aaf8-ff0000765f2c']"))
+                .click();
+
+        driver.findElement(By.xpath("//*[@id=\"pager2\"]/span[1]/span/select/option[5]")).click();
+
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "counsel"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -62,9 +82,8 @@ public class SimpsonThacher extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("contact-office")};
-        String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-        if (office.equalsIgnoreCase("New York")) return "USA";
-        return office;
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "USA");
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -86,7 +105,8 @@ public class SimpsonThacher extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", this.getCountry(lawyer),
+//                "country", this.getCountry(lawyer),
+                "country", "England",
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1]

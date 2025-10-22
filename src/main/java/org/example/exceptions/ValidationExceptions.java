@@ -7,6 +7,11 @@ public class ValidationExceptions extends Exception{
     }
 
 
+    public static ValidationExceptions firmToAvoid() {
+        return new ValidationExceptions("Firm to avoid...\n");
+    }
+
+
     public static ValidationExceptions emailValidation() {
         return new ValidationExceptions("Incomplete lawyer data, skipping...\n");
     }

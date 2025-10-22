@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -31,7 +31,7 @@ public class PillsburyWinthropShawPittman extends ByPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));

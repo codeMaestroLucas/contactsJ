@@ -29,7 +29,7 @@ public abstract class Site {
     public final WebDriver driver = MyDriver.getINSTANCE();
     protected final SiteUtils siteUtl = SiteUtils.getINSTANCE();
     protected final Extractor extractor = Extractor.getINSTANCE();
-    protected final ErrorLogger errorLogger = ErrorLogger.getINSTANCE(); // Instância do Logger
+    protected ErrorLogger errorLogger = ErrorLogger.getINSTANCE(); // Instância do Logger - não-final para permitir override em testes
     protected String emailsOfMonthPath;
     protected String emailsToAvoidPath;
 

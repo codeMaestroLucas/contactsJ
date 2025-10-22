@@ -3,6 +3,7 @@ package org.example.src.entities.BaseSites;
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.CONFIG;
 import org.example.src.entities.MyDriver;
+import org.example.src.utils.Validations;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -19,6 +20,8 @@ public abstract class ByNewPage extends Site {
 
     @Override
     public Runnable searchForLawyers(boolean showLogs) {
+        if (Validations.isAFirmToAVoid(this.name)) return null;
+
         // Use labeled break to exit both loops
         pageLoop: for (int i = 0; i < this.getTotalPages(); i++) {
             System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.getTotalPages());

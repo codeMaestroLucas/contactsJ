@@ -1,17 +1,30 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.byPage.*;
+import org.example.src.sites.byPage.SullivanAndWorcester;
 
 
 import java.lang.reflect.Field;
 
 /**
  * Class used to test a new Site
+ * 
+ * IMPORTANT: This test class uses a separate error logger (test_log.txt) to isolate
+ * test execution from production logs. This prevents test runs from clearing or
+ * interfering with the main log.txt file used by the production Main class.
  */
 
-    class MyTestPage extends ALGoodbody {
+    class MyTestPage extends SullivanAndWorcester {
+    
+    /**
+     * Constructor that initializes with test logger to avoid affecting production logs
+     */
+    public MyTestPage() {
+        super();
+        // Use test logger instance to isolate test execution logs
+        this.errorLogger = org.example.src.utils.ErrorLogger.getTestInstance();
+    }
+    
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs
      */

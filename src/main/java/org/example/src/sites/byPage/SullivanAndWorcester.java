@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,32 +12,38 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class MccannFitzGerald extends ByPage {
+public class SullivanAndWorcester extends ByPage {
     private final By[] byRoleArray = {
-            By.className("role")
+            By.className("person-title")
     };
 
-    public MccannFitzGerald() {
+    String currentCountry = "";
+
+    public SullivanAndWorcester() {
         super(
-                "Mccann Fitz Gerald",
-                "https://www.mccannfitzgerald.com/people",
-                1
+                "Sullivan & Worcester",
+                "https://www.sullivanlaw.com/people?search%5Bpost_type%5D=person&search%5Boffice_location%5D=333",
+                2
         );
     }
 
-    protected void accessPage(int index) {
-        this.driver.get(this.link);
+    protected void accessPage(int index) throws InterruptedException {
+        String otherUrl = "https://www.sullivanlaw.com/people?search%5Bpost_type%5D=person&search%5Boffice_location%5D=330";
+        String url = index == 0 ? this.link : otherUrl;
+        currentCountry = index == 0 ? "Israel" : "England";
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
+        Thread.sleep(3000L);
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "counsel", "director", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("people-card")
+                            By.className("person-result")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -47,12 +53,12 @@ public class MccannFitzGerald extends ByPage {
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("p.h2 a")};
+        By[] byArray = {By.className("person-name")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("p.h2 a")};
+        By[] byArray = {By.className("person-name")};
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
@@ -61,15 +67,13 @@ public class MccannFitzGerald extends ByPage {
     }
 
     private String[] getSocials(WebElement lawyer) {
-        String email = "";
-        String phone = "";
         try {
-            email = lawyer.findElement(By.cssSelector("a.contact-icon__email-blue")).getAttribute("href");
-            phone = lawyer.findElement(By.cssSelector("a.contact-links__contact")).getText();
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.person-connect > a"));
+            return super.getSocials(socials, false);
         } catch (Exception e) {
-            // Social not found, ignore
+            System.err.println("Error getting socials: " + e.getMessage());
+            return new String[]{"", ""};
         }
-        return new String[]{email, phone};
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {
@@ -80,10 +84,10 @@ public class MccannFitzGerald extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "Ireland",
+                "country", currentCountry,
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1]
         );
     }
 }

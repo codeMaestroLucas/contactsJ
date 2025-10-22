@@ -69,7 +69,7 @@ public class Extractor {
             if ((fieldName.equals("EMAIL"))) {
                 throw e;
             } else {
-                System.err.println(e.getMessage());
+                if (!fieldName.equals("PRACTICE AREA")) System.err.println(e.getMessage());
                 return "";
             }
 

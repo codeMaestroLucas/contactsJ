@@ -1,5 +1,6 @@
 package org.example.src.utils;
 
+import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
@@ -84,12 +85,29 @@ public final class TreatLawyerParams {
 
 
     /**
+     * Removes all accent marks (diacritics) from a string.
+     * Example: "martin.römermann" -> "martin.romermann"
+     * @param input The original string.
+     * @return The normalized string without accents.
+     */
+    public static String removeAccents(String input) {
+        if (input == null) {
+            return "";
+        }
+        String normalized = Normalizer.normalize(input, Normalizer.Form.NFD);
+        // Remove all diacritical marks
+        return normalized.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+    }
+
+
+    /**
      * Cleans an email address.
      * @param email The original email string.
      * @return The treated email.
      */
     public static String treatEmail(String email) {
         if (email == null) return "";
+        email = removeAccents(email);
         return email.replaceAll("\\?.*$", "")
                 .toLowerCase()
                 .replace("mailto", "")

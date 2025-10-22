@@ -22,9 +22,11 @@ public class Excel {
         this.filePath = filePath;
         this.rowsToFill = rowsToFill;
 
-        try (FileInputStream file = new FileInputStream(filePath)) {
+        try {
+            FileInputStream file = new FileInputStream(filePath);
             this.workbook = new XSSFWorkbook(file);
             this.sheet = this.workbook.getSheetAt(0);
+            file.close(); // Close input stream after loading workbook into memory
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -34,9 +36,11 @@ public class Excel {
     public Excel(String filePath) {
         this.filePath = filePath;
 
-        try (FileInputStream file = new FileInputStream(filePath)) {
+        try {
+            FileInputStream file = new FileInputStream(filePath);
             this.workbook = new XSSFWorkbook(file);
             this.sheet = this.workbook.getSheetAt(0);
+            file.close(); // Close input stream after loading workbook into memory
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,6 +58,20 @@ public class Excel {
 
         } catch (IOException e) {
             throw new RuntimeException("Error saving Excel file: " + filePath, e);
+        }
+    }
+
+    /**
+     * Close the workbook to free resources.
+     * Should be called when done with all operations.
+     */
+    public void closeWorkbook() {
+        try {
+            if (workbook != null) {
+                workbook.close();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Error closing Excel workbook: " + filePath, e);
         }
     }
 

@@ -44,6 +44,31 @@ public class Validations {
     }
 
     /**
+     * Checks if a given firm is in the "firmToAvoid.json" file.
+     */
+    public static boolean isAFirmToAVoid(String firm) {
+        Path filePath = Paths.get("src/main/resources/baseFiles/json/firmsToAvoid.json");
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            String jsonContent = Files.readString(filePath);
+
+            List<CountryData> countriesToAvoid = mapper.readValue(
+                    jsonContent,
+                    new TypeReference<List<CountryData>>() {}
+            );
+
+            return countriesToAvoid.stream()
+                    .map(CountryData::getCountry)
+                    .anyMatch(c -> c.trim().equalsIgnoreCase(firm.trim()));
+
+        } catch (IOException e) {
+            System.err.println("Error reading country data: " + e.getMessage());
+            return false;
+        }
+    }
+
+    /**
      * Checks if the given email was already registered in the current month or in contacts.xlsx.
      */
     private static boolean isEmailAlreadyRegistered(String email, String emailsOfMonthPath) {
@@ -77,6 +102,11 @@ public class Validations {
 
         String email = lawyer.getEmail();
         String country = lawyer.getCountry();
+        String firm = lawyer.getFirm();
+
+        if (isAFirmToAVoid(firm)) {
+            throw ValidationExceptions.firmToAvoid();
+        }
 
         if (!"-----".equals(country) && isACountryToAvoid(country)) {
             throw ValidationExceptions.countryToAvoid();
