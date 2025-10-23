@@ -1,1464 +1,858 @@
-/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=49715 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/lucassamuellemosrajao/dev_projects/java/target/classes:/Users/lucassamuellemosrajao/.m2/repository/org/apache/poi/poi/5.4.1/poi-5.4.1.jar:/Users/lucassamuellemosrajao/.m2/repository/commons-codec/commons-codec/1.18.0/commons-codec-1.18.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/lucassamuellemosrajao/.m2/repository/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/poi/poi-ooxml/5.4.1/poi-ooxml-5.4.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/poi/poi-ooxml-lite/5.4.1/poi-ooxml-lite-5.4.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/xmlbeans/xmlbeans/5.3.0/xmlbeans-5.3.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-compress/1.27.1/commons-compress-1.27.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-lang3/3.16.0/commons-lang3-3.16.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/github/virtuald/curvesapi/1.08/curvesapi-1.08.jar:/Users/lucassamuellemosrajao/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-java/4.35.0/selenium-java-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-api/4.35.0/selenium-api-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.35.0/selenium-chrome-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.35.0/selenium-chromium-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-json/4.35.0/selenium-json-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.35.0/selenium-manager-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v137/4.35.0/selenium-devtools-v137-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v138/4.35.0/selenium-devtools-v138-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v139/4.35.0/selenium-devtools-v139-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.35.0/selenium-edge-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.35.0/selenium-firefox-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-http/4.35.0/selenium-http-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.35.0/selenium-ie-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.35.0/selenium-remote-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-api/1.53.0/opentelemetry-api-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-context/1.53.0/opentelemetry-context-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-common/1.53.0/opentelemetry-common-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.53.0/opentelemetry-exporter-logging-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.53.0/opentelemetry-sdk-common-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.53.0/opentelemetry-sdk-extension-autoconfigure-spi-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.53.0/opentelemetry-sdk-extension-autoconfigure-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.53.0/opentelemetry-sdk-trace-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.53.0/opentelemetry-sdk-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.53.0/opentelemetry-sdk-metrics-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.53.0/opentelemetry-sdk-logs-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-os/4.35.0/selenium-os-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-exec/1.5.0/commons-exec-1.5.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.35.0/selenium-safari-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-support/4.35.0/selenium-support-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/Users/lucassamuellemosrajao/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/lucassamuellemosrajao/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/lucassamuellemosrajao/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/Users/lucassamuellemosrajao/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/Users/lucassamuellemosrajao/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/Users/lucassamuellemosrajao/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/Users/lucassamuellemosrajao/.m2/repository/net/bytebuddy/byte-buddy/1.14.4/byte-buddy-1.14.4.jar:/Users/lucassamuellemosrajao/.m2/repository/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/Users/lucassamuellemosrajao/.m2/repository/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/jetbrains/annotations/26.0.2-1/annotations-26.0.2-1.jar org.example.Main
-2025-10-15T16:46:08.864068Z main ERROR Log4j API could not find a logging provider.
-Oct 15, 2025 1:46:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/bin/java -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:50002,suspend=y,server=n -javaagent:/Users/lucassamuellemosrajao/Library/Caches/JetBrains/IntelliJIdea2025.2/captureAgent/debugger-agent.jar=file:///var/folders/m1/8y1dyblx1_1f44s5th4hs10m0000gn/T/capture11773329161148209738.props -agentpath:/private/var/folders/m1/8y1dyblx1_1f44s5th4hs10m0000gn/T/idea_libasyncProfiler_dylib_temp_folder/libasyncProfiler.dylib=version,jfr,event=wall,interval=10ms,cstack=no,file=/Users/lucassamuellemosrajao/IdeaSnapshots/Main_2025_10_22_110512.jfr,log=/private/var/folders/m1/8y1dyblx1_1f44s5th4hs10m0000gn/T/Main_2025_10_22_110512.jfr.log.txt,logLevel=DEBUG -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false -Ddebugger.agent.enable.coroutines=true -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/lucassamuellemosrajao/dev_projects/java/target/classes:/Users/lucassamuellemosrajao/.m2/repository/org/apache/poi/poi/5.4.1/poi-5.4.1.jar:/Users/lucassamuellemosrajao/.m2/repository/commons-codec/commons-codec/1.18.0/commons-codec-1.18.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/lucassamuellemosrajao/.m2/repository/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/poi/poi-ooxml/5.4.1/poi-ooxml-5.4.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/poi/poi-ooxml-lite/5.4.1/poi-ooxml-lite-5.4.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/xmlbeans/xmlbeans/5.3.0/xmlbeans-5.3.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-compress/1.27.1/commons-compress-1.27.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-lang3/3.16.0/commons-lang3-3.16.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/github/virtuald/curvesapi/1.08/curvesapi-1.08.jar:/Users/lucassamuellemosrajao/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-java/4.35.0/selenium-java-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-api/4.35.0/selenium-api-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.35.0/selenium-chrome-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.35.0/selenium-chromium-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-json/4.35.0/selenium-json-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.35.0/selenium-manager-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v137/4.35.0/selenium-devtools-v137-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v138/4.35.0/selenium-devtools-v138-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v139/4.35.0/selenium-devtools-v139-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.35.0/selenium-edge-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.35.0/selenium-firefox-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-http/4.35.0/selenium-http-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.35.0/selenium-ie-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.35.0/selenium-remote-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/Users/lucassamuellemosrajao/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-api/1.53.0/opentelemetry-api-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-context/1.53.0/opentelemetry-context-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-common/1.53.0/opentelemetry-common-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.53.0/opentelemetry-exporter-logging-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.53.0/opentelemetry-sdk-common-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.53.0/opentelemetry-sdk-extension-autoconfigure-spi-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.53.0/opentelemetry-sdk-extension-autoconfigure-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.53.0/opentelemetry-sdk-trace-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.53.0/opentelemetry-sdk-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.53.0/opentelemetry-sdk-metrics-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.53.0/opentelemetry-sdk-logs-1.53.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-os/4.35.0/selenium-os-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/apache/commons/commons-exec/1.5.0/commons-exec-1.5.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.35.0/selenium-safari-driver-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/seleniumhq/selenium/selenium-support/4.35.0/selenium-support-4.35.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/Users/lucassamuellemosrajao/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/lucassamuellemosrajao/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/lucassamuellemosrajao/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/Users/lucassamuellemosrajao/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/Users/lucassamuellemosrajao/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/Users/lucassamuellemosrajao/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/Users/lucassamuellemosrajao/.m2/repository/net/bytebuddy/byte-buddy/1.14.4/byte-buddy-1.14.4.jar:/Users/lucassamuellemosrajao/.m2/repository/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/Users/lucassamuellemosrajao/.m2/repository/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/Users/lucassamuellemosrajao/.m2/repository/org/jetbrains/annotations/26.0.2-1/annotations-26.0.2-1.jar:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar org.example.Main
+Connected to the target VM, address: '127.0.0.1:50002', transport: 'socket'
+2025-10-22T14:05:12.573353Z main ERROR Log4j API could not find a logging provider.
+Oct 22, 2025 11:05:14 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 141, returning the closest version; found: 139; Please update to a Selenium version that supports CDP version 141
 macOS: caffeinate started to prevent sleep.
 Starting: Collecting previously registered lawyers...
-Email 'mariusz.purgal@kwkr.pl' is already registered. Cleaning up.
-Email 'tingenhoven@milbank.com' is already registered. Cleaning up.
-Email 'egarcia@muclaw.mx' is already registered. Cleaning up.
-Email 'peter.burckhardt@swlegal.ch' is already registered. Cleaning up.
-
-Re-running registered Lawyers filtering.
-
 Completed: Filtering and processing complete.
 
 ======================================================================
 
-Total time: 14s
+Total time: 16s
 
 Starting: Searching for new lawyers...
------------------------| Legalis |-----------------------
+-----------------------| Vaneps |-----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Legalis.
---------------------| HPP Attorneys |--------------------
+No more than 1 lawyer(s) needed for the firm Vaneps.
+------------------------| BYRO |------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm HPP Attorneys.
--------------------| Lambadarios Law |-------------------
+No more than 1 lawyer(s) needed for the firm BYRO.
+---------------------| Liedekerke |---------------------
 
-Page 1 - - - - - - - - - - ( 1 )
-Failed to find element with locator: By.className: lawyer-inner-body
-Failed to find element with locator: By.cssSelector: p
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: lawyer-inner-body
-Failed to find element with locator: By.cssSelector: p
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: lawyer-inner-body
-Failed to find element with locator: By.cssSelector: p
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Lambadarios Law.
--------------------------| AWA |-------------------------
-
-Page 1 - - - - - - - - - - ( 28 )
-Page 2 - - - - - - - - - - ( 28 )
-Page 3 - - - - - - - - - - ( 28 )
-Page 4 - - - - - - - - - - ( 28 )
-Page 5 - - - - - - - - - - ( 28 )
-Page 6 - - - - - - - - - - ( 28 )
-Page 7 - - - - - - - - - - ( 28 )
-Page 8 - - - - - - - - - - ( 28 )
-Page 9 - - - - - - - - - - ( 28 )
-Page 10 - - - - - - - - - - ( 28 )
-Page 11 - - - - - - - - - - ( 28 )
-Page 12 - - - - - - - - - - ( 28 )
-Page 13 - - - - - - - - - - ( 28 )
-Page 14 - - - - - - - - - - ( 28 )
-Page 15 - - - - - - - - - - ( 28 )
-Page 16 - - - - - - - - - - ( 28 )
-Page 17 - - - - - - - - - - ( 28 )
-Timeout exceeded for site: AWA
-Page 18 - - - - - - - - - - ( 28 )
-Page 19 - - - - - - - - - - ( 28 )
-Page 20 - - - - - - - - - - ( 28 )
-Page 21 - - - - - - - - - - ( 28 )
-Page 22 - - - - - - - - - - ( 28 )
-Page 23 - - - - - - - - - - ( 28 )
-Page 24 - - - - - - - - - - ( 28 )
-Page 25 - - - - - - - - - - ( 28 )
-Page 26 - - - - - - - - - - ( 28 )
-Page 27 - - - - - - - - - - ( 28 )
-Page 28 - - - - - - - - - - ( 28 )
------------------| Castrén & Snellman |-----------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: title
-Failed to find element with locator: By.className: title
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Castrén & Snellman.
----------------------| Carey Olsen |---------------------
-
-Page 1 - - - - - - - - - - ( 1 )
------------------| Hammarskiöld And Co |-----------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-	$$ Could not extract lawyer text for ROLE
-Invalid ROLE:
+Page 1 - - - - - - - - - - ( 6 )
 	$$ Could not extract lawyer text for NAME
 Invalid NAME:
-Invalid ROLE:
-	$$ Could not extract lawyer text for ROLE
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Invalid ROLE:
-	$$ Could not extract lawyer text for ROLE
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Invalid ROLE:
-	$$ Could not extract lawyer text for ROLE
-	$$ Could not extract lawyer text for NAME
-Invalid NAME:
-	$$ Could not extract lawyer text for ROLE
-Invalid ROLE:
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-	$$ Could not extract lawyer text for ROLE
-Invalid ROLE:
-	$$ Could not extract lawyer text for NAME
-Invalid NAME:
-	$$ Could not extract lawyer text for ROLE
-Invalid ROLE:
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Invalid ROLE:
-	$$ Could not extract lawyer text for ROLE
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Invalid ROLE:
-	$$ Could not extract lawyer text for ROLE
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Invalid ROLE:
-	$$ Could not extract lawyer text for ROLE
+	$$ Could not extract lawyer text for COUNTRY
+Invalid COUNTRY:
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Hammarskiöld And Co.
---------------------| BARENTSKRANS |--------------------
+No more than 1 lawyer(s) needed for the firm Liedekerke.
+-----------------------| Mourant |-----------------------
 
-Page 1 - - - - - - - - - - ( 1 )
+Page 1 - - - - - - - - - - ( 11 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm BARENTSKRANS.
----------------------| ENS Africa |---------------------
-
-Page 1 - - - - - - - - - - ( 15 )
-Failed to find element with locator: By.cssSelector: a[href^='/expertise/detail/']
-Invalid PRACTICE AREA: Element not found for PRACTICE AREA
-	$$ Could not extract lawyer text for PRACTICE AREA
-Failed to find element with locator: By.cssSelector: a[href^='/expertise/detail/']
-Invalid PRACTICE AREA: Element not found for PRACTICE AREA
+Page 2 - - - - - - - - - - ( 11 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm ENS Africa.
-----------------------| H-F & Co |----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm H-F & Co.
-------------------| Cassidy Levy Kent |------------------
-
-Page 1 - - - - - - - - - - ( 2 )
-Lawyer added successfully!
-Page 2 - - - - - - - - - - ( 2 )
-Lawyer added successfully!
-No more than 2 lawyer(s) needed for the firm Cassidy Levy Kent.
---------------| Burnet Duckworth & Palmer |--------------
-
-Page 1 - - - - - - - - - - ( 7 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Burnet Duckworth & Palmer.
--------------------------| RDJ |-------------------------
-
-Page 1 - - - - - - - - - - ( 8 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm RDJ.
-------------------| LEX Logmannsstofa |------------------
-
-Page 1 - - - - - - - - - - ( 2 )
-Page 2 - - - - - - - - - - ( 2 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm LEX Logmannsstofa.
------------------------| Kanter |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Kanter.
----------------------| Chattertons |---------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Chattertons.
------------------------| BWB LLP |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm BWB LLP.
------------------------| Conyers |-----------------------
-
-Page 1 - - - - - - - - - - ( 15 )
-Page 2 - - - - - - - - - - ( 15 )
-Lawyer added successfully!
-Page 3 - - - - - - - - - - ( 15 )
-Page 4 - - - - - - - - - - ( 15 )
-Lawyer added successfully!
-Page 5 - - - - - - - - - - ( 15 )
-Page 6 - - - - - - - - - - ( 15 )
-Page 7 - - - - - - - - - - ( 15 )
-Page 8 - - - - - - - - - - ( 15 )
-Page 9 - - - - - - - - - - ( 15 )
-Page 10 - - - - - - - - - - ( 15 )
-Page 11 - - - - - - - - - - ( 15 )
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm Conyers.
---------------------| Barnea And Co |--------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Barnea And Co.
------------------------| Kolster |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Kolster.
------------------| BARDEHLE PAGENBERG |-----------------
+No more than 2 lawyer(s) needed for the firm Mourant.
+------------------------| Ellex |------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
 Lawyer added successfully!
-No more than 2 lawyer(s) needed for the firm BARDEHLE PAGENBERG.
-------------------------| Fidal |------------------------
-
-Page 1 - - - - - - - - - - ( 64 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Fidal.
---------------------| Clark Wilson |--------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Error getting socials: null
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Clark Wilson.
---------------| Panetta Consulting Group |--------------
+No more than 2 lawyer(s) needed for the firm Ellex.
+------------------------| EP&C |------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Panetta Consulting Group.
---------------------| Control Risks |--------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Lawyer added successfully!
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Failed to find element with locator: By.className: btn__geo
-Invalid COUNTRY: Element not found for COUNTRY
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Lawyer added successfully!
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Invalid PRACTICE AREA: null
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm Control Risks.
----------------------| AL Goodbody |---------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-Invalid ROLE:
-
-
-
-
-Timeout exceeded for site: AL Goodbody
-------------------------| Aera |------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Aera.
-----------------------| Belgravia |----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Belgravia.
------------------| Schindler Attorneys |-----------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Schindler Attorneys.
-----------------------| Andersen |----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-----------------------| Latam Lex |----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-------------------| Sargent And Krahn |------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-------------------------| Codex |------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Codex.
-------------------| Langseth Advokat |------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Langseth Advokat.
--------------------------| MBM |-------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm MBM.
--------------------------| EBN |-------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Failed to find element with locator: By.className: hero__practice-areas
-Failed to find element with locator: By.cssSelector: a[href^='https://www.ebnlaw.co.il/practice-areas/']
-Invalid PRACTICE AREA: Element not found for PRACTICE AREA
-	$$ Could not extract lawyer text for PRACTICE AREA
-Failed to find element with locator: By.className: hero__practice-areas
-Failed to find element with locator: By.cssSelector: a[href^='https://www.ebnlaw.co.il/practice-areas/']
-Invalid PRACTICE AREA: Element not found for PRACTICE AREA
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm EBN.
------------------| Holland And Knight |-----------------
+No more than 1 lawyer(s) needed for the firm EP&C.
+-----------------------| Sidley |-----------------------
 
 Page 1 - - - - - - - - - - ( 4 )
 Lawyer added successfully!
 Page 2 - - - - - - - - - - ( 4 )
 Lawyer added successfully!
-No more than 2 lawyer(s) needed for the firm Holland And Knight.
---------------------| Tuca Zbarcea |--------------------
-
-Page 1 - - - - - - - - - - ( 11 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Tuca Zbarcea.
-------------------| Aron Tadmor Levy |------------------
+No more than 2 lawyer(s) needed for the firm Sidley.
+---------------------| Secretariat |---------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Aron Tadmor Levy.
------------------------| CLP Law |-----------------------
+No more than 1 lawyer(s) needed for the firm Secretariat.
+------------------------| Esche |------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
-Failed to find element with locator: By.cssSelector: p.typo-hd-small
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Failed to find element with locator: By.cssSelector: p.typo-hd-small
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Failed to find element with locator: By.cssSelector: p.typo-hd-small
-Failed to find element with locator: By.cssSelector: p.typo-hd-small
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Failed to find element with locator: By.cssSelector: p.typo-hd-small
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Failed to find element with locator: By.cssSelector: p.typo-hd-small
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm CLP Law.
----------------------| Wolf Theiss |---------------------
-
-Page 1 - - - - - - - - - - ( 33 )
-Page 2 - - - - - - - - - - ( 33 )
-Lawyer added successfully!
-Page 3 - - - - - - - - - - ( 33 )
-Lawyer added successfully!
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm Wolf Theiss.
---------------------| Peter And Kim |--------------------
+No more than 1 lawyer(s) needed for the firm Esche.
+-----------------------| Holmes |-----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Failed to find element with locator: By.cssSelector: div.flex.gap-2.items-center.self-start.mt-2.text-xs.uppercase.whitespace-nowrap.text-violet-950
-Failed to find element with locator: By.cssSelector: span:first-child
-Failed to find element with locator: By.cssSelector: div.flex.gap-2.items-center.self-start.mt-2.text-xs.uppercase.whitespace-nowrap.text-violet-950
-Failed to find element with locator: By.cssSelector: span:first-child
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
+Failed to find element with locator: By.className: banner__title
+Invalid NAME: Element not found for NAME
+Failed to find element with locator: By.className: banner__subheading
+Invalid ROLE: Element not found for ROLE
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
+	$$ Could not extract lawyer text for PRACTICE AREA
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
+Failed to find element with locator: By.className: banner__title
+Invalid NAME: Element not found for NAME
+Failed to find element with locator: By.className: banner__subheading
+Invalid ROLE: Element not found for ROLE
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
+	$$ Could not extract lawyer text for PRACTICE AREA
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
+Failed to find element with locator: By.className: banner__title
+Invalid NAME: Element not found for NAME
+Failed to find element with locator: By.className: banner__subheading
+Invalid ROLE: Element not found for ROLE
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
+	$$ Could not extract lawyer text for PRACTICE AREA
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
+Failed to find element with locator: By.className: banner__title
+Invalid NAME: Element not found for NAME
+Failed to find element with locator: By.className: banner__subheading
+Invalid ROLE: Element not found for ROLE
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
+	$$ Could not extract lawyer text for PRACTICE AREA
+Failed to find element with locator: By.className: banner__content
+Failed to find element with locator: By.className: banner__text
 Lawyer added successfully!
------------------------| Cobalt |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Timeout exceeded for site: Cobalt
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Failed to find element with locator: By.className: item-body
-Failed to find element with locator: By.className: item-position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-No search results found on page 1 of the firm Cobalt
-----------------------| KISCH IP |----------------------
+No more than 1 lawyer(s) needed for the firm Holmes.
+-------------------| CWA Associates |-------------------
 
 Page 1 - - - - - - - - - - ( 2 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm KISCH IP.
--------------------| Boodle Hatfield |-------------------
+No more than 1 lawyer(s) needed for the firm CWA Associates.
+-----------------------| Blakes |-----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Boodle Hatfield.
-------------------------| LEXIA |------------------------
+No more than 1 lawyer(s) needed for the firm Blakes.
+------------------| McCarthy Tetrault |------------------
+
+Page 1 - - - - - - - - - - ( 38 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm McCarthy Tetrault.
+---------------------| WikborgRein |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+------------------| Sargent And Krahn |------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+------------------------| Hügel |------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm LEXIA.
--------------------| MSB Solicitors |-------------------
+No more than 1 lawyer(s) needed for the firm Hügel.
+-----------------| Mccann Fitz Gerald |-----------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm MSB Solicitors.
-----------------| Dittmar And Indrenius |----------------
+No more than 1 lawyer(s) needed for the firm Mccann Fitz Gerald.
+-------------| Nelson Wilians & Advogados |-------------
+
+Page 1 - - - - - - - - - - ( 2 )
+No search results found on page 1 of the firm Nelson Wilians & Advogados
+Page 2 - - - - - - - - - - ( 2 )
+No search results found on page 2 of the firm Nelson Wilians & Advogados
+----------------------| Goodmans |----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Dittmar And Indrenius.
-------------------------| Titov |------------------------
+No more than 1 lawyer(s) needed for the firm Goodmans.
+-----------------------| FPS Law |-----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Titov.
-------------------| Hjulmand Captain |------------------
+No more than 1 lawyer(s) needed for the firm FPS Law.
+-----------------------| Vischer |-----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Hjulmand Captain.
------------------------| LPA Law |-----------------------
-
-Page 1 - - - - - - - - - - ( 21 )
-Lawyer added successfully!
-Lawyer added successfully!
-No more than 2 lawyer(s) needed for the firm LPA Law.
----------------------| Oyen Wiggs |---------------------
+No more than 1 lawyer(s) needed for the firm Vischer.
+------------------| Prüfer & Partner |------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Oyen Wiggs.
--------------------------| HNA |-------------------------
+No more than 1 lawyer(s) needed for the firm Prüfer & Partner.
+------------------------| Ploum |------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+No search results found on page 1 of the firm Ploum
+--------------------| Keystone Law |--------------------
+
+Page 1 - - - - - - - - - - ( 20 )
+Invalid ROLE: null
+Invalid COUNTRY:
+	$$ Could not extract lawyer text for COUNTRY
+Invalid ROLE: null
+Invalid ROLE: null
+Invalid ROLE: null
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Keystone Law.
+---------------------| Kuri Breña |---------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm HNA.
+No more than 1 lawyer(s) needed for the firm Kuri Breña.
+------------------| Hamso Patentybra |------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Hamso Patentybra.
+----------------------| Krogerus |----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Invalid NAME:
+	$$ Could not extract lawyer text for NAME
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+	$$ Could not extract lawyer text for NAME
+Invalid NAME:
+	$$ Could not extract lawyer text for ROLE
+Invalid ROLE:
+Invalid NAME:
+	$$ Could not extract lawyer text for NAME
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+	$$ Could not extract lawyer text for NAME
+	$$ Could not extract lawyer text for ROLE
+Invalid NAME:
+Invalid ROLE:
+Invalid NAME:
+	$$ Could not extract lawyer text for NAME
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+	$$ Could not extract lawyer text for NAME
+Invalid NAME:
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+Invalid NAME:
+Invalid ROLE:
+	$$ Could not extract lawyer text for NAME
+	$$ Could not extract lawyer text for ROLE
+Invalid NAME:
+	$$ Could not extract lawyer text for NAME
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+Invalid NAME:
+	$$ Could not extract lawyer text for NAME
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+	$$ Could not extract lawyer text for NAME
+Invalid NAME:
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Krogerus.
+----------------------| Borenius |----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Borenius.
+----------------------| Frontier |----------------------
+
+Page 1 - - - - - - - - - - ( 34 )
+Page 2 - - - - - - - - - - ( 34 )
+Page 3 - - - - - - - - - - ( 34 )
+Lawyer added successfully!
+Page 4 - - - - - - - - - - ( 34 )
+Page 5 - - - - - - - - - - ( 34 )
+Lawyer added successfully!
+No more than 2 lawyer(s) needed for the firm Frontier.
+-----------------| Banki Haddock Fiora |-----------------
+
+Page 1 - - - - - - - - - - ( 1 )
+No search results found on page 1 of the firm Banki Haddock Fiora
+-----------------------| Selmer |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Selmer.
+---------------| Laszczuk And Wspolnicy |---------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Laszczuk And Wspolnicy.
+-------------------| Campbells Legal |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 3 lawyer(s) needed for the firm Campbells Legal.
+-------------------| Ibañez Parkman |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Ibañez Parkman.
+--------------------| Collas Crill |--------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Failed to find element with locator: By.className: location
+Invalid COUNTRY: Element not found for COUNTRY
+Lawyer added successfully!
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 3 lawyer(s) needed for the firm Collas Crill.
+----------------------| TEMPLARS |----------------------
+
+Page 1 - - - - - - - - - - ( 10 )
+Page 2 - - - - - - - - - - ( 10 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm TEMPLARS.
+----------------| Kochański & Partners |----------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Kochański & Partners.
+-------------------| Moroğlu Arseven |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Moroğlu Arseven.
+--------------------| Nelligan Law |--------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Nelligan Law.
+-----------------------| Legance |-----------------------
+
+Page 1 - - - - - - - - - - ( 52 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Legance.
+-----------------------| Sangra |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Sangra.
+---------------------| Arnesen IP |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Arnesen IP.
+--------------------| Bennet Jones |--------------------
+
+Page 1 - - - - - - - - - - ( 32 )
+Page 2 - - - - - - - - - - ( 32 )
+Page 3 - - - - - - - - - - ( 32 )
+Page 4 - - - - - - - - - - ( 32 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Bennet Jones.
+------------| Faegre Drinker Biddle & Reath |------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Faegre Drinker Biddle & Reath.
+-------------------------| BNT |-------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 3 lawyer(s) needed for the firm BNT.
+----------------------| McKercher |----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm McKercher.
+-----------------------| DZP Law |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm DZP Law.
+---------| Reinhard Skuhra Weise & Partner GbR |---------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Reinhard Skuhra Weise & Partner GbR.
+-------------------| Lawson Lundell |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Failed to find element with locator: By.className: position
+Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
+Failed to find element with locator: By.className: position
+Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
+Failed to find element with locator: By.className: position
+Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
+Failed to find element with locator: By.className: position
+Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Lawson Lundell.
+-----------------------| Delcade |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Delcade.
+-----------------------| Cassels |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+No search results found on page 1 of the firm Cassels
+----------------------| Bull & Co |----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Bull & Co.
+--------------------| Lex Caribbean |--------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+---------------------| Pearl Cohen |---------------------
+
+Page 1 - - - - - - - - - - ( 12 )
+Page 2 - - - - - - - - - - ( 12 )
+Lawyer added successfully!
+Page 3 - - - - - - - - - - ( 12 )
+Page 4 - - - - - - - - - - ( 12 )
+Page 5 - - - - - - - - - - ( 12 )
+Page 6 - - - - - - - - - - ( 12 )
+Page 7 - - - - - - - - - - ( 12 )
+Page 8 - - - - - - - - - - ( 12 )
+Page 9 - - - - - - - - - - ( 12 )
+Page 10 - - - - - - - - - - ( 12 )
+Page 11 - - - - - - - - - - ( 12 )
+Page 12 - - - - - - - - - - ( 12 )
+-------------------| Kienhuis Legal |-------------------
+
+Page 1 - - - - - - - - - - ( 8 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Kienhuis Legal.
+------------------------| AOil |------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm AOil.
+-----------------------| SIRIUS |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm SIRIUS.
+---------------------| Morris Law |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+-----------------------| Horten |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Horten.
+-----------| Joksovic Stojanovic & Partners |-----------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Joksovic Stojanovic & Partners.
+-------------------| Cleary Gottlieb |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Cleary Gottlieb.
 -------------------| Le Poole Bekema |-------------------
 
 Page 1 - - - - - - - - - - ( 1 )
------------------------| HBN Law |-----------------------
+------------------------| Håmsø |------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Håmsø.
+--------------------| Marks & Clerk |--------------------
+
+Page 1 - - - - - - - - - - ( 11 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Marks & Clerk.
+---------------| Osler Hoskin & Harcourt |---------------
+
+Page 1 - - - - - - - - - - ( 28 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Osler Hoskin & Harcourt.
+-----------------------| Fischer |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Fischer.
+-------------------| Prinz & Partner |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Prinz & Partner.
+-------------------------| CBA |-------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm CBA.
+-----------------------| Kondrat |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Kondrat.
+---------------------| Clarkslegal |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Clarkslegal.
+--------------------| Asafo And Co |--------------------
+
+Page 1 - - - - - - - - - - ( 4 )
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 2 lawyer(s) needed for the firm Asafo And Co.
+---------------------| Shahid Law |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Shahid Law.
+--------------------| Meyer Köring |--------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
+Failed to find element with locator: By.className: anwalt__position
+Failed to find element with locator: By.className: anwalt__position
+Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Meyer Köring.
+----------------| Zepos And Yannopoulos |----------------
+
+Page 1 - - - - - - - - - - ( 11 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Zepos And Yannopoulos.
+----------------------| Houthoof |----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Houthoof.
+-----------------------| METIDA |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Invalid COUNTRY:
+
+Lawyer added successfully!
+-------------------| EC Legal Rubio |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm EC Legal Rubio.
+---------------------| Thommessen |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Thommessen.
+----------------------| NPP Legal |----------------------
+
+Page 1 - - - - - - - - - - ( 2 )
+Page 2 - - - - - - - - - - ( 2 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm NPP Legal.
+---------------------| L&E Global |---------------------
+
+Page 1 - - - - - - - - - - ( 9 )
+Lawyer added successfully!
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 3 lawyer(s) needed for the firm L&E Global.
+-------------------| Fogler Rubinoff |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Fogler Rubinoff.
+-------------------| Loopstra Nixon |-------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Loopstra Nixon.
+-----------------| Prasad And Company |-----------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Prasad And Company.
+--------------------| Burges Salmon |--------------------
+
+Page 1 - - - - - - - - - - ( 17 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Burges Salmon.
+------------------| Ronan Daly Jermyn |------------------
+
+Page 1 - - - - - - - - - - ( 40 )
+	$$ Could not extract lawyer text for NAME
+Invalid NAME:
+	$$ Could not extract lawyer text for ROLE
+Invalid ROLE:
+Invalid NAME:
+	$$ Could not extract lawyer text for NAME
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+Invalid NAME:
+Invalid ROLE:
+	$$ Could not extract lawyer text for NAME
+	$$ Could not extract lawyer text for ROLE
+	$$ Could not extract lawyer text for NAME
+Invalid NAME:
+Invalid ROLE:
+	$$ Could not extract lawyer text for ROLE
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Ronan Daly Jermyn.
+------------------------| Oxera |------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
 Lawyer added successfully!
-No more than 2 lawyer(s) needed for the firm HBN Law.
------------------------| Tavares |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
------------------------| Astrea |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Failed to find element with locator: By.cssSelector: ul.field__items > li
-Failed to find element with locator: By.cssSelector: ul.field__items > li
-Invalid PRACTICE AREA: Element not found for PRACTICE AREA
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Astrea.
------------------------| Willkie |-----------------------
+No more than 2 lawyer(s) needed for the firm Oxera.
+----------------------| Molinari |----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Willkie.
-------------------------| SBGK |------------------------
+No more than 1 lawyer(s) needed for the firm Molinari.
+-------------------------| SZA |-------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm SBGK.
-------------------| McDougall Gauley |------------------
-
-Page 1 - - - - - - - - - - ( 5 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm McDougall Gauley.
------------------------| Haavind |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Failed to find element with locator: By.className: taxonomy-role
-Failed to find element with locator: By.className: taxonomy-role
-Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Haavind.
----------| Mijares Angoitia Cortés And Fuentes |---------
+No more than 1 lawyer(s) needed for the firm SZA.
+---------------------| Clemens Law |---------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Mijares Angoitia Cortés And Fuentes.
--------------------------| MSP |-------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm MSP.
-----------------------| Werksmans |----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Werksmans.
--------------------| Fillmore Riley |-------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Fillmore Riley.
-------------------| Joffe & Associés |------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Joffe & Associés.
--------------------| Buss Murton Law |-------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Buss Murton Law.
--------------------| Kromann Reumert |-------------------
+No more than 1 lawyer(s) needed for the firm Clemens Law.
+-------------------| Hill Dickinson |-------------------
 
 Page 1 - - - - - - - - - - ( 13 )
+Lawyer added successfully!
 Page 2 - - - - - - - - - - ( 13 )
 Page 3 - - - - - - - - - - ( 13 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Kromann Reumert.
-----------------------| Langlois |----------------------
-
-Page 1 - - - - - - - - - - ( 16 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Langlois.
------------------------| Dottir |-----------------------
+No more than 2 lawyer(s) needed for the firm Hill Dickinson.
+-----------------------| Lydian |-----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
-Failed to find element with locator: By.className: team-people--position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
-Failed to find element with locator: By.className: team-people--position
-Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Dottir.
---------------| Zamfirescu Racoti Predoiu |--------------
+No more than 1 lawyer(s) needed for the firm Lydian.
+--------------| VO Patents And Trademarks |--------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 2 lawyer(s) needed for the firm VO Patents And Trademarks.
+------------------| Moalem Weitemeyer |------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Moalem Weitemeyer.
+------------------------| Logos |------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Logos.
+------------------------| Foyen |------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Foyen.
+-----------| Viering Jentschura And Partner |-----------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+---------------------| William Fry |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Stopped before completing all the 19 clicks.
+Performed only 17 clicks.
+Lawyer added successfully!
+Failed to find element with locator: By.className: location
+Failed to find element with locator: By.className: list__common__link
+Invalid COUNTRY: Element not found for COUNTRY
+Lawyer added successfully!
+No more than 2 lawyer(s) needed for the firm William Fry.
+---------------| Steinmetz Haring Gurman |---------------
+
+Page 1 - - - - - - - - - - ( 1 )
+------------------| Pavia And Ansaldo |------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+------------------------| STBB |------------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm STBB.
+----------------| Dimitrov Petrov & Co |----------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Dimitrov Petrov & Co.
+--------------------| Spencer West |--------------------
+
+Page 1 - - - - - - - - - - ( 23 )
+Page 2 - - - - - - - - - - ( 23 )
+Page 3 - - - - - - - - - - ( 23 )
+Lawyer added successfully!
+Page 4 - - - - - - - - - - ( 23 )
+Page 5 - - - - - - - - - - ( 23 )
+Page 6 - - - - - - - - - - ( 23 )
+Page 7 - - - - - - - - - - ( 23 )
+Page 8 - - - - - - - - - - ( 23 )
+Page 9 - - - - - - - - - - ( 23 )
+Lawyer added successfully!
+Page 10 - - - - - - - - - - ( 23 )
+Lawyer added successfully!
+No more than 3 lawyer(s) needed for the firm Spencer West.
+-----------------------| Norens |-----------------------
+
+Page 1 - - - - - - - - - - ( 1 )
+Invalid NAME: null
+Invalid NAME: null
+Invalid NAME: null
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm Norens.
+-------------------| Appleby Global |-------------------
+
+Page 1 - - - - - - - - - - ( 9 )
+Page 2 - - - - - - - - - - ( 9 )
+Page 3 - - - - - - - - - - ( 9 )
+Lawyer added successfully!
+Page 4 - - - - - - - - - - ( 9 )
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 3 lawyer(s) needed for the firm Appleby Global.
+--------------------| Quin Emanuel |--------------------
+
+Page 1 - - - - - - - - - - ( 23 )
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='tel:'], id=f.C23F43B0106A60702917F5DCC11DB889.d.A669B21B9F3B9FB1A240C40A679A7AF7.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='mailto:'], id=f.1D2F79A2EC150D4A233FA94CA6DB88C9.d.6D08C0977DFAF2B8A7B9A832A8BEE5D5.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Page 2 - - - - - - - - - - ( 23 )
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='tel:'], id=f.ED489FCC416B215B881AB32E630C5B13.d.FF2595CC4323896591EE459E5F9E86A8.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='mailto:'], id=f.632278D7059F66E3234E9893D7831A99.d.294EB3AD90CCE4A00BED3DC993202F4B.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Page 3 - - - - - - - - - - ( 23 )
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='tel:'], id=f.B4C7332928ABC8427ECBFADD402BEBA4.d.42ECD0475F5CE3BCFC886304FD39526D.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='mailto:'], id=f.27371DCDB841202F8B0FA47659E2405D.d.0753CC839DDD85E510D7C6E0E20A55B5.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Page 4 - - - - - - - - - - ( 23 )
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='tel:'], id=f.ADCE393459B6985400E2092938B50E5A.d.DA129CAF4AA671EEA4D1D20860BB2643.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='mailto:'], id=f.307A9044C0C6E9EDEFA9FE25792F2BD9.d.4BA20E78858F41F085D1846AFDAC279C.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Page 5 - - - - - - - - - - ( 23 )
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='tel:'], id=f.8DB279477B3BB6430F4CF744EC3E348D.d.AC7A2CE810C435C45BA10B6D96FBD77A.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='mailto:'], id=f.DE508BC4E56976BBC04D5BB35E04B9E0.d.F627ECF3F11EFCB49033FFCEA462D424.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Page 6 - - - - - - - - - - ( 23 )
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='tel:'], id=f.3DE388B39BE200683043D5CE6AD88ED3.d.D4079883D1A93B761736315505939847.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
+  (Session info: chrome=141.0.7390.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee6a8329d609de049f86497517404ee3, findChildElement {value=a[href*='mailto:'], id=f.A150446D44F2DF2C262A96ACEA09BA26.d.893A88B86948467F5F7DE60DBDFD3C4E.e.7, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.109, chrome: {chromedriverVersion: 141.0.7390.122 (b477534e7e1..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50008/devtoo..., se:cdpVersion: 141.0.7390.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee6a8329d609de049f86497517404ee3
+Page 7 - - - - - - - - - - ( 23 )
+Timeout exceeded for site: Quin Emanuel
+--------------| Ritch Mueller And Nicolau |--------------
 
 Page 1 - - - - - - - - - - ( 3 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Zamfirescu Racoti Predoiu.
-------------------| Ogletree Deakins |------------------
+Page 2 - - - - - - - - - - ( 3 )
+Page 3 - - - - - - - - - - ( 3 )
+--------------------| Byrne Wallace |--------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Ogletree Deakins.
---------------------| Barriston Law |--------------------
+No more than 1 lawyer(s) needed for the firm Byrne Wallace.
+------------------------| Hayes |------------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Barriston Law.
-------------------------| CRCCD |------------------------
+No more than 1 lawyer(s) needed for the firm Hayes.
+--------------------| AraozAndRueda |--------------------
 
 Page 1 - - - - - - - - - - ( 1 )
+Failed to find element with locator: By.className: status-ficha
+Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
+Failed to find element with locator: By.className: status-ficha
+Cannot invoke "org.openqa.selenium.WebElement.getText()" because "element" is null
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm CRCCD.
+No more than 1 lawyer(s) needed for the firm AraozAndRueda.
+-------------------------| BDO |-------------------------
+
+Page 1 - - - - - - - - - - ( 28 )
+Lawyer added successfully!
+Page 2 - - - - - - - - - - ( 28 )
+Stopped before completing all the 5 clicks.
+Performed only 1 clicks.
+Lawyer added successfully!
+Timeout exceeded for site: BDO
+------------------------| DGKV |------------------------
+
+Page 1 - - - - - - - - - - ( 3 )
+Page 2 - - - - - - - - - - ( 3 )
+Lawyer added successfully!
+No more than 1 lawyer(s) needed for the firm DGKV.
 --------------| Hans Offia And Associates |--------------
 
 Page 1 - - - - - - - - - - ( 1 )
@@ -1474,452 +868,37 @@ Failed to find element with locator: By.cssSelector: .elementor-element-3a7110a 
 Invalid NAME: Element not found for NAME
 Failed to find element with locator: By.cssSelector: .elementor-element-b3bbfa7 h3
 Invalid ROLE: Element not found for ROLE
----------------------| Meitar Law |---------------------
-
-Page 1 - - - - - - - - - - ( 3 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Meitar Law.
------------------------| Walkers |-----------------------
-
-Page 1 - - - - - - - - - - ( 43 )
-Page 2 - - - - - - - - - - ( 43 )
-Lawyer added successfully!
-Page 3 - - - - - - - - - - ( 43 )
-Lawyer added successfully!
-Page 4 - - - - - - - - - - ( 43 )
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm Walkers.
-------------------| Flügel Preissner |------------------
+--------------------| Lewiss Silkin |--------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Flügel Preissner.
-------------------| Dale And Lessmann |------------------
+----------------------| Alliotts |----------------------
 
 Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Dale And Lessmann.
-----------------------| Dompatent |----------------------
+No more than 1 lawyer(s) needed for the firm Alliotts.
+-----------------------| KRBLaw |-----------------------
 
-Page 1 - - - - - - - - - - ( 15 )
-Page 2 - - - - - - - - - - ( 15 )
-Page 3 - - - - - - - - - - ( 15 )
-Page 4 - - - - - - - - - - ( 15 )
-Page 5 - - - - - - - - - - ( 15 )
-Page 6 - - - - - - - - - - ( 15 )
+Page 1 - - - - - - - - - - ( 1 )
+---------------------| Carey Olsen |---------------------
+
+Page 1 - - - - - - - - - - ( 1 )
 Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Dompatent.
--------------| Nelson Wilians & Advogados |-------------
+Lawyer added successfully!
+Lawyer added successfully!
+No more than 3 lawyer(s) needed for the firm Carey Olsen.
+----------------| Jackson Etti And Edu |----------------
 
 Page 1 - - - - - - - - - - ( 2 )
-Page 2 - - - - - - - - - - ( 2 )
------------------| Stephenson Harwood |-----------------
-
-Page 1 - - - - - - - - - - ( 30 )
-Page 2 - - - - - - - - - - ( 30 )
+Failed to find element with locator: By.cssSelector: div.flex > p.font-normal
+Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
+Failed to find element with locator: By.cssSelector: div.flex > p.font-normal
+Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
+Failed to find element with locator: By.cssSelector: div.flex > p.font-normal
+Cannot invoke "org.openqa.selenium.WebElement.getAttribute(String)" because "element" is null
 Lawyer added successfully!
-Page 3 - - - - - - - - - - ( 30 )
-Lawyer added successfully!
-Page 4 - - - - - - - - - - ( 30 )
-Page 5 - - - - - - - - - - ( 30 )
-Page 6 - - - - - - - - - - ( 30 )
-Page 7 - - - - - - - - - - ( 30 )
-Page 8 - - - - - - - - - - ( 30 )
-Page 9 - - - - - - - - - - ( 30 )
-Page 10 - - - - - - - - - - ( 30 )
-Page 11 - - - - - - - - - - ( 30 )
-Page 12 - - - - - - - - - - ( 30 )
-Failed to find element with locator: By.cssSelector: a[href^='/offices/']
-Invalid COUNTRY: Element not found for COUNTRY
-	$$ Could not extract lawyer text for COUNTRY
-Failed to find element with locator: By.cssSelector: a[href^='/offices/']
-Invalid COUNTRY: Element not found for COUNTRY
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm Stephenson Harwood.
----------------------| Cuatrecasas |---------------------
-
-Page 1 - - - - - - - - - - ( 5 )
-Page 2 - - - - - - - - - - ( 5 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Cuatrecasas.
-------------------| Schurti Partners |------------------
+No more than 1 lawyer(s) needed for the firm Jackson Etti And Edu.
+----------------| Santamarina And Steta |----------------
 
 Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Schurti Partners.
----------------------| FCM Limited |---------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-	$$ Could not extract lawyer text for NAME
-Invalid NAME:
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-	$$ Could not extract lawyer text for NAME
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Invalid NAME:
-Invalid NAME:
-	$$ Could not extract lawyer text for NAME
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm FCM Limited.
-------------------------| Kvale |------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Kvale.
-------------------------| Ogier |------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-Lawyer added successfully!
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm Ogier.
--------------------| Aluko & Oyebode |-------------------
-
-Page 1 - - - - - - - - - - ( 5 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Aluko & Oyebode.
---------------------| Quin Emanuel |--------------------
-
-Page 1 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.297F6046E881AF170335D6E6BFEB0C74.d.BE1513C0D97D04CCC4D1550789962FD6.e.19, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.E2FA94996922B49DF717D5DB8284C14F.d.B1F57CF44A9F7FBF5C7AD226DA7D1760.e.20, value=a[href*='mailto:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Page 2 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.E2E9E154699A9A55B470CC0642318CAF.d.3E35EB623A02B4CFBDDB2AFE19F3CD1C.e.21, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.F19AD6DD940132D3AD8CB0F15A5DE8D9.d.C70874E7DE0988DE917AADF84B8A56FD.e.20, value=a[href*='mailto:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Page 3 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.6259B79B2C57B819201B6E965A1E9E9F.d.3F3287DB9445AE97F7154208058B7EAB.e.20, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.7FDE1CE1AE887D8CFA81799EF5D0AD57.d.7BD7C345684F32FEE63097E340F17CC7.e.20, value=a[href*='mailto:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Page 4 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.2E90844D602DBEC4922E7AF9345ACBFF.d.D90489113D0BDFBDDA963E681570A3A0.e.20, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.69BE5EDA1A0D1FBF019EEDAE5D5FCF61.d.EE88F3D6FF146A2B87FB461DFD2E14ED.e.21, value=a[href*='mailto:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Page 5 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.591B485699EB1A18D7C2484E1C4197F8.d.5E3BE2EBD3A5819187923C1094FB1264.e.21, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.0D79C1FB7CFE3791D2D40756E1F0713F.d.A4955B2CC350AFA9FCC5697867F95881.e.20, value=a[href*='mailto:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Page 6 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.41F357518E1C0B1923037AFC21A1BA94.d.0B9D995F6ECF83DA382AF68459576735.e.20, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.27D5DC1539E1AF1F944154A71058504C.d.613A5438A97C92061D02C4BF80ED7870.e.20, value=a[href*='mailto:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Page 7 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.17225A9DF91B6002AF254ACFD942288B.d.89F9EA8408269738023E83C5485ABAAA.e.19, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='mailto:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.1662FD88D9102693E2C892A0881593EB.d.8560ACF9060CBC1422D703D7242301E7.e.20, value=a[href*='mailto:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Page 8 - - - - - - - - - - ( 23 )
-Error getting socials: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='tel:']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.6.1', java.version: '24.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [26c0bbc22da3d06f3be70951a5f15e9b, findChildElement {using=css selector, id=f.63395B48CAD6A0BA1C8D168CDC3A7F91.d.1899BBD5D3D0982DD60F4B02BEDB8EBA.e.21, value=a[href*='tel:']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: /var/folders/m1/8y1dyblx1_1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49724}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49724/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c0bbc22da3d06f3be70951a5f15e9b
-Timeout exceeded for site: Quin Emanuel
-Failed to find element with locator: By.tagName: h4
-Invalid ROLE: Element not found for ROLE
-Failed to find element with locator: By.tagName: h4
-Invalid ROLE: Element not found for ROLE
-Failed to find element with locator: By.cssSelector: div.atn-contact > h6
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: div.atn-contact > h6
-Invalid COUNTRY: Element not found for COUNTRY
-	$$ Could not extract lawyer text for ROLE
-	$$ Could not extract lawyer text for COUNTRY
-Lawyer added successfully!
--------------------| Thomas Bodström |-------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Thomas Bodström.
-------------------| Kantor & Immerman |------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Kantor & Immerman.
--------------------| Hannes Snellman |-------------------
-
-Page 1 - - - - - - - - - - ( 19 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Hannes Snellman.
-------------------| Portolano Cavallo |------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Portolano Cavallo.
--------------------| Dillon Eustace |-------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-Lawyer added successfully!
-No more than 2 lawyer(s) needed for the firm Dillon Eustace.
------------------------| Ferrere |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
---------------------| Roca Junyent |--------------------
-
-Page 1 - - - - - - - - - - ( 5 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Roca Junyent.
---------------------| Lex Caribbean |--------------------
-
-Page 1 - - - - - - - - - - ( 1 )
---------------------| Blake Morgan |--------------------
-
-Page 1 - - - - - - - - - - ( 32 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Blake Morgan.
-----------------| Lemstra Van der Korst |----------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Lemstra Van der Korst.
-------------------------| MdME |------------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm MdME.
-----------------| Addleshaw Goddard LLP |----------------
-
-Page 1 - - - - - - - - - - ( 35 )
-Lawyer added successfully!
-Lawyer added successfully!
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm Addleshaw Goddard LLP.
--------------------| White And Case |-------------------
-
-Page 1 - - - - - - - - - - ( 5 )
-Lawyer added successfully!
-Lawyer added successfully!
-Lawyer added successfully!
-No more than 3 lawyer(s) needed for the firm White And Case.
------------------| Brinkmann & Partner |-----------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Brinkmann & Partner.
-----------------| Gorrissen Federspiel |----------------
-
-Page 1 - - - - - - - - - - ( 3 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Gorrissen Federspiel.
------------------------| Kew Law |-----------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Kew Law.
-----------------------| Wiersholm |----------------------
-
-Page 1 - - - - - - - - - - ( 38 )
-Page 2 - - - - - - - - - - ( 38 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Wiersholm.
---------------------| AGP Advokater |--------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm AGP Advokater.
-------------------| Ganado Advocates |------------------
-
-Page 1 - - - - - - - - - - ( 3 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Ganado Advocates.
--------------------| Sheppard Mullin |-------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Lawyer added successfully!
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Failed to find element with locator: By.cssSelector: a
-Invalid COUNTRY: Element not found for COUNTRY
-Lawyer added successfully!
-No more than 2 lawyer(s) needed for the firm Sheppard Mullin.
---------------------| Nauta Dutilh |--------------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Nauta Dutilh.
------------------| Gitti And Partners |-----------------
-
-Page 1 - - - - - - - - - - ( 1 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Gitti And Partners.
------------------| Miller Thomson LLP |-----------------
-
-Page 1 - - - - - - - - - - ( 53 )
-Lawyer added successfully!
-No more than 1 lawyer(s) needed for the firm Miller Thomson LLP.
---------------------| Garcia Bodan |--------------------
-
-Page 1 - - - - - - - - - - ( 1 )
+No search results found on page 1 of the firm Santamarina And Steta

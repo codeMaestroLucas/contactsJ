@@ -35,6 +35,7 @@ public class Validations {
 
             return countriesToAvoid.stream()
                     .map(CountryData::getCountry)
+                    .filter(java.util.Objects::nonNull)  // ✅ Remove valores nulos
                     .anyMatch(c -> c.trim().equalsIgnoreCase(country.trim()));
 
         } catch (IOException e) {
@@ -60,6 +61,7 @@ public class Validations {
 
             return countriesToAvoid.stream()
                     .map(CountryData::getCountry)
+                    .filter(java.util.Objects::nonNull)  // ✅ Remove valores nulos
                     .anyMatch(c -> c.trim().equalsIgnoreCase(firm.trim()));
 
         } catch (IOException e) {
@@ -134,6 +136,7 @@ public class Validations {
      * Helper class to represent country data from JSON.
      */
     @Getter
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
     public static class CountryData {
         @JsonProperty("Country")
         private String Country;
