@@ -54,7 +54,7 @@ public class MoalemWeitemeyer extends ByPage {
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{By.cssSelector("a.basic-button")};
+        By[] byArray = new By[]{By.cssSelector("a[href*='/People/']")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 

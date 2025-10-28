@@ -67,7 +67,11 @@ public class LEGlobal extends ByPage {
             String addressBlock = lawyer.findElement(By.cssSelector("dd:nth-of-type(3)")).getAttribute("innerHTML");
             String[] lines = addressBlock.split("<br>");
             // The country is usually the line before the phone number
-            return lines[lines.length - 4];
+            String country = lines[lines.length - 4];
+
+            if (country.toLowerCase().contains("United States")) return "USA";
+
+            return country;
         } catch (Exception e) {
             return "";
         }

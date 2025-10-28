@@ -78,7 +78,7 @@ public class CampbellsLegal extends ByPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.tagName("a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

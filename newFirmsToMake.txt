@@ -1,0 +1,204 @@
+bynewpage
+
+{
+name: "PM&P",
+link: "https://penkov-markov.eu/en/team/partners-and-ceo"
+lawyers: <a href="https://penkov-markov.eu/en/team/member/nikolai-voinov" class="team_main-content--wrapper-single team-member_card " data-membercategoryid="1">
+                                     <div class="team-member_card-img">
+                                         <img src="https://penkov-markov.eu/storage/449/656f5d4410129_Voynov.webp">
+                                         <div class="big-circle"></div>
+                                         <div class="arrow">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="15" viewBox="0 0 26 15" fill="none">
+           <g clip-path="url(#clip0_1702_4615)">
+             <path d="M0.265625 6.78192C0.088541 6.959 0 7.20249 0 7.51239C0 7.82228 0.099608 8.07684 0.298828 8.27606C0.498048 8.47528 0.752603 8.57489 1.0625 8.57489H21.8477L17.332 13.1569C16.8008 13.6439 16.7897 14.1419 17.2988 14.6511C17.8079 15.1602 18.306 15.1491 18.793 14.6179L25.168 8.24285C25.3008 8.15431 25.3893 8.04364 25.4336 7.91082C25.4779 7.77801 25.5 7.6452 25.5 7.51239C25.5 7.37957 25.4779 7.24676 25.4336 7.11395C25.3893 6.98113 25.3008 6.87046 25.168 6.78192L18.793 0.406917C18.306 -0.124336 17.8079 -0.135403 17.2988 0.373714C16.7897 0.882831 16.8008 1.38087 17.332 1.86785L21.8477 6.44989H1.0625C0.752603 6.44989 0.48698 6.56056 0.265625 6.78192Z" fill="black"></path>
+           </g>
+           <defs>
+             <clipPath id="clip0_1702_4615">
+               <rect width="25.5" height="14.3438" fill="white"></rect>
+             </clipPath>
+           </defs>
+         </svg>                                </div>
+                                         <div class="blur"></div>
+                                     </div>
+                                     <div class="team-member_card-info">
+                                         <div class="team-member_card-info--name">
+                                             <div class="garamond-700">Nikolay Voynov</div>
+                                             <div class="raleway-400"> Partner, Head of Energy &amp; Environmental </div>
+                                             <div class="raleway-400">nikolay.voynov@penkov-markov.eu</div>
+                                         </div>
+                                     </div>
+                                 </a>
+lawyer: <div class="team-single_wrapper-person--info">
+                            <div class="garamond-700 name">
+                                Nikolay Voynov
+                            </div>
+                            <div class="raleway-400">
+                                Partner, Head of Energy &amp; Environmental
+                            </div>
+                            <a href="mailto: nikolay.voynov@penkov-markov.eu" class="raleway-400 contacts">
+                                nikolay.voynov@penkov-markov.eu
+                            </a>
+                        </div>
+},
+
+
+
+
+
+bypage
+{
+name: "Pollonais Blanc de la BastideAndJacelon",
+link: "https://polanc.com/lawyers/?_sft_seniority=partners"
+lawyers: <div data-elementor-type="loop-item" data-elementor-id="5227" class="elementor elementor-5227 e-loop-item e-loop-item-5323 post-5323 lawyers type-lawyers status-publish has-post-thumbnail hentry practice_area-property-and-estates seniority-partners" data-elementor-post-type="elementor_library" data-custom-edit-handle="1"><div class="elementor-element elementor-element-88ba332 e-con-full cstm_loop_filter e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="88ba332" data-element_type="container"><div class="elementor-element elementor-element-c3246eb elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="c3246eb" data-element_type="widget" data-widget_type="theme-post-featured-image.default"><div class="elementor-widget-container">
+         <img loading="lazy" width="684" height="1024" src="https://polanc.com/wp-content/uploads/2023/11/Oneesha-Paul-684x1024.jpg" class="attachment-large size-large wp-image-7129" alt="" srcset="https://polanc.com/wp-content/uploads/2023/11/Oneesha-Paul-684x1024.jpg 684w, https://polanc.com/wp-content/uploads/2023/11/Oneesha-Paul-200x300.jpg 200w, https://polanc.com/wp-content/uploads/2023/11/Oneesha-Paul-768x1151.jpg 768w, https://polanc.com/wp-content/uploads/2023/11/Oneesha-Paul-1025x1536.jpg 1025w, https://polanc.com/wp-content/uploads/2023/11/Oneesha-Paul.jpg 1335w" sizes="(max-width: 684px) 100vw, 684px"></div></div></div><div class="elementor-element elementor-element-12ff137 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="12ff137" data-element_type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-7be7fbd elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="7be7fbd" data-element_type="widget" data-widget_type="theme-post-title.default"><div class="elementor-widget-container"><h1 class="elementor-heading-title elementor-size-default">Oneesha Paul</h1></div></div></div></div><div class="elementor-element elementor-element-2f75b85 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="2f75b85" data-element_type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-c09a769 elementor-widget elementor-widget-heading" data-id="c09a769" data-element_type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">Partner</h2></div></div></div></div><div class="elementor-element elementor-element-b4a7d49 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="b4a7d49" data-element_type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-3209dcf elementor-widget elementor-widget-heading" data-id="3209dcf" data-element_type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">Property and Estates</h2></div></div></div></div><div class="elementor-element elementor-element-50419d5 e-flex e-con-boxed wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent" data-id="50419d5" data-element_type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-38f7f49 elementor-align-center cstm-btn1 elementor-widget elementor-widget-button" data-id="38f7f49" data-element_type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
+         <a class="elementor-button elementor-button-link elementor-size-xs" href="https://polanc.com/lawyers/oneesha-paul/" target="_blank">
+         <span class="elementor-button-content-wrapper">
+         <span class="elementor-button-text">View Profile </span>
+         </span>
+         </a></div></div></div></div></div></div>
+lawyer:
+},
+
+
+
+
+
+{
+name: "PFP Law",
+link: "https://pfp.law/team/"
+lawyers: <div class="team-member" data-style="bio_fullscreen_alt" data-slug="luka-fabiani"><div class="team-member-image"><div class="team-member-image-inner img-loaded"><img fetchpriority="high" decoding="async" class="nectar-lazy loaded" src="https://pfp.law/wp-content/uploads/2024/09/luka-fabiani-1024x683.jpg" width="1800" height="1200" alt="" style=""></div></div><div class="team-member-overlay"></div>
+             <div class="team-meta"><h5>Attorney at Law / Partner (SI)</h5><h3>Luka Fabiani</h3><p>Dispute Resolution, Criminal law, Compliance, Data Protection and Trade Secrets, Intellectual Property and IT Law, Fraud Investigation</p><div class="nectar-cta loaded" data-color="default" data-using-bg="false" data-style="arrow-animation" data-display="block" data-alignment="left"><span class="link_wrap"><a class="link_text" href="#"><svg class="next-arrow" width="20px" height="25px" viewBox="0 0 50 80" xml:space="preserve">
+                 <polyline stroke="#000000" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round" points="0, 0 45, 40 0, 80"></polyline>
+                 </svg><span class="line" style="background-color: #000;"></span> </a></span></div></div>
+             <div class="nectar_team_bio_img" data-img-src="https://pfp.law/wp-content/uploads/2024/09/luka-fabiani.jpg"></div>
+             <div class="nectar_team_bio"><p><strong>Contact</strong>: E: luka.fabiani@pfp.law, T: +386 8 205 21 11</p>
+         <p>Luka Fabiani is partner at PFP Law where he acts as counsel to and represents both domestic and foreign clients before the Slovenian courts, administrative and other authorities, as well as in arbitration. His experience in contract law, dispute resolution mechanisms, as well as management liability stands out in particular. He also represents clients as defence counsel in criminal proceedings, particularly in the field of white collar crime, while dedicating special attention to advising in the areas of corporate compliance, personal data protection law and intellectual property law. In addition to his master’s degree in competition law from the University of Tübingen, Germany, he is also a Certified Fraud Examiner licenced by the Association of Certified Fraud Examiners (ACFE), and court interpreter for the German language and member of the Honorary Court of Arbitration of The Association of Sworn Court Interpreters and Legal Translators of Slovenia (SCIT).</p>
+         <p><strong>Country: </strong>SI</p>
+         <p><strong>Education:</strong></p>
+         <ul>
+         <li>2015, Certified Fraud Investigator Licence, ACFE</li>
+         <li>2008, State Bar Examination, Republic of Slovenia, Ministry of Justice</li>
+         <li>2005, Master of Laws (LL.M.), Eberhard-Karls-Universität Tübingen, Germany</li>
+         <li>2004, Bachelor of Laws (univ. dipl. pravnik), University of Ljubljana, Faculty of Law</li>
+         </ul>
+         <p><strong>Memberships:</strong></p>
+         <ul>
+         <li>Member of the Bar Association of Slovenia (registered as an attorney-at-law since 2009)</li>
+         <li>Member of the Association of Certified Fraud Examiners (ACFE) (2015-)</li>
+         <li>Member of the Honorary Court of Arbitration of The Association of Sworn Court Interpreters and Legal Translators of Slovenia (SCIT) (2025-)</li>
+         </ul>
+         <p><strong>Areas of work:</strong></p>
+         <ul>
+         <li>Dispute Resolution</li>
+         <li>Criminal law</li>
+         <li>Compliance</li>
+         <li>Data Protection and Trade Secrets</li>
+         <li>Intellectual Property and IT Law</li>
+         <li>Fraud Investigation</li>
+         </ul>
+         <p><strong>Languages:</strong></p>
+         <ul>
+         <li>Slovenian</li>
+         <li>English</li>
+         <li>German</li>
+         <li>Croatian</li>
+         <li>Serbian</li>
+         </ul>
+         <p><strong>Client commendations:</strong></p>
+         <p>“<em>Great team, approachable people, friendly attitude. Luka Fabiani – good negotiation skills, ability to explain issues in understandable manner</em>.” (Legal500)</p>
+         <p>“<em>Large yet very diverse team, very responsive, and covering all areas where we needed legal assistance/advice. Luka Fabiani is expert in his field, highly responsive, straight to the point, very good in finding details yet at the same time providing an “executive summary” type of feedback.</em>” (Legal500)</p>
+         <p>“<em>Very hands-on team with a good mix of individual strengths. /…/ All of them are exceptional lawyers with a lot of know-how in their respective fields</em>.” (Legal500)</p>
+         <p><strong>Publications:</strong></p>
+         <p>International Comparative Legal Guide to Business Crime 2015</p>
+         <p>International Comparative Legal Guide to Data Protection 2014</p>
+         <p>International Comparative Legal Guide to Litigation &amp; Dispute Resolution 2014</p>
+         <div class="bottom_meta"><a href="mailto:luka.fabiani@pfp.law" target="_blank"><i class="icon-default-style fa fa-envelope-o"></i> <span class="social-text">luka.fabiani@pfp.law</span></a><a href="tel:0038682052111" target="_blank"><i class="icon-default-style fa fa-phone"></i> <span class="social-text">+38682052111</span></a><a href="https://www.linkedin.com/in/luka-fabiani-a5960627/" target="_blank"><i class="icon-default-style fa fa-linkedin"></i> <span class="social-text">LinkedIn</span></a></div></div>
+             </div>
+},
+
+
+
+
+
+
+
+{
+name: "PeterkaAndPartners",
+link: "https://www.peterkapartners.com/en/localteams/all/"
+lawyers: <div class="ppwinleft">
+                                                             <div class="tbcontwrp teamlist xtraContent hlavahide hlavahide-removed removneme">
+                                             <div class="img">
+                                                 <img id="ctl00_TemplatePlaceHolder_ctl06_RepeaterUserListC1_ctl00_foto1" src="/Aton/FileRepository/aton_file_000000000086291_BD75E134173C8548B2342093E5BA449F_s.jpg">
+                                             </div>
+                                             <div class="txt">
+                                                 <h3>
+                                                     Peterka&nbsp;Ondřej
+                                                 </h3>
+                                                 <p>
+                                                     Founder and Managing Partner</p>
+                                                 <p>
+                                                     </p>
+                                                 <a class="teamailto" href="mailto:peterka@peterkapartners.cz">
+                                                     peterka@peterkapartners.cz</a>
+                                                 <p>
+                                                     +420 225 396 301</p>
+
+                                             </div>
+                                         </div>
+                                                           <!--  zzu1 -->
+                                                          </div>
+},
+
+
+
+
+
+
+
+{
+name: "Pamboridis",
+link: "https://www.pamboridis.com/people/"
+lawyers:
+},
+
+
+
+
+
+
+
+{
+name: "Palomo Abogados",
+link: "https://palomoabogadosen.squarespace.com/federico-palomo-1"
+lawyers:
+},
+
+
+
+
+
+
+
+{
+name: "Paksoy",
+link: "https://paksoy.av.tr/en/team/"
+lawyers:
+},
+
+
+
+
+
+
+
+{
+name: "PAGBAM",
+link: "https://pagbam.com/integrantes/socios/"
+lawyers:
+},
+
+
+
+
+
+

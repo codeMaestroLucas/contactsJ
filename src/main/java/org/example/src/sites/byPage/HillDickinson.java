@@ -18,7 +18,7 @@ public class HillDickinson extends ByPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("hong kong", "Hong Kong"),
             entry("limassol", "Cyprus"),
-            entry("monaco", "Monaco"),
+            entry("monaco", "Italy"),
             entry("piraeus", "Greece"),
             entry("singapore", "Singapore")
     );

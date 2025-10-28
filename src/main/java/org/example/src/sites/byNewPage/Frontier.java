@@ -17,7 +17,7 @@ import static java.util.Map.entry;
 public class Frontier extends ByNewPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("32", "Belgium"),
-            entry("33", "Paris"),
+            entry("33", "France"),
             entry("34", "Spain"),
             entry("44", "England"),
             entry("49", "Germany"),

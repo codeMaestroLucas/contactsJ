@@ -58,6 +58,8 @@ public class _CompletedFirmsData {
             new WildeboerDellelce(), new WilliamFry(), new WinstonAndStrawn(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
             new MayerBrown(), new Orrick(), new Sidley(), new SquirePattonBoggs(), new SullivanAndWorcester(),
             new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(),
+            new AVMAdvogados(), new FRA(), new SuarezDeVivero(),
+            new ABAndDavid(), new BentsiEnchillLetsaAndAnkomah(), new FlichyGrange(),
 
 
     };
@@ -87,7 +89,7 @@ public class _CompletedFirmsData {
             new SargentAndKrahn(), new SBGK(), new Sherrards(), new Sorainen(), new SZA(),
             new TEMPLARS(), new Thommessen(), new ThompsonDorfmanSweatman(), new Vaneps(), new Vischer(),
             new WardynskiAndPartners(), new Werksmans(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
-            new Curtis(), new Goerg(),
+            new Shalakany(), new ZakiHashemAndPartners(), new ZulficarAndPartners(), new Curtis(), new Goerg(),
 
     };
 

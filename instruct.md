@@ -68,6 +68,8 @@ ou o valor encontrado) deve ser mantida.
 
 * **Construção de Email**: Quando instruído, a função `getSocials` deve ser customizada para construir o email a partir
 do nome do advogado, seguindo o padrão especificado (ex: `(primeiraLetraNome)(sobrenome)@dominio.com`).
+  * Assim sendo, colete primeiro o nome - fora da função - e o insira como parâmetro da função `getSocials`.
+  * Além disso, utilize a função `name = TreatLawyerParams.treatName(name);` para fazer o tratamento do nome
 
 ## 4. Princípios Gerais*
 * **Precisão**: O usuário é um desenvolvedor e espera um código preciso e funcional.
