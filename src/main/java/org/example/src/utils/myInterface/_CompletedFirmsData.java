@@ -57,11 +57,10 @@ public class _CompletedFirmsData {
             new VieringJentschuraAndPartner(), new Vinge(), new VOPatentsAndTrademarks(), new Walkers(), new WatsonFarleyAndWilliams(),
             new WildeboerDellelce(), new WilliamFry(), new WinstonAndStrawn(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
             new MayerBrown(), new Orrick(), new Sidley(), new SquirePattonBoggs(), new SullivanAndWorcester(),
-            new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(),
-            new AVMAdvogados(), new FRA(), new SuarezDeVivero(),
+            new AVMAdvogados(), new FRA(), new SuarezDeVivero(), new PFPLaw(), new PeterkaAndPartners(),
             new ABAndDavid(), new BentsiEnchillLetsaAndAnkomah(), new FlichyGrange(),
-
-
+            new PopoviciNituStoicaAndAsociatii(), new PorwiszAndPartners(), new PricaAndPartners(), new RadulescuAndMusoi(),
+            new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(),
     };
 
     public final static Site[] byNewPage = {
@@ -90,6 +89,8 @@ public class _CompletedFirmsData {
             new TEMPLARS(), new Thommessen(), new ThompsonDorfmanSweatman(), new Vaneps(), new Vischer(),
             new WardynskiAndPartners(), new Werksmans(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
             new Shalakany(), new ZakiHashemAndPartners(), new ZulficarAndPartners(), new Curtis(), new Goerg(),
+            new PMP(),
+
 
     };
 

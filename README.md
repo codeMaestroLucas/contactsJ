@@ -9,6 +9,9 @@ GIT COMMANDs:
 git add . ':!data/sites'
 git add . ':!data/sites' ':!src/main/java/org/example/src/entities/MyDriver.java'
 
+---
+PYTHON COMMANDs
+python3 cleanup_todos.py
 
 ---
 # Ideas
