@@ -44,7 +44,7 @@ public class HBNLaw extends ByPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner", "counsel", "senior associate", "attorney"};
+        String[] validRoles = {"partner", "counsel", "senior associate"};
         WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
         List<WebElement> lawyers = wait.until(
                 ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("person__content"))

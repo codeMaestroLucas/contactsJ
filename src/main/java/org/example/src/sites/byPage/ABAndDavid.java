@@ -93,7 +93,7 @@ public class ABAndDavid extends ByPage {
                 "country", this.getCountry(lawyer),
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "" : socials[1]
+                "phone", socials[1].isEmpty() ? "233302253073" : socials[1]
         );
     }
 }

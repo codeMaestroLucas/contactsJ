@@ -95,7 +95,8 @@ public class Main {
 
     @SneakyThrows
     private static void performCompleteSearch() {
-        calculateTimeOfExecution(Main::getRegisteredContacts);
+//        Few contacts were
+//        calculateTimeOfExecution(Main::getRegisteredContacts);
         calculateTimeOfExecution(() -> {
             try {
                 searchLawyersInWeb();

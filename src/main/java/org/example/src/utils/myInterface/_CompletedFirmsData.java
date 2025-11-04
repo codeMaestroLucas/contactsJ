@@ -60,7 +60,9 @@ public class _CompletedFirmsData {
             new AVMAdvogados(), new FRA(), new SuarezDeVivero(), new PFPLaw(), new PeterkaAndPartners(),
             new ABAndDavid(), new BentsiEnchillLetsaAndAnkomah(), new FlichyGrange(),
             new PopoviciNituStoicaAndAsociatii(), new PorwiszAndPartners(), new PricaAndPartners(), new RadulescuAndMusoi(),
+            new Elverdam(), new FironLaw(), new MerilampiAttorneys(), new MitelAndAsociatii(), new SelihAndPartnerji(),
             new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(),
+
     };
 
     public final static Site[] byNewPage = {

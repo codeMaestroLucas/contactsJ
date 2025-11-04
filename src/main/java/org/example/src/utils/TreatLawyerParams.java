@@ -64,6 +64,7 @@ public final class TreatLawyerParams {
                 .replaceAll("[\"']", " ")
                 .toLowerCase()
                 .replace("ll m", "")
+                .replace("k c", "")
                 .trim();
 
         for (String role : VALID_ROLES) {

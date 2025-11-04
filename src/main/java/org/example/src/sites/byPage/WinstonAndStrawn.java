@@ -67,14 +67,14 @@ public class WinstonAndStrawn extends ByPage {
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='/en/professionals/']")
+                By.cssSelector("a[href*='/en/professionals/']")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='/en/professionals/']"),
+                By.cssSelector("a[href*='/en/professionals/']"),
                 By.cssSelector("img")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "alt", LawyerExceptions::nameException);
@@ -86,7 +86,7 @@ public class WinstonAndStrawn extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='/en/locations/']")
+                By.cssSelector("a[href*='/en/locations/']")
         };
         String href = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY", "href", LawyerExceptions::countryException);
 
