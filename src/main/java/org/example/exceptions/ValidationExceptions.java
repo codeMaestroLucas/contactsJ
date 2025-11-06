@@ -40,4 +40,9 @@ public class ValidationExceptions extends Exception{
     public static ValidationExceptions countryInSetOfCountries() {
         return new ValidationExceptions("Country in set of countries");
     }
+
+
+    public static ValidationExceptions emailDuplicateOnGlobalLawExperts() {
+        return new ValidationExceptions("Email is duplicate on GlobalLawExperts - cannot register");
+    }
 }

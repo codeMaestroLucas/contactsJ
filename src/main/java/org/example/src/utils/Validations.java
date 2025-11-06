@@ -7,9 +7,16 @@ import lombok.Getter;
 import org.example.exceptions.ValidationExceptions;
 import org.example.src.entities.Lawyer;
 import org.example.src.entities.excel.Contacts;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
@@ -128,6 +135,68 @@ public class Validations {
 
         if (setOfLastCountries.contains(country)) {
             throw ValidationExceptions.countryInSetOfCountries();
+        }
+
+        // Check if email is duplicate on GlobalLawExperts (last validation)
+        if (!isEmailCleanOnGlobalLawExperts(email)) {
+            throw ValidationExceptions.emailDuplicateOnGlobalLawExperts();
+        }
+    }
+
+
+    /**
+     * Checks if email is duplicate on GlobalLawExperts website.
+     * Returns true if email is clean (not duplicate), false if duplicate.
+     */
+    private static boolean isEmailCleanOnGlobalLawExperts(String email) {
+        WebDriver driver = null;
+        try {
+            driver = new ChromeDriver();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            
+            // Step 1: Access login page
+            driver.get("https://globallawexperts.com/login/?redirect_to=https%3A%2F%2Fgloballawexperts.com%2Fdashboard%2F");
+            
+            // Step 2: Fill login credentials
+            WebElement usernameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("login_username")));
+            usernameField.sendKeys("contact@kfroisconsulting.com");
+            
+            WebElement passwordField = driver.findElement(By.name("login_password"));
+            passwordField.sendKeys("Fo5KdZhSNxT!y1bQpkPh)6qg");
+            
+            // Step 3: Click login button
+            WebElement loginButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/div/form/div[3]/div[4]/button"));
+            loginButton.click();
+            
+            // Wait for login to complete
+            Thread.sleep(3000);
+            
+            // Step 4: Navigate to duplicate checker
+            driver.get("https://globallawexperts.com/lead-duplicate-checker/");
+            
+            // Step 5: Enter email to check
+            WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='email-input']")));
+            emailInput.clear();
+            emailInput.sendKeys(email);
+            
+            // Wait for result to appear
+            Thread.sleep(2000);
+            
+            // Step 6: Check result
+            WebElement resultContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("result-container")));
+            String resultClass = resultContainer.getAttribute("class");
+            
+            // If contains "result-clean" class, email is clean (no duplicates)
+            return resultClass != null && resultClass.contains("result-clean");
+            
+        } catch (Exception e) {
+            System.err.println("Error checking email on GlobalLawExperts: " + e.getMessage());
+            e.printStackTrace();
+            return false; // Consider as duplicate if error occurs (safer approach)
+        } finally {
+            if (driver != null) {
+                driver.quit();
+            }
         }
     }
 
