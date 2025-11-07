@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -137,7 +138,7 @@ public class Validations {
             throw ValidationExceptions.countryInSetOfCountries();
         }
 
-        // Check if email is duplicate on GlobalLawExperts (last validation)
+        // Check if email is duplicate on GlobalLawExperts
         if (!isEmailCleanOnGlobalLawExperts(email)) {
             throw ValidationExceptions.emailDuplicateOnGlobalLawExperts();
         }
@@ -178,16 +179,15 @@ public class Validations {
             WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='email-input']")));
             emailInput.clear();
             emailInput.sendKeys(email);
-            
-            // Wait for result to appear
-            Thread.sleep(2000);
-            
+            driver.findElement(By.id("check-button")).click();
+
+            Thread.sleep(3000);
+
             // Step 6: Check result
             WebElement resultContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("result-container")));
-            String resultClass = resultContainer.getAttribute("class");
+            String result = resultContainer.getAttribute("textContent");
             
-            // If contains "result-clean" class, email is clean (no duplicates)
-            return resultClass != null && resultClass.contains("result-clean");
+            return result != null && result.contains("Email is clean - no duplicates found!");
             
         } catch (Exception e) {
             System.err.println("Error checking email on GlobalLawExperts: " + e.getMessage());

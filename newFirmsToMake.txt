@@ -1,51 +1,32 @@
-📄 Resumo dos Erros Principais
+Binder Grösswang
+https://www.bindergroesswang.at/
 
-Aqui estão os tipos de erros distintos que ocorreram nas execuções. Erros idênticos ou muito semelhantes (como falhas repetidas na mesma página ou em páginas diferentes) foram agrupados em uma única mensagem principal.
+CERHA HEMPEL
+https://www.bindergroesswang.at/
 
-Erro de Runtime (O mais comum):
+Maric & CO
+https://mariclaw.com/meet-the-team/
 
-Runtime Error: Failed to find lawyer elements at getLawyersInPage()
+DKGV
+https://www.dgkv.com/people?first_name=&last_name=&position=3&practice_area=&industry=&language=#results
 
-Contexto: Este foi o erro mais frequente, ocorrendo em vários scripts diferentes (BLG Law, Myers Fletcher, Pavia And Ansaldo, Matheson, MAQS, AWA, CBA, Lex Caribbean, Ritch Mueller, DGKV, e muitos outros em ambos os logs). Indica que o seletor usado para encontrar a lista de advogados na página falhou.
+Kambourov & Partners
+https://www.kambourov.biz/en/professionals
 
-Erro de WebDriver (Elemento não encontrado):
+WALLESS
+https://walless.com/the-team/
 
-WebDriver Error: no such element: Unable to locate element...
+"name": "Rymarz Zdort Maruta",
+"link": "https://rzmlaw.com/en/team/?lang=en"
 
-Contexto: Ocorreu de forma massiva nos scripts (Werksmans, Nova Law, Ferrere, Porta & Consulenti Associati). Indica que um seletor específico (via XPath ou CSS) não encontrou o elemento esperado na página durante a raspagem.
+NESTOR
+https://www.nndkp.ro/who-we-are/our-team/
 
-Erro de WebDriver (Argumento Inválido):
+"name": "JPMAndPartners",
+"link": "https://www.jpm.law/lawyers/"
 
-WebDriver Error: invalid argument at openNewTab()
+"name": "Hillbridges",
+"link": "https://www.hillbridges.com/people/"
 
-Contexto: Este erro ocorreu consistentemente em vários scripts (Thompson Dorfman, Prasad And Company, Gornitzky And Co, METIDA, BDO) ao tentar abrir uma nova aba.
-
-Erro de WebDriver (Erro Genérico/Crash):
-
-WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b'...
-
-Contexto: Um erro genérico do WebDriver que parece indicar uma falha interna. Ocorreu em scripts como BDO, MAQS, AWA, Lewiss Silkin e Quin Emanuel, tanto ao acessar páginas quanto ao abrir novas abas.
-
-Erro de Rede do WebDriver:
-
-WebDriver Error: unknown error: net::ERR_NAME_NOT_RESOLVED (visto em BDO) e net::ERR_CONNECTION_REFUSED (visto em Joffe & Associés).
-
-Contexto: São erros de conexão de rede, indicando que o navegador não conseguiu resolver o DNS ou foi recusado ao tentar acessar a página.
-
-Erro de Runtime (Índice Fora dos Limites):
-
-Runtime Error: Range [9, 8) out of bounds for length 8 at getCountry()
-
-Contexto: Um erro específico de lógica de programação no script Carey Olsen, onde o código tentou acessar um índice inválido de um array ou lista.
-
-Erro de WebDriver (Sleep Interrompido):
-
-WebDriver Error: java.lang.InterruptedException: sleep interrupted at goToPage()
-
-Contexto: Erro específico ocorrido no script Gomez Acebo And Pombo em ambos os logs, sugerindo que uma pausa (sleep) foi interrompida.
-
-Erro de WebDriver (Condição de Espera Falhou):
-
-WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage()
-
-Contexto: Erro específico no script Arnesen IP, onde o WebDriver esperava por um elemento que nunca apareceu.
+"name": "JadekAndPensa",
+"link": "https://www.jadek-pensa.si/en/experts/"
