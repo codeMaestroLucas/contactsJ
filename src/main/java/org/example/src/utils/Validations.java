@@ -7,17 +7,10 @@ import lombok.Getter;
 import org.example.exceptions.ValidationExceptions;
 import org.example.src.entities.Lawyer;
 import org.example.src.entities.excel.Contacts;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.example.src.utils.validation.EmailDuplicateChecker;
 
 import java.io.IOException;
 import java.nio.file.*;
-import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
@@ -138,68 +131,22 @@ public class Validations {
             throw ValidationExceptions.countryInSetOfCountries();
         }
 
-        // Check if email is duplicate on GlobalLawExperts
+        // Check if email is duplicate on GlobalLawExperts using persistent session
         if (!isEmailCleanOnGlobalLawExperts(email)) {
             throw ValidationExceptions.emailDuplicateOnGlobalLawExperts();
         }
     }
 
-
     /**
-     * Checks if email is duplicate on GlobalLawExperts website.
-     * Returns true if email is clean (not duplicate), false if duplicate.
+     * Checks if email is duplicate on GlobalLawExperts website using the singleton checker.
+     * This method uses a persistent session, so login only happens once during the entire execution.
+     * 
+     * @param email Email to check
+     * @return true if email is clean (not duplicate), false if duplicate
      */
     private static boolean isEmailCleanOnGlobalLawExperts(String email) {
-        WebDriver driver = null;
-        try {
-            driver = new ChromeDriver();
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            
-            // Step 1: Access login page
-            driver.get("https://globallawexperts.com/login/?redirect_to=https%3A%2F%2Fgloballawexperts.com%2Fdashboard%2F");
-            
-            // Step 2: Fill login credentials
-            WebElement usernameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("login_username")));
-            usernameField.sendKeys("contact@kfroisconsulting.com");
-            
-            WebElement passwordField = driver.findElement(By.name("login_password"));
-            passwordField.sendKeys("Fo5KdZhSNxT!y1bQpkPh)6qg");
-            
-            // Step 3: Click login button
-            WebElement loginButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div/div/div/form/div[3]/div[4]/button"));
-            loginButton.click();
-            
-            // Wait for login to complete
-            Thread.sleep(3000);
-            
-            // Step 4: Navigate to duplicate checker
-            driver.get("https://globallawexperts.com/lead-duplicate-checker/");
-            
-            // Step 5: Enter email to check
-            WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='email-input']")));
-            emailInput.clear();
-            emailInput.sendKeys(email);
-            driver.findElement(By.id("check-button")).click();
-
-            Thread.sleep(3000);
-
-            // Step 6: Check result
-            WebElement resultContainer = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("result-container")));
-            String result = resultContainer.getAttribute("textContent");
-            
-            return result != null && result.contains("Email is clean - no duplicates found!");
-            
-        } catch (Exception e) {
-            System.err.println("Error checking email on GlobalLawExperts: " + e.getMessage());
-            e.printStackTrace();
-            return false; // Consider as duplicate if error occurs (safer approach)
-        } finally {
-            if (driver != null) {
-                driver.quit();
-            }
-        }
+        return EmailDuplicateChecker.getINSTANCE().isEmailClean(email);
     }
-
 
     /**
      * Helper class to represent country data from JSON.

@@ -15,7 +15,7 @@ public final class TreatLawyerParams {
     private static final Set<String> ABBREVIATIONS = new HashSet<>(Arrays.asList(
             "mr", "ms", "mx", "dr", "prof", "mrs", "miss", "php",
             "master", "sir", "esq", "rev", "att", "llm", "kc",
-            "msc", "llb", "nbsp", "dsc"
+            "msc", "llb", "nbsp", "dsc", "em"
     ));
 
     private static final String[] VALID_ROLES = {

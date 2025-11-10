@@ -10,6 +10,7 @@ import org.example.src.utils.FirmsOMonth;
 import org.example.src.utils.NoSleep;
 import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
+import org.example.src.utils.validation.EmailDuplicateChecker;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -110,6 +111,7 @@ public class Main {
 
     public static void main(String[] args) {
         NoSleep.preventSleep(); // block sleep
+        EmailDuplicateChecker.getINSTANCE().login();
         try {
             performCompleteSearch();
         } finally {
@@ -117,6 +119,8 @@ public class Main {
             ErrorLogger.getINSTANCE().flushAllLogs();
             // Close the reports workbook to ensure all data is saved
             reports.closeWorkbook();
+            // Close the email duplicate checker session
+            EmailDuplicateChecker.getINSTANCE().close();
             NoSleep.allowSleep(); // allow sleep again when finished
         }
     }

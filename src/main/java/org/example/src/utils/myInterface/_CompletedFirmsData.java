@@ -61,7 +61,7 @@ public class _CompletedFirmsData {
             new ABAndDavid(), new BentsiEnchillLetsaAndAnkomah(), new FlichyGrange(),
             new PopoviciNituStoicaAndAsociatii(), new PorwiszAndPartners(), new PricaAndPartners(), new RadulescuAndMusoi(),
             new Elverdam(), new FironLaw(), new MerilampiAttorneys(), new MitelAndAsociatii(), new SelihAndPartnerji(),
-            new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(),
+            new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(), new NunzianteMagrone(),
 
     };
 
@@ -92,8 +92,9 @@ public class _CompletedFirmsData {
             new WardynskiAndPartners(), new Werksmans(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
             new Shalakany(), new ZakiHashemAndPartners(), new ZulficarAndPartners(), new Curtis(), new Goerg(),
             new PMP(),
-
-
+            new CerhaHempel(), new DKGV(), new KambourovAndPartners(), new WALLESS(),
+            new JadekAndPensa(), new JPMAndPartners(), new NESTOR(), new RymarzZdortMaruta(),
+            new JBLaw(), new Oppenheim(), new SlaughterAndMay(), new Valfor(),
     };
 
     public final static Site[] byFilter = {};
