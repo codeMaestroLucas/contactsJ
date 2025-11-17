@@ -1,2 +1,1910 @@
-LOG SESSION STARTED - 2025-11-17 10:49:54
+LOG SESSION STARTED - 2025-11-17 14:05:33
+
+====================================================================================================
+McConnell Valdés
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 100th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 101th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 102th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 103th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 104th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 105th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 106th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 28th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 29th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 31th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 41th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 42th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 44th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 53th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 54th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 56th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 69th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 70th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 71th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 72th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 73th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 74th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 75th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 76th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 77th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 78th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 79th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 80th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 81th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 82th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 83th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 84th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 85th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 86th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 87th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 88th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 89th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 90th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 91th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 92th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 93th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 94th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 95th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 96th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 97th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 98th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 99th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():60 (Error reading 9th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getRole():65 (Error reading 1th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Fylgia
+
+Errors:
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 28th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 29th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 31th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Myers Fletcher And Gordon
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+DGKV
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+CBA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Pavia And Ansaldo
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():71 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+McMillan
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 17) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 18) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 28) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 29) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 30) 1x
+====================================================================================================
+
+====================================================================================================
+Matheson
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Gomez Acebo And Pombo
+
+Errors:
+    - WebDriver Error: java.lang.InterruptedException: sleep interrupted at goToPage():46 (Error accessing page 4) 1x
+====================================================================================================
+
+====================================================================================================
+Ferrere
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getPracticeArea():95 (Error reading 22th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+KBVL Law
+
+Errors:
+    - WebDriver Error: no such element: element not found at openNewTab():51 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():51 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():51 (Error reading 4th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sorainen
+
+Errors:
+    - WebDriver Error: unknown error: net::ERR_CONNECTION_TIMED_OUT at accessPage():33 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Carey Olsen
+
+Errors:
+    - Runtime Error: Range [9, 8) out of bounds for length 8 at getCountry():91 (Error reading 46th lawyer at page 1) 1x
+    - Runtime Error: Range [9, 8) out of bounds for length 8 at getCountry():91 (Error reading 50th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+S Horowitz & Co
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():53 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Steinmetz Haring Gurman
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():48 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BCLP Law
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 10) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 11) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 12) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 13) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 14) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 15) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 16) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 17) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 28) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 29) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 30) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 31) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 32) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 33) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 34) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 35) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 36) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 37) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 38) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 39) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 40) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 41) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 42) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 43) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 44) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 45) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 46) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 47) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 48) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 49) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 5) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 50) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 51) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 52) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 53) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 54) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 55) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 56) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 57) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 58) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 59) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 6) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 60) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 61) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 62) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 63) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 64) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 65) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 66) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 7) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 8) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():49 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Sheppard Mullin
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():45 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Kanter
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+FLICHY GRANGÉ
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():26 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ashitiva
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Racine
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():46 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Morris Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Faegre Drinker Biddle & Reath
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():38 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Watson Farley And Williams
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 21) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 22) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 23) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 24) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 25) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 26) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 27) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 28) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 29) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 30) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 31) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 32) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 33) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 34) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 35) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 36) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 37) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():68 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Hunton Andrews Kurth
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+VB Advocates
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sullivan & Worcester
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Blandy And Blandy
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Latam Lex
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Wildeboer Dellelce
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Houthoof
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():38 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Van Der Putt
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+WALLESS
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+FCM Limited
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Moroğlu Arseven
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Shalakany
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Hamso Patentybra
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+CRCCD
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Krogerus
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Tavares
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Odigo
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Bentsi-Enchill Letsa & Ankomah
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Paksoy
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Lemstra Van der Korst
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Borenius
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Kienhuis Legal
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 8) 1x
+====================================================================================================
+
+====================================================================================================
+METIDA
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Nielsen Nørager
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Conyers
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Jackson Etti And Edu
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Araoz & Rueda
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Vossius And Partner
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+LEX Logmannsstofa
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Zaki Hashem & Partners
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Nunziante Magrone
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Noerr
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():52 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Habraken Rutten
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Onsagers
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Hjulmand Captain
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Lex Caribbean
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Dottir
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+MSP
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Vaneps
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():37 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Osler Hoskin & Harcourt
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 21) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 22) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 23) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 24) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 25) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 26) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 27) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 28) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Kinstellar
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Schurti Partners
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Cassels
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():25 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BCF Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Dahl Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():25 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Elverdam
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Joffe & Associés
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+EC Legal Rubio
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Dittmar And Indrenius
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Garcia Bodan
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Pearl Cohen
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Mayer Brown
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():89 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():89 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():89 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():89 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():89 (Error accessing page 5) 1x
+====================================================================================================
+
+====================================================================================================
+Nelligan Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller And Nicolau
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Meitar Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():38 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():38 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():38 (Error accessing page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Control Risks
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():73 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+EBN
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Werksmans
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Schindler Attorneys
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+McDougall Gauley
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 5) 1x
+====================================================================================================
+
+====================================================================================================
+Kambourov And Partners
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Cuatrecasas
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():53 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():53 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():53 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():53 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():53 (Error accessing page 5) 1x
+====================================================================================================
+
+====================================================================================================
+Gianni And Origoni
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Burnet Duckworth & Palmer
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 7) 1x
+====================================================================================================
+
+====================================================================================================
+Holst
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Fogler Rubinoff
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Boodle Hatfield
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Fillmore Riley
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Nova Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Aera
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Duane Morris
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():40 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+DZP Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Belgravia
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sargent And Krahn
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Cirio
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AWA
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 21) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 22) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 23) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 24) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 25) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 26) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 27) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 28) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():47 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Curtis
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():50 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():50 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+FPS Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Slaughter & May
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 21) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 22) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 23) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 24) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 25) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 26) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 27) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 28) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 29) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 30) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 31) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 32) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 33) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 34) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 35) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 36) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 37) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 38) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 39) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 40) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 41) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 42) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 43) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 44) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 45) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 46) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 47) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 48) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 49) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 50) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 51) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 52) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 53) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 54) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 55) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 56) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 57) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Clark Wilson
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Blakes
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():25 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Tuca Zbarcea
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Astrea
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Filip & Company
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 6) 1x
+====================================================================================================
+
+====================================================================================================
+KRBLaw
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+NESTOR
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 5) 1x
+====================================================================================================
+
+====================================================================================================
+Burges Salmon
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Hill Dickinson
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Hayes
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Pusch Wahlig
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BRAUNEIS RECHTSANWÄLTE
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Squire Patton Boggs
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():55 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Barriston Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Oxera
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():48 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Alliotts
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Walkers
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():51 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 21) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 22) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 23) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 24) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 25) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 26) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 27) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 28) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 29) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 30) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 31) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 32) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 33) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 34) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 35) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 36) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 37) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 38) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 39) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 40) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 41) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 42) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 43) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():56 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Maikowski And Ninnemann
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():27 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+KISCH IP
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+JWP
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Oyen Wiggs
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Dimitrov Petrov & Co
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+HARTE-BAVENDAMM
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Le Poole Bekema
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Filion Wakely Thorup Angeletti
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Hoffmann Eitle
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Fidal
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 21) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 22) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 23) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 24) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 25) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 26) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 27) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 28) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 29) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 30) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 31) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 32) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 33) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 34) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 35) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 36) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 37) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 38) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 39) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 40) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 41) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 42) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 43) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 44) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 45) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 46) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 47) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 48) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 49) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 50) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 51) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 52) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 53) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 54) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 55) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 56) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 57) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 58) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 59) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 60) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 61) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 62) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 63) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 64) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():34 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Holmes
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Merilampi Attorneys
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Goerg
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+CERHA HEMPEL
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Prasad And Company
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Wardynski And Partners
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sampson Coward LLP
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():28 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+LEFOSSE
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():36 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Greene And Greene Solicitors
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ekelmans
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Eisenfuhr Speiser And Partner
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():27 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BAHR
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Rădulescu And Mușoi
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Goodmans
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AB & David
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Rymarz Zdort Maruta
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AOil
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Arnesen IP
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():26 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Lewiss Silkin
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():39 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Thommessen
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Lydian
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+DKGV
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():44 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Robortella e Peres
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+KLC Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Barnea And Co
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():26 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BDO
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 21) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 22) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 23) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 24) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 25) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 26) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 27) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 28) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():178 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Gornitzky And Co
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Horten
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Pillsbury Winthrop Shaw Pittman
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Liedekerke
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():42 (Error accessing page 6) 1x
+====================================================================================================
+
+====================================================================================================
+Orrick
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():76 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():76 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():76 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():76 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():76 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():76 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():76 (Error accessing page 7) 1x
+====================================================================================================
+
+====================================================================================================
+One Essex Court
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():33 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Legalis
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Broseta
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Keystone Law
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 10) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 11) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 12) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 13) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 14) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 15) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 16) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 17) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 18) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 19) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 2) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 20) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 3) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 4) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 5) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 6) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 7) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 8) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():35 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+CWA Associates
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 1) 1x
+    - WebDriver Error: no such window: target window already closed at accessPage():32 (Error accessing page 2) 1x
+====================================================================================================
+
+====================================================================================================
+Francis Wilks And Jones
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Vinge
+
+Errors:
+    - WebDriver Error: no such window: target window already closed at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Asafo And Co
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at openNewTab():83 (Error reading 16th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+MBM
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at openNewTab():62 (Error reading 1th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Schoups
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at openNewTab():51 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():51 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
 
