@@ -15,13 +15,14 @@ public final class TreatLawyerParams {
     private static final Set<String> ABBREVIATIONS = new HashSet<>(Arrays.asList(
             "mr", "ms", "mx", "dr", "prof", "mrs", "miss", "php",
             "master", "sir", "esq", "rev", "att", "llm", "kc",
-            "msc", "llb", "nbsp", "dsc", "em"
+            "msc", "llb", "nbsp", "dsc", "em", "mag", "mbl"
     ));
 
     private static final String[] VALID_ROLES = {
             "Senior Partner", "Senior Associate", "Senior Director", "Senior Advisor", "Senior Counsel",
 
             "Associate Principal", "Associate Counsel", "Associate Director", "Associate Advisor", "Associate Partner",
+            "Principal Associate",
 
             "Of Counsel", "Special Counsel",
 
@@ -60,15 +61,15 @@ public final class TreatLawyerParams {
      */
     public static String treatName(String name) {
         String processedName = name
+                .toLowerCase()
                 .replaceAll("[.,;*ˆ:`]", " ")
                 .replaceAll("[\"']", " ")
-                .toLowerCase()
                 .replace("ll m", "")
                 .replace("k c", "")
                 .trim();
 
         for (String role : VALID_ROLES) {
-            processedName = processedName.replace(role, " ");
+            processedName = processedName.replace(role.toLowerCase(), " ");
         }
 
         String[] words = processedName.trim().split("\\s+");

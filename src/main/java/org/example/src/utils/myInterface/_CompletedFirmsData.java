@@ -48,7 +48,7 @@ public class _CompletedFirmsData {
             new NovaLaw(), new NPPLegal(), new NysinghAdvocatenNotarissenNV(), new Odigo(), new Ogier(),
             new Ogletree(), new OslerHoskinAndHarcourt(), new OyenWiggs(), new Paksoy(), new PanettaConsultingGroup(),
             new Pedersoli(), new Penta(), new PeterAndKim(), new PillsburyWinthropShawPittman(), new Ploum(),
-            new RBK(), new RDJ(), new RitchMueller(), new RitchMuellerAndNicolau(), new RobortellaEPeres(),
+            new RBK(), new RitchMueller(), new RitchMuellerAndNicolau(), new RobortellaEPeres(),
             new RonanDalyJermyn(), new Roschier(), new RPCLegal(), new SantamarinaAndSteta(), new SchindlerAttorneys(),
             new Schoenherr(), new SchurtiPartners(), new Secretariat(), new Selmer(), new ShahidLaw(),
             new SheppardMullin(), new SHorowitzAndCo(), new SIRIUS(), new SmartAndBiggar(), new SpencerWest(),
@@ -61,7 +61,8 @@ public class _CompletedFirmsData {
             new ABAndDavid(), new BentsiEnchillLetsaAndAnkomah(), new FlichyGrange(),
             new PopoviciNituStoicaAndAsociatii(), new PorwiszAndPartners(), new PricaAndPartners(), new RadulescuAndMusoi(),
             new Elverdam(), new FironLaw(), new MerilampiAttorneys(), new MitelAndAsociatii(), new SelihAndPartnerji(),
-            new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(), new NunzianteMagrone(),
+            new BCLPLaw(), new ClearyGottlieb(), new DuaneMorris(), new NunzianteMagrone(), new Berggren(),
+            new BpvHugel(),
 
     };
 
@@ -95,6 +96,13 @@ public class _CompletedFirmsData {
             new CerhaHempel(), new DKGV(), new KambourovAndPartners(), new WALLESS(),
             new JadekAndPensa(), new JPMAndPartners(), new NESTOR(), new RymarzZdortMaruta(),
             new JBLaw(), new Oppenheim(), new SlaughterAndMay(), new Valfor(),
+            new FilionWakelyThorupAngeletti(), new KBVLLaw(), new KLCLaw(), new PuschWahlig(), new SRSLegal(), new VanOlmenAndWynant(),
+            new ABGIP(), new VazquezTerceroAndZepeda(),
+            new EisenfuhrSpeiserAndPartner(), new HarteBavendamm(), new HoffmannEitle(),
+            new MaikowskiAndNinnemann(), new SKWSchwarz(), new VossiusAndPartner(),
+            new FrancisWilksAndJones(), new GreeneAndGreeneSolicitors(), new PinneyTalfourdSolicitors(), new SampsonCowardLLP(),
+            new BRAUNEISRECHTSANWALTE(),
+            new Racine(), new Schoups(), new Strelia(),
     };
 
     public final static Site[] byFilter = {};

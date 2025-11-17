@@ -90,7 +90,7 @@ public class GanadoAdvocates extends ByPage {
 
         return Map.of(
                 "link", this.getLink(lawyer),
-                "name", this.name,
+                "name", name,
                 "role", this.getRole(lawyer),
                 "firm", this.name,
                 "country", "Malta",

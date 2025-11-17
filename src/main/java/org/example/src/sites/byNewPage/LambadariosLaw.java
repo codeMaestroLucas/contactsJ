@@ -111,7 +111,7 @@ public class LambadariosLaw extends ByNewPage {
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", this.name,
+                "name", name,
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Greece",

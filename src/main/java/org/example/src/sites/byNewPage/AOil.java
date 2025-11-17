@@ -107,7 +107,7 @@ public class AOil extends ByNewPage {
                 "country", "Israel",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "035198090" : socials[1]
+                "phone", socials[1].isEmpty() ? "97235198090" : socials[1]
         );
     }
 }

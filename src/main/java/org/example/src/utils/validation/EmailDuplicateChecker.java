@@ -94,7 +94,9 @@ public final class EmailDuplicateChecker {
             
             isLoggedIn = true;
             System.out.println("EmailDuplicateChecker: Login successful");
-            
+
+            driver.get("https://globallawexperts.com/auth/");
+
         } catch (Exception e) {
             System.err.println("EmailDuplicateChecker: Login failed - " + e.getMessage());
             throw new RuntimeException("Failed to login to globallawexperts.com", e);
@@ -119,9 +121,18 @@ public final class EmailDuplicateChecker {
                 login();
             }
 
-            // Navigate to duplicate checker page
-            driver.get(DUPLICATE_CHECKER_URL);
-            
+            // Navigate to duplicate checker page IF isn't in the page
+            if (!driver.getCurrentUrl().equals(DUPLICATE_CHECKER_URL)) {
+                driver.get(DUPLICATE_CHECKER_URL);
+            }
+
+            try {
+                driver.findElement(By.cssSelector("a.ts-action-con[href*='https://globallawexperts.com/auth/']"));
+                driver.get("https://globallawexperts.com/auth/");
+                Thread.sleep(2000);
+                driver.get(DUPLICATE_CHECKER_URL);
+            } catch (Exception e) {}
+
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
             // Wait for email input and enter email

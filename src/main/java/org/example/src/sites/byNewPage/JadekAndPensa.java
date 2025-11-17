@@ -20,7 +20,7 @@ public class JadekAndPensa extends ByNewPage {
 
     public JadekAndPensa() {
         super(
-                "JadekAndPensa",
+                "Jadek And Pensa",
                 "https://www.jadek-pensa.si/en/experts/",
                 1
         );
