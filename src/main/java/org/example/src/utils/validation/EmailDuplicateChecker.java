@@ -149,15 +149,8 @@ public final class EmailDuplicateChecker {
 
             // Check if it has the "result-clean" class
             String resultClass = resultContainer.getAttribute("class");
-            boolean isClean = resultClass != null && resultClass.contains("result-clean");
-
-            if (isClean) {
-                System.out.println("EmailDuplicateChecker: Email '" + email + "' is clean ✓");
-            } else {
-                System.out.println("EmailDuplicateChecker: Email '" + email + "' is duplicate ✗");
-            }
-
-            return isClean;
+            return
+                    resultClass != null && resultClass.contains("result-clean");
 
         } catch (Exception e) {
             System.err.println("EmailDuplicateChecker: Error checking email '" + email + "' - " + e.getMessage());

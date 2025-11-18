@@ -8,11 +8,6 @@
     "link": "https://emeraldlaw.in/partners/"
   },
   {
-    "name": "NandaAndAssociate",
-    "link": "https://nanda.ca/our-team/",
-    "note": "check if BARRISTER is a valid position"
-  },
-  {
     "name": "KochharAndCo",
     "link": "https://kochhar.com/people/",
     "note": "INDIAN"
@@ -27,36 +22,16 @@
     "link": "https://www.stblaw.com/offices/beijing"
   },
   {
-    "name": "Shonubi MusokeAndCo",
-    "link": "https://www.shonubimusoke.co.ug/Our-people/Partners/Noah-Mwesigwa"
-  },
-  {
     "name": "Seyfarth Shaw",
     "link": "https://www.seyfarth.com/people/index.html?of=9045&po=17969"
-  },
-  {
-    "name": "SALAndCaldeira Advogados",
-    "link": "https://salcaldeira.com/index.php/en/team"
-  },
-  {
-    "name": "SyLS",
-    "link": "https://syls.law/"
   },
   {
     "name": "Saga Legal",
     "link": "https://sagalegal.in/pages/Team.html"
   },
   {
-    "name": "RussinAndVecchi",
-    "link": "https://russinvecchi.ru/team/"
-  },
-  {
     "name": "RussiAndEguiguren | Quadrant",
     "link": "https://www.relegal.cl/corporate-practice.html"
-  },
-  {
-    "name": "RPHS Law",
-    "link": "https://rphs.law/our-team/"
   },
   {
     "name": "Romulo",
@@ -71,96 +46,12 @@
     "link": "https://www.resourcelawasia.com/people/adrian-aw/"
   },
   {
-    "name": "ReffAndAsociaţii",
-    "link": "https://www.reff-associates.ro/re/en/team/partners.html?icid=top_partners"
-  },
-  {
-    "name": "RădulescuAndMușoi",
-    "link": "http://radulescu-musoi.ro/who-we-are/"
-  },
-  {
-    "name": "RödlAndPartner",
-    "link": "https://www.roedl.lt/en/team/"
-  },
-  {
-    "name": "Quorus",
-    "link": "https://quorus.ch/team"
-  },
-  {
-    "name": "PricaAndPartners",
-    "link": "https://pricapartners.com/people/"
-  },
-  {
-    "name": "Prelevic Law",
-    "link": "https://www.prelevic.com/partners/"
-  },
-  {
-    "name": "Sintons",
-    "link": "https://sintons.co.uk/our-people/job-title-partner/"
-  },
-  {
-    "name": "Popovici Niţu StoicaAndAsociaţii",
-    "link": "https://pnsa.ro/team/partn/partners.asp"
-  },
-  {
-    "name": "PopescuAndAsociatii",
-    "link": "https://popescu-asociatii.ro/our-team/partners/"
-  },
-  {
-    "name": "Pollonais Blanc de la BastideAndJacelon",
-    "link": "https://polanc.com/lawyers/mark-j-laquis/"
-  },
-  {
-    "name": "Polenak Law",
-    "link": "https://polenak.com/en/people"
-  },
-  {
-    "name": "PeterkaAndPartners",
-    "link": "https://www.peterkapartners.com/en/localteams/all/"
-  },
-  {
-    "name": "PM&P",
-    "link": "https://penkov-markov.eu/en/team/partners-and-ceo"
-  },
-  {
-    "name": "Penezoglu Law",
-    "link": "https://penezoglu.com/en/our-team/"
-  },
-  {
     "name": "Payet Rey Cauvi Pérez",
     "link": "https://prcp.com.pe/en/people/?post_types=socio"
   },
   {
-    "name": "Pamboridis",
-    "link": "https://www.pamboridis.com/people/"
-  },
-  {
-    "name": "Palomo Abogados",
-    "link": "https://palomoabogadosen.squarespace.com/federico-palomo-1"
-  },
-  {
-    "name": "Orange Clover",
-    "link": "https://orangecloverlaw.com/person/"
-  },
-  {
-    "name": "OZN Law",
-    "link": "https://www.onz.at/index.php?name=team"
-  },
-  {
-    "name": "ONV Law",
-    "link": "https://onvlaw.ro/team/"
-  },
-  {
     "name": "Olmedo",
     "link": "https://www.olmedo.com.py/en/our-team.php"
-  },
-  {
-    "name": "NOEWE",
-    "link": "https://noewe.eu/about/#team"
-  },
-  {
-    "name": "NKO Law",
-    "link": "https://www.nko-law.com/"
   },
   {
     "name": "NFA",
@@ -170,6 +61,25 @@
     "name": "Nassar",
     "link": "https://www.nassarabogados.com/en/our-team"
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   {
     "name": "MVKini Law",
     "link": "https://www.mvkini.com/people.html"
@@ -337,10 +247,6 @@
   {
     "name": "KonstantinovicAndMiloševski",
     "link": "https://konstantinovic-milosevski.mk/our-team/"
-  },
-  {
-    "name": "Palthe Oberman",
-    "link": "https://paltheoberman.nl/en/our-staff/"
   },
   {
     "name": "KhodeirAndPartners",
