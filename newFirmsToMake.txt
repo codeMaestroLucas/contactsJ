@@ -1,0 +1,38 @@
+BYNEWPAGE
+
+name: Filion Wakely Thorup Angeletti
+link: https://filionlaw.com/our-team/
+lawyers:
+<div class="team-member-box" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;"><a href="https://filionlaw.com/team-member/darren-avery/"><div class="overlay-content name-on-left"><h2 class="secondary-font">Darren Avery</h2><h3 class="uppercase base-size">Partner</h3></div><img width="1000" height="465" src="https://filionlaw.com/wp-content/uploads/2025/09/darren-avery.webp" class="team-member-photo-img" alt="" decoding="async" srcset="https://filionlaw.com/wp-content/uploads/2025/09/darren-avery.webp 1000w, https://filionlaw.com/wp-content/uploads/2025/09/darren-avery-300x140.webp 300w, https://filionlaw.com/wp-content/uploads/2025/09/darren-avery-768x357.webp 768w" sizes="(max-width: 1000px) 100vw, 1000px"></a></div>
+
+lawyer:
+<div class="team-member-info col-5" id="profile-right"><div class="voice-print-icons sm-flex align-stretch"><button class="btn icon-print" onclick="window.print()"><svg width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.229 0.400391H15.5679C15.7359 0.400467 15.8973 0.467141 16.0161 0.585938C16.1348 0.704774 16.2017 0.866225 16.2017 1.03418V4.53516H17.6353C18.3516 4.53516 19.0388 4.8197 19.5454 5.32617C20.052 5.8328 20.3364 6.52082 20.3364 7.2373V13.4395C20.3364 14.1559 20.052 14.844 19.5454 15.3506C19.0388 15.857 18.3516 16.1416 17.6353 16.1416H16.2017V19.6426C16.2017 19.8105 16.1348 19.972 16.0161 20.0908C15.8973 20.2096 15.7359 20.2763 15.5679 20.2764H5.229C5.06098 20.2763 4.89957 20.2096 4.78076 20.0908C4.66205 19.972 4.59521 19.8106 4.59521 19.6426V16.1416H3.16162C2.44529 16.1416 1.75806 15.857 1.25146 15.3506C0.744834 14.844 0.460449 14.1559 0.460449 13.4395V7.2373C0.460449 6.52082 0.744834 5.8328 1.25146 5.32617C1.75807 4.81972 2.44527 4.53516 3.16162 4.53516H4.59521V1.03418C4.59521 0.866212 4.66207 0.704777 4.78076 0.585938C4.89957 0.467125 5.06098 0.400451 5.229 0.400391ZM5.86279 19.0088H14.9341V14.0732H5.86279V19.0088ZM3.16162 5.80273C2.78148 5.80273 2.41682 5.95394 2.14795 6.22266C1.87905 6.49155 1.72803 6.85703 1.72803 7.2373V13.4395C1.72803 13.8197 1.87905 14.1852 2.14795 14.4541C2.41681 14.7228 2.78149 14.874 3.16162 14.874H4.59521V13.4395C4.59532 13.2715 4.66199 13.11 4.78076 12.9912C4.89957 12.8725 5.06102 12.8057 5.229 12.8057H15.5679C15.7358 12.8057 15.8973 12.8724 16.0161 12.9912C16.1349 13.11 16.2016 13.2715 16.2017 13.4395V14.874H17.6353C18.0154 14.874 18.3801 14.7228 18.6489 14.4541C18.9178 14.1852 19.0688 13.8197 19.0688 13.4395V7.2373C19.0688 6.85703 18.9178 6.49155 18.6489 6.22266C18.3801 5.95392 18.0154 5.80274 17.6353 5.80273H3.16162ZM5.229 8.6709C5.39709 8.6709 5.55838 8.7376 5.67725 8.85645C5.79611 8.97531 5.86279 9.13658 5.86279 9.30469C5.86276 9.42986 5.82582 9.55214 5.75635 9.65625C5.6868 9.76034 5.58778 9.84165 5.47217 9.88965C5.35644 9.93758 5.22882 9.95016 5.10596 9.92578C4.98301 9.90133 4.86941 9.84157 4.78076 9.75293C4.69213 9.66429 4.63236 9.55067 4.60791 9.42773C4.58355 9.30489 4.59612 9.17723 4.64404 9.06152C4.69204 8.94593 4.77336 8.84689 4.87744 8.77734C4.98154 8.70787 5.10385 8.67094 5.229 8.6709ZM5.86279 4.53516H14.9341V1.66797H5.86279V4.53516Z" fill="black" stroke="#CDD7D9" stroke-width="0.8"></path>
+</svg>
+</button></div><div class="team-member-name-pronouns sm-flex align-baseline"><h1 class="team-member-name">Darren Avery</h1></div><p class="team-member-title color-dark-blue">Partner</p><div class="contact-wrapper flex justify-between"><div class="team-member-contact-info"><h2>Contact</h2><p>T. <a href="tel:519.435.6008" data-no-wipe="">519.435.6008</a></p><p>F. 519.433.4453</p><p><a class="email-link" href="mailto:davery@filionlaw.com" data-no-wipe="">davery@filionlaw.com</a></p><div class="team-member-locations"><p>London</p></div><div class="team-member-contact-socials mt-1 mb-2">        <a href="https://filionlaw.com/team-member/darren-avery/?download_vcard=true" data-no-wipe="">
+  Download vCard
+</a>
+
+</div></div><div class="team-member-assistant"><h2>Assistant</h2><p>Sherri-Anne Tong</p><p>T. <a href="tel:519.800.2241" data-no-wipe="">519.800.2241</a></p><p>F. 519.433.4453</p><p><a class="email-link" href="mailto:stong@filionlaw.com" data-no-wipe="">stong@filionlaw.com</a></p></div></div><div class="team-member-bio mb-4 mt-2" id="exec-summary"><h2 class="text-blue">Executive Summary</h2><div class="exec-summary__body" id="exec-summary-body" style="max-height: 330px;"><!-- wp:paragraph -->
+<p>Darren is a partner practicing in all areas of labour and employment law, including related litigation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A major focus of Darren’s practice is occupational health and safety law. He frequently assists clients in dealing with regulators and enforcement agencies. This includes reviewing orders, helping ensure compliance with applicable legislation, and, when necessary, appealing orders. Darren also often advises clients on issues such as joint health and safety committees, critical injuries, and workplace violence and harassment issues.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Darren defends employers, corporations, and individuals when they face charges related to workplace incidents, including injuries and fatalities. Such charges can lead to severe consequences, including major fines and/or imprisonment. Darren ensures clients are fully informed of their legal rights and are in the best position to respond to any charges against them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Darren has years of experience representing clients of all sizes, from small family-owned businesses to multinational corporations. He also represents public sector clients including hospitals, municipalities, and post-secondary institutions.</p>
+<!-- /wp:paragraph --></div><button type="button" class="exec-summary__toggle" id="exec-summary-toggle" data-no-wipe="" aria-expanded="false" aria-controls="exec-summary-body"> Show more </button></div></div>
+
+
+
+
+
+
+
+BYPAGE

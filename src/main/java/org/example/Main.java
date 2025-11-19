@@ -114,6 +114,12 @@ public class Main {
         EmailDuplicateChecker.getINSTANCE().login();
         try {
             performCompleteSearch();
+            searchLawyersInWeb();
+            searchLawyersInWeb();
+            searchLawyersInWeb();
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         } finally {
             // Write any remaining logs that weren't flushed
             ErrorLogger.getINSTANCE().flushAllLogs();
