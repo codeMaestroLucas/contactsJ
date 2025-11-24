@@ -60,6 +60,7 @@ public class _CompletedFirmsData {
             new TucaZbarcea(), new VanDerPutt(), new VBAdvocates(), new VieringJentschuraAndPartner(), new Vinge(),
             new VOPatentsAndTrademarks(), new Walkers(), new WatsonFarleyAndWilliams(), new WhiteAndCase(), new WildeboerDellelce(),
             new WilliamFry(), new Willkie(), new WinstonAndStrawn(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
+            new JSKAdvokatni(), new Kallan(), new KECOLegal(), new MooreLegalKovacs(), new MVJMarkovicVukoticJovkovic(),
     };
 
     public final static Site[] byNewPage = {
@@ -95,6 +96,7 @@ public class _CompletedFirmsData {
             new Vaneps(), new VanOlmenAndWynant(), new VazquezTerceroAndZepeda(), new Vischer(),
             new VossiusAndPartner(), new WALLESS(), new WardynskiAndPartners(), new Werksmans(), new Wiersholm(),
             new WikborgRein(), new ZakiHashemAndPartners(), new ZeposAndYannopoulos(), new ZulficarAndPartners(), new ONVLaw(),
+            new JohnsonCamachoAndSingh(), new KWKRLaw(),
     };
 
     public final static Site[] byFilter = {};

@@ -77,3 +77,5 @@ do nome do advogado, seguindo o padrão especificado (ex: `(primeiraLetraNome)(s
 prosseguir. Não deduzir ou adivinhar a lógica.
 * **Correção de Erros**: Para corrigir um código enviado anteriormente,
 usar o formato: `--- ANTIGO <código> ---` seguido de `--- NOVO <código> ---`.
+* **Não preciso de comentários no código**: boa parte do que está implementado eu criei, por isso, não preciso que vc me 
+explique o código que eu msm criei.

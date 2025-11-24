@@ -61,120 +61,33 @@
     "name": "Nassar",
     "link": "https://www.nassarabogados.com/en/our-team"
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   {
     "name": "MVKini Law",
-    "link": "https://www.mvkini.com/people.html"
-  },
-  {
-    "name": "MVJ Marković Vukotić Jovković",
-    "link": "https://mvj.rs/our-team/"
-  },
-  {
-    "name": "Muñoz Aya",
-    "link": "https://munozaya.com/en/equipo/"
-  },
-  {
-    "name": "Moratis Passas",
-    "link": "https://www.moratispassas.gr/en/people"
-  },
-  {
-    "name": "Moore Legal Kovács",
-    "link": "https://www.mooreglobal.hu/vezetoink?lang=en-gb"
+    "link": "https://mvkini.com/people.html"
   },
   {
     "name": "MRCO",
     "link": "https://ridzalaw.com.my/our-people/partner-mohamad-nazran-basirun/"
   },
   {
-    "name": "MNS Attorneys",
-    "link": "https://mnsattorneys.co.za/our-people/directors/"
-  },
-  {
-    "name": "MitelAndAsociaţii",
-    "link": "https://mitelpartners.ro/our-team/"
-  },
-  {
-    "name": "Firon Law",
-    "link": "https://www.firon.co.il/team/"
-  },
-  {
-    "name": "Merilampi Attorneys",
-    "link": "https://www.merilampi.com/en/people?position=Partner"
-  },
-  {
-    "name": "MBP Partners",
-    "link": "https://mbppartners.com/en/teams/"
-  },
-  {
-    "name": "MBC",
-    "link": "https://www.mbcabogados.com/en/equipo/"
-  },
-  {
-    "name": "Marjanovic",
-    "link": "https://www.marjanovic.law/people-listing/"
-  },
-  {
     "name": "Mansukhlal Hiralal and Co",
     "link": "https://www.mhcolaw.com/peoples"
-  },
-  {
-    "name": "MakarimAndTaira S",
-    "link": "https://makarim.com/lawyers#"
   },
   {
     "name": "MahoneyLiotta",
     "link": "https://www.mlmongolia.com/about"
   },
   {
-    "name": "LnP Beyond Legal",
-    "link": "https://lnpbeyondlegal.com/our-people/"
-  },
-  {
     "name": "LMA",
     "link": "https://lma.com.pk/our-people.php"
-  },
-  {
-    "name": "Lexstone Lawyers",
-    "link": "https://www.lexstone.je/person/"
   },
   {
     "name": "Lexist Law",
     "link": "https://www.lexist.com.tr/en/our-team-2/"
   },
   {
-    "name": "Lexel",
-    "link": "http://www.lexel.mg/en/#equipe"
-  },
-  {
     "name": "Lex Atlas",
     "link": "https://lexatlas.com/en/team/"
-  },
-  {
-    "name": "Levant Law",
-    "link": "https://www.levantlp.com/team"
-  },
-  {
-    "name": "Lesayra",
-    "link": "https://lesayra.com/en/team"
   },
   {
     "name": "Lektou",
@@ -187,10 +100,6 @@
   {
     "name": "Lee Choon WanAndCo",
     "link": "https://leecwco.com.my/people/lily-tan-chea-li"
-  },
-  {
-    "name": "Lawtons Africa",
-    "link": "https://www.lawtonsafrica.com/our-people"
   },
   {
     "name": "Warde Advogados",
@@ -209,10 +118,6 @@
     "link": "https://www.advokatskafirmasajic.com/EN/about-us.html"
   },
   {
-    "name": "Laurence Khupe Attorneys",
-    "link": "https://www.law.co.bw/our-team/"
-  },
-  {
     "name": "Lane Neave",
     "link": "https://www.laneneave.co.nz/our-people/?_people_roles=partners"
   },
@@ -221,95 +126,39 @@
     "link": "https://labpartners.co.kr/en/category/peoples/"
   },
   {
-    "name": "KWKR Law",
-    "link": "https://kwkr.pl/en/team-3/"
-  },
-  {
-    "name": "KudunAndPartners",
-    "link": "https://www.kap.co.th/our-team/"
-  },
-  {
-    "name": "Kovačević Prpić Simeunović",
-    "link": "https://kps-law.com/en/team/"
-  },
-  {
-    "name": "Kouengoua and Mbattang Law",
-    "link": "https://kmnlaw.cm/lawyers/"
-  },
-  {
-    "name": "Kosta Legal",
-    "link": "https://kostalegal.com/team"
-  },
-  {
-    "name": "Soto Frugis",
-    "link": "https://sotofrugis.com.br/en/professionals/"
-  },
-  {
-    "name": "KonstantinovicAndMiloševski",
-    "link": "https://konstantinovic-milosevski.mk/our-team/"
-  },
-  {
-    "name": "KhodeirAndPartners",
-    "link": "https://mkhodeir.com/partners.html"
-  },
-  {
-    "name": "KECO Legal",
-    "link": "https://www.kecolegal.com/en/our-people"
-  },
-  {
-    "name": "Kasirye ByaruhangaAndCo",
-    "link": "https://lawyer.co.ug/kb-team/"
-  },
-  {
-    "name": "KaplanAndStratton",
-    "link": "https://www.kaplanstratton.com/lawyers/"
-  },
-  {
-    "name": "KangaAndCo",
-    "link": "http://kangacompany.com/partners.html"
-  },
-  {
-    "name": "Kallan",
-    "link": "https://www.kallan-legal.de/en/ansprechpartner/"
+    "name": "Johnson Winter Slattery",
+    "link": "https://jws.com.au/our-people/"
   },
   {
     "name": "RGSH Advogados",
     "link": "https://rgshadvogados.com.br/en/team/"
   },
   {
-    "name": "José LupiAndAssociates",
-    "link": "https://joselupi.com/en/people/"
+    "name": "NunesAndAsociados",
+    "link": "https://estudionunes.com.ar/english/#team",
+    "Note": "Email format (firstNameLetter)(LastName)@estudionunes.com.ar",
+    "Ex.:": "Tomas Demo === tdemo@estudionunes.com.ar"
   },
-  {
-    "name": "Johnson Winter Slattery",
-    "link": "https://jws.com.au/our-people/"
-  },
-  {
-    "name": "Johnson CamachoAndSingh",
-    "link": "https://www.jcscaribbeanlaw.com/attorneys/",
-    "Note": "Country === Trinidad and Tobago"
-  },
-  {
-    "name": "JŠK Advokátní",
-    "link": "https://www.jsk.cz/en/team#partner"
-  },
-  {
-    "name": "JJ RocaAndAsociados",
-    "link": "https://www.jjrocalaw.com/english/",
-    "Note": "Email format (firstNameLetter)(LastName)@jjrocalaw.com",
-    "Ex.:": "Tomas Demo === tdemo@jjrocalaw.com"
-  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   {
     "name": "Youssry SalehAndPartners",
     "link": "https://youssrysaleh.com/en/attorneys/",
     "Note": "Email format (firstNameLetter).(LastName)@youssrysaleh.com",
     "Ex.:": "Tomas Demo === t.demo@youssrysaleh.com"
-  },
-  {
-    "name": "NunesAndAsociados",
-    "link": "https://estudionunes.com.ar/english/#team",
-    "Note": "Email format (firstNameLetter)(LastName)@estudionunes.com.ar",
-    "Ex.:": "Tomas Demo === tdemo@estudionunes.com.ar"
   },
   {
     "name": "J.J. RocaAndAsociados",

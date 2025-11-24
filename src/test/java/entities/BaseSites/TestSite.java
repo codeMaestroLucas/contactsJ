@@ -1,7 +1,7 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byPage.RoedlAndPartner;
+import org.example.src.sites.byPage.MVJMarkovicVukoticJovkovic;
 
 
 import java.lang.reflect.Field;
@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
  * interfering with the main log.txt file used by the production Main class.
  */
 
-    class MyTestPage extends RoedlAndPartner {
+    class MyTestPage extends MVJMarkovicVukoticJovkovic {
 
     /**
      * Constructor that initializes with test logger to avoid affecting production logs
