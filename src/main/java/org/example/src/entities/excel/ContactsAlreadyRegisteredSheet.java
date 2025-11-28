@@ -1,8 +1,8 @@
 package org.example.src.entities.excel;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DateUtil;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 import org.example.src.entities.MyDriver;
@@ -164,8 +164,46 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
         }
 
         this.registerLastFirmCollectedRow(i);
+        this.addRedSeparatorLine();
         this.saveSheet();
         this.registerFirmsCollected();
+    }
+
+    /**
+     * Adds a red empty line in the destination sheet to visually separate
+     * contacts collected from different execution phases.
+     */
+    private void addRedSeparatorLine() {
+        try {
+            // Get the destination sheet workbook to create the style
+            Workbook destWorkbook = destinationSheet.getWorkbook();
+            
+            // Create a cell style with red background
+            XSSFCellStyle redStyle = (XSSFCellStyle) destWorkbook.createCellStyle();
+            redStyle.setFillForegroundColor(new XSSFColor(new java.awt.Color(255, 0, 0), null));
+            redStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+            
+            // Get the next available row in the destination sheet
+            org.apache.poi.ss.usermodel.Sheet destSheet = destinationSheet.getSheet();
+            int nextRowNum = destSheet.getLastRowNum() + 1;
+            Row redRow = destSheet.createRow(nextRowNum);
+            
+            // Create empty cells with red background for all columns (assuming 13 columns based on your data)
+            for (int col = 0; col < 13; col++) {
+                Cell cell = redRow.createCell(col);
+                cell.setCellValue("");
+                cell.setCellStyle(redStyle);
+            }
+            
+            // Save the destination sheet
+            destinationSheet.saveSheet();
+            
+            System.out.println("\n\u001B[31m[SEPARATOR] Red line added to mark end of registered contacts phase.\u001B[0m\n");
+            
+        } catch (Exception e) {
+            System.err.println("Error adding red separator line: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**

@@ -61,7 +61,6 @@ public final class EmailDuplicateChecker {
         options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
 
         this.driver = new ChromeDriver(options);
-        System.out.println("EmailDuplicateChecker: WebDriver initialized");
     }
 
     /**
@@ -70,7 +69,6 @@ public final class EmailDuplicateChecker {
      */
     public void login() {
         try {
-            System.out.println("EmailDuplicateChecker: Logging in...");
             driver.get(LOGIN_URL);
             
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -93,7 +91,6 @@ public final class EmailDuplicateChecker {
             wait.until(ExpectedConditions.urlContains("dashboard"));
             
             isLoggedIn = true;
-            System.out.println("EmailDuplicateChecker: Login successful");
 
             driver.get("https://globallawexperts.com/auth/");
 
@@ -149,8 +146,7 @@ public final class EmailDuplicateChecker {
 
             // Check if it has the "result-clean" class
             String resultClass = resultContainer.getAttribute("class");
-            return
-                    resultClass != null && resultClass.contains("result-clean");
+            return resultClass != null && resultClass.contains("result-clean");
 
         } catch (Exception e) {
             System.err.println("EmailDuplicateChecker: Error checking email '" + email + "' - " + e.getMessage());
@@ -167,7 +163,6 @@ public final class EmailDuplicateChecker {
         if (driver != null) {
             try {
                 driver.quit();
-                System.out.println("EmailDuplicateChecker: WebDriver closed");
             } catch (Exception e) {
                 System.err.println("EmailDuplicateChecker: Error closing WebDriver - " + e.getMessage());
             } finally {

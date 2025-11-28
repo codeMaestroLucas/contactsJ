@@ -127,7 +127,7 @@ public class HiggsAndJohnson extends ByNewPage {
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,
-                "country", "Bahamas",
+                "country", "the Bahamas",
                 "practice_area", this.getPracticeArea(),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
