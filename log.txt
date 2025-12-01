@@ -1,4 +1,361 @@
-LOG SESSION STARTED - 2025-11-24 22:45:27
+LOG SESSION STARTED - 2025-12-01 05:40:30
+
+====================================================================================================
+McMillan
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 17) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 18) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 28) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 29) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 30) 1x
+====================================================================================================
+
+====================================================================================================
+Haynes And Boone
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Houthoof
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():60 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AWA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 17) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 28) 1x
+====================================================================================================
+
+====================================================================================================
+Hill Dickinson
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 9) 1x
+====================================================================================================
+
+====================================================================================================
+BCF Law
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():56 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Le Poole Bekema
+
+Errors:
+    - WebDriver Error: no such element: element not found at openNewTab():62 (Error reading 2th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+CBA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ferrere
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getPracticeArea():95 (Error reading 22th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+DGKV
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Johnson Camacho And Singh
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Kinstellar
+
+Errors:
+    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():39 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Carey Olsen
+
+Errors:
+    - Runtime Error: Range [9, 8) out of bounds for length 8 at getCountry():91 (Error reading 46th lawyer at page 1) 1x
+    - Runtime Error: Range [9, 8) out of bounds for length 8 at getCountry():91 (Error reading 50th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Byrne Wallace
+
+Errors:
+    - WebDriver Error: unknown error: net::ERR_NAME_NOT_RESOLVED at accessPage():25 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+MVJ Marković Vukotić Jovković
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Roca Junyent
+
+Errors:
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 2th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 5) 1x
+====================================================================================================
+
+====================================================================================================
+Asafo And Co
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():74 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():74 (Error fetching lawyers on page 4) 1x
+====================================================================================================
+
+====================================================================================================
+Gomez Acebo And Pombo
+
+Errors:
+    - WebDriver Error: java.lang.InterruptedException: sleep interrupted at goToPage():46 (Error accessing page 4) 1x
+====================================================================================================
+
+====================================================================================================
+Pavia And Ansaldo
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():71 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sampson Coward LLP
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():46 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():46 (Error reading 20th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ibañez Parkman
+
+Errors:
+    - WebDriver Error: no such element: element not found at openNewTab():59 (Error reading 2th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Matheson
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Morris Law
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Hill Dickinson
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():50 (Error accessing page 1) 1x
+====================================================================================================
 
 ====================================================================================================
 Nova Law
@@ -25,25 +382,214 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-Kambourov And Partners
+Haynes And Boone
 
 Errors:
-    - Lawyer Error: Invalid LINK: Could not find link element (Error reading 2th lawyer at page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-Myers Fletcher And Gordon
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Johnson Camacho And Singh
+CBA
 
 Errors:
-    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 1th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Kinstellar
+
+Errors:
+    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():39 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BCF Law
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():56 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+PM&P
+
+Errors:
+    - WebDriver Error: unknown error: unsupported protocol at openNewTab():45 (Error reading 5th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Legalis
+
+Errors:
+    - WebDriver Error: no such element: element not found at openNewTab():63 (Error reading 2th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller And Nicolau
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+MVJ Marković Vukotić Jovković
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Racine
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at openNewTab():68 (Error reading 75th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 28th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 29th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 31th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 41th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 42th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 44th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 53th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 54th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 56th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 69th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 70th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 71th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 72th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 73th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 74th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():68 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+MdME
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AWA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 17) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 28) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -54,17 +600,17 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-Matheson
+Myers Fletcher And Gordon
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-Le Poole Bekema
+Gomez Acebo And Pombo
 
 Errors:
-    - WebDriver Error: no such element: element not found at openNewTab():62 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: java.lang.InterruptedException: sleep interrupted at goToPage():46 (Error accessing page 4) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -77,41 +623,10 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-Kinstellar
+Pavia And Ansaldo
 
 Errors:
-    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():39 (Error accessing page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ritch Mueller And Nicolau
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 3) 1x
-====================================================================================================
-
-====================================================================================================
-Houthoof
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():60 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Asafo And Co
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():74 (Error fetching lawyers on page 3) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():74 (Error fetching lawyers on page 4) 1x
-====================================================================================================
-
-====================================================================================================
-Gomez Acebo And Pombo
-
-Errors:
-    - WebDriver Error: java.lang.InterruptedException: sleep interrupted at goToPage():46 (Error accessing page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():71 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -122,35 +637,39 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-BDO
+KRBLaw
 
 Errors:
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 10) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 11) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 12) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 13) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 14) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 15) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 16) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 17) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 18) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 19) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 20) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 21) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 22) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 23) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 24) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 25) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 26) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 27) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 28) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 4) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 5) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 6) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 7) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 8) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 9) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():185 (Error accessing page 3) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():64 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():64 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():64 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():64 (Error reading 5th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ferrere
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getPracticeArea():95 (Error reading 22th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AOil
+
+Errors:
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():67 (Error reading 9th lawyer at page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -161,182 +680,78 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-Ritch Mueller
+Steinmetz Haring Gurman
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():48 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-PM&P
+Johnson Camacho And Singh
 
 Errors:
-    - WebDriver Error: unknown error: unsupported protocol at openNewTab():45 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 9th lawyer at page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-Rădulescu And Mușoi
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-TEMPLARS
-
-Errors:
-    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 2th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-BCF Law
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():56 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-S Horowitz & Co
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():53 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-BDO
-
-Errors:
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 10) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 11) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 12) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 13) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 14) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 15) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 16) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 17) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 18) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 19) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 20) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 21) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 22) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 23) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 24) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 25) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 26) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 27) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 28) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 4) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 5) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 6) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 7) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 8) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 9) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():185 (Error accessing page 3) 1x
-====================================================================================================
-
-====================================================================================================
-Ritch Mueller
+Sampson Coward LLP
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 3) 1x
-====================================================================================================
-
-====================================================================================================
-METIDA
-
-Errors:
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 10th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 11th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 12th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 13th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 14th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 15th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 16th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 17th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 18th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 6th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 7th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 8th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 9th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Matheson
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Sorainen
-
-Errors:
-    - WebDriver Error: unknown error: net::ERR_CONNECTION_TIMED_OUT at accessPage():33 (Error accessing page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Gomez Acebo And Pombo
-
-Errors:
-    - WebDriver Error: java.lang.InterruptedException: sleep interrupted at goToPage():46 (Error accessing page 4) 1x
-====================================================================================================
-
-====================================================================================================
-Carey Olsen
-
-Errors:
-    - Runtime Error: Range [9, 8) out of bounds for length 8 at getCountry():91 (Error reading 46th lawyer at page 1) 1x
-    - Runtime Error: Range [9, 8) out of bounds for length 8 at getCountry():91 (Error reading 50th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-PM&P
-
-Errors:
-    - WebDriver Error: unknown error: unsupported protocol at openNewTab():45 (Error reading 5th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-MVJ Marković Vukotić Jovković
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ritch Mueller And Nicolau
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 3) 1x
-====================================================================================================
-
-====================================================================================================
-Rădulescu And Mușoi
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Lex Caribbean
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():57 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Houthoof
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():60 (Error fetching lawyers on page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():46 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():46 (Error reading 20th lawyer at page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -501,180 +916,10 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-Nova Law
+Matheson
 
 Errors:
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 10th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 11th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 12th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 13th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 14th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 15th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 16th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 17th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 18th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 19th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 20th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 3th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 4th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 5th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 6th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 7th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 8th lawyer at page 1) 1x
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 9th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Steinmetz Haring Gurman
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():48 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Beauchamps
-
-Errors:
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 10th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 11th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 12th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 13th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 14th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 15th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 16th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 17th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 18th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 19th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 20th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 21th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 22th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 23th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 24th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 25th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 26th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 27th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 28th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 29th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 2th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 30th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 31th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 32th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 33th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 34th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 35th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 36th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 37th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 38th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 39th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 3th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 40th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 41th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 42th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 43th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 44th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 45th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 46th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 47th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 48th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 49th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 4th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 50th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 51th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 52th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 53th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 54th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 55th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 56th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 57th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 58th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 59th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 5th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 60th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 61th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 62th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 63th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 6th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 7th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 8th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():69 (Error reading 9th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ashitiva
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():55 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ferrere
-
-Errors:
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getPracticeArea():95 (Error reading 22th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Kinstellar
-
-Errors:
-    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():39 (Error accessing page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Myers Fletcher And Gordon
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Pavia And Ansaldo
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():71 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-AWA
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 10) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 11) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 12) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 13) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 14) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 15) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 16) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 3) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 4) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 5) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 6) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 7) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 8) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 9) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 17) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 18) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 19) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 20) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 21) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 22) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 23) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 24) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 25) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 26) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 27) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 28) 1x
-====================================================================================================
-
-====================================================================================================
-Cuatrecasas
-
-Errors:
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():53 (Error accessing page 5) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():58 (Error accessing page 4) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at openNewTab():84 (Error reading 14th lawyer at page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -682,38 +927,6 @@ Morris Law
 
 Errors:
     - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Conyers
-
-Errors:
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 10) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 11) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 12) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 13) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 14) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 15) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 6) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 7) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 8) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():28 (Error accessing page 9) 1x
-====================================================================================================
-
-====================================================================================================
-DGKV
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 3) 1x
-====================================================================================================
-
-====================================================================================================
-CBA
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -752,51 +965,12 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-BDO
-
-Errors:
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 10) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 11) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 12) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 13) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 14) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 15) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 16) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 17) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 18) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 19) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 20) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 21) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 22) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 23) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 24) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 25) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 26) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 27) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 28) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 4) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 5) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 6) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 7) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 8) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 9) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():185 (Error accessing page 3) 1x
-====================================================================================================
-
-====================================================================================================
 DGKV
 
 Errors:
     - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 1) 1x
     - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 2) 1x
     - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 3) 1x
-====================================================================================================
-
-====================================================================================================
-Kinstellar
-
-Errors:
-    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():39 (Error accessing page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -809,50 +983,10 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-Lex Caribbean
+Kinstellar
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():57 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-PM&P
-
-Errors:
-    - WebDriver Error: unknown error: unsupported protocol at openNewTab():45 (Error reading 5th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Matheson
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-S Horowitz & Co
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():53 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-METIDA
-
-Errors:
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 10th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 11th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 12th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 13th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 14th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 15th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 16th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 17th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 18th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 6th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 7th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 8th lawyer at page 1) 1x
-    - WebDriver Error: invalid argument at openNewTab():70 (Error reading 9th lawyer at page 1) 1x
+    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():39 (Error accessing page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -880,103 +1014,180 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
+Haynes And Boone
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Johnson Camacho And Singh
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+S Horowitz & Co
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():53 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Hill Dickinson
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():50 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Hans Offia And Associates
+
+Errors:
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():60 (Error reading 4th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+CBA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Lex Caribbean
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():57 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Belgravia
+
+Errors:
+    - WebDriver Error: no such element: element not found at openNewTab():63 (Error reading 2th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AWA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 17) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 28) 1x
+====================================================================================================
+
+====================================================================================================
+Morris Law
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sorainen
+
+Errors:
+    - WebDriver Error: unknown error: net::ERR_CONNECTION_TIMED_OUT at accessPage():33 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
 Steinmetz Haring Gurman
 
 Errors:
     - Runtime Error: Failed to find lawyer elements at getLawyersInPage():48 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Myers Fletcher And Gordon
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ferrere
-
-Errors:
-    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getPracticeArea():95 (Error reading 22th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Houthoof
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():60 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Pavia And Ansaldo
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():71 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ritch Mueller And Nicolau
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 3) 1x
-====================================================================================================
-
-====================================================================================================
-McMillan
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 10) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 11) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 12) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 13) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 14) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 15) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 16) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 17) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 18) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 19) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 3) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 4) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 5) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 6) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 7) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 8) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 9) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 20) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 21) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 22) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 23) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 24) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 25) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 26) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 27) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 28) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 29) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 30) 1x
-====================================================================================================
-
-====================================================================================================
-Prüfer & Partner
-
-Errors:
-    - WebDriver Error: no such element: element not found at openNewTab():62 (Error reading 2th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Gomez Acebo And Pombo
-
-Errors:
-    - WebDriver Error: java.lang.InterruptedException: sleep interrupted at goToPage():46 (Error accessing page 4) 1x
-====================================================================================================
-
-====================================================================================================
-Rădulescu And Mușoi
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -1141,79 +1352,41 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-BCF Law
+MdME
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():56 (Error fetching lawyers on page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 11th lawyer at page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-CBA
+MVJ Marković Vukotić Jovković
 
 Errors:
     - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-AWA
+PM&P
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 10) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 11) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 12) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 13) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 14) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 15) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 16) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 17) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 3) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 4) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 5) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 6) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 7) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 8) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 9) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 18) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 19) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 20) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 21) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 22) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 23) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 24) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 25) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 26) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 27) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 28) 1x
+    - WebDriver Error: unknown error: unsupported protocol at openNewTab():45 (Error reading 5th lawyer at page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-Morris Law
+Sampson Coward LLP
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():46 (Error reading 2th lawyer at page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-Sorainen
-
-Errors:
-    - WebDriver Error: unknown error: net::ERR_CONNECTION_TIMED_OUT at accessPage():33 (Error accessing page 1) 1x
-====================================================================================================
-
-====================================================================================================
-JWP
+Gomez Acebo And Pombo
 
 Errors:
-    - WebDriver Error: no such element: element not found at openNewTab():69 (Error reading 2th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ashitiva
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():55 (Error fetching lawyers on page 1) 1x
+    - InterruptedException: sleep interrupted at goToPage():56 (Error accessing page 4) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -1224,26 +1397,10 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-Lex Caribbean
+BCF Law
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():57 (Error fetching lawyers on page 1) 1x
-====================================================================================================
-
-====================================================================================================
-DGKV
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():61 (Error fetching lawyers on page 3) 1x
-====================================================================================================
-
-====================================================================================================
-CBA
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():56 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -1256,61 +1413,17 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-McMillan
+Pavia And Ansaldo
 
 Errors:
-    - InterruptedException: sleep interrupted at accessPage():29 (Error accessing page 19) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 10) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 11) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 12) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 13) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 14) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 15) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 16) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 17) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 18) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 20) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 21) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 22) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 23) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 24) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 25) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 26) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 27) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 28) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 29) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 3) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 30) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 4) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 5) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 6) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 7) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 8) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 9) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():71 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
-Sorainen
+Kondrat
 
 Errors:
-    - WebDriver Error: unknown error: net::ERR_CONNECTION_TIMED_OUT at accessPage():33 (Error accessing page 1) 1x
-====================================================================================================
-
-====================================================================================================
-AC&R
-
-Errors:
-    - WebDriver Error: no such element: element not found at openNewTab():57 (Error reading 2th lawyer at page 1) 1x
-====================================================================================================
-
-====================================================================================================
-Ritch Mueller
-
-Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -1321,10 +1434,45 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-BCF Law
+Myers Fletcher And Gordon
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():56 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+McMillan
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 17) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 18) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 28) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 29) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 30) 1x
 ====================================================================================================
 
 ====================================================================================================
@@ -1352,36 +1500,157 @@ Errors:
 ====================================================================================================
 
 ====================================================================================================
-AWA
+McMillan
 
 Errors:
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 1) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 10) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 11) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 12) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 13) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 14) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 15) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 16) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 17) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 2) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 3) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 4) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 5) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 6) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 7) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 8) 1x
-    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 9) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 18) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 19) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 20) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 21) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 22) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 23) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 24) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 25) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 26) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 27) 1x
-    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 28) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 17) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():44 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 28) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 29) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():27 (Error accessing page 30) 1x
+====================================================================================================
+
+====================================================================================================
+Holmes
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at openNewTab():70 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at openNewTab():70 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: no such element: element not found at openNewTab():70 (Error reading 2th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+MVJ Marković Vukotić Jovković
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Steinmetz Haring Gurman
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():48 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+CBA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Lex Caribbean
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():57 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Johnson Camacho And Singh
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Kinstellar
+
+Errors:
+    - WebDriver Error: Expected condition failed: waiting for presence of element l at accessPage():39 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+PM&P
+
+Errors:
+    - WebDriver Error: unknown error: unsupported protocol at openNewTab():45 (Error reading 5th lawyer at page 1) 1x
 ====================================================================================================
 

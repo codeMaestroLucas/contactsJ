@@ -116,7 +116,6 @@ public class Main {
             performCompleteSearch();
             searchLawyersInWeb();
             searchLawyersInWeb();
-            searchLawyersInWeb();
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
