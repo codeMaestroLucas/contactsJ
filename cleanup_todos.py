@@ -1,257 +1,491 @@
 #!/usr/bin/env python3
 """
-Script para limpar os TODOs removendo firmas já criadas
+Script to extract country information from Java firm files and organize them by continent.
+Reads all firm Java files, extracts countries, maps to continents, and generates organized output.
 """
-import os
+
 import re
-import json
 from pathlib import Path
-from difflib import SequenceMatcher
+from collections import defaultdict
+from typing import Set, Dict, List, Tuple
 
-def extract_firm_name_from_java(file_path):
-    """Extrai o nome da firma de um arquivo Java"""
+# ============================================================================
+# COUNTRY TO CONTINENT MAPPING
+# ============================================================================
+COUNTRY_TO_CONTINENT = {
+    # Africa
+    "South Africa": "Africa",
+    "Nigeria": "Africa",
+    "Ghana": "Africa",
+    "Kenya": "Africa",
+    "Egypt": "Africa",
+    "Morocco": "Africa",
+    "Tanzania": "Africa",
+    "Uganda": "Africa",
+    "Zimbabwe": "Africa",
+    "Mauritius": "Africa",
+    "Namibia": "Africa",
+    "Botswana": "Africa",
+    "Seychelles": "Africa",
+
+    # Asia
+    "China": "Asia",
+    "Japan": "Asia",
+    "South Korea": "Asia",
+    "Korea": "Asia",
+    "India": "Asia",
+    "Singapore": "Asia",
+    "Malaysia": "Asia",
+    "Thailand": "Asia",
+    "Vietnam": "Asia",
+    "Indonesia": "Asia",
+    "Philippines": "Asia",
+    "Taiwan": "Asia",
+    "Hong Kong": "Asia",
+    "Pakistan": "Asia",
+    "Bangladesh": "Asia",
+    "Sri Lanka": "Asia",
+    "UAE": "Asia",
+    "Saudi Arabia": "Asia",
+    "Israel": "Asia",
+    "Turkey": "Asia",
+    "Lebanon": "Asia",
+    "Jordan": "Asia",
+    "Qatar": "Asia",
+    "Bahrain": "Asia",
+    "Kuwait": "Asia",
+    "Oman": "Asia",
+
+    # Europe
+    "United Kingdom": "Europe",
+    "UK": "Europe",
+    "England": "Europe",
+    "Scotland": "Europe",
+    "Wales": "Europe",
+    "Germany": "Europe",
+    "France": "Europe",
+    "Italy": "Europe",
+    "Spain": "Europe",
+    "Netherlands": "Europe",
+    "the Netherlands": "Europe",
+    "Belgium": "Europe",
+    "Switzerland": "Europe",
+    "Austria": "Europe",
+    "Sweden": "Europe",
+    "Norway": "Europe",
+    "Denmark": "Europe",
+    "Finland": "Europe",
+    "Poland": "Europe",
+    "Czech Republic": "Europe",
+    "Czechia": "Europe",
+    "Hungary": "Europe",
+    "Romania": "Europe",
+    "Bulgaria": "Europe",
+    "Greece": "Europe",
+    "Portugal": "Europe",
+    "Ireland": "Europe",
+    "Iceland": "Europe",
+    "Luxembourg": "Europe",
+    "Croatia": "Europe",
+    "Serbia": "Europe",
+    "Slovenia": "Europe",
+    "Slovakia": "Europe",
+    "Estonia": "Europe",
+    "Latvia": "Europe",
+    "Lithuania": "Europe",
+    "Malta": "Europe",
+    "Cyprus": "Europe",
+    "Albania": "Europe",
+    "North Macedonia": "Europe",
+    "Bosnia": "Europe",
+    "Montenegro": "Europe",
+    "Kosovo": "Europe",
+    "Russia": "Europe",
+    "Ukraine": "Europe",
+    "Belarus": "Europe",
+    "Moldova": "Europe",
+    "Liechtenstein": "Europe",
+    "Monaco": "Europe",
+    "Andorra": "Europe",
+    "San Marino": "Europe",
+    "Guernsey": "Europe",
+    "Jersey": "Europe",
+    "Isle of Man": "Europe",
+
+    # North America
+    "USA": "North America",
+    "United States": "North America",
+    "US": "North America",
+    "Canada": "North America",
+    "Mexico": "North America",
+
+    # South America
+    "Brazil": "South America",
+    "Argentina": "South America",
+    "Chile": "South America",
+    "Colombia": "South America",
+    "Peru": "South America",
+    "Venezuela": "South America",
+    "Ecuador": "South America",
+    "Bolivia": "South America",
+    "Paraguay": "South America",
+    "Uruguay": "South America",
+    "Guyana": "South America",
+    "Suriname": "South America",
+
+    # Central America & Caribbean
+    "Costa Rica": "Central America",
+    "Panama": "Central America",
+    "Guatemala": "Central America",
+    "Honduras": "Central America",
+    "El Salvador": "Central America",
+    "Nicaragua": "Central America",
+    "Belize": "Central America",
+    "Jamaica": "Central America",
+    "Trinidad and Tobago": "Central America",
+    "Bahamas": "Central America",
+    "Barbados": "Central America",
+    "Cayman Islands": "Central America",
+    "the Cayman Islands": "Central America",
+    "British Virgin Islands": "Central America",
+    "the British Virgin Islands": "Central America",
+    "Bermuda": "Central America",
+    "Puerto Rico": "Central America",
+    "Dominican Republic": "Central America",
+    "Cuba": "Central America",
+    "Haiti": "Central America",
+    "Antigua": "Central America",
+    "Grenada": "Central America",
+    "Saint Lucia": "Central America",
+
+    # Oceania
+    "Australia": "Oceania",
+    "New Zealand": "Oceania",
+    "Fiji": "Oceania",
+    "Papua New Guinea": "Oceania",
+    "Samoa": "Oceania",
+}
+
+
+# ============================================================================
+# EXTRACTION FUNCTIONS
+# ============================================================================
+
+def extract_countries_from_file(file_path: Path) -> Tuple[str, Set[str]]:
+    """
+    Extract all countries mentioned in a firm's Java file.
+    Returns: (class_name, set_of_countries)
+    """
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-            # Procura por super( com o nome da firma
-            match = re.search(r'super\s*\(\s*"([^"]+)"', content)
-            if match:
-                return match.group(1)
+        content = file_path.read_text(encoding='utf-8')
     except Exception as e:
-        print(f"Erro ao ler {file_path}: {e}")
-    return None
+        print(f"Error reading {file_path}: {e}")
+        return file_path.stem, set()
 
-def get_all_created_firms(base_path):
-    """Retorna todos os nomes de firmas já criadas"""
-    firms = {}
-    
-    # Diretórios para verificar
-    directories = [
-        'byNewPage',
-        'byPage',
-        '_standingBy/otherIssues',
-        '_standingBy/toAvoidForNow'
-    ]
-    
-    for directory in directories:
-        dir_path = os.path.join(base_path, directory)
-        if os.path.exists(dir_path):
-            for filename in os.listdir(dir_path):
-                if filename.endswith('.java') and filename != '_Template.java':
-                    file_path = os.path.join(dir_path, filename)
-                    firm_name = extract_firm_name_from_java(file_path)
-                    if firm_name:
-                        firms[firm_name.lower()] = {
-                            'original_name': firm_name,
-                            'file': filename,
-                            'directory': directory
-                        }
-    
-    return firms
+    countries = set()
 
-def normalize_name(name):
-    """Normaliza o nome da firma para comparação"""
-    if not name:
-        return ""
-    # Remove espaços extras, converte para minúsculas
-    normalized = name.lower().strip()
-    # Remove variações comuns
-    normalized = normalized.replace('&', 'and')
-    normalized = normalized.replace(',', '')
-    normalized = re.sub(r'\s+', ' ', normalized)
-    return normalized
+    # Pattern 1: Hardcoded country in getLawyer() like: "country", "Nigeria"
+    # This is the most common pattern
+    pattern1 = r'"country"\s*,\s*"([^"]+)"'
+    matches = re.findall(pattern1, content)
+    for match in matches:
+        # Exclude dynamic calls like "this.getCountry(...)"
+        if not any(x in match for x in ['this.', 'get', '(', ')']):
+            countries.add(match.strip())
 
-def are_names_similar(name1, name2, threshold=0.85):
-    """Verifica se dois nomes são similares"""
-    norm1 = normalize_name(name1)
-    norm2 = normalize_name(name2)
-    
-    if norm1 == norm2:
-        return True
-    
-    # Verifica similaridade usando SequenceMatcher
-    similarity = SequenceMatcher(None, norm1, norm2).ratio()
-    return similarity >= threshold
+    # Pattern 2: OFFICE_TO_COUNTRY mapping - entry("office", "Country")
+    pattern2 = r'entry\s*\(\s*"[^"]*"\s*,\s*"([^"]+)"\s*\)'
+    matches = re.findall(pattern2, content)
+    for match in matches:
+        countries.add(match.strip())
 
-def find_similar_names(firms_dict, threshold=0.85):
-    """Encontra nomes similares entre as firmas"""
-    similar_groups = []
-    checked = set()
-    
-    firm_list = list(firms_dict.values())
-    
-    for i, firm1 in enumerate(firm_list):
-        if firm1['original_name'] in checked:
-            continue
-            
-        group = [firm1]
-        checked.add(firm1['original_name'])
-        
-        for j in range(i + 1, len(firm_list)):
-            firm2 = firm_list[j]
-            if firm2['original_name'] in checked:
-                continue
-                
-            if are_names_similar(firm1['original_name'], firm2['original_name'], threshold):
-                group.append(firm2)
-                checked.add(firm2['original_name'])
-        
-        if len(group) > 1:
-            similar_groups.append(group)
-    
-    return similar_groups
+    # Pattern 3: getCountry method with default country parameter
+    # Example: getCountryBasedInOffice(..., ..., "Canada")
+    pattern3 = r'getCountryBasedInOffice[^)]*,\s*"([^"]+)"\s*\)'
+    matches = re.findall(pattern3, content)
+    for match in matches:
+        countries.add(match.strip())
 
-def clean_todos(todos_path, created_firms, output_path=None):
-    """Remove firmas já criadas dos TODOs"""
-    with open(todos_path, 'r', encoding='utf-8') as f:
-        todos = json.load(f)
-    
-    original_count = len([t for t in todos if t.get('name')])
-    removed = []
-    kept = []
-    
-    for todo in todos:
-        if not todo.get('name'):  # Mantém entradas vazias
-            kept.append(todo)
-            continue
-        
-        # Verifica se a firma já foi criada
-        found = False
-        todo_normalized = normalize_name(todo['name'])
-        
-        for firm_key, firm_data in created_firms.items():
-            if are_names_similar(todo['name'], firm_data['original_name']):
-                removed.append({
-                    'todo_name': todo['name'],
-                    'created_as': firm_data['original_name'],
-                    'file': firm_data['file'],
-                    'directory': firm_data['directory']
-                })
-                found = True
-                break
-        
-        if not found:
-            kept.append(todo)
-    
-    # Salva o arquivo limpo
-    if output_path:
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(kept, f, indent=2, ensure_ascii=False)
-    
-    return {
-        'original_count': original_count,
-        'removed_count': len(removed),
-        'kept_count': len([k for k in kept if k.get('name')]),
-        'removed_items': removed
-    }
+    # Pattern 4: Direct return in getCountry method
+    # Example: return "Brazil";
+    pattern4 = r'private\s+String\s+getCountry[^}]*?return\s+"([^"]+)"\s*;'
+    matches = re.findall(pattern4, content, re.DOTALL)
+    for match in matches:
+        if not any(x in match for x in ['this.', 'get', 'Not Found', '-----']):
+            countries.add(match.strip())
 
-def main():
-    # Caminhos base
-    base_sites_path = '/Users/lucassamuellemosrajao/dev_projects/java/src/main/java/org/example/src/sites'
-    todos_base_path = '/Users/lucassamuellemosrajao/dev_projects/java/src/main/resources/todos'
-    
-    print("=" * 80)
-    print("LIMPEZA DE TODOs - Remoção de firmas já criadas")
-    print("=" * 80)
-    print()
-    
-    # 1. Extrair todas as firmas criadas
-    print("1. Extraindo firmas já criadas...")
-    created_firms = get_all_created_firms(base_sites_path)
-    print(f"   ✓ {len(created_firms)} firmas encontradas")
-    print()
-    
-    # 2. Procurar por nomes similares
-    print("2. Procurando por nomes similares/duplicados...")
-    similar_groups = find_similar_names(created_firms, threshold=0.85)
-    
-    if similar_groups:
-        print(f"   ⚠ {len(similar_groups)} grupos de nomes similares encontrados:")
-        print()
-        for i, group in enumerate(similar_groups, 1):
-            print(f"   Grupo {i}:")
-            for firm in group:
-                print(f"      - {firm['original_name']}")
-                print(f"        Arquivo: {firm['file']}")
-                print(f"        Diretório: {firm['directory']}")
-            print()
+    # Pattern 5: Hardcoded in Map.of within getCountry
+    # Used when country is extracted from office dynamically
+    pattern5 = r'Map\.of\s*\([^)]*"([^"]+)"\s*,\s*"([^"]+)"[^)]*\)'
+    matches = re.findall(pattern5, content)
+    for match_tuple in matches:
+        # match_tuple is (key, value) - we want the values that look like countries
+        for val in match_tuple:
+            if val in COUNTRY_TO_CONTINENT:
+                countries.add(val.strip())
+
+    # Get class name
+    class_pattern = r'public\s+class\s+(\w+)\s+extends'
+    class_match = re.search(class_pattern, content)
+    class_name = class_match.group(1) if class_match else file_path.stem
+
+    # Clean up countries - remove invalid entries
+    valid_countries = set()
+    for country in countries:
+        # Skip entries that are clearly not countries
+        if country and len(country) > 1 and country not in ['Not Found', '-----', 'null']:
+            valid_countries.add(country)
+
+    return class_name, valid_countries
+
+
+def map_countries_to_continents(countries: Set[str]) -> Set[str]:
+    """Map a set of countries to their continents."""
+    continents = set()
+
+    for country in countries:
+        continent = COUNTRY_TO_CONTINENT.get(country)
+        if continent:
+            continents.add(continent)
+        else:
+            # Country not in mapping - report it
+            if country:
+                print(f"  ⚠️  Unknown country: '{country}'")
+
+    return continents
+
+
+def categorize_firm(countries: Set[str], continents: Set[str]) -> str:
+    """
+    Determine the category for a firm based on its countries and continents.
+    Returns: continent name or "Mundial" or "Unknown"
+    """
+    if len(continents) == 0:
+        return "Unknown"
+    elif len(continents) == 1:
+        return list(continents)[0]
     else:
-        print("   ✓ Nenhum nome similar encontrado")
-        print()
-    
-    # 3. Limpar cada arquivo de TODO
-    todo_files = {
-        'byFilter.json': 'byFilter_cleaned.json',
-        'byNewPage.json': 'byNewPage_cleaned.json',
-        'byPage.json': 'byPage_cleaned.json',
-        'uncategorized.json': 'uncategorized_cleaned.json'
-    }
-    
-    print("3. Limpando arquivos de TODOs...")
-    print()
-    
-    all_removed = []
-    total_stats = {
-        'original': 0,
-        'removed': 0,
-        'kept': 0
-    }
-    
-    for todo_file, output_file in todo_files.items():
-        todo_path = os.path.join(todos_base_path, todo_file)
-        output_path = os.path.join(todos_base_path, output_file)
-        
-        if os.path.exists(todo_path):
-            print(f"   Processando {todo_file}...")
-            result = clean_todos(todo_path, created_firms, output_path)
-            
-            total_stats['original'] += result['original_count']
-            total_stats['removed'] += result['removed_count']
-            total_stats['kept'] += result['kept_count']
-            
-            all_removed.extend(result['removed_items'])
-            
-            print(f"      Original: {result['original_count']} firmas")
-            print(f"      Removidas: {result['removed_count']} firmas")
-            print(f"      Mantidas: {result['kept_count']} firmas")
-            print()
-    
-    # 4. Resumo final
-    print("=" * 80)
-    print("RESUMO FINAL")
-    print("=" * 80)
-    print(f"Total de firmas nos TODOs originais: {total_stats['original']}")
-    print(f"Total de firmas removidas (já criadas): {total_stats['removed']}")
-    print(f"Total de firmas mantidas: {total_stats['kept']}")
-    print()
-    
-    if all_removed:
-        print("Firmas removidas (algumas):")
-        for item in all_removed[:20]:  # Mostra apenas as primeiras 20
-            print(f"   - {item['todo_name']} → criada como '{item['created_as']}' ({item['directory']}/{item['file']})")
-        if len(all_removed) > 20:
-            print(f"   ... e mais {len(all_removed) - 20} firmas")
-    
-    print()
-    print("✓ Arquivos limpos salvos com sufixo '_cleaned'")
-    print()
-    
-    # Salvar relatório detalhado
-    report_path = os.path.join(todos_base_path, 'cleanup_report.json')
-    report = {
-        'summary': total_stats,
-        'similar_groups': [
-            [{'name': f['original_name'], 'file': f['file'], 'directory': f['directory']} 
-             for f in group]
-            for group in similar_groups
-        ],
-        'removed_firms': all_removed
-    }
-    
-    with open(report_path, 'w', encoding='utf-8') as f:
-        json.dump(report, f, indent=2, ensure_ascii=False)
-    
-    print(f"✓ Relatório detalhado salvo em: cleanup_report.json")
+        # Multiple continents = Mundial
+        return "Mundial"
+
+
+# ============================================================================
+# MAIN PROCESSING
+# ============================================================================
+
+def process_directory(directory_path: str) -> Dict[str, Dict]:
+    """
+    Process all Java files in a directory.
+    Returns: {firm_name: {countries, continents, category, class_name}}
+    """
+    dir_path = Path(directory_path)
+
+    if not dir_path.exists():
+        print(f"❌ Directory not found: {directory_path}")
+        return {}
+
+    firm_data = {}
+    java_files = list(dir_path.glob("*.java"))
+
+    # Remove template file
+    java_files = [f for f in java_files if f.stem != "_Template"]
+
+    print(f"\n📁 Processing {len(java_files)} files from {dir_path.name}...\n")
+
+    for java_file in sorted(java_files):
+        class_name, countries = extract_countries_from_file(java_file)
+        continents = map_countries_to_continents(countries)
+        category = categorize_firm(countries, continents)
+
+        firm_data[class_name] = {
+            'countries': countries,
+            'continents': continents,
+            'category': category,
+            'class_name': class_name
+        }
+
+        # Print summary for each firm
+        if countries:
+            countries_str = ", ".join(sorted(countries))
+            print(f"✓ {class_name:40s} → {category:20s} ({countries_str})")
+        else:
+            print(f"⚠ {class_name:40s} → No countries found")
+
+    return firm_data
+
+
+def group_by_continent(firm_data: Dict[str, Dict]) -> Dict[str, List[str]]:
+    """Group firms by their continent category."""
+    grouped = defaultdict(list)
+
+    for firm_name, data in firm_data.items():
+        grouped[data['category']].append(firm_name)
+
+    # Sort firms within each category
+    for category in grouped:
+        grouped[category].sort()
+
+    return dict(grouped)
+
+
+def generate_organized_java_file(bypage_data: Dict[str, Dict], bynewpage_data: Dict[str, Dict], output_path: str):
+    """Generate the organized _CompletedFirmsData.java file."""
+
+    # Define continent order
+    continent_order = [
+        "Africa",
+        "Asia",
+        "Europe",
+        "North America",
+        "Central America",
+        "South America",
+        "Oceania",
+        "Mundial",
+        "Unknown"
+    ]
+
+    # Start building the file
+    lines = []
+    lines.append("package org.example.src.utils.myInterface;")
+    lines.append("")
+    lines.append("import lombok.Getter;")
+    lines.append("import org.example.src.entities.BaseSites.Site;")
+    lines.append("import org.example.src.sites.byNewPage.*;")
+    lines.append("import org.example.src.sites.byPage.*;")
+    lines.append("")
+    lines.append("@Getter")
+    lines.append("public class _CompletedFirmsData {")
+    lines.append("")
+    lines.append("    public final static Site[] byPage = {")
+    lines.append("            /* Firms to avoid")
+    lines.append("            new AddleshawGoddardLLP(), new Andersen(), new ArnoldAndPorter(), new Ashurst(), new CliffordChance(),")
+    lines.append("            new CovingtonAndBurlingLLP(), new CrowellAndMoring(), new DavisPolkAndWardwell(), new DebevoiseAndPlimpton(), new DechertLLP(),")
+    lines.append("            new GorrissenFederspiel(), new GreenbergTraurig(), new HerbertSmithFreehillsKramer(), new JonesDay(), new KromannReumert(),")
+    lines.append("            new LathamAndWatkins(), new Milbank(), new MorganLewis(), new NautaDutilh(), new ProskauerRose(),")
+    lines.append("            new RopesAndGray(), new Skadden(), new StephensonHarwood(), new Stibbe(), new TaylorWessing(),")
+    lines.append("            new WhiteAndCase(), new Willkie(),")
+    lines.append("            */")
+
+    # Group byPage firms
+    grouped = group_by_continent(bypage_data)
+
+    first_continent = True
+    for continent in continent_order:
+        if continent in grouped and grouped[continent]:
+            if not first_continent:
+                lines.append("")
+            lines.append(f"// {continent}")
+
+            firm_line = "            "
+            for i, firm in enumerate(grouped[continent]):
+                firm_line += f"new {firm}(), "
+                # Break line every 5 firms for readability
+                if (i + 1) % 5 == 0 and i < len(grouped[continent]) - 1:
+                    lines.append(firm_line.rstrip())
+                    firm_line = "            "
+
+            # Add remaining firms
+            if firm_line.strip():
+                lines.append(firm_line.rstrip(", ") + ",")
+
+            first_continent = False
+
+    # Remove trailing comma from last line
+    if lines[-1].endswith(","):
+        lines[-1] = lines[-1].rstrip(",")
+
+    lines.append("    };")
+    lines.append("")
+    lines.append("    public final static Site[] byNewPage = {")
+    lines.append("            /* Firms to avoid")
+    lines.append("            new ALGoodbody(), new ArthurCox(), new Dentons(), new MishconKaras(), new OsborneClarke(),")
+    lines.append("            */")
+
+    # Group byNewPage firms
+    grouped = group_by_continent(bynewpage_data)
+
+    first_continent = True
+    for continent in continent_order:
+        if continent in grouped and grouped[continent]:
+            if not first_continent:
+                lines.append("")
+            lines.append(f"// {continent}")
+
+            firm_line = "            "
+            for i, firm in enumerate(grouped[continent]):
+                firm_line += f"new {firm}(), "
+                # Break line every 5 firms for readability
+                if (i + 1) % 5 == 0 and i < len(grouped[continent]) - 1:
+                    lines.append(firm_line.rstrip())
+                    firm_line = "            "
+
+            # Add remaining firms
+            if firm_line.strip():
+                lines.append(firm_line.rstrip(", ") + ",")
+
+            first_continent = False
+
+    # Remove trailing comma from last line
+    if lines[-1].endswith(","):
+        lines[-1] = lines[-1].rstrip(",")
+
+    lines.append("    };")
+    lines.append("")
+    lines.append("    public final static Site[] byFilter = {};")
+    lines.append("")
+    lines.append("    public final static Site[] byClick = {};")
+    lines.append("}")
+
+    # Write to file
+    output = "\n".join(lines)
+    Path(output_path).write_text(output, encoding='utf-8')
+
+    print(f"\n✅ Organized file written to: {output_path}")
+
+
+def print_summary(bypage_data: Dict[str, Dict], bynewpage_data: Dict[str, Dict]):
+    """Print summary statistics."""
+    print("\n" + "="*80)
+    print("SUMMARY")
+    print("="*80)
+
+    print(f"\n📊 byPage Statistics:")
+    print(f"   Total firms: {len(bypage_data)}")
+    grouped = group_by_continent(bypage_data)
+    for continent in sorted(grouped.keys()):
+        print(f"   {continent:20s}: {len(grouped[continent])} firms")
+
+    print(f"\n📊 byNewPage Statistics:")
+    print(f"   Total firms: {len(bynewpage_data)}")
+    grouped = group_by_continent(bynewpage_data)
+    for continent in sorted(grouped.keys()):
+        print(f"   {continent:20s}: {len(grouped[continent])} firms")
+
+
+# ============================================================================
+# MAIN EXECUTION
+# ============================================================================
 
 if __name__ == "__main__":
-    main()
+    BASE_PATH = "/Users/lucassamuellemosrajao/dev_projects/java/src/main/java/org/example/src/sites"
+
+    print("="*80)
+    print("FIRM ORGANIZATION SCRIPT")
+    print("="*80)
+
+    # Process byPage directory
+    bypage_path = f"{BASE_PATH}/byPage"
+    bypage_data = process_directory(bypage_path)
+
+    # Process byNewPage directory
+    bynewpage_path = f"{BASE_PATH}/byNewPage"
+    bynewpage_data = process_directory(bynewpage_path)
+
+    # Generate organized file
+    output_path = "/Users/lucassamuellemosrajao/dev_projects/java/src/main/java/org/example/src/utils/myInterface/_CompletedFirmsData.java"
+    generate_organized_java_file(bypage_data, bynewpage_data, output_path)
+
+    # Print summary
+    print_summary(bypage_data, bynewpage_data)
+
+    print("\n✅ Done!")

@@ -103,6 +103,11 @@ public final class TreatLawyerParams {
     }
 
 
+    public static String treatNameForEmail(String name) {
+        name = TreatLawyerParams.treatName(name).toLowerCase();
+        return TreatLawyerParams.removeAccents(name);
+    }
+
     /**
      * Cleans an email address.
      * @param email The original email string.

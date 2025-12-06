@@ -30,10 +30,6 @@
     "link": "https://sagalegal.in/pages/Team.html"
   },
   {
-    "name": "RussiAndEguiguren | Quadrant",
-    "link": "https://www.relegal.cl/corporate-practice.html"
-  },
-  {
     "name": "Romulo",
     "link": "https://www.romulo.com/a/"
   },
@@ -44,10 +40,6 @@
   {
     "name": "Resource Law",
     "link": "https://www.resourcelawasia.com/people/adrian-aw/"
-  },
-  {
-    "name": "Payet Rey Cauvi Pérez",
-    "link": "https://prcp.com.pe/en/people/?post_types=socio"
   },
   {
     "name": "Olmedo",
@@ -82,10 +74,6 @@
     "link": "https://lma.com.pk/our-people.php"
   },
   {
-    "name": "Lexist Law",
-    "link": "https://www.lexist.com.tr/en/our-team-2/"
-  },
-  {
     "name": "Lex Atlas",
     "link": "https://lexatlas.com/en/team/"
   },
@@ -100,18 +88,6 @@
   {
     "name": "Lee Choon WanAndCo",
     "link": "https://leecwco.com.my/people/lily-tan-chea-li"
-  },
-  {
-    "name": "Warde Advogados",
-    "link": "https://warde.com.br/equipe-warde/"
-  },
-  {
-    "name": "Tofic",
-    "link": "https://tofic.com.br/socios/"
-  },
-  {
-    "name": "TWK",
-    "link": "https://twk.bpsinternet.com.br/en/professionals/"
   },
   {
     "name": "Sajić",
@@ -130,85 +106,18 @@
     "link": "https://jws.com.au/our-people/"
   },
   {
-    "name": "RGSH Advogados",
-    "link": "https://rgshadvogados.com.br/en/team/"
-  },
-  {
-    "name": "NunesAndAsociados",
-    "link": "https://estudionunes.com.ar/english/#team",
-    "Note": "Email format (firstNameLetter)(LastName)@estudionunes.com.ar",
-    "Ex.:": "Tomas Demo === tdemo@estudionunes.com.ar"
-  },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  {
-    "name": "Youssry SalehAndPartners",
-    "link": "https://youssrysaleh.com/en/attorneys/",
-    "Note": "Email format (firstNameLetter).(LastName)@youssrysaleh.com",
-    "Ex.:": "Tomas Demo === t.demo@youssrysaleh.com"
-  },
-  {
     "name": "J.J. RocaAndAsociados",
     "link": "https://jjrocalaw.com/english/",
     "Note": "Email format (firstNameLetter)(LastName)@jjrocalaw.com",
     "Ex.:": "Tomas Demo === tdemo@jjrocalaw.com"
   },
   {
-    "name": "Soteris PittasAndCo",
-    "link": "https://www.pittaslegal.com/en/firm-members",
-    "Note": "Email format (firstNameLetter)(LastName)@pittaslegal.com",
-    "Ex.:": "Tomas Demo === tdemo@pittaslegal.com"
-  },
-  {
-    "name": "Knijff",
-    "link": "https://www.knijff.com/en/team",
-    "Note": "Email format (firstNameLetter).(LastName)@knijff.com",
-    "Ex.:": "Tomas Demo === tdemo@knijff.com"
-  },
-  {
-    "name": "McDermott WillAndEmery",
-    "link": "https://www.mwe.com/people/?law=&loc=1153,1156,1157,811,1161,1162,332&tit=140,49762,176",
-    "Note": "Email format (firstNameLetter)(LastName)@mwe.com",
-    "Ex.:": "Tomas Demo === tdemo@mwe.com"
-  },
-  {
-    "name": "Pares Advogados",
-    "link": "https://www.paresadvogados.com/en/team/?f_c=010_SOC",
-    "Note": "Email format (firstNameLetter)(lastNameLetter)@paresadvogados.com",
-    "Ex.:": "Tomas Demo === td@paresadvogados.com"
-  },
-  {
-    "name": "JingAndPartners",
-    "link": "https://jingpartners.com/our-team/"
-  },
-  {
     "name": "Jia Yuan Law",
     "link": "https://www.jiayuan-law.com/EN/Team.aspx?Lan=EN&MenuID=00000000000000000004"
   },
   {
-    "name": "IsailovićAndPartners",
-    "link": "https://www.advokatskakancelarija.com/en/tim/"
-  },
-  {
     "name": "International Counsel Bureau",
     "link": "https://icbkuwait.com.kw/our-team"
-  },
-  {
-    "name": "",
-    "link": "https://interjuris.com/equipo/"
   },
   {
     "name": "India Law Offices",
@@ -217,50 +126,12 @@
     "Ex.:": "Tomas Demo === t.demo@indialawoffices.com"
   },
   {
-    "name": "Jalsovszky",
-    "link": "https://jalsovszky.com/lawyers#partners",
-    "Note": "Email format (firstNameLetter)(LastName)@jalsovszky.com",
-    "Ex.:": "Tomas Demo === tdemo@jalsovszky.com"
-  },
-  {
-    "name": "Perdiz de Jesus Advogados Associados",
-    "link": "https://perdiz.adv.br/language/en/lawyer/"
-  },
-  {
-    "name": "Ilieva VoutchevaAndCo",
-    "link": "https://ivlawfirm.com/en/team/"
-  },
-  {
-    "name": "Ali Sharif Zu’bi AdvocatesAndLegal Consultants",
-    "link": "https://www.zubilaw.com/team1.php"
-  },
-  {
-    "name": "IgeriaAndNgugi Advocates",
-    "link": "https://www.attorneysafrica.com/?teamsearch=1&post_type=tm_team_member&s=&tm_team_group=partner"
-  },
-  {
-    "name": "I&P",
-    "link": "https://www.ibrachy.com/?page_id=1562"
+    "name": "",
+    "link": "https://interjuris.com/equipo/"
   },
   {
     "name": "Hisham SobriAndKadir",
     "link": "https://hsk.com.my/partners/"
-  },
-  {
-    "name": "Herzog FoxAndNeeman",
-    "link": "https://herzoglaw.co.il/en/team/"
-  },
-  {
-    "name": "Hellström",
-    "link": "https://www.hellstromlaw.com/en/our-people/"
-  },
-  {
-    "name": "HaxhiaAndHajdari",
-    "link": "https://lawfirmhh.com/our-people/"
-  },
-  {
-    "name": "Haslinger / Nagele Rechtsanwälte",
-    "link": "https://www.haslinger-nagele.com/team/"
   },
   {
     "name": "Harry Elias Partnership",
@@ -279,32 +150,56 @@
     "link": "https://en.guoyaoqindao.com/professional/index.html?leeter_active=ALL&work_active=&major_active=&keyword=&username="
   },
   {
-    "name": "Green Horse Legal",
-    "link": "https://www.greenhorselegaladvisory.com/team/"
-  },
-  {
-    "name": "GRATA International",
-    "link": "https://gratanet.com/employees"
-  },
-  {
-    "name": "Gottlieb Gera EngelAndCo",
-    "link": "https://www.gottliebgera.com/our-team/"
-  },
-  {
     "name": "GladeiAndPartners",
     "link": "https://www.gladei.md/303.htm"
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   {
-    "name": "GissinAndCo",
-    "link": "https://gissinlaw.co.il/en/team/"
+    "name": "Green Horse Legal",
+    "link": "https://www.greenhorselegaladvisory.com/team/",
+    "LAWYERS":
+    <div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper">
+    <div class="wpb_single_image wpb_content_element vc_align_left">
+    <div class="wpb_wrapper">
+
+    <div class="vc_single_image-wrapper   vc_box_border_grey"><img decoding="async" width="683" height="1024" src="https://www.greenhorselegaladvisory.com/wp-content/uploads/2025/09/Gentili-Andrea-683x1024.jpg" class="vc_single_image-img attachment-large" alt="" title="Gentili Andrea" srcset="https://www.greenhorselegaladvisory.com/wp-content/uploads/2025/09/Gentili-Andrea-683x1024.jpg 683w, https://www.greenhorselegaladvisory.com/wp-content/uploads/2025/09/Gentili-Andrea-200x300.jpg 200w, https://www.greenhorselegaladvisory.com/wp-content/uploads/2025/09/Gentili-Andrea-768x1152.jpg 768w, https://www.greenhorselegaladvisory.com/wp-content/uploads/2025/09/Gentili-Andrea-1024x1536.jpg 1024w, https://www.greenhorselegaladvisory.com/wp-content/uploads/2025/09/Gentili-Andrea-700x1050.jpg 700w, https://www.greenhorselegaladvisory.com/wp-content/uploads/2025/09/Gentili-Andrea.jpg 1080w" sizes="(max-width: 683px) 100vw, 683px"></div>
+    </div>
+    </div>
+    <div class="separator  transparent   " style=""></div>
+    <div class="wpb_text_column wpb_content_element ">
+    <div class="wpb_wrapper">
+    <h5><b>Andrea Gentili</b></h5>
+    <p><em><b>Co-Founder and Deputy Managing Partner<br>
+    Project Development and M&amp;A</b></em></p>
+
+    </div>
+    </div><div class="vc_row wpb_row vc_inner section vc_row-fluid" style=" text-align:left;"><div class=" full_section_inner clearfix"><div class="wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner"><div class="wpb_wrapper"><a href="https://www.greenhorselegaladvisory.com/team/andrea-gentili/" target="_self" data-hover-background-color="#026d74" data-hover-color="#ffffff" class="qbutton " style="color: #026d74; border-color: #026d74; background-color: #ffffff;">Read more</a></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+    <div class="wpb_text_column wpb_content_element ">
+    <div class="wpb_wrapper">
+    <span class="fa-stack q_icon_shortcode circle q_font_awsome_icon_holder q_font_awsome_icon_circle fa-lg  " style="color: #ffffff;background-color: #187535;font-size: 20px; "><a href="mailto:andrea.gentili@greenhorseadvisory.com" target="_blank"><i class="fa fa-envelope-open"></i></a></span>
+
+    </div>
+    </div></div></div></div></div></div></div></div></div>
   },
   {
-    "name": "GEMS Schindhelm",
-    "link": "https://tr.schindhelm.com/en/team?tx_ptcompanyinformation_teamplugin%5Baction%5D=search&tx_ptcompanyinformation_teamplugin%5Bcontroller%5D=Person&cHash=deeedce860c8d87d5e5d0ba93f205ffc#search"
-  },
-  {
-    "name": "Fox Mandal",
-    "link": "https://www.foxmandal.in/people/"
+    "name": "GRATA International",
+    "link": "https://gratanet.com/employees",
+    "lawyers":
+    <a href="/employees/altynay-sovet" class="person"><div><img src="https://gratanet.com/web_files/employee/2251836353004156692.png" alt="Altynay Sovet"><div class="person__info"><div class="person__info-short"><span class="person__name">Altynay Sovet</span><span class="person__position">Senior Associate</span><a href="/employees/altynay-sovet" class="person__read-more">Read more</a></div><span class="person__info-full"><a href="/china/regions" class="person__location" style="display: flex; align-items: center;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_5146_7366)"><path d="M7.00139 14C6.89043 14.0011 6.78201 13.9667 6.69196 13.9019C6.46554 13.7585 1.15234 10.1887 1.15234 5.84905C1.15234 4.29778 1.76858 2.81005 2.86549 1.71315C3.9624 0.616237 5.45013 0 7.00139 0C8.55265 0 10.0404 0.616237 11.1373 1.71315C12.2342 2.81005 12.8504 4.29778 12.8504 5.84905C12.8504 10.1887 7.56743 13.7585 7.31082 13.9019C7.22077 13.9667 7.11235 14.0011 7.00139 14ZM7.00139 1.16981C5.75567 1.1658 4.55928 1.65629 3.67489 2.53361C2.7905 3.41092 2.29041 4.60334 2.28442 5.84905C2.28442 9.0264 5.89951 11.9321 7.00139 12.7396C8.10327 11.9321 11.7184 9.0264 11.7184 5.84905C11.7124 4.60334 11.2123 3.41092 10.3279 2.53361C9.4435 1.65629 8.24711 1.1658 7.00139 1.16981Z" fill="white"></path><path d="M7.00125 7.58453C6.59076 7.58453 6.18949 7.46281 5.84818 7.23475C5.50687 7.0067 5.24086 6.68255 5.08377 6.30331C4.92668 5.92407 4.88558 5.50676 4.96566 5.10416C5.04574 4.70156 5.24341 4.33174 5.53367 4.04148C5.82393 3.75123 6.19375 3.55356 6.59635 3.47347C6.99895 3.39339 7.41626 3.43449 7.7955 3.59158C8.17474 3.74867 8.49888 4.01469 8.72694 4.35599C8.95499 4.6973 9.07672 5.09857 9.07672 5.50906C9.07672 6.05951 8.85805 6.58741 8.46883 6.97664C8.0796 7.36587 7.5517 7.58453 7.00125 7.58453ZM7.00125 4.56567C6.81466 4.56567 6.63227 4.621 6.47713 4.72466C6.32199 4.82832 6.20107 4.97566 6.12967 5.14804C6.05826 5.32042 6.03958 5.51011 6.07598 5.69311C6.11238 5.87611 6.20223 6.04421 6.33417 6.17614C6.46611 6.30808 6.6342 6.39793 6.8172 6.43433C7.0002 6.47073 7.18989 6.45205 7.36227 6.38065C7.53465 6.30924 7.68199 6.18832 7.78565 6.03318C7.88932 5.87804 7.94464 5.69565 7.94464 5.50906C7.94464 5.25886 7.84525 5.0189 7.66833 4.84198C7.49141 4.66506 7.25145 4.56567 7.00125 4.56567Z" fill="white"></path></g><defs><clipPath id="clip0_5146_7366"><rect width="14" height="14" fill="white"></rect></clipPath></defs></svg> Beijing, China</a><!----><a class="person__phone" href="tel:+44 7539 089168" target="_blank"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.3981 17.7517H15.1681C12.5769 17.4698 10.0874 16.5863 7.89814 15.1717C5.86432 13.8764 4.13752 12.153 2.83814 10.1217C1.4203 7.92671 0.536663 5.42994 0.258143 2.83172C0.226296 2.52182 0.257739 2.20867 0.350564 1.91129C0.443389 1.61391 0.595662 1.33848 0.798143 1.10172C0.995081 0.861789 1.23816 0.663818 1.51299 0.519532C1.78783 0.375245 2.08882 0.287577 2.39814 0.261719H4.99814C5.56126 0.262287 6.10561 0.464186 6.5329 0.830957C6.96018 1.19773 7.24224 1.7052 7.32814 2.26172C7.42309 2.9766 7.60096 3.67798 7.85814 4.35172C8.01458 4.7751 8.04687 5.23435 7.95121 5.67546C7.85555 6.11656 7.63592 6.52118 7.31814 6.84172L6.70814 7.45172C7.66856 8.96792 8.95685 10.2494 10.4781 11.2017L11.0881 10.6017C11.4087 10.2839 11.8133 10.0643 12.2544 9.96865C12.6955 9.87299 13.1548 9.90528 13.5781 10.0617C14.2526 10.3166 14.9537 10.4943 15.6681 10.5917C16.2342 10.6768 16.7497 10.9655 17.1179 11.4038C17.4862 11.842 17.6818 12.3995 17.6681 12.9717V15.3717C17.6681 15.9959 17.4209 16.5947 16.9805 17.037C16.54 17.4793 15.9423 17.7291 15.3181 17.7317L15.3981 17.7517ZM4.99814 1.75172H2.60814C2.49079 1.75948 2.37623 1.79095 2.27139 1.84423C2.16654 1.89751 2.07359 1.9715 1.99814 2.06172C1.92471 2.14623 1.86914 2.24473 1.83477 2.35128C1.8004 2.45783 1.78794 2.57023 1.79814 2.68172C2.04063 5.03849 2.83176 7.30571 4.10814 9.30172C5.28478 11.1484 6.85146 12.7151 8.69814 13.8917C10.6954 15.1815 12.9651 15.9895 15.3281 16.2517C15.451 16.2586 15.574 16.24 15.6894 16.197C15.8047 16.1539 15.9098 16.0875 15.9981 16.0017C16.1574 15.8385 16.247 15.6198 16.2481 15.3917V13.0017C16.2526 12.7913 16.1798 12.5865 16.0434 12.4261C15.907 12.2658 15.7166 12.161 15.5081 12.1317C14.682 12.0206 13.8705 11.8194 13.0881 11.5317C12.934 11.4741 12.7667 11.4614 12.6056 11.495C12.4446 11.5286 12.2963 11.6072 12.1781 11.7217L11.1781 12.7217C11.061 12.8359 10.9102 12.9093 10.748 12.9309C10.5859 12.9525 10.4211 12.9212 10.2781 12.8417C8.14432 11.6359 6.37811 9.87317 5.16814 7.74172C5.08532 7.59969 5.05216 7.43412 5.07389 7.27115C5.09562 7.10818 5.171 6.95709 5.28814 6.84172L6.28814 5.84172C6.40282 5.72574 6.48171 5.57922 6.5154 5.41964C6.54909 5.26006 6.53616 5.09415 6.47814 4.94172C6.18933 4.1597 5.9881 3.34808 5.87814 2.52172C5.85333 2.30699 5.74947 2.10918 5.58679 1.96683C5.42411 1.82449 5.21427 1.74781 4.99814 1.75172Z" fill="#fff"></path></svg> +44 7539 089168</a><a class="person__email" href="mailto:asovet@gratanet.com" target="_blank"><svg width="14" height="14" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 0.25H2C1.53668 0.252625 1.09309 0.437842 0.765464 0.765464C0.437842 1.09309 0.252625 1.53668 0.25 2V14C0.252625 14.4633 0.437842 14.9069 0.765464 15.2345C1.09309 15.5622 1.53668 15.7474 2 15.75H16C16.4633 15.7474 16.9069 15.5622 17.2345 15.2345C17.5622 14.9069 17.7474 14.4633 17.75 14V2C17.7474 1.53668 17.5622 1.09309 17.2345 0.765464C16.9069 0.437842 16.4633 0.252625 16 0.25ZM2 1.75H16C16.0663 1.75 16.1299 1.77634 16.1768 1.82322C16.2237 1.87011 16.25 1.9337 16.25 2V3.54L9 7.16L1.75 3.54V2C1.75 1.9337 1.77634 1.87011 1.82322 1.82322C1.87011 1.77634 1.9337 1.75 2 1.75ZM16 14.25H2C1.9337 14.25 1.87011 14.2237 1.82322 14.1768C1.77634 14.1299 1.75 14.0663 1.75 14V5.21L8.66 8.67C8.76556 8.7228 8.88197 8.75029 9 8.75029C9.11803 8.75029 9.23444 8.7228 9.34 8.67L16.25 5.21V14C16.25 14.0663 16.2237 14.1299 16.1768 14.1768C16.1299 14.2237 16.0663 14.25 16 14.25Z" fill="#fff"></path></svg> Email me</a></span></div></div></a>
   },
   {
     "name": "Forgó DamjanovicAndPartners",
