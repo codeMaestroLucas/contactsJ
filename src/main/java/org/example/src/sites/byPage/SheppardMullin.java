@@ -97,7 +97,8 @@ public class SheppardMullin extends ByPage {
 
 
     private String getRole(WebElement container) throws LawyerExceptions {
-        return extractor.extractLawyerAttribute(container, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerAttribute(container, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
+        return role.toLowerCase().contains("retired") ? "Invalid Role" : role;
     }
 
 
@@ -132,11 +133,13 @@ public class SheppardMullin extends ByPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
 
         String[] socials = this.getSocials(lawyer);
+        String role = this.getRole(lawyer);
+        if (role.equals("Invalid Role")) return "Invalid Role";
 
         return Map.of(
                 "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
+                "role", role,
                 "firm", this.name,
                 "country", this.getCountry(lawyer),
                 "practice_area", "",

@@ -1,2 +1,1215 @@
-LOG SESSION STARTED - 2025-12-01 22:10:33
+LOG SESSION STARTED - 2025-12-06 17:40:15
+
+====================================================================================================
+S Horowitz & Co
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():53 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Fangda Partners
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at accessPage():39 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Nova Law
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getLink():57 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Šelih And Partnerji
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():49 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Werksmans
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 100th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 101th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 102th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 103th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 104th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 105th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 106th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 107th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 108th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 109th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 110th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 111th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 112th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 113th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 114th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 115th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 116th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 117th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 118th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 119th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 120th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 121th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 122th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 123th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 124th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 125th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 126th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 127th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 128th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 129th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 130th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 131th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 132th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 133th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 134th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 135th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 136th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 137th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 138th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 139th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 140th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 141th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 142th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 143th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 144th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 145th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 146th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 147th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 148th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 149th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 150th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 151th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 152th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 153th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 154th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 155th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 28th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 29th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 31th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 41th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 42th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 44th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 53th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 54th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 56th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 69th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 70th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 71th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 72th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 73th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 74th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 75th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 76th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 77th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 78th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 79th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 80th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 81th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 82th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 83th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 84th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 85th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 86th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 87th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 88th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 89th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 90th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 91th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 92th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 93th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 94th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 95th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 96th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 97th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 98th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 99th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sampson Coward LLP
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 20th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+MVJ Marković Vukotić Jovković
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():45 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Pulegal
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Stephenson Harwood
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():78 (Error fetching lawyers on page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 10) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 11) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 12) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 13) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 14) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 15) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 16) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 17) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 18) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 19) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 2) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 20) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 21) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 22) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 23) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 24) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 25) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 26) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 27) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 28) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 29) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 3) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 30) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 4) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 5) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 6) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 7) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 8) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():55 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Covington And Burling LLP
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 4) 1x
+====================================================================================================
+
+====================================================================================================
+Morgan Lewis
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 39) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 40) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 41) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 13) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 17) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 18) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 23) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 24) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 25) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 30) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 31) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 32) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 33) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 34) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 36) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 37) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 6) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 7) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at accessPage():82 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Reliance Corporate Advisors
+
+Errors:
+    - WebDriver Error: unknown error: net::ERR_CONNECTION_TIMED_OUT at accessPage():31 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ogletree Deakins
+
+Errors:
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Roca Junyent
+
+Errors:
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 10th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 11th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 2th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 3th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 4th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 5th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 6th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 7th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 8th lawyer at page 5) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 2) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 4) 1x
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 9th lawyer at page 5) 1x
+====================================================================================================
+
+====================================================================================================
+Haynes And Boone
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller And Nicolau
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Hill Dickinson
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():63 (Error fetching lawyers on page 9) 1x
+====================================================================================================
+
+====================================================================================================
+Poulschmith
+
+Errors:
+    - Runtime Error: class org.openqa.selenium.remote.RemoteWebElement cannot be  at accessPage():42 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ferrere
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getPracticeArea():95 (Error reading 22th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Tahota Law
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 10) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 11) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 3) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 4) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 5) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 6) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 7) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 8) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 9) 1x
+====================================================================================================
+
+====================================================================================================
+WikborgRein
+
+Errors:
+    - WebDriver Error: no such element: element not found at openNewTab():63 (Error reading 2th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Moroğlu Arseven
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Magnusson Law
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Prinz & Partner
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+One Essex Court
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():33 (Error accessing page 2) 1x
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Steinmetz Haring Gurman
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ploum
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BAHR
+
+Errors:
+    - WebDriver Error: java.util.concurrent.TimeoutException at accessPage():29 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Blake Morgan
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 10) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 11) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 12) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 13) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 14) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 15) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 16) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 17) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 2) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 28) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 29) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 3) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 30) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 31) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 32) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 4) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 5) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 6) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 7) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 8) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():31 (Error accessing page 9) 1x
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Hügel
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Consortium Legal
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():29 (Error accessing page 2) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():29 (Error accessing page 3) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():29 (Error accessing page 4) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():29 (Error accessing page 5) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():29 (Error accessing page 6) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():29 (Error accessing page 7) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():29 (Error accessing page 8) 1x
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+LPA-GGV
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Kinstellar
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Drzewiecki Tomaszek
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Wildeboer Dellelce
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Tavares
+
+Errors:
+    - WebDriver Error: java.net.http.HttpTimeoutException: request timed out (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Brigrard Urrutia
+
+Errors:
+    - WebDriver Error: java.util.concurrent.TimeoutException at accessPage():32 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Deeth Williams Wall
+
+Errors:
+    - WebDriver Error: java.util.concurrent.TimeoutException at accessPage():30 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Morris Law
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Myers Fletcher And Gordon
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():59 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Arthur Cox
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 16) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 17) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 20) 1x
+====================================================================================================
+
+====================================================================================================
+Jackson Etti And Edu
+
+Errors:
+    - WebDriver Error: no such element: element not found at openNewTab():65 (Error reading 2th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Clifford Chance
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 10) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 11) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 12) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 13) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 14) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 15) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 2) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 3) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 4) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 5) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 6) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 7) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 8) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():72 (Error accessing page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 100th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 101th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 102th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 103th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 104th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 105th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 106th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 107th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 41th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 42th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 44th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 53th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 54th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 56th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 69th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 70th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 71th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 72th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 73th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 74th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 75th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 76th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 77th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 78th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 79th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 80th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 81th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 82th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 83th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 84th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 85th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 86th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 87th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 88th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 89th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 90th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 91th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 92th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 93th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 94th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 95th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 96th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 97th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 98th lawyer at page 1) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at getSocials():140 (Error reading 99th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Frontier
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 1th lawyer at page 10) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 1th lawyer at page 15) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Johnson Camacho And Singh
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 28th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 29th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 41th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 42th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 53th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 54th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 56th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 69th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 70th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 71th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 72th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 73th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+MdME
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Arthur Cox
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():70 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 15) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 16) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 17) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():41 (Error accessing page 20) 1x
+====================================================================================================
+
+====================================================================================================
+Poulschmith
+
+Errors:
+    - Runtime Error: class org.openqa.selenium.remote.RemoteWebElement cannot be  at accessPage():42 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Simmons And Simmons
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at getSocials():98 (Error reading 1th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+BDO
+
+Errors:
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 10) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 11) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 12) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 13) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 14) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 15) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 16) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 17) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 28) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 4) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 5) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 6) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 7) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 8) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():178 (Error accessing page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():185 (Error accessing page 3) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: invalid argument at openNewTab():226 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Johnson Camacho And Singh
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 28th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 29th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 41th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 42th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 53th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 54th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 56th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 69th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 70th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 71th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 72th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 73th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at newInstance():62 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+AWA
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 10) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 11) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 12) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 13) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 14) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 15) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 16) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 3) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 4) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 5) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 6) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 7) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 8) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():75 (Error fetching lawyers on page 9) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 17) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 18) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 19) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 20) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 21) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 22) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 23) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 24) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 25) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 26) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 27) 1x
+    - WebDriver Error: Build info: version: '4.35.0', revision: '1c58e5028b' at accessPage():47 (Error accessing page 28) 1x
+====================================================================================================
+
+====================================================================================================
+Haynes And Boone
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():51 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Sampson Coward LLP
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"css se at openNewTab():46 (Error reading 20th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Werksmans
+
+Errors:
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 100th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 101th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 102th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 103th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 104th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 105th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 106th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 107th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 108th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 109th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 10th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 110th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 111th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 112th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 113th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 114th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 115th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 116th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 117th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 118th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 119th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 11th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 120th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 121th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 122th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 123th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 124th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 125th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 126th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 127th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 128th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 129th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 12th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 130th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 131th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 132th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 133th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 134th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 135th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 136th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 137th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 138th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 139th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 13th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 140th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 141th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 142th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 143th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 144th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 145th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 146th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 147th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 148th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 149th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 14th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 150th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 151th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 152th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 153th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 154th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 155th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 15th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 16th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 17th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 18th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 19th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 1th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 20th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 21th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 22th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 23th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 24th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 25th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 26th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 27th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 28th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 29th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 2th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 30th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 31th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 32th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 33th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 34th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 35th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 36th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 37th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 38th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 39th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 3th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 40th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 41th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 42th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 43th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 44th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 45th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 46th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 47th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 48th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 49th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 4th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 50th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 51th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 52th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 53th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 54th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 55th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 56th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 57th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 58th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 59th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 5th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 60th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 61th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 62th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 63th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 64th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 65th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 66th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 67th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 68th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 69th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 6th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 70th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 71th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 72th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 73th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 74th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 75th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 76th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 77th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 78th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 79th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 7th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 80th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 81th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 82th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 83th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 84th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 85th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 86th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 87th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 88th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 89th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 8th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 90th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 91th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 92th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 93th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 94th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 95th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 96th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 97th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 98th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 99th lawyer at page 1) 1x
+    - WebDriver Error: no such element: Unable to locate element: {"method":"xpath" at getPracticeArea():86 (Error reading 9th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Pulegal
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ogletree Deakins
+
+Errors:
+    - WebDriver Error: invalid argument at openNewTab():66 (Error reading 12th lawyer at page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Szecskay
+
+Errors:
+    - WebDriver Error: unknown error: net::ERR_CONNECTION_TIMED_OUT at accessPage():36 (Error accessing page 1) 1x
+====================================================================================================
+
+====================================================================================================
+Ritch Mueller
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 1) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 2) 1x
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():43 (Error fetching lawyers on page 3) 1x
+====================================================================================================
+
+====================================================================================================
+Morris Law
+
+Errors:
+    - Runtime Error: Failed to find lawyer elements at getLawyersInPage():52 (Error fetching lawyers on page 1) 1x
+====================================================================================================
 

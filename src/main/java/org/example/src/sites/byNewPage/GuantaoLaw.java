@@ -33,7 +33,7 @@ public class GuantaoLaw extends ByNewPage {
                 "Guantao Law",
                 "https://www.guantao.com/en/column41?ly=0&bg=0&zw=0&py=&key=&go=goto26",
                 30,
-                2
+                1
         );
     }
 
