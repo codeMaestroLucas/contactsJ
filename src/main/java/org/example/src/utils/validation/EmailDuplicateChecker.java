@@ -93,11 +93,104 @@ public final class EmailDuplicateChecker {
             isLoggedIn = true;
 
             driver.get("https://globallawexperts.com/auth/");
+            Thread.sleep(2000);
 
         } catch (Exception e) {
             System.err.println("EmailDuplicateChecker: Login failed - " + e.getMessage());
             throw new RuntimeException("Failed to login to globallawexperts.com", e);
         }
+    }
+
+    /**
+     * Verifies if the required elements are present on the page
+     * @return true if all required elements are present, false otherwise
+     */
+    private boolean areRequiredElementsPresent() {
+        try {
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(3));
+            shortWait.until(ExpectedConditions.presenceOfElementLocated(EMAIL_INPUT));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Ensures the duplicate checker page is loaded with all required elements
+     * If elements are not present, attempts to re-login
+     * If re-login fails, restarts the driver
+     */
+    private void ensurePageIsReady() throws InterruptedException {
+        int maxAttempts = 3;
+        int attempt = 0;
+
+        while (attempt < maxAttempts) {
+            attempt++;
+
+            // Navigate to duplicate checker page if not already there
+            if (!driver.getCurrentUrl().equals(DUPLICATE_CHECKER_URL)) {
+                driver.get(DUPLICATE_CHECKER_URL);
+                Thread.sleep(2000);
+            }
+
+            // Check if we need to authenticate
+            try {
+                driver.findElement(By.cssSelector("a.ts-action-con[href*='https://globallawexperts.com/auth/']"));
+                System.out.println("EmailDuplicateChecker: Auth required, navigating to auth page...");
+                driver.get("https://globallawexperts.com/auth/");
+                Thread.sleep(2000);
+                driver.get(DUPLICATE_CHECKER_URL);
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                // Auth link not present, continue
+            }
+
+            // Check if required elements are present
+            if (areRequiredElementsPresent()) {
+                return; // Success!
+            }
+
+            // Elements not present, check if we need to login again
+
+            if (attempt < maxAttempts) {
+                // Try to login again
+                isLoggedIn = false;
+                try {
+                    login();
+                    driver.get(DUPLICATE_CHECKER_URL);
+                    Thread.sleep(2000);
+                } catch (Exception loginError) {}
+            }
+        }
+
+        // If we got here, all attempts failed - restart the driver
+        restartDriver();
+        
+        // One final attempt after restart
+        login();
+        driver.get(DUPLICATE_CHECKER_URL);
+        Thread.sleep(2000);
+        
+        if (!areRequiredElementsPresent()) {
+            throw new RuntimeException("Failed to load duplicate checker page after driver restart");
+        }
+    }
+
+    /**
+     * Closes and reinitializes the WebDriver
+     */
+    private void restartDriver() {
+        try {
+            if (driver != null) {
+                driver.quit();
+            }
+        } catch (Exception e) {} finally {
+            driver = null;
+            isLoggedIn = false;
+        }
+        
+        // Initialize new driver
+        initializeDriver();
     }
 
     /**
@@ -118,17 +211,8 @@ public final class EmailDuplicateChecker {
                 login();
             }
 
-            // Navigate to duplicate checker page IF isn't in the page
-            if (!driver.getCurrentUrl().equals(DUPLICATE_CHECKER_URL)) {
-                driver.get(DUPLICATE_CHECKER_URL);
-            }
-
-            try {
-                driver.findElement(By.cssSelector("a.ts-action-con[href*='https://globallawexperts.com/auth/']"));
-                driver.get("https://globallawexperts.com/auth/");
-                Thread.sleep(2000);
-                driver.get(DUPLICATE_CHECKER_URL);
-            } catch (Exception e) {}
+            // Ensure page is ready with all required elements
+            ensurePageIsReady();
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -150,6 +234,16 @@ public final class EmailDuplicateChecker {
 
         } catch (Exception e) {
             System.err.println("EmailDuplicateChecker: Error checking email '" + email + "' - " + e.getMessage());
+            e.printStackTrace();
+            
+            // Try to restart driver for next attempt
+            try {
+                restartDriver();
+                isLoggedIn = false;
+            } catch (Exception restartError) {
+                System.err.println("EmailDuplicateChecker: Failed to restart driver - " + restartError.getMessage());
+            }
+            
             // In case of error, assume email is not clean to be safe
             return false;
         }
