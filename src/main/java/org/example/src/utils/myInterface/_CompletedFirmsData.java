@@ -2,10 +2,8 @@ package org.example.src.utils.myInterface;
 
 import lombok.Getter;
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites._standingBy.AliSharifZubiAdvocatesAndLegalConsultants;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.sites.byPage.*;
-import org.example.src.sites.to_test.*;
 
 @Getter
 public class _CompletedFirmsData {
@@ -65,7 +63,9 @@ public class _CompletedFirmsData {
             new Titov(), new TucaZbarcea(), new VBAdvocates(), new VanDerPutt(), new Vinge(),
             new WolfTheiss(), new ZamfirescuRacotiPredoiu(), new Aera(), new Njord(), new Orrick(),
             new Sidley(), new VOPatentsAndTrademarks(), new VieringJentschuraAndPartner(),
-            new Hellstrom(), new Jalsovszky(), new Knijff(), new McDermottWillAndEmery(),
+            new Hellstrom(), new Jalsovszky(), new Knijff(), new McDermottWillAndEmery(), new Eubelius(),
+            new GrataInternational(), new GreenHorseLegal(), new Hellstrom(), new Jalsovszky(),
+            new Knijff(), new McDermottWillAndEmery(), new PayetReyCauviPerez(),
 
 
             // North America
@@ -82,7 +82,7 @@ public class _CompletedFirmsData {
 
             // South America
             new AguayoEcclefieldAndMartinez(), new Andersen(), new LEFOSSE(), new NelsonWiliansAndAdvogados(), new RennoPenteadoSampaioAdvogados(),
-            new RobortellaEPeres(), new Tavares(), new PayetReyCauviPerez(),
+            new RobortellaEPeres(), new Tavares(), new PayetReyCauviPerez(), new PayetReyCauviPerez(),
 
             // Oceania
 //            new BankiHaddockFiora(), new DBHLaw(), new DuncanCotterill(), new MBIP(), new MacphersonKelley(),
@@ -156,7 +156,7 @@ public class _CompletedFirmsData {
 
             // South America
             new BrigrardUrrutia(), new Ferrere(), new LatinAlliance(), new Madrona(), new RMADVAdvogados(),
-            new SargentAndKrahn(),
+            new SargentAndKrahn(), new CariolaDiezPerezCotapos(),
 
             // Oceania
 //            new Baumgartners(), new DWFoxTucker(), new DeutschMiller(), new Gadens(), new SimmonsWolfhagen(),

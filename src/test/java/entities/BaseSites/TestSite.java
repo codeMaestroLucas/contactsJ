@@ -1,7 +1,6 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites._standingBy.AliSharifZubiAdvocatesAndLegalConsultants;
 import org.example.src.sites.to_test.*;
 
 
@@ -15,7 +14,7 @@ import java.lang.reflect.Field;
  * interfering with the main log.txt file used by the production Main class.
  */
 
-    class MyTestPage extends _Template {
+    class MyTestPage extends _Template{
 
     /**
      * Constructor that initializes with test logger to avoid affecting production logs
