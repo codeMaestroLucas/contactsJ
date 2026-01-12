@@ -65,7 +65,10 @@ public class _CompletedFirmsData {
             new Sidley(), new VOPatentsAndTrademarks(), new VieringJentschuraAndPartner(),
             new Hellstrom(), new Jalsovszky(), new Knijff(), new McDermottWillAndEmery(), new Eubelius(),
             new GrataInternational(), new GreenHorseLegal(), new Hellstrom(), new Jalsovszky(),
+            new BureauPlattner(), new Contrast(), new DMSLegal(), new GPK(), new MVVPAdvocaten(),
             new Knijff(), new McDermottWillAndEmery(), new PayetReyCauviPerez(),
+            new BSJP(), new EldibAdvocates(), new HCRLegal(),
+
 
 
             // North America
@@ -145,6 +148,7 @@ public class _CompletedFirmsData {
             new SZA(), new SampsonCowardLLP(), new Schoups(), new Sherrards(), new SlaughterAndMay(),
             new Strelia(), new Szecskay(), new Valfor(), new VanOlmenAndWynant(), new Vischer(),
             new VossiusAndPartner(), new WardynskiAndPartners(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
+            new KallioLaw(), new Avance(), new Boyanov(),
 
             // North America
             new ArthurCox(), new AsafoAndCo(), new BCFLaw(), new BWBLLP(), new FilionWakelyThorupAngeletti(),
@@ -176,4 +180,8 @@ public class _CompletedFirmsData {
     public final static Site[] byFilter = {};
 
     public final static Site[] byClick = {};
+
+    public final static Site[] toTest = {
+
+    };
 }

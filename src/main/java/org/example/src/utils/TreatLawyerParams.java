@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-
 /**
  * Utility class for treating and formatting Lawyer data.
  */
@@ -17,7 +16,7 @@ public final class TreatLawyerParams {
             "master", "sir", "esq", "rev", "att", "llm", "kc",
             "msc", "llb", "nbsp", "dsc", "em", "mag", "mbl",
             "mba", "mbe", "lawyer", "advocate", "advokat",
-            "phd"
+            "phd", "prof", "univ"
     ));
 
     private static final String[] VALID_ROLES = {
@@ -36,10 +35,9 @@ public final class TreatLawyerParams {
             "Head", "Chair", "Legal", "Silk", "Dipl."
     };
 
+
     /**
      * Treats a lawyer's practice area by removing common, generic terms.
-     * @param practiceArea The original practice area string.
-     * @return The treated practice area.
      */
     public static String treatPracticeArea(String practiceArea) {
         if (Objects.isNull(practiceArea)) {
@@ -57,11 +55,11 @@ public final class TreatLawyerParams {
 
     /**
      * Cleans a lawyer's name by removing abbreviations, punctuation, and roles.
-     * If the name is empty, it derives a name from the email.
-     * @param name The original name string.
-     * @return The treated name.
+     * Fixed: Now correctly capitalizes names with hyphens (e.g., Sainte-Marie).
      */
     public static String treatName(String name) {
+        if (name == null || name.isBlank()) return "";
+
         String processedName = name
                 .toLowerCase()
                 .replaceAll("[.,;*ˆ:`]", " ")
@@ -79,9 +77,7 @@ public final class TreatLawyerParams {
 
         for (String word : words) {
             if (!word.isBlank() && !ABBREVIATIONS.contains(word)) {
-                fullName.append(Character.toUpperCase(word.charAt(0)))
-                        .append(word.substring(1))
-                        .append(" ");
+                fullName.append(capitalizeWordWithHyphens(word)).append(" ");
             }
         }
         return fullName.toString().trim();
@@ -89,10 +85,32 @@ public final class TreatLawyerParams {
 
 
     /**
+     * Helper method to capitalize parts of a word separated by hyphens.
+     */
+    private static String capitalizeWordWithHyphens(String word) {
+        if (!word.contains("-")) {
+            return Character.toUpperCase(word.charAt(0)) + word.substring(1);
+        }
+
+        String[] parts = word.split("-", -1);
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < parts.length; i++) {
+            String part = parts[i];
+            if (!part.isEmpty()) {
+                result.append(Character.toUpperCase(part.charAt(0)))
+                        .append(part.substring(1));
+            }
+            if (i < parts.length - 1) {
+                result.append("-");
+            }
+        }
+        return result.toString();
+    }
+
+
+    /**
      * Removes all accent marks (diacritics) from a string.
-     * Example: "martin.römermann" -> "martin.romermann"
-     * @param input The original string.
-     * @return The normalized string without accents.
      */
     public static String removeAccents(String input) {
         if (input == null) {
@@ -108,6 +126,7 @@ public final class TreatLawyerParams {
         name = TreatLawyerParams.treatName(name).toLowerCase();
         return TreatLawyerParams.removeAccents(name);
     }
+
 
     /**
      * Cleans an email address.
