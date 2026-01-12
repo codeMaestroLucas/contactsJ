@@ -92,6 +92,8 @@ public final class EmailDuplicateChecker {
             
             isLoggedIn = true;
 
+            Thread.sleep(5000);
+
             driver.get("https://globallawexperts.com/auth/");
             Thread.sleep(2000);
 
@@ -157,6 +159,7 @@ public final class EmailDuplicateChecker {
                 isLoggedIn = false;
                 try {
                     login();
+                    Thread.sleep(5000);
                     driver.get(DUPLICATE_CHECKER_URL);
                     Thread.sleep(2000);
                 } catch (Exception loginError) {}
@@ -168,6 +171,7 @@ public final class EmailDuplicateChecker {
         
         // One final attempt after restart
         login();
+        Thread.sleep(5000);
         driver.get(DUPLICATE_CHECKER_URL);
         Thread.sleep(2000);
         
