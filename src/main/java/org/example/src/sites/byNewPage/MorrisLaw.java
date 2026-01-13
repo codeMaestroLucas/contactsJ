@@ -18,7 +18,7 @@ public class MorrisLaw extends ByNewPage {
     public MorrisLaw() {
         super(
                 "Morris Law",
-                "https://www.morrislaw.se/en/who-we-are/",
+                "https://www.morrislaw.se/en/employees",
                 1
         );
     }
