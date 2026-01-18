@@ -62,7 +62,7 @@ public final class TreatLawyerParams {
 
         String processedName = name
                 .toLowerCase()
-                .replaceAll("[.,;*ˆ:`]", " ")
+                .replaceAll("[.,;*ˆ:`()\\[\\]{}]", " ")
                 .replaceAll("[\"']", " ")
                 .replace("ll m", "")
                 .replace("k c", "")
@@ -121,10 +121,13 @@ public final class TreatLawyerParams {
         return normalized.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }
 
-
+    /**
+     * Treats the name for the generation of the email
+     * @return name in lowercase and without accents
+     */
     public static String treatNameForEmail(String name) {
-        name = TreatLawyerParams.treatName(name).toLowerCase();
-        return TreatLawyerParams.removeAccents(name);
+        name = TreatLawyerParams.treatName(name);
+        return TreatLawyerParams.removeAccents(name).toLowerCase().trim();
     }
 
 

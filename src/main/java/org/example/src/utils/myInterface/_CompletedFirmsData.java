@@ -20,7 +20,8 @@ public class _CompletedFirmsData {
 
             // Africa
             new AlukoAndOyebode(), new Ashitiva(), new BentsiEnchillLetsaAndAnkomah(), new FisherQuarmbyAndPfeifer(), new KantorAndImmerman(),
-            new STBB(), new ShahidLaw(), new TheartMey(),
+            new STBB(), new ShahidLaw(), new TheartMey(), new Adsero(), new ALPNGAndCo(),
+            new AmanAndPartners(),
 
             // Asia
 //            new ALMTLegal(), new AnandAndAnand(), new CFNLaw(), new Deacons(), new FoxAndMandal(),
@@ -68,6 +69,8 @@ public class _CompletedFirmsData {
             new BureauPlattner(), new Contrast(), new DMSLegal(), new GPK(), new MVVPAdvocaten(),
             new Knijff(), new McDermottWillAndEmery(), new PayetReyCauviPerez(),
             new BSJP(), new EldibAdvocates(), new HCRLegal(),
+            new AlstonAndBirdLLP(), new ASCHukuk(), new HarperJamesSolicitors(), new StoneKing(),
+
 
 
 
@@ -86,6 +89,8 @@ public class _CompletedFirmsData {
             // South America
             new AguayoEcclefieldAndMartinez(), new Andersen(), new LEFOSSE(), new NelsonWiliansAndAdvogados(), new RennoPenteadoSampaioAdvogados(),
             new RobortellaEPeres(), new Tavares(), new PayetReyCauviPerez(), new PayetReyCauviPerez(),
+            new FarrocoAbreuGuarnieriZotelli(), new CEPDAbogados(), new ChevezRuizZamarripa(),
+
 
             // Oceania
 //            new BankiHaddockFiora(), new DBHLaw(), new DuncanCotterill(), new MBIP(), new MacphersonKelley(),
@@ -148,7 +153,7 @@ public class _CompletedFirmsData {
             new SZA(), new SampsonCowardLLP(), new Schoups(), new Sherrards(), new SlaughterAndMay(),
             new Strelia(), new Szecskay(), new Valfor(), new VanOlmenAndWynant(), new Vischer(),
             new VossiusAndPartner(), new WardynskiAndPartners(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
-            new KallioLaw(), new Avance(), new Boyanov(),
+            new BadriAndSalimElMeouchiLaw(), new KallioLaw(), new Avance(), new Boyanov(),
 
             // North America
             new ArthurCox(), new AsafoAndCo(), new BCFLaw(), new BWBLLP(), new FilionWakelyThorupAngeletti(),
@@ -181,7 +186,9 @@ public class _CompletedFirmsData {
 
     public final static Site[] byClick = {};
 
-    public final static Site[] toTest = {
+    public final static Site[] toTest = new Site[]{
+// ByPage
 
+// ByNewPage
     };
 }

@@ -229,6 +229,18 @@
     "Notes": "Email formatt (firstName).(lastName)@soksiphana.com",
     "Ex.:": "Tomas Demo === tomas.demo@soksiphana.com"
   },
+  {
+    "name": "AS&H Clifford Chance",
+    "link": "https://www.ashcliffordchance.com/en/lawyers/partners/dr-fahad-abuhimed.html",
+    "Note": "Email format (firstName).(LastName)@ashcliffordchance.com",
+    "Ex.:": "Tomas Demo === tomas.demo@ashcliffordchance.com"
+  },
+  {
+    "name": "Clarke, ModetAndCо",
+    "link": "https://www.clarkemodet.com/en/our-experts/",
+    "Note": "Email format (firstNameLetter)(LastName)@clarkemodet.com",
+    "Ex.:": "Tomas Demo === tdemo@clarkemodet.com"
+  },
 
   {
     "name": "Bizlink",
@@ -238,59 +250,9 @@
     "name": "BharuchaAndPartners",
     "link": "https://www.bharucha.in/people/"
   },
-
-
-
-
-
-
-
-
-
-
   {
     "name": "Asia Practice",
     "link": "https://www.asiapractice.com.sg/about-us"
-  },
-  {
-    "name": "Badri and Salim El Meouchi Law",
-    "link": "https://www.savoric.com/en/lawyers/",
-    "Note": "Email format (firstName).(LastName)@elmeouchi.com",
-    "Ex.:": "Tomas Demo === tomas.demo@elmeouchi.com"
-  },
-  {
-    "name": "ŠavorićAndPartners",
-    "link": "https://www.elmeouchi.com/team",
-    "Note": "Email format (firstName).(LastName)@savoric.com",
-    "Ex.:": "Tomas Demo === tomas.demo@savoric.com"
-  },
-  {
-    "name": "Tsuru Morales Isla",
-    "link": "https://www.tmilaw.com.mx/nuestro-equipo/",
-    "Note": "Email format (firstNameLetter)(LastName)@tmilaw.com.mx",
-    "Ex.:": "Tomas Demo === tdemo@tmilaw.com.mx"
-  },
-  {
-    "name": "Clarke, ModetAndCо",
-    "link": "https://www.clarkemodet.com/en/our-experts/",
-    "Note": "Email format (firstNameLetter)(LastName)@clarkemodet.com",
-    "Ex.:": "Tomas Demo === tdemo@clarkemodet.com"
-  },
-  {
-    "name": "AS&H Clifford Chance",
-    "link": "https://www.ashcliffordchance.com/en/lawyers/partners/dr-fahad-abuhimed.html",
-    "Note": "Email format (firstName).(LastName)@ashcliffordchance.com",
-    "Ex.:": "Tomas Demo === tomas.demo@ashcliffordchance.com"
-  },
-  {
-    "name": "AtaiAndAssociates",
-    "link": "https://www.ataiassociates.com/our-people/",
-    "Note": "Email format (firstName).(LastName)@ataiassociates.com",
-    "Ex.:": "Tomas Demo === tomas.demo@ataiassociates.com"
-  },
-  {
-    "name": "Arsov Natchev Ganeva",
-    "link": "https://anglaw.com/en/lawyers"
   },
   {
     "name": "Arnold Bloch Leibler",
@@ -301,72 +263,12 @@
     "link": "http://arethalegal.com/index.php/about-us/"
   },
   {
-    "name": "Ferraz Ivamoto e Furlan",
-    "link": "https://fifsa.com.br/en/professionals/"
-  },
-  {
-    "name": "Farroco Abreu Guarnieri Zotelli",
-    "link": "https://www.farrocoabreu.com.br/en/advogados/"
-  },
-  {
-    "name": "Apostolska AleksandrovskiAndPartners",
-    "link": "https://aap.law/team"
-  },
-  {
-    "name": "ADWISE Consulting",
-    "link": "https://adwise.am/company/our-people/"
-  },
-  {
-    "name": "Adsero",
-    "link": "https://adsero.me/our-people/"
-  },
-  {
-    "name": "",
-    "link": "https://bentsienchill.com/people/?role=partner",
-    "Note": "email formatt (firstNameLetter)(lastName)@bentsienchill.com",
-    "Ex.:": "Tomas Demo === tdemo@bentsienchill.com"
-  },
-  {
-    "name": "AmanAndPartners",
-    "link": "https://www.aaclo.com/about/#our_people"
-  },
-  {
-    "name": "AmadaganaAndPartners",
-    "link": "https://amadaganapartners.com/distinctions-1",
-    "Note": "Email format (firstName).(LastName)@aaclo.com",
-    "Ex.:": "Tomas Demo === tomas.demo@aaclo.com"
-  },
-  {
-    "name": "ALSTONAndBIRD LLP",
-    "link": "https://www.alston.com/en/professionals?office=c8a737cf-f50c-403f-8afe-12ae745f9b9a&level=ca7cb4b4-b9fd-4f74-a2f8-632a2ced023e&skip=10&reload=false&scroll=3010"
-  },
-  {
-    "name": "Lewis Denley",
-    "link": "https://www.lewisdenley.com/our-team/?_gl=1*1lc52o6*_up*MQ..*_gs*MQ..&gclid=CjwKCAiAneK8BhAVEiwAoy2HYUJ-13WuSFdcoyH3qypxkCCCm9BbYrx3JoxyiF_q-FfVtLYEIfiudBoCVg8QAvD_BwE",
-    "Note": "Email format (firstName).(LastName)@lewisdenley.com.au or @lewisdenley.com.uk",
-    "Ex.:": "Tomas Demo === tomas.demo@lewisdenley.com.au or @lewisdenley.com.uk"
-  },
-  {
-    "name": "Harper James Solicitors",
-    "link": "https://harperjames.co.uk/our-people/",
-    "Note": "Email format (firstName).(LastName)@harperjames.co.uk",
-    "Ex.:": "Tomas Demo === tomas.demo@harperjames.co.uk"
-  },
-  {
-    "name": "ALP NGAndCo",
-    "link": "https://www.alp.company/our-people"
-  },
-  {
     "name": "Zubi Law",
-    "link": "https://zubilaw.com/team1.php"
+    "link": "https://zubilaw.com/Lawyers"
   },
   {
     "name": "Al-Hossam Legal",
     "link": "https://hossamlegal.com/our-team"
-  },
-  {
-    "name": "Alexiou KnowlesAndCo",
-    "link": "https://bahamaslaw.com/our-team/"
   },
   {
     "name": "Sharq Law Firm",
@@ -381,46 +283,13 @@
     "link": "https://alammarlaw.com/people/"
   },
   {
-    "name": "ASC hukuk",
-    "link": "https://www.aschukuk.com/tr/team",
-    "Note": "Email format (firstName)(LastName)@aschukuk.com",
-    "Ex.:": "Tomas Demo === tomas.demo@aschukuk.com"
-  },
-  {
-    "name": "Čakmakova",
-    "link": "https://mlca.com.mk/partners/",
-    "Note": "Macedonia"
-  },
-  {
-    "name": "Stone King",
-    "link": "https://www.stoneking.co.uk/sectors/individuals",
-    "Note": "Email format (firstName)(LastName)@stoneking.co.uk",
-    "Ex.:": "Tomas Demo === tomasdemo@stoneking.co.uk"
-  },
-  {
     "name": "AIP Law",
     "link": "https://aiplawbn.com/our-lawyers/"
   },
-  {
-    "name": "Reklamasjonsportalen",
-    "link": "https://reklamasjonsportalen.no/menneskene/"
-  },
-  {
-    "name": "CEPD Abogados",
-    "link": "https://www.cepd.cl/#abogados"
-  },
-  {
-    "name": "Cibils Labougle Ibanez",
-    "link": "https://cibils.com.ar/en/us/"
-  },
-  {
-    "name": "Chevez Ruiz Zamarripa",
-    "link": "https://www.chevez.com/En/Search"
-  },
-  {
-    "name": "Aramo",
-    "link": "https://aramolaw.com/"
-  },
+
+
+
+
   {
     "name": "Chanis",
     "link": "https://chanis.pa/lawyers/ricardo-chanis/"

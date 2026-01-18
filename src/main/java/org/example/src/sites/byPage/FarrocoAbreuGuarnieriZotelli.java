@@ -1,0 +1,90 @@
+package org.example.src.sites.byPage;
+
+import org.example.exceptions.LawyerExceptions;
+import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.MyDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+
+public class FarrocoAbreuGuarnieriZotelli extends ByPage {
+    private final By[] byRoleArray = {
+            By.className("position")
+    };
+
+    public FarrocoAbreuGuarnieriZotelli() {
+        super(
+                "Farroco Abreu Guarnieri Zotelli",
+                "https://www.farrocoabreu.com.br/en/advogados/",
+                1
+        );
+    }
+
+    @Override
+    protected void accessPage(int index) throws InterruptedException {
+        this.driver.get(this.link);
+        MyDriver.waitForPageToLoad();
+    }
+
+    @Override
+    protected List<WebElement> getLawyersInPage() {
+        String[] validRoles = {"partner"};
+        try {
+            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+            List<WebElement> lawyers = wait.until(
+                    ExpectedConditions.presenceOfAllElementsLocatedBy(
+                            By.className("lawyer-item")
+                    )
+            );
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to find lawyer elements", e);
+        }
+    }
+
+    private String getLink(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.tagName("a")};
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+    }
+
+    private String getName(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("name")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+    }
+
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+    }
+
+    private String[] getSocials(WebElement lawyer) {
+        try {
+            By[] byArray = {By.className("email")};
+            String email = extractor.extractLawyerText(lawyer, byArray, "EMAIL", LawyerExceptions::emailException);
+            return new String[]{email, ""};
+        } catch (Exception e) {
+            System.err.println("Error getting socials: " + e.getMessage());
+            return new String[]{"", ""};
+        }
+    }
+
+    @Override
+    public Object getLawyer(WebElement lawyer) throws Exception {
+        String[] socials = this.getSocials(lawyer);
+
+        return Map.of(
+                "link", this.getLink(lawyer),
+                "name", this.getName(lawyer),
+                "role", this.getRole(lawyer),
+                "firm", this.name,
+                "country", "Brazil",
+                "practice_area", "",
+                "email", socials[0],
+                "phone", "551145505370"
+        );
+    }
+}
