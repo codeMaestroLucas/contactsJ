@@ -21,7 +21,7 @@ public class AlstonAndBirdLLP extends ByPage {
 
     public AlstonAndBirdLLP() {
         super(
-                "ALSTONAndBIRD LLP",
+                "Alston and Bird LLP",
                 "https://www.alston.com/en/professionals?office=499cdc01-9d0b-4414-a6c1-b3f8a8bae680&reload=false&scroll=462",
                 2
         );
