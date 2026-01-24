@@ -59,8 +59,9 @@ public class LatamLex extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href^='https://latamlex.com/en/detalle-perfil/?id_=']")).getAttribute("href"));
+        return null;
     }
 
 

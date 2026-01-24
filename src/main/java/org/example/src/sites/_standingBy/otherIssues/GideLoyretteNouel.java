@@ -114,8 +114,9 @@ public class GideLoyretteNouel extends ByNewPage {
 
 
     @Override
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a")).getAttribute("href"));
+        return null;
     }
 
 

@@ -47,13 +47,14 @@ public class VanOlmenAndWynant extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         try {
             String link = lawyer.findElement(By.tagName("a")).getAttribute("href");
             MyDriver.openNewTab(link);
         } catch (Exception e) {
             throw LawyerExceptions.linkException("Could not find link element");
         }
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

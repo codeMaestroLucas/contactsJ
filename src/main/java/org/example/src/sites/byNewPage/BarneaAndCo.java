@@ -54,8 +54,9 @@ public class BarneaAndCo extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a")).getAttribute("href"));
+        return null;
     }
 
     public String getLink() {

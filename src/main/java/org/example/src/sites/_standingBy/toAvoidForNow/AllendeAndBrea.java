@@ -41,8 +41,9 @@ public class AllendeAndBrea extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href*='/lawyers/']")).getAttribute("href"));
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

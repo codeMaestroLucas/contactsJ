@@ -49,7 +49,7 @@ public class BWBLLP extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         try {
             By[] byArray = new By[]{
                     By.cssSelector("a")
@@ -59,6 +59,7 @@ public class BWBLLP extends ByNewPage {
         } catch (LawyerExceptions e) {
             System.err.println("Failed to open new tab: " + e.getMessage());
         }
+        return null;
     }
 
     public String getLink() {

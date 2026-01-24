@@ -66,12 +66,13 @@ public class ZeposAndYannopoulos extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("a[href*='/our-people/']")
         };
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
+        return link;
     }
 
 

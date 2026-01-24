@@ -47,8 +47,9 @@ public class Carey extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

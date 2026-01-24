@@ -52,8 +52,9 @@ public class Vischer extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
+        return null;
     }
 
 

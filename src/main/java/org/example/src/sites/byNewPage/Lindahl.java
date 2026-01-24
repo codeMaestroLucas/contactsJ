@@ -62,9 +62,10 @@ public class Lindahl extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         String link = lawyer.getAttribute("href");
         MyDriver.openNewTab(link);
+        return link;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

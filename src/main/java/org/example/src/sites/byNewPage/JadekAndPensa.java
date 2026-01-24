@@ -47,9 +47,10 @@ public class JadekAndPensa extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         String link = lawyer.findElement(By.cssSelector("a.p1.blue")).getAttribute("href");
         MyDriver.openNewTab(link);
+        return link;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

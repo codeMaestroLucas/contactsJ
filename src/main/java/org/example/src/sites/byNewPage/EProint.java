@@ -80,12 +80,13 @@ public class EProint extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
                 By.cssSelector("h2 > a[href^='https://eproint.com/team/']")
         };
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
+        return link;
     }
 
 

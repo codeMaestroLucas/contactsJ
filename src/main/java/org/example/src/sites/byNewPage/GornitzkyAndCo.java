@@ -48,7 +48,7 @@ public class GornitzkyAndCo extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         try {
             By[] byArray = {By.cssSelector("a")};
             String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
@@ -56,6 +56,7 @@ public class GornitzkyAndCo extends ByNewPage {
         } catch (LawyerExceptions e) {
             System.err.println("Failed to open new tab: " + e.getMessage());
         }
+        return null;
     }
 
     public String getLink() {

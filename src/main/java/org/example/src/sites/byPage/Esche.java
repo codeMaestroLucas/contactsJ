@@ -59,8 +59,9 @@ public class Esche extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href*='/en/personalities/']")).getAttribute("href"));
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

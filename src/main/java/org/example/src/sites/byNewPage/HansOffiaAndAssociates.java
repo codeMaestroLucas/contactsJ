@@ -54,10 +54,11 @@ public class HansOffiaAndAssociates extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{By.tagName("a")};
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
+        return link;
     }
 
     private String getName(WebElement container) throws LawyerExceptions {

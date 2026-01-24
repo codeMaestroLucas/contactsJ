@@ -48,8 +48,9 @@ public class CerhaHempel extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("div.lawyer-list-name > a")).getAttribute("href"));
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

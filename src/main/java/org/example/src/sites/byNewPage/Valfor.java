@@ -50,8 +50,9 @@ public class Valfor extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

@@ -40,9 +40,10 @@ public class TavaroneRovelliSalimAndMiani extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         // This site doesn't seem to have individual pages from the list view.
         // All data is extracted from the list page itself, but we'll maintain the ByNewPage structure.
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

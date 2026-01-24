@@ -46,8 +46,9 @@ public class GreeneAndGreeneSolicitors extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.findElement(By.className("post-permalink")).getAttribute("href"));
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

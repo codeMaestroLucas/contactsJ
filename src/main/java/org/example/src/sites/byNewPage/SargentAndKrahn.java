@@ -61,10 +61,11 @@ public class SargentAndKrahn extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         String[] split = lawyer.getAttribute("href").split("equipo");
         String link = "https://www.sargent.cl/en/team" + split[split.length - 1];
         MyDriver.openNewTab(link);
+        return link;
     }
 
 

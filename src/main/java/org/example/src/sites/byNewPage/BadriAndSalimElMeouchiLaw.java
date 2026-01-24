@@ -50,10 +50,11 @@ public class BadriAndSalimElMeouchiLaw extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("lawyer-item__link")};
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
+        return link;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

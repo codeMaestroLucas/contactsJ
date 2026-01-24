@@ -58,8 +58,9 @@ public class MBM extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
+        return null;
     }
 
 

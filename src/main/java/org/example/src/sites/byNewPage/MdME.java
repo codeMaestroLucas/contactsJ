@@ -53,11 +53,12 @@ public class MdME extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.cssSelector("a.card-team")};
         String href = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         String url = href.startsWith("http") ? href : "https://www.mdme.com" + href;
         MyDriver.openNewTab(url);
+        return href;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

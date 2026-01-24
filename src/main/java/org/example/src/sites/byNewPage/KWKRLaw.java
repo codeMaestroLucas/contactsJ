@@ -47,13 +47,14 @@ public class KWKRLaw extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         try {
             String link = lawyer.getAttribute("href");
             MyDriver.openNewTab(link);
         } catch (Exception e) {
             System.err.println("Error opening tab: " + e.getMessage());
         }
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

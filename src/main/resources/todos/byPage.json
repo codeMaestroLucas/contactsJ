@@ -241,7 +241,6 @@
     "Note": "Email format (firstNameLetter)(LastName)@clarkemodet.com",
     "Ex.:": "Tomas Demo === tdemo@clarkemodet.com"
   },
-
   {
     "name": "Bizlink",
     "link": "https://bizlink.vn/partners/nguyen-duc-manh.html"
@@ -286,97 +285,9 @@
     "name": "AIP Law",
     "link": "https://aiplawbn.com/our-lawyers/"
   },
-
-
-
-
-  {
-    "name": "Chanis",
-    "link": "https://chanis.pa/lawyers/ricardo-chanis/"
-  },
-  {
-    "name": "CarlssonAndPartners",
-    "link": "https://carlrev.se/medarbetare/"
-  },
-  {
-    "name": "Thomas Bodström Law Firm",
-    "link": "https://www.bodstrom.se/medarbetare/"
-  },
-  {
-    "name": "GrothAndCo",
-    "link": "https://www.groth.eu/employees"
-  },
-  {
-    "name": "EZ Legal",
-    "link": "https://ezlegal.se/om-oss/medarbetare/"
-  },
-  {
-    "name": "Hansen",
-    "link": "https://wearehansen.se/"
-  },
-  {
-    "name": "CAR Advogados",
-    "link": "https://www.car-law.com.br/our-team/#partners"
-  },
-  {
-    "name": "Citius",
-    "link": "https://www.citiusadvocaten.nl/en/team/"
-  },
-  {
-    "name": "ArnoldAndSiedsma",
-    "link": "https://www.arnold-siedsma.com/about-us/the-specialists/?search=specialist&establishment=&function=partner&department=&specialization=&text="
-  },
-  {
-    "name": "Hoyng Rokh Monegier",
-    "link": "https://www.hoyngrokhmonegier.com/team/",
-    "Notes": "Email formatt (firstName).(lastName)@hoyngrokh.com",
-    "Ex.:": "Tomas Demo === tomas.demo@hoyngrokh.com"
-  },
-  {
-    "name": "SavoricAndPartners",
-    "link": "https://www.savoric.com/odvjetnici/",
-    "Notes": "Email formatt (firstName).(lastName)@savoric.com",
-    "Ex.:": "Tomas Demo === tomas.demo@savoric.com"
-  },
-  {
-    "name": "De Clercq",
-    "link": "https://www.declercq.com/specialisten/?expertises=&function=partner&search="
-  },
-  {
-    "name": "BUREN",
-    "link": "https://www.burenlegal.com/en/team?specialisation=All&office=&function=23&search="
-  },
-  {
-    "name": "Pels Rijcken",
-    "link": "https://pelsrijcken.nl/en/people?employeeType=attorney-at-law-partner#c-openfilter__search"
-  },
-  {
-    "name": "Kemperink Maarschalkerweerd Wouters",
-    "link": "https://kmw-nv.com/team-4/"
-  },
-  {
-    "name": "NEWGROUND",
-    "link": "https://newgroundlaw.com/people/"
-  },
-  {
-    "name": "De Clercq",
-    "link": "https://www.declercq.com/en/specialists/?expertises=&function=partner&search="
-  },
-  {
-    "name": "JPR",
-    "link": "https://www.jpr.nl/onze-mensen?_gl=1*1vlhlr6*_up*MQ..*_gs*MQ..&gclid=CjwKCAiAkc28BhB0EiwAM001TdXNgss-kT57ZoKQJY4kV6IgG0c3kdnn9tn3xWmvW4gzEl_PsKkTnBoCDWAQAvD_BwE&current_page=1"
-  },
   {
     "name": "Vina Legal",
     "link": "https://vinalegal.com/thanh-vien.htm"
-  },
-  {
-    "name": "PLF",
-    "link": "https://plf.vn/our-team/"
-  },
-  {
-    "name": "Chiode Minicucci",
-    "link": "https://www.chiode.com.br/about.html"
   },
   {
     "name": "AN Legal",
@@ -385,6 +296,10 @@
   {
     "name": "Bizlink",
     "link": "http://bizlink.vn/partners/nguyen-duc-manh.html"
+  },
+  {
+    "name": "PLF",
+    "link": "https://plf.vn/our-team/"
   },
   {
     "name": "VisionAndAssociates",
@@ -407,30 +322,8 @@
     "link": "https://www.orrdignam.com/team-4-2/"
   },
   {
-    "name": "DRAndAJU LLC",
-    "link": "https://www.draju.com/en/sub/people.html?sP=L01&d_t_tit=All&d_t_tit=All&sT=1?d_t_num=1"
-  },
-  {
-    "name": "FirstLaw PC",
-    "link": "https://www.firstlaw.co.kr/en/sub/professionals/professionals.asp?page=1&p_cate1=&p_cate2=&s_keyword=a#mem_list"
-  },
-  {
-    "name": "Yulchon",
-    "link": "https://www.yulchon.com/en/professionals/professionals-search.do",
-    "Notes": "Send keys for the name to load the lawyers"
-  },
-  {
     "name": "WTL",
     "link": "https://www.wtl.com.sg/directors"
-  },
-  {
-    "name": "JTJB International Lawyers",
-    "link": "https://jtjb.com/our-people/"
-  },
-  {
-    "name": "BTPLaw ",
-    "link": "https://btplaw.com.sg/our_team/brandon-tee-zhi-yi/",
-    "Note": "Head + Dir"
   },
   {
     "name": "Asia Practice",
@@ -445,8 +338,22 @@
     "link": "https://skylaw.com.ph/our-people/"
   },
   {
-    "name": "VillarazaAndAngangco",
-    "link": "https://www.thefirmva.com/partners.do"
+    "name": "FirstLaw PC",
+    "link": "https://www.firstlaw.co.kr/en/sub/professionals/professionals.asp?page=1&p_cate1=&p_cate2=&s_keyword=a#mem_list"
+  },
+  {
+    "name": "Yulchon",
+    "link": "https://www.yulchon.com/en/professionals/professionals-search.do",
+    "Notes": "Send keys for the name to load the lawyers"
+  },
+  {
+    "name": "JTJB International Lawyers",
+    "link": "https://jtjb.com/our-people/"
+  },
+  {
+    "name": "BTPLaw ",
+    "link": "https://btplaw.com.sg/our_team/brandon-tee-zhi-yi/",
+    "Note": "Head + Dir"
   },
   {
     "name": "Bhandari Naqvi Riaz",
@@ -476,14 +383,6 @@
     "name": "WongPartnership",
     "link": "https://www.wongpartnership.com/wpgnetwork-detail/china",
     "Notes": "Try-catch find partners in the Countries sections"
-  },
-  {
-    "name": "Caminati Bueno Advogados",
-    "link": "https://caminatibueno.com.br/en/team/"
-  },
-  {
-    "name": "BVZ Advogados",
-    "link": "https://bvzadvogados.com.br/en/#our-team"
   },
   {
     "name": "AtsumiAndSakai",
@@ -566,20 +465,6 @@
     "link": "https://www.legacylawoffices.com/key-individuals/"
   },
   {
-    "name": "BRATAX",
-    "link": "https://bratax.com.br/en/home/#team"
-  },
-  {
-    "name": "DhirAndDhir",
-    "link": "https://www.dhirassociates.com/the-team/",
-    "Notes": "Email formatt (firstName).(lastName)@dhirassociates.com",
-    "Ex.:": "Tomas Demo === tomas.demo@dhirassociates.com"
-  },
-  {
-    "name": "PSL",
-    "link": "https://www.pslchambers.com/our-team/"
-  },
-  {
     "name": "SinghaniaAndPartners",
     "link": "https://singhania.in/our-people"
   },
@@ -592,14 +477,14 @@
     "link": "https://trustlegal.in/about-us/"
   },
   {
-    "name": "Robertsons Solicitors",
-    "link": "https://robsols.co.uk/our-team/?tx_member_position=director"
+    "name": "DhirAndDhir",
+    "link": "https://www.dhirassociates.com/the-team/",
+    "Notes": "Email formatt (firstName).(lastName)@dhirassociates.com",
+    "Ex.:": "Tomas Demo === tomas.demo@dhirassociates.com"
   },
   {
-    "name": "MinterEllison",
-    "link": "https://www.minterellison.com/people?q=partner",
-    "Notes": "Email formatt (firstName).(lastName)@minterellison.com",
-    "Ex.:": "Tomas Demo === tomas.demo@minterellison.com"
+    "name": "PSL",
+    "link": "https://www.pslchambers.com/our-team/"
   },
   {
     "name": "Grandway",
@@ -614,198 +499,28 @@
     "link": "https://www.llinkslaw.com/index.php?a=lists&catid=9"
   },
   {
-    "name": "CBS",
-    "link": "https://www.cbs.adv.br/en/people"
-  },
-  {
     "name": "D. L.AndF. De Saram",
     "link": "https://www.desaram.com/people/"
   },
   {
-    "name": "Gruenbaum, PossinhasAndTeixeira",
-    "link": "https://gruenbaum.com.br/en/professionals/"
-  },
-  {
-    "name": "JOHANSSONAndLANGLOIS",
-    "link": "https://jl.cl/en/team/"
-  },
-  {
-    "name": "BERTON MORENO",
-    "link": "https://bertonmoreno.com.ar/team/"
-  },
-  {
-    "name": "Shield",
-    "link": "https://www.shieldadvocates.com/attorneys/"
-  },
-  {
-    "name": "KUHNENAndWACKER",
-    "link": "https://kuhnen-wacker.com/en/team/"
-  },
-  {
-    "name": "BOEHMERTAndBOEHMERT",
-    "link": "https://www.boehmert.de/en/our-team/?_sf_s=partner",
-    "Notes": "Email formatt(lastName)@boehmert.de",
-    "Ex.:": "Tomas Demo === demo@boehmert.de"
-  },
-  {
     "name": "Price Sanond",
-    "link": "https://www.pricesanond.com/partners/jonathan-uchima.php",
-    "Notes": "Start from this"
-  },
-  {
-    "name": "TSEDAQAH",
-    "link": "https://ta-ng.com/2/attorneys/",
-    "Notes": "Email formatt (firstNameLetter).(lastName)@ta-ng.com",
-    "Ex.:": "Tomas Demo === t.demo@ta-ng.com"
-  },
-  {
-    "name": "ScaviaAndScavia",
-    "link": "https://en.scavialaw.com/nuestro-equipo/",
-    "Notes": "Email formatt (firstNameLetter)(lastName)@scavialaw.com",
-    "Ex.:": "Tomas Demo === tdemo@scavialaw.com"
-  },
-  {
-    "name": "GVZH",
-    "link": "https://gvzh.mt/our-team/"
-  },
-  {
-    "name": "Dinova RusevAndPartners",
-    "link": "https://drp-legal.com/team/"
+    "link": "https://www.pricesanond.com/partners/jonathan-uchima.php"
   },
   {
     "name": "Luqman Legal",
     "link": "https://luqmanlegal.com/team/"
   },
   {
-    "name": "Lanham-Love Galbraith-van Reenen",
-    "link": "https://llgv.co.za/our-team/"
-  },
-  {
-    "name": "CDV",
-    "link": "https://cdv.co.za/legal-team/"
-  },
-  {
-    "name": "Greyvensteins",
-    "link": "https://www.greyvensteins.co.za/about/team/professional-staff"
-  },
-  {
-    "name": "Annemarie Swanepoel",
-    "link": "https://www.aswanepoel.co.za/aswanepoel-conveyancing-attorneys-nelspruit-team/"
-  },
-  {
-    "name": "BLC",
-    "link": "https://www.blcattorneys.co.za/team/"
-  },
-  {
-    "name": "HoetAndPartners",
-    "link": "https://www.hoetpartners.com/en/ourpeople/"
-  },
-  {
-    "name": "ASBZ",
-    "link": "https://asbz.com.br/en/our-team/"
-  },
-  {
-    "name": "BlancoAndEtcheverry",
-    "link": "https://blancoetcheverry.com/equipo/"
-  },
-  {
-    "name": "BKZR",
-    "link": "https://www.bkzr.com.uy/socios.html",
-    "Notes": "get the cv URL"
-  },
-  {
-    "name": "HughesAndHughes",
-    "link": "https://www.hughes.com.uy/our_people"
-  },
-  {
-    "name": "BarriosAndFuentes",
-    "link": "https://www.bafur.com.pe/en/members-of-the-firm/"
-  },
-  {
-    "name": "CVM",
-    "link": "https://www.cvmabogados.com.pe/equipo/"
-  },
-  {
-    "name": "HernándezAndCía",
-    "link": "https://www.ehernandez.com.pe/en/el-equipo/?cargo=partner&buscar="
-  },
-  {
-    "name": "Payet, Rey, Cauvi, Pérez",
-    "link": "https://prcp.com.pe/en/people/?post_types=socio"
-  },
-  {
-    "name": "Olmedo",
-    "link": "https://www.olmedo.com.py/our-team.php"
-  },
-  {
-    "name": "Vouga",
-    "link": "https://www.vouga.com.py/en/equipo/"
-  },
-  {
-    "name": "PontoonsAndLedesma",
-    "link": "https://pontonesyledesma.com/en/socios/"
-  },
-  {
-    "name": "MUC",
-    "link": "https://muclaw.mx/en/team/"
-  },
-  {
-    "name": "Axkati",
-    "link": "https://www.axkati.mx/our-team"
-  },
-  {
     "name": "Sierra Legal",
     "link": "https://www.sierralegal.com.au/team"
   },
-  {
-    "name": "Müggenburg, Gorches and Peñalosa",
-    "link": "https://www.mgps.com.mx/en/equipo/"
-  },
-  {
-    "name": "E.C. Rubio",
-    "link": "https://ecrubio.com/attorneyss/?lang=en"
-  },
-  {
-    "name": "Chevez, Ruiz, Zamarripa",
-    "link": "https://www.chevez.com/En/Contacts"
-  },
-  {
-    "name": "Apolo",
-    "link": "https://apolo.ec/nuestro-equipo/"
-  },
-  {
-    "name": "Raful Sicard Fernández",
-    "link": "https://legalrspf.com/staff/?l=eng"
-  },
-  {
-    "name": "Serrano Martinez CMA",
-    "link": "https://serranomartinezcma.com/en/team/"
-  },
-  {
-    "name": "SFA",
-    "link": "https://www.sfa.com.co/sociosymiembros"
-  },
-  {
-    "name": "Palacios Lleras",
-    "link": "https://www.palacioslleras.com/nuestroequipo/"
-  },
-  {
-    "name": "OlarteMoure",
-    "link": "https://olartemoure.com/en/nuestro-equipo-2/"
-  },
-  {
-    "name": "Tumnet",
-    "link": "https://tumnet.com/en/law-firm-partners/",
-    "Notes": "Check if the last 2 are valid options"
-  },
-  {
-    "name": "Escandón",
-    "link": "https://escandonabogados.com/equipo/"
-  },
-  {
-    "name": "BES",
-    "link": "https://besabogados.cl/en/equipo/"
-  },
+
+
+
+  {"sep":  "========================================================================================="},
+
+
+
   {
     "name": "Alvarez Abogados",
     "link": "https://alvareza.cl/equipo/"

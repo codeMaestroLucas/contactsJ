@@ -45,12 +45,13 @@ public class ONVLaw extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         try {
             MyDriver.openNewTab(lawyer.getAttribute("href"));
         } catch (Exception e) {
             System.err.println("Could not find link for lawyer: " + e.getMessage());
         }
+        return null;
     }
 
     private String getName(WebElement div) throws LawyerExceptions {

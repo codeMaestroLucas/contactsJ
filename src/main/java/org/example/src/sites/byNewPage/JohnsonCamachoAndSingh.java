@@ -40,12 +40,13 @@ public class JohnsonCamachoAndSingh extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         try {
             MyDriver.openNewTab(lawyer.getAttribute("href"));
         } catch (Exception e) {
             System.err.println("Error opening tab: " + e.getMessage());
         }
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

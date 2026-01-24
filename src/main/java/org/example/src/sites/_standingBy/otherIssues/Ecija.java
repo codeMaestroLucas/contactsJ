@@ -129,12 +129,13 @@ public class Ecija extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         By[] byArray = new By[]{
                 By.cssSelector("a[href^='https://www.ecija.com/en/lawyers/']")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         MyDriver.openNewTab(element.getAttribute("href"));
+        return null;
     }
 
 

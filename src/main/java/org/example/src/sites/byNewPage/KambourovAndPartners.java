@@ -47,13 +47,14 @@ public class KambourovAndPartners extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         try {
             WebElement linkEl = lawyer.findElement(By.tagName("a"));
             MyDriver.openNewTab(linkEl.getAttribute("href"));
         } catch (Exception e) {
             throw LawyerExceptions.linkException("Could not find link element");
         }
+        return null;
     }
 
     private String getNameFromList(WebElement lawyer) throws LawyerExceptions {

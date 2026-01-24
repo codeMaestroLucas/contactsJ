@@ -68,8 +68,9 @@ public class _CompletedFirmsData {
             new GrataInternational(), new GreenHorseLegal(), new Hellstrom(), new Jalsovszky(),
             new BureauPlattner(), new Contrast(), new DMSLegal(), new GPK(), new MVVPAdvocaten(),
             new Knijff(), new McDermottWillAndEmery(), new PayetReyCauviPerez(),
-            new BSJP(), new EldibAdvocates(), new HCRLegal(),
+            new BSJP(), new EldibAdvocates(), new HCRLegal(), new GVZH(), new PelsRijcken(),
             new AlstonAndBirdLLP(), new ASCHukuk(), new HarperJamesSolicitors(), new StoneKing(),
+            new ArnoldAndSiedsma(), new BUREN(), new DeClercq(), new DinovaRusevAndPartners(),
 
 
 
@@ -89,7 +90,9 @@ public class _CompletedFirmsData {
             // South America
             new AguayoEcclefieldAndMartinez(), new Andersen(), new LEFOSSE(), new NelsonWiliansAndAdvogados(), new RennoPenteadoSampaioAdvogados(),
             new RobortellaEPeres(), new Tavares(), new PayetReyCauviPerez(), new PayetReyCauviPerez(),
-            new FarrocoAbreuGuarnieriZotelli(), new CEPDAbogados(), new ChevezRuizZamarripa(),
+            new FarrocoAbreuGuarnieriZotelli(), new CEPDAbogados(), new ChevezRuizZamarripa(), new CARAdvogados(),
+            new BarriosAndFuentes(), new HernandezAndCia(), new MUC(),
+
 
 
             // Oceania

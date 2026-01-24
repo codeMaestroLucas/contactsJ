@@ -46,10 +46,11 @@ public class Shalakany extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.cssSelector("figure.elementor-image-box-img > a")};
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
+        return link;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

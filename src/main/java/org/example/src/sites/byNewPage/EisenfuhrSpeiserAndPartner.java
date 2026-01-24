@@ -43,13 +43,14 @@ public class EisenfuhrSpeiserAndPartner extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         try {
             WebElement linkElement = lawyer.findElement(By.tagName("a"));
             MyDriver.openNewTab(linkElement.getAttribute("href"));
         } catch (Exception e) {
             System.err.println("Error opening tab: " + e.getMessage());
         }
+        return null;
     }
 
     private String getName(WebElement divInfo) throws LawyerExceptions {

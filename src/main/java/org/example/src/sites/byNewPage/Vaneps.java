@@ -54,8 +54,9 @@ public class Vaneps extends ByNewPage {
         }
     }
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         MyDriver.openNewTab(lawyer.getAttribute("href"));
+        return null;
     }
 
     private String getNameFromListPage(WebElement lawyer) throws LawyerExceptions {

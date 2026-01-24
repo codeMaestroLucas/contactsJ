@@ -58,8 +58,9 @@ public class Werksmans extends ByNewPage {
     }
 
     @Override
-    public void openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href^='https://werksmans.com/team-members/']")).getAttribute("href"));
+        return null;
     }
 
 

@@ -65,13 +65,14 @@ public class BirdAndBird extends ByNewPage {
     }
 
 
-    public void openNewTab(WebElement lawyer) {
+    public String openNewTab(WebElement lawyer) {
         By[] byArray = new By[]{
                 By.className(""),
                 By.cssSelector("")
         };
         WebElement element = this.siteUtl.iterateOverBy(byArray, lawyer);
         MyDriver.openNewTab(element.getAttribute("href"));
+        return null;
     }
 
 
