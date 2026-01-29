@@ -128,5 +128,8 @@ public class Main {
             EmailDuplicateChecker.getINSTANCE().close();
             NoSleep.allowSleep(); // allow sleep again when finished
         }
+//        try {
+//            searchLawyersInWeb();
+//        }  catch (Exception e) {}
     }
 }

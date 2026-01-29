@@ -11,8 +11,8 @@ import org.example.src.utils.validation.EmailDuplicateChecker;
 
 import java.io.IOException;
 import java.nio.file.*;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Utility class containing validation functions for lawyers.
@@ -20,27 +20,93 @@ import java.util.Set;
 public class Validations {
 
     /**
-     * Checks if a given country is in the "countriesToAvoid.json" file.
+     * Checks if a given country should be avoided.
+     * Combines two sources:
+     * 1. PERMANENT countries - ALWAYS avoided (countriesToAvoidPermanent.json)
+     * 2. TEMPORARY countries - Only avoided when enabled (countriesToAvoidTemporary.json)
+     * 
+     * @param country The country to check
+     * @return true if the country should be avoided, false otherwise
      */
     public static boolean isACountryToAvoid(String country) {
-        Path filePath = Paths.get("src/main/resources/baseFiles/json/countriesToAvoid.json");
+        // Check permanent countries first (always avoided)
+        if (isAPermanentCountryToAvoid(country)) {
+            return true;
+        }
+        
+        // Check temporary countries (only if enabled)
+        return isATemporaryCountryToAvoid(country);
+    }
+
+    /**
+     * Checks if a country is in the PERMANENT avoid list.
+     * These countries are ALWAYS avoided, regardless of any enabled flag.
+     * 
+     * File: countriesToAvoidPermanent.json
+     */
+    private static boolean isAPermanentCountryToAvoid(String country) {
+        Path filePath = Paths.get("src/main/resources/baseFiles/json/countriesToAvoidPermanent.json");
         ObjectMapper mapper = new ObjectMapper();
 
         try {
             String jsonContent = Files.readString(filePath);
 
-            List<CountryData> countriesToAvoid = mapper.readValue(
+            // Read the structure: Map<Continent, List<CountryData>>
+            Map<String, List<CountryData>> countryDataByContinent = mapper.readValue(
                     jsonContent,
-                    new TypeReference<List<CountryData>>() {}
+                    new TypeReference<Map<String, List<CountryData>>>() {}
             );
 
-            return countriesToAvoid.stream()
+            // Flatten all countries from all continents
+            List<String> allCountries = countryDataByContinent.values().stream()
+                    .flatMap(List::stream)
                     .map(CountryData::getCountry)
-                    .filter(java.util.Objects::nonNull)  // ✅ Remove valores nulos
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+
+            // Check if the country is in the list
+            return allCountries.stream()
                     .anyMatch(c -> c.trim().equalsIgnoreCase(country.trim()));
 
         } catch (IOException e) {
-            System.err.println("Error reading country data: " + e.getMessage());
+            System.err.println("Error reading permanent countries data: " + e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * Checks if a country is in the TEMPORARY avoid list AND the continent is enabled.
+     * These countries are only avoided when their continent has "enabled": true.
+     * 
+     * File: countriesToAvoidTemporary.json
+     */
+    private static boolean isATemporaryCountryToAvoid(String country) {
+        Path filePath = Paths.get("src/main/resources/baseFiles/json/countriesToAvoidTemporary.json");
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            String jsonContent = Files.readString(filePath);
+
+            // Read the structure: Map<Continent, ContinentData>
+            Map<String, ContinentData> continentDataMap = mapper.readValue(
+                    jsonContent,
+                    new TypeReference<Map<String, ContinentData>>() {}
+            );
+
+            // Flatten all countries from ENABLED continents only
+            List<String> enabledCountries = continentDataMap.entrySet().stream()
+                    .filter(entry -> entry.getValue().isEnabled()) // ✅ Only process enabled continents
+                    .flatMap(entry -> entry.getValue().getCountries().stream())
+                    .map(CountryData::getCountry)
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+
+            // Check if the country is in the list
+            return enabledCountries.stream()
+                    .anyMatch(c -> c.trim().equalsIgnoreCase(country.trim()));
+
+        } catch (IOException e) {
+            System.err.println("Error reading temporary countries data: " + e.getMessage());
             return false;
         }
     }
@@ -146,6 +212,20 @@ public class Validations {
      */
     private static boolean isEmailCleanOnGlobalLawExperts(String email) {
         return EmailDuplicateChecker.getINSTANCE().isEmailClean(email);
+    }
+
+    /**
+     * Helper class to represent continent data from JSON.
+     * Contains an "enabled" flag to toggle entire continents on/off.
+     */
+    @Getter
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
+    public static class ContinentData {
+        @JsonProperty("enabled")
+        private boolean enabled = true; // Default to enabled if not specified
+        
+        @JsonProperty("countries")
+        private List<CountryData> countries = new ArrayList<>();
     }
 
     /**

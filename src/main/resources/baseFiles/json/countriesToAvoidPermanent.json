@@ -1,0 +1,63 @@
+{
+  "Africa": [
+    { "Country": "Burundi" },
+    { "Country": "Central African Republic" },
+    { "Country": "Chad" },
+    { "Country": "Congo Republic" },
+    { "Country": "Democratic Republic of the Congo" },
+    { "Country": "Eritrea" },
+    { "Country": "Libya" },
+    { "Country": "Mauritius" },
+    { "Country": "Seychelles" },
+    { "Country": "Somalia" },
+    { "Country": "South Sudan" },
+    { "Country": "Sudan" }
+  ],
+
+
+  "Asia": [
+    { "Country": "Afghanistan" },
+    { "Country": "Armenia" },
+    { "Country": "Azerbaijan" },
+    { "Country": "Bahrain" },
+    { "Country": "Bhutan" },
+    { "Country": "Brunei" },
+    { "Country": "Cambodia" },
+    { "Country": "Georgia" },
+    { "Country": "Iran" },
+    { "Country": "Iraq" },
+    { "Country": "Kazakhstan" },
+    { "Country": " Korea (North)" },
+    { "Country": "Kyrgyzstan" },
+    { "Country": "Pakistan" },
+    { "Country": "Palestine" },
+    { "Country": "Vietnam" }
+  ],
+
+
+  "Europe": [
+    { "Country": "Belarus" },
+    { "Country": "Crimea" },
+    { "Country": "Donetsk Peoples Republic" },
+    { "Country": "Lugansk Peoples Republic" },
+    { "Country": "Russia" },
+    { "Country": "Ukraine" }
+  ],
+
+
+  "North America": [],
+
+
+  "Central America": [
+    { "Country": "Antigua and Barbuda" },
+    { "Country": "Cuba" }
+  ],
+
+
+  "South America": [
+    { "Country": "Venezuela" }
+  ],
+
+
+  "Oceania": []
+}

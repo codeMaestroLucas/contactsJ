@@ -18,22 +18,23 @@ public class _CompletedFirmsData {
             new WhiteAndCase(), new Willkie(),
             */
 
+
             // Africa
             new AlukoAndOyebode(), new Ashitiva(), new BentsiEnchillLetsaAndAnkomah(), new FisherQuarmbyAndPfeifer(), new KantorAndImmerman(),
             new STBB(), new ShahidLaw(), new TheartMey(), new Adsero(), new ALPNGAndCo(),
             new AmanAndPartners(),
 
-            // Asia
-//            new ALMTLegal(), new AnandAndAnand(), new CFNLaw(), new Deacons(), new FoxAndMandal(),
-//            new Helmsman(), new HowseWilliams(), new MZMLegal(), new OldhamLiAndNie(),
-//            new RamdasAndWong(), new SEUM(), new SFKSLaw(), new VeritasLegal(), new ZhongziLaw(),
-//            new BaeKimAndLee(), new DRAndAJU(), new GrandwayLaw(), new K1Chamber(),
-//            new LeeAndKo(), new MASLaw(), new ShinAndKim()
 
-            new AronTadmorLevy(), new FironLaw(), new HFAndCo(), new KECOLegal(),
-            new MeitarLaw(), new MorogluArseven(),
-            new Paksoy(),
-            new SHorowitzAndCo(), new SteinmetzHaringGurman(), new TiruchelvamAssociates(),
+            // Asia
+            new ALMTLegal(), new AnandAndAnand(), new CFNLaw(), new Deacons(), new FoxAndMandal(),
+            new Helmsman(), new HowseWilliams(), new MZMLegal(), new OldhamLiAndNie(),
+            new RamdasAndWong(), new SEUM(), new SFKSLaw(), new VeritasLegal(), new ZhongziLaw(),
+            new BaeKimAndLee(), new DRAndAJU(), new GrandwayLaw(), new K1Chamber(),
+            new LeeAndKo(), new MASLaw(), new ShinAndKim(),
+
+            new AronTadmorLevy(), new FironLaw(), new HFAndCo(), new KECOLegal(), new MeitarLaw(),
+            new MorogluArseven(), new Paksoy(), new SHorowitzAndCo(), new SteinmetzHaringGurman(), new TiruchelvamAssociates(),
+
 
             // Europe
             new BARDEHLEPAGENBERG(), new CampbellsLegal(), new DechertLLP(),
@@ -73,31 +74,33 @@ public class _CompletedFirmsData {
             new ArnoldAndSiedsma(), new BUREN(), new DeClercq(), new DinovaRusevAndPartners(),
 
 
-
-
             // North America
-            new BLGLaw(), new BarristonLaw(), new BennettJones(), new BurnetDuckworthAndPalmer(), new Cassels(),
-            new ClarkWilson(), new DaleAndLessmann(), new DeethWilliamsWall(), new DillonEustace(), new ECLegalRubio(),
-            new FillmoreRiley(), new FoglerRubinoff(), new Goodmans(), new HNA(), new LEGlobal(),
-            new Langlois(), new LawsonLundell(), new LoopstraNixon(), new MLTAikins(), new McDougallGauley(),
-            new McKercher(), new MijaresAngoitiaCortesAndFuentes(), new NautaDutilh(), new NelliganLaw(), new OslerHoskinAndHarcourt(),
-            new OyenWiggs(), new RitchMueller(), new RitchMuellerAndNicolau(), new SantamarinaAndSteta(), new SmartAndBiggar(),
-            new StikemanElliott(), new WildeboerDellelce(),
+//            new BLGLaw(), new BarristonLaw(), new BennettJones(), new BurnetDuckworthAndPalmer(), new Cassels(),
+//            new ClarkWilson(), new DaleAndLessmann(), new DeethWilliamsWall(), new DillonEustace(), new ECLegalRubio(),
+//            new FillmoreRiley(), new FoglerRubinoff(), new Goodmans(), new HNA(), new LEGlobal(),
+//            new Langlois(), new LawsonLundell(), new LoopstraNixon(), new MLTAikins(), new McDougallGauley(),
+//            new McKercher(), new MijaresAngoitiaCortesAndFuentes(), new NautaDutilh(), new NelliganLaw(), new OslerHoskinAndHarcourt(),
+//            new OyenWiggs(), new RitchMueller(), new RitchMuellerAndNicolau(), new SantamarinaAndSteta(), new SmartAndBiggar(),
+//            new StikemanElliott(), new WildeboerDellelce(), new VillarrealVGF(),
+
 
             // Central America
-            new GarciaBodan(), new McConnellValdes(),
+//            new GarciaBodan(), new McConnellValdes(),
+
 
             // South America
-            new AguayoEcclefieldAndMartinez(), new Andersen(), new LEFOSSE(), new NelsonWiliansAndAdvogados(), new RennoPenteadoSampaioAdvogados(),
-            new RobortellaEPeres(), new Tavares(), new PayetReyCauviPerez(), new PayetReyCauviPerez(),
-            new FarrocoAbreuGuarnieriZotelli(), new CEPDAbogados(), new ChevezRuizZamarripa(), new CARAdvogados(),
-            new BarriosAndFuentes(), new HernandezAndCia(), new MUC(),
+//            new AguayoEcclefieldAndMartinez(), new Andersen(), new LEFOSSE(), new NelsonWiliansAndAdvogados(), new RennoPenteadoSampaioAdvogados(),
+//            new RobortellaEPeres(), new Tavares(), new PayetReyCauviPerez(), new PayetReyCauviPerez(),
+//            new FarrocoAbreuGuarnieriZotelli(), new CEPDAbogados(), new ChevezRuizZamarripa(), new CARAdvogados(),
+//            new BarriosAndFuentes(), new HernandezAndCia(), new MUC(),
+//            new AlvarezAbogados(), new Bermudes(), new PPOAbogados(), new BeccarVarela(), new BullrichFlanzbaum(),
 
 
 
             // Oceania
-//            new BankiHaddockFiora(), new DBHLaw(), new DuncanCotterill(), new MBIP(), new MacphersonKelley(),
-//            new MalleyAndCo(), new MinterEllisonRuddWatts(), new JamesAndWells(),
+            new BankiHaddockFiora(), new DBHLaw(), new DuncanCotterill(), new MBIP(), new MacphersonKelley(),
+            new MalleyAndCo(), new MinterEllisonRuddWatts(), new JamesAndWells(),
+
 
             // Mundial
             new AWA(), new AddleshawGoddardLLP(), new AlTamimi(), new Allens(), new ApplebyGlobal(),
@@ -111,7 +114,7 @@ public class _CompletedFirmsData {
             new SquirePattonBoggs(), new StephensonHarwood(), new TahotaLaw(), new TaylorWessing(), new Walkers(),
             new WatsonFarleyAndWilliams(), new WhiteAndCase(), new WilliamFry(), new Willkie(), new WinstonAndStrawn(),
             new ABAndDavid(), new AVMAdvogados(), new ArnoldAndPorter(), new BNT(),
-            new Blakes(), new CassidyLevyKent(), new Chattertons(), new ConsortiumLegal(),
+            new Blakes(), new CassidyLevyKent(), new Chattertons(),
             new Conyers(), new Goodwin(), new HakunLaw(),
             new HavelPartners(), new HollandAndKnight(), new JSKAdvokatni(),
             new KISCHIP(), new Kinstellar(),
@@ -129,10 +132,11 @@ public class _CompletedFirmsData {
             new ENSAfrica(), new HansOffiaAndAssociates(), new JacksonEttiAndEdu(), new Shalakany(), new Werksmans(),
             new ZakiHashemAndPartners(), new ZulficarAndPartners(),
 
+
             // Asia
-//            new CovenantChambers(), new DSKLegal(), new HYLeungAndCo(), new HuiyeLaw(), new JSA(),
-//            new LonganLaw(), new MishconKaras(), new Mourant(), new NurmansyahAndMuzdalifah(),
-//            new RemfryAndSagar(), new SamvadPartners(), new TCLaw(), new TannerDeWitt(),
+            new CovenantChambers(), new DSKLegal(), new HYLeungAndCo(), new HuiyeLaw(), new JSA(),
+            new LonganLaw(), new MishconKaras(), new Mourant(), new NurmansyahAndMuzdalifah(),
+            new RemfryAndSagar(), new SamvadPartners(), new TCLaw(), new TannerDeWitt(),
 
             new AOil(), new BarneaAndCo(), new EBN(), new Fischer(), new GornitzkyAndCo(), new KRBLaw(),
 
@@ -158,21 +162,25 @@ public class _CompletedFirmsData {
             new VossiusAndPartner(), new WardynskiAndPartners(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
             new BadriAndSalimElMeouchiLaw(), new KallioLaw(), new Avance(), new Boyanov(),
 
+
             // North America
-            new ArthurCox(), new AsafoAndCo(), new BCFLaw(), new BWBLLP(), new FilionWakelyThorupAngeletti(),
-            new IbanezParkman(), new KuriBrena(), new MBM(), new NaderHayauxAndGoebel(), new PrasadAndCompany(),
-            new Sangra(), new ThompsonDorfmanSweatman(), new VazquezTerceroAndZepeda(),
+//            new ArthurCox(), new AsafoAndCo(), new BCFLaw(), new BWBLLP(), new FilionWakelyThorupAngeletti(),
+//            new IbanezParkman(), new KuriBrena(), new MBM(), new NaderHayauxAndGoebel(), new PrasadAndCompany(),
+//            new Sangra(), new ThompsonDorfmanSweatman(), new VazquezTerceroAndZepeda(),
 
             // Central America
-            new MyersFletcherAndGordon(),
+//            new MyersFletcherAndGordon(),
+
 
             // South America
-            new BrigrardUrrutia(), new Ferrere(), new LatinAlliance(), new Madrona(), new RMADVAdvogados(),
-            new SargentAndKrahn(), new CariolaDiezPerezCotapos(),
+//            new BrigrardUrrutia(), new Ferrere(), new LatinAlliance(), new Madrona(), new RMADVAdvogados(),
+//            new SargentAndKrahn(), new CariolaDiezPerezCotapos(), new ZBV(),
+
 
             // Oceania
-//            new Baumgartners(), new DWFoxTucker(), new DeutschMiller(), new Gadens(), new SimmonsWolfhagen(),
-//            new TompkinsWake(), new YoungList(),
+            new Baumgartners(), new DWFoxTucker(), new DeutschMiller(), new Gadens(), new SimmonsWolfhagen(),
+            new TompkinsWake(), new YoungList(),
+
 
             // Mundial
             new ALGoodbody(), new ControlRisks(), new Cuatrecasas(), new Curtis(), new Dentons(),

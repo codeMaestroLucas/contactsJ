@@ -1,0 +1,131 @@
+{
+  "Africa": {
+    "enabled": true,
+    "countries": []
+  },
+
+
+  "Asia": {
+    "enabled": false,
+    "countries": [
+      { "Country": "Bangladesh" },
+      { "Country": "China" },
+      { "Country": "Hong Kong" },
+      { "Country": "India" },
+      { "Country": "Indonesia" },
+      { "Country": "Japan" },
+      { "Country": "Jordan" },
+      { "Country": "Korea (South)" },
+      { "Country": "Kuwait" },
+      { "Country": "Laos" },
+      { "Country": "Macau" },
+      { "Country": "Malaysia" },
+      { "Country": "Maldives" },
+      { "Country": "Mongolia" },
+      { "Country": "Myanmar" },
+      { "Country": "Nepal" },
+      { "Country": "Oman" },
+      { "Country": "Qatar" },
+      { "Country": "Saudi Arabia" },
+      { "Country": "Singapore" },
+      { "Country": "Sri Lanka" },
+      { "Country": "Syria" },
+      { "Country": "Taiwan" },
+      { "Country": "Tajikistan" },
+      { "Country": "Thailand" },
+      { "Country": "the Philippines" },
+      { "Country": "the UAE" },
+      { "Country": "Timor-Leste" },
+      { "Country": "Turkmenistan" },
+      { "Country": "Uzbekistan" },
+      { "Country": "Yemen" }
+    ]
+  },
+
+
+  "Europe": {
+    "enabled": true,
+    "countries": []
+  },
+
+
+  "North America": {
+    "enabled": true,
+    "countries": [
+      { "Country": "Mexico" },
+      { "Country": "Canada" },
+
+      { "Country": "USA" },
+      { "Country": "United States" },
+      { "Country": "United States of America" },
+      { "Country": "EUA" }
+    ]
+  },
+
+
+  "Central America": {
+    "enabled": true,
+    "countries": [
+      { "Country": "the Bahamas" },
+      { "Country": "Barbados" },
+      { "Country": "Belize" },
+      { "Country": "Dominica" },
+      { "Country": "Dominican Republic" },
+      { "Country": "the Dominican Republic" },
+      { "Country": "Grenada" },
+      { "Country": "Guatemala" },
+      { "Country": "Haiti" },
+      { "Country": "Honduras" },
+      { "Country": "Jamaica" },
+      { "Country": "Nicaragua" },
+      { "Country": "Panama" },
+      { "Country": "Saint Kitts and Nevis" },
+      { "Country": "Saint Lucia" },
+      { "Country": "Saint Vincent and the Grenadines" },
+      { "Country": "Trinidad and Tobago" }
+    ]
+  },
+
+
+  "South America": {
+    "enabled": true,
+    "countries": [
+      { "Country": "Argentina" },
+      { "Country": "Bolivia" },
+      { "Country": "Brazil" },
+      { "Country": "Chile" },
+      { "Country": "Colombia" },
+      { "Country": "Ecuador" },
+      { "Country": "Guyana" },
+      { "Country": "Paraguay" },
+      { "Country": "Peru" },
+      { "Country": "Suriname" },
+      { "Country": "Uruguay" }
+    ]
+  },
+
+
+
+  "Oceania": {
+    "enabled": false,
+    "countries": [
+      { "Country": "Australia" },
+      { "Country": "Christmas Island" },
+      { "Country": "Cocos (Keeling) Islands" },
+      { "Country": "Fiji Islands" },
+      { "Country": "Kiribati" },
+      { "Country": "Marshall Islands" },
+      { "Country": "Micronesia" },
+      { "Country": "Nauru" },
+      { "Country": "New Caledonia" },
+      { "Country": "New Zealand" },
+      { "Country": "Palau" },
+      { "Country": "Papua New Guinea" },
+      { "Country": "Samoa" },
+      { "Country": "Solomon Islands" },
+      { "Country": "Tonga" },
+      { "Country": "Tuvalu" },
+      { "Country": "Vanuatu" }
+    ]
+  }
+}

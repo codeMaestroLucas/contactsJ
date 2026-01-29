@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,35 +12,33 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class ABNR extends ByPage {
+public class PPOAbogados extends ByPage {
+    private final By[] byRoleArray = {
+            By.cssSelector("div.links-socios a")
+    };
 
-    public ABNR() {
+    public PPOAbogados() {
         super(
-                "ABNR",
-                "https://www.abnrlaw.com/profiles",
-                8
+                "PPO Abogados",
+                "https://www.ppolegal.com/en/professionals/",
+                1
         );
     }
-    private final By[] byRoleArray = {
-            By.cssSelector("h5")
-    };
 
     @Override
     protected void accessPage(int index) {
-        String otherUrl = "https://www.abnrlaw.com/profiles/all/" + (index + 1);
-        String url = index == 0 ? this.link : otherUrl;
-        this.driver.get(url);
+        this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner", "counsel"};
+        String[] validRoles = {"partner", "director", "senior associate"};
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("isotope-item")
+                            By.className("col-profesionales")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -50,16 +48,12 @@ public class ABNR extends ByPage {
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {
-                By.cssSelector("a")
-        };
+        By[] byArray = {By.cssSelector("div.img-plus a")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {
-                By.cssSelector("figcaption a")
-        };
+        By[] byArray = {By.cssSelector("div.title-info h3")};
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
@@ -67,12 +61,21 @@ public class ABNR extends ByPage {
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
+    private String getPracticeArea(WebElement lawyer) {
+        try {
+            return lawyer.findElement(By.cssSelector("div.data-info p")).getText().trim();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.figfooter a"));
-            return super.getSocials(socials, false);
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.contacto-profesional a[href^='mailto:']"));
+            String email = socials.isEmpty() ? "" : socials.get(0).getAttribute("href").replace("mailto:", "");
+            String phone = lawyer.findElement(By.cssSelector("div.contacto-profesional p:nth-of-type(2)")).getText().replace("T.", "").trim();
+            return new String[]{email, phone};
         } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
         }
     }
@@ -85,10 +88,10 @@ public class ABNR extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "Indonesia",
-                "practice_area", "",
+                "country", "Bolivia",
+                "practice_area", this.getPracticeArea(lawyer),
                 "email", socials[0],
-                "phone", "62212505125"
+                "phone", socials[1].isEmpty() ? "59162002020" : socials[1]
         );
     }
 }
