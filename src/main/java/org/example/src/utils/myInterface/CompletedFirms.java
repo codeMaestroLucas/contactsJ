@@ -7,26 +7,36 @@ import org.apache.poi.ss.usermodel.Row;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
+import org.example.src.utils.ContinentConfig;
 import org.example.src.utils.FirmsOMonth;
 
 import java.util.*;
 
 @Getter
 public class CompletedFirms {
-    private final static Site[] byPage = _CompletedFirmsData.byPage;
-    private final static Site[] byNewPage = _CompletedFirmsData.byNewPage;
-    private final static Site[] byFilter = _CompletedFirmsData.byFilter;
-    private final static Site[] byClick = _CompletedFirmsData.byClick;
+    private static Site[] getByPage() { return ByPageFirmsBuilder.build(); }
+    private static Site[] getByNewPage() { return ByNewPageFirmsBuilder.build(); }
 
     public final static MyInterfaceUtls interfaceUtls = MyInterfaceUtls.getINSTANCE();
+
+    // ANSI color codes
+    private static final String RESET = "\u001B[0m";
+    private static final String GREEN = "\u001B[32m";
+    private static final String RED = "\u001B[31m";
+    private static final String YELLOW = "\u001B[33m";
+    private static final String BLUE = "\u001B[34m";
+    private static final String CYAN = "\u001B[36m";
+    private static final String BOLD = "\u001B[1m";
+    private static final String DIM = "\u001B[2m";
 
 
     /**
      * Construct all firms that are not inserted in the  file then insert the filter firms in the in an array and
      * then shuffle it.
+     * Respects continent configuration - only includes firms from enabled continents.
      */
     public static List<Site> constructFirms(int maxFirmsToGet) {
-        Site[][] sites = new Site[][] {byPage, byNewPage, byFilter, byClick};
+        Site[][] sites = new Site[][] {getByPage(), getByNewPage()};
         List<Site> filteredSites = new ArrayList<>();
 
         // Filter all sites that weren't registered in the `monthsFirms.txt` file
@@ -36,33 +46,115 @@ public class CompletedFirms {
 
         Collections.shuffle(filteredSites);
         return filteredSites;
-//        Commented just to avoid fill less firms
-        // Prevent an error that might be caused by not having the amount of firms needed to fill the desired amount
-        // of lawyers to register
-//        int toIndex = Math.min(maxFirmsToGet, filteredSites.size());
-//        return filteredSites.subList(0, toIndex);
     }
 
 
     /**
-     * A log print to count all sites completed
+     * Shows continent configuration with firms breakdown by ByPage and ByNewPage.
      */
-    private static int showSitesCompleted() {
-        String title = "| SITES COMPLETED |";
-        int lineLength = 70;
+    private static void showContinentBreakdown() {
+        int lineLength = 90;
+        String title = "| CONTINENT CONFIGURATION |";
         int padding = (lineLength - title.length()) / 2;
 
-        System.out.println("-".repeat(padding) + title + "-".repeat(padding));
+        System.out.println("\n" + "=".repeat(lineLength));
+        System.out.println(" ".repeat(padding) + title);
+        System.out.println("=".repeat(lineLength));
+
+        // Header
+        System.out.printf(" %-18s │ %6s │ %10s │ %10s │ %12s │ %12s%n",
+                "Continent", "Status", "ByPage", "ByNewPage", "Total Firms", "Max Lawyers");
+        System.out.println("-".repeat(lineLength));
+
+        // Continent data structure: name, byPageGetter, byNewPageGetter
+        Object[][] continents = {
+                {"Africa",          ByPageFirmsBuilder.getAfrica(),         ByNewPageFirmsBuilder.getAfrica()},
+                {"Asia",            ByPageFirmsBuilder.getAsia(),           ByNewPageFirmsBuilder.getAsia()},
+                {"Europe",          ByPageFirmsBuilder.getEurope(),         ByNewPageFirmsBuilder.getEurope()},
+                {"North America",   ByPageFirmsBuilder.getNorthAmerica(),   ByNewPageFirmsBuilder.getNorthAmerica()},
+                {"Central America", ByPageFirmsBuilder.getCentralAmerica(), ByNewPageFirmsBuilder.getCentralAmerica()},
+                {"South America",   ByPageFirmsBuilder.getSouthAmerica(),   ByNewPageFirmsBuilder.getSouthAmerica()},
+                {"Oceania",         ByPageFirmsBuilder.getOceania(),        ByNewPageFirmsBuilder.getOceania()},
+        };
+
+        int totalEnabled = 0, totalDisabled = 0;
+        int firmsEnabled = 0, firmsDisabled = 0;
+        int lawyersEnabled = 0, lawyersDisabled = 0;
+
+        for (Object[] continent : continents) {
+            String name = (String) continent[0];
+            Site[] byPage = (Site[]) continent[1];
+            Site[] byNewPage = (Site[]) continent[2];
+
+            boolean enabled = ContinentConfig.isContinentEnabled(name);
+            int totalFirms = byPage.length + byNewPage.length;
+            int maxLawyers = countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage);
+
+            String statusIcon = enabled ? GREEN + "ON " + RESET : RED + "OFF" + RESET;
+            String lineColor = enabled ? "" : DIM;
+            String endColor = enabled ? "" : RESET;
+
+            System.out.printf("%s %-18s │ %s   │ %10d │ %10d │ %12d │ %12d%s%n",
+                    lineColor, name, statusIcon, byPage.length, byNewPage.length, totalFirms, maxLawyers, endColor);
+
+            if (enabled) {
+                totalEnabled++;
+                firmsEnabled += totalFirms;
+                lawyersEnabled += maxLawyers;
+            } else {
+                totalDisabled++;
+                firmsDisabled += totalFirms;
+                lawyersDisabled += maxLawyers;
+            }
+        }
+
+        // Mundial (always enabled)
+        Site[] mundialByPage = ByPageFirmsBuilder.getMundial();
+        Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
+        int mundialTotal = mundialByPage.length + mundialByNewPage.length;
+        int mundialLawyers = countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage);
+
+        System.out.println("-".repeat(lineLength));
+        System.out.printf(" %-18s │ %s%s%s   │ %10d │ %10d │ %12d │ %12d%n",
+                "Mundial", CYAN, "***", RESET, mundialByPage.length, mundialByNewPage.length, mundialTotal, mundialLawyers);
+
+        // Summary
+        System.out.println("=".repeat(lineLength));
+
+        int grandTotalFirms = firmsEnabled + firmsDisabled + mundialTotal;
+        int grandTotalLawyers = lawyersEnabled + lawyersDisabled + mundialLawyers;
+        int activeFirms = firmsEnabled + mundialTotal;
+        int activeLawyers = lawyersEnabled + mundialLawyers;
+
+        System.out.printf("%n %sSUMMARY:%s%n", BOLD, RESET);
+        System.out.printf("   Continents: %s%d enabled%s / %s%d disabled%s%n",
+                GREEN, totalEnabled, RESET, RED, totalDisabled, RESET);
+        System.out.printf("   Active Firms:    %s%d%s / %d total  (%s%.1f%%%s)%n",
+                GREEN, activeFirms, RESET, grandTotalFirms, YELLOW, (activeFirms * 100.0 / grandTotalFirms), RESET);
+        System.out.printf("   Active Lawyers:  %s%d%s / %d total  (%s%.1f%%%s)%n",
+                GREEN, activeLawyers, RESET, grandTotalLawyers, YELLOW, (activeLawyers * 100.0 / grandTotalLawyers), RESET);
+
+        System.out.println("=".repeat(lineLength));
+    }
+
+
+    /**
+     * A log print to count all sites completed (only enabled continents)
+     */
+    private static int showSitesCompleted() {
+        int lineLength = 90;
+        String title = "| ACTIVE SITES |";
+        int padding = (lineLength - title.length()) / 2;
+
+        System.out.println("\n" + "-".repeat(padding) + title + "-".repeat(padding));
 
         Object[][] categories = {
-                { "ByPage",    byPage    },
-                { "ByNewPage", byNewPage },
-                { "ByFilter",  byFilter  },
-                { "ByClick",   byClick   }
+                { "ByPage",    getByPage()    },
+                { "ByNewPage", getByNewPage() },
         };
 
         int grandTotal = 0;
-        int totalFirmsRegistered =0;
+        int totalFirmsRegistered = 0;
 
         for (Object[] category : categories) {
             String label = (String) category[0];
@@ -72,11 +164,13 @@ public class CompletedFirms {
             grandTotal += totalToRegister;
             totalFirmsRegistered += firms.length;
 
-            System.out.printf(" - %-10s \u001B[33m%-30s\u001B[0m To Register: \u001B[34m%d\u001B[0m%n", label + ":", firms.length, totalToRegister);
+            System.out.printf(" - %-10s %s%-30s%s To Register: %s%d%s%n",
+                    label + ":", YELLOW, firms.length + " firms", RESET, BLUE, totalToRegister, RESET);
         }
 
         System.out.println("-".repeat(lineLength));
-        System.out.printf("  Total Firms: \u001B[1;33m%-20d\u001B[0m Total Lawyers to Register: \u001B[1;34m%d\u001B[0m%n", totalFirmsRegistered, grandTotal);
+        System.out.printf("  %sTotal Active Firms:%s %s%-15d%s %sMax Lawyers:%s %s%d%s%n",
+                BOLD, RESET, YELLOW, totalFirmsRegistered, RESET, BOLD, RESET, BLUE, grandTotal, RESET);
         System.out.println("-".repeat(lineLength));
 
         return grandTotal;
@@ -101,7 +195,7 @@ public class CompletedFirms {
 
         for (int i = 0; i <= lastRow; i++) {
             Row row = sheet.getSheet().getRow(i);
-            if (row == null) continue; // skip empty rows
+            if (row == null) continue;
 
             for (Cell cell : row) {
                 if (cell.getCellType() != CellType.BLANK && cell.getCellType() != CellType._NONE) {
@@ -111,12 +205,12 @@ public class CompletedFirms {
             }
         }
 
+        int lineLength = 90;
         String title = "| FILTERED LAWYERS |";
-        int lineLength = 70;
         int padding = Math.max(0, (lineLength - title.length()) / 2);
 
         System.out.println("-".repeat(padding) + title + "-".repeat(lineLength - padding - title.length()));
-        System.out.println(" - Filtered Lawyers:" + " ".repeat(38)  + "\u001B[34m" + nonEmptyRows + "\u001B[0m");
+        System.out.printf(" - Filtered Lawyers: %s%d%s%n", BLUE, nonEmptyRows, RESET);
         System.out.println("-".repeat(lineLength));
 
         return nonEmptyRows;
@@ -128,16 +222,21 @@ public class CompletedFirms {
      * Then it shows the total amount of lawyers registered
      */
     private static void showAllFirmsCompleted() {
-        System.out.println("\n\n");
+        System.out.println("\n");
+
+        // Show continent breakdown first
+        showContinentBreakdown();
+
+        // Then show active sites and filtered contacts
         int totalMaxLawyers = showFilteredContacts();
         totalMaxLawyers += showSitesCompleted();
 
-        String title = "| TOTAL |";
-        int lineLength = 70;
+        int lineLength = 90;
+        String title = "| GRAND TOTAL |";
         int padding = Math.max(0, (lineLength - title.length()) / 2);
 
         System.out.println("=".repeat(padding) + title + "=".repeat(lineLength - padding - title.length()));
-        System.out.println(" - Total Lawyers:" + " ".repeat(41)  + "\u001B[34m" + totalMaxLawyers + "\u001B[0m");
+        System.out.printf(" %sTotal Lawyers Available:%s %s%d%s%n", BOLD, RESET, BLUE, totalMaxLawyers, RESET);
         System.out.println("=".repeat(lineLength));
     }
 
@@ -145,4 +244,5 @@ public class CompletedFirms {
     public static void main(String[] args) {
         MyDriver.quitDriver();
         showAllFirmsCompleted();
-    }}
+    }
+}

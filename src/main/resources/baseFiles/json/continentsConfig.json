@@ -1,0 +1,15 @@
+{
+  "Africa":              { "enabled": true },
+
+  "Asia":                { "enabled": true },
+
+  "Europe":              { "enabled": true },
+
+  "North America":       { "enabled": false },
+
+  "Central America":     { "enabled": false },
+
+  "South America":       { "enabled": false },
+
+  "Oceania":             { "enabled": true }
+}

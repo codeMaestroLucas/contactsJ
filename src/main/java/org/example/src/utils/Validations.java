@@ -106,9 +106,10 @@ public class Validations {
 
     /**
      * Checks if a country is in the TEMPORARY avoid list AND the continent is enabled.
-     * These countries are only avoided when their continent has "enabled": true.
-     * 
-     * File: countriesToAvoidTemporary.json
+     * These countries are only avoided when their continent is enabled in continentsConfig.json.
+     *
+     * File: countriesToAvoidTemporary.json (countries list)
+     * File: continentsConfig.json (enabled/disabled settings)
      */
     private static boolean isATemporaryCountryToAvoid(String country) {
         Path filePath = Paths.get("src/main/resources/baseFiles/json/countriesToAvoidTemporary.json");
@@ -123,9 +124,9 @@ public class Validations {
                     new TypeReference<Map<String, ContinentData>>() {}
             );
 
-            // Flatten all countries from ENABLED continents only
+            // Flatten all countries from ENABLED continents only (using ContinentConfig)
             List<String> enabledCountries = continentDataMap.entrySet().stream()
-                    .filter(entry -> entry.getValue().isEnabled()) // ✅ Only process enabled continents
+                    .filter(entry -> ContinentConfig.isContinentEnabled(entry.getKey())) // Uses central config
                     .flatMap(entry -> entry.getValue().getCountries().stream())
                     .map(CountryData::getCountry)
                     .filter(Objects::nonNull)
@@ -253,14 +254,11 @@ public class Validations {
 
     /**
      * Helper class to represent continent data from JSON.
-     * Contains an "enabled" flag to toggle entire continents on/off.
+     * The enabled/disabled state is now controlled by continentsConfig.json.
      */
     @Getter
     @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
     public static class ContinentData {
-        @JsonProperty("enabled")
-        private boolean enabled = true; // Default to enabled if not specified
-        
         @JsonProperty("countries")
         private List<CountryData> countries = new ArrayList<>();
     }

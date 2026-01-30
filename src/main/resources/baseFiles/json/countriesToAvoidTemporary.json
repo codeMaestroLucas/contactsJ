@@ -1,12 +1,9 @@
 {
   "Africa": {
-    "enabled": true,
     "countries": []
   },
 
-
   "Asia": {
-    "enabled": false,
     "countries": [
       { "Country": "Bangladesh" },
       { "Country": "China" },
@@ -42,19 +39,14 @@
     ]
   },
 
-
   "Europe": {
-    "enabled": true,
     "countries": []
   },
 
-
   "North America": {
-    "enabled": true,
     "countries": [
       { "Country": "Mexico" },
       { "Country": "Canada" },
-
       { "Country": "USA" },
       { "Country": "United States" },
       { "Country": "United States of America" },
@@ -62,9 +54,7 @@
     ]
   },
 
-
   "Central America": {
-    "enabled": true,
     "countries": [
       { "Country": "the Bahamas" },
       { "Country": "Barbados" },
@@ -86,9 +76,7 @@
     ]
   },
 
-
   "South America": {
-    "enabled": true,
     "countries": [
       { "Country": "Argentina" },
       { "Country": "Bolivia" },
@@ -104,10 +92,7 @@
     ]
   },
 
-
-
   "Oceania": {
-    "enabled": false,
     "countries": [
       { "Country": "Australia" },
       { "Country": "Christmas Island" },
