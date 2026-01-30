@@ -45,4 +45,9 @@ public class ValidationExceptions extends Exception{
     public static ValidationExceptions emailDuplicateOnGlobalLawExperts() {
         return new ValidationExceptions("Email is duplicate on GlobalLawExperts - cannot register");
     }
+
+
+    public static ValidationExceptions testModeActive() {
+        return new ValidationExceptions("🔧 TEST MODE - Validation skipped (visualization only, no registration)");
+    }
 }

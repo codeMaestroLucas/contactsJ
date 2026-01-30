@@ -1,8 +1,8 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites._standingBy.toAvoidForNow.ABNR;
-import org.example.src.sites.byNewPage.ZBV;
+import org.example.src.sites.byPage.BuddleFindlay;
+import org.example.src.utils.Validations;
 
 import java.lang.reflect.Field;
 
@@ -12,9 +12,12 @@ import java.lang.reflect.Field;
  * IMPORTANT: This test class uses a separate error logger (test_log.txt) to isolate
  * test execution from production logs. This prevents test runs from clearing or
  * interfering with the main log.txt file used by the production Main class.
+ * 
+ * TEST MODE: All validations will ALWAYS fail to prevent actual lawyer registration.
+ * This allows you to visualize the site extraction without making real registrations.
  */
 
-    class MyTestPage extends ABNR {
+class MyTestPage extends BuddleFindlay {
 
     /**
      * Constructor that initializes with test logger to avoid affecting production logs
@@ -51,6 +54,8 @@ import java.lang.reflect.Field;
 
 public class TestSite {
     public static void main(String[] args) throws Exception {
+        Validations.enableTestMode();
+        
         MyTestPage test = new MyTestPage();
         test.searchForLawyers();
     }

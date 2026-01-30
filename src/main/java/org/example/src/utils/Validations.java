@@ -20,6 +20,36 @@ import java.util.stream.Collectors;
 public class Validations {
 
     /**
+     * TEST MODE FLAG
+     * When true, all validations will ALWAYS fail (for testing extraction only).
+     * Set to true in test classes to prevent actual lawyer registration.
+     */
+    private static boolean TEST_MODE = false;
+
+    /**
+     * Enable test mode - all validations will fail.
+     * Use this in test classes to visualize site extraction without registering lawyers.
+     */
+    public static void enableTestMode() {
+        TEST_MODE = true;
+        System.out.println("🔧 TEST MODE ENABLED - All validations will fail (no registrations will be made)");
+    }
+
+    /**
+     * Disable test mode - validations will work normally.
+     */
+    public static void disableTestMode() {
+        TEST_MODE = false;
+    }
+
+    /**
+     * Check if test mode is enabled.
+     */
+    public static boolean isTestMode() {
+        return TEST_MODE;
+    }
+
+    /**
      * Checks if a given country should be avoided.
      * Combines two sources:
      * 1. PERMANENT countries - ALWAYS avoided (countriesToAvoidPermanent.json)
@@ -157,6 +187,8 @@ public class Validations {
 
     /**
      * Validates if the operation of registering a lawyer can proceed.
+     * 
+     * IN TEST MODE: Always throws ValidationExceptions.testModeActive() to prevent registration.
      */
     public static void makeValidations(
             Lawyer lawyer,
@@ -164,6 +196,11 @@ public class Validations {
             String emailsOfMonthPath,
             String emailsToAvoidPath
     ) throws ValidationExceptions {
+
+        // ✅ TEST MODE: Always fail validation to prevent registration
+        if (TEST_MODE) {
+            throw ValidationExceptions.testModeActive();
+        }
 
         if (lawyer.getEmail() == null || lawyer.getEmail().isEmpty()) {
             throw ValidationExceptions.emailValidation();
