@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -13,32 +13,64 @@ import java.util.List;
 import java.util.Map;
 
 public class DrewAndNapier extends ByPage {
+    private final By[] byRoleArray = {By.cssSelector("div.designation p")};
 
     public DrewAndNapier() {
         super(
                 "DrewAndNapier",
-                "https://www.drewnapier.com/Our-Lawyers?name=",
-                26,
-                2
+                "https://www.drewnapier.com/Our-Lawyers?name=a&practice=",
+                26
         );
+    }
+
+    private static final String[] LETTERS = {
+            "a", "b","c","d","e","f","g","h","i","j","k","l","m",
+            "n","o","p","q","r","s","t","u","v","w","x","y","z"
+    };
+
+    private int getLastPageNumber() {
+        try {
+            WebElement lastPageLink = driver.findElement(By.xpath("//div[@class='search-pagination']//a[text()='>|']"));
+            String href = lastPageLink.getAttribute("href");
+            assert href != null;
+            String pageValue = href.substring(href.lastIndexOf("page=") + 5);
+            return Integer.parseInt(pageValue);
+        } catch (Exception e) {
+            return 1;
+        }
     }
 
     @Override
     protected void accessPage(int index) {
-        char letter = (char) ('a' + index);
-        this.driver.get(this.link + letter);
+        String letter = LETTERS[index];
+        String baseUrl = "https://www.drewnapier.com/Our-Lawyers?name=" + letter + "&practice=";
+
+        this.driver.get(baseUrl);
         MyDriver.waitForPageToLoad();
+        int totalPages = getLastPageNumber();
+
+        for (int p = 1; p <= totalPages; p++) {
+            if (p > 1) {
+                String pageUrl = baseUrl + "&page=" + p;
+                this.driver.get(pageUrl);
+                MyDriver.waitForPageToLoad();
+            }
+
+            getLawyersInPage();
+        }
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
+        String[] validRoles = {"head", "director", "chief", "counsel"};
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            return wait.until(
+            List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.className("lawyer-item")
                     )
             );
+            return siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles) ;
         } catch (Exception e) {
             System.out.println("No lawyers found for the current letter.");
             return List.of();
@@ -57,8 +89,15 @@ public class DrewAndNapier extends ByPage {
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("div.designation p")};
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+    }
+
+    private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {
+                By.className("lawyer-item__text--practice"),
+                By.cssSelector("ul > li")
+        };
+        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -80,9 +119,9 @@ public class DrewAndNapier extends ByPage {
                 "role", this.getRole(lawyer),
                 "firm", this.name,
                 "country", "Singapore",
-                "practice_area", "",
+                "practice_area", this.getPracticeArea(lawyer),
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1].isEmpty() ? "6565350733" : socials[1]
         );
     }
 }

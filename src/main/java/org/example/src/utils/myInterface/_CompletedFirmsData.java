@@ -32,6 +32,7 @@ public class _CompletedFirmsData {
             new MASLaw(), new MeitarLaw(), new MorogluArseven(), new MZMLegal(), new OldhamLiAndNie(),
             new Paksoy(), new RamdasAndWong(), new SEUM(), new SFKSLaw(), new SHorowitzAndCo(),
             new ShinAndKim(), new SteinmetzHaringGurman(), new TiruchelvamAssociates(), new VeritasLegal(), new ZhongziLaw(),
+            new ChandlerMHM(), new DrewAndNapier(), new EastAndConcord(), new FJAndGDeSaram(),
 
             // Europe
             new Aera(), new AGPAdvokater(), new Alliotts(), new AlstonAndBirdLLP(), new Amorys(),
@@ -91,7 +92,7 @@ public class _CompletedFirmsData {
             // Oceania
             new AiGroup(), new AndersonLloyd(), new AnthonyHarper(), new BankiHaddockFiora(), new BuddleFindlay(),
             new DBHLaw(), new DuncanCotterill(), new JamesAndWells(), new MacphersonKelley(), new MalleyAndCo(),
-            new MBIP(), new MinterEllisonRuddWatts(),
+            new MBIP(), new MinterEllisonRuddWatts(), new CarterNewell(), new Corrs(),
 
             // Mundial
             new ABAndDavid(), new AddleshawGoddardLLP(), new AlTamimi(), new Allens(), new ApplebyGlobal(),
@@ -126,6 +127,7 @@ public class _CompletedFirmsData {
             new Fischer(), new GornitzkyAndCo(), new HuiyeLaw(), new HYLeungAndCo(), new JSA(),
             new KRBLaw(), new LonganLaw(), new MishconKaras(), new Mourant(), new NurmansyahAndMuzdalifah(),
             new RemfryAndSagar(), new SamvadPartners(), new TannerDeWitt(), new TCLaw(),
+            new CityYuwaPartners(), new DesaiAndDiwanji(),
 
             // Europe
             new ABGIP(), new ACAndR(), new Astrea(), new Avance(), new BadriAndSalimElMeouchiLaw(),

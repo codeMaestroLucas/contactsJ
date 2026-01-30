@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,15 +12,15 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class DaHui extends ByPage {
+public class FJAndGDeSaram extends ByPage {
     private final By[] byRoleArray = {
-            By.cssSelector("i.poppins")
+            By.className("comp-sub-title")
     };
 
-    public DaHui() {
+    public FJAndGDeSaram() {
         super(
-                "DaHui",
-                "https://www.dahuilawyers.com/en/our-people/",
+                "F. J. And G. De Saram",
+                "https://www.fjgdesaram.com/our-people",
                 1
         );
     }
@@ -31,64 +31,52 @@ public class DaHui extends ByPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("professional-col")
+                            By.className("comp-item-people")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
-    private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("a.text-decoration-none")};
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-    }
-
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h4")};
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        By[] byArray = {By.className("comp-title")};
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
     private String[] getSocials(WebElement lawyer) {
-        String email = "";
-        String phone = "";
         try {
-            List<WebElement> tds = lawyer.findElements(By.cssSelector("td.poppins"));
-            for (WebElement td : tds) {
-                if (td.getText().contains("@")) {
-                    email = td.getText();
-                } else if (td.getText().startsWith("+")) {
-                    phone = td.getText();
-                }
-            }
-        } catch (Exception ignored) {
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.contact-item > a"));
+            return super.getSocials(socials, false);
+        } catch (Exception e) {
+            System.err.println("Error getting socials: " + e.getMessage());
+            return new String[]{"", ""};
         }
-        return new String[]{email, phone};
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
 
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", this.link,
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "China",
+                "country", "Sri Lanka",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1].isEmpty() ? "94114605100" : socials[1]
         );
     }
 }

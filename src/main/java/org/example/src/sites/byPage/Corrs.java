@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,32 +12,38 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class AliSharifZubiAdvocatesAndLegalConsultants extends ByPage {
+public class Corrs extends ByPage {
+
     private final By[] byRoleArray = {
-            By.tagName("h2")
+            By.className("uk-text-secondary")
     };
 
-    public AliSharifZubiAdvocatesAndLegalConsultants() {
+    public Corrs() {
         super(
-                "Ali Sharif Zu’bi Advocates And Legal Consultants",
-                "https://www.zubilaw.com/Lawyers",
-                1
+                "Corrs",
+                "https://www.corrs.com.au/people",
+                3
         );
     }
 
-    protected void accessPage(int index) {
-        this.driver.get(this.link);
+    @Override
+    protected void accessPage(int index) throws InterruptedException {
+        String otherUrl = "https://www.corrs.com.au/people/p" + (index + 1);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
+        Thread.sleep(1000L);
     }
 
+    @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = new String[]{"partner", "head"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.border.rounded-lg")
+                            By.className("uk-padding-small")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -46,12 +52,15 @@ public class AliSharifZubiAdvocatesAndLegalConsultants extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) {
-        return this.link;
+    private String getLink(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{By.className("uk-link-text")};
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.tagName("h1")};
+        By[] byArray = new By[]{
+                By.className("uk-text-uppercase")
+        };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
@@ -60,21 +69,16 @@ public class AliSharifZubiAdvocatesAndLegalConsultants extends ByPage {
     }
 
     private String[] getSocials(WebElement lawyer) {
-        String email = "";
         try {
-            List<WebElement> listItems = lawyer.findElements(By.tagName("li"));
-            for (WebElement li : listItems) {
-                if (li.getText().toLowerCase().contains("email:")) {
-                    email = li.getText().replaceAll("(?i)email:", "").trim();
-                    break;
-                }
-            }
+            List<WebElement> socials = lawyer.findElement(By.className("person-icons")).findElements(By.tagName("a"));
+            return super.getSocials(socials, false);
         } catch (Exception e) {
-            // Ignore
+            System.err.println("Error getting socials: " + e.getMessage());
+            return new String[]{"", ""};
         }
-        return new String[]{email, ""};
     }
 
+    @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
 
@@ -83,10 +87,10 @@ public class AliSharifZubiAdvocatesAndLegalConsultants extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "Jordan",
+                "country", "Australia",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", "xxxxxx"
+                "phone", socials[1].isEmpty() ? "61292106500" : socials[1]
         );
     }
 }

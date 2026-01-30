@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,15 +12,15 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class FJAndGDeSaram extends ByPage {
+public class EastAndConcord extends ByPage {
     private final By[] byRoleArray = {
-            By.className("comp-sub-title")
+            By.cssSelector("p")
     };
 
-    public FJAndGDeSaram() {
+    public EastAndConcord() {
         super(
-                "F. J. And G. De Saram",
-                "https://www.fjgdesaram.com/our-people",
+                "East And Concord",
+                "http://en.east-concord.com/tuandui/index.html",
                 1
         );
     }
@@ -31,43 +31,44 @@ public class FJAndGDeSaram extends ByPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"counsel"};
+        String[] validRoles = {"partner", "director", "counsel", "head"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("comp-item-people")
+                            By.className("Normal")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("comp-img")};
+        By[] byArray = {By.cssSelector("a[href*='/tuandui/Article/']")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("comp-title")};
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        By[] byArray = {By.cssSelector("div.LawyerName > h2")};
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
     private String[] getSocials(WebElement lawyer) {
+        String email = "";
+        String phone = "";
         try {
-            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.contact-item > a"));
-            return super.getSocials(socials, false);
+            email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
+            phone = lawyer.findElement(By.className("Num")).getText();
         } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
         }
+        return new String[]{email, phone};
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {
@@ -78,10 +79,10 @@ public class FJAndGDeSaram extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "Sri Lanka",
+                "country", "China",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1].isEmpty() ? "861065906639" : socials[1]
         );
     }
 }

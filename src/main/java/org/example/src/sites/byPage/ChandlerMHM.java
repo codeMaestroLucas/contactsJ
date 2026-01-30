@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -22,22 +22,22 @@ public class ChandlerMHM extends ByPage {
         super(
                 "Chandler MHM",
                 "https://chandler.morihamada.com/en/people?keywords=&sort=&jaorder=&practices=&location=&supportlang=&position=",
-                1
+                4
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        String otherUrl = "https://chandler.morihamada.com/en/people?keywords=&sort=&jaorder=&practices=&position=&location=&supportlang=&page=" + (index + 1);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner"
-        };
+        String[] validRoles = new String[]{"partner", "counsel", "advisor", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -91,7 +91,7 @@ public class ChandlerMHM extends ByPage {
                 "country", "Thailand",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1]
         );
     }
 }

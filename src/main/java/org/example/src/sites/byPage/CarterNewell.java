@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -20,18 +20,20 @@ public class CarterNewell extends ByPage {
     public CarterNewell() {
         super(
                 "Carter Newell",
-                "https://www.carternewell.com/team/?_td_title=60",
-                1
+                "https://www.carternewell.com/team/",
+                3
         );
     }
 
     protected void accessPage(int index) {
-        this.driver.get(this.link);
+        String otherUrl = "https://www.carternewell.com/team/?_paged=" + (index + 1);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "chair", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -82,7 +84,7 @@ public class CarterNewell extends ByPage {
                 "country", "Australia",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1].isEmpty() ? " 61730008300" : socials[1]
         );
     }
 }
