@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,74 +12,67 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class FolloscoMorallosAndHerce extends ByPage {
-    private final By[] byRoleArray = {
-            By.cssSelector("p.team-item-cat") // Not available in snippet, assuming this for role
-    };
+public class GulapaLaw extends ByPage {
 
-    public FolloscoMorallosAndHerce() {
+    public GulapaLaw() {
         super(
-                "Follosco Morallos And Herce",
-                "https://fmh.ph/the-team/#top",
+                "Gulapa Law",
+                "https://gulapalaw.com/lawyers/",
                 1
         );
     }
 
+    @Override
     protected void accessPage(int index) {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
     }
 
+    @Override
     protected List<WebElement> getLawyersInPage() {
-        // No role in snippet, so returning all team members
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            return wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("team-item")
+            WebElement partnersDiv = wait.until(
+                    ExpectedConditions.presenceOfElementLocated(
+                            By.id("partners")
                     )
             );
+            List<WebElement> lawyers = partnersDiv.findElements(By.cssSelector("a[href*='/lawyers/']"));
+            WebElement counselsDiv = driver.findElement(By.id("of-counsels"));
+            lawyers.addAll(counselsDiv.findElements(By.cssSelector("a[href*='/lawyers/']")));
+            return lawyers;
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("team-item-title")};
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+        String href = lawyer.getAttribute("href");
+        if (href == null || href.isEmpty()) throw LawyerExceptions.linkException("Link not found");
+        return href.startsWith("http") ? href : "https://gulapalaw.com" + href;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("team-item-title")};
+        By[] byArray = {By.cssSelector("h3.text-secondary")};
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getRole(WebElement lawyer) {
-        // Assuming a default role since it's not present in the main card
-        return "Partner";
+    private String getEmail(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.cssSelector("div.text-white p")};
+        return extractor.extractLawyerText(lawyer, byArray, "EMAIL", LawyerExceptions::emailException);
     }
 
-    private String[] getSocials(WebElement lawyer) {
-        String email = "";
-        try {
-            email = lawyer.findElement(By.className("team-email")).getText();
-        } catch (Exception ignored) {
-        }
-        return new String[]{email, ""};
-    }
-
+    @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
-
         return Map.of(
                 "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
+                "role", "",
                 "firm", this.name,
                 "country", "the Philippines",
                 "practice_area", "",
-                "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "email", this.getEmail(lawyer),
+                "phone", "63286587835"
         );
     }
 }

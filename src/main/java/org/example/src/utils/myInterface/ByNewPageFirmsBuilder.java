@@ -66,7 +66,7 @@ public class ByNewPageFirmsBuilder {
 
     private static final Site[] OCEANIA = {
             new Baumgartners(), new DeutschMiller(), new DWFoxTucker(), new Gadens(), new SimmonsWolfhagen(),
-            new TompkinsWake(), new YoungList()
+            new TompkinsWake(), new YoungList(), new Grette()
     };
 
     private static final Site[] MUNDIAL = {

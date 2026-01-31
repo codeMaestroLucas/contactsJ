@@ -29,7 +29,7 @@ public class ByPageFirmsBuilder {
             new MASLaw(), new MeitarLaw(), new MorogluArseven(), new MZMLegal(), new OldhamLiAndNie(),
             new Paksoy(), new RamdasAndWong(), new SEUM(), new SFKSLaw(), new SHorowitzAndCo(),
             new ShinAndKim(), new SteinmetzHaringGurman(), new TiruchelvamAssociates(), new VeritasLegal(), new ZhongziLaw(),
-            new ChandlerMHM(), new DrewAndNapier(), new EastAndConcord(), new FJAndGDeSaram()
+            new ChandlerMHM(), new DrewAndNapier(), new EastAndConcord(), new FJAndGDeSaram(), new GulapaLaw()
     };
 
     private static final Site[] EUROPE = {

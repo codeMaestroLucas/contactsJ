@@ -1,7 +1,7 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
-import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,17 +11,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
-public class Grette extends ByPage {
+public class Grette extends ByNewPage {
 
     private final By[] byRoleArray = {
-            By.className("employee-position")
+            By.cssSelector("div.text-base")
     };
 
     public Grette() {
         super(
                 "Grette",
-                "https://grette.no/en/people/",
+                "https://www.arntzen.no/en/employees",
                 1
         );
     }
@@ -31,56 +32,60 @@ public class Grette extends ByPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
+        // More than 50 rolls
+        MyDriver.rollDown(20, 0.5);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner", "senior associate"
-        };
+        String[] validRoles = new String[]{ "partner", "counsel", "senior associate" };
 
         try {
-            // Somehow, access forbidden for this site
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            WebElement lawyersDiv = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main\"]/div[5]/div[4]/div/div/div")));
-            List<WebElement> lawyers = lawyersDiv.findElements(By.cssSelector("div"));
+            WebElement lawyersDiv = wait.until(
+                    ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"filter-controls\"]/div/div[2]"))
+            );
+            List<WebElement> lawyers = lawyersDiv.findElements(By.cssSelector("div.group"));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
-    private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{By.tagName("a")};
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+    @Override
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
+        String link = lawyer.findElement(By.cssSelector("a[href*='/en/employees/']")).getAttribute("href");
+        MyDriver.openNewTab(link);
+        return null;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.tagName("h2")
+                By.className("col-span-2"),
+                By.tagName("h1")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = new By[]{
+                By.xpath("//*[@id=\"__next\"]/div/main/article/div[2]/div[2]/div/p")
+        };
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("expertise-filter")
+                By.className("col-span-1"),
+                By.cssSelector("a[href*='/en/expertise/']")
         };
         return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.tagName("a"));
-            // Filter out the main link and only get mailto and tel
-            List<WebElement> contactLinks = socials.stream()
-                    .filter(a -> a.getAttribute("href") != null && (a.getAttribute("href").startsWith("mailto:") || a.getAttribute("href").startsWith("tel:")))
-                    .toList();
-            return super.getSocials(contactLinks, false);
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
+            return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
@@ -89,15 +94,17 @@ public class Grette extends ByPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
+        this.openNewTab(lawyer);
+        WebElement div = driver.findElement(By.xpath("//*[@id=\"__next\"]/div/main/article/div[2]"));
+        String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", this.getLink(lawyer),
-                "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "name", this.getName(div),
+                "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Norway",
-                "practice_area", this.getPracticeArea(lawyer),
+                "practice_area", this.getPracticeArea(div),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "4722340000" : socials[1]
         );
