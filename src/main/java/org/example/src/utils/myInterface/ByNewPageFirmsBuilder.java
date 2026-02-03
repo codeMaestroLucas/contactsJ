@@ -1,6 +1,8 @@
 package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byNewPage.HarryElias;
+import org.example.src.sites.byNewPage.MiuraAndPartners;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.utils.ContinentConfig;
 
@@ -24,7 +26,7 @@ public class ByNewPageFirmsBuilder {
             new Fischer(), new GornitzkyAndCo(), new HuiyeLaw(), new HYLeungAndCo(), new JSA(),
             new KRBLaw(), new LonganLaw(), new MishconKaras(), new Mourant(), new NurmansyahAndMuzdalifah(),
             new RemfryAndSagar(), new SamvadPartners(), new TannerDeWitt(), new TCLaw(),
-            new CityYuwaPartners(), new DesaiAndDiwanji()
+            new CityYuwaPartners(), new DesaiAndDiwanji(), new HarryElias(), new MiuraAndPartners(),
     };
 
     private static final Site[] EUROPE = {

@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -14,32 +14,35 @@ import java.util.Map;
 
 public class Hiways extends ByPage {
     private final By[] byRoleArray = {
-            By.xpath("./div/div/div/span[1]")
+            By.cssSelector("div.width6 > span:nth-of-type(1)")
     };
 
     public Hiways() {
         super(
                 "Hiways",
-                "https://www.hiwayslaw.com/EN/0502.aspx?&zw=dcbc7625c3d7e091",
-                1
+                "https://www.hiwayslaw.com/EN/0502.aspx?&Page=1#about_menu",
+                4
         );
     }
 
     protected void accessPage(int index) {
-        this.driver.get(this.link);
+        String otherUrl = "https://www.hiwayslaw.com/EN/0502.aspx?&Page=" + (index + 1) + "#about_menu";
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "advisor", "adviser"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.lawyer_list > a")
+            WebElement lawyersDiv = wait.until(
+                    ExpectedConditions.presenceOfElementLocated(
+                            By.xpath("/html/body/div[11]/div/div[2]/div/div[1]/ul")
                     )
             );
+            List<WebElement> lawyers = lawyersDiv.findElements(By.cssSelector("li > a"));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -59,21 +62,22 @@ public class Hiways extends ByPage {
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String[] getSocials(WebElement lawyer) {
-        String email = "";
-        String phone = "";
+    private String getPracticeArea(WebElement lawyer) {
         try {
-            List<WebElement> spans = lawyer.findElements(By.cssSelector(".lawyer_txt span"));
-            for (WebElement span : spans) {
-                if (span.getText().contains("@")) {
-                    email = span.getText();
-                } else if (span.findElement(By.tagName("i")).getAttribute("class").contains("fa-phone")) {
-                    phone = span.getText();
-                }
-            }
-        } catch (Exception ignored) {
+            By[] byArray = {By.cssSelector("div.width6 p")};
+            return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        } catch (Exception e) {
+            return "";
         }
-        return new String[]{email, phone};
+    }
+
+    private String[] getSocials(WebElement lawyer) {
+        try {
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("div.width6 > span"));
+            return super.getSocials(socials, true);
+        } catch (Exception ignored) {
+            return new String[] {"", ""};
+        }
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {
@@ -85,9 +89,9 @@ public class Hiways extends ByPage {
                 "role", this.getRole(lawyer),
                 "firm", this.name,
                 "country", "China",
-                "practice_area", "",
+                "practice_area", this.getPracticeArea(lawyer),
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1]
         );
     }
 }

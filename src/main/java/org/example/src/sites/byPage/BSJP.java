@@ -68,19 +68,13 @@ public class BSJP extends ByPage {
         return phone == null ? "" : phone;
     }
 
-    private String getLink(WebElement lawyer) throws LawyerExceptions {
-        String urlPart = lawyer.getAttribute("data-nazwa-url");
-        if (urlPart == null || urlPart.isEmpty()) return this.link;
-        return "https://bsjp.pl/en/people/" + urlPart;
-    }
-
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         String role = this.getRole(lawyer);
         if (role.equals("Invalid Role")) return "Invalid Role";
 
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", this.link,
                 "name", this.getName(lawyer),
                 "role", role,
                 "firm", this.name,

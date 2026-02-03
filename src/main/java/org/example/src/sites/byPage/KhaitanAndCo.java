@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -32,12 +32,13 @@ public class KhaitanAndCo extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
+        MyDriver.clickOnAddBtn(By.xpath("/html/body/div[3]/div/div[3]/a"));
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner", "counsel", "consultant"
+                "partner", "counsel", "advisor", "director"
         };
 
         try {
@@ -47,7 +48,7 @@ public class KhaitanAndCo extends ByNewPage {
                             By.className("flex-wrp")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -105,7 +106,7 @@ public class KhaitanAndCo extends ByNewPage {
                 "country", "India",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1].isEmpty() ? "912266365000" : socials[1]
         );
     }
 }

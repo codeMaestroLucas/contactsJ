@@ -105,8 +105,11 @@ public class Validations {
     }
 
     /**
-     * Checks if a country is in the TEMPORARY avoid list AND the continent is enabled.
-     * These countries are only avoided when their continent is enabled in continentsConfig.json.
+     * Checks if a country is in the TEMPORARY avoid list AND the continent is DISABLED.
+     *
+     * Logic:
+     * - Continent enabled  = true  → Firms are built, countries are NOT avoided
+     * - Continent enabled  = false → Firms are NOT built, countries ARE avoided
      *
      * File: countriesToAvoidTemporary.json (countries list)
      * File: continentsConfig.json (enabled/disabled settings)
@@ -124,16 +127,17 @@ public class Validations {
                     new TypeReference<Map<String, ContinentData>>() {}
             );
 
-            // Flatten all countries from ENABLED continents only (using ContinentConfig)
-            List<String> enabledCountries = continentDataMap.entrySet().stream()
-                    .filter(entry -> ContinentConfig.isContinentEnabled(entry.getKey())) // Uses central config
+            // Flatten all countries from DISABLED continents only (using ContinentConfig)
+            // Countries from disabled continents should be avoided
+            List<String> countriesToAvoid = continentDataMap.entrySet().stream()
+                    .filter(entry -> !ContinentConfig.isContinentEnabled(entry.getKey())) // DISABLED continents
                     .flatMap(entry -> entry.getValue().getCountries().stream())
                     .map(CountryData::getCountry)
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList());
 
-            // Check if the country is in the list
-            return enabledCountries.stream()
+            // Check if the country is in the list of countries to avoid
+            return countriesToAvoid.stream()
                     .anyMatch(c -> c.trim().equalsIgnoreCase(country.trim()));
 
         } catch (IOException e) {

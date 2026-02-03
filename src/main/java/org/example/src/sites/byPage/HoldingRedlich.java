@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -21,17 +21,19 @@ public class HoldingRedlich extends ByPage {
         super(
                 "Holding Redlich",
                 "https://www.holdingredlich.com/lawyers",
-                1
+                8
         );
     }
 
     protected void accessPage(int index) {
-        this.driver.get(this.link);
+        String otherUrl = "https://www.holdingredlich.com/lawyers?currentPage=" + (index + 1);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
     }
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner"};
+        String[] validRoles = {"partner", "counsel", "chair", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -81,7 +83,7 @@ public class HoldingRedlich extends ByPage {
                 "country", "Australia",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]
+                "phone", socials[1].isEmpty() ? "61393219999" : socials[1]
         );
     }
 }

@@ -1,4 +1,4 @@
-package org.example.src.sites._standingBy.toAvoidForNow;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -12,43 +12,47 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-public class MahWengKwai extends ByPage {
+public class HugillAndIp extends ByPage {
     private final By[] byRoleArray = {
-            By.className("team-member-position")
+            By.className("eut-team-identity")
     };
 
-    public MahWengKwai() {
+    public HugillAndIp() {
         super(
-                "MahWengKwai",
-                "https://mahwengkwai.com/lawyers/",
-                1,
-                2
+                "Hugill And Ip",
+                "https://www.hugillandip.com/solicitors/",
+                1
         );
     }
 
-    @Override
     protected void accessPage(int index) {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
     }
 
-    @Override
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = {"partner", "senior associate"};
-        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-        List<WebElement> lawyers = wait.until(
-                ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("team-member-info"))
-        );
-        return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+
+        try {
+            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+            List<WebElement> lawyers = wait.until(
+                    ExpectedConditions.presenceOfAllElementsLocatedBy(
+                            By.className("eut-team")
+                    )
+            );
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to find lawyer elements", e);
+        }
     }
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h3 > a")};
+        By[] byArray = {By.className("eut-team-url")};
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("h3 > a")};
+        By[] byArray = {By.className("eut-team-name")};
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
@@ -58,7 +62,7 @@ public class MahWengKwai extends ByPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.cssSelector("a[href^='mailto:']"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("ul.eut-team-social a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
@@ -66,7 +70,6 @@ public class MahWengKwai extends ByPage {
         }
     }
 
-    @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = this.getSocials(lawyer);
 
@@ -75,10 +78,10 @@ public class MahWengKwai extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", "Malaysia",
+                "country", "Hong Kong",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", "xxxxxx"
+                "phone", socials[1].isEmpty() ? "85228611511" : socials[1]
         );
     }
 }

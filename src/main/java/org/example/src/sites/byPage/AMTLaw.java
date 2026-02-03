@@ -86,7 +86,7 @@ public class AMTLaw extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("p.h4")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 

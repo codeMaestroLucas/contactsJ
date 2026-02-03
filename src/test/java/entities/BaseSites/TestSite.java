@@ -1,7 +1,7 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byPage.GulapaLaw;
+import org.example.src.sites.byPage.MomoOMatsuoAndNamba;
 import org.example.src.utils.Validations;
 
 import java.lang.reflect.Field;
@@ -17,7 +17,7 @@ import java.lang.reflect.Field;
  * This allows you to visualize the site extraction without making real registrations.
  */
 
-class MyTestPage extends GulapaLaw {
+class MyTestPage extends MomoOMatsuoAndNamba {
 
     /**
      * Constructor that initializes with test logger to avoid affecting production logs

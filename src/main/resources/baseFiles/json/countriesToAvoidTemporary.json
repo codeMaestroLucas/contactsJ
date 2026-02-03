@@ -88,7 +88,10 @@
       { "Country": "Paraguay" },
       { "Country": "Peru" },
       { "Country": "Suriname" },
-      { "Country": "Uruguay" }
+      { "Country": "Uruguay" },
+      { "Country": "Curaçao" },
+      { "Country": "Trinidad & Tobago" },
+      { "Country": "Trinidad and Tobago" }
     ]
   },
 

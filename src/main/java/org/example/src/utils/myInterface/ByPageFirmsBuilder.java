@@ -29,7 +29,9 @@ public class ByPageFirmsBuilder {
             new MASLaw(), new MeitarLaw(), new MorogluArseven(), new MZMLegal(), new OldhamLiAndNie(),
             new Paksoy(), new RamdasAndWong(), new SEUM(), new SFKSLaw(), new SHorowitzAndCo(),
             new ShinAndKim(), new SteinmetzHaringGurman(), new TiruchelvamAssociates(), new VeritasLegal(), new ZhongziLaw(),
-            new ChandlerMHM(), new DrewAndNapier(), new EastAndConcord(), new FJAndGDeSaram(), new GulapaLaw()
+            new ChandlerMHM(), new DrewAndNapier(), new EastAndConcord(), new FJAndGDeSaram(), new GulapaLaw(),
+            new HiswaraBunjaminAndTandjung(), new Hiways(), new HugillAndIp(), new JinchengTongdaAndNeal(),
+            new KhaitanAndCo(), new MomoOMatsuoAndNamba()
     };
 
     private static final Site[] EUROPE = {
@@ -94,7 +96,8 @@ public class ByPageFirmsBuilder {
     private static final Site[] OCEANIA = {
             new AiGroup(), new AndersonLloyd(), new AnthonyHarper(), new BankiHaddockFiora(), new BuddleFindlay(),
             new DBHLaw(), new DuncanCotterill(), new JamesAndWells(), new MacphersonKelley(), new MalleyAndCo(),
-            new MBIP(), new MinterEllisonRuddWatts(), new CarterNewell(), new Corrs()
+            new MBIP(), new MinterEllisonRuddWatts(), new CarterNewell(), new Corrs(),
+            new HoldingRedlich(),
     };
 
     private static final Site[] MUNDIAL = {
