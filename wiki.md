@@ -22,6 +22,7 @@ C:.
 |   pom.xml
 |   README.md
 |   wiki.md
+|   instruct.md
 |
 +---data
 |   |   monthFirms.txt
@@ -59,8 +60,6 @@ C:.
 |   |               |   |   MyDriver.java
 |   |               |   |
 |   |               |   +---BaseSites
-|   |               |   |       ByClick.java      (Not implemented)
-|   |               |   |       ByFilter.java     (Not implemented)
 |   |               |   |       ByNewPage.java
 |   |               |   |       ByPage.java
 |   |               |   |       Site.java
@@ -81,6 +80,7 @@ C:.
 |   |               |           <Site classes that extend ByPage>
 |   |               |
 |   |               ---utils
+|   |                   |   ContinentConfig.java
 |   |                   |   EmailOfMonth.java
 |   |                   |   Extractor.java
 |   |                   |   FirmsOMonth.java
@@ -88,6 +88,8 @@ C:.
 |   |                   |   Validations.java
 |   |                   |
 |   |                   ---myInterface
+|   |                           ByNewPageFirmsBuilder.java
+|   |                           ByPageFirmsBuilder.java
 |   |                           CompletedFirms.java
 |   |                           MyInterfaceUtls.java
 |   |                           _CompletedFirmsData.java
@@ -103,7 +105,10 @@ C:.
 |       |   |   |   Sheet.xlsx
 |       |   |
 |       |   ---json
-|       |           countriesToAvoid.json
+|       |           continentsConfig.json
+|       |           countriesToAvoidPermanent.json
+|       |           countriesToAvoidTemporary.json
+|       |           firmsToAvoid.json
 |       |
 |       ---todos
 |               <JSON files for future planning>
@@ -134,12 +139,15 @@ C:.
 -   `src/sites`: Packages containing the concrete implementations of the scrapers, organized by strategy (`byPage`, `byNewPage`).
 
 -   `src/utils`: Utility classes that provide supporting functionalities.
+    -   `ContinentConfig.java`: **Central utility** for reading the continent configuration. Provides methods like `isContinentEnabled()`, `getEnabledContinents()`, and `getDisabledContinents()`.
     -   `Extractor.java`: A robust utility for extracting data from `WebElements` with exception handling, ensuring that the extraction of one field does not stop the entire process.
-    -   `Validations.java`: Centralizes all validation rules before a lawyer is registered (countries to avoid, email duplicates, etc.).
+    -   `Validations.java`: Centralizes all validation rules before a lawyer is registered (countries to avoid, email duplicates, etc.). Uses `ContinentConfig` to determine which countries to avoid based on disabled continents.
     -   `EmailOfMonth.java` & `FirmsOMonth.java`: Manage text files to track emails and firms already processed in the current month to avoid repeated work.
     -   `myInterface/`: Classes that manage the application flow and the command-line interface (CLI).
-        -   `_CompletedFirmsData.java`: A **central registry** that contains instances of all completed scraper classes ready for use.
-        -   `CompletedFirms.java`: Builds the list of firms to be processed, shuffling them to vary the order of execution.
+        -   `ByPageFirmsBuilder.java`: Builder that contains all `ByPage` firms organized by continent. Respects `continentsConfig.json` to include only firms from enabled continents.
+        -   `ByNewPageFirmsBuilder.java`: Builder that contains all `ByNewPage` firms organized by continent. Respects `continentsConfig.json` to include only firms from enabled continents.
+        -   `_CompletedFirmsData.java`: A **facade** that delegates to the builders to get the list of firms.
+        -   `CompletedFirms.java`: Builds the list of firms to be processed, shuffling them to vary the order of execution. Also provides visual statistics about firms and continents.
 
 -   `src/CONFIG.java`: A file to centralize all **global settings**, such as file paths and collection limits.
 
@@ -149,7 +157,69 @@ C:.
 
 ---
 
-## 3. Main Execution Flow
+## 3. Continent Configuration System
+
+The application uses a **central continent configuration** to control which firms are built and which countries are avoided during validation.
+
+### 3.1. Configuration File
+
+**Location**: `src/main/resources/baseFiles/json/continentsConfig.json`
+
+```json
+{
+  "Africa":              { "enabled": true },
+  "Asia":                { "enabled": true },
+  "Europe":              { "enabled": true },
+  "North America":       { "enabled": false },
+  "Central America":     { "enabled": false },
+  "South America":       { "enabled": false },
+  "Oceania":             { "enabled": true }
+}
+```
+
+### 3.2. How It Works
+
+| Continent State | Firms | Countries |
+|-----------------|-------|-----------|
+| `enabled: true` | **Built** and included in scraping | **NOT avoided** in validation |
+| `enabled: false` | **NOT built**, excluded from scraping | **Avoided** in validation |
+
+### 3.3. Affected Components
+
+1. **Builders** (`ByPageFirmsBuilder.java`, `ByNewPageFirmsBuilder.java`):
+   - Only include firms from enabled continents
+   - `MUNDIAL` (global) firms are always included regardless of configuration
+
+2. **Validations** (`Validations.java`):
+   - Countries from **disabled** continents are avoided (via `countriesToAvoidTemporary.json`)
+   - Countries in `countriesToAvoidPermanent.json` are **always** avoided
+
+### 3.4. Firms Organization
+
+Firms are organized by continent within each builder:
+
+```java
+// In ByPageFirmsBuilder.java or ByNewPageFirmsBuilder.java
+private static final Site[] AFRICA = { ... };
+private static final Site[] ASIA = { ... };
+private static final Site[] EUROPE = { ... };
+private static final Site[] NORTH_AMERICA = { ... };
+private static final Site[] CENTRAL_AMERICA = { ... };
+private static final Site[] SOUTH_AMERICA = { ... };
+private static final Site[] OCEANIA = { ... };
+private static final Site[] MUNDIAL = { ... };  // Always included
+```
+
+### 3.5. Viewing Statistics
+
+Run `CompletedFirms.main()` to see a visual breakdown of:
+- Firms per continent (enabled/disabled)
+- Total active vs total firms
+- Max lawyers available per category
+
+---
+
+## 4. Main Execution Flow
 
 The application operates in a two-phase flow, orchestrated by the `Main.java` class.
 
@@ -162,14 +232,15 @@ The application operates in a two-phase flow, orchestrated by the `Main.java` cl
 
 2.  **Phase 2: Web Scraping**
     -   The `searchLawyersInWeb()` method in `Main.java` starts the scraping process.
-    -   **Firm Selection**: `CompletedFirms.constructFirms()` creates a list of all scrapers defined in `_CompletedFirmsData.java`, excluding those already processed in the current month (checked via `FirmsOMonth.txt`), and shuffles the list.
+    -   **Firm Selection**: `CompletedFirms.constructFirms()` creates a list of all scrapers from **enabled continents** (via builders), excluding those already processed in the current month (checked via `FirmsOMonth.txt`), and shuffles the list.
     -   **Scraping Loop**: `Main` iterates over each `Site` in the list.
         -   An `ExecutorService` is used to run each site's scraper with a **timeout** (currently 1 minute). This prevents a problematic site from freezing the entire application.
         -   The corresponding `Site` class navigates to the page, locates the lawyers, and extracts the raw data.
     -   **Data Cleaning**: The extracted data is passed to the `Lawyer.builder()` constructor, which immediately applies the treatment methods (`treatName`, `treatEmail`, etc.).
     -   **Validation**: The `Site.registerValidLawyer()` method calls `Validations.makeValidations()` to check:
         -   If the email is empty.
-        -   If the country is on the exclusion list (`countriesToAvoid.json`).
+        -   If the country is on the permanent exclusion list (`countriesToAvoidPermanent.json`).
+        -   If the country is on the temporary exclusion list (`countriesToAvoidTemporary.json`) AND the continent is **disabled**.
         -   If the email is on the permanent exclusion list (`data/_toAvoid/`).
         -   If the firm has already been registered in the month (`monthFirms.txt`).
         -   If the email already exists in `Contacts.xlsx` or in the month's records (`data/sites/`).
@@ -178,14 +249,20 @@ The application operates in a two-phase flow, orchestrated by the `Main.java` cl
         -   `Sheet.addLawyer()` adds them to `Sheet.xlsx`.
         -   `EmailOfMonth.registerEmailOfMonth()` registers the email in the site's monthly log file.
     -   **Completion**: The loop continues until the target number of lawyers (`CONFIG.LAWYERS_IN_SHEET`) is reached or all sites in the list have been processed.
+    
+- PS.: Sometimes i'll need to create the email based in the name of the lawyer. so, when this happens i need u to use the
+ `TreatLawyerParams.treatNameForEmail(name)` to treat the name of the lawyer so it can be used to create the email. 
+ Change the `getSocials` function to create the email of the lawyer following the pattern (eg.: `(firstNameFirstLetter)(lastName)@dominio.com`).
+
 
 ---
 
-## 4. How to Add a New Scraper
+## 5. How to Add a New Scraper
 
 1.  **Analyze the Target Website**:
     -   Determine the required strategy. Is all the data on a results page (`ByPage`), or do you need to click on each profile to see the details (`ByNewPage`)?
     -   Inspect the HTML to find the CSS or XPath selectors for key elements: the lawyer's container, name, role, email, phone, etc.
+    -   Identify which **continent** the firm belongs to.
 
 2.  **Create the Java Class**:
     -   Create a new class in the appropriate package (`src/sites/byPage` or `src/sites/byNewPage`).
@@ -203,8 +280,39 @@ The application operates in a two-phase flow, orchestrated by the `Main.java` cl
         -   `ByNewPage` automatically closes the new tab in the main loop's `finally` block.
 
 4.  **Register the New Scraper**:
-    -   Go to the `_CompletedFirmsData.java` file.
-    -   Add a new instance of your scraper class to the appropriate array (`byPage` or `byNewPage`).
+    -   Go to the appropriate builder file (`ByPageFirmsBuilder.java` or `ByNewPageFirmsBuilder.java`).
+    -   Add a new instance of your scraper class to the appropriate **continent array**.
+    -   **Example**: Adding a European firm to `ByNewPageFirmsBuilder.java`:
+        ```java
+        private static final Site[] EUROPE = {
+            new ExistingFirm1(), new ExistingFirm2(),
+            new NewFirm(),  // Add here
+        };
+        ```
 
 5.  **Test**:
     -   Run the `Main` class to ensure your new scraper works as expected, collects data correctly, and does not throw errors.
+
+---
+
+## 6. JSON Configuration Files
+
+| File | Purpose |
+|------|---------|
+| `continentsConfig.json` | Central configuration for enabling/disabling continents |
+| `countriesToAvoidPermanent.json` | Countries that are **always** avoided (regardless of continent config) |
+| `countriesToAvoidTemporary.json` | Countries organized by continent (avoided only when continent is **disabled**) |
+| `firmsToAvoid.json` | Specific firms to avoid |
+
+---
+
+## 7. Key Classes Summary
+
+| Class | Purpose |
+|-------|---------|
+| `ContinentConfig.java` | Reads `continentsConfig.json` and provides utility methods |
+| `ByPageFirmsBuilder.java` | Builds `ByPage` firms list respecting continent config |
+| `ByNewPageFirmsBuilder.java` | Builds `ByNewPage` firms list respecting continent config |
+| `_CompletedFirmsData.java` | Facade that delegates to builders |
+| `CompletedFirms.java` | Constructs final firm list and shows statistics |
+| `Validations.java` | Validates lawyers, uses `ContinentConfig` for country validation |

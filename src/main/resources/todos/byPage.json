@@ -3,48 +3,7 @@
     "name": "",
     "link": ""
   },
-  {
-    "name": "Emerald Law",
-    "link": "https://emeraldlaw.in/partners/"
-  },
-  {
-    "name": "KochharAndCo",
-    "link": "https://kochhar.com/people/",
-    "note": "INDIAN"
-  },
-  {
-    "name": "SPCM and Associates",
-    "link": "https://www.spcm.in/our-team",
-    "note": "INDIA"
-  },
-  {
-    "name": "Simpson ThacherAndBartlett",
-    "link": "https://www.stblaw.com/offices/beijing"
-  },
-  {
-    "name": "Seyfarth Shaw",
-    "link": "https://www.seyfarth.com/people/index.html?of=9045&po=17969"
-  },
-  {
-    "name": "Saga Legal",
-    "link": "https://sagalegal.in/pages/Team.html"
-  },
-  {
-    "name": "Romulo",
-    "link": "https://www.romulo.com/a/"
-  },
-  {
-    "name": "Romero Pineda",
-    "link": "https://www.romeropineda.com/en/nuestra-firma/#nuestro-equipo"
-  },
-  {
-    "name": "Resource Law",
-    "link": "https://www.resourcelawasia.com/people/adrian-aw/"
-  },
-  {
-    "name": "Olmedo",
-    "link": "https://www.olmedo.com.py/en/our-team.php"
-  },
+
   {
     "name": "NFA",
     "link": "https://www.negraoferrari.com.br/equipe.php"
@@ -52,22 +11,6 @@
   {
     "name": "Nassar",
     "link": "https://www.nassarabogados.com/en/our-team"
-  },
-  {
-    "name": "MVKini Law",
-    "link": "https://mvkini.com/people.html"
-  },
-  {
-    "name": "MRCO",
-    "link": "https://ridzalaw.com.my/our-people/partner-mohamad-nazran-basirun/"
-  },
-  {
-    "name": "Mansukhlal Hiralal and Co",
-    "link": "https://www.mhcolaw.com/peoples"
-  },
-  {
-    "name": "MahoneyLiotta",
-    "link": "https://www.mlmongolia.com/about"
   },
   {
     "name": "LMA",
@@ -78,57 +21,18 @@
     "link": "https://lexatlas.com/en/team/"
   },
   {
-    "name": "Lektou",
-    "link": "https://lektou.com/people-page/"
-  },
-  {
-    "name": "Leges Advokat",
-    "link": "https://legesadvokat.com/teams/"
-  },
-  {
     "name": "Lee Choon WanAndCo",
     "link": "https://leecwco.com.my/people/lily-tan-chea-li"
   },
   {
-    "name": "Sajić",
-    "link": "https://www.advokatskafirmasajic.com/EN/about-us.html"
+    "name": "InterJuris Abogados",
+    "link": "https://interjuris.com/en/team/"
   },
-  {
-    "name": "Lane Neave",
-    "link": "https://www.laneneave.co.nz/our-people/?_people_roles=partners"
-  },
-  {
-    "name": "LAB Partners",
-    "link": "https://labpartners.co.kr/en/category/peoples/"
-  },
-  {
-    "name": "Johnson Winter Slattery",
-    "link": "https://jws.com.au/our-people/"
-  },
-  {
-    "name": "J.J. RocaAndAsociados",
-    "link": "https://jjrocalaw.com/english/",
-    "Note": "Email format (firstNameLetter)(LastName)@jjrocalaw.com",
-    "Ex.:": "Tomas Demo === tdemo@jjrocalaw.com"
-  },
-  {
-    "name": "Jia Yuan Law",
-    "link": "https://www.jiayuan-law.com/EN/Team.aspx?Lan=EN&MenuID=00000000000000000004"
-  },
-  {
-    "name": "International Counsel Bureau",
-    "link": "https://icbkuwait.com.kw/our-team"
-  },
-  {
-    "name": "India Law Offices",
-    "link": "https://www.indialawoffices.com/team",
-    "Note": "Email format (firstNameLetter).(LastName)@indialawoffices.com",
-    "Ex.:": "Tomas Demo === t.demo@indialawoffices.com"
-  },
-  {
-    "name": "",
-    "link": "https://interjuris.com/equipo/"
-  },
+
+
+  {"sep":  "========================================================================================="},
+
+
   {
     "name": "Hisham SobriAndKadir",
     "link": "https://hsk.com.my/partners/"

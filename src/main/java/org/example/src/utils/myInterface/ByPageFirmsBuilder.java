@@ -31,7 +31,11 @@ public class ByPageFirmsBuilder {
             new ShinAndKim(), new SteinmetzHaringGurman(), new TiruchelvamAssociates(), new VeritasLegal(), new ZhongziLaw(),
             new ChandlerMHM(), new DrewAndNapier(), new EastAndConcord(), new FJAndGDeSaram(), new GulapaLaw(),
             new HiswaraBunjaminAndTandjung(), new Hiways(), new HugillAndIp(), new JinchengTongdaAndNeal(),
-            new KhaitanAndCo(), new MomoOMatsuoAndNamba()
+            new KhaitanAndCo(), new MomoOMatsuoAndNamba(), new MoriHamadaAndMatsumoto(), new NagashimaOhnoAndTsunematsu(), new NishimuraAndAsahi(),
+            new OhEbashiLPCAndPartners(), new RahmatLimAndPartners(), new RomuloLawFirm(), new StevensonWongAndCo(),
+            new IndiaLawOffices(), new JiaYuanLaw(), new KochharAndCo(), new Lektou(), new SagaLegal(),
+            new TianYuan(), new ABSAndCo(), new TMIAssociates(), new Trilegal(), new TsarAndTsai(),
+            new Virtus(), new ZaidIbrahimAndCo(),
     };
 
     private static final Site[] EUROPE = {
@@ -78,11 +82,12 @@ public class ByPageFirmsBuilder {
             new LawsonLundell(), new LEGlobal(), new LoopstraNixon(), new McDougallGauley(), new McKercher(),
             new MijaresAngoitiaCortesAndFuentes(), new MLTAikins(), new NautaDutilh(), new NelliganLaw(), new OslerHoskinAndHarcourt(),
             new OyenWiggs(), new RitchMueller(), new RitchMuellerAndNicolau(), new SantamarinaAndSteta(), new SmartAndBiggar(),
-            new StikemanElliott(), new VillarrealVGF(), new WildeboerDellelce()
+            new StikemanElliott(), new VillarrealVGF(), new WildeboerDellelce(), new CozenOConnor(), new UlisesCabrera(),
+            new GrahamThompson(), new HeadrickRizikAlvarezAndFernandez()
     };
 
     private static final Site[] CENTRAL_AMERICA = {
-            new GarciaBodan(), new McConnellValdes()
+            new GarciaBodan(), new McConnellValdes(),
     };
 
     private static final Site[] SOUTH_AMERICA = {
@@ -90,14 +95,19 @@ public class ByPageFirmsBuilder {
             new Bermudes(), new BullrichFlanzbaum(), new CARAdvogados(), new CEPDAbogados(), new ChevezRuizZamarripa(),
             new FarrocoAbreuGuarnieriZotelli(), new HernandezAndCia(), new LEFOSSE(), new MUC(), new NelsonWiliansAndAdvogados(),
             new PayetReyCauviPerez(), new PayetReyCauviPerez(), new PPOAbogados(), new RennoPenteadoSampaioAdvogados(), new RobortellaEPeres(),
-            new Tavares()
+            new Tavares(), new AbeledoGottheil(), new AllendeAndBrea(), new BaptistaLuz(), new BarrosAndErrazuriz(),
+            new Bocater(), new BrasilSalomaoeMatthes(), new BSVV(), new BustamanteFabara(),
+            new EsguerraJHR(), new Felsberg(), new FLH(), new GSALegal(), new LacazMartinsPereiraNetoGurevichAndSchoueri(),
+            new MachadoMeyer(), new MattosEngelbergEchenique(), new MENPA(), new MontauryPimentaMachadoAndVieiraDeMello(),
+            new MQMGLD(), new MunizLaw(), new OlarteMoure(), new SerranoMartinezCMA(), new TauilAndChequer(),
+            new TraviesoEvansArriaAndRengel(), new Tumnet(), new Vouga(), new WaldAntunesVitaEBlattner(),
     };
 
     private static final Site[] OCEANIA = {
             new AiGroup(), new AndersonLloyd(), new AnthonyHarper(), new BankiHaddockFiora(), new BuddleFindlay(),
             new DBHLaw(), new DuncanCotterill(), new JamesAndWells(), new MacphersonKelley(), new MalleyAndCo(),
             new MBIP(), new MinterEllisonRuddWatts(), new CarterNewell(), new Corrs(),
-            new HoldingRedlich(),
+            new JohnsonWinterSlattery(), new LaneNeave(), new HoldingRedlich(), new PiperAlderman(), new ThomsonGeer()
     };
 
     private static final Site[] MUNDIAL = {
@@ -116,7 +126,7 @@ public class ByPageFirmsBuilder {
             new SheppardMullin(), new Skadden(), new SpencerWest(), new SprusonAndFerguson(), new SquirePattonBoggs(),
             new StephensonHarwood(), new StewartMcKelvey(), new SullivanAndWorcester(), new TahotaLaw(), new TaylorWessing(),
             new Walkers(), new WatsonFarleyAndWilliams(), new WhiteAndCase(), new WilliamFry(), new Willkie(),
-            new WinstonAndStrawn()
+            new WinstonAndStrawn(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

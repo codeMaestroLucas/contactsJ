@@ -1,8 +1,6 @@
 package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byNewPage.HarryElias;
-import org.example.src.sites.byNewPage.MiuraAndPartners;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.utils.ContinentConfig;
 
@@ -54,7 +52,7 @@ public class ByNewPageFirmsBuilder {
     private static final Site[] NORTH_AMERICA = {
             new ArthurCox(), new AsafoAndCo(), new BCFLaw(), new BWBLLP(), new FilionWakelyThorupAngeletti(),
             new IbanezParkman(), new KuriBrena(), new MBM(), new NaderHayauxAndGoebel(), new PrasadAndCompany(),
-            new Sangra(), new ThompsonDorfmanSweatman(), new VazquezTerceroAndZepeda()
+            new Sangra(), new ThompsonDorfmanSweatman(), new VazquezTerceroAndZepeda(), new McKinneyBancroftAndHughes(),
     };
 
     private static final Site[] CENTRAL_AMERICA = {
@@ -63,12 +61,12 @@ public class ByNewPageFirmsBuilder {
 
     private static final Site[] SOUTH_AMERICA = {
             new BrigrardUrrutia(), new CariolaDiezPerezCotapos(), new Ferrere(), new LatinAlliance(), new Madrona(),
-            new RMADVAdvogados(), new SargentAndKrahn(), new ZBV()
+            new RMADVAdvogados(), new SargentAndKrahn(), new ZBV(), new Carey(), new GaiaSilvaGaedeAndAssociados()
     };
 
     private static final Site[] OCEANIA = {
             new Baumgartners(), new DeutschMiller(), new DWFoxTucker(), new Gadens(), new SimmonsWolfhagen(),
-            new TompkinsWake(), new YoungList(), new Grette()
+            new TompkinsWake(), new YoungList(), new Grette(), new RussellMcVeagh(), new WilsonHarle(),
     };
 
     private static final Site[] MUNDIAL = {

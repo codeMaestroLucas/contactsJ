@@ -4,3 +4,23 @@ MANTENDO TODA A DIVISÃO DE CONTINENTES E ARRAYS DE BYPAGE E BYNEWPAGE, ORDENE A
 DESSA FORMA, VC DEVE ORGANIZAR AS FIRMAS DA ÁFRICA DO ARRAY BYPAGE ALFABÉTICAMENTE, ORGANIZAR AS FIRMAS DA ASIA DO ARRAY BYPAGE ALFABÉTICAMENTE E ASSIM POR DIANTE
 
 OBS: AS FIRMAS COMENTADAS DEVEM SOFRER ESSA ORDENAÇÃO TBM
+
+
+
+- 05.02.26
+
+==========================================================================================
+                               | CONTINENT CONFIGURATION |
+==========================================================================================
+ Continent          │ Status │     ByPage │  ByNewPage │  Total Firms │  Max Lawyers
+------------------------------------------------------------------------------------------
+ Africa             │ ON    │         11 │          7 │           18 │           18
+ Asia               │ ON    │         70 │         23 │           93 │          112
+ Europe             │ ON    │        165 │         94 │          259 │          280
+ North America      │ OFF   │         37 │         13 │           50 │           55
+ Central America    │ OFF   │          2 │          1 │            3 │            4
+ South America      │ OFF   │         33 │         10 │           43 │           45
+ Oceania            │ ON    │         19 │         10 │           29 │           30
+------------------------------------------------------------------------------------------
+ Mundial            │ ***   │         76 │         36 │          112 │          218
+==========================================================================================
