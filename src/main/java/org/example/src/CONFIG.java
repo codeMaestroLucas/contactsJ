@@ -17,9 +17,9 @@ public class CONFIG {
     public static String MONTH_FILE = "data/monthFirms.txt";
 
     // OTHERS
-    public static int TOTAL_LAWYERS_TO_GET = 350;
+    public static int TOTAL_LAWYERS_TO_GET = 200; //350
     public static int LAWYERS_IN_SHEET = 250;
-    public static int LAWYERS_IN_FILTER = TOTAL_LAWYERS_TO_GET - LAWYERS_IN_SHEET;
+    public static int LAWYERS_IN_FILTER = 0;  //TOTAL_LAWYERS_TO_GET - LAWYERS_IN_SHEET;
 
     public static int TIMEOUT_MINUTES = 4;
 }

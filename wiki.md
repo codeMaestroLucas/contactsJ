@@ -250,11 +250,6 @@ The application operates in a two-phase flow, orchestrated by the `Main.java` cl
         -   `EmailOfMonth.registerEmailOfMonth()` registers the email in the site's monthly log file.
     -   **Completion**: The loop continues until the target number of lawyers (`CONFIG.LAWYERS_IN_SHEET`) is reached or all sites in the list have been processed.
     
-- PS.: Sometimes i'll need to create the email based in the name of the lawyer. so, when this happens i need u to use the
- `TreatLawyerParams.treatNameForEmail(name)` to treat the name of the lawyer so it can be used to create the email. 
- Change the `getSocials` function to create the email of the lawyer following the pattern (eg.: `(firstNameFirstLetter)(lastName)@dominio.com`).
-
-
 ---
 
 ## 5. How to Add a New Scraper

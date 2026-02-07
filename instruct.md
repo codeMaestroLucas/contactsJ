@@ -1,53 +1,53 @@
-# Resumo de Instruções para Geração de Scrapers em Java
+# Instructions Summary for Java Scraper Generation
 
-Este documento resume todas as diretrizes e regras de formatação para a criação automática de classes de web-scraper em
-Java, com base nas instruções fornecidas.
+This document summarizes all guidelines and formatting rules for the automatic creation of web-scraper classes in
+Java, based on the provided instructions.
 
-## 1. Objetivo Principal
+## 1. Main Objective
 
-A tarefa principal é gerar classes Java (`ByPage` ou `ByNewPage`) para extrair informações de advogados a partir de sites
-de escritórios. O input fornecido será o **Nome da Firma**, **URL**, **trechos de HTML** e o **tipo de classe base** a ser usada.
+The main task is to generate Java classes (`ByPage` or `ByNewPage`) to extract lawyer information from law firm websites.
+The provided input will be the **Firm Name**, **URL**, **HTML snippets**, and the **base class type** to be used.
 
-## 2. Estrutura e Sequência da Resposta
+## 2. Response Structure and Sequence
 
-A resposta deve seguir rigorosamente esta ordem:
-OBS: Antes de gerar os códigos, vc deve ordenar as firmas alfabéticamente e então gerar o código.
+The response must strictly follow this order:
+NOTE: Before generating the code, you must sort the firms alphabetically and then generate the code.
 
-1.  **Comando `touch`**: No início da resposta, fornecer um comando
-`touch` em uma única linha para criar todos os arquivos `.java` necessários no diretório de teste.
-   * **Exemplo**:
+1.  **`touch` Command**: At the beginning of the response, provide a
+`touch` command in a single line to create all necessary `.java` files in the test directory.
+   * **Example**:
        ```bash
-       touch src/main/java/org/example/src/sites/to_test/Firma1.java src/main/java/org/example/src/sites/to_test/Firma2.java
+       touch src/main/java/org/example/src/sites/to_test/Firm1.java src/main/java/org/example/src/sites/to_test/Firm2.java
        ```
 
-2. **Geração das Classes**: Para cada firma solicitada, a estrutura deve ser:
-   * Um título com o **Nome da Firma**.
-   * Um bloco de código contendo a classe Java completa.
+2. **Class Generation**: For each requested firm, the structure must be:
+   * A title with the **Firm Name**.
+   * A code block containing the complete Java class.
 
-3. **Linha para os Builders**: Ao final de toda a resposta, fornecer a linha de instanciação para as novas classes.
-  * Esta linha deve conter **apenas** as firmas da iteração atual.
-  * Deve estar dentro de um bloco de código do tipo `txt`.
-  * As instanciações devem ser agrupadas por classe base (`ByPage` ou `ByNewPage`).
-  * As firmas devem estar ordenadas alfabéticamente.
-  * Incluir o **continente** de cada firma como comentário.
-  * **Exemplo**:
+3. **Line for Builders**: At the end of the entire response, provide the instantiation line for the new classes.
+  * This line must contain **only** the firms from the current iteration.
+  * Must be inside a `txt` type code block.
+  * Instantiations must be grouped by base class (`ByPage` or `ByNewPage`).
+  * Firms must be sorted alphabetically.
+  * Include the **continent** of each firm as a comment.
+  * **Example**:
    ```text
    // ByPage - Europe
-   new FirmaB(), new FirmaD(),
+   new FirmB(), new FirmD(),
 
    // ByNewPage - Asia
-   new FirmaA(), new FirmaC(),
+   new FirmA(), new FirmC(),
    ```
 
-## 3. Arquitetura de Continentes
+## 3. Continent Architecture
 
-O sistema utiliza uma **configuração central de continentes** que controla:
-1. Quais firmas são construídas (builders)
-2. Quais países são evitados na validação
+The system uses a **central continent configuration** that controls:
+1. Which firms are built (builders)
+2. Which countries are avoided in validation
 
-### 3.1 Arquivo de Configuração Central
+### 3.1 Central Configuration File
 
-**Localização**: `src/main/resources/baseFiles/json/continentsConfig.json`
+**Location**: `src/main/resources/baseFiles/json/continentsConfig.json`
 
 ```json
 {
@@ -61,24 +61,24 @@ O sistema utiliza uma **configuração central de continentes** que controla:
 }
 ```
 
-**Lógica**:
-- `enabled: true` → Firmas do continente são construídas, países NÃO são evitados
-- `enabled: false` → Firmas do continente NÃO são construídas, países SÃO evitados
+**Logic**:
+- `enabled: true` → Continent firms are built, countries are NOT avoided
+- `enabled: false` → Continent firms are NOT built, countries ARE avoided
 
-### 3.2 Builders de Firmas
+### 3.2 Firm Builders
 
-As firmas são organizadas em dois builders separados por tipo:
+Firms are organized in two separate builders by type:
 
-| Arquivo | Descrição |
-|---------|-----------|
-| `ByPageFirmsBuilder.java` | Firmas que usam a classe base `ByPage` |
-| `ByNewPageFirmsBuilder.java` | Firmas que usam a classe base `ByNewPage` |
+| File | Description |
+|------|-------------|
+| `ByPageFirmsBuilder.java` | Firms that use the `ByPage` base class |
+| `ByNewPageFirmsBuilder.java` | Firms that use the `ByNewPage` base class |
 
-**Localização**: `src/main/java/org/example/src/utils/myInterface/`
+**Location**: `src/main/java/org/example/src/utils/myInterface/`
 
-**Estrutura interna dos builders**:
+**Internal builder structure**:
 ```java
-// Arrays separados por continente
+// Arrays separated by continent
 private static final Site[] AFRICA = { ... };
 private static final Site[] ASIA = { ... };
 private static final Site[] EUROPE = { ... };
@@ -86,20 +86,20 @@ private static final Site[] NORTH_AMERICA = { ... };
 private static final Site[] CENTRAL_AMERICA = { ... };
 private static final Site[] SOUTH_AMERICA = { ... };
 private static final Site[] OCEANIA = { ... };
-private static final Site[] MUNDIAL = { ... };  // Sempre incluído (firmas globais)
+private static final Site[] MUNDIAL = { ... };  // Always included (global firms)
 
-// Getters por continente
+// Getters by continent
 public static Site[] getAfrica() { return AFRICA; }
-// ... outros getters
+// ... other getters
 
-// Método build() que respeita continentsConfig.json
+// build() method that respects continentsConfig.json
 public static Site[] build() { ... }
 ```
 
-### 3.3 Continentes Disponíveis
+### 3.3 Available Continents
 
-| Continente | Identificador no código |
-|------------|-------------------------|
+| Continent | Code Identifier |
+|-----------|-----------------|
 | Africa | `AFRICA` |
 | Asia | `ASIA` |
 | Europe | `EUROPE` |
@@ -109,72 +109,73 @@ public static Site[] build() { ... }
 | Oceania | `OCEANIA` |
 | Mundial (Global) | `MUNDIAL` |
 
-**Nota**: Firmas em `MUNDIAL` são sempre incluídas independente da configuração de continentes.
+**Note**: Firms in `MUNDIAL` are always included regardless of continent configuration.
 
-### 3.4 Onde Adicionar Novas Firmas
+### 3.4 Where to Add New Firms
 
-Ao criar uma nova firma, adicione-a no builder correto (`ByPageFirmsBuilder.java` ou `ByNewPageFirmsBuilder.java`) dentro do array do continente apropriado.
+When creating a new firm, add it to the correct builder (`ByPageFirmsBuilder.java` or `ByNewPageFirmsBuilder.java`) within the appropriate continent array.
 
-**Exemplo** - Adicionar firma `NewFirm` (ByNewPage, Europa):
+**Example** - Adding firm `NewFirm` (ByNewPage, Europe):
 ```java
-// Em ByNewPageFirmsBuilder.java
+// In ByNewPageFirmsBuilder.java
 private static final Site[] EUROPE = {
     new ExistingFirm1(), new ExistingFirm2(),
-    new NewFirm(),  // Nova firma adicionada aqui
+    new NewFirm(),  // New firm added here
 };
 ```
 
-## 4. Regras de Geração e Formatação de Código
+## 4. Code Generation and Formatting Rules
 
-* **Package**: Todas as classes geradas devem usar o pacote:
+* **Package**: All generated classes must use the package:
     ```java
     package org.example.src.sites.to_test;
     ```
-* **Nome dos Parâmetros**: Em métodos de extração de dados (ex: `getName`, `getRole`), o parâmetro `WebElement` deve ser
-nomeado como `lawyer`.
-    * **Exemplo**: `private String getName(WebElement lawyer)`
+* **Parameter Names**: In data extraction methods (e.g., `getName`, `getRole`), the `WebElement` parameter must be
+named as `lawyer`.
+    * **Example**: `private String getName(WebElement lawyer)`
 
-* **Indentação do `super()`**: Os argumentos dentro da chamada do construtor `super()` devem ter um nível a menos
-de indentação.
-    * **Exemplo**:
+* **`super()` Indentation**: The arguments inside the `super()` constructor call must have one less level
+of indentation.
+    * **Example**:
         ```java
-        public MinhaFirma() {
+        public MyFirm() {
             super(
-            "Nome da Firma",
-            "https://firma.com",
+            "Firm Name",
+            "https://firm.com",
             1
             );
         }
         ```
-* **Valor Padrão para Telefone**: Para firmas de um único país, se o telefone não for encontrado, o valor padrão no `Map`
-de retorno deve ser a string `"xxxxxx"`. Para firmas multinacionais, a lógica anterior (geralmente uma string vazia `""`
-ou o valor encontrado) deve ser mantida.
-    * **Exemplo**: `"phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]`
+* **Default Phone Value**: For single-country firms, if the phone is not found, the default value in the return `Map`
+must be the string `"xxxxxx"`. For multinational firms, the previous logic (usually an empty string `""`
+or the found value) must be maintained.
+    * **Example**: `"phone", socials[1].isEmpty() ? "xxxxxx" : socials[1]`
 
-* **Construção de Email**: Quando instruído, a função `getSocials` deve ser customizada para construir o email a partir
-do nome do advogado, seguindo o padrão especificado (ex: `(primeiraLetraNome)(sobrenome)@dominio.com`).
-  * Assim sendo, colete primeiro o nome - fora da função - e o insira como parâmetro da função `getSocials`.
-  * Além disso, utilize a função `name = TreatLawyerParams.treatName(name);` para fazer o tratamento do nome
+* **Email Construction**: When instructed, the `getSocials` function must be customized to build the email from
+the lawyer's name, following the specified pattern (e.g., `(firstLetterOfName)(surname)@domain.com`).
+  * Therefore, collect the name first - outside the function - and insert it as a parameter of the `getSocials` function.
+  * ADDITIONALLY, use it's necessary to use the function `name = TreatLawyerParams.treatName(name);` to treat the name
+  to properly treat the name before using it to create the email
 
-## 5. Princípios Gerais
+## 5. General Principles
 
-* **Precisão**: O usuário é um desenvolvedor e espera um código preciso e funcional.
-* **Nunca Assumir**: Se o HTML fornecido for ambíguo ou insuficiente, é necessário solicitar mais informações antes de
-prosseguir. Não deduzir ou adivinhar a lógica.
-* **Correção de Erros**: Para corrigir um código enviado anteriormente,
-usar o formato: `--- ANTIGO <código> ---` seguido de `--- NOVO <código> ---`.
-* **Não preciso de comentários no código**: boa parte do que está implementado eu criei, por isso, não preciso que vc me
-explique o código que eu msm criei.
+* **Precision**: The user is a developer and expects precise and functional code.
+* **Never Assume**: If the provided HTML is ambiguous or insufficient, you must request more information before
+proceeding. Do not deduce or guess the logic.
+* **Error Correction**: To correct previously sent code,
+use the format: `--- OLD <code> ---` followed by `--- NEW <code> ---`.
+* **No code comments needed**: most of what is implemented I created myself, so I don't need you to
+explain the code that I created.
 
-## 6. Resumo dos Arquivos Importantes
+## 6. Important Files Summary
 
-| Arquivo | Propósito |
-|---------|-----------|
-| `continentsConfig.json` | Configuração central de continentes habilitados/desabilitados |
-| `ByPageFirmsBuilder.java` | Builder de firmas ByPage organizadas por continente |
-| `ByNewPageFirmsBuilder.java` | Builder de firmas ByNewPage organizadas por continente |
-| `CompletedFirms.java` | Construção das firmas e visualização de estatísticas |
-| `ContinentConfig.java` | Utilitário para ler a configuração de continentes |
-| `Validations.java` | Validações de países (usa ContinentConfig para evitar países de continentes desabilitados) |
-| `countriesToAvoidTemporary.json` | Lista de países por continente (evitados quando continente está desabilitado) |
-| `countriesToAvoidPermanent.json` | Lista de países sempre evitados (independente de configuração) |
+| File | Purpose |
+|------|---------|
+| `continentsConfig.json` | Central configuration for enabled/disabled continents |
+| `ByPageFirmsBuilder.java` | Builder for ByPage firms organized by continent |
+| `ByNewPageFirmsBuilder.java` | Builder for ByNewPage firms organized by continent |
+| `CompletedFirms.java` | Firm construction and statistics visualization |
+| `ContinentConfig.java` | Utility to read continent configuration |
+| `Validations.java` | Country validations (uses ContinentConfig to avoid countries from disabled continents) |
+| `countriesToAvoidTemporary.json` | List of countries by continent (avoided when continent is disabled) |
+| `countriesToAvoidPermanent.json` | List of countries always avoided (regardless of configuration) |
