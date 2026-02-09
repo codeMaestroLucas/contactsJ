@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class TompkinsWake extends ByNewPage {
     private final By[] byRoleArray = {
@@ -58,17 +59,13 @@ public class TompkinsWake extends ByNewPage {
 
     public String openNewTab(WebElement lawyer) {
         try {
-            By[] byArray = {By.cssSelector("a[href^='/people/']")};
+            By[] byArray = {By.cssSelector("a[href*='/people/']")};
             String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-            MyDriver.openNewTab("https://www.tompkinswake.com" + link);
+            MyDriver.openNewTab(link);
         } catch (LawyerExceptions e) {
             System.err.println("Failed to open new tab: " + e.getMessage());
         }
         return null;
-    }
-
-    public String getLink() {
-        return driver.getCurrentUrl();
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
@@ -103,7 +100,7 @@ public class TompkinsWake extends ByNewPage {
 
         String[] socials = this.getSocials(div);
         return Map.of(
-                "link", this.getLink(),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,

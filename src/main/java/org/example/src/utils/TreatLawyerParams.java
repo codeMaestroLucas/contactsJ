@@ -16,7 +16,8 @@ public final class TreatLawyerParams {
             "master", "sir", "esq", "rev", "att", "llm", "kc",
             "msc", "llb", "nbsp", "dsc", "em", "mag", "mbl",
             "mba", "mbe", "lawyer", "advocate", "advokat",
-            "phd", "prof", "univ", "she/her", "he/him"
+            "phd", "prof", "univ", "she/her", "he/him",
+            "professor"
     ));
 
     private static final String[] VALID_ROLES = {
@@ -142,6 +143,7 @@ public final class TreatLawyerParams {
         return email.replaceAll("\\?.*$", "")
                 .toLowerCase()
                 .replace("mailto", "")
+                .replace("email", "")
                 .replace(":", "")
                 .trim();
     }

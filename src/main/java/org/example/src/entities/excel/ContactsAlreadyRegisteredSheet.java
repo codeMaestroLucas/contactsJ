@@ -5,7 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
-import org.example.src.entities.MyDriver;
 import org.example.src.utils.Validations;
 
 import java.io.*;
@@ -45,10 +44,18 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
         try (BufferedReader br = new BufferedReader(new FileReader(CONFIG.LAST_FIRM_REGISTERED_FILE))) {
             firmToCheck = br.readLine();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            return 0;
         }
 
-        return Objects.isNull(firmToCheck) ?  0 : Integer.parseInt(firmToCheck) + 1;
+        if (Objects.isNull(firmToCheck) || firmToCheck.trim().isEmpty()) {
+            return 0;
+        }
+
+        try {
+            return Integer.parseInt(firmToCheck.trim()) + 1;
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 
 
@@ -56,14 +63,13 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
      * Write all the firms collected in the file `monthFirms.txt` to prevent duplicates on main execution
      */
     private void registerFirmsCollected() {
-        for (String lawFirm :lawFirmsCollected) {
-
-            try (BufferedWriter br = new BufferedWriter(new FileWriter(CONFIG.MONTH_FILE))){
-                br.write(String.valueOf(lawFirm));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(CONFIG.MONTH_FILE, true))) {
+            for (String lawFirm : lawFirmsCollected) {
+                bw.write(lawFirm);
+                bw.newLine();
             }
-
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -87,8 +93,15 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
     public void collectLawyersRegistered() {
         int i;
         int addedThisRun = 0;
+        int lastRowNum = this.getSheet().getLastRowNum();
 
-        for (i = this.lastFirmRow; i <= this.getSheet().getLastRowNum(); i++) {
+        System.out.println("\n=== Starting collectLawyersRegistered ===");
+        System.out.println("Starting from row: " + this.lastFirmRow);
+        System.out.println("Last row in sheet: " + lastRowNum);
+        System.out.println("Target lawyers: " + CONFIG.LAWYERS_IN_FILTER);
+        System.out.println("==========================================\n");
+
+        for (i = this.lastFirmRow; i <= lastRowNum; i++) {
 
             if (totalLawyers == CONFIG.LAWYERS_IN_FILTER) break;
 
@@ -102,20 +115,23 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
             if (Validations.isACountryToAvoid(country)) continue;
 
-            if (email.isEmpty() || name.isEmpty()) {
-                sheet.removeRow(row);
-                continue;
-            }
+            if (email.isEmpty() || name.isEmpty()) continue;
 
             if (contacts.isEmailRegistered(email)) {
-                System.out.println("Email '" + email + "' is already registered. Cleaning up.");
-                sheet.removeRow(row);
+                System.out.println("Email '" + email + "' is already registered in Contacts. Skipping.");
                 continue;
             }
 
-            if (firm.equals(lastFirm)) {
-                if (totalLawyersPerFirm == 3 || setOfCountriesCollectPerFirm.contains(country.toLowerCase().trim())
-                ) continue;
+            // Reset counters when firm changes
+            if (!firm.equals(lastFirm)) {
+                totalLawyersPerFirm = 0;
+                setOfCountriesCollectPerFirm.clear();
+                lastFirm = firm;
+            }
+
+            // Skip if we already have 3 lawyers from this firm or country already collected for this firm
+            if (totalLawyersPerFirm >= 3 || setOfCountriesCollectPerFirm.contains(country.toLowerCase().trim())) {
+                continue;
             }
 
             // collect full lawyer info
@@ -137,18 +153,13 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
             boolean successfullyRegistered = destinationSheet.addLawyer(lawyer, false);
             if (successfullyRegistered) {
-                sheet.removeRow(row);
-
                 totalLawyers++;
                 addedThisRun++;
                 setOfCountriesCollectPerFirm.add(country.toLowerCase().trim());
                 totalLawyersPerFirm++;
-                lastFirm = firm;
-            }
+                lawFirmsCollected.add(firm);
 
-            if (!firm.equals(lastFirm)) {
-                totalLawyersPerFirm = 0;
-                setOfCountriesCollectPerFirm.clear();
+                System.out.println("Added lawyer: " + name + " from " + firm + " (" + country + ")");
             }
         }
 
@@ -162,6 +173,12 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                 this.collectLawyersRegistered();
             }
         }
+
+        System.out.println("\n=== Collection Complete ===");
+        System.out.println("Total lawyers added: " + totalLawyers);
+        System.out.println("Firms collected: " + lawFirmsCollected.size());
+        System.out.println("Last row processed: " + i);
+        System.out.println("===========================\n");
 
         this.registerLastFirmCollectedRow(i);
         this.addRedSeparatorLine();

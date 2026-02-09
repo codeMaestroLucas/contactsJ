@@ -117,6 +117,9 @@ public abstract class Site {
         }
 
         this.lawyersRegistered++;
+
+        // Track successful registration in ErrorLogger
+        errorLogger.recordLawyerRegistered(this.name);
     }
 
     protected boolean registerValidLawyer(Object lawyerDetails, int index, int i, boolean showLogs)  {

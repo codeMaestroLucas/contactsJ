@@ -34,11 +34,11 @@ public class Main {
         int totalLawyersRegistered = 0;
         int redo = 0;
 
-        List<Site> sites = CompletedFirms.constructFirms(CONFIG.LAWYERS_IN_SHEET + 70);
+        List<Site> sites = CompletedFirms.constructFirms();
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         for (Site site : sites) {
-            if (Thread.currentThread().isInterrupted() || totalLawyersRegistered >= CONFIG.LAWYERS_IN_SHEET) {
+            if (Thread.currentThread().isInterrupted() || totalLawyersRegistered >= CONFIG.TOTAL_LAWYERS_TO_GET) {
                 System.out.println("Stopping lawyer search.");
                 break;
             }
@@ -113,7 +113,7 @@ public class Main {
         NoSleep.preventSleep(); // block sleep
         EmailDuplicateChecker.getINSTANCE().login();
         try {
-            performCompleteSearch();
+//            performCompleteSearch();
             searchLawyersInWeb();
             searchLawyersInWeb();
 
@@ -128,8 +128,5 @@ public class Main {
             EmailDuplicateChecker.getINSTANCE().close();
             NoSleep.allowSleep(); // allow sleep again when finished
         }
-//        try {
-//            searchLawyersInWeb();
-//        }  catch (Exception e) {}
     }
 }

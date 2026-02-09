@@ -22,6 +22,9 @@ public abstract class ByPage extends Site {
     public Runnable searchForLawyers(boolean showLogs) {
         if (Validations.isAFirmToAVoid(this.name)) return null;
 
+        // Mark this firm as being processed for error tracking
+        errorLogger.startFirm(this.name);
+
         // Use labeled break to exit both loops
         pageLoop: for (int i = 0; i < this.getTotalPages(); i++) {
             System.out.printf("Page %d - - - - - - - - - - ( %d )%n", i + 1, this.getTotalPages());

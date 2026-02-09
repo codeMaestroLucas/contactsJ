@@ -80,11 +80,7 @@ public class CliffordChance extends ByPage {
 
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "senior associate"
-        };
+        String[] validRoles = new String[]{ "partner", "counsel", "senior associate" };
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
@@ -104,16 +100,15 @@ public class CliffordChance extends ByPage {
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='/people_and_places/people/']")
+                By.cssSelector("a[href*='https://www.cliffordchance.com/people_and_places/people/']")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException).toLowerCase();
-        // To lowerCase necessary
     }
 
 
     private String getName(WebElement container) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='/people_and_places/people/']")
+                By.cssSelector("a[href*='https://www.cliffordchance.com/people_and_places/people/']")
         };
         return extractor.extractLawyerAttribute(container, byArray, "NAME", "title", LawyerExceptions::nameException);
     }

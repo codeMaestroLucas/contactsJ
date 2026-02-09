@@ -24,7 +24,7 @@ public class WikborgRein extends ByNewPage {
 
     public WikborgRein() {
         super(
-            "WikborgRein",
+            "Wikborg Rein",
             "https://www.wr.no/en/people",
             1
         );

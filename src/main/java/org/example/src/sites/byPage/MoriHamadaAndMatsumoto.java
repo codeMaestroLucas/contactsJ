@@ -77,8 +77,7 @@ public class MoriHamadaAndMatsumoto extends ByPage {
         By[] byArray = new By[]{
                 By.cssSelector("a[href^='/en/people/']")
         };
-        String href = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-        return "https://www.morihamada.com" + href;
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 

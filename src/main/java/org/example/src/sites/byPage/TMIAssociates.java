@@ -56,8 +56,7 @@ public class TMIAssociates extends ByPage {
 
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        String href = extractor.extractLawyerAttribute(lawyer, new By[]{}, "LINK", "href", LawyerExceptions::linkException);
-        return "https://www.tmi.gr.jp" + href;
+        return extractor.extractLawyerAttribute(lawyer, new By[]{}, "LINK", "href", LawyerExceptions::linkException);
     }
 
 

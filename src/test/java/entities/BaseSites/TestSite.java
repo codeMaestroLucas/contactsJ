@@ -1,7 +1,7 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byPage.WaldAntunesVitaEBlattner;
+import org.example.src.sites.byPage.AMTLaw;
 import org.example.src.utils.Validations;
 
 import java.lang.reflect.Field;
@@ -17,16 +17,13 @@ import java.lang.reflect.Field;
  * This allows you to visualize the site extraction without making real registrations.
  */
 
-class MyTestPage extends WaldAntunesVitaEBlattner {
+class MyTestPage extends AMTLaw {
 
     /**
      * Constructor that initializes with test logger to avoid affecting production logs
      */
     public MyTestPage() {
-        super();
-        // Use test logger instance to isolate test execution logs
-        this.errorLogger = org.example.src.utils.ErrorLogger.getTestInstance();
-    }
+        super();}
     
     /**
      * Change the values of MaxLawyersForSite and totalPages and show the logs

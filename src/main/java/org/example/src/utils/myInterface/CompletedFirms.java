@@ -31,11 +31,10 @@ public class CompletedFirms {
 
 
     /**
-     * Construct all firms that are not inserted in the  file then insert the filter firms in the in an array and
-     * then shuffle it.
+     * Construct all firms that are not inserted in the monthFirms.txt file then insert them in an array and shuffle it.
      * Respects continent configuration - only includes firms from enabled continents.
      */
-    public static List<Site> constructFirms(int maxFirmsToGet) {
+    public static List<Site> constructFirms() {
         Site[][] sites = new Site[][] {getByPage(), getByNewPage()};
         List<Site> filteredSites = new ArrayList<>();
 

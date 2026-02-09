@@ -2,298 +2,309 @@ package org.example.src.utils;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.exceptions.ValidationExceptions;
-import org.openqa.selenium.WebDriverException;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.TimeoutException;
 
 /**
- * Singleton class to handle error logging.
- * Accumulates errors by firm and writes them in a clean, grouped format.
+ * Singleton class for tracking and logging extraction errors.
+ * Designed to help identify which scraper classes need maintenance.
+ *
+ * Features:
+ * - Tracks errors by firm and error type (linkException, nameException, etc.)
+ * - Tracks firms that registered zero lawyers
+ * - Generates a summary with most common errors
+ * - Outputs clean, actionable logs for maintenance
  */
 public class ErrorLogger {
     private static ErrorLogger INSTANCE;
-    private static ErrorLogger TEST_INSTANCE;
-    private final Map<String, Map<String, Integer>> errorCountsByFirm = new HashMap<>();
-    private static final String LOG_FILE_PATH = "log.txt";
-    private static final String TEST_LOG_FILE_PATH = "test_log.txt";
-    private static final String SEPARATOR = "=".repeat(100);
-    private final String logFilePath;
 
-    /**
-     * Private constructor to prevent instantiation.
-     * Initializes the log file at the beginning of a new session.
-     * @param logPath Path to the log file to use
-     */
-    private ErrorLogger(String logPath) {
-        this.logFilePath = logPath;
-        try (FileWriter fw = new FileWriter(logFilePath, false);
-             PrintWriter pw = new PrintWriter(fw)) {
-            pw.printf("LOG SESSION STARTED - %s%n%n", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-        } catch (IOException e) {
-            System.err.println("FATAL: Could not initialize log file: " + logFilePath);
-            e.printStackTrace(System.err);
-        }
+    private static final String LOG_FILE_PATH = "log.txt";
+
+    // Error tracking: Firm -> (ErrorType -> Count)
+    private final Map<String, Map<String, Integer>> errorsByFirm = new LinkedHashMap<>();
+
+    // Track lawyers registered per firm
+    private final Map<String, Integer> lawyersRegisteredByFirm = new LinkedHashMap<>();
+
+    // Track all firms that were processed
+    private final Set<String> processedFirms = new LinkedHashSet<>();
+
+    // Global error counts for summary
+    private final Map<String, Integer> globalErrorCounts = new HashMap<>();
+
+    // Session start time
+    private final String sessionStartTime;
+
+    private ErrorLogger() {
+        this.sessionStartTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
 
-    /**
-     * Gets the main production logger instance.
-     * @return The main ErrorLogger instance
-     */
     public static synchronized ErrorLogger getINSTANCE() {
         if (INSTANCE == null) {
-            INSTANCE = new ErrorLogger(LOG_FILE_PATH);
+            INSTANCE = new ErrorLogger();
         }
         return INSTANCE;
     }
 
     /**
-     * Gets a test logger instance that writes to a separate log file.
-     * Use this in test classes to avoid affecting production logs.
-     * @return The test ErrorLogger instance
+     * Resets the logger for a new session.
+     * Call this at the start of a new execution if needed.
      */
-    public static synchronized ErrorLogger getTestInstance() {
-        if (TEST_INSTANCE == null) {
-            TEST_INSTANCE = new ErrorLogger(TEST_LOG_FILE_PATH);
-        }
-        return TEST_INSTANCE;
+    public void reset() {
+        errorsByFirm.clear();
+        lawyersRegisteredByFirm.clear();
+        processedFirms.clear();
+        globalErrorCounts.clear();
     }
 
     /**
-     * Logs an error by accumulating it in memory.
-     * @param firmName The name of the firm where the error occurred.
-     * @param e The exception to log.
-     * @param showLogs If true, prints to the console. If false, accumulates for file logging.
+     * Marks a firm as processed (started scraping).
+     * Call this at the beginning of processing each firm.
+     */
+    public void startFirm(String firmName) {
+        processedFirms.add(firmName);
+        lawyersRegisteredByFirm.putIfAbsent(firmName, 0);
+    }
+
+    /**
+     * Records that a lawyer was successfully registered for a firm.
+     */
+    public void recordLawyerRegistered(String firmName) {
+        lawyersRegisteredByFirm.merge(firmName, 1, Integer::sum);
+    }
+
+    /**
+     * Logs an extraction error.
+     * Automatically categorizes the error by type.
+     *
+     * @param firmName The firm where the error occurred
+     * @param e        The exception
+     * @param showLogs If true, also prints to console
      */
     public void log(String firmName, Exception e, boolean showLogs) {
-        if (showLogs) {
-            System.err.printf("Error while processing firm %s:%n", firmName);
-            e.printStackTrace(System.err);
-            return;
-        }
-
-        // Do not log validation exceptions to the file
+        // Skip validation exceptions - they're not extraction errors
         if (e instanceof ValidationExceptions) return;
 
-        String errorDescription = getErrorDescription(e, null);
-        accumulateError(firmName, errorDescription);
+        String errorType = categorizeError(e);
+
+        // Track by firm
+        errorsByFirm.putIfAbsent(firmName, new LinkedHashMap<>());
+        errorsByFirm.get(firmName).merge(errorType, 1, Integer::sum);
+
+        // Track globally
+        globalErrorCounts.merge(errorType, 1, Integer::sum);
+
+        if (showLogs) {
+            System.err.printf("[%s] %s: %s%n", firmName, errorType, e.getMessage());
+        }
     }
 
     /**
-     * Overloaded method to log errors with additional context information.
-     * @param firmName The name of the firm where the error occurred.
-     * @param e The exception to log.
-     * @param showLogs If true, prints to the console. If false, accumulates for file logging.
-     * @param context Additional context information (e.g., "Error accessing page 3")
+     * Logs an error with additional context.
+     * Note: Context is used for console output only, not for aggregation.
+     * This ensures errors are grouped by type only (e.g., "getSocialsError" not "getSocialsError (Error reading 36th lawyer at page 1)")
      */
     public void log(String firmName, Exception e, boolean showLogs, String context) {
-        if (showLogs) {
-            System.err.printf("Error while processing firm %s: %s%n", firmName, context);
-            e.printStackTrace(System.err);
-            return;
-        }
-
-        // Do not log validation exceptions to the file
         if (e instanceof ValidationExceptions) return;
 
-        String errorDescription = getErrorDescription(e, context);
-        accumulateError(firmName, errorDescription);
+        String errorType = categorizeError(e);
+
+        // Only use errorType for aggregation (no context)
+        errorsByFirm.putIfAbsent(firmName, new LinkedHashMap<>());
+        errorsByFirm.get(firmName).merge(errorType, 1, Integer::sum);
+        globalErrorCounts.merge(errorType, 1, Integer::sum);
+
+        if (showLogs) {
+            // Context is only shown in console output, not stored for aggregation
+            String displayType = (context != null && !context.isEmpty())
+                    ? errorType + " (" + context + ")"
+                    : errorType;
+            System.err.printf("[%s] %s: %s%n", firmName, displayType, e.getMessage());
+        }
     }
 
     /**
-     * Accumulates an error for a specific firm.
-     * @param firmName The firm name.
-     * @param errorDescription The error description.
+     * Categorizes an exception into a simple, actionable error type.
      */
-    private void accumulateError(String firmName, String errorDescription) {
-        errorCountsByFirm.putIfAbsent(firmName, new HashMap<>());
-        Map<String, Integer> firmErrors = errorCountsByFirm.get(firmName);
-        firmErrors.put(errorDescription, firmErrors.getOrDefault(errorDescription, 0) + 1);
+    private String categorizeError(Exception e) {
+        if (e instanceof LawyerExceptions) {
+            String msg = e.getMessage();
+            if (msg == null) return "lawyerException";
+
+            if (msg.contains("LINK")) return "linkException";
+            if (msg.contains("NAME")) return "nameException";
+            if (msg.contains("EMAIL")) return "emailException";
+            if (msg.contains("PHONE")) return "phoneException";
+            if (msg.contains("ROLE")) return "roleException";
+            if (msg.contains("COUNTRY")) return "countryException";
+            if (msg.contains("PRACTICE")) return "practiceAreaException";
+
+            return "lawyerException";
+        }
+
+        // Extract method name from stack trace for other exceptions
+        String methodName = extractMethodFromStack(e);
+        if (methodName != null) {
+            return methodName + "Error";
+        }
+
+        return e.getClass().getSimpleName();
     }
 
     /**
-     * Writes accumulated logs for a specific firm to the log file.
-     * @param firmName The name of the firm to write logs for.
+     * Extracts the relevant method name from the stack trace.
      */
-    public void flushFirmLogs(String firmName) {
-        Map<String, Integer> firmErrors = errorCountsByFirm.get(firmName);
-        
-        if (firmErrors == null || firmErrors.isEmpty()) {
+    private String extractMethodFromStack(Exception e) {
+        for (StackTraceElement element : e.getStackTrace()) {
+            String className = element.getClassName();
+            String method = element.getMethodName();
+
+            // Look for site class methods
+            if (className.contains(".sites.") && !method.equals("searchForLawyers")) {
+                return method;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Writes all accumulated logs to the log file.
+     * Call this at the end of the session.
+     */
+    public void flushAllLogs() {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(LOG_FILE_PATH, false))) {
+            writeHeader(pw);
+            writeFirmErrors(pw);
+            writeFirmsWithZeroLawyers(pw);
+            writeErrorSummary(pw);
+            writeFooter(pw);
+
+        } catch (IOException e) {
+            System.err.println("ERROR: Could not write to log file: " + e.getMessage());
+        }
+    }
+
+    private void writeHeader(PrintWriter pw) {
+        pw.println("=====================================================================================================");
+        pw.println("                                    ERROR LOG - " + sessionStartTime);
+        pw.println("=====================================================================================================");
+        pw.println();
+    }
+
+    private void writeFirmErrors(PrintWriter pw) {
+        if (errorsByFirm.isEmpty()) {
+            pw.println("[OK] No extraction errors recorded!");
+            pw.println();
             return;
         }
 
-        try (FileWriter fw = new FileWriter(logFilePath, true);
-             PrintWriter pw = new PrintWriter(fw)) {
+        pw.println("----------------------------------------------------------------------------------------------------");
+        pw.println("                                      ERRORS BY FIRM");
+        pw.println("----------------------------------------------------------------------------------------------------");
+        pw.println();
 
-            pw.println(SEPARATOR);
-            pw.println(firmName);
+        // Sort firms by total error count (descending)
+        List<Map.Entry<String, Map<String, Integer>>> sortedFirms = new ArrayList<>(errorsByFirm.entrySet());
+        sortedFirms.sort((a, b) -> {
+            int totalA = a.getValue().values().stream().mapToInt(Integer::intValue).sum();
+            int totalB = b.getValue().values().stream().mapToInt(Integer::intValue).sum();
+            return Integer.compare(totalB, totalA);
+        });
+
+        for (Map.Entry<String, Map<String, Integer>> entry : sortedFirms) {
+            String firmName = entry.getKey();
+            Map<String, Integer> errors = entry.getValue();
+            int totalErrors = errors.values().stream().mapToInt(Integer::intValue).sum();
+            int lawyersRegistered = lawyersRegisteredByFirm.getOrDefault(firmName, 0);
+
+            pw.printf("Class %s [%d lawyers registered, %d errors]%n", firmName, lawyersRegistered, totalErrors);
+
+            // Sort errors by count (descending)
+            List<Map.Entry<String, Integer>> sortedErrors = new ArrayList<>(errors.entrySet());
+            sortedErrors.sort((a, b) -> Integer.compare(b.getValue(), a.getValue()));
+
+            for (Map.Entry<String, Integer> error : sortedErrors) {
+                pw.printf("   - %-30s occurred %d times%n", error.getKey(), error.getValue());
+            }
             pw.println();
-            pw.println("Errors:");
+        }
+    }
 
-            // Sort errors alphabetically for consistent output
-            List<Map.Entry<String, Integer>> sortedErrors = new ArrayList<>(firmErrors.entrySet());
-            sortedErrors.sort(Map.Entry.comparingByKey());
+    private void writeFirmsWithZeroLawyers(PrintWriter pw) {
+        List<String> zeroLawyerFirms = new ArrayList<>();
 
-            for (Map.Entry<String, Integer> entry : sortedErrors) {
-                pw.printf("    - %s %dx%n", entry.getKey(), entry.getValue());
+        for (String firm : processedFirms) {
+            int registered = lawyersRegisteredByFirm.getOrDefault(firm, 0);
+            if (registered == 0) {
+                zeroLawyerFirms.add(firm);
             }
-
-            pw.println(SEPARATOR);
-            pw.println();
-
-            // Clear the errors for this firm after writing
-            errorCountsByFirm.remove(firmName);
-
-        } catch (IOException e) {
-            System.err.println("FATAL: Could not write to log file.");
-            e.printStackTrace(System.err);
         }
-    }
 
-    /**
-     * Writes all accumulated logs to the file and clears the buffer.
-     * Useful for flushing all pending logs at the end of the session.
-     */
-    public void flushAllLogs() {
-        List<String> firmNames = new ArrayList<>(errorCountsByFirm.keySet());
-        firmNames.sort(String::compareTo);
-        
-        for (String firmName : firmNames) {
-            flushFirmLogs(firmName);
+        if (zeroLawyerFirms.isEmpty()) {
+            return;
         }
-    }
 
-    /**
-     * Generates a clean, human-readable description of an error.
-     * @param e The exception.
-     * @param context Optional context information.
-     * @return A formatted error description string.
-     */
-    private String getErrorDescription(Exception e, String context) {
-        StringBuilder description = new StringBuilder();
+        pw.println("----------------------------------------------------------------------------------------------------");
+        pw.println("                              [WARNING] FIRMS WITH ZERO LAWYERS REGISTERED");
+        pw.println("----------------------------------------------------------------------------------------------------");
+        pw.println();
+        pw.printf("Total: %d firms need attention%n%n", zeroLawyerFirms.size());
 
-        // Determine error type
-        if (e instanceof LawyerExceptions) {
-            // LawyerExceptions already have clean messages like "Invalid NAME: John"
-            description.append("Lawyer Error: ").append(e.getMessage());
-        } else if (e instanceof WebDriverException) {
-            description.append("WebDriver Error: ");
-            String message = e.getMessage();
-            if (message != null) {
-                // Extract first meaningful line or first 60 characters
-                String[] lines = message.split("\n");
-                String firstLine = lines[0].trim();
-                if (firstLine.length() > 60) {
-                    firstLine = firstLine.substring(0, 60);
-                }
-                description.append(firstLine);
+        for (String firm : zeroLawyerFirms) {
+            Map<String, Integer> errors = errorsByFirm.get(firm);
+            if (errors != null && !errors.isEmpty()) {
+                int totalErrors = errors.values().stream().mapToInt(Integer::intValue).sum();
+                pw.printf("   [X] %s (%d errors)%n", firm, totalErrors);
             } else {
-                description.append("Unknown error");
-            }
-            
-            // Add method and line info from stack trace
-            String stackInfo = extractStackInfo(e);
-            if (stackInfo != null) {
-                description.append(" at ").append(stackInfo);
-            }
-            
-        } else if (e instanceof TimeoutException) {
-            description.append("Timeout Error");
-            if (e.getMessage() != null) {
-                description.append(": ").append(e.getMessage());
-            }
-        } else if (e instanceof RuntimeException) {
-            description.append("Runtime Error: ");
-            String message = e.getMessage();
-            if (message != null && !message.isEmpty()) {
-                // Use first 60 characters of message
-                description.append(message.length() > 60 ? message.substring(0, 60) : message);
-            } else {
-                description.append(e.getClass().getSimpleName());
-            }
-            
-            // Add method info from stack trace
-            String stackInfo = extractStackInfo(e);
-            if (stackInfo != null) {
-                description.append(" at ").append(stackInfo);
-            }
-            
-        } else {
-            // Generic exception handling
-            description.append(e.getClass().getSimpleName());
-            if (e.getMessage() != null) {
-                description.append(": ").append(
-                    e.getMessage().length() > 60 ? e.getMessage().substring(0, 60) : e.getMessage()
-                );
-            }
-            
-            String stackInfo = extractStackInfo(e);
-            if (stackInfo != null) {
-                description.append(" at ").append(stackInfo);
+                pw.printf("   [X] %s (no errors logged - possible timeout or page issue)%n", firm);
             }
         }
-
-        // Add context if provided
-        if (context != null && !context.isEmpty()) {
-            description.append(" (").append(context).append(")");
-        }
-
-        return description.toString();
+        pw.println();
     }
-    
+
+    private void writeErrorSummary(PrintWriter pw) {
+        if (globalErrorCounts.isEmpty()) {
+            return;
+        }
+
+        pw.println("----------------------------------------------------------------------------------------------------");
+        pw.println("                                      ERROR SUMMARY");
+        pw.println("----------------------------------------------------------------------------------------------------");
+        pw.println();
+
+        int totalErrors = globalErrorCounts.values().stream().mapToInt(Integer::intValue).sum();
+        pw.printf("Total errors: %d%n%n", totalErrors);
+
+        // Sort by count (descending)
+        List<Map.Entry<String, Integer>> sorted = new ArrayList<>(globalErrorCounts.entrySet());
+        sorted.sort((a, b) -> Integer.compare(b.getValue(), a.getValue()));
+
+        pw.println("Most common errors:");
+        for (Map.Entry<String, Integer> entry : sorted) {
+            double percentage = (entry.getValue() * 100.0) / totalErrors;
+            pw.printf("   %-35s %5d  (%5.1f%%)%n", entry.getKey(), entry.getValue(), percentage);
+        }
+        pw.println();
+    }
+
+    private void writeFooter(PrintWriter pw) {
+        pw.println("=====================================================================================================");
+        pw.printf("Firms processed: %d | Firms with errors: %d | Firms with 0 lawyers: %d%n",
+                processedFirms.size(),
+                errorsByFirm.size(),
+                processedFirms.stream().filter(f -> lawyersRegisteredByFirm.getOrDefault(f, 0) == 0).count());
+        pw.println("=====================================================================================================");
+    }
+
     /**
-     * Extracts the most relevant stack trace information to identify where the error occurred.
-     * Looks for the first site class method (e.g., getName, getEmail, getSocials).
-     * @param e The exception.
-     * @return A string with method name and line number, or null if not found.
+     * For backward compatibility - flushes logs for a specific firm.
+     * In this new implementation, all logs are flushed together at the end.
      */
-    private String extractStackInfo(Exception e) {
-        StackTraceElement[] stackTrace = e.getStackTrace();
-        
-        if (stackTrace == null || stackTrace.length == 0) {
-            return null;
-        }
-        
-        // Look for the first relevant stack trace element from our site classes
-        for (StackTraceElement element : stackTrace) {
-            String className = element.getClassName();
-            String methodName = element.getMethodName();
-            
-            // Skip internal Java, Selenium, and utility classes
-            if (className.startsWith("java.") || 
-                className.startsWith("org.openqa.selenium.") ||
-                className.startsWith("sun.") ||
-                className.contains("$Proxy") ||
-                methodName.equals("log") ||
-                methodName.equals("searchForLawyers") ||
-                methodName.equals("registerValidLawyer") ||
-                methodName.equals("getLawyer")) {
-                continue;
-            }
-            
-            // Found relevant method - extract method name only (cleaner)
-            if (className.contains(".sites.")) {
-                // Extract just the method name, which usually indicates what was being accessed
-                // e.g., getName(), getEmail(), getRole(), getSocials()
-                return methodName + "():" + element.getLineNumber();
-            }
-        }
-        
-        // If no site class found, return first non-internal frame
-        for (StackTraceElement element : stackTrace) {
-            String className = element.getClassName();
-            if (!className.startsWith("java.") && 
-                !className.startsWith("org.openqa.selenium.") &&
-                !className.startsWith("sun.") &&
-                !className.contains("$Proxy")) {
-                return element.getMethodName() + "():" + element.getLineNumber();
-            }
-        }
-        
-        return null;
+    public void flushFirmLogs(String firmName) {
+        // No-op in new implementation - logs are flushed all together at the end
     }
 }

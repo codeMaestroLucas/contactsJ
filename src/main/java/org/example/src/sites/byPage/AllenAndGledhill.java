@@ -16,7 +16,7 @@ public class AllenAndGledhill extends ByPage {
 
     public AllenAndGledhill() {
         super(
-                "AllenAndGledhill",
+                "Allen And Gledhill",
                 "https://www.allenandgledhill.com/partners/",
                 19,
                 2

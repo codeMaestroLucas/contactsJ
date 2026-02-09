@@ -56,12 +56,6 @@ public class IndiaLawOffices extends ByPage {
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.xpath(".//p[contains(strong, 'Location')]")};
-        String location = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-        return location.replace("Location:", "").trim();
-    }
-
     private String getEmail(String name) {
         String cleanName = TreatLawyerParams.treatNameForEmail(name);
         String[] parts = cleanName.split(" ");
@@ -76,7 +70,7 @@ public class IndiaLawOffices extends ByPage {
                 "name", name,
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", this.getCountry(lawyer),
+                "country", "India",
                 "practice_area", "",
                 "email", getEmail(name),
                 "phone", "911141647271"

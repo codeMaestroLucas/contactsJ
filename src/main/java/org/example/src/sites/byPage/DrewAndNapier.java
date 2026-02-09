@@ -17,7 +17,7 @@ public class DrewAndNapier extends ByPage {
 
     public DrewAndNapier() {
         super(
-                "DrewAndNapier",
+                "Drew And Napier",
                 "https://www.drewnapier.com/Our-Lawyers?name=a&practice=",
                 26
         );

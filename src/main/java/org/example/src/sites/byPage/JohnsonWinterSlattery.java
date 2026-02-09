@@ -57,11 +57,6 @@ public class JohnsonWinterSlattery extends ByPage {
         return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("span._1t5zywtl:last-child")};
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-    }
-
     private String[] getSocials(WebElement lawyer) {
         try {
             String email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getText().trim();
@@ -80,7 +75,7 @@ public class JohnsonWinterSlattery extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", this.getCountry(lawyer),
+                "country", "Australia",
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "61282749555" : socials[1]

@@ -25,7 +25,7 @@ public class Milbank extends ByPage {
             entry("munich", "Germany"),
             entry("new york", "USA"),
             entry("são paulo", "Brazil"),
-            entry("seoul", "South Korea"),
+            entry("seoul", "Korea (South)"),
             entry("singapore", "Singapore"),
             entry("tokyo", "Japan"),
             entry("washington, d.c.", "USA")

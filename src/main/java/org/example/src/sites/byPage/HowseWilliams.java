@@ -50,8 +50,7 @@ public class HowseWilliams extends ByPage {
                 By.className("staff_more"),
                 By.cssSelector("a")
         };
-        String partialLink = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-        return "https://www.howsewilliams.com/en/" + partialLink;
+        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
 

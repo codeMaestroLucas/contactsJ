@@ -1,295 +1,565 @@
-Legance
-Magnusson Law
-Paul Hastings
-AMT Law
-Dahl Law
-SRS Legal
-Gianni And Origoni
-Norens
-Jalsovszky
-Miller Thomson LLP
-Njord
-Krogerus
-Vischer
-Stibbe
-ALP NGAndCo
-LEX Logmannsstofa
-Marks & Clerk
-Moroğlu Arseven
-Boyanov
-Winston And Strawn
-Hoffmann Eitle
-Morgan Lewis
-Šelih And Partnerji
-Porwisz and Partners
-Oxera
-Ganado Advocates
-Conyers
-Holland And Knight
-Al Tamimi
-White And Case
-Clemens Law
-KBVL Law
-SZA
-HBN Law
-Johnson Camacho And Singh
-Proskauer Rose
-HFW
-William Fry
-Onsagers
-Brinkmann & Partner
-Logos
-Strelia
-DANUBIA Patent And Law
-Kanter
-Ploum
-Moalem Weitemeyer
-Crowell And Moring
-Thommessen
-Ekelmans
-Pels Rijcken
-FLICHY GRANGÉ
+Trilegal
+Ramdas And Wong
+ShinAndKim
+BSA Law
+Hiways
+Guantao Law
+DCC Law
+Saba And Co
+DR And AJU
+Jia Yuan Law
+Momo-o Matsuo And Namba
+Peter And Kim
+Khaitan & Co
+Anand And Anand
+Cuatrecasas
+Carter Newell
+SEUM
+ABNR
+Hakun Law
+Rahmat Lim And Partners
+Banki Haddock Fiora
+Grandway Law
+MAS Law
+Nurmansyah And Muzdalifah
+Anderson Lloyd
+Ashitiva
+Control Risks
+Oh-Ebashi LPC And Partners
+Anthony Harper
+Bae Kim And Lee
+Baumgartners
+AllBright Law
+Wilson Harle
+Ai Group
+Oldham Li & Nie
+Allens
+Spruson And Ferguson
+Simmons Wolfhagen
+Russell McVeagh
+Nishimura And Asahi
+Kochhar And Co
+Zaid Ibrahim And Co
+DrewAndNapier
+India Law Offices
+Minter Ellison RuddWatts
+Lee And Ko
+Malley And Co
+ALMTLegal
+Jincheng Tongda And Neal
+Young List
+K1 Chamber
+Duncan Cotterill
+DW Fox Tucker
+Veritas Legal
+CFN Law
+Aquinas Law Alliance
+Johnson Winter Slattery
+F. J. And G. De Saram
+Harry Elias
+Macpherson Kelley
+Romulo Law Firm
+Covenant Chambers
+MdME
+Houthoof
+Buddle Findlay
+Tiruchelvam Associates
+Mori Hamada And Matsumoto
+Tsar And Tsai
+Tahota Law
+Thomson Geer
+TCLaw
+James And Wells
+Desai & Diwanji
+Gadens
+Hiswara BunjaminAndTandjung
+Nagashima Ohno And Tsunematsu
+MZM Legal
+Zhongzi Law
+East And Concord
+Virtus
+Piper Alderman
+Lane Neave
+Holding Redlich
+RemfryAndSagar
+Deacons
+Howse Williams
+Chandler MHM
+Hugill And Ip
+TMI Associates
+One Essex Court
+Lektou
+Huiye Law
+City-Yuwa Partners
+Reliance Corporate Advisors
+Assegaf Hamzah & Partners
+Gulapa Law
+Miura & Partners
+DBHLaw
+LonganLaw
+Saga Legal
+Stevenson Wong And Co
+Fidal
+Frontier
 CLP Law
-Suárez de Vivero
-Braun Partners
-NESTOR
-Popovici Niţu StoicaAndAsociaţii
-Thomas Bodström
-BNT
-McCarthy Tetrault
-Dimitrov Petrov & Co
-Jackson Etti And Edu
-Wolf Theiss
-ONV Law
-Blake Morgan
-GVZH
-LEXIA
-Rymarz Zdort Maruta
-Byrne Wallace
-Lindahl
-Cleary Gottlieb
-Francis Wilks And Jones
-Hayes
-Meitar Law
-Kromann Reumert
-ArnoldAndSiedsma
-Selmer
-NOEWE
-Hammarskiöld And Co
-Shalakany
-Joffe & Associés
-SIRIUS
-Aman And Partners
-Valfor
-Jadek And Pensa
-Kochański & Partners
-Maikowski And Ninnemann
-Blakes
-Cassidy Levy Kent
-Faegre Drinker Biddle & Reath
-Aluko & Oyebode
-AL Goodbody
-FRA
-WALLESS
-Foyen
-Vossius And Partner
-Keystone Law
-KRBLaw
-Mazanti-Andersen
-Holst
-Harper James Solicitors
-Delcade
-Curtis
-Carey Olsen
-Dompatent
-Mourant
-Greene And Greene Solicitors
-Gornitzky And Co
-Sheppard Mullin
-Haavind
-FPS Law
-Burges Salmon
-Hellström
-Pinney Talfourd Solicitors
-Schoenherr
-Havel Partners
-Zamfirescu Racoti Predoiu
-Shahid Law
-Ogletree
-Walkers
-LPA-GGV
-Orrick
-Racine
-Kennedy Van der Laan
-Latham And Watkins
-Campbells Legal
-Pedersoli
-Pusch Wahlig
-Kallio Law
-Brown Rudnick
-Kolster
-TEMPLARS
-Mitel And Asociaţii
-Viering Jentschura And Partner
-Codex
-Filip & Company
-Rödl And Partner
-Habraken Rutten
-Ashurst
-Kienhuis Legal
-Odigo
-Zepos And Yannopoulos
-ASC hukuk
-Cirio
-RPC Legal
-Nunziante Magrone
-Firon Law
-Gorrissen Federspiel
-JPM And Partners
-Wiersholm
-McDermott Will And Emery
-Watson Farley And Williams
-GRATA International
-Slaughter & May
-CERHA HEMPEL
-Latam Lex
-Fylgia
-Esche
-Eubelius
-Jones Day
-Kinstellar
-BUREN
-Osborne Clarke
-Portolano Cavallo
-Drzewiecki Tomaszek
-KECO Legal
-Knijff
-MVVP advocaten
-Hunton Andrews Kurth
-Arnesen IP
-Nielsen Nørager
-Kew Law
-Bancila Diaconu si Asociatii
-KISCH IP
-Ellisons Solicitors
-Greenberg Traurig
-ENS Africa
-RBK
-Lewiss Silkin
-AGP Advokater
-WikborgRein
-Vinge
-Carnelutti Law
-Bull & Co
-Tuca Zbarcea
-Lambadarios Law
-Lydian
-Dinova RusevAndPartners
-Goerg
-Duane Morris
-STBB
-Gitti And Partners
-Bureau Plattner
-Finreg 360
-Clarkslegal
-Eldib Advocates
-Morris Law
-HARTE-BAVENDAMM
-Borenius
-MSB Solicitors
-Goodwin
-Arnold And Porter
-Liedekerke
-Grette
-Willkie
-Blandy And Blandy
-Appleby Global
-Lemstra Van der Korst
-Hjulmand Captain
-KWKR Law
-Beauchamps
-Berggren
-Prüfer & Partner
-BonelliErede
-Hannes Snellman
-Spencer West
-GPK
-HCR Legal
-GÖRG
-AB & David
-VO Patents And Trademarks
-AllenAndGledhill
-PAGBAM
-Penta
-Legalis
-Higgs And Johnson
-Franklin Law
-SKW Schwarz
-Ropes And Gray
-Addleshaw Goddard LLP
-Green Horse Legal
-Rădulescu And Mușoi
-Dechert LLP
-JŠK Advokátní
-ABG IP
-De Clercq
-Laszczuk And Wspolnicy
-Meyer Köring
-Chattertons
-EProint
-Boodle Hatfield
-Bentsi-Enchill Letsa & Ankomah
-Buss Murton Law
-Adsero
-DMS Legal
-JB Law
-Peterka And Partners
-Pearl Cohen
-Aron Tadmor Levy
-Mayer Brown
-Nysingh advocaten-notarissen N.V.
-Horten
-Pillsbury Winthrop Shaw Pittman
-Vaneps
-EP&C
-Payet Rey Cauvi Pérez
-BARDEHLE PAGENBERG
-BAHR
-Contrast
-Skadden
-BSJP
-Eisenfuhr Speiser And Partner
-Ogier
-FIVERS
-Paksoy
-Kvale
-Schurti Partners
-FCM Limited
-DKGV
-Herbert Smith Freehills Kramer
-Debevoise And Plimpton
-Secretariat
-HPP Attorneys
-Sullivan & Worcester
-MVJ Marković Vukotić Jovković
-Milbank
-Mccann Fitz Gerald
-Ellex
-Taylor Wessing
-Fischer
-EBN
-Kambourov And Partners
-Hügel
-Stone King
-Aera
-Schoups
-Molinari
-Wardynski And Partners
-BRAUNEIS RECHTSANWÄLTE
-Alston and Bird LLP
-MAQS
+Arthur Cox
 Castrén & Snellman
-Quin Emanuel
-Zulficar & Partners
-Holmes
+AlemAndAssociates
+Asia Practice
+Akerman LLP
+AlixPartners
+Allen & Gledhill
+Jackson Etti And Edu
+DRAndAJU LLC
+ASBZ
+BG2V 
+Charles, Russell, Speechlys
+BAHR
+HFW
+BVZ Advogados
+José LupiAndAssociates
+Kroll
+Blanco & Etcheverry
+HKA
+Cornwalls
+Bridge Legal Group
+Escandon Abogados
+Gowling WLG
+Bell Gully
+Addleshaw Goddard LLP
+Control Risks
+Baker Botts
+Aluko & Oyebode
+BES Abogados
+Fischer FBC & Co
+Johnson Winter Slattery
+ALP NGAndCo
+Appleby Global
+CEC Group
+Freshfields
+Al Ammar Law
+BRATAX
+Advocatus Law LLP
+Grandall Law
+FI&F
+Haavind
+Cliffe Dekker Hofmeyr
+Anthony Harper
+Campbells Legal
+Cleary Gottlieb Steen & Hamilton
+JŠK Advokátní
+AWA
+Hugo Law
+Hunton Andrews Kurth
+Arsov Natchev Ganeva
+Abogados & Asociados
+Kinstellar
+Al-Hossam Legal
+CBS
+Clyde & Co
+Foyen
+Intellect Group of IP Companies
+Barun Law LLC
+FTI Consulting
+Assegaf Hamzah & Partners
+Bull & Co
+Foong & Partners
+Eversheds Sutherland
+Carlsson And Partners
+BTPLaw
+Bryan Cave Leighton Paisner
+Cowell Clarke
+ABG IP
+Aretha Legal
+Halfords IP
+Cakmakova Advocates
+Codex
+Akin
+Bahamas Law
+Deutsch Miller
+Charles Russell Speechlys
+FRA
+EZ Legal
+WongPartnership
+Onsagers
+Reklamasjons Portalen
+RVMH Avocats
+Selmer
+Shield
+Stephenson Harwood
+AlemAndAssociates
+Simmons & Simmons
+YPOG
+Akerman LLP
+AlixPartners
+Allen & Gledhill
+Mills Oakley
+SinghaniaAndPartners
+Peter & Kim
+LCS & Partners
+Lee and Li
+LAB Partners
+TEGOS
+SFA Abogados SA
+Stroebel Singh Theunissen Incorporated
+Setterwalls 
+TALMA 
+Simpson Grierson
+PSL
+Addleshaw Goddard LLP
+LEXEL
+William Fry
+TEMPLARS
+Aluko & Oyebode
+Lavan
+Laminar IP
+Zaid Ibrahim & CO
+ALP NGAndCo
+Romulo Buenaventura Law
+Shearn Delamore & Co
+Sołtysiński, Kawecki & Szlęzak
+Al Ammar Law
+Werksmans
+Webber Wentzel
+Seitz
+Advocatus Law LLP
+McMillan
+Rymarz, Zdort, Maruta
+Wardynski & Partners
+Thanathip Partners
+Thommessen
+Robsols
+Saglietti Bianco
+Pearl Cohen
+Pioneer Legal
+Palacios Lieras
+Abogados & Asociados
+SELMER
+Slaughter May
+Al-Hossam Legal
+Winston & Strawn LLP
+SZA SCHILLING, ZUTT & ANSCHÜTZ 
+Three Crowns LLP
+ZICO IP
+A&O Shearman
+Watson Farley & Williams
+Sierra Legal
+Wikborg Rein Advokatfirma
+Wenger Vieli AG
+Rimon
+Selmer 
+SZA Schilling, Zutt & Anschütz
+WikborgRein
+Robertsons Solicitors
+RSM International Association
+MinterEllison
+ABG IP
+Mayer Brown
+PLMJ RVA Advogados
+Akin
+Secretariat Advisors
+Vinge
+SKY Law
+Walder Wyss
+Wiersholms
+Saxinger
+Wiersholm
+WongPartnership
+Onsagers
+Reklamasjons Portalen
+RVMH Avocats
+Selmer
+Shield
+Stephenson Harwood
+AlemAndAssociates
+Simmons & Simmons
+YPOG
+Akerman LLP
+AlixPartners
+Allen & Gledhill
+Mills Oakley
+SinghaniaAndPartners
+Peter & Kim
+LCS & Partners
+Lee and Li
+LAB Partners
+TEGOS
+SFA Abogados SA
+Stroebel Singh Theunissen Incorporated
+Setterwalls 
+TALMA 
+Simpson Grierson
+PSL
+Addleshaw Goddard LLP
+LEXEL
+William Fry
+TEMPLARS
+Aluko & Oyebode
+Lavan
+Laminar IP
+Zaid Ibrahim & CO
+ALP NGAndCo
+Romulo Buenaventura Law
+Shearn Delamore & Co
+Sołtysiński, Kawecki & Szlęzak
+Al Ammar Law
+Werksmans
+Webber Wentzel
+Seitz
+Advocatus Law LLP
+McMillan
+Rymarz, Zdort, Maruta
+Wardynski & Partners
+Thanathip Partners
+Thommessen
+Robsols
+Saglietti Bianco
+Pearl Cohen
+Pioneer Legal
+Palacios Lieras
+Abogados & Asociados
+SELMER
+Slaughter May
+Al-Hossam Legal
+Winston & Strawn LLP
+SZA SCHILLING, ZUTT & ANSCHÜTZ 
+Three Crowns LLP
+ZICO IP
+A&O Shearman
+Watson Farley & Williams
+Sierra Legal
+Wikborg Rein Advokatfirma
+Wenger Vieli AG
+Rimon
+Selmer 
+SZA Schilling, Zutt & Anschütz
+WikborgRein
+Robertsons Solicitors
+RSM International Association
+MinterEllison
+ABG IP
+Mayer Brown
+PLMJ RVA Advogados
+Akin
+Secretariat Advisors
+Vinge
+SKY Law
+Walder Wyss
+Wiersholms
+Saxinger
+Wiersholm
+Tian Yuan
+Avance
+Dimitrov Petrov & Co
+Faegre Drinker Biddle & Reath
+HPP Attorneys
+Havel Partners
+SKW Schwarz
+Knijff
+Peterka And Partners
+Liedekerke
+Blandy And Blandy
+DANUBIA Patent And Law
+Skadden
+Aera
+McDermott Will And Emery
+Hjulmand Captain
+Jalsovszky
+Esche
+Filip & Company
+Clifford Chance
+Gornitzky And Co
+Rödl And Partner
+Hellström
+Fischer
+STBB
+Norens
+Vischer
+Arnold And Porter
+Lambadarios Law
+Vossius And Partner
+Lindahl
+Meitar Law
+Kochański & Partners
+Aron Tadmor Levy
+Pusch Wahlig
+AllenAndGledhill
+Kennedy Van der Laan
+Delcade
+Horten
+Nielsen Nørager
+Logos
+EProint
+Magnusson Law
+LEX Logmannsstofa
+Valfor
+Duane Morris
+Dahl Law
+Nunziante Magrone
+RBK
+NESTOR
+Ellisons Solicitors
+NOEWE
+Greene And Greene Solicitors
+VO Patents And Trademarks
+KISCH IP
+GRATA International
+Drew And Napier
+GÖRG
+SRS Legal
+Tompkins Wake
+MSB Solicitors
+Brinkmann & Partner
+Braun Partners
+Byrne Wallace
+Alston and Bird LLP
+Ropes And Gray
+Sullivan & Worcester
+Spencer West
+Carnelutti Law
+JPM And Partners
+Franklin Law
+CERHA HEMPEL
+Secretariat
+Firon Law
+Rădulescu And Mușoi
+Pels Rijcken
+Adsero
+Lemstra Van der Korst
+DKGV
+EBN
+Finreg 360
+Molinari
+Pinney Talfourd Solicitors
+Šelih And Partnerji
+Tuca Zbarcea
+Al Tamimi
+Borenius
+Laszczuk And Wspolnicy
+GPK
+Wolf Theiss
+Eubelius
+FCM Limited
+Racine
+Taylor Wessing
+Conyers
+Njord
+BNT
+De Clercq
+Joffe & Associés
+Cirio
+Kambourov And Partners
+Proskauer Rose
+Schoenherr
+Oxera
+Hannes Snellman
+SZA
+ArnoldAndSiedsma
+Francis Wilks And Jones
+Legance
+Dompatent
+Habraken Rutten
+Rymarz Zdort Maruta
+Slaughter & May
+Blake Morgan
+Mazanti-Andersen
+Mitel And Asociaţii
+Goerg
+EP&C
+Moalem Weitemeyer
+Nysingh advocaten-notarissen N.V.
+FIVERS
+McCarthy Tetrault
+Drzewiecki Tomaszek
+Orrick
+Grette
+Watson Farley And Williams
+ASC hukuk
+Curtis
+Maikowski And Ninnemann
+Dinova RusevAndPartners
+Ashurst
+FPS Law
+Gitti And Partners
+KBVL Law
+Viering Jentschura And Partner
+Schoups
+Meyer Köring
+BARDEHLE PAGENBERG
+Lewiss Silkin
+Paul Hastings
+Vaneps
+Odigo
+Crowell And Moring
+Bancila Diaconu si Asociatii
+Hoffmann Eitle
+Latham And Watkins
+Strelia
+Mourant
+Eldib Advocates
+Debevoise And Plimpton
+Walkers
+HCR Legal
+Ogletree
+Contrast
+Stibbe
+FLICHY GRANGÉ
+JB Law
+Zepos And Yannopoulos
+Zamfirescu Racoti Predoiu
+Kolster
+Bentsi-Enchill Letsa & Ankomah
+Marks & Clerk
+AB & David
+Ploum
+Morris Law
+Paksoy
+Ellex
+Carey Olsen
+RPC Legal
+DMS Legal
+Osborne Clarke
+Buss Murton Law
+AMT Law
+Milbank
+Boodle Hatfield
+MVVP advocaten
+Keystone Law
+Boyanov
+BUREN
+Dechert LLP
+Mccann Fitz Gerald
+Kew Law
+Krogerus
+MAQS
+Holst
+Hiswara Bunjamin And Tandjung
+Cleary Gottlieb
+KECO Legal
+Ganado Advocates
+Beauchamps
+BonelliErede
+Kienhuis Legal
+Greenberg Traurig
+Jones Day
+KWKR Law
+Green Horse Legal
 Dentons
+Hügel
+Fylgia
+Shahid Law
+Pillsbury Winthrop Shaw Pittman
+Clemens Law
+Popovici Niţu StoicaAndAsociaţii
+Lydian
+Aman And Partners
+KRBLaw
+Clarkslegal
+Shalakany
+WALLESS
+BSJP
+Chattertons
+Berggren
+White And Case
+GVZH
+Hammarskiöld And Co
