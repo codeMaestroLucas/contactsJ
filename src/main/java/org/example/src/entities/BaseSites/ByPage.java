@@ -3,6 +3,7 @@ package org.example.src.entities.BaseSites;
 import org.example.exceptions.LawyerExceptions;
 import org.example.exceptions.ValidationExceptions;
 import org.example.src.CONFIG;
+import org.example.src.entities.MyDriver;
 import org.example.src.utils.Validations;
 import org.openqa.selenium.WebElement;
 
@@ -21,6 +22,8 @@ public abstract class ByPage extends Site {
     @Override
     public Runnable searchForLawyers(boolean showLogs) {
         if (Validations.isAFirmToAVoid(this.name)) return null;
+
+        this.driver = MyDriver.getINSTANCE();
 
         // Mark this firm as being processed for error tracking
         errorLogger.startFirm(this.name);

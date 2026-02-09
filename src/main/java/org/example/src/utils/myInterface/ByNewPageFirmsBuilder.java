@@ -2,6 +2,7 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
+import org.example.src.sites.to_test.*;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -77,7 +78,20 @@ public class ByNewPageFirmsBuilder {
             new MarksAndClerk(), new MdME(), new METIDA(), new Noerr(), new OsborneClarke(),
             new PearlCohen(), new PortolanoCavallo(), new Pulegal(), new QuinEmanuel(), new SabaAndCo(),
             new SimmonsAndSimmons(), new Sorainen(), new TEMPLARS(), new Thommessen(), new Vaneps(),
-            new WALLESS()
+            new WALLESS(),
+
+
+            // ByPage - Asia
+            new GuoyaoQindaoLaw(),
+
+// ByPage - Mundial
+            new HadefAndPartners(),
+
+// ByPage - Oceania
+            new HarmosHortonLusk(),
+
+// ByNewPage - Asia
+            new FoongAndPartners(), new HarryEliasPartnership(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

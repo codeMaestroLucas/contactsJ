@@ -5,7 +5,6 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.utils.ContinentConfig;
 import org.example.src.utils.FirmsOMonth;
@@ -241,7 +240,6 @@ public class CompletedFirms {
 
 
     public static void main(String[] args) {
-        MyDriver.quitDriver();
         showAllFirmsCompleted();
     }
 }

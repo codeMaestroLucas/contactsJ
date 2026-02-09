@@ -100,7 +100,6 @@ This application automates the collection of lawyer contact information from law
 | **Template Method** | `Site` → `ByPage`/`ByNewPage` | Define scraping algorithm structure |
 | **Strategy** | `ByPage` vs `ByNewPage` | Different scraping approaches |
 | **Builder** | `Lawyer.builder()`, `ByPageFirmsBuilder` | Object construction |
-| **Facade** | `_CompletedFirmsData` | Simplified interface to builders |
 
 ### 2.3 Scraping Strategies
 
@@ -182,7 +181,6 @@ project-root/
     │           └── myInterface/
     │               ├── ByPageFirmsBuilder.java
     │               ├── ByNewPageFirmsBuilder.java
-    │               ├── _CompletedFirmsData.java
     │               ├── CompletedFirms.java
     │               └── MyInterfaceUtls.java
     │

@@ -5,7 +5,6 @@ import org.example.exceptions.LawyerExceptions;
 import org.example.exceptions.ValidationExceptions;
 import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
-import org.example.src.entities.MyDriver;
 import org.example.src.entities.excel.Sheet;
 import org.example.src.utils.EmailOfMonth;
 import org.example.src.utils.ErrorLogger;
@@ -26,7 +25,7 @@ public abstract class Site {
     protected final int totalPages;
     public final int maxLawyersForSite;
     protected Set<String> lastCountries = new HashSet<>();
-    public final WebDriver driver = MyDriver.getINSTANCE();
+    public WebDriver driver;
     protected final SiteUtils siteUtl = SiteUtils.getINSTANCE();
     protected final Extractor extractor = Extractor.getINSTANCE();
     protected ErrorLogger errorLogger = ErrorLogger.getINSTANCE(); // Instância do Logger - não-final para permitir override em testes

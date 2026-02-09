@@ -22,6 +22,8 @@ public abstract class ByNewPage extends Site {
     public Runnable searchForLawyers(boolean showLogs) {
         if (Validations.isAFirmToAVoid(this.name)) return null;
 
+        this.driver = MyDriver.getINSTANCE();
+
         // Mark this firm as being processed for error tracking
         errorLogger.startFirm(this.name);
 

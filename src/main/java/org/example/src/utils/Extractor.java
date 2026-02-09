@@ -2,21 +2,17 @@ package org.example.src.utils;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.SiteUtils;
-import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.Objects;
 
 public class Extractor {
-    private final WebDriver driver;
     private final SiteUtils siteUtl;
     private static Extractor INSTANCE;
 
 
     private Extractor() {
-        this.driver = MyDriver.getINSTANCE();
         this.siteUtl = SiteUtils.getINSTANCE();
     }
 

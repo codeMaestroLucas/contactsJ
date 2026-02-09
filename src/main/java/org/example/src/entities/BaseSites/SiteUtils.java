@@ -13,11 +13,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SiteUtils {
-    private WebDriver driver;
     private static SiteUtils INSTANCE;
 
-    private SiteUtils() {
-        this.driver = MyDriver.getINSTANCE();
+    private SiteUtils() {}
+
+    private WebDriver getDriver() {
+        return MyDriver.getINSTANCE();
     }
 
     public static SiteUtils getINSTANCE() {
@@ -52,11 +53,11 @@ public class SiteUtils {
 
         for (By locator : byArray) {
             try {
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+                WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(3));
                 WebElement parent = current;
 
                 // Wait until the child element is found inside the current parent
-                current = wait.until(driver -> parent.findElement(locator));
+                current = wait.until(d -> parent.findElement(locator));
             } catch (Exception e) {
                 System.err.println("Failed to find element with locator: " + locator);
                 current = null;
