@@ -33,6 +33,7 @@ public class RocaJunyent extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
+        MyDriver.clickOnAddBtn(By.cssSelector("button.cookiesjsr-btn.important.allowAll"));
         if (index == 0) return;
 
         MyDriver.clickOnElement(By.cssSelector("li.pager__item.pager__item--next > a"));
@@ -48,7 +49,7 @@ public class RocaJunyent extends ByNewPage {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.wrapper-text")
+                            By.cssSelector("div.view-content > div.views-row")
                     )
             );
             lawyers.removeFirst();

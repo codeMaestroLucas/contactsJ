@@ -8,282 +8,54 @@
 
 Class Roca Junyent [0 lawyers registered, 88 errors]
    - openNewTabError (Error reading 2th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 3th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 4th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 5th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 6th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 7th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 8th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 9th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 10th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 11th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 12th lawyer at page 2) occurred 2 times
-   - openNewTabError (Error reading 2th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 3th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 4th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 5th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 6th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 7th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 8th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 9th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 10th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 11th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 12th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 2th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 3th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 4th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 5th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 6th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 7th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 8th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 9th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 10th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 11th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 12th lawyer at page 4) occurred 2 times
-   - openNewTabError (Error reading 2th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 3th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 4th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 5th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 6th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 7th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 8th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 9th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 10th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 11th lawyer at page 5) occurred 2 times
-   - openNewTabError (Error reading 12th lawyer at page 5) occurred 2 times
 
-Class Ronan Daly Jermyn [0 lawyers registered, 78 errors]
-   - getLawyersInPageError (Error fetching lawyers on page 2) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 3) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 4) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 5) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 6) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 7) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 8) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 9) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 10) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 11) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 12) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 13) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 14) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 15) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 16) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 17) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 18) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 19) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 20) occurred 2 times
-   - accessPageError (Error accessing page 22) occurred 2 times
-   - accessPageError (Error accessing page 23) occurred 2 times
-   - accessPageError (Error accessing page 24) occurred 2 times
-   - accessPageError (Error accessing page 25) occurred 2 times
-   - accessPageError (Error accessing page 26) occurred 2 times
-   - accessPageError (Error accessing page 27) occurred 2 times
-   - accessPageError (Error accessing page 28) occurred 2 times
-   - accessPageError (Error accessing page 29) occurred 2 times
-   - accessPageError (Error accessing page 30) occurred 2 times
-   - accessPageError (Error accessing page 31) occurred 2 times
-   - accessPageError (Error accessing page 32) occurred 2 times
-   - accessPageError (Error accessing page 33) occurred 2 times
-   - accessPageError (Error accessing page 34) occurred 2 times
-   - accessPageError (Error accessing page 35) occurred 2 times
-   - accessPageError (Error accessing page 36) occurred 2 times
-   - accessPageError (Error accessing page 37) occurred 2 times
-   - accessPageError (Error accessing page 38) occurred 2 times
-   - accessPageError (Error accessing page 39) occurred 2 times
-   - accessPageError (Error accessing page 40) occurred 2 times
-   - accessPageError (Error accessing page 21) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 21) occurred 1 times
 
 Class Avance [1 lawyers registered, 64 errors]
    - getLawyerError (Error reading 1th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 2th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 3th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 4th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 5th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 6th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 7th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 8th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 9th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 10th lawyer at page 1) occurred 2 times
-   - getLawyerError (Error reading 11th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 12th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 13th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 14th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 15th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 16th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 17th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 18th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 19th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 20th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 21th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 22th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 23th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 24th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 25th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 26th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 27th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 28th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 29th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 30th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 31th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 32th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 33th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 34th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 35th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 36th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 37th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 38th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 39th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 40th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 41th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 42th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 43th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 44th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 45th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 46th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 47th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 48th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 49th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 50th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 51th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 52th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 53th lawyer at page 1) occurred 1 times
-   - getLawyerError (Error reading 54th lawyer at page 1) occurred 1 times
 
 Class Nova Law [0 lawyers registered, 36 errors]
    - getLinkError (Error reading 3th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 4th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 5th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 6th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 7th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 8th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 9th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 10th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 11th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 12th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 13th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 14th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 15th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 16th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 17th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 18th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 19th lawyer at page 1) occurred 2 times
-   - getLinkError (Error reading 20th lawyer at page 1) occurred 2 times
 
 Class SFKS Law [0 lawyers registered, 26 errors]
    - getLawyersInPageError (Error fetching lawyers on page 1) occurred 2 times
    - accessPageError (Error accessing page 2) occurred 2 times
-   - accessPageError (Error accessing page 3) occurred 2 times
-   - accessPageError (Error accessing page 4) occurred 2 times
-   - accessPageError (Error accessing page 5) occurred 2 times
-   - accessPageError (Error accessing page 6) occurred 2 times
-   - accessPageError (Error accessing page 7) occurred 2 times
-   - accessPageError (Error accessing page 8) occurred 2 times
-   - accessPageError (Error accessing page 9) occurred 2 times
-   - accessPageError (Error accessing page 10) occurred 2 times
-   - accessPageError (Error accessing page 11) occurred 2 times
-   - accessPageError (Error accessing page 12) occurred 2 times
-   - accessPageError (Error accessing page 13) occurred 2 times
 
 Class JSA [0 lawyers registered, 24 errors]
    - getLawyersInPageError (Error fetching lawyers on page 1) occurred 2 times
    - accessPageError (Error accessing page 2) occurred 2 times
-   - accessPageError (Error accessing page 3) occurred 2 times
-   - accessPageError (Error accessing page 4) occurred 2 times
-   - accessPageError (Error accessing page 5) occurred 2 times
-   - accessPageError (Error accessing page 6) occurred 2 times
-   - accessPageError (Error accessing page 7) occurred 2 times
-   - accessPageError (Error accessing page 8) occurred 2 times
-   - accessPageError (Error accessing page 9) occurred 2 times
-   - accessPageError (Error accessing page 10) occurred 2 times
-   - accessPageError (Error accessing page 11) occurred 2 times
-   - accessPageError (Error accessing page 12) occurred 2 times
 
 Class Mishcon Karas [0 lawyers registered, 21 errors]
    - getSocialsError (Error reading 1th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 2th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 3th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 4th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 5th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 6th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 7th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 8th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 9th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 10th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 11th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 12th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 13th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 14th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 15th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 16th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 17th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 18th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 19th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 20th lawyer at page 1) occurred 1 times
-   - getSocialsError (Error reading 21th lawyer at page 1) occurred 1 times
 
 Class BDO [2 lawyers registered, 19 errors]
    - openNewTabError (Error reading 1th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 2th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 3th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 4th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 5th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 6th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 7th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 8th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 9th lawyer at page 3) occurred 2 times
-   - openNewTabError (Error reading 10th lawyer at page 3) occurred 1 times
 
 Class Hill Dickinson [0 lawyers registered, 13 errors]
    - getLawyersInPageError (Error fetching lawyers on page 1) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 2) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 3) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 4) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 5) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 6) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 7) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 8) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 9) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 10) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 11) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 12) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 13) occurred 1 times
 
 Class Sidley [0 lawyers registered, 8 errors]
    - getLawyersInPageError (Error fetching lawyers on page 1) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 2) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 3) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 4) occurred 2 times
 
 Class DGKV [0 lawyers registered, 6 errors]
    - getLawyersInPageError (Error fetching lawyers on page 1) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 2) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 3) occurred 2 times
 
 Class Simmons And Simmons [0 lawyers registered, 6 errors]
    - getSocialsError (Error reading 1th lawyer at page 1) occurred 2 times
-   - getSocialsError (Error reading 2th lawyer at page 1) occurred 2 times
-   - getSocialsError (Error reading 3th lawyer at page 1) occurred 2 times
 
 Class Sampson Coward LLP [0 lawyers registered, 6 errors]
    - openNewTabError (Error reading 18th lawyer at page 1) occurred 2 times
-   - openNewTabError (Error reading 19th lawyer at page 1) occurred 2 times
-   - openNewTabError (Error reading 20th lawyer at page 1) occurred 2 times
 
 Class KLC Law [0 lawyers registered, 4 errors]
    - getLawyersInPageError (Error fetching lawyers on page 1) occurred 2 times
-   - getLawyersInPageError (Error fetching lawyers on page 2) occurred 2 times
 
 Class Philippe & Partners [0 lawyers registered, 4 errors]
    - openNewTabError (Error reading 31th lawyer at page 1) occurred 2 times
-   - openNewTabError (Error reading 32th lawyer at page 1) occurred 2 times
 
 Class Szecskay [0 lawyers registered, 2 errors]
    - accessPageError (Error accessing page 1) occurred 2 times
 
 Class Corrs [0 lawyers registered, 2 errors]
    - getLawyersInPageError (Error fetching lawyers on page 2) occurred 1 times
-   - getLawyersInPageError (Error fetching lawyers on page 3) occurred 1 times
 
 Class Ogletree Deakins [0 lawyers registered, 2 errors]
    - openNewTabError (Error reading 13th lawyer at page 1) occurred 2 times
@@ -312,7 +84,6 @@ Class Squire Patton Boggs [0 lawyers registered, 2 errors]
 
 Class Noerr [1 lawyers registered, 2 errors]
    - openNewTabError (Error reading 139th lawyer at page 1) occurred 1 times
-   - openNewTabError (Error reading 179th lawyer at page 1) occurred 1 times
 
 Class Gomez Acebo And Pombo [1 lawyers registered, 2 errors]
    - goToPageError (Error accessing page 4) occurred 2 times
@@ -382,109 +153,3 @@ Class AC&R [0 lawyers registered, 1 errors]
 
 Class DSKLegal [0 lawyers registered, 1 errors]
    - accessPageError (Error accessing page 1) occurred 1 times
-
-----------------------------------------------------------------------------------------------------
-                              [WARNING] FIRMS WITH ZERO LAWYERS REGISTERED
-----------------------------------------------------------------------------------------------------
-
-Total: 99 firms need attention
-
-   [X] Håmsø (no errors logged - possible timeout or page issue)
-   [X] Szecskay (2 errors)
-   [X] Schindler Attorneys (no errors logged - possible timeout or page issue)
-   [X] Elverdam (no errors logged - possible timeout or page issue)
-   [X] CWA Associates (no errors logged - possible timeout or page issue)
-   [X] Tompkins Wake (112 errors)
-   [X] Roschier (no errors logged - possible timeout or page issue)
-   [X] JSA (24 errors)
-   [X] Corrs (2 errors)
-   [X] VB Advocates (no errors logged - possible timeout or page issue)
-   [X] Ogletree Deakins (2 errors)
-   [X] Broseta (no errors logged - possible timeout or page issue)
-   [X] Langseth Advokat (2 errors)
-   [X] Knezović & Associates (no errors logged - possible timeout or page issue)
-   [X] HY Leung And Co (2 errors)
-   [X] Aequitas (no errors logged - possible timeout or page issue)
-   [X] Flügel Preissner (no errors logged - possible timeout or page issue)
-   [X] Panetta Consulting Group (no errors logged - possible timeout or page issue)
-   [X] BYRO (no errors logged - possible timeout or page issue)
-   [X] AVM Advogados (no errors logged - possible timeout or page issue)
-   [X] Astrea (no errors logged - possible timeout or page issue)
-   [X] Hans Offia And Associates (2 errors)
-   [X] Sorainen (2 errors)
-   [X] Moore Legal Kovács (2 errors)
-   [X] DZP Law (no errors logged - possible timeout or page issue)
-   [X] Steinmetz Haring Gurman (2 errors)
-   [X] Squire Patton Boggs (2 errors)
-   [X] MSP (no errors logged - possible timeout or page issue)
-   [X] Samvad Partners (2 errors)
-   [X] NPP Legal (no errors logged - possible timeout or page issue)
-   [X] Pulegal (2 errors)
-   [X] Van Olmen & Wynant (1 errors)
-   [X] Fox And Mandal (2 errors)
-   [X] Porta & Consulenti Associati (no errors logged - possible timeout or page issue)
-   [X] CRCCD (no errors logged - possible timeout or page issue)
-   [X] Roca Junyent (88 errors)
-   [X] AOil (2 errors)
-   [X] ABS And Co (no errors logged - possible timeout or page issue)
-   [X] Le Poole Bekema (no errors logged - possible timeout or page issue)
-   [X] METIDA (2 errors)
-   [X] KLC Law (4 errors)
-   [X] Collas Crill (2 errors)
-   [X] SBGK (no errors logged - possible timeout or page issue)
-   [X] Poulschmith (2 errors)
-   [X] Titov (2 errors)
-   [X] Nova Law (36 errors)
-   [X] Lex Caribbean (2 errors)
-   [X] Reinhard Skuhra Weise & Partner GbR (no errors logged - possible timeout or page issue)
-   [X] Mishcon Karas (21 errors)
-   [X] SFKS Law (26 errors)
-   [X] JWP (no errors logged - possible timeout or page issue)
-   [X] Barnea And Co (2 errors)
-   [X] Kallan (no errors logged - possible timeout or page issue)
-   [X] Helmsman (2 errors)
-   [X] DGKV (6 errors)
-   [X] Oppenheim (no errors logged - possible timeout or page issue)
-   [X] Simmons And Simmons (6 errors)
-   [X] Davis Polk And Wardwell (no errors logged - possible timeout or page issue)
-   [X] Fisher Quarmby & Pfeifer (no errors logged - possible timeout or page issue)
-   [X] Zaki Hashem & Partners (no errors logged - possible timeout or page issue)
-   [X] Melling Voitishkin And Partners (no errors logged - possible timeout or page issue)
-   [X] Clifford Chance (174 errors)
-   [X] S Horowitz & Co (2 errors)
-   [X] AC&R (1 errors)
-   [X] Haslinger Nagele (no errors logged - possible timeout or page issue)
-   [X] Fangda Partners (2 errors)
-   [X] Kondrat (no errors logged - possible timeout or page issue)
-   [X] Amorys (no errors logged - possible timeout or page issue)
-   [X] BARENTSKRANS (no errors logged - possible timeout or page issue)
-   [X] PFP Law (no errors logged - possible timeout or page issue)
-   [X] MBIP (2 errors)
-   [X] Dottir (no errors logged - possible timeout or page issue)
-   [X] H-F & Co (no errors logged - possible timeout or page issue)
-   [X] Cobalt (no errors logged - possible timeout or page issue)
-   [X] Covington And Burling LLP (1 errors)
-   [X] JGSA (no errors logged - possible timeout or page issue)
-   [X] Sampson Coward LLP (6 errors)
-   [X] Philippe & Partners (4 errors)
-   [X] Theart Mey (no errors logged - possible timeout or page issue)
-   [X] Kantor & Immerman (no errors logged - possible timeout or page issue)
-   [X] StewartMcKelvey (no errors logged - possible timeout or page issue)
-   [X] PM&P (2 errors)
-   [X] CBA (2 errors)
-   [X] Haynes And Boone (2 errors)
-   [X] Tanner DeWitt (no errors logged - possible timeout or page issue)
-   [X] Ronan Daly Jermyn (78 errors)
-   [X] DSKLegal (1 errors)
-   [X] PricaAndPartners (no errors logged - possible timeout or page issue)
-   [X] Sidley (8 errors)
-   [X] Belgravia (no errors logged - possible timeout or page issue)
-   [X] Matheson (2 errors)
-   [X] Araoz & Rueda (no errors logged - possible timeout or page issue)
-   [X] Alliotts (no errors logged - possible timeout or page issue)
-   [X] Joksovic Stojanovic & Partners (no errors logged - possible timeout or page issue)
-   [X] Prinz & Partner (no errors logged - possible timeout or page issue)
-   [X] Merilampi Attorneys (no errors logged - possible timeout or page issue)
-   [X] Badri and Salim El Meouchi Law (no errors logged - possible timeout or page issue)
-   [X] Van Der Putt (no errors logged - possible timeout or page issue)
-   [X] Hill Dickinson (13 errors)
