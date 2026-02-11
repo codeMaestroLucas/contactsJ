@@ -2,9 +2,6 @@
   {
     "name": "",
     "link": ""
-  },  {
-    "name": "Wenger Vieli AG",
-    "link": "https://www.wengervieli.ch/en-us/team"
   },
   {
     "name": "Almeida Advogados",
@@ -12,99 +9,17 @@
     "Note": "Check if is an valid firm"
   },
   {
-    "name": "Aitken Partners",
-    "link": "https://www.aitken.com.au/our-people-list"
-  },
-  {
     "name": "Estudio Delion",
     "link": "https://www.estudiodelion.com.pe/our-team/"
-  },
-  {
-    "name": "BTG Advaya",
-    "link": "https://www.btgadvaya.com/our-people",
-    "note": "INDIA"
-  },
-  {
-    "name": "PradhanAndAssociates",
-    "link": "https://www.pradhanlaw.com/team"
   },
   {
     "name": "GumucioAndAbogados",
     "link": "https://www.gumucioabogados.com.bo/en/team/"
   },
-  {
-    "name": "Winkler",
-    "link": "https://winklerpartners.com/people/"
-  },
-  {
-    "name": "Torres Legal",
-    "link": "https://torres.legal/team/"
-  },
-  {
-    "name": "MIO Law",
-    "link": "https://miolawfirm.com/pages/meet-the-team"
-  },
-  {
-    "name": "Allan Hall",
-    "link": "https://allanhall.com.au/our-directors/"
-  },
-  {
-    "name": "ADCOLaw",
-    "link": "https://adcolaw.com/our-team"
-  },
-  {
-    "name": "CameronAndShepherd",
-    "link": "https://cameronandshepherd.com/our-team"
-  },
-  {
-    "name": "Gilligan Sheppard",
-    "link": "https://gilligansheppard.co.nz/about-us/meet-the-team/"
-  },
-  {
-    "name": "Greens List",
-    "link": "https://www.greenslist.com.au/s/mediators",
-    "Note": "Check if is an valid firm"
-  },
-  {
-    "name": "Wynn Williams",
-    "link": "https://wynnwilliams.co.nz/people/"
-  },
-  {
-    "name": "Webb Henderson",
-    "link": "https://webbhenderson.com/people/"
-  },
-  {
-    "name": "Mills Oakley",
-    "link": "https://www.millsoakley.com.au/people/"
-  },
-  {
-    "name": "Norman Waterhouse",
-    "link": "https://www.normans.com.au/people/"
-  },
-  {
-    "name": "McCullough Robertson",
-    "link": "https://mccullough.com.au/people/"
-  },
-  {
-    "name": "Wrays",
-    "link": "https://wrays.com.au/people/"
-  },
-  {
-    "name": "Madderns",
-    "link": "https://madderns.com.au/team/"
-  },
-  {
-    "name": "Chamberlains",
-    "link": "https://chamberlains.com.au/about/"
-  },
-  {
-    "name": "Pearce IP",
-    "link": "https://www.pearceip.law/our-people/"
-  },
-  {
-    "name": "PC WooAndCo",
-    "link": "https://www.pcwoo.com.hk/people.html"
-  },
+
+  {"sep":  "========================================================================================="},
+
+
   {
     "name": "Stellex",
     "link": "https://stellexlaw.com/en/professionals.html"

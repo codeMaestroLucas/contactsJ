@@ -1,6 +1,8 @@
 package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byNewPage.HHRLawyers;
+import org.example.src.sites.byNewPage.SolomonAndCo;
 import org.example.src.sites.byPage.*;
 import org.example.src.utils.ContinentConfig;
 
@@ -35,7 +37,12 @@ public class ByPageFirmsBuilder {
             new OhEbashiLPCAndPartners(), new RahmatLimAndPartners(), new RomuloLawFirm(), new StevensonWongAndCo(),
             new IndiaLawOffices(), new JiaYuanLaw(), new KochharAndCo(), new Lektou(), new SagaLegal(),
             new TianYuan(), new ABSAndCo(), new TMIAssociates(), new Trilegal(), new TsarAndTsai(),
-            new Virtus(), new ZaidIbrahimAndCo(),
+            new Virtus(), new ZaidIbrahimAndCo(), new SokSiphanaAndAssociates(),
+            new ASAndHCliffordChance(), new BharuchaAndPartners(), new GuoyaoQindaoLaw(), new JuslawsAndConsult(), new KojimaLaw(),
+            new ADCOLaw(), new BTGAdvaya(), new JeffLeongPoonAndWong(),
+            new AtsumiAndSakai(), new BhandariNaqviRiaz(), new MakesAndPartners(), new DaiichiFuyo(), new DhavalVussonjiAndAssociates(),
+            new FirstLawPC(), new JTJBInternationalLawyers(), new LNT(), new MohsinTayebalyAndCo(), new VellaniAndVellani(),
+            new VisionAndAssociates(), new WongPartnership(), new Yulchon(),
     };
 
     private static final Site[] EUROPE = {
@@ -107,7 +114,9 @@ public class ByPageFirmsBuilder {
             new AiGroup(), new AndersonLloyd(), new AnthonyHarper(), new BankiHaddockFiora(), new BuddleFindlay(),
             new DBHLaw(), new DuncanCotterill(), new JamesAndWells(), new MacphersonKelley(), new MalleyAndCo(),
             new MBIP(), new MinterEllisonRuddWatts(), new CarterNewell(), new Corrs(),
-            new JohnsonWinterSlattery(), new LaneNeave(), new HoldingRedlich(), new PiperAlderman(), new ThomsonGeer()
+            new JohnsonWinterSlattery(), new LaneNeave(), new HoldingRedlich(), new PiperAlderman(), new ThomsonGeer(),
+            new ArnoldBlochLeibler(), new HarmosHortonLusk(), new ClaytonUtz(), new GordonLegal(),
+            new WynnWilliams(),
     };
 
     private static final Site[] MUNDIAL = {
@@ -126,7 +135,7 @@ public class ByPageFirmsBuilder {
             new SheppardMullin(), new Skadden(), new SpencerWest(), new SprusonAndFerguson(), new SquirePattonBoggs(),
             new StephensonHarwood(), new StewartMcKelvey(), new SullivanAndWorcester(), new TahotaLaw(), new TaylorWessing(),
             new Walkers(), new WatsonFarleyAndWilliams(), new WhiteAndCase(), new WilliamFry(), new Willkie(),
-            new WinstonAndStrawn(),
+            new WinstonAndStrawn(), new HadefAndPartners(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

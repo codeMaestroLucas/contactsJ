@@ -1,15 +1,15 @@
 {
-  "Africa":              { "enabled": true },
+  "Africa":              { "enabled": true,  "weight": 1 },
 
-  "Asia":                { "enabled": true },
+  "Asia":                { "enabled": true,  "weight": 2 },
 
-  "Europe":              { "enabled": true },
+  "Europe":              { "enabled": true,  "weight": 1 },
 
-  "North America":       { "enabled": false },
+  "North America":       { "enabled": false, "weight": 1 },
 
-  "Central America":     { "enabled": false },
+  "Central America":     { "enabled": false, "weight": 1 },
 
-  "South America":       { "enabled": false },
+  "South America":       { "enabled": false, "weight": 1 },
 
-  "Oceania":             { "enabled": true }
+  "Oceania":             { "enabled": true,  "weight": 1 }
 }

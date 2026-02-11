@@ -10,6 +10,7 @@ import org.example.src.utils.ContinentConfig;
 import org.example.src.utils.FirmsOMonth;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 @Getter
 public class CompletedFirms {
@@ -29,21 +30,82 @@ public class CompletedFirms {
     private static final String DIM = "\u001B[2m";
 
 
+    // Continent name → getter for each builder
+    private static final Map<String, Supplier<Site[]>> BY_PAGE_GETTERS = Map.of(
+            "Africa", ByPageFirmsBuilder::getAfrica,
+            "Asia", ByPageFirmsBuilder::getAsia,
+            "Europe", ByPageFirmsBuilder::getEurope,
+            "North America", ByPageFirmsBuilder::getNorthAmerica,
+            "Central America", ByPageFirmsBuilder::getCentralAmerica,
+            "South America", ByPageFirmsBuilder::getSouthAmerica,
+            "Oceania", ByPageFirmsBuilder::getOceania
+    );
+
+    private static final Map<String, Supplier<Site[]>> BY_NEW_PAGE_GETTERS = Map.of(
+            "Africa", ByNewPageFirmsBuilder::getAfrica,
+            "Asia", ByNewPageFirmsBuilder::getAsia,
+            "Europe", ByNewPageFirmsBuilder::getEurope,
+            "North America", ByNewPageFirmsBuilder::getNorthAmerica,
+            "Central America", ByNewPageFirmsBuilder::getCentralAmerica,
+            "South America", ByNewPageFirmsBuilder::getSouthAmerica,
+            "Oceania", ByNewPageFirmsBuilder::getOceania
+    );
+
+
     /**
-     * Construct all firms that are not inserted in the monthFirms.txt file then insert them in an array and shuffle it.
-     * Respects continent configuration - only includes firms from enabled continents.
+     * Construct all firms ordered by continent weight (highest first), shuffled within each weight group.
+     * Firms already registered in monthFirms.txt are excluded.
+     * Mundial firms always have weight 0 (lowest priority).
      */
     public static List<Site> constructFirms() {
-        Site[][] sites = new Site[][] {getByPage(), getByNewPage()};
-        List<Site> filteredSites = new ArrayList<>();
+        // Group enabled continents by weight (descending)
+        Map<Integer, List<String>> continentsByWeight = new TreeMap<>(Collections.reverseOrder());
 
-        // Filter all sites that weren't registered in the `monthsFirms.txt` file
-        for (Site[] category : sites) {
-            for (Site site : category) if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) filteredSites.add(site);
+        for (Map.Entry<String, ContinentConfig.ContinentSettings> entry : ContinentConfig.getConfig().entrySet()) {
+            if (entry.getValue().isEnabled()) {
+                int weight = entry.getValue().getWeight();
+                continentsByWeight.computeIfAbsent(weight, k -> new ArrayList<>()).add(entry.getKey());
+            }
         }
 
-        Collections.shuffle(filteredSites);
-        return filteredSites;
+        List<Site> result = new ArrayList<>();
+
+        // Process each weight group (highest weight first thanks to reverse TreeMap)
+        for (Map.Entry<Integer, List<String>> weightGroup : continentsByWeight.entrySet()) {
+            List<Site> groupFirms = new ArrayList<>();
+
+            for (String continent : weightGroup.getValue()) {
+                collectFirmsFromContinent(continent, groupFirms);
+            }
+
+            Collections.shuffle(groupFirms);
+            result.addAll(groupFirms);
+        }
+
+        // Mundial firms — weight 0, always last
+        List<Site> mundialFirms = new ArrayList<>();
+        collectFilteredFirms(ByPageFirmsBuilder.getMundial(), mundialFirms);
+        collectFilteredFirms(ByNewPageFirmsBuilder.getMundial(), mundialFirms);
+        Collections.shuffle(mundialFirms);
+        result.addAll(mundialFirms);
+
+        return result;
+    }
+
+    private static void collectFirmsFromContinent(String continent, List<Site> dest) {
+        Supplier<Site[]> byPage = BY_PAGE_GETTERS.get(continent);
+        Supplier<Site[]> byNewPage = BY_NEW_PAGE_GETTERS.get(continent);
+
+        if (byPage != null) collectFilteredFirms(byPage.get(), dest);
+        if (byNewPage != null) collectFilteredFirms(byNewPage.get(), dest);
+    }
+
+    private static void collectFilteredFirms(Site[] firms, List<Site> dest) {
+        for (Site site : firms) {
+            if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) {
+                dest.add(site);
+            }
+        }
     }
 
 
@@ -51,7 +113,7 @@ public class CompletedFirms {
      * Shows continent configuration with firms breakdown by ByPage and ByNewPage.
      */
     private static void showContinentBreakdown() {
-        int lineLength = 90;
+        int lineLength = 100;
         String title = "| CONTINENT CONFIGURATION |";
         int padding = (lineLength - title.length()) / 2;
 
@@ -60,8 +122,8 @@ public class CompletedFirms {
         System.out.println("=".repeat(lineLength));
 
         // Header
-        System.out.printf(" %-18s │ %6s │ %10s │ %10s │ %12s │ %12s%n",
-                "Continent", "Status", "ByPage", "ByNewPage", "Total Firms", "Max Lawyers");
+        System.out.printf(" %-18s │ %6s │ %6s │ %10s │ %10s │ %12s │ %12s%n",
+                "Continent", "Status", "Weight", "ByPage", "ByNewPage", "Total Firms", "Max Lawyers");
         System.out.println("-".repeat(lineLength));
 
         // Continent data structure: name, byPageGetter, byNewPageGetter
@@ -85,6 +147,7 @@ public class CompletedFirms {
             Site[] byNewPage = (Site[]) continent[2];
 
             boolean enabled = ContinentConfig.isContinentEnabled(name);
+            int weight = ContinentConfig.getContinentWeight(name);
             int totalFirms = byPage.length + byNewPage.length;
             int maxLawyers = countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage);
 
@@ -92,8 +155,8 @@ public class CompletedFirms {
             String lineColor = enabled ? "" : DIM;
             String endColor = enabled ? "" : RESET;
 
-            System.out.printf("%s %-18s │ %s   │ %10d │ %10d │ %12d │ %12d%s%n",
-                    lineColor, name, statusIcon, byPage.length, byNewPage.length, totalFirms, maxLawyers, endColor);
+            System.out.printf("%s %-18s │ %s   │ %6d │ %10d │ %10d │ %12d │ %12d%s%n",
+                    lineColor, name, statusIcon, weight, byPage.length, byNewPage.length, totalFirms, maxLawyers, endColor);
 
             if (enabled) {
                 totalEnabled++;
@@ -106,15 +169,15 @@ public class CompletedFirms {
             }
         }
 
-        // Mundial (always enabled)
+        // Mundial (always enabled, weight 0)
         Site[] mundialByPage = ByPageFirmsBuilder.getMundial();
         Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
         int mundialTotal = mundialByPage.length + mundialByNewPage.length;
         int mundialLawyers = countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage);
 
         System.out.println("-".repeat(lineLength));
-        System.out.printf(" %-18s │ %s%s%s   │ %10d │ %10d │ %12d │ %12d%n",
-                "Mundial", CYAN, "***", RESET, mundialByPage.length, mundialByNewPage.length, mundialTotal, mundialLawyers);
+        System.out.printf(" %-18s │ %s%s%s   │ %6d │ %10d │ %10d │ %12d │ %12d%n",
+                "Mundial", CYAN, "***", RESET, 0, mundialByPage.length, mundialByNewPage.length, mundialTotal, mundialLawyers);
 
         // Summary
         System.out.println("=".repeat(lineLength));

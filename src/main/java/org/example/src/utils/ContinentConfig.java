@@ -105,11 +105,23 @@ public class ContinentConfig {
     }
 
     /**
-     * Helper class to represent continent settings from JSON.
+     * Gets the weight of a continent.
+     *
+     * @param continent The continent name
+     * @return the weight (default 1 if not found)
      */
+    public static int getContinentWeight(String continent) {
+        Map<String, ContinentSettings> config = getConfig();
+        ContinentSettings settings = config.get(continent);
+        return settings != null ? settings.getWeight() : 1;
+    }
+
     @Getter
     public static class ContinentSettings {
         @JsonProperty("enabled")
-        private boolean enabled = true; // Default to enabled if not specified
+        private boolean enabled = true;
+
+        @JsonProperty("weight")
+        private int weight = 1;
     }
 }
