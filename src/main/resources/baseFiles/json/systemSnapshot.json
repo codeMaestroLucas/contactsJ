@@ -1,0 +1,45 @@
+{
+  "timestamp" : "2026-02-12T23:06:46.571371",
+  "continents" : {
+    "Africa" : {
+      "maxLawyers" : 18,
+      "byNewPage" : 7,
+      "byPage" : 11
+    },
+    "Asia" : {
+      "maxLawyers" : 151,
+      "byNewPage" : 29,
+      "byPage" : 103
+    },
+    "Europe" : {
+      "maxLawyers" : 283,
+      "byNewPage" : 95,
+      "byPage" : 167
+    },
+    "North America" : {
+      "maxLawyers" : 56,
+      "byNewPage" : 14,
+      "byPage" : 37
+    },
+    "Central America" : {
+      "maxLawyers" : 4,
+      "byNewPage" : 1,
+      "byPage" : 2
+    },
+    "South America" : {
+      "maxLawyers" : 59,
+      "byNewPage" : 10,
+      "byPage" : 47
+    },
+    "Oceania" : {
+      "maxLawyers" : 44,
+      "byNewPage" : 18,
+      "byPage" : 25
+    }
+  },
+  "mundial" : {
+    "maxLawyers" : 220,
+    "byNewPage" : 37,
+    "byPage" : 77
+  }
+}

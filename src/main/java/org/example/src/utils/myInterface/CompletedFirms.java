@@ -1,14 +1,23 @@
 package org.example.src.utils.myInterface;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.utils.ContinentConfig;
 import org.example.src.utils.FirmsOMonth;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -302,7 +311,206 @@ public class CompletedFirms {
     }
 
 
+    // ==================== SNAPSHOT ====================
+
+    private static final ObjectMapper snapshotMapper = new ObjectMapper();
+    private static final String[] CONTINENT_NAMES = {
+            "Africa", "Asia", "Europe", "North America", "Central America", "South America", "Oceania"
+    };
+
+    /**
+     * Collects the current state of all continents + Mundial into a Map structure.
+     */
+    private static Map<String, Object> collectCurrentState() {
+        Map<String, Object> snapshot = new LinkedHashMap<>();
+        snapshot.put("timestamp", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
+        Map<String, Map<String, Integer>> continents = new LinkedHashMap<>();
+        for (String name : CONTINENT_NAMES) {
+            Supplier<Site[]> byPageGetter = BY_PAGE_GETTERS.get(name);
+            Supplier<Site[]> byNewPageGetter = BY_NEW_PAGE_GETTERS.get(name);
+
+            Site[] byPage = byPageGetter != null ? byPageGetter.get() : new Site[0];
+            Site[] byNewPage = byNewPageGetter != null ? byNewPageGetter.get() : new Site[0];
+
+            continents.put(name, Map.of(
+                    "byPage", byPage.length,
+                    "byNewPage", byNewPage.length,
+                    "maxLawyers", countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage)
+            ));
+        }
+        snapshot.put("continents", continents);
+
+        Site[] mundialByPage = ByPageFirmsBuilder.getMundial();
+        Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
+        snapshot.put("mundial", Map.of(
+                "byPage", mundialByPage.length,
+                "byNewPage", mundialByNewPage.length,
+                "maxLawyers", countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage)
+        ));
+
+        return snapshot;
+    }
+
+    /**
+     * Saves the current system state to a JSON snapshot file.
+     */
+    private static void saveSnapshot() {
+        try {
+            Map<String, Object> snapshot = collectCurrentState();
+            snapshotMapper.writerWithDefaultPrettyPrinter().writeValue(new File(CONFIG.SYSTEM_SNAPSHOT_FILE), snapshot);
+            System.out.println("\n " + GREEN + "Snapshot salvo com sucesso." + RESET);
+        } catch (IOException e) {
+            System.err.println("Error saving snapshot: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Loads the previous snapshot from the JSON file.
+     * @return the snapshot map, or null if no snapshot exists
+     */
+    @SuppressWarnings("unchecked")
+    private static Map<String, Object> loadSnapshot() {
+        Path path = Path.of(CONFIG.SYSTEM_SNAPSHOT_FILE);
+        if (!Files.exists(path)) return null;
+
+        try {
+            String json = Files.readString(path);
+            return snapshotMapper.readValue(json, new TypeReference<Map<String, Object>>() {});
+        } catch (IOException e) {
+            System.err.println("Error reading snapshot: " + e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Formats a value with its delta compared to a previous value.
+     * Returns colored string: green for positive, red for negative, plain if equal.
+     */
+    private static String formatDelta(int current, int previous) {
+        int delta = current - previous;
+        if (delta > 0) return String.format("%d %s(+%d)%s", current, GREEN, delta, RESET);
+        if (delta < 0) return String.format("%d %s(%d)%s", current, RED, delta, RESET);
+        return String.valueOf(current);
+    }
+
+    /**
+     * Shows a comparison between the current system state and the last saved snapshot.
+     */
+    @SuppressWarnings("unchecked")
+    private static void showSystemState() {
+        Map<String, Object> previous = loadSnapshot();
+
+        if (previous == null) {
+            System.out.println("\n " + YELLOW + "Nenhum snapshot anterior encontrado." + RESET);
+            System.out.println(" Execute qualquer opcao e saia para gerar o primeiro snapshot.\n");
+            return;
+        }
+
+        Map<String, Map<String, Object>> prevContinents = (Map<String, Map<String, Object>>) previous.get("continents");
+        Map<String, Object> prevMundial = (Map<String, Object>) previous.get("mundial");
+        String prevTimestamp = (String) previous.get("timestamp");
+
+        int lineLength = 100;
+        String title = "| SYSTEM STATE COMPARISON |";
+        int padding = (lineLength - title.length()) / 2;
+
+        System.out.println("\n" + "=".repeat(lineLength));
+        System.out.println(" ".repeat(padding) + title);
+        System.out.println("=".repeat(lineLength));
+
+        System.out.printf(" %-18s │ %14s │ %14s │ %14s │ %14s%n",
+                "Continent", "ByPage", "ByNewPage", "Total Firms", "Max Lawyers");
+        System.out.println("-".repeat(lineLength));
+
+        for (String name : CONTINENT_NAMES) {
+            Supplier<Site[]> byPageGetter = BY_PAGE_GETTERS.get(name);
+            Supplier<Site[]> byNewPageGetter = BY_NEW_PAGE_GETTERS.get(name);
+
+            Site[] byPage = byPageGetter != null ? byPageGetter.get() : new Site[0];
+            Site[] byNewPage = byNewPageGetter != null ? byNewPageGetter.get() : new Site[0];
+
+            int curByPage = byPage.length;
+            int curByNewPage = byNewPage.length;
+            int curTotal = curByPage + curByNewPage;
+            int curLawyers = countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage);
+
+            Map<String, Object> prev = prevContinents != null ? prevContinents.get(name) : null;
+            if (prev != null) {
+                int prevByPage = (int) prev.get("byPage");
+                int prevByNewPage = (int) prev.get("byNewPage");
+                int prevTotal = prevByPage + prevByNewPage;
+                int prevLawyers = (int) prev.get("maxLawyers");
+
+                System.out.printf(" %-18s │ %14s │ %14s │ %14s │ %14s%n",
+                        name,
+                        formatDelta(curByPage, prevByPage),
+                        formatDelta(curByNewPage, prevByNewPage),
+                        formatDelta(curTotal, prevTotal),
+                        formatDelta(curLawyers, prevLawyers));
+            } else {
+                System.out.printf(" %-18s │ %14d │ %14d │ %14d │ %14d%n",
+                        name, curByPage, curByNewPage, curTotal, curLawyers);
+            }
+        }
+
+        // Mundial
+        Site[] mundialByPage = ByPageFirmsBuilder.getMundial();
+        Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
+        int curMByPage = mundialByPage.length;
+        int curMByNewPage = mundialByNewPage.length;
+        int curMTotal = curMByPage + curMByNewPage;
+        int curMLawyers = countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage);
+
+        System.out.println("-".repeat(lineLength));
+        if (prevMundial != null) {
+            int prevMByPage = (int) prevMundial.get("byPage");
+            int prevMByNewPage = (int) prevMundial.get("byNewPage");
+            int prevMTotal = prevMByPage + prevMByNewPage;
+            int prevMLawyers = (int) prevMundial.get("maxLawyers");
+
+            System.out.printf(" %-18s │ %14s │ %14s │ %14s │ %14s%n",
+                    "Mundial",
+                    formatDelta(curMByPage, prevMByPage),
+                    formatDelta(curMByNewPage, prevMByNewPage),
+                    formatDelta(curMTotal, prevMTotal),
+                    formatDelta(curMLawyers, prevMLawyers));
+        } else {
+            System.out.printf(" %-18s │ %14d │ %14d │ %14d │ %14d%n",
+                    "Mundial", curMByPage, curMByNewPage, curMTotal, curMLawyers);
+        }
+
+        System.out.println("=".repeat(lineLength));
+        System.out.printf(" Last snapshot: %s%s%s%n", DIM, prevTimestamp, RESET);
+        System.out.println("=".repeat(lineLength));
+    }
+
+
+    // ==================== MENU ====================
+
     public static void main(String[] args) {
-        showAllFirmsCompleted();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n" + "=".repeat(35));
+            System.out.println("  1. Ver todas as firmas");
+            System.out.println("  2. Verificar estado do sistema");
+            System.out.println("  0. Sair");
+            System.out.println("=".repeat(35));
+            System.out.print("Escolha uma opcao: ");
+
+            String input = scanner.nextLine().trim();
+
+            switch (input) {
+                case "1" -> showAllFirmsCompleted();
+                case "2" -> showSystemState();
+                case "0" -> {
+                    saveSnapshot();
+                    scanner.close();
+                    return;
+                }
+                default -> System.out.println(" " + RED + "Opcao invalida." + RESET);
+            }
+        }
     }
 }

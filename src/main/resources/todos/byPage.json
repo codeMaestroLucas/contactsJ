@@ -20,198 +20,38 @@
     "name": "InterJuris Abogados",
     "link": "https://interjuris.com/en/team/"
   },
-
-
-  {"sep":  "========================================================================================="},
-
-
-
-
-
-
-
-  {
-    "name": "ChadhaAndCo",
-    "link": "https://chadha-co.com/key-contacts/namita-chadha/",
-    "Note": "Start from this"
-  },
-  {
-    "name": "Anhad Law",
-    "link": "https://anhadlaw.com/team/##"
-  },
-  {
-    "name": "Amicus",
-    "link": "https://www.amicusservices.in/team"
-  },
-  {
-    "name": "APAndPartners",
-    "link": "https://appartners.in/team",
-    "Note": "The href email and the real email are !="
-  },
-  {
-    "name": "Sarthak",
-    "link": "https://sarthaklaw.com/team/"
-  },
-  {
-    "name": "Pioneer Legal",
-    "link": "https://pioneerlegal.com/our-team/"
-  },
-  {
-    "name": "Naik Naik",
-    "link": "https://naiknaik.com/malabika-boruah/",
-    "Notes": "Email formatt (firstName)(lastName)@nnico.com",
-    "Ex.:": "Tomas Demo === tomasdemo@nnico.com"
-  },
-  {
-    "name": "Legacy Law",
-    "link": "https://www.legacylawoffices.com/key-individuals/"
-  },
-  {
-    "name": "SinghaniaAndPartners",
-    "link": "https://singhania.in/our-people"
-  },
-  {
-    "name": "KaranjawalaAndCo",
-    "link": "https://karanjawala.in/about-us/#our-team"
-  },
-  {
-    "name": "Trust Legal",
-    "link": "https://trustlegal.in/about-us/"
-  },
-  {
-    "name": "DhirAndDhir",
-    "link": "https://www.dhirassociates.com/the-team/",
-    "Notes": "Email formatt (firstName).(lastName)@dhirassociates.com",
-    "Ex.:": "Tomas Demo === tomas.demo@dhirassociates.com"
-  },
-  {
-    "name": "PSL",
-    "link": "https://www.pslchambers.com/our-team/"
-  },
-  {
-    "name": "Grandway",
-    "link": "https://www.grandwaylaw.com/en/zhuanyetuandui/?kwd=&job=partner&t6=&t2="
-  },
-  {
-    "name": "Zhenghan",
-    "link": "https://www.zhenghan.com/html_en/html/about/team.html"
-  },
-  {
-    "name": "Llinks",
-    "link": "https://www.llinkslaw.com/index.php?a=lists&catid=9"
-  },
-  {
-    "name": "D. L.AndF. De Saram",
-    "link": "https://www.desaram.com/people/"
-  },
-  {
-    "name": "Price Sanond",
-    "link": "https://www.pricesanond.com/partners/jonathan-uchima.php"
-  },
-  {
-    "name": "Luqman Legal",
-    "link": "https://luqmanlegal.com/team/"
-  },
-  {
-    "name": "Sierra Legal",
-    "link": "https://www.sierralegal.com.au/team"
-  },
-
-
-
-  {"sep":  "========================================================================================="},
-
-
-
-
-
-  {
-    "name": "Nieto Lawyers",
-    "link": "https://nietolegal.com/team/"
-  },
   {
     "name": "BSPZ Law",
     "link": "https://bspz.law/profissionais/"
-  },
-  {
-    "name": "Hriadel-HegerAndPartners",
-    "link": "https://www.hriadelheger.eu/o-nas/"
-  },
-  {
-    "name": "High Gate",
-    "link": "https://highgate.sk/en/about-us/",
-    "Notes": "Email formatt (firstName).(lastName)@highgate.sk",
-    "Ex.:": "Tomas Demo === tomas.demo@highgate.sk"
-  },
-  {
-    "name": "CEC Group",
-    "link": "https://cecgr.com/leadership/"
-  },
-  {
-    "name": "https://www.prosman-pavlovic.sk/en/about-us/",
-    "link": "PROSMAN and PAVLOVIČ"
-  },
-  {
-    "name": "BKFAndCO",
-    "link": "https://bkf.co.uk/people/"
-  },
-  {
-    "name": "Euclid Law",
-    "link": "https://euclid-law.eu/our-team/"
-  },
-  {
-    "name": "KonecnaAndZacha",
-    "link": "https://www.konecna-zacha.com/en/people/"
-  },
-  {
-    "name": "AgcaoiliAndAssociates",
-    "link": "https://www.avaslaw.com/jose-luis-v-agcaoili/"
-  },
-  {
-    "name": "V&A Law",
-    "link": "https://www.thefirmva.com/partners.do?p=partners"
-  },
-  {
-    "name": "Ocampo and Suralvo",
-    "link": "https://www.ocamposuralvo.com/category/our-team/"
-  },
-  {
-    "name": "Puno Law ",
-    "link": "https://punolaw.com/lawyers-cat/partners/"
   },
   {
     "name": "GNB Law",
     "link": "https://www.gnblaw.com.br/en/people/"
   },
   {
-    "name": "SOLIDIS",
-    "link": "https://www.solidis.ch/en/our-team/team/partners.html"
+    "name": "LRI Law",
+    "link": "https://lrilaw.com.br/profissionais/?todos=sim&nome=&cargo=socio&atuacao="
   },
   {
-    "name": "Aumento Law Firm",
-    "link": "https://www.aumento.dk/en/people"
+    "name": "LPA Law Firm",
+    "link": "https://www.lpalaw.com/en/team/#associe"
   },
   {
-    "name": "Wintertons",
-    "link": "https://wintertons.co.zw/our-team/",
-    "Notes": "try-catch not every lawyer has the info"
+    "name": "Demarest",
+    "link": "https://www.demarest.com.br/en/search-professionals/?nome&cargo=partner&area=Areas%20of%20expertise&escritorio=Offices#professionals"
   },
   {
-    "name": "Lexum Law",
-    "link": "https://lexumattorneys.com/who-we-are/"
+    "name": "BGBG",
+    "link": "https://bgbg.mx/our-team/our-team-2/?lang=en",
+    "Notes": "Some have the info, other doesnt -> try-catch"
   },
   {
-    "name": "Fazleghani Advocates",
-    "link": "http://fazleghani.com/people/"
+    "name": "Uhthoff",
+    "link": "https://uhthoff.com.mx/nuestro-equipo/"
   },
-  {
-    "name": "Ijaz AhmedAndAssociates",
-    "link": "https://iaa.com.pk/team/"
-  },
-  {
-    "name": "ABSAndCo.",
-    "link": "https://absco.pk/lawyers/"
-  },
+
+  {"sep":  "========================================================================================="},
+
   {
     "name": "Country Hill AttorneysAndSolicitors",
     "link": "https://countryhillattorneys.com.ng/our-team/"
@@ -253,27 +93,6 @@
   {
     "name": "Ramberg Advokater",
     "link": "https://ramberglaw.se/our-people/?lang=en"
-  },
-  {
-    "name": "LRI Law",
-    "link": "https://lrilaw.com.br/profissionais/?todos=sim&nome=&cargo=socio&atuacao="
-  },
-  {
-    "name": "LPA Law Firm",
-    "link": "https://www.lpalaw.com/en/team/#associe"
-  },
-  {
-    "name": "Demarest",
-    "link": "https://www.demarest.com.br/en/search-professionals/?nome&cargo=partner&area=Areas%20of%20expertise&escritorio=Offices#professionals"
-  },
-  {
-    "name": "BGBG",
-    "link": "https://bgbg.mx/our-team/our-team-2/?lang=en",
-    "Notes": "Some have the info, other doesnt -> try-catch"
-  },
-  {
-    "name": "Uhthoff",
-    "link": "https://uhthoff.com.mx/nuestro-equipo/"
   },
   {
     "name": "Zampa Partners",
