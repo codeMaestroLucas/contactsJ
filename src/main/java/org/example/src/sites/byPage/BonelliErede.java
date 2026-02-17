@@ -16,7 +16,7 @@ import java.util.Map;
 public class BonelliErede extends ByPage {
     public BonelliErede() {
         super(
-                "BonelliErede",
+                "Bonelli Erede",
                 "https://www.belex.com/en/professional/",
                 1
         );

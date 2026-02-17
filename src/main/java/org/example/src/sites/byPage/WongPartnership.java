@@ -21,7 +21,7 @@ public class WongPartnership extends ByPage {
 
     public WongPartnership() {
         super(
-                "WongPartnership",
+                "Wong Partnership",
                 "",
                 9
         );

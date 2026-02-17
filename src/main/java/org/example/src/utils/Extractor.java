@@ -85,7 +85,7 @@ public class Extractor {
     {
         String value = extractLawyerField(lawyer, locators, fieldName, false, null, exceptionSupplier);
         if (value.isBlank()) {
-            System.out.println("\t$$ Could not extract lawyer text for " + fieldName);
+            if (!fieldName.equals("PRACTICE AREA")) System.out.println("\t$$ Could not extract lawyer text for " + fieldName);
             value = extractLawyerAttribute(lawyer, locators, fieldName, "textContent", exceptionSupplier);
         }
         return value;

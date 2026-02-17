@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class Werksmans extends ByNewPage {
     private final By[] byRoleArray = {
@@ -59,14 +60,11 @@ public class Werksmans extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        MyDriver.openNewTab(lawyer.findElement(By.cssSelector("a[href^='https://werksmans.com/team-members/']")).getAttribute("href"));
+        String link = lawyer.findElement(By.cssSelector("a[href*='https://werksmans.com/team-members/']")).getAttribute("href");
+        MyDriver.openNewTab(link);
         return null;
     }
 
-
-    public String getLink() {
-        return driver.getCurrentUrl();
-    }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
@@ -82,15 +80,6 @@ public class Werksmans extends ByNewPage {
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
-
-    private String getPracticeArea() throws LawyerExceptions {
-        WebElement lawyer = driver.findElement(By.xpath("//*[@id=\"gs_team_single\"]/div/div[2]/div[2]/ul"));
-        By[] byArray = new By[]{
-                By.cssSelector("ul > li")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
-    }
-
 
     private String[] getSocials(WebElement lawyer) {
         try {
@@ -113,12 +102,12 @@ public class Werksmans extends ByNewPage {
 
         String[] socials = this.getSocials(div);
         return Map.of(
-                "link", this.getLink(),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", "South Africa",
-                "practice_area", this.getPracticeArea(),
+                "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1]
         );

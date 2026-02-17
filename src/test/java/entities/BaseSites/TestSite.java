@@ -1,6 +1,12 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byNewPage.MorrisLaw;
+import org.example.src.sites.byNewPage.OsborneClarke;
+import org.example.src.sites.byNewPage.Werksmans;
+import org.example.src.sites.byPage.Ashurst;
+import org.example.src.sites.byPage.BCLPLaw;
+import org.example.src.sites.byPage.LathamAndWatkins;
 import org.example.src.sites.to_test.*;
 import org.example.src.utils.Validations;
 
@@ -17,7 +23,7 @@ import java.lang.reflect.Field;
  * This allows you to visualize the site extraction without making real registrations.
  */
 
-class MyTestPage extends _Template {
+class MyTestPage extends MorrisLaw {
 
     /**
      * Constructor that initializes with test logger to avoid affecting production logs

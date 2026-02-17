@@ -18,7 +18,7 @@ public class CONFIG {
     public static String SYSTEM_SNAPSHOT_FILE = "src/main/resources/baseFiles/json/systemSnapshot.json";
 
     // OTHERS
-    public static int TOTAL_LAWYERS_TO_GET = 350;
+    public static int TOTAL_LAWYERS_TO_GET = 270;
     public static int LAWYERS_IN_SHEET = 250;
     public static int LAWYERS_IN_FILTER = TOTAL_LAWYERS_TO_GET - LAWYERS_IN_SHEET;
 

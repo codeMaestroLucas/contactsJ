@@ -20,7 +20,7 @@ public class SolomonAndCo extends ByNewPage {
 
     public SolomonAndCo() {
         super(
-                "SolomonAndCo",
+                "Solomon & Co",
                 "https://solomonco.in/lawyers-in-fort-mumbai/",
                 1
         );

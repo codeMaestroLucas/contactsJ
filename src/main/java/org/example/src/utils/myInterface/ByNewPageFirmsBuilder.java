@@ -34,7 +34,7 @@ public class ByNewPageFirmsBuilder {
             new BurgesSalmon(), new CarneluttiLaw(), new CRCCD(), new DANUBIAPatentAndLaw(), new DGKV(),
             new DKGV(), new Dottir(), new EisenfuhrSpeiserAndPartner(), new Ekelmans(), new EllisonsSolicitors(),
             new EPAndC(), new FCMLimited(), new FPSLaw(), new FrancisWilksAndJones(), new Frontier(),
-            new Fylgia(), new GittiAndPartners(), new Goerg(), new GORG(), new GreeneAndGreeneSolicitors(),
+            new Fylgia(), new GittiAndPartners(), new GORG(), new GreeneAndGreeneSolicitors(),
             new GVZH(), new Hamso(), new HarteBavendamm(), new HaslingerNagele(), new HoffmannEitle(),
             new Holmes(), new Horten(), new JadekAndPensa(), new JBLaw(), new JWP(),
             new KallioLaw(), new KambourovAndPartners(), new KBVLLaw(), new KennedyVanderLaan(), new KeystoneLaw(),

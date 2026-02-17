@@ -15,7 +15,7 @@ import java.util.*;
  *
  * Features:
  * - Tracks errors by firm and error type (linkException, nameException, etc.)
- * - Tracks firms that registered zero lawyers
+ * - Tolerance of 10 errors per firm (firms with ≤10 errors are considered normal and omitted from the log)
  * - Generates a summary with most common errors
  * - Outputs clean, actionable logs for maintenance
  */
@@ -23,6 +23,7 @@ public class ErrorLogger {
     private static ErrorLogger INSTANCE;
 
     private static final String LOG_FILE_PATH = "log.txt";
+    private static final int ERROR_TOLERANCE_PER_FIRM = 10;
 
     // Error tracking: Firm -> (ErrorType -> Count)
     private final Map<String, Map<String, Integer>> errorsByFirm = new LinkedHashMap<>();
@@ -89,6 +90,9 @@ public class ErrorLogger {
         // Skip validation exceptions - they're not extraction errors
         if (e instanceof ValidationExceptions) return;
 
+        // Silently ignore practice area errors
+        if (e instanceof LawyerExceptions && e.getMessage() != null && e.getMessage().contains("PRACTICE")) return;
+
         String errorType = categorizeError(e);
 
         // Track by firm
@@ -110,6 +114,9 @@ public class ErrorLogger {
      */
     public void log(String firmName, Exception e, boolean showLogs, String context) {
         if (e instanceof ValidationExceptions) return;
+
+        // Silently ignore practice area errors
+        if (e instanceof LawyerExceptions && e.getMessage() != null && e.getMessage().contains("PRACTICE")) return;
 
         String errorType = categorizeError(e);
 
@@ -179,7 +186,6 @@ public class ErrorLogger {
         try (PrintWriter pw = new PrintWriter(new FileWriter(LOG_FILE_PATH, false))) {
             writeHeader(pw);
             writeFirmErrors(pw);
-            writeFirmsWithZeroLawyers(pw);
             writeErrorSummary(pw);
             writeFooter(pw);
 
@@ -202,20 +208,43 @@ public class ErrorLogger {
             return;
         }
 
+        // Filter out firms within tolerance (≤ ERROR_TOLERANCE_PER_FIRM errors)
+        List<Map.Entry<String, Map<String, Integer>>> firmsAboveTolerance = new ArrayList<>();
+        int firmsWithinTolerance = 0;
+
+        for (Map.Entry<String, Map<String, Integer>> entry : errorsByFirm.entrySet()) {
+            int totalErrors = entry.getValue().values().stream().mapToInt(Integer::intValue).sum();
+            if (totalErrors > ERROR_TOLERANCE_PER_FIRM) {
+                firmsAboveTolerance.add(entry);
+            } else {
+                firmsWithinTolerance++;
+            }
+        }
+
+        if (firmsAboveTolerance.isEmpty()) {
+            pw.printf("[OK] All firms are within error tolerance (≤%d errors each). %d firm(s) had minor errors.%n",
+                    ERROR_TOLERANCE_PER_FIRM, firmsWithinTolerance);
+            pw.println();
+            return;
+        }
+
         pw.println("----------------------------------------------------------------------------------------------------");
         pw.println("                                      ERRORS BY FIRM");
         pw.println("----------------------------------------------------------------------------------------------------");
         pw.println();
 
+        if (firmsWithinTolerance > 0) {
+            pw.printf("(%d firm(s) omitted — within tolerance)%n%n", firmsWithinTolerance);
+        }
+
         // Sort firms by total error count (descending)
-        List<Map.Entry<String, Map<String, Integer>>> sortedFirms = new ArrayList<>(errorsByFirm.entrySet());
-        sortedFirms.sort((a, b) -> {
+        firmsAboveTolerance.sort((a, b) -> {
             int totalA = a.getValue().values().stream().mapToInt(Integer::intValue).sum();
             int totalB = b.getValue().values().stream().mapToInt(Integer::intValue).sum();
             return Integer.compare(totalB, totalA);
         });
 
-        for (Map.Entry<String, Map<String, Integer>> entry : sortedFirms) {
+        for (Map.Entry<String, Map<String, Integer>> entry : firmsAboveTolerance) {
             String firmName = entry.getKey();
             Map<String, Integer> errors = entry.getValue();
             int totalErrors = errors.values().stream().mapToInt(Integer::intValue).sum();
@@ -232,38 +261,6 @@ public class ErrorLogger {
             }
             pw.println();
         }
-    }
-
-    private void writeFirmsWithZeroLawyers(PrintWriter pw) {
-        List<String> zeroLawyerFirms = new ArrayList<>();
-
-        for (String firm : processedFirms) {
-            int registered = lawyersRegisteredByFirm.getOrDefault(firm, 0);
-            if (registered == 0) {
-                zeroLawyerFirms.add(firm);
-            }
-        }
-
-        if (zeroLawyerFirms.isEmpty()) {
-            return;
-        }
-
-        pw.println("----------------------------------------------------------------------------------------------------");
-        pw.println("                              [WARNING] FIRMS WITH ZERO LAWYERS REGISTERED");
-        pw.println("----------------------------------------------------------------------------------------------------");
-        pw.println();
-        pw.printf("Total: %d firms need attention%n%n", zeroLawyerFirms.size());
-
-        for (String firm : zeroLawyerFirms) {
-            Map<String, Integer> errors = errorsByFirm.get(firm);
-            if (errors != null && !errors.isEmpty()) {
-                int totalErrors = errors.values().stream().mapToInt(Integer::intValue).sum();
-                pw.printf("   [X] %s (%d errors)%n", firm, totalErrors);
-            } else {
-                pw.printf("   [X] %s (no errors logged - possible timeout or page issue)%n", firm);
-            }
-        }
-        pw.println();
     }
 
     private void writeErrorSummary(PrintWriter pw) {
@@ -292,11 +289,13 @@ public class ErrorLogger {
     }
 
     private void writeFooter(PrintWriter pw) {
+        long firmsAboveTolerance = errorsByFirm.entrySet().stream()
+                .filter(e -> e.getValue().values().stream().mapToInt(Integer::intValue).sum() > ERROR_TOLERANCE_PER_FIRM)
+                .count();
+
         pw.println("=====================================================================================================");
-        pw.printf("Firms processed: %d | Firms with errors: %d | Firms with 0 lawyers: %d%n",
-                processedFirms.size(),
-                errorsByFirm.size(),
-                processedFirms.stream().filter(f -> lawyersRegisteredByFirm.getOrDefault(f, 0) == 0).count());
+        pw.printf("Firms processed: %d | Firms above tolerance (>%d errors): %d%n",
+                processedFirms.size(), ERROR_TOLERANCE_PER_FIRM, firmsAboveTolerance);
         pw.println("=====================================================================================================");
     }
 

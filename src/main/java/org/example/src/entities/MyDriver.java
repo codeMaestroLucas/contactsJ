@@ -21,7 +21,9 @@ public final class MyDriver {
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-//            options.addArguments("--headless"); // Run Chrome in headless mode
+            // Disabled: headed mode is more stable for scraping
+            // (fewer anti-bot detections, more reliable element rendering)
+            // options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
@@ -34,10 +36,12 @@ public final class MyDriver {
             options.setExperimentalOption("excludeSwitches", List.of("enable-automation"));
             options.setExperimentalOption("useAutomationExtension", false);
 
-            // Add realistic user agent
-            options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
-
             driver = new ChromeDriver(options);
+
+            // Override navigator.webdriver to avoid bot detection
+            ((JavascriptExecutor) driver).executeScript(
+                    "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+            );
         }
 
         return driver;
@@ -45,12 +49,13 @@ public final class MyDriver {
 
     /**
      * Waits for the current page to fully load by checking the `document.readyState`.
-     * Waits up to 6 minutes.
+     * Waits up to 3min. If a page hasn't loaded by then, it's likely broken or
+     * unresponsive — waiting longer just delays the entire execution for no benefit.
      */
     public static void waitForPageToLoad() {
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(6));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(3));
 
-        new WebDriverWait(driver, Duration.ofMinutes(6))
+        new WebDriverWait(driver, Duration.ofMinutes(3))
                 .until(webDriver -> ((JavascriptExecutor) webDriver)
                         .executeScript("return document.readyState")
                         .equals("complete"));
@@ -213,6 +218,38 @@ public final class MyDriver {
     }
 
     
+    /**
+     * Cleans up browser state between site executions without closing the browser.
+     * - Closes any extra tabs (keeps only the first one)
+     * - Clears cookies to prevent session/state leakage between sites
+     * - Navigates to about:blank to reset the page context
+     */
+    public static void cleanUpBetweenSites() {
+        if (driver == null) return;
+
+        try {
+            // Close all extra tabs, keep only the first one
+            List<String> handles = new ArrayList<>(driver.getWindowHandles());
+            if (handles.size() > 1) {
+                String firstHandle = handles.get(0);
+                for (int i = handles.size() - 1; i >= 1; i--) {
+                    driver.switchTo().window(handles.get(i));
+                    driver.close();
+                }
+                driver.switchTo().window(firstHandle);
+            }
+
+            // Clear cookies to prevent session leakage
+            driver.manage().deleteAllCookies();
+
+            // Navigate to a blank page to fully reset page state (DOM, JS context, etc.)
+            driver.get("about:blank");
+
+        } catch (Exception e) {
+            System.err.println("Warning: Could not fully clean up browser between sites: " + e.getMessage());
+        }
+    }
+
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();

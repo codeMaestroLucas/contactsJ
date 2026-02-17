@@ -1,0 +1,1083 @@
+=====================================================================================================
+                                    ERROR LOG - 2026-02-14 06:36:14
+=====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+                                      ERRORS BY FIRM
+----------------------------------------------------------------------------------------------------
+
+
+Class BCLP Law [0 lawyers registered, 132 errors]
+   - accessPageError                occurred 132 times
+
+Class Latham And Watkins [0 lawyers registered, 124 errors]
+   - accessPageError                occurred 124 times
+
+Class Taylor Wessing [0 lawyers registered, 120 errors]
+   - accessPageError                occurred 120 times
+
+Class Slaughter & May [0 lawyers registered, 114 errors]
+   - accessPageError                occurred 113 times
+   - TimeoutException               occurred 1 times
+
+Class Miller Thomson LLP [0 lawyers registered, 106 errors]
+   - accessPageError                occurred 106 times
+
+Class Legance [0 lawyers registered, 104 errors]
+   - accessPageError                occurred 104 times
+
+Class Walkers [0 lawyers registered, 86 errors]
+   - accessPageError                occurred 86 times
+
+Class Morgan Lewis [0 lawyers registered, 82 errors]
+   - accessPageError                occurred 82 times
+
+Class McCarthy Tetrault [0 lawyers registered, 76 errors]
+   - accessPageError                occurred 76 times
+
+Class Watson Farley And Williams [0 lawyers registered, 74 errors]
+   - accessPageError                occurred 74 times
+
+Class Frontier [0 lawyers registered, 68 errors]
+   - accessPageError                occurred 67 times
+   - TimeoutException               occurred 1 times
+
+Class Guantao Law [0 lawyers registered, 60 errors]
+   - accessPageError                occurred 60 times
+
+Class Stephenson Harwood [0 lawyers registered, 60 errors]
+   - accessPageError                occurred 60 times
+
+Class Morris Law [1 lawyers registered, 56 errors]
+   - openNewTabError                occurred 56 times
+
+Class BDO [0 lawyers registered, 56 errors]
+   - accessPageError                occurred 56 times
+
+Class Hayes [0 lawyers registered, 55 errors]
+   - getRoleError                   occurred 54 times
+   - accessPageError                occurred 1 times
+
+Class Crowell And Moring [0 lawyers registered, 52 errors]
+   - accessPageError                occurred 52 times
+
+Class Skadden [0 lawyers registered, 52 errors]
+   - accessPageError                occurred 52 times
+
+Class Greenberg Traurig [0 lawyers registered, 52 errors]
+   - accessPageError                occurred 52 times
+
+Class Allens [0 lawyers registered, 50 errors]
+   - accessPageError                occurred 50 times
+
+Class Spencer West [0 lawyers registered, 46 errors]
+   - accessPageError                occurred 46 times
+
+Class Quin Emanuel [0 lawyers registered, 46 errors]
+   - accessPageError                occurred 46 times
+
+Class Hakun Law [0 lawyers registered, 46 errors]
+   - accessPageError                occurred 46 times
+
+Class Roca Junyent [0 lawyers registered, 40 errors]
+   - openNewTabError                occurred 35 times
+   - accessPageError                occurred 5 times
+
+Class Boyanov [0 lawyers registered, 37 errors]
+   - openNewTabError                occurred 36 times
+   - accessPageError                occurred 1 times
+
+Class Jones Day [0 lawyers registered, 34 errors]
+   - accessPageError                occurred 34 times
+
+Class Clifford Chance [0 lawyers registered, 30 errors]
+   - accessPageError                occurred 30 times
+
+Class Conyers [0 lawyers registered, 30 errors]
+   - accessPageError                occurred 30 times
+
+Class SFKS Law [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 25 times
+   - getLawyersInPageError          occurred 1 times
+
+Class Hill Dickinson [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 26 times
+
+Class Avance [1 lawyers registered, 25 errors]
+   - getLawyerError                 occurred 25 times
+
+Class JSA [0 lawyers registered, 24 errors]
+   - accessPageError                occurred 23 times
+   - getLawyersInPageError          occurred 1 times
+
+Class Al Tamimi [0 lawyers registered, 24 errors]
+   - accessPageError                occurred 24 times
+
+Class Paul Hastings [0 lawyers registered, 24 errors]
+   - accessPageError                occurred 24 times
+
+Class Pearl Cohen [0 lawyers registered, 24 errors]
+   - accessPageError                occurred 24 times
+
+Class Mishcon Karas [0 lawyers registered, 22 errors]
+   - getSocialsError                occurred 21 times
+   - accessPageError                occurred 1 times
+
+Class Marks & Clerk [0 lawyers registered, 22 errors]
+   - accessPageError                occurred 22 times
+
+Class Tahota Law [0 lawyers registered, 22 errors]
+   - accessPageError                occurred 22 times
+
+Class Payet Rey Cauvi Pérez [0 lawyers registered, 20 errors]
+   - accessPageError                occurred 19 times
+   - getLawyersInPageError          occurred 1 times
+
+Class Milbank [0 lawyers registered, 20 errors]
+   - accessPageError                occurred 20 times
+
+Class TEMPLARS [0 lawyers registered, 20 errors]
+   - accessPageError                occurred 20 times
+
+Class Nova Law [0 lawyers registered, 19 errors]
+   - getLinkError                   occurred 18 times
+   - accessPageError                occurred 1 times
+
+Class Spruson And Ferguson [0 lawyers registered, 18 errors]
+   - accessPageError                occurred 18 times
+
+Class Havel Partners [0 lawyers registered, 16 errors]
+   - accessPageError                occurred 16 times
+
+Class Ogletree [0 lawyers registered, 16 errors]
+   - accessPageError                occurred 16 times
+
+Class Dompatent [0 lawyers registered, 15 errors]
+   - accessPageError                occurred 15 times
+
+Class Goodwin [0 lawyers registered, 14 errors]
+   - accessPageError                occurred 14 times
+
+Class Cuatrecasas [0 lawyers registered, 10 errors]
+   - accessPageError                occurred 10 times
+
+Class White And Case [0 lawyers registered, 10 errors]
+   - accessPageError                occurred 10 times
+
+Class Mayer Brown [0 lawyers registered, 10 errors]
+   - accessPageError                occurred 10 times
+
+Class Covington And Burling LLP [0 lawyers registered, 10 errors]
+   - accessPageError                occurred 10 times
+
+Class JGSA [0 lawyers registered, 10 errors]
+   - accessPageError                occurred 10 times
+
+Class Sidley [0 lawyers registered, 8 errors]
+   - getLawyersInPageError          occurred 4 times
+   - accessPageError                occurred 4 times
+
+Class Gomez Acebo And Pombo [0 lawyers registered, 8 errors]
+   - accessPageError                occurred 8 times
+
+Class Holland And Knight [0 lawyers registered, 8 errors]
+   - accessPageError                occurred 8 times
+
+Class Hadef & Partners [0 lawyers registered, 8 errors]
+   - accessPageError                occurred 8 times
+
+Class Corrs [0 lawyers registered, 6 errors]
+   - accessPageError                occurred 5 times
+   - TimeoutException               occurred 1 times
+
+Class Kallio Law [0 lawyers registered, 6 errors]
+   - getLawyerError                 occurred 5 times
+   - accessPageError                occurred 1 times
+
+Class DGKV [0 lawyers registered, 6 errors]
+   - getLawyersInPageError          occurred 3 times
+   - accessPageError                occurred 3 times
+
+Class Winston And Strawn [0 lawyers registered, 6 errors]
+   - accessPageError                occurred 6 times
+
+Class Hans Offia And Associates [0 lawyers registered, 4 errors]
+   - openNewTabError                occurred 3 times
+   - accessPageError                occurred 1 times
+
+Class KLC Law [0 lawyers registered, 4 errors]
+   - getLawyersInPageError          occurred 2 times
+   - accessPageError                occurred 2 times
+
+Class Sampson Coward LLP [0 lawyers registered, 4 errors]
+   - openNewTabError                occurred 3 times
+   - accessPageError                occurred 1 times
+
+Class Sullivan & Worcester [0 lawyers registered, 4 errors]
+   - accessPageError                occurred 4 times
+
+Class Cassidy Levy Kent [0 lawyers registered, 4 errors]
+   - accessPageError                occurred 4 times
+
+Class Curtis [0 lawyers registered, 4 errors]
+   - accessPageError                occurred 4 times
+
+Class PAGBAM [0 lawyers registered, 4 errors]
+   - accessPageError                occurred 4 times
+
+Class Philippe & Partners [0 lawyers registered, 3 errors]
+   - openNewTabError                occurred 2 times
+   - accessPageError                occurred 1 times
+
+Class Konecna And Zacha [1 lawyers registered, 3 errors]
+   - getLawyerError                 occurred 3 times
+
+Class LNT [0 lawyers registered, 3 errors]
+   - accessPageError                occurred 3 times
+
+Class Fox And Mandal [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Barnea And Co [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Steinmetz Haring Gurman [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class AOil [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Helmsman [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class HY Leung And Co [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Samvad Partners [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Moroğlu Arseven [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class S Horowitz & Co [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class GVZH [0 lawyers registered, 2 errors]
+   - getLawyerError                 occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Langseth Advokat [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class PM&P [0 lawyers registered, 2 errors]
+   - openNewTabError                occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Matheson [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Krogerus [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class DANUBIA Patent And Law [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Wynn Williams [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Kochański & Partners [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Simmons Wolfhagen [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class ONV Law [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Meyer Köring [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Dimitrov Petrov & Co [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class HARTE-BAVENDAMM [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Beauchamps [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Suárez de Vivero [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Dahl Law [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class RPC Legal [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Gordon Legal [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Reinhard Skuhra Weise & Partner GbR [0 lawyers registered, 2 errors]
+   - TimeoutException               occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Pinney Talfourd Solicitors [0 lawyers registered, 2 errors]
+   - openNewTabError                occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Szecskay [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class HCR Legal [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class MVJ Marković Vukotić Jovković [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class MBIP [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Titov [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Collas Crill [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Poulschmith [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Kambourov And Partners [1 lawyers registered, 2 errors]
+   - linkException                  occurred 2 times
+
+Class Ogletree Deakins [0 lawyers registered, 2 errors]
+   - openNewTabError                occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class CBA [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Moore Legal Kovács [0 lawyers registered, 2 errors]
+   - getLawyersInPageError          occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Wardynski And Partners [0 lawyers registered, 2 errors]
+   - openNewTabError                occurred 1 times
+   - accessPageError                occurred 1 times
+
+Class Reliance Corporate Advisors [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Squire Patton Boggs [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class DCC Law [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Saba And Co [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Secretariat [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Willkie [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Fangda Partners [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class William Fry [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class METIDA [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class WALLESS [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class EProint [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Ellex [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Higgs And Johnson [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Magnusson Law [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class AB & David [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class CERHA HEMPEL [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Pillsbury Winthrop Shaw Pittman [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Cleary Gottlieb [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Gianni And Origoni [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Portolano Cavallo [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Ropes And Gray [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class JPM And Partners [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Schoenherr [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Sheppard Mullin [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Latam Lex [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class MdME [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Houthoof [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Debevoise And Plimpton [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Lex Caribbean [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Thommessen [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Herbert Smith Freehills Kramer [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Noerr [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Vaneps [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Duane Morris [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Chattertons [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Haynes And Boone [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Cobalt [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Johnson Camacho And Singh [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Arnold And Porter [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Faegre Drinker Biddle & Reath [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Simmons And Simmons [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Carey Olsen [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class BNT [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Blakes [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class AVM Advogados [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class StewartMcKelvey [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Lewiss Silkin [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Dentons [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Peter And Kim [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Peterka And Partners [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Ogier [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class HBN Law [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Sorainen [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Pulegal [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Anand And Anand [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Vision & Associates [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class NPP Legal [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class CWA Associates [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class JWP [0 lawyers registered, 2 errors]
+   - accessPageError                occurred 2 times
+
+Class Lektou [1 lawyers registered, 1 errors]
+   - getLawyerError                 occurred 1 times
+
+Class Aquinas Law Alliance [1 lawyers registered, 1 errors]
+   - getRoleError                   occurred 1 times
+
+Class Orrick [3 lawyers registered, 1 errors]
+   - getLawyersInPageError          occurred 1 times
+
+Class Harper James Solicitors [1 lawyers registered, 1 errors]
+   - getRoleError                   occurred 1 times
+
+Class H-F & Co [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Aequitas [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class DSKLegal [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Tanner DeWitt [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Vellani & Vellani [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Sok Siphana & Associates [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Bhandari Naqvi Riaz [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class ABS And Co [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Mohsin Tayebaly & Co [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Arnold Bloch Leibler [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Van Olmen & Wynant [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class MSP [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Clemens Law [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Flügel Preissner [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Penta [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Buss Murton Law [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Roschier [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Håmsø [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Malley And Co [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Fisher Quarmby & Pfeifer [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Legalis [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class MVVP advocaten [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Prinz & Partner [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Vinge [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class PricaAndPartners [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Hügel [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Arnesen IP [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Panetta Consulting Group [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class DZP Law [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Prüfer & Partner [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Broseta [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Rödl And Partner [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Alliotts [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class AC&R [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Chamberlains [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Theart Mey [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class CRCCD [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class BARENTSKRANS [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Thomas Bodström [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Merilampi Attorneys [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Zaki Hashem & Partners [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class LEXIA [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Holmes [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class AGP Advokater [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class SBGK [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Porwisz and Partners [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Green Horse Legal [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Sierra Legal [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Schindler Attorneys [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Schurti Partners [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class PFP Law [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Belgravia [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class FCM Limited [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Kantor & Immerman [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Haslinger Nagele [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Astrea [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class BRAUNEIS RECHTSANWÄLTE [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Badri and Salim El Meouchi Law [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Elverdam [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Joksovic Stojanovic & Partners [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Davis Polk And Wardwell [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Knezović & Associates [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Dottir [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Amorys [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class VB Advocates [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Van Der Putt [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Oppenheim [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Porta & Consulenti Associati [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Stone King [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Araoz & Rueda [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Le Poole Bekema [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Kallan [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class BYRO [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Kondrat [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class Melling Voitishkin And Partners [0 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+Class AL Goodbody [1 lawyers registered, 1 errors]
+   - accessPageError                occurred 1 times
+
+----------------------------------------------------------------------------------------------------
+                              [WARNING] FIRMS WITH ZERO LAWYERS REGISTERED
+----------------------------------------------------------------------------------------------------
+
+Total: 244 firms need attention
+
+   [X] Mohsin Tayebaly & Co (1 errors)
+   [X] Fox And Mandal (2 errors)
+   [X] DSKLegal (1 errors)
+   [X] Barnea And Co (2 errors)
+   [X] Steinmetz Haring Gurman (2 errors)
+   [X] Anand And Anand (2 errors)
+   [X] AOil (2 errors)
+   [X] Vision & Associates (2 errors)
+   [X] Helmsman (2 errors)
+   [X] Bhandari Naqvi Riaz (1 errors)
+   [X] HY Leung And Co (2 errors)
+   [X] Mishcon Karas (22 errors)
+   [X] ABS And Co (1 errors)
+   [X] Samvad Partners (2 errors)
+   [X] LNT (3 errors)
+   [X] SFKS Law (26 errors)
+   [X] Sok Siphana & Associates (1 errors)
+   [X] H-F & Co (1 errors)
+   [X] Aequitas (1 errors)
+   [X] Tanner DeWitt (1 errors)
+   [X] Moroğlu Arseven (2 errors)
+   [X] Vellani & Vellani (1 errors)
+   [X] S Horowitz & Co (2 errors)
+   [X] JSA (24 errors)
+   [X] Sidley (8 errors)
+   [X] GVZH (2 errors)
+   [X] Langseth Advokat (2 errors)
+   [X] Theart Mey (1 errors)
+   [X] SBGK (1 errors)
+   [X] Vinge (1 errors)
+   [X] PM&P (2 errors)
+   [X] Dottir (1 errors)
+   [X] Matheson (2 errors)
+   [X] Chamberlains (1 errors)
+   [X] Krogerus (2 errors)
+   [X] DANUBIA Patent And Law (2 errors)
+   [X] Wynn Williams (2 errors)
+   [X] Kochański & Partners (2 errors)
+   [X] Simmons Wolfhagen (2 errors)
+   [X] ONV Law (2 errors)
+   [X] Corrs (6 errors)
+   [X] Frontier (68 errors)
+   [X] Slaughter & May (114 errors)
+   [X] Meyer Köring (2 errors)
+   [X] Dimitrov Petrov & Co (2 errors)
+   [X] HARTE-BAVENDAMM (2 errors)
+   [X] Beauchamps (2 errors)
+   [X] Suárez de Vivero (2 errors)
+   [X] Dahl Law (2 errors)
+   [X] RPC Legal (2 errors)
+   [X] Gordon Legal (2 errors)
+   [X] Reinhard Skuhra Weise & Partner GbR (2 errors)
+   [X] Prinz & Partner (1 errors)
+   [X] Van Der Putt (1 errors)
+   [X] Arnesen IP (1 errors)
+   [X] Kallio Law (6 errors)
+   [X] Van Olmen & Wynant (1 errors)
+   [X] Pinney Talfourd Solicitors (2 errors)
+   [X] Hans Offia And Associates (4 errors)
+   [X] DZP Law (1 errors)
+   [X] Joksovic Stojanovic & Partners (1 errors)
+   [X] VB Advocates (1 errors)
+   [X] Green Horse Legal (1 errors)
+   [X] Payet Rey Cauvi Pérez (20 errors)
+   [X] BYRO (1 errors)
+   [X] Szecskay (2 errors)
+   [X] Fisher Quarmby & Pfeifer (1 errors)
+   [X] HCR Legal (2 errors)
+   [X] Roca Junyent (40 errors)
+   [X] Kallan (1 errors)
+   [X] Werksmans (156 errors)
+   [X] Astrea (1 errors)
+   [X] JWP (2 errors)
+   [X] AC&R (1 errors)
+   [X] BRAUNEIS RECHTSANWÄLTE (1 errors)
+   [X] Thomas Bodström (1 errors)
+   [X] Araoz & Rueda (1 errors)
+   [X] MVJ Marković Vukotić Jovković (2 errors)
+   [X] Merilampi Attorneys (1 errors)
+   [X] MBIP (2 errors)
+   [X] Hügel (1 errors)
+   [X] Stone King (1 errors)
+   [X] Titov (2 errors)
+   [X] LEXIA (1 errors)
+   [X] Sierra Legal (1 errors)
+   [X] Elverdam (1 errors)
+   [X] Badri and Salim El Meouchi Law (1 errors)
+   [X] Porta & Consulenti Associati (1 errors)
+   [X] Flügel Preissner (1 errors)
+   [X] DGKV (6 errors)
+   [X] Amorys (1 errors)
+   [X] Knezović & Associates (1 errors)
+   [X] Clemens Law (1 errors)
+   [X] Collas Crill (2 errors)
+   [X] Malley And Co (1 errors)
+   [X] Legalis (1 errors)
+   [X] Penta (1 errors)
+   [X] MVVP advocaten (1 errors)
+   [X] Poulschmith (2 errors)
+   [X] BARENTSKRANS (1 errors)
+   [X] PricaAndPartners (1 errors)
+   [X] Panetta Consulting Group (1 errors)
+   [X] AGP Advokater (1 errors)
+   [X] Oppenheim (1 errors)
+   [X] Davis Polk And Wardwell (1 errors)
+   [X] Kondrat (1 errors)
+   [X] MSP (1 errors)
+   [X] Holmes (1 errors)
+   [X] Rödl And Partner (1 errors)
+   [X] Dompatent (15 errors)
+   [X] Philippe & Partners (3 errors)
+   [X] Roschier (1 errors)
+   [X] Schurti Partners (1 errors)
+   [X] KLC Law (4 errors)
+   [X] Le Poole Bekema (1 errors)
+   [X] Alliotts (1 errors)
+   [X] Ogletree Deakins (2 errors)
+   [X] Buss Murton Law (1 errors)
+   [X] JGSA (10 errors)
+   [X] Prüfer & Partner (1 errors)
+   [X] PFP Law (1 errors)
+   [X] Porwisz and Partners (1 errors)
+   [X] Sampson Coward LLP (4 errors)
+   [X] Belgravia (1 errors)
+   [X] Hayes (55 errors)
+   [X] Boyanov (37 errors)
+   [X] Arnold Bloch Leibler (1 errors)
+   [X] CBA (2 errors)
+   [X] Moore Legal Kovács (2 errors)
+   [X] FCM Limited (1 errors)
+   [X] Haslinger Nagele (1 errors)
+   [X] NPP Legal (2 errors)
+   [X] Kantor & Immerman (1 errors)
+   [X] Wardynski And Partners (2 errors)
+   [X] Nova Law (19 errors)
+   [X] Zaki Hashem & Partners (1 errors)
+   [X] Håmsø (1 errors)
+   [X] Schindler Attorneys (1 errors)
+   [X] Broseta (1 errors)
+   [X] CRCCD (1 errors)
+   [X] CWA Associates (2 errors)
+   [X] Melling Voitishkin And Partners (1 errors)
+   [X] Jones Day (34 errors)
+   [X] Reliance Corporate Advisors (2 errors)
+   [X] Al Tamimi (24 errors)
+   [X] Squire Patton Boggs (2 errors)
+   [X] Ashurst (262 errors)
+   [X] DCC Law (2 errors)
+   [X] Saba And Co (2 errors)
+   [X] Cuatrecasas (10 errors)
+   [X] Secretariat (2 errors)
+   [X] Osborne Clarke (144 errors)
+   [X] Guantao Law (60 errors)
+   [X] Spruson And Ferguson (18 errors)
+   [X] Willkie (2 errors)
+   [X] Fangda Partners (2 errors)
+   [X] William Fry (2 errors)
+   [X] METIDA (2 errors)
+   [X] WALLESS (2 errors)
+   [X] EProint (2 errors)
+   [X] Ellex (2 errors)
+   [X] Higgs And Johnson (2 errors)
+   [X] Clifford Chance (30 errors)
+   [X] Magnusson Law (2 errors)
+   [X] Milbank (20 errors)
+   [X] White And Case (10 errors)
+   [X] AB & David (2 errors)
+   [X] CERHA HEMPEL (2 errors)
+   [X] Pillsbury Winthrop Shaw Pittman (2 errors)
+   [X] Cleary Gottlieb (2 errors)
+   [X] Gianni And Origoni (2 errors)
+   [X] Portolano Cavallo (2 errors)
+   [X] Sullivan & Worcester (4 errors)
+   [X] Ropes And Gray (2 errors)
+   [X] JPM And Partners (2 errors)
+   [X] Havel Partners (16 errors)
+   [X] Schoenherr (2 errors)
+   [X] Sheppard Mullin (2 errors)
+   [X] Legance (104 errors)
+   [X] Crowell And Moring (52 errors)
+   [X] Cassidy Levy Kent (4 errors)
+   [X] Winston And Strawn (6 errors)
+   [X] Paul Hastings (24 errors)
+   [X] Latam Lex (2 errors)
+   [X] Morgan Lewis (82 errors)
+   [X] MdME (2 errors)
+   [X] Taylor Wessing (120 errors)
+   [X] Houthoof (2 errors)
+   [X] Gomez Acebo And Pombo (8 errors)
+   [X] Holland And Knight (8 errors)
+   [X] Ogletree (16 errors)
+   [X] Stephenson Harwood (60 errors)
+   [X] Skadden (52 errors)
+   [X] Debevoise And Plimpton (2 errors)
+   [X] Curtis (4 errors)
+   [X] Lex Caribbean (2 errors)
+   [X] Mayer Brown (10 errors)
+   [X] Thommessen (2 errors)
+   [X] Herbert Smith Freehills Kramer (2 errors)
+   [X] Noerr (2 errors)
+   [X] Vaneps (2 errors)
+   [X] Duane Morris (2 errors)
+   [X] Chattertons (2 errors)
+   [X] Haynes And Boone (2 errors)
+   [X] Spencer West (46 errors)
+   [X] Cobalt (2 errors)
+   [X] TEMPLARS (20 errors)
+   [X] Watson Farley And Williams (74 errors)
+   [X] Hadef & Partners (8 errors)
+   [X] BCLP Law (132 errors)
+   [X] Johnson Camacho And Singh (2 errors)
+   [X] Marks & Clerk (22 errors)
+   [X] Arnold And Porter (2 errors)
+   [X] BDO (56 errors)
+   [X] Covington And Burling LLP (10 errors)
+   [X] Walkers (86 errors)
+   [X] Faegre Drinker Biddle & Reath (2 errors)
+   [X] Simmons And Simmons (2 errors)
+   [X] Latham And Watkins (124 errors)
+   [X] Carey Olsen (2 errors)
+   [X] BNT (2 errors)
+   [X] PAGBAM (4 errors)
+   [X] Blakes (2 errors)
+   [X] AVM Advogados (2 errors)
+   [X] Greenberg Traurig (52 errors)
+   [X] Conyers (30 errors)
+   [X] Miller Thomson LLP (106 errors)
+   [X] Goodwin (14 errors)
+   [X] StewartMcKelvey (2 errors)
+   [X] Pearl Cohen (24 errors)
+   [X] Quin Emanuel (46 errors)
+   [X] Lewiss Silkin (2 errors)
+   [X] Dentons (2 errors)
+   [X] Peter And Kim (2 errors)
+   [X] McCarthy Tetrault (76 errors)
+   [X] Allens (50 errors)
+   [X] Peterka And Partners (2 errors)
+   [X] Ogier (2 errors)
+   [X] Hakun Law (46 errors)
+   [X] Tahota Law (22 errors)
+   [X] HBN Law (2 errors)
+   [X] Sorainen (2 errors)
+   [X] Pulegal (2 errors)
+   [X] Hill Dickinson (26 errors)
+
+----------------------------------------------------------------------------------------------------
+                                      ERROR SUMMARY
+----------------------------------------------------------------------------------------------------
+
+Total errors: 3270
+
+Most common errors:
+   accessPageError                      2799  ( 85.6%)
+   getPracticeAreaError                  155  (  4.7%)
+   openNewTabError                       139  (  4.3%)
+   getRoleError                           56  (  1.7%)
+   getLawyerError                         35  (  1.1%)
+   getLawyersInPageError                  30  (  0.9%)
+   getSocialsError                        21  (  0.6%)
+   getLinkError                           18  (  0.6%)
+   TimeoutException                       15  (  0.5%)
+   linkException                           2  (  0.1%)
+
+=====================================================================================================
+Firms processed: 537 | Firms with errors: 253 | Firms with 0 lawyers: 244
+=====================================================================================================

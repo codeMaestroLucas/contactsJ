@@ -51,7 +51,7 @@ public class PMP extends ByNewPage {
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
-    private String getPracticeArea() throws LawyerExceptions {
+    private String getPracticeArea() {
         return driver.findElement(By.cssSelector("a[href*='https://penkov-markov.eu/en/practice-areas/']")).getAttribute("textContent");
     }
 

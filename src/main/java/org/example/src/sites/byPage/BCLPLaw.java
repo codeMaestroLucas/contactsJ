@@ -72,8 +72,9 @@ public class BCLPLaw extends ByPage {
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("p.styles__type__name--fd7d38c4 > a")};
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        By[] byArray = {By.cssSelector("a")};
+        String name1 = extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "aria-label", LawyerExceptions::nameException);
+        return name1.split("for")[1];
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {

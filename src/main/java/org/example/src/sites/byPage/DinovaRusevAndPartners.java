@@ -19,7 +19,7 @@ public class DinovaRusevAndPartners extends ByPage {
 
     public DinovaRusevAndPartners() {
         super(
-                "Dinova RusevAndPartners",
+                "Dinova Rusev And Partners",
                 "https://drp-legal.com/team/",
                 1
         );

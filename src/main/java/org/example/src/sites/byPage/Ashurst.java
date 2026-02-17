@@ -40,6 +40,7 @@ public class Ashurst extends ByPage {
             Map.entry("singapore", "Singapore"),
             Map.entry("tokyo", "Japan")
     );
+
     public Ashurst() {
         super(
                 "Ashurst",
@@ -48,6 +49,9 @@ public class Ashurst extends ByPage {
                 3
         );
     }
+
+    private final By[] byRoleArray = { By.className("people-info") };
+
 
     protected void accessPage(int index) throws InterruptedException {
         String otherUrl = "https://www.ashurst.com/en/people/#e=" + 10 * index;
@@ -61,15 +65,12 @@ public class Ashurst extends ByPage {
     }
 
     protected List<WebElement> getLawyersInPage() {
-        By[] webRole = new By[]{
-                By.className("people-info")
-        };
         String[] validRoles = new String[]{"partner", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("profile-card__info")));
-            return this.siteUtl.filterLawyersInPage(lawyers, webRole, false, validRoles);
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.search-result-list > li > div.people-result")));
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -92,16 +93,7 @@ public class Ashurst extends ByPage {
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = { By.className("people-info") };
-
-        String text = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
-
-        String[] split = text.split("\\n");
-
-        if (split.length > 1) {
-            return split[1].trim();
-        }
-        return split[0].trim();
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {

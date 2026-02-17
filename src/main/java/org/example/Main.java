@@ -12,6 +12,8 @@ import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 import org.example.src.utils.validation.EmailDuplicateChecker;
 
+import org.example.src.entities.MyDriver;
+
 import java.util.List;
 import java.util.concurrent.*;
 
@@ -29,7 +31,7 @@ public class Main {
         System.out.println("Completed: Filtering and processing complete.");
     }
 
-    private static void searchLawyersInWeb() throws InterruptedException {
+    private static int searchLawyersInWeb() throws InterruptedException {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
         int redo = 0;
@@ -51,6 +53,8 @@ public class Main {
                 return null;
             });
 
+            boolean needsNewExecutor = false;
+
             try {
                 future.get(CONFIG.TIMEOUT_MINUTES, TimeUnit.MINUTES);
 
@@ -62,6 +66,7 @@ public class Main {
             } catch (TimeoutException e) {
                 System.err.println("Timeout exceeded for site: " + site.name);
                 future.cancel(true);
+                needsNewExecutor = true;
 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -74,51 +79,67 @@ public class Main {
                     e.getCause().printStackTrace();
                 }
 
-            if (totalLawyersRegistered == 0 && redo == 0) {
-                System.out.println("REDOING FIRM IN THE FUTURE");
-                sites.add(site);
-                redo = 1;
-            }
+                if (totalLawyersRegistered == 0 && redo == 0) {
+                    System.out.println("REDOING FIRM IN THE FUTURE");
+                    sites.add(site);
+                    redo = 1;
+                }
 
             } finally {
                 long endTime = System.currentTimeMillis();
                 reports.createReportRow(site, instance.calculateTime(initTime, endTime));
                 redo = 0;
-                Thread.sleep(2500);
 
+                // Clean up browser state between sites (clear cookies, close extra tabs)
+                try {
+                    MyDriver.cleanUpBetweenSites();
+                } catch (Exception ignored) {}
+
+                // If the previous site timed out or was interrupted, the executor's thread
+                // may still be running or have a stale interrupt flag.
+                // Recreate the executor so the next site gets a fresh, clean thread.
+                if (needsNewExecutor) {
+                    executor.shutdownNow();
+                    executor = Executors.newSingleThreadExecutor();
+                }
+
+                Thread.sleep(2500);
             }
         }
 
         executor.shutdownNow();
         System.out.println("\n\nCompleted: Lawyer search finished.");
         System.out.println("\tTotal lawyers collected in web: \u001B[1;31m" + totalLawyersRegistered + "\u001B[0;0m");
+        return totalLawyersRegistered;
     }
 
     @SneakyThrows
-    private static void performCompleteSearch() {
+    private static int performCompleteSearch() {
 //        Few contacts were
         calculateTimeOfExecution(Main::getRegisteredContacts);
+
+        final int[] result = {0};
         calculateTimeOfExecution(() -> {
             try {
-                searchLawyersInWeb();
+                result[0] = searchLawyersInWeb();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         });
 
         System.out.println("\n\n" + "=".repeat(70));
+        return result[0];
     }
 
     public static void main(String[] args) {
+        long globalStart = System.currentTimeMillis();
+        int totalLawyers = 0;
+
         NoSleep.preventSleep(); // block sleep
         EmailDuplicateChecker.getINSTANCE().login();
         try {
-//            performCompleteSearch();
-            searchLawyersInWeb();
-            searchLawyersInWeb();
+            totalLawyers += performCompleteSearch();
 
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
         } finally {
             // Write any remaining logs that weren't flushed
             ErrorLogger.getINSTANCE().flushAllLogs();
@@ -127,6 +148,13 @@ public class Main {
             // Close the email duplicate checker session
             EmailDuplicateChecker.getINSTANCE().close();
             NoSleep.allowSleep(); // allow sleep again when finished
+
+            // Final summary
+            String totalTime = instance.calculateTime(globalStart, System.currentTimeMillis());
+            System.out.println("\n" + "=".repeat(70));
+            System.out.printf("  Total time: \u001B[1;33m%s\u001B[0m%n", totalTime);
+            System.out.printf("  Total lawyers registered: \u001B[1;31m%d\u001B[0m%n", totalLawyers);
+            System.out.println("=".repeat(70));
         }
     }
 }

@@ -21,7 +21,7 @@ public class BlandyAndBlandy extends ByPage {
 
     public BlandyAndBlandy() {
         super(
-                "Blandy And Blandy",
+                "Blandy & Blandy",
                 "https://www.blandy.co.uk/about/find-a-solicitor/",
                 1
         );
