@@ -42,6 +42,9 @@ public class ByPageFirmsBuilder {
             new Amicus(), new AnhadLaw(), new DhirAndDhir(), new DLAndFDeSaram(), new LegacyLaw(),
             new Llinks(), new OcampoAndSuralvo(), new PSL(), new PunoLaw(), new SinghaniaAndPartners(),
             new VALaw(), new ZaidIbrahimAndCo(), new ZhongziLaw(),
+
+            new ACIP(), new BeijingEastIP(), new YoonAndYang(),
+
     };
 
     private static final Site[] EUROPE = {
@@ -79,6 +82,9 @@ public class ByPageFirmsBuilder {
             new ThomasBodstrom(), new Titov(), new TucaZbarcea(), new VanDerPutt(), new VBAdvocates(),
             new VieringJentschuraAndPartner(), new Vinge(), new VOPatentsAndTrademarks(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
             new AumentoLawFirm(), new EuclidLaw(),
+            new KCGPartners(), new RambergAdvokater(), new RBLaw(),
+            new Schjodt(),
+
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -116,6 +122,8 @@ public class ByPageFirmsBuilder {
             new JohnsonWinterSlattery(), new LaneNeave(), new MacphersonKelley(), new MalleyAndCo(), new MBIP(),
             new MinterEllisonRuddWatts(), new PiperAlderman(), new ThomsonGeer(), new WynnWilliams(),
             new SierraLegal(),
+            new DoogueGeorge(), new FpaPatent(), new MorayAndAgnew(),
+
     };
 
     private static final Site[] MUNDIAL = {
@@ -134,7 +142,7 @@ public class ByPageFirmsBuilder {
             new Secretariat(), new SheppardMullin(), new Skadden(), new SpencerWest(), new SprusonAndFerguson(),
             new SquirePattonBoggs(), new StephensonHarwood(), new StewartMcKelvey(), new SullivanAndWorcester(), new TahotaLaw(),
             new TaylorWessing(), new Walkers(), new WatsonFarleyAndWilliams(), new WhiteAndCase(), new WilliamFry(),
-            new Willkie(), new WinstonAndStrawn(),
+            new Willkie(), new WinstonAndStrawn(), new Rimon(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

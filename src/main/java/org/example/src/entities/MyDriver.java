@@ -23,7 +23,7 @@ public final class MyDriver {
             ChromeOptions options = new ChromeOptions();
             // Disabled: headed mode is more stable for scraping
             // (fewer anti-bot detections, more reliable element rendering)
-            // options.addArguments("--headless");
+//             options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
@@ -77,6 +77,32 @@ public final class MyDriver {
         for (int i = 0; i < timesToScroll; i++) {
             js.executeScript("window.scrollBy(0, window.innerHeight);");
             Thread.sleep((long) (sleepTime * 1000L));
+        }
+
+        // Extra delay for lazy-loaded content
+        Thread.sleep(1500);
+    }
+
+    /**
+     * Scrolls to the bottom of the page by repeatedly scrolling until no more content loads.
+     * Useful for pages with infinite scroll or lazy-loaded content.
+     *
+     * @param sleepTime Delay in seconds between each scroll (to allow content to load)
+     * @throws InterruptedException if thread sleep is interrupted
+     */
+    public static void scrollToBottom(double sleepTime) throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        long previousHeight = (long) js.executeScript("return document.body.scrollHeight");
+
+        while (true) {
+            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+            Thread.sleep((long) (sleepTime * 1000L));
+
+            long currentHeight = (long) js.executeScript("return document.body.scrollHeight");
+            if (currentHeight == previousHeight) break;
+
+            previousHeight = currentHeight;
         }
 
         // Extra delay for lazy-loaded content

@@ -40,7 +40,7 @@ public class Main {
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         for (Site site : sites) {
-            if (Thread.currentThread().isInterrupted() || totalLawyersRegistered >= CONFIG.TOTAL_LAWYERS_TO_GET) {
+            if (Thread.currentThread().isInterrupted() || totalLawyersRegistered >= (CONFIG.TOTAL_LAWYERS_TO_GET + CONFIG.LAWYERS_IN_FILTER)) {
                 System.out.println("Stopping lawyer search.");
                 break;
             }

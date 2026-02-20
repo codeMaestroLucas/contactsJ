@@ -211,28 +211,37 @@ public class SiteUtils {
             return "";
         }
 
-        String normalizedOffice = officeToCheck
-                .replaceAll("[^A-Za-z]", " ")
-                .replace("nbsp", " ")
-                .toLowerCase()
-                .replaceAll("\\s+", " ") // collapse multiple spaces
-                .trim();
+        // Split by commas/semicolons first to get individual office entries,
+        // then try each one against the map
+        String[] entries = officeToCheck.split("[,;/|]+");
 
-        // 1. Try full match
-        if (officeToCountry.containsKey(normalizedOffice)) {
-            return officeToCountry.get(normalizedOffice);
-        }
+        for (String entry : entries) {
+            String normalized = entry
+                    .replaceAll("[^A-Za-zÀ-ÿ]", " ")
+                    .replace("nbsp", " ")
+                    .toLowerCase()
+                    .replaceAll("\\s+", " ")
+                    .trim();
 
-        // 2. Try word-by-word
-        String[] words = normalizedOffice.split(" ");
-        for (String word : words) {
-            if (officeToCountry.containsKey(word)) {
-                return officeToCountry.get(word);
+            if (normalized.isEmpty()) continue;
+
+            // 1. Try full match on this entry (e.g. "new york", "hong kong")
+            if (officeToCountry.containsKey(normalized)) {
+                return officeToCountry.get(normalized);
+            }
+
+            // 2. Try each key as a substring of this entry
+            for (Map.Entry<String, String> mapEntry : officeToCountry.entrySet()) {
+                if (normalized.contains(mapEntry.getKey())) {
+                    return mapEntry.getValue();
+                }
             }
         }
 
-        // 3. Nothing found, return normalized string or the default value
-        return defaultValue.isEmpty() ? normalizedOffice : defaultValue;
+        // 3. Nothing found, return the default value or the original input normalized
+        return defaultValue.isEmpty()
+                ? officeToCheck.replaceAll("[^A-Za-zÀ-ÿ]", " ").toLowerCase().replaceAll("\\s+", " ").trim()
+                : defaultValue;
     }
 
 

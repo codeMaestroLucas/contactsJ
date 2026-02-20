@@ -130,7 +130,7 @@ public class LatamLex extends ByNewPage {
                 "firm", this.name,
                 "country", this.getCountry(div),
                 "practice_area", this.getPracticeArea(),
-                "email", socials[0].replace("email", "").trim(),
+                "email", socials[0],
                 "phone", socials[1]
         );
     }

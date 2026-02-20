@@ -107,7 +107,7 @@ public class TCLaw extends ByNewPage {
                 "firm", this.name,
                 "country", "China",
                 "practice_area", "",
-                "email", socials[0].replace("email", ""),
+                "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }

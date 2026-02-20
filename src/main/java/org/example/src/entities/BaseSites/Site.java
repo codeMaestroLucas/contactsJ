@@ -104,6 +104,29 @@ public abstract class Site {
         return new String[]{ email, phone };
     }
 
+    protected String[] getSocialsFromText(String text) {
+        String email = "";
+        String phone = "";
+
+        String[] parts = text.split("[\\s|,;/]+");
+
+        for (String part : parts) {
+            String value = part.toLowerCase().trim();
+
+            if ((value.contains("mail") || value.contains("@")) && email.isEmpty() && value.length() > 6) {
+                email = value;
+
+            } else if (phone.isEmpty()) {
+                String cleaned = value.replaceAll("[^0-9]", "");
+                if (cleaned.length() >= 7) phone = cleaned;
+            }
+
+            if (!email.isEmpty() && !phone.isEmpty()) break;
+        }
+
+        return new String[]{ email, phone };
+    }
+
     protected void addLawyer(Lawyer lawyer) {
         Sheet sheet = Sheet.getINSTANCE();
         sheet.addLawyer(lawyer, true);

@@ -63,7 +63,7 @@ public class GPK extends ByPage {
         return "Partner";
     }
 
-    private String[] getSocials(String name) {
+    public String[] getSocials(String name) {
         // Email format (firstName).(LastName)@lawfirm.at
         try {
             String treatedName = TreatLawyerParams.treatName(name);

@@ -144,6 +144,7 @@ public final class TreatLawyerParams {
                 .toLowerCase()
                 .replace("mailto", "")
                 .replace("email", "")
+                .replace("e-mail", "")
                 .replace(":", "")
                 .trim();
     }

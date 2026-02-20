@@ -1,7 +1,7 @@
 {
   "Africa":              { "enabled": true,  "weight": 1 },
 
-  "Asia":                { "enabled": true,  "weight": 2 },
+  "Asia":                { "enabled": true,  "weight": 3 },
 
   "Europe":              { "enabled": true,  "weight": 1 },
 
@@ -11,5 +11,5 @@
 
   "South America":       { "enabled": false, "weight": 1 },
 
-  "Oceania":             { "enabled": true,  "weight": 1 }
+  "Oceania":             { "enabled": true,  "weight": 2 }
 }
