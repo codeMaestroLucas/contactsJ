@@ -20,7 +20,7 @@ public class OcampoAndSuralvo extends ByPage {
 
     public OcampoAndSuralvo() {
         super(
-                "Ocampo And Suralvo",
+                "Ocampo & Suralvo",
                 "https://www.ocamposuralvo.com/category/our-team/",
                 1
         );

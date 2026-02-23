@@ -1,0 +1,546 @@
+{
+  "AI": [
+    "artificial intelligence"
+  ],
+  "Anti Money Laundering": [
+    "anti money laundering",
+    "anti-money laundering",
+    "antimoney laundering"
+  ],
+  "Arbitration": [
+    "arbitration"
+  ],
+  "Audit & Assurance": [
+    "audit and assurance",
+    "auditing and assurance",
+    "audit assurance",
+    "audit"
+  ],
+  "Aviation": [
+    "aviation"
+  ],
+  "Banking & Finance": [
+    "banking and finance",
+    "bank and finance",
+    "banking finance",
+    "financial services",
+    "banking"
+  ],
+  "Bankruptcy": [
+    "bankruptcy"
+  ],
+  "Business": [
+    "business"
+  ],
+  "Business Contracts": [
+    "business contracts",
+    "business agreements"
+  ],
+  "Capital Markets": [
+    "capital markets",
+    "equity capital markets",
+    "debt capital markets",
+    "capital market"
+  ],
+  "Child Care": [
+    "child care",
+    "childcare",
+    "children rights",
+    "children"
+  ],
+  "Commercial": [
+    "commercial"
+  ],
+  "Commercial Advisory": [
+    "commercial advisory"
+  ],
+  "Commercial Arbitration": [
+    "commercial arbitration"
+  ],
+  "Commercial Contracts": [
+    "commercial contracts",
+    "commercial agreements"
+  ],
+  "Commercial Disputes": [
+    "commercial disputes",
+    "commercial dispute"
+  ],
+  "Commercial Litigation": [
+    "commercial litigation"
+  ],
+  "Commercial Property": [
+    "commercial property"
+  ],
+  "Commercial Real Estate": [
+    "commercial real estate"
+  ],
+  "Competition": [
+    "competition and antitrust",
+    "antitrust and competition",
+    "antitrust",
+    "competition"
+  ],
+  "Compliance": [
+    "regulatory compliance",
+    "corporate compliance",
+    "compliance"
+  ],
+  "Construction": [
+    "construction"
+  ],
+  "Contracts": [
+    "contracts"
+  ],
+  "Conveyancing": [
+    "conveyancing"
+  ],
+  "Copyrights": [
+    "copyrights",
+    "copyright"
+  ],
+  "Corporate": [
+    "corporate"
+  ],
+  "Corporate Advisory": [
+    "corporate advisory"
+  ],
+  "Corporate Finance": [
+    "corporate finance"
+  ],
+  "Corporate Governance": [
+    "corporate governance",
+    "governance"
+  ],
+  "Corporate Litigation": [
+    "corporate litigation"
+  ],
+  "Corporate M&A": [
+    "corporate mergers and acquisitions",
+    "corporate m and a"
+  ],
+  "Corporate Real Estate": [
+    "corporate real estate"
+  ],
+  "Corporate Restructuring": [
+    "corporate restructuring"
+  ],
+  "Criminal": [
+    "criminal"
+  ],
+  "Criminal Defense": [
+    "criminal defense",
+    "criminal defence"
+  ],
+  "Cross Border Banking & Finance": [
+    "cross border banking and finance",
+    "cross-border banking and finance",
+    "cross border banking"
+  ],
+  "Cross Border Corporate": [
+    "cross border corporate",
+    "cross-border corporate"
+  ],
+  "Cross Border Labour & Employment": [
+    "cross border labour and employment",
+    "cross border labor and employment",
+    "cross-border labour and employment"
+  ],
+  "Cross Border Litigation": [
+    "cross border litigation",
+    "cross-border litigation"
+  ],
+  "Cross Border Real Estate": [
+    "cross border real estate",
+    "cross-border real estate"
+  ],
+  "Cross Border Restructuring": [
+    "cross border restructuring",
+    "cross-border restructuring"
+  ],
+  "Data Protection": [
+    "data protection and privacy",
+    "data protection",
+    "data privacy",
+    "gdpr",
+    "privacy"
+  ],
+  "Debt Finance": [
+    "debt finance",
+    "leveraged finance",
+    "loan finance"
+  ],
+  "Dispute Resolution": [
+    "dispute resolution"
+  ],
+  "Divorce": [
+    "divorce"
+  ],
+  "Domestic Violence": [
+    "domestic violence",
+    "domestic abuse",
+    "family violence"
+  ],
+  "Due Diligence": [
+    "due diligence"
+  ],
+  "Employment Advisory": [
+    "employment advisory"
+  ],
+  "Employment Contracts": [
+    "employment contracts",
+    "employment agreements"
+  ],
+  "Employment Disputes": [
+    "employment disputes",
+    "employment dispute"
+  ],
+  "Employment Litigation": [
+    "employment litigation",
+    "employment tribunal"
+  ],
+  "Employment Tax": [
+    "employment tax",
+    "payroll tax"
+  ],
+  "Energy": [
+    "energy and utilities",
+    "energy and resources",
+    "energy"
+  ],
+  "Environmental": [
+    "environmental",
+    "climate change",
+    "esg"
+  ],
+  "Estate Planning": [
+    "estate planning",
+    "estate and succession planning"
+  ],
+  "EU Competition": [
+    "eu competition",
+    "european competition"
+  ],
+  "EU Intellectual Property": [
+    "eu intellectual property",
+    "european intellectual property"
+  ],
+  "EU Labor & Employment": [
+    "eu labour and employment",
+    "eu labor and employment",
+    "european labour and employment",
+    "eu labour",
+    "eu labor"
+  ],
+  "EU Patents": [
+    "eu patents",
+    "european patents"
+  ],
+  "EU Regulatory": [
+    "eu regulatory",
+    "european regulatory"
+  ],
+  "EU Trademarks": [
+    "eu trademarks",
+    "eu trade marks",
+    "european trademarks",
+    "european trade marks"
+  ],
+  "Family": [
+    "family",
+    "matrimonial"
+  ],
+  "Funds & Investment": [
+    "funds and investment",
+    "investment funds",
+    "fund management",
+    "asset management",
+    "funds"
+  ],
+  "Gaming": [
+    "gaming",
+    "gambling"
+  ],
+  "Healthcare": [
+    "healthcare"
+  ],
+  "Immigration": [
+    "immigration"
+  ],
+  "Infrastructure": [
+    "infrastructure"
+  ],
+  "Innovation": [
+    "innovation"
+  ],
+  "Insolvency": [
+    "insolvency and administration",
+    "insolvency",
+    "liquidation",
+    "winding up"
+  ],
+  "Insurance": [
+    "insurance and reinsurance",
+    "reinsurance",
+    "insurance"
+  ],
+  "Intellectual Property": [
+    "intellectual property and technology",
+    "intellectual property"
+  ],
+  "Intellectual Property Litigation": [
+    "intellectual property litigation",
+    "ip litigation",
+    "ip disputes"
+  ],
+  "International Arbitration": [
+    "international arbitration",
+    "investor state arbitration"
+  ],
+  "International Business": [
+    "international business",
+    "global business"
+  ],
+  "International Tax": [
+    "international tax",
+    "cross-border tax",
+    "global tax"
+  ],
+  "International Trade": [
+    "international trade",
+    "trade and customs",
+    "export control",
+    "trade"
+  ],
+  "Joint Ventures": [
+    "joint ventures",
+    "joint venture"
+  ],
+  "Labour & Employment": [
+    "labour and employment",
+    "labor and employment",
+    "employment and labour",
+    "employment and labor",
+    "labour",
+    "labor"
+  ],
+  "Life Sciences": [
+    "life sciences and healthcare",
+    "life sciences",
+    "biotechnology",
+    "biotech"
+  ],
+  "Litigation": [
+    "civil litigation",
+    "litigation"
+  ],
+  "M&A": [
+    "mergers and acquisitions",
+    "merge and acquisition",
+    "merges and acquisitions",
+    "merger and acquisition",
+    "m and a"
+  ],
+  "Media": [
+    "media and entertainment",
+    "media",
+    "entertainment"
+  ],
+  "Mediation": [
+    "mediation"
+  ],
+  "Mining": [
+    "mining and natural resources",
+    "natural resources",
+    "mining"
+  ],
+  "Oil & Gas": [
+    "oil and gas",
+    "petroleum",
+    "upstream oil",
+    "downstream oil"
+  ],
+  "Patent Litigation": [
+    "patent litigation",
+    "patent infringement",
+    "patent disputes"
+  ],
+  "Patents": [
+    "patent prosecution",
+    "patent applications",
+    "patents",
+    "patent"
+  ],
+  "Pensions": [
+    "pension schemes",
+    "pensions",
+    "pension"
+  ],
+  "Personal Injury": [
+    "personal injury"
+  ],
+  "Pharmaceutical": [
+    "pharmaceutical",
+    "pharma"
+  ],
+  "PPP": [
+    "ppp",
+    "public private partnership",
+    "public-private partnership"
+  ],
+  "Private Clients": [
+    "private clients",
+    "private client",
+    "high net worth",
+    "private wealth",
+    "wealth management"
+  ],
+  "Private Equity": [
+    "venture and private equity",
+    "private equity",
+    "leveraged buyout"
+  ],
+  "Project Finance": [
+    "project finance"
+  ],
+  "Property": [
+    "property"
+  ],
+  "Real Estate": [
+    "real estate and property",
+    "real estate"
+  ],
+  "Real Estate Finance": [
+    "real estate finance",
+    "property finance",
+    "mortgage finance"
+  ],
+  "Real Estate Litigation": [
+    "real estate litigation",
+    "property litigation",
+    "property disputes"
+  ],
+  "Regulatory": [
+    "regulatory affairs",
+    "regulatory"
+  ],
+  "Renewable Energy": [
+    "renewable energy",
+    "clean energy",
+    "green energy",
+    "solar energy",
+    "wind energy"
+  ],
+  "Residential Property": [
+    "residential property",
+    "residential real estate",
+    "residential conveyancing"
+  ],
+  "Restructuring": [
+    "restructuring and insolvency",
+    "debt restructuring",
+    "financial restructuring",
+    "restructuring"
+  ],
+  "Retirement": [
+    "retirement planning",
+    "retirement"
+  ],
+  "Shipping & Maritime": [
+    "shipping and maritime",
+    "admiralty",
+    "maritime"
+  ],
+  "Shipping & Maritime Disputes": [
+    "shipping and maritime disputes",
+    "shipping disputes",
+    "maritime disputes",
+    "admiralty disputes"
+  ],
+  "Sports": [
+    "sports and entertainment",
+    "sports"
+  ],
+  "Succession": [
+    "succession planning",
+    "succession"
+  ],
+  "Tax": [
+    "taxation",
+    "fiscal",
+    "tax"
+  ],
+  "Tax Advisory": [
+    "tax advisory",
+    "tax consulting",
+    "tax counsel"
+  ],
+  "Tax Litigation": [
+    "tax litigation",
+    "tax disputes",
+    "tax controversy"
+  ],
+  "Technology": [
+    "technology and innovation",
+    "it and technology",
+    "technology"
+  ],
+  "Technology Regulation": [
+    "technology regulation",
+    "tech regulation",
+    "digital regulation"
+  ],
+  "TMT": [
+    "technology media and telecommunications",
+    "technology media and telecoms",
+    "tmt"
+  ],
+  "Trademarks": [
+    "trademarks",
+    "trade marks",
+    "trademark",
+    "trade mark",
+    "brand protection"
+  ],
+  "Trusts & Estates": [
+    "trusts and estates",
+    "trust and estate",
+    "trusts"
+  ],
+  "UK Immigration": [
+    "uk immigration",
+    "uk visa",
+    "uk imigration"
+  ],
+  "UK Patents": [
+    "uk patents",
+    "uk patent"
+  ],
+  "VAT": [
+    "value added tax",
+    "goods and services tax",
+    "indirect tax",
+    "vat"
+  ],
+  "Venture Capital": [
+    "venture capital",
+    "startup funding",
+    "seed funding"
+  ],
+  "White Collar Crime": [
+    "white collar crime",
+    "white collar criminal"
+  ],
+  "White Collar Defense": [
+    "white collar criminal defense",
+    "white collar defense",
+    "white collar defence",
+    "fraud defense"
+  ],
+  "Wills & Estates": [
+    "wills and estates",
+    "wills and probate",
+    "wills estates",
+    "probate",
+    "wills"
+  ]
+}

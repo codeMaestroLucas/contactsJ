@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class NovaLaw extends ByPage {
     private final By[] byRoleArray = {
-            By.xpath("(//h2)[2]")
+            By.cssSelector("div"),
     };
 
     public NovaLaw() {
@@ -38,13 +38,14 @@ public class NovaLaw extends ByPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
 
-            List<WebElement> lawyerBlocks = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.xpath("//*[@id='content']//div[contains(@class,'e-con-full') and contains(@class,'elementor-element')]")
+            WebElement div = wait.until(
+                    ExpectedConditions.presenceOfElementLocated(
+                            By.xpath("//*[@id=\"content\"]/div/div/div/div/div/div/div/div")
                     )
             );
-            List<WebElement> lawyers = siteUtl.filterLawyersInPage(lawyerBlocks, byRoleArray, false, validRoles);
-            return lawyers.subList(0, lawyers.size() - 2); // Remove the last one
+            List<WebElement> lawyers = div.findElements(By.cssSelector("div.elementor-element"));
+
+            return siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         }
         catch (Exception e) {
             System.out.println("Failed to find lawyer elements");
@@ -63,7 +64,7 @@ public class NovaLaw extends ByPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {
-                By.xpath("(//h2)[1]")
+                By.xpath(".//h2[1]")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }

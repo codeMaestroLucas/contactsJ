@@ -84,8 +84,8 @@ public class MishconKaras extends ByNewPage {
 
 
     private String[] getSocials() {
-        WebElement lawyer = driver.findElement(By.xpath("//*[@id=\"ctl00_ctl00_MainPlaceHolder_AsidePlaceHolder_ctl00_dvContactInfo\"]/div/ul"));
         try {
+            WebElement lawyer = driver.findElement(By.className("mod-contact-card"));
             List<WebElement> socials = lawyer
                     .findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);

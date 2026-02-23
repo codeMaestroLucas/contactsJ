@@ -1,8 +1,14 @@
 package org.example.src.utils;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.InputStream;
 import java.text.Normalizer;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
@@ -10,6 +16,46 @@ import java.util.Set;
  * Utility class for treating and formatting Lawyer data.
  */
 public final class TreatLawyerParams {
+
+    private static volatile Map<String, List<String>> PRACTICE_AREA_MAP = null;
+
+    private static Map<String, List<String>> getPracticeAreaMap() {
+        if (PRACTICE_AREA_MAP == null) {
+            synchronized (TreatLawyerParams.class) {
+                if (PRACTICE_AREA_MAP == null) {
+                    try (InputStream is = TreatLawyerParams.class.getResourceAsStream("/baseFiles/json/practiceAreas.json")) {
+                        if (is != null) {
+                            ObjectMapper mapper = new ObjectMapper();
+                            PRACTICE_AREA_MAP = mapper.readValue(is, new TypeReference<Map<String, List<String>>>() {});
+                        } else {
+                            System.err.println("practiceAreas.json not found");
+                            PRACTICE_AREA_MAP = new HashMap<>();
+                        }
+                    } catch (Exception e) {
+                        System.err.println("Failed to load practiceAreas.json: " + e.getMessage());
+                        PRACTICE_AREA_MAP = new HashMap<>();
+                    }
+                }
+            }
+        }
+        return PRACTICE_AREA_MAP;
+    }
+
+    private static String matchPracticeArea(String normalizedInput) {
+        Map<String, List<String>> map = getPracticeAreaMap();
+        String bestMatch = null;
+        int bestMatchLength = 0;
+
+        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+            for (String alias : entry.getValue()) {
+                if (normalizedInput.contains(alias) && alias.length() > bestMatchLength) {
+                    bestMatch = entry.getKey();
+                    bestMatchLength = alias.length();
+                }
+            }
+        }
+        return bestMatch;
+    }
 
     private static final Set<String> ABBREVIATIONS = new HashSet<>(Arrays.asList(
             "mr", "ms", "mx", "dr", "prof", "mrs", "miss", "php",
@@ -38,19 +84,36 @@ public final class TreatLawyerParams {
 
 
     /**
-     * Treats a lawyer's practice area by removing common, generic terms.
+     * Treats a lawyer's practice area.
+     * First tries to match against the canonical practice area map (practiceAreas.json).
+     * If no match is found, falls back to removing generic terms.
      */
     public static String treatPracticeArea(String practiceArea) {
-        if (Objects.isNull(practiceArea)) {
-            return "-----";
+        if (Objects.isNull(practiceArea) || practiceArea.isBlank()) {
+            return Objects.isNull(practiceArea) ? "-----" : practiceArea.trim();
         }
-        return practiceArea
+
+        // Normalize for JSON lookup: lowercase, & → "and", collapse whitespace
+        String normalized = practiceArea
+                .replace("&amp;", " and ")
+                .replaceAll("(?i)\\s*&\\s*", " and ")
+                .toLowerCase()
+                .replaceAll("\\s+", " ")
+                .trim();
+
+        String canonical = matchPracticeArea(normalized);
+        if (canonical != null) return canonical;
+
+        // Fallback: remove generic terms
+        String cleaned = practiceArea
                 .replace("&amp;", "")
                 .replaceAll("(?i)law", "")
                 .replaceAll("(?i)specialist", "")
                 .replaceAll("(?i)department", "")
                 .replaceAll("(?i)service(s)?", "")
                 .trim();
+
+        return cleaned.isBlank() ? "-----" : cleaned;
     }
 
 

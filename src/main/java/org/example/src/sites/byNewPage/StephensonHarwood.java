@@ -1,7 +1,7 @@
-package org.example.src.sites.byPage;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
-import org.example.src.entities.BaseSites.ByPage;
+import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,11 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.Objects;
 
 import static java.util.Map.entry;
 
-public class StephensonHarwood extends ByPage {
+public class StephensonHarwood extends ByNewPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
             entry("london", "England"),
             entry("seoul", "Korea (South)"),
@@ -28,69 +28,52 @@ public class StephensonHarwood extends ByPage {
 
 
     private final By[] byRoleArray = {
-            By.cssSelector("h3")
+            By.tagName("p")
     };
 
 
     public StephensonHarwood() {
         super(
                 "Stephenson Harwood",
-                "https://www.stephensonharwood.com/people#searchtype=categories;",
-                30,
+                "https://www.stephensonharwood.com/people/?currentPage=81",
+                1,
                 3
         );
     }
 
 
     protected void accessPage(int index) throws InterruptedException {
-        if (index == 0) {
-            this.driver.get(this.link);
-            MyDriver.waitForPageToLoad();
-            Thread.sleep(1000L);
-            MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
-            return;
-        }
-
-        try {
-            WebElement activeLi = driver.findElement(By.cssSelector("ul.pagination > li.active"));
-            WebElement nextLi = activeLi.findElement(By.xpath("following-sibling::li[1]/a"));
-            MyDriver.clickOnElement(nextLi);
-            Thread.sleep(2000L);
-        } catch (NoSuchElementException e) {
-            System.out.println("No next page available or structure changed.");
-        }
+        this.driver.get(this.link);
+        MyDriver.waitForPageToLoad();
+        Thread.sleep(1000L);
+        MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
     }
 
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "managing associate",
-                "senior associate",
-        };
+        String[] validRoles = new String[]{ "partner", "counsel", "managing associate", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.row > div.col-sm-12.col-xs-8")));
+            WebElement div = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div[1]")));
+            List<WebElement> lawyers = div.findElements(By.cssSelector("a[href*='http://www.stephensonharwood.com/people/']"));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
-
-    public String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.cssSelector("h2 > a")
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+    @Override
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
+        String link = lawyer.getAttribute("href");
+        MyDriver.openNewTab(link);
+        return "";
     }
 
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("h2 > a")
+                By.cssSelector("h1")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
@@ -103,7 +86,7 @@ public class StephensonHarwood extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href^='/offices/']")
+                By.cssSelector("a[href*='/offices/']")
         };
         String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "China");
@@ -112,7 +95,7 @@ public class StephensonHarwood extends ByPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.tagName("a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());
@@ -122,13 +105,16 @@ public class StephensonHarwood extends ByPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
+        this.openNewTab(lawyer);
+        WebElement div = driver.findElement(By.xpath("/html/body/section[2]/div/div/div"));
+        String[] socials = this.getSocials(div);
+
         return Map.of(
-                "link", this.getLink(lawyer),
-                "name", this.getName(lawyer),
-                "role", this.getRole(lawyer),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "name", this.getName(div),
+                "role", this.getRole(div),
                 "firm", this.name,
-                "country", this.getCountry(lawyer),
+                "country", this.getCountry(div),
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1]

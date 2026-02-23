@@ -69,22 +69,21 @@ public class MorganLewis extends ByPage {
 
 
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
-        MyDriver.waitForPageToLoad();
-        Thread.sleep(1000L);
-
         if (index == 0) {
+            this.driver.get(this.link);
+            MyDriver.waitForPageToLoad();
+            Thread.sleep(1000L);
             MyDriver.clickOnAddBtn(By.id("onetrust-accept-btn-handler"));
 
 //            this.tryToFilter();
 
-        } else {
-            WebElement nextBtn = driver.findElement(By.className("c-pagination__list"))
-                    .findElement(By.cssSelector("a.c-pagination__link.js-pagination-link.next"));
-            MyDriver.clickOnElement(nextBtn);
-            MyDriver.waitForPageToLoad();
+            return;
         }
 
+        WebElement nextBtn = driver.findElement(By.className("c-pagination__list"))
+                .findElement(By.cssSelector("a.c-pagination__link.js-pagination-link.next"));
+        MyDriver.clickOnElement(nextBtn);
+        MyDriver.waitForPageToLoad();
     }
 
     private void tryToFilter() {
@@ -108,8 +107,7 @@ public class MorganLewis extends ByPage {
 
     protected List<WebElement> getLawyersInPage() {
         String[] validRoles = new String[]{
-                "partner",
-                "counsel"
+                "partner", "counsel", "director", "head", "senior associate"
         };
 
         try {

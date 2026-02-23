@@ -20,7 +20,7 @@ public class HammarskioldAndCo extends ByPage {
 
     public HammarskioldAndCo() {
         super(
-                "Hammarskiöld And Co",
+                "Hammarskiöld & Co",
                 "https://hammarskiold.se/team/",
                 1
         );

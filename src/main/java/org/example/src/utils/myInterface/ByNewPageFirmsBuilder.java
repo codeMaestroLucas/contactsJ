@@ -23,7 +23,7 @@ public class ByNewPageFirmsBuilder {
             new AOil(), new ArethaLegal(), new BarneaAndCo(), new CityYuwaPartners(), new CovenantChambers(),
             new DesaiAndDiwanji(), new DSKLegal(), new EBN(), new Fischer(), new FoongAndPartners(),
             new GornitzkyAndCo(), new HarryElias(), new HarryEliasPartnership(), new HHRLawyers(), new HuiyeLaw(),
-            new HYLeungAndCo(), new JSA(), new KRBLaw(), new LonganLaw(), new MishconKaras(),
+            new HYLeungAndCo(), new KRBLaw(), new LonganLaw(), new MishconKaras(),
             new MiuraAndPartners(), new Mourant(), new NurmansyahAndMuzdalifah(), new RemfryAndSagar(), new SamvadPartners(),
             new SolomonAndCo(), new TannerDeWitt(), new TCLaw(), new ChadhaAndCo(),
             new AJUKimChangAndLee(), new AsiaLiuhIP(), new DonaldsonAndBurkinshaw(), new HastingsAndCo(),
@@ -57,7 +57,7 @@ public class ByNewPageFirmsBuilder {
             new Valfor(), new VanOlmenAndWynant(), new Vischer(), new VossiusAndPartner(), new WardynskiAndPartners(),
             new WengerVieliAG(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
             new KonecnaAndZacha(), new BettenAndResch(), new BonnAndSchmitt(), new ZampaPartners(),
-            new KolcuogluDemirkanKocakli(), new SayinLaw(),
+            new KolcuogluDemirkanKocakli(), new SayinLaw(), new Hayes(),
     };
 
     private static final Site[] NORTH_AMERICA = {

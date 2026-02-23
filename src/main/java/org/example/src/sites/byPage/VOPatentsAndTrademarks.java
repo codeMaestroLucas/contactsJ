@@ -21,7 +21,7 @@ public class VOPatentsAndTrademarks extends ByPage {
 
     public VOPatentsAndTrademarks() {
         super(
-                "VO Patents And Trademarks",
+                "VO Patents & Trademarks",
                 "https://www.vo.eu/home/experts/",
                 1,
                 2

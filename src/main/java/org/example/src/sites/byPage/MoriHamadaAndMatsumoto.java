@@ -38,7 +38,7 @@ public class MoriHamadaAndMatsumoto extends ByPage {
 
     public MoriHamadaAndMatsumoto() {
         super(
-                "Mori Hamada And Matsumoto",
+                "Mori Hamada & Matsumoto",
                 "https://www.morihamada.com/en/people?keywords=&sort=&jaorder=&practices=&location=&supportlang=&position=2411%2C16%2C2581%2C2601%2C2626",
                 35,
                 2

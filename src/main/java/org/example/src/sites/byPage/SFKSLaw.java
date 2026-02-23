@@ -79,7 +79,7 @@ public class SFKSLaw extends ByPage {
     }
 
 
-    private String[] getSocials(WebElement lawyer) {
+    private String[] getSocials() {
         String email = "";
         String phone = "";
 
@@ -106,7 +106,7 @@ public class SFKSLaw extends ByPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = this.getSocials(lawyer);
+        String[] socials = this.getSocials();
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(lawyer),

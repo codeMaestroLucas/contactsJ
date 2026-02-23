@@ -1,6 +1,7 @@
 package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byNewPage.StephensonHarwood;
 import org.example.src.sites.byPage.*;
 import org.example.src.utils.ContinentConfig;
 
@@ -62,7 +63,7 @@ public class ByPageFirmsBuilder {
             new FilipAndCompany(), new Finreg360(), new FIVERS(), new FlichyGrange(), new FluegelPreissner(),
             new Foyen(), new FranklinLaw(), new GanadoAdvocates(), new GorrissenFederspiel(), new GPK(),
             new GrataInternational(), new GreenHorseLegal(), new Haavind(), new HabrakenRutten(), new HammarskioldAndCo(),
-            new HannesSnellman(), new HarperJamesSolicitors(), new Hayes(), new HCRLegal(), new Hellstrom(),
+            new HannesSnellman(), new HarperJamesSolicitors(), new HCRLegal(), new Hellstrom(),
             new Hellstrom(), new HjulmandCaptain(), new Holst(), new HPPAttorneys(), new Hugel(),
             new Jalsovszky(), new Jalsovszky(), new JGSA(), new JoffeAndAssocies(), new JoksovicStojanovicAndPartners(),
             new Kallan(), new Kanter(), new KewLaw(), new KienhuisLegal(), new Knijff(),

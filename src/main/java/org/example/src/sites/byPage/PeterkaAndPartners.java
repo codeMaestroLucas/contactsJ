@@ -19,7 +19,7 @@ public class PeterkaAndPartners extends ByPage {
 
     public PeterkaAndPartners() {
         super(
-                "Peterka And Partners",
+                "Peterka & Partners",
                 "https://www.peterkapartners.com/en/localteams/all/",
                 1
         );

@@ -21,7 +21,7 @@ public class TTTAndPartners extends ByNewPage {
 
     public TTTAndPartners() {
         super(
-                "TTTAndPartners",
+                "TTT & Partners",
                 "https://tttandpartners.com/team/",
                 1
         );

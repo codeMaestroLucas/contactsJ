@@ -20,13 +20,7 @@ public class BDO extends ByNewPage {
 
     private String currentCountry = "";
 
-    private final String[] validRoles = {
-            "partner",
-            "counsel",
-            "advisor",
-            "director",
-            "senior associate"
-    };
+    private final String[] validRoles = { "partner", "counsel", "advisor", "director", "senior associate" };
 
     public BDO() {
         super(
@@ -219,7 +213,7 @@ public class BDO extends ByNewPage {
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href*='/en-gb/our-people/']")
+                By.cssSelector("a[href*='/our-people/']")
 
         };
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);

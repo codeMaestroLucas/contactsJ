@@ -62,7 +62,7 @@ public class RocaJunyent extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{By.cssSelector("a[href*='/en/team/']")};
+        By[] byArray = new By[]{By.cssSelector("a[href*='/team/']")};
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
         return null;

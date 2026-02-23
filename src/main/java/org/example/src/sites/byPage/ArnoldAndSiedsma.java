@@ -19,7 +19,7 @@ public class ArnoldAndSiedsma extends ByPage {
 
     public ArnoldAndSiedsma() {
         super(
-                "ArnoldAndSiedsma",
+                "Arnold & Siedsma",
                 "https://www.arnold-siedsma.com/about-us/the-specialists/?search=specialist&establishment=&function=&department=&specialization=&text=",
                 1
         );

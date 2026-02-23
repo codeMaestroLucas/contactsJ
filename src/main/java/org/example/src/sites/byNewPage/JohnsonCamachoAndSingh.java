@@ -16,7 +16,7 @@ import java.util.Objects;
 public class JohnsonCamachoAndSingh extends ByNewPage {
     public JohnsonCamachoAndSingh() {
         super(
-                "Johnson Camacho And Singh",
+                "Johnson Camacho & Singh",
                 "https://www.jcscaribbeanlaw.com/our-team/",
                 1
         );
@@ -30,22 +30,26 @@ public class JohnsonCamachoAndSingh extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            return wait.until(
+            List<WebElement> all = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
                             By.cssSelector("a[href*='https://www.jcscaribbeanlaw.com/our-team/']")
                     )
             );
+            return all.stream()
+                    .filter(e -> {
+                        String href = e.getAttribute("href");
+                        return href != null
+                                && !href.equals("https://www.jcscaribbeanlaw.com/our-team/")
+                                && !href.equals(this.link);
+                    })
+                    .collect(java.util.stream.Collectors.toList());
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
     public String openNewTab(WebElement lawyer) {
-        try {
-            MyDriver.openNewTab(lawyer.getAttribute("href"));
-        } catch (Exception e) {
-            System.err.println("Error opening tab: " + e.getMessage());
-        }
+        MyDriver.openNewTab(lawyer.getAttribute("href"));
         return null;
     }
 

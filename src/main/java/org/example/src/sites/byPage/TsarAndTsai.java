@@ -20,7 +20,7 @@ public class TsarAndTsai extends ByPage {
 
     public TsarAndTsai() {
         super(
-                "Tsar And Tsai",
+                "Tsar & Tsai",
                 "https://www.tsartsai.com.tw/team?lang=en",
                 1
         );

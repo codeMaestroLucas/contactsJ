@@ -18,7 +18,7 @@ public class KonecnaAndZacha extends ByNewPage {
 
     public KonecnaAndZacha() {
         super(
-                "Konecna And Zacha",
+                "Konecna & Zacha",
                 "https://www.konecna-zacha.com/en/people/",
                 1
         );
