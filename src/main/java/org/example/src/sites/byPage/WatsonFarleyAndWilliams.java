@@ -54,7 +54,7 @@ public class WatsonFarleyAndWilliams extends ByPage {
 
     public WatsonFarleyAndWilliams() {
         super(
-                "Watson Farley And Williams",
+                "Watson Farley & Williams",
                 "https://www.wfw.com/people/?reset=yes",
                 37,
                 3

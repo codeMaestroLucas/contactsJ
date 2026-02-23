@@ -4,6 +4,7 @@ import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class YoonAndYang extends ByPage {
 
@@ -21,7 +24,7 @@ public class YoonAndYang extends ByPage {
 
     public YoonAndYang() {
         super(
-                "YoonAndYang",
+                "Yoon & Yang",
                 "https://yoonyang.co.kr/eng/professionals/members?lang=en",
                 5
         );
@@ -44,7 +47,7 @@ public class YoonAndYang extends ByPage {
         Thread.sleep(2000);
 
         // More than 50
-        MyDriver.clickOnElementMultipleTimes(By.cssSelector("div#moreButton > button"), 10, 0.8);
+        MyDriver.clickOnElementMultipleTimes(By.cssSelector("div#moreButton > button"), 1, 0.8);
     }
 
     @Override
@@ -65,8 +68,19 @@ public class YoonAndYang extends ByPage {
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.tagName("a")};
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+        String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+
+        Pattern pattern = Pattern.compile("\\((\\d+)\\)");
+        Matcher matcher = pattern.matcher(link);
+
+        String id = "";
+        if (matcher.find()) {
+            id = matcher.group(1);
+        }
+
+        return  "https://yoonyang.co.kr/eng/professionals/profile/" + id;
     }
+
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("name")};

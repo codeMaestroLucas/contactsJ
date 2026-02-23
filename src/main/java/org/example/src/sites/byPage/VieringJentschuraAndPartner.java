@@ -20,7 +20,7 @@ public class VieringJentschuraAndPartner extends ByPage {
 
     public VieringJentschuraAndPartner() {
         super(
-                "Viering Jentschura And Partner",
+                "Viering Jentschura & Partner",
                 "https://www.vjp.de/en/team",
                 1,
                 2

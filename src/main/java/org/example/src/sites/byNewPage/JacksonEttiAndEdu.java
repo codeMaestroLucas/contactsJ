@@ -20,7 +20,7 @@ public class JacksonEttiAndEdu extends ByNewPage {
 
     public JacksonEttiAndEdu() {
         super(
-            "Jackson Etti And Edu",
+            "Jackson Etti & Edu",
             "https://jee.africa/people",
             2
         );

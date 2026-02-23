@@ -19,7 +19,7 @@ public class MitelAndAsociatii extends ByPage {
 
     public MitelAndAsociatii() {
         super(
-                "Mitel And Asociaţii",
+                "Mitel & Asociaţii",
                 "https://mitelpartners.ro/our-team/",
                 1
         );

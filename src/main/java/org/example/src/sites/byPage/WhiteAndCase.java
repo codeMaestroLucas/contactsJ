@@ -83,7 +83,7 @@ public class WhiteAndCase extends ByPage {
 
     public WhiteAndCase() {
         super(
-                "White And Case",
+                "White & Case",
                 "https://www.whitecase.com/people/all/partner/all/all/all/all/search_api_relevance/DESC",
                 5,
                 3

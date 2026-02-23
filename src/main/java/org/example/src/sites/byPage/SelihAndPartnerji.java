@@ -19,7 +19,7 @@ public class SelihAndPartnerji extends ByPage {
 
     public SelihAndPartnerji() {
         super(
-                "Šelih And Partnerji",
+                "Šelih & Partnerji",
                 "https://selih.si/en/",
                 1
         );

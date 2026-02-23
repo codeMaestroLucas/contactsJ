@@ -137,7 +137,7 @@ public class Legance extends ByNewPage {
                 "firm", this.name,
                 "country", this.getCountry(div),
                 "practice_area", this.getPracticeArea(),
-                "email", socials[0],
+                "email", socials[0].replace("%20", ""),
                 "phone", "39028963071"
         );
     }

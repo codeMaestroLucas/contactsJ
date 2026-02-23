@@ -20,7 +20,7 @@ public class MorayAndAgnew extends ByPage {
 
     public MorayAndAgnew() {
         super(
-                "MorayAndAgnew Lawyers",
+                "Moray & Agnew",
                 "https://www.moray.com.au/people?RefineModule=620&StartTax=104&StartDate=&Keywords=&RefineParent=1",
                 8
         );

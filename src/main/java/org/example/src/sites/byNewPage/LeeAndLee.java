@@ -19,7 +19,7 @@ public class LeeAndLee extends ByNewPage {
 
     public LeeAndLee() {
         super(
-                "LeeAndLee",
+                "Lee & Lee",
                 "https://www.leenlee.com.sg/our-people",
                 1
         );

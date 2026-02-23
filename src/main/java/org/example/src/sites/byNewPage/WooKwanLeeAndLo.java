@@ -17,7 +17,7 @@ public class WooKwanLeeAndLo extends ByNewPage {
 
     public WooKwanLeeAndLo() {
         super(
-                "Woo Kwan LeeAndLo",
+                "Woo Kwan Lee & Lo",
                 "https://www.wkll.com/en/our-professionals",
                 1
         );

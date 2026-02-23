@@ -16,7 +16,7 @@ public class BSJP extends ByPage {
 
     public BSJP() {
         super(
-                "BSJP",
+                "LYNX",
                 "https://bsjp.pl/en/people/",
                 1
         );

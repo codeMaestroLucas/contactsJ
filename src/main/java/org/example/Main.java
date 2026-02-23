@@ -139,7 +139,10 @@ public class Main {
         EmailDuplicateChecker.getINSTANCE().login();
         try {
             totalLawyers += performCompleteSearch();
+            totalLawyers += searchLawyersInWeb();
 
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         } finally {
             // Write any remaining logs that weren't flushed
             ErrorLogger.getINSTANCE().flushAllLogs();

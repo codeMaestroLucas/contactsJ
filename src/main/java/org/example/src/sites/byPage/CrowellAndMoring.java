@@ -32,7 +32,7 @@ public class CrowellAndMoring extends ByPage {
 
     public CrowellAndMoring() {
         super(
-                "Crowell And Moring",
+                "Crowell & Moring",
                 "https://www.crowell.com/en/professionals",
                 26,
                 3

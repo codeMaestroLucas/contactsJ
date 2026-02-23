@@ -40,7 +40,7 @@ public class SprusonAndFerguson extends ByPage {
 
     public SprusonAndFerguson() {
         super(
-                "Spruson And Ferguson",
+                "Spruson & Ferguson",
                 "https://www.spruson.com/our-people/",
                 9,
                 3

@@ -39,7 +39,7 @@ public class RopesAndGray extends ByPage {
 
     public RopesAndGray() {
         super(
-                "Ropes And Gray",
+                "Ropes & Gray",
                 "https://www.ropesgray.com/en/people?offices=46cc9841-9e34-4565-87b2-c4a2042a1721&offices=284963e5-38ec-45fb-87d0-99b21caebd21&offices=f3d1a787-ec2c-4c9b-85ea-0e2a31a295e7&offices=b5a2fb42-35c2-441b-868f-23707ac10631&offices=0e008de0-c344-4e56-9126-8426580d8ab5&offices=e4299641-e33e-4ba2-abb0-702e9ed9aec9&offices=acb21c29-c05e-40e2-b68e-81e3bc3df395&page=16",
                 1,
                 3

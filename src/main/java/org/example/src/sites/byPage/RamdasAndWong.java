@@ -22,7 +22,7 @@ public class RamdasAndWong extends ByPage {
 
     public RamdasAndWong() {
         super(
-                "Ramdas And Wong",
+                "Ramdas & Wong",
                 "https://www.ramdwong.com.sg/#lawyersprofile",
                 1
         );

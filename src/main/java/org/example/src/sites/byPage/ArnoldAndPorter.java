@@ -23,7 +23,7 @@ public class ArnoldAndPorter extends ByPage {
 
     public ArnoldAndPorter() {
         super(
-                "Arnold And Porter",
+                "Arnold & Porter",
                 "https://www.arnoldporter.com/en/people?offices=6345e0f4-64a2-4698-8117-fb2c8311cfc5,4dfbc043-3bdf-df98-7dbd-9579ed375007,dfcf7436-a067-b337-91ac-e8f2ff7e912a,effc1763-f448-4d06-94f5-9bb5a082a8f8,ef390be5-f9a7-434a-927e-22f81d498b35&titles=c9a37860-0e03-294c-b0ba-bdca9259042b,0def9372-5897-4459-9f95-f67a49d4b484,323a1c1f-00ed-ccd0-7709-668547c15146,570dd7b1-d7f5-4c83-85dd-aba52eb0e6c4,77b92139-93bc-1d04-5d7a-05fccc1eca7a,93ffd6e1-fd46-4514-bf4e-6def93e1df8f,5bad4c39-74aa-4011-ad9f-fb0c31fc44c1,d7bcd7a6-8fa9-45d7-a4f0-75f8e290d723&skip=40&sort=0&reload=false&scroll=8604",
                 1,
                 3

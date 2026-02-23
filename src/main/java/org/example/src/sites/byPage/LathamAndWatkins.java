@@ -44,7 +44,7 @@ public class LathamAndWatkins extends ByPage {
 
     public LathamAndWatkins() {
         super(
-                "Latham And Watkins",
+                "Latham & Watkins",
                 "https://www.lw.com/en/people#sort=%40peoplerankbytitle%20ascending%3B%40peoplelastname%20ascending&f:@peopleoffices=[Beijing,Brussels,Dubai,D%C3%BCsseldorf,Frankfurt,Hamburg,Hong%20Kong,London,Madrid,Milan,Munich,Orange%20County,Paris,Riyadh,Seoul,Singapore,Tel%20Aviv,Tokyo]",
                 62,
                 3

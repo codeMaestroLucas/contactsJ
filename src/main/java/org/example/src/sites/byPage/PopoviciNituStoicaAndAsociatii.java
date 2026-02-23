@@ -15,7 +15,7 @@ import java.util.Map;
 public class PopoviciNituStoicaAndAsociatii extends ByPage {
     public PopoviciNituStoicaAndAsociatii() {
         super(
-                "Popovici Niţu StoicaAndAsociaţii",
+                "Popovici Niţu Stoica & Asociaţii",
                 "",
                 3
         );

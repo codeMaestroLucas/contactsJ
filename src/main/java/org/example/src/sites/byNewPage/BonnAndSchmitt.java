@@ -21,7 +21,7 @@ public class BonnAndSchmitt extends ByNewPage {
 
     public BonnAndSchmitt() {
         super(
-                "BonnAndSchmitt",
+                "Bonn & Schmitt",
                 "https://www.bsp.lu/lu/people?expertise=All&job_title=All&name=",
                 1
         );

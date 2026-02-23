@@ -23,7 +23,7 @@ public class WardynskiAndPartners extends ByNewPage {
 
     public WardynskiAndPartners() {
         super(
-            "Wardynski And Partners",
+            "Wardynski & Partners",
             "https://wardynski.com.pl/en/lawyers",
             1
         );
