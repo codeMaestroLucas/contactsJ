@@ -1,32 +1,52 @@
-# Contexto de Geração de Maps (Java)
-Este documento resume as diretrizes para a criação de mapas em Java que associam cidades (escritórios) aos seus respectivos países, baseando-se em extrações de elementos UI (HTML ou Imagens).
+# Java Map Generation Context (Law Firms & Global Offices)
 
-1. Objetivo Principal
-   Gerar implementações de `Map.of` ou `Map.ofEntries` em Java para automatizar o mapeamento geográfico de escritórios de advocacia ou empresas globais.
+This document outlines the standard guidelines for creating Java Maps that associate cities (offices) with their respective countries, based on UI element extractions (HTML or Images).
 
-2. Regras Técnicas (Java)
-   Método de Inicialização:
-   1. Usar Map.of(...) para até 10 entradas. 
-   2. Usar Map.ofEntries(entry(key, value), ...) para mais de 10 entradas.
+Just generate the `OFFICE_TO_COUNTRY` variable with the values of the Keys and Values.
+
+1. Primary Objective
+   To generate Java Map.of or Map.ofEntries implementations to automate the geographical mapping of law firms or global corporate offices.
+
+2. Technical Guidelines (Java)
+  ## Initialization Methods
    
-   Estrutura de Chaves:
-   1. As chaves devem ser os nomes das cidades como aparecem no elemento visual (ex: data-title, data-param ou o texto entre as tags <span>/<option>). 
-   2. As chaves devem ser em lowercase, SEMPRE 
-   3. Imutabilidade: Os mapas devem ser declarados como public static final Map<String, String>.
-3. Fluxo de Trabalho
-   Extração: Identificar o nome da cidade no HTML (atributo value, data-value ou texto visível).
-   Mapeamento: Associar a cidade ao país correspondente (ver seção de Convenções abaixo).
-   Formatação: Entregar o código pronto para ser inserido na classe, com comentários explicativos fora do bloco de código.
-4. Convenções de Nomenclatura (PAÍSES)
-   O nome dos países deve ser enviado em inglês. 
+   - Up to 10 entries: Use Map.of(key, value, ...).
 
-# Padrão de alguns nomes que deve ser seguidas para os valores das chaves:
-   - United States, EUA → USA
-   - UK, United Kingdom → England 
-   - Netherlands → the Netherlands
-   - Philippines → the Philippines 
-   - United Arab Emirates→ the UAE
-   - South Korea → Korea (South) 
-   - British Virgin Islands → the British Virgin Islands 
-   - Czech Republic → the Czech Republic
-   - Dominican Republic → the Dominican Republic
+   - More than 10 entries: Use Map.ofEntries(entry(key, value), ...).
+   
+   ## Key & Value Structure
+
+   - Key Source: Keys must be the city names as they appear in the visual element (e.g., data-title, data-param, or text within <span>/<option> tags).
+   
+   - Key Formatting: Keys must ALWAYS be in lowercase.
+
+   - Immutability: Maps must be declared as public static final Map<String, String>.
+
+3. Workflow
+   Extraction: Identify the city name in the HTML (look for value, data-value, or visible text).
+
+Mapping: Associate the city with the correct country (refer to the Country Conventions section below).
+
+Formatting: Provide code ready for class insertion, with explanatory comments placed outside the code block.
+
+4. Country Naming Conventions (Values)
+   Use the name convention based in the file `countryNameConventions.md`. All the names must be in english
+
+# Example
+- Input: HTML or photos
+```html
+<ul.countries>
+   <li.country>afghanistan</li.country>
+   <li.country>albania</li.country>
+   <li.country>angola</li.country>
+</ul.countries>
+```
+
+- Output: java code
+```java
+ public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+         entry("afghanistan", "Afghanistan"),
+         entry("albania", "Albania"),
+         entry("angola", "Angola")
+ }
+```

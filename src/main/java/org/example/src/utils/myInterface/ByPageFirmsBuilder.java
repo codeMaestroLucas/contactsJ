@@ -1,7 +1,6 @@
 package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byNewPage.StephensonHarwood;
 import org.example.src.sites.byPage.*;
 import org.example.src.utils.ContinentConfig;
 
@@ -18,7 +17,7 @@ public class ByPageFirmsBuilder {
     private static final Site[] AFRICA = {
             new Adsero(), new ALPNGAndCo(), new AlukoAndOyebode(), new AmanAndPartners(), new Ashitiva(),
             new BentsiEnchillLetsaAndAnkomah(), new FisherQuarmbyAndPfeifer(), new KantorAndImmerman(), new ShahidLaw(), new STBB(),
-            new TheartMey(),
+            new EldibAdvocates(), new TheartMey(),
     };
 
     private static final Site[] ASIA = {
@@ -42,9 +41,10 @@ public class ByPageFirmsBuilder {
             new VeritasLegal(), new Virtus(), new VisionAndAssociates(), new WongPartnership(), new Yulchon(),
             new Amicus(), new AnhadLaw(), new DhirAndDhir(), new DLAndFDeSaram(), new LegacyLaw(),
             new Llinks(), new OcampoAndSuralvo(), new PSL(), new PunoLaw(), new SinghaniaAndPartners(),
+            new ACIP(), new BeijingEastIP(), new YoonAndYang(), new AbeIkuboAndKatayama(), new GrossAndCo(),
             new VALaw(), new ZaidIbrahimAndCo(), new ZhongziLaw(),
+            new FKNKLaw(), new KLaw(), new PhoenixLegal(), new VanguardLawyersTokyo(), new YuenLaw(),
 
-            new ACIP(), new BeijingEastIP(), new YoonAndYang(),
 
     };
 
@@ -82,10 +82,8 @@ public class ByPageFirmsBuilder {
             new Sidley(), new SIRIUS(), new Stibbe(), new StoneKing(), new SuarezDeVivero(),
             new ThomasBodstrom(), new Titov(), new TucaZbarcea(), new VanDerPutt(), new VBAdvocates(),
             new VieringJentschuraAndPartner(), new Vinge(), new VOPatentsAndTrademarks(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
-            new AumentoLawFirm(), new EuclidLaw(),
-            new KCGPartners(), new RambergAdvokater(), new RBLaw(),
-            new Schjodt(),
-
+            new KCGPartners(), new RambergAdvokater(), new RBLaw(), new Schjodt(), new Esin(),
+            new AumentoLawFirm(), new EuclidLaw(), new AlstonAndBirdLLP(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -134,16 +132,16 @@ public class ByPageFirmsBuilder {
             new ClearyGottlieb(), new CliffordChance(), new Conyers(), new CovingtonAndBurlingLLP(), new CrowellAndMoring(),
             new DCCLaw(), new DebevoiseAndPlimpton(), new DuaneMorris(), new FaegreDrinkerBiddleAndReath(), new FRA(),
             new GianniAndOrigoni(), new GomezAceboAndPombo(), new Goodwin(), new GreenbergTraurig(), new HadefAndPartners(),
-            new HakunLaw(), new HavelPartners(), new HaynesAndBoone(), new HBNLaw(), new HerbertSmithFreehillsKramer(),
+            new HakunLaw(), new HavelPartners(), new HaynesAndBoone(), new HBNLaw(),
             new HFW(), new HillDickinson(), new HollandAndKnight(), new HuntonAndrewsKurth(), new JonesDay(),
             new JSKAdvokatni(), new Kinstellar(), new KISCHIP(), new LathamAndWatkins(), new MagnussonLaw(),
             new MayerBrown(), new McCarthyTetrault(), new Milbank(), new MillerThomsonLLP(), new MorganLewis(),
             new Ogier(), new Ogletree(), new PAGBAM(), new PaulHastings(), new PeterAndKim(),
             new PeterkaAndPartners(), new PillsburyWinthropShawPittman(), new RelianceCorporateAdvisors(), new RopesAndGray(), new Schoenherr(),
             new Secretariat(), new SheppardMullin(), new Skadden(), new SpencerWest(), new SprusonAndFerguson(),
-            new SquirePattonBoggs(), new StephensonHarwood(), new StewartMcKelvey(), new SullivanAndWorcester(), new TahotaLaw(),
+            new SquirePattonBoggs(), new StewartMcKelvey(), new SullivanAndWorcester(), new TahotaLaw(),
             new TaylorWessing(), new Walkers(), new WatsonFarleyAndWilliams(), new WhiteAndCase(), new WilliamFry(),
-            new Willkie(), new WinstonAndStrawn(), new Rimon(),
+            new Willkie(), new WinstonAndStrawn(), new Rimon(), new CorporateINTL(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

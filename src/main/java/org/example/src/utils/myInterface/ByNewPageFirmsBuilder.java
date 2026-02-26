@@ -33,7 +33,12 @@ public class ByNewPageFirmsBuilder {
             new SayatZholshyAndPartners(), new SGAndCoLawyers(), new ShanghaiPacificLegal(),
             new SudathPereraAssociates(), new TheCapitalLaw(), new TTA(), new TTTAndPartners(), new TommyThomas(),
             new WooKwanLeeAndLo(), new YossiLevyAndCo(), new ZhongLunLaw(), new LeeAndLee(),
-            new MatryMeiriAndCo(),
+            new MatryMeiriAndCo(), new RIAABarkerGillette(), new GanLeeAndTan(), new Hauzen(), new HornAndCo(),
+            new Dashnyam(), new EligGurkaynak(), new ErgunAvukatlikBurosu(),
+            new ATIM(), new AzmanDavidsonAndCo(), new BrossAndPartners(), new CapitalEquityLegalGroup(), new ChienYehLaw(),
+            new CTPartners(), new DomnernSomgiatAndBoonma(), new FormosanBrothers(), new GlobalVietnamLawyers(), new SCPT(),
+            new VILAF(), new SNRAssociates(), new StratageLaw(),
+            new CorneliusLaneAndMufti(), new EconomicLawsPractice(), new FCLaw(), new QuaheWooAndPalmer(), new SIPLaw(),
     };
 
     private static final Site[] EUROPE = {
@@ -57,7 +62,8 @@ public class ByNewPageFirmsBuilder {
             new Valfor(), new VanOlmenAndWynant(), new Vischer(), new VossiusAndPartner(), new WardynskiAndPartners(),
             new WengerVieliAG(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
             new KonecnaAndZacha(), new BettenAndResch(), new BonnAndSchmitt(), new ZampaPartners(),
-            new KolcuogluDemirkanKocakli(), new SayinLaw(), new Hayes(),
+            new KolcuogluDemirkanKocakli(), new SayinLaw(), new Hayes(), new HoxhaMemiAndHoxha(),
+            new GunAndPartners(), new Sherrards(), new Cerraloglu(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -90,7 +96,7 @@ public class ByNewPageFirmsBuilder {
             new MarksAndClerk(), new MdME(), new METIDA(), new MIOLaw(), new Noerr(),
             new OsborneClarke(), new PearlCohen(), new PortolanoCavallo(), new Pulegal(), new QuinEmanuel(),
             new SabaAndCo(), new SimmonsAndSimmons(), new Sorainen(), new TEMPLARS(), new Thommessen(),
-            new Vaneps(), new WALLESS(), new KingAndWoodMallesons(),
+            new Vaneps(), new WALLESS(), new KingAndWoodMallesons(), new Adna(), new StephensonHarwood(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

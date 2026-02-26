@@ -1,45 +1,45 @@
 {
-  "timestamp" : "2026-02-12T23:06:46.571371",
+  "timestamp" : "2026-02-23T18:33:13.023638",
   "continents" : {
     "Africa" : {
-      "maxLawyers" : 18,
       "byNewPage" : 7,
+      "maxLawyers" : 18,
       "byPage" : 11
     },
     "Asia" : {
-      "maxLawyers" : 151,
-      "byNewPage" : 29,
-      "byPage" : 103
+      "byNewPage" : 56,
+      "maxLawyers" : 181,
+      "byPage" : 106
     },
     "Europe" : {
-      "maxLawyers" : 283,
-      "byNewPage" : 95,
-      "byPage" : 167
+      "byNewPage" : 99,
+      "maxLawyers" : 290,
+      "byPage" : 170
     },
     "North America" : {
-      "maxLawyers" : 56,
       "byNewPage" : 14,
+      "maxLawyers" : 56,
       "byPage" : 37
     },
     "Central America" : {
-      "maxLawyers" : 4,
       "byNewPage" : 1,
+      "maxLawyers" : 4,
       "byPage" : 2
     },
     "South America" : {
-      "maxLawyers" : 59,
       "byNewPage" : 10,
+      "maxLawyers" : 59,
       "byPage" : 47
     },
     "Oceania" : {
-      "maxLawyers" : 44,
       "byNewPage" : 18,
-      "byPage" : 25
+      "maxLawyers" : 47,
+      "byPage" : 28
     }
   },
   "mundial" : {
-    "maxLawyers" : 220,
-    "byNewPage" : 37,
-    "byPage" : 77
+    "byNewPage" : 38,
+    "maxLawyers" : 223,
+    "byPage" : 78
   }
 }

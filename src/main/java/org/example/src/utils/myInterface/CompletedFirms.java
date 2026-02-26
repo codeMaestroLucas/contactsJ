@@ -384,14 +384,38 @@ public class CompletedFirms {
     }
 
     /**
-     * Formats a value with its delta compared to a previous value.
-     * Returns colored string: green for positive, red for negative, plain if equal.
+     * Builds a right-aligned cell of exactly {@code width} visible characters.
+     * When current != previous the delta is appended in color.
+     * ANSI codes are excluded from the width calculation so columns stay aligned.
      */
-    private static String formatDelta(int current, int previous) {
+    private static String formatCell(int current, int previous, int width) {
         int delta = current - previous;
-        if (delta > 0) return String.format("%d %s(+%d)%s", current, GREEN, delta, RESET);
-        if (delta < 0) return String.format("%d %s(%d)%s", current, RED, delta, RESET);
-        return String.valueOf(current);
+
+        String visible;   // what the user will actually see
+        String colored;   // same string but with ANSI color on the delta part
+
+        if (delta > 0) {
+            String d = "(+" + delta + ")";
+            visible = current + " " + d;
+            colored = current + " " + GREEN + d + RESET;
+        } else if (delta < 0) {
+            String d = "(" + delta + ")";
+            visible = current + " " + d;
+            colored = current + " " + RED + d + RESET;
+        } else {
+            visible = String.valueOf(current);
+            colored = visible;
+        }
+
+        int pad = Math.max(0, width - visible.length());
+        return " ".repeat(pad) + colored;
+    }
+
+    /** Plain right-aligned cell (no comparison). */
+    private static String formatCell(int current, int width) {
+        String s = String.valueOf(current);
+        int pad = Math.max(0, width - s.length());
+        return " ".repeat(pad) + s;
     }
 
     /**
@@ -411,78 +435,91 @@ public class CompletedFirms {
         Map<String, Object> prevMundial = (Map<String, Object>) previous.get("mundial");
         String prevTimestamp = (String) previous.get("timestamp");
 
-        int lineLength = 100;
+        final int COL  = 14;   // visible width of each data column
+        final int LINE = 1 + 18 + 3 + (COL + 3) * 4;  // " " + name + " │ " + (col + " │ ") x4
+
         String title = "| SYSTEM STATE COMPARISON |";
-        int padding = (lineLength - title.length()) / 2;
+        int padding = (LINE - title.length()) / 2;
 
-        System.out.println("\n" + "=".repeat(lineLength));
+        System.out.println("\n" + "=".repeat(LINE));
         System.out.println(" ".repeat(padding) + title);
-        System.out.println("=".repeat(lineLength));
+        System.out.println("=".repeat(LINE));
 
-        System.out.printf(" %-18s │ %14s │ %14s │ %14s │ %14s%n",
+        // Header — plain %Ns works here because there are no ANSI codes
+        System.out.printf(" %-18s │ %"+COL+"s │ %"+COL+"s │ %"+COL+"s │ %"+COL+"s%n",
                 "Continent", "ByPage", "ByNewPage", "Total Firms", "Max Lawyers");
-        System.out.println("-".repeat(lineLength));
+        System.out.println("-".repeat(LINE));
 
         for (String name : CONTINENT_NAMES) {
-            Supplier<Site[]> byPageGetter = BY_PAGE_GETTERS.get(name);
+            Supplier<Site[]> byPageGetter    = BY_PAGE_GETTERS.get(name);
             Supplier<Site[]> byNewPageGetter = BY_NEW_PAGE_GETTERS.get(name);
 
-            Site[] byPage = byPageGetter != null ? byPageGetter.get() : new Site[0];
+            Site[] byPage    = byPageGetter    != null ? byPageGetter.get()    : new Site[0];
             Site[] byNewPage = byNewPageGetter != null ? byNewPageGetter.get() : new Site[0];
 
-            int curByPage = byPage.length;
+            int curByPage    = byPage.length;
             int curByNewPage = byNewPage.length;
-            int curTotal = curByPage + curByNewPage;
-            int curLawyers = countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage);
+            int curTotal     = curByPage + curByNewPage;
+            int curLawyers   = countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage);
 
             Map<String, Object> prev = prevContinents != null ? prevContinents.get(name) : null;
-            if (prev != null) {
-                int prevByPage = (int) prev.get("byPage");
-                int prevByNewPage = (int) prev.get("byNewPage");
-                int prevTotal = prevByPage + prevByNewPage;
-                int prevLawyers = (int) prev.get("maxLawyers");
 
-                System.out.printf(" %-18s │ %14s │ %14s │ %14s │ %14s%n",
+            // Use %s with pre-padded cells so ANSI codes don't affect column alignment
+            if (prev != null) {
+                int prevByPage    = (int) prev.get("byPage");
+                int prevByNewPage = (int) prev.get("byNewPage");
+                int prevTotal     = prevByPage + prevByNewPage;
+                int prevLawyers   = (int) prev.get("maxLawyers");
+
+                System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
                         name,
-                        formatDelta(curByPage, prevByPage),
-                        formatDelta(curByNewPage, prevByNewPage),
-                        formatDelta(curTotal, prevTotal),
-                        formatDelta(curLawyers, prevLawyers));
+                        formatCell(curByPage,    prevByPage,    COL),
+                        formatCell(curByNewPage, prevByNewPage, COL),
+                        formatCell(curTotal,     prevTotal,     COL),
+                        formatCell(curLawyers,   prevLawyers,   COL));
             } else {
-                System.out.printf(" %-18s │ %14d │ %14d │ %14d │ %14d%n",
-                        name, curByPage, curByNewPage, curTotal, curLawyers);
+                System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
+                        name,
+                        formatCell(curByPage,    COL),
+                        formatCell(curByNewPage, COL),
+                        formatCell(curTotal,     COL),
+                        formatCell(curLawyers,   COL));
             }
         }
 
-        // Mundial
-        Site[] mundialByPage = ByPageFirmsBuilder.getMundial();
+        // Mundial row
+        Site[] mundialByPage    = ByPageFirmsBuilder.getMundial();
         Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
-        int curMByPage = mundialByPage.length;
+        int curMByPage    = mundialByPage.length;
         int curMByNewPage = mundialByNewPage.length;
-        int curMTotal = curMByPage + curMByNewPage;
-        int curMLawyers = countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage);
+        int curMTotal     = curMByPage + curMByNewPage;
+        int curMLawyers   = countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage);
 
-        System.out.println("-".repeat(lineLength));
+        System.out.println("-".repeat(LINE));
         if (prevMundial != null) {
-            int prevMByPage = (int) prevMundial.get("byPage");
+            int prevMByPage    = (int) prevMundial.get("byPage");
             int prevMByNewPage = (int) prevMundial.get("byNewPage");
-            int prevMTotal = prevMByPage + prevMByNewPage;
-            int prevMLawyers = (int) prevMundial.get("maxLawyers");
+            int prevMTotal     = prevMByPage + prevMByNewPage;
+            int prevMLawyers   = (int) prevMundial.get("maxLawyers");
 
-            System.out.printf(" %-18s │ %14s │ %14s │ %14s │ %14s%n",
+            System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
                     "Mundial",
-                    formatDelta(curMByPage, prevMByPage),
-                    formatDelta(curMByNewPage, prevMByNewPage),
-                    formatDelta(curMTotal, prevMTotal),
-                    formatDelta(curMLawyers, prevMLawyers));
+                    formatCell(curMByPage,    prevMByPage,    COL),
+                    formatCell(curMByNewPage, prevMByNewPage, COL),
+                    formatCell(curMTotal,     prevMTotal,     COL),
+                    formatCell(curMLawyers,   prevMLawyers,   COL));
         } else {
-            System.out.printf(" %-18s │ %14d │ %14d │ %14d │ %14d%n",
-                    "Mundial", curMByPage, curMByNewPage, curMTotal, curMLawyers);
+            System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
+                    "Mundial",
+                    formatCell(curMByPage,    COL),
+                    formatCell(curMByNewPage, COL),
+                    formatCell(curMTotal,     COL),
+                    formatCell(curMLawyers,   COL));
         }
 
-        System.out.println("=".repeat(lineLength));
+        System.out.println("=".repeat(LINE));
         System.out.printf(" Last snapshot: %s%s%s%n", DIM, prevTimestamp, RESET);
-        System.out.println("=".repeat(lineLength));
+        System.out.println("=".repeat(LINE));
     }
 
 

@@ -1,6 +1,6 @@
 # Law Firm Web Scraper - Complete Documentation
 
-> **Version:** 2.0
+> **Version:** 2.1
 > **Last Updated:** February 2026
 > **Platform:** Java 17+ with Selenium WebDriver
 
@@ -13,6 +13,7 @@
 3. [Directory Structure](#3-directory-structure)
 4. [Core Components](#4-core-components)
 5. [Utility Classes Reference](#5-utility-classes-reference)
+   - [5.7 VCard.java](#57-vcardjavanew)
 6. [Configuration System](#6-configuration-system)
 7. [Continent Configuration](#7-continent-configuration)
 8. [Creating New Scrapers](#8-creating-new-scrapers)
@@ -176,6 +177,7 @@ project-root/
     │           ├── Extractor.java        # Data extraction utility
     │           ├── FirmsOMonth.java      # Monthly firm tracker
     │           ├── TreatLawyerParams.java # Data cleaning
+    │           ├── VCard.java            # VCF file parser (NEW)
     │           ├── Validations.java      # Validation rules
     │           │
     │           └── myInterface/
@@ -294,6 +296,35 @@ public abstract class ByNewPage extends Site {
                 }
             }
         }
+    }
+}
+```
+
+NOTE: If the lawyer's role is present in the file, the filter should be applied at this point.
+```java
+public abstract class ByNewPage extends Site {
+    // Same constructor as ByPage
+
+   private final By[] byRoleArray = {
+           <selector>,
+           <selector>
+   };
+
+    @Override
+    protected List<WebElement> getLawyersInPage() {
+       String[] validRoles = {"partner", "counsel", "senior associate"};
+
+       try {
+          WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+          List<WebElement> lawyers = wait.until(
+                  ExpectedConditions.presenceOfAllElementsLocatedBy(
+                          <selector>
+                  )
+          );
+          return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+       } catch (Exception e) {
+          return List.of();
+       }
     }
 }
 ```
@@ -503,6 +534,73 @@ public class ErrorLogger {
 - `openNewTabError` - Failed to open profile tab
 - `getSocialsError` - Failed to extract contact info
 
+### 5.7 VCard.java (NEW)
+
+Parses `.vcf` (VCard) files downloaded from law firm websites and extracts email and phone.
+Injectable as a field in any `ByPage` or `ByNewPage` firm class.
+
+Because different sites produce VCards with different field names, the constructor requires
+explicit **regex patterns** for email and phone. Each pattern must contain one capturing
+group that isolates the value.
+
+#### Default patterns
+
+```java
+// Matches: EMAIL:x@y.com  /  EMAIL;PREF;INTERNET:x@y.com
+VCard.DEFAULT_EMAIL_PATTERN = "EMAIL[^:\\r\\n]*:([^\\r\\n]+)"
+
+// Matches: TEL:+55 11 1234  /  TEL;WORK;VOICE:+55 11 1234
+VCard.DEFAULT_PHONE_PATTERN = "TEL[^:\\r\\n]*:([^\\r\\n]+)"
+```
+
+#### API
+
+| Method | Description |
+|--------|-------------|
+| `new VCard(emailPattern, phonePattern)` | Creates instance with custom patterns |
+| `VCard.withDefaultPatterns()` | Factory using the standard VCard 2.1 / 3.0 patterns |
+| `getSocials(String vcardUrl)` | Downloads VCF via plain HTTP GET, returns `String[]{ email, phone }` |
+| `getSocials(WebDriver driver, String vcardUrl)` | Downloads VCF forwarding the active Selenium session cookies — use for authenticated endpoints |
+| `parse(String vcfContent)` | Parses already-loaded VCF text — use when content comes from a page element or other source |
+
+> Extracted values are automatically cleaned via `TreatLawyerParams.treatEmail()` and
+> `TreatLawyerParams.treatPhone()` before being returned.
+
+#### Usage inside a firm class
+
+```java
+// ── declare as a field ──────────────────────────────────────────────────────
+
+// Standard VCard 2.1 / 3.0 (covers most firms)
+private final VCard vCard = VCard.withDefaultPatterns();
+
+// Custom patterns when the site uses non-standard field names
+private final VCard vCard = new VCard(
+    "X-EMAIL[^:\\r\\n]*:([^\\r\\n]+)",
+    "X-TEL[^:\\r\\n]*:([^\\r\\n]+)"
+);
+
+// ── inside getLawyer() ──────────────────────────────────────────────────────
+
+// 1. Find the VCard download link element and get its URL
+String vcardUrl = lawyer.findElement(By.cssSelector("a.vcard-download"))
+                        .getAttribute("href");
+
+// 2a. Public VCF endpoint (no session needed)
+String[] socials = vCard.getSocials(vcardUrl);
+
+// 2b. Protected endpoint (requires active browser session cookies)
+String[] socials = vCard.getSocials(driver, vcardUrl);
+
+// 2c. Content already available as text (e.g. hidden element, API response)
+String vcfText = driver.findElement(By.id("vcard-data")).getAttribute("textContent");
+String[] socials = vCard.parse(vcfText);
+
+// 3. Use the result
+String email = socials[0];
+String phone  = socials[1];
+```
+
 ---
 
 ## 6. Configuration System
@@ -619,6 +717,11 @@ public static Site[] build() {
 | South America | `SOUTH_AMERICA` | |
 | Oceania | `OCEANIA` | |
 | Mundial (Global) | `MUNDIAL` | Always included |
+
+NOTE: If the country registered if from more than one continent, like Turkey (Asia and Europe), guarantee that the continent
+showed is in EUROPE
+
+NOTE: Inside ASIA, put a difference between other countries and ISRAEL just with a commentary
 
 ---
 
@@ -873,6 +976,21 @@ public class NewFirmName extends ByNewPage {
         try {
             List<WebElement> socials = profileDiv.findElements(By.cssSelector("a.contact"));
             return super.getSocials(socials, false);
+        } catch (Exception e) {
+            return new String[]{"", ""};
+        }
+    }
+
+
+    // ── VCard alternative: when contact is only available via .vcf download ─
+    private final VCard vCard = VCard.withDefaultPatterns();
+
+    private String[] getSocialsFromVCard(WebElement profileDiv) {
+        try {
+            String vcardUrl = profileDiv
+                .findElement(By.cssSelector("a[href$='.vcf']"))
+                .getAttribute("href");
+            return vCard.getSocials(driver, vcardUrl);   // use driver overload if login is required
         } catch (Exception e) {
             return new String[]{"", ""};
         }
@@ -1277,6 +1395,20 @@ MyDriver.clickOnElement(By.id("..."));
 MyDriver.clickOnAddBtn(By.id("cookie-btn"));
 MyDriver.openNewTab("https://...");
 MyDriver.closeCurrentTab();
+```
+
+### VCard Methods
+
+```java
+// Instantiation
+VCard vCard = VCard.withDefaultPatterns();                   // standard VCard 2.1/3.0
+VCard vCard = new VCard("EMAIL[^:\\r\\n]*:([^\\r\\n]+)",     // custom email pattern
+                         "TEL[^:\\r\\n]*:([^\\r\\n]+)");     // custom phone pattern
+
+// Extraction — all return String[]{ email, phone }
+vCard.getSocials(vcardUrl);               // plain HTTP download
+vCard.getSocials(driver, vcardUrl);       // HTTP download + Selenium session cookies
+vCard.parse(vcfText);                     // parse already-loaded VCF text
 ```
 
 ---

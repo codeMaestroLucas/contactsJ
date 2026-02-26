@@ -88,10 +88,19 @@ public class SiteUtils {
     /**
      * Filters lawyers from the provided list based on their role, returning only valid lawyers.
      *
+     * <p>Text is resolved in order of preference:
+     * <ol>
+     *   <li>If {@code byText=true}, tries {@link WebElement#getText()} first.</li>
+     *   <li>Falls back to {@code textContent} attribute when getText() is blank
+     *       (happens for hidden/off-screen elements where Selenium returns "").</li>
+     *   <li>If the element itself is {@code null} (locator not found), the lawyer is skipped.</li>
+     * </ol>
+     *
      * @param lawyersInPage List of WebElements representing all lawyers on the page.
      * @param webRole       Array of locators for the role element within a lawyer element.
-     * @param byText        If true, uses `getText()`; otherwise, uses `getAttribute("outerHTML")`.
-     * @return Filtered list of lawyers WebElements.
+     * @param byText        If true, prefers {@code getText()}; otherwise goes straight to {@code textContent}.
+     * @param validRoles    Lowercase keywords; a lawyer is kept if its role contains any of them.
+     * @return Filtered list of lawyer WebElements.
      */
     public List<WebElement> filterLawyersInPage(List<WebElement> lawyersInPage, By[] webRole,
                                                    boolean byText, String[] validRoles) {
@@ -101,15 +110,26 @@ public class SiteUtils {
             try {
                 WebElement element = iterateOverBy(webRole, lawyer);
 
-                String role = byText
-                        ? element.getText()
-                        : element.getAttribute("textContent");
+                // Guard: locator not found for this card
+                if (element == null) continue;
 
+                // Resolve role text ───────────────────────────────────────────
+                String role = byText ? element.getText() : null;
 
+                // getText() returns "" for hidden elements; fall back to textContent
+                if (role == null || role.isBlank()) {
+                    role = element.getAttribute("textContent");
+                }
+
+                // Guard: element has no text at all
+                if (role == null) continue;
+
+                // Normalize ───────────────────────────────────────────────────
                 role = role
-                        .replaceAll("[\\n\\t]", "")  // Remove all "\n\t"
-                        .replace("-", " ")          // Remove all "-"
-                        .replaceAll("\\s+", " ")     // Remove all empty duplicated spaces between words
+                        .replace('\u00A0', ' ')          // non-breaking space (&nbsp;) → space
+                        .replaceAll("[\\r\\n\\t]", " ")  // control chars → space (not removed, to avoid word concatenation)
+                        .replace("-", " ")
+                        .replaceAll("\\s+", " ")
                         .toLowerCase().trim();
 
                 for (String word : validRoles) {
@@ -120,7 +140,6 @@ public class SiteUtils {
                 }
 
             } catch (Exception ignored) {
-//                throw ignored;
                 System.out.println(ignored.getMessage());
             }
         }
