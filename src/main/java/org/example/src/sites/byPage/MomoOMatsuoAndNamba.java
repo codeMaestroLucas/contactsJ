@@ -17,7 +17,7 @@ public class MomoOMatsuoAndNamba extends ByPage {
 
     public MomoOMatsuoAndNamba() {
         super(
-                "Momo-o Matsuo And Namba",
+                "Momo-o Matsuo & Namba",
                 "https://www.mmn-law.gr.jp/en/lawyers/index.html",
                 1
         );

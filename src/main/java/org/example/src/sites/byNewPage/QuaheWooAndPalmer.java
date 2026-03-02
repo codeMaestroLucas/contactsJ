@@ -17,7 +17,7 @@ public class QuaheWooAndPalmer extends ByNewPage {
 
     public QuaheWooAndPalmer() {
         super(
-                "Quahe Woo And Palmer",
+                "Quahe Woo & Palmer",
                 "https://www.qwp.sg/our-lawyers/",
                 1
         );

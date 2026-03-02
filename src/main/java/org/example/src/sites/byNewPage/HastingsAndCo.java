@@ -18,7 +18,7 @@ public class HastingsAndCo extends ByNewPage {
 
     public HastingsAndCo() {
         super(
-                "Hastings And Co",
+                "Hastings & Co",
                 "https://hastings-hk.com/en/people.php?wid=247",
                 2
         );

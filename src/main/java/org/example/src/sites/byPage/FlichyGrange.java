@@ -16,7 +16,7 @@ public class FlichyGrange extends ByPage {
 
     public FlichyGrange() {
         super(
-                "FLICHY GRANGÉ",
+                "Flichy Grangé",
                 "https://www.flichygrange.com/our-partners.htm",
                 1
         );

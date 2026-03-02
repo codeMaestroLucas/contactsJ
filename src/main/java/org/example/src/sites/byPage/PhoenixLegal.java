@@ -59,7 +59,8 @@ public class PhoenixLegal extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.cssSelector(".pro-text p span")};
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        String country = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
+        return country.equalsIgnoreCase("new delhi") ? "India" : country;
     }
 
     private String[] getSocials(WebElement lawyer) {

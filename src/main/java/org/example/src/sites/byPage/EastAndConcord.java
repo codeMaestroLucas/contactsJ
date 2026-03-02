@@ -19,7 +19,7 @@ public class EastAndConcord extends ByPage {
 
     public EastAndConcord() {
         super(
-                "East And Concord",
+                "East & Concord",
                 "http://en.east-concord.com/tuandui/index.html",
                 1
         );

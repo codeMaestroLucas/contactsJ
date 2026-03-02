@@ -17,7 +17,7 @@ public class DonaldsonAndBurkinshaw extends ByNewPage {
 
     public DonaldsonAndBurkinshaw() {
         super(
-                "Donaldson And Burkinshaw",
+                "Donaldson & Burkinshaw",
                 "https://donburk.asia/our-people.html#partners",
                 1
         );

@@ -19,7 +19,7 @@ public class HugillAndIp extends ByPage {
 
     public HugillAndIp() {
         super(
-                "Hugill And Ip",
+                "Hugill & Ip",
                 "https://www.hugillandip.com/solicitors/",
                 1
         );

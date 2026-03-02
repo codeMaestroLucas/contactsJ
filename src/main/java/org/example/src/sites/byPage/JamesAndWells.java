@@ -20,7 +20,7 @@ public class JamesAndWells extends ByPage {
 
     public JamesAndWells() {
         super(
-                "James And Wells",
+                "James & Wells",
                 "https://www.jamesandwells.com/intl/our-team/",
                 1,
                 2

@@ -20,7 +20,7 @@ public class RemfryAndSagar extends ByNewPage {
 
     public RemfryAndSagar() {
         super(
-            "RemfryAndSagar",
+            "Remfry & Sagar",
             "https://www.remfry.com/our-team/",
             6
         );

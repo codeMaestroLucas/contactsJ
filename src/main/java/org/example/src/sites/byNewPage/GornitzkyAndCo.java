@@ -15,7 +15,7 @@ import java.util.Map;
 public class GornitzkyAndCo extends ByNewPage {
     public GornitzkyAndCo() {
         super(
-                "Gornitzky And Co",
+                "Gornitzky & Co",
                 // Remove this link when all the lawyers are registered - few lawyers
                 "https://www.gornitzky.com/attorneys/?letter=&member=&practice=&role=83#pageContent",
                 2

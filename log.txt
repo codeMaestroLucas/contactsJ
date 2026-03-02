@@ -1,0 +1,85 @@
+=====================================================================================================
+                                    ERROR LOG - 2026-02-28 05:39:58
+=====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+                                      ERRORS BY FIRM
+----------------------------------------------------------------------------------------------------
+
+(80 firm(s) omitted — within tolerance)
+
+Class White & Case [2 lawyers registered, 515 errors]
+   - getCountryError                occurred 512 times
+   - getLawyersInPageError          occurred 2 times
+   - accessPageError                occurred 1 times
+
+Class Roca Junyent [0 lawyers registered, 72 errors]
+   - openNewTabError                occurred 72 times
+
+Class Lee And Ko [0 lawyers registered, 52 errors]
+   - accessPageError                occurred 52 times
+
+Class Legance [0 lawyers registered, 52 errors]
+   - getLawyersInPageError          occurred 50 times
+   - accessPageError                occurred 2 times
+
+Class Johnson Camacho & Singh [0 lawyers registered, 50 errors]
+   - getLawyerError                 occurred 50 times
+
+Class AWA [0 lawyers registered, 28 errors]
+   - getLawyersInPageError          occurred 16 times
+   - accessPageError                occurred 12 times
+
+Class Drew & Napier [1 lawyers registered, 26 errors]
+   - accessPageError                occurred 26 times
+
+Class SFKS Law [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 24 times
+   - getLawyersInPageError          occurred 2 times
+
+Class Skadden [1 lawyers registered, 24 errors]
+   - accessPageError                occurred 16 times
+   - getLawyersInPageError          occurred 8 times
+
+Class Mourant [0 lawyers registered, 22 errors]
+   - getLawyersInPageError          occurred 20 times
+   - accessPageError                occurred 2 times
+
+Class Avance [1 lawyers registered, 20 errors]
+   - getLawyerError                 occurred 20 times
+
+Class TMP Intellectual Property [0 lawyers registered, 15 errors]
+   - openNewTabError                occurred 15 times
+
+Class Horn & Co [0 lawyers registered, 14 errors]
+   - getLawyerError                 occurred 14 times
+
+Class Pearl Cohen [0 lawyers registered, 13 errors]
+   - getLawyersInPageError          occurred 11 times
+   - getLawyerError                 occurred 2 times
+
+Class Nova Law [0 lawyers registered, 11 errors]
+   - getLinkError                   occurred 11 times
+
+----------------------------------------------------------------------------------------------------
+                                      ERROR SUMMARY
+----------------------------------------------------------------------------------------------------
+
+Total errors: 1110
+
+Most common errors:
+   getCountryError                       514  ( 46.3%)
+   getLawyersInPageError                 179  ( 16.1%)
+   accessPageError                       160  ( 14.4%)
+   openNewTabError                       120  ( 10.8%)
+   getLawyerError                        116  ( 10.5%)
+   getLinkError                           11  (  1.0%)
+   getSocialsError                         3  (  0.3%)
+   emailException                          2  (  0.2%)
+   getRoleError                            2  (  0.2%)
+   TimeoutException                        2  (  0.2%)
+   goToPageError                           1  (  0.1%)
+
+=====================================================================================================
+Firms processed: 631 | Firms above tolerance (>10 errors): 15
+=====================================================================================================

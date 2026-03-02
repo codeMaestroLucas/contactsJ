@@ -16,7 +16,7 @@ import java.util.Objects;
 public class GreeneAndGreeneSolicitors extends ByNewPage {
     public GreeneAndGreeneSolicitors() {
         super(
-                "Greene And Greene Solicitors",
+                "Greene & Greene Solicitors",
                 "https://greene-greene.com/our-people/",
                 1
         );

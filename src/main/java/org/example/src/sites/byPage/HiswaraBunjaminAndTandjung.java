@@ -16,7 +16,7 @@ public class HiswaraBunjaminAndTandjung extends ByPage {
 
     public HiswaraBunjaminAndTandjung() {
         super(
-                "Hiswara Bunjamin And Tandjung",
+                "Hiswara Bunjamin & Tandjung",
                 "https://www.hbtlaw.com/our-people",
                 3
         );

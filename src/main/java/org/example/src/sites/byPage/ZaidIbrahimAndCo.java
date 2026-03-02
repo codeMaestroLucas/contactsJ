@@ -19,7 +19,7 @@ public class ZaidIbrahimAndCo extends ByPage {
 
     public ZaidIbrahimAndCo() {
         super(
-                "Zaid Ibrahim And Co",
+                "Zaid Ibrahim & Co",
                 "https://www.ziclegal.com/people",
                 1
         );

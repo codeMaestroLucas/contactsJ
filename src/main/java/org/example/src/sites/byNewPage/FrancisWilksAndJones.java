@@ -20,7 +20,7 @@ public class FrancisWilksAndJones extends ByNewPage {
 
     public FrancisWilksAndJones() {
         super(
-                "Francis Wilks And Jones",
+                "Francis Wilks & Jones",
                 "https://www.franciswilksandjones.co.uk/people/",
                 1
         );

@@ -21,7 +21,7 @@ public class AmanAndPartners extends ByPage {
 
     public AmanAndPartners() {
         super(
-                "Aman And Partners",
+                "Aman & Partners",
                 "https://www.aaclo.com/about/#our_people",
                 1
         );

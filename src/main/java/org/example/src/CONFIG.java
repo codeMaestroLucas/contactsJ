@@ -18,7 +18,7 @@ public class CONFIG {
     public static String SYSTEM_SNAPSHOT_FILE = "src/main/resources/baseFiles/json/systemSnapshot.json";
 
     // OTHERS
-    public static int TOTAL_LAWYERS_TO_GET = 270;
+    public static int TOTAL_LAWYERS_TO_GET = 230;
     public static int LAWYERS_IN_FILTER = 70;
 
     public static int TIMEOUT_MINUTES = 4;

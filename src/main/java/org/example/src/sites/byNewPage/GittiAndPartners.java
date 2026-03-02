@@ -19,7 +19,7 @@ public class GittiAndPartners extends ByNewPage {
 
     public GittiAndPartners() {
         super(
-                "Gitti And Partners",
+                "Gitti & Partners",
                 "https://www.grplex.com/en/the-lawyers",
                 1
         );

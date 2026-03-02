@@ -22,7 +22,7 @@ public class ShinAndKim extends ByPage {
 
     public ShinAndKim() {
         super(
-                "Shin And Kim",
+                "Shin & Kim",
                 "https://www.shinkim.com/eng/member/list?page=0&size=10&name=&bizCode=",
                 85
         );

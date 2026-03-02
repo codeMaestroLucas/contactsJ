@@ -67,7 +67,8 @@ public class HoxhaMemiAndHoxha extends ByPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.cssSelector("h6")};
-        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
+        String name = extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
+        return name.replace("Read Profile", "").trim();
     }
 
     private String[] getSocials(String name) {

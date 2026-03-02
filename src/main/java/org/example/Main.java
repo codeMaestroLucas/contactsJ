@@ -31,7 +31,13 @@ public class Main {
         System.out.println("Completed: Filtering and processing complete.");
     }
 
-    private static int searchLawyersInWeb() throws InterruptedException {
+    /**
+     * Searches for lawyers across all active firms, stopping once the global cap is reached.
+     *
+     * @param alreadyCollected number of lawyers already registered in previous phases,
+     *                         so that the global limit is shared across all calls.
+     */
+    private static int searchLawyersInWeb(int alreadyCollected) throws InterruptedException {
         System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
         int redo = 0;
@@ -40,7 +46,8 @@ public class Main {
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         for (Site site : sites) {
-            if (Thread.currentThread().isInterrupted() || totalLawyersRegistered >= (CONFIG.TOTAL_LAWYERS_TO_GET + CONFIG.LAWYERS_IN_FILTER)) {
+            if (Thread.currentThread().isInterrupted()
+                    || (alreadyCollected + totalLawyersRegistered) >= (CONFIG.TOTAL_LAWYERS_TO_GET + CONFIG.LAWYERS_IN_FILTER)) {
                 System.out.println("Stopping lawyer search.");
                 break;
             }
@@ -121,7 +128,7 @@ public class Main {
         final int[] result = {0};
         calculateTimeOfExecution(() -> {
             try {
-                result[0] = searchLawyersInWeb();
+                result[0] = searchLawyersInWeb(0);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -139,7 +146,8 @@ public class Main {
         EmailDuplicateChecker.getINSTANCE().login();
         try {
             totalLawyers += performCompleteSearch();
-            totalLawyers += searchLawyersInWeb();
+            // Pass what was already collected so the global cap is shared between both phases
+            totalLawyers += searchLawyersInWeb(totalLawyers);
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

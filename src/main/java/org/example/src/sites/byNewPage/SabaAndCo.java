@@ -36,7 +36,7 @@ public class SabaAndCo extends ByNewPage {
 
     public SabaAndCo() {
         super(
-            "Saba And Co",
+            "Saba & Co",
             "https://www.sabaip.com/our-team-2/",
             1
         );

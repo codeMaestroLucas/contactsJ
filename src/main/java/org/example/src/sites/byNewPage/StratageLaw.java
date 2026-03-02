@@ -83,7 +83,7 @@ public class StratageLaw extends ByNewPage {
                 "firm", this.name,
                 "country", "India",
                 "practice_area", "",
-                "email", socials[0],
+                "email", socials[0].replace("%20", ""),
                 "phone", socials[1].isEmpty() ? "912269048000" : socials[1]
         );
     }

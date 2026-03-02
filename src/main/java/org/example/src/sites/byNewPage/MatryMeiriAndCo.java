@@ -17,7 +17,7 @@ public class MatryMeiriAndCo extends ByNewPage {
 
     public MatryMeiriAndCo() {
         super(
-                "Matry MeiriAndCo ",
+                "Matry Meiri & Co",
                 "https://www.mamlaw.co.il/en/team-en/",
                 1
         );

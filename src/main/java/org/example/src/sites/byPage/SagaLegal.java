@@ -53,7 +53,8 @@ public class SagaLegal extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         String text = extractor.extractLawyerText(lawyer, byRoleArray, "COUNTRY", LawyerExceptions::countryException);
-        return text.split(",")[1].trim();
+        String country = text.split(",")[1].trim();
+        return country.equalsIgnoreCase("bengaluru") ? "India" : country;
     }
 
     @Override

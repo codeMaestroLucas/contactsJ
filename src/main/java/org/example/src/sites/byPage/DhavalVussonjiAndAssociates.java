@@ -16,7 +16,7 @@ import java.util.Map;
 public class DhavalVussonjiAndAssociates extends ByPage {
     public DhavalVussonjiAndAssociates() {
         super(
-                "Dhaval Vussonji And Associates",
+                "Dhaval Vussonji & Associates",
                 "https://dhavalvussonji.com/partners/",
                 1
         );

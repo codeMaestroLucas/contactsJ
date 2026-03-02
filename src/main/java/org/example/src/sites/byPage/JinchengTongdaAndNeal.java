@@ -19,7 +19,7 @@ public class JinchengTongdaAndNeal extends ByPage {
 
     public JinchengTongdaAndNeal() {
         super(
-                "Jincheng Tongda And Neal",
+                "Jincheng Tongda & Neal",
                 "https://www.jtn.com/EN/lawyers_more.aspx?Lan=EN&PageUrl=lawyers",
                 21
         );

@@ -20,7 +20,7 @@ public class KambourovAndPartners extends ByNewPage {
 
     public KambourovAndPartners() {
         super(
-                "Kambourov And Partners",
+                "Kambourov & Partners",
                 "https://www.kambourov.biz/en/professionals",
                 1
         );

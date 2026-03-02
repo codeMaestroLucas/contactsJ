@@ -17,24 +17,15 @@ import java.util.Set;
  */
 public final class TreatLawyerParams {
 
+    // ── Practice Area map ────────────────────────────────────────────────────
+
     private static volatile Map<String, List<String>> PRACTICE_AREA_MAP = null;
 
     private static Map<String, List<String>> getPracticeAreaMap() {
         if (PRACTICE_AREA_MAP == null) {
             synchronized (TreatLawyerParams.class) {
                 if (PRACTICE_AREA_MAP == null) {
-                    try (InputStream is = TreatLawyerParams.class.getResourceAsStream("/baseFiles/json/practiceAreas.json")) {
-                        if (is != null) {
-                            ObjectMapper mapper = new ObjectMapper();
-                            PRACTICE_AREA_MAP = mapper.readValue(is, new TypeReference<Map<String, List<String>>>() {});
-                        } else {
-                            System.err.println("practiceAreas.json not found");
-                            PRACTICE_AREA_MAP = new HashMap<>();
-                        }
-                    } catch (Exception e) {
-                        System.err.println("Failed to load practiceAreas.json: " + e.getMessage());
-                        PRACTICE_AREA_MAP = new HashMap<>();
-                    }
+                    PRACTICE_AREA_MAP = loadJsonMap("/baseFiles/json/practiceAreas.json");
                 }
             }
         }
@@ -57,13 +48,58 @@ public final class TreatLawyerParams {
         return bestMatch;
     }
 
+    // ── Country map ──────────────────────────────────────────────────────────
+
+    private static volatile Map<String, List<String>> COUNTRY_MAP = null;
+
+    private static Map<String, List<String>> getCountryMap() {
+        if (COUNTRY_MAP == null) {
+            synchronized (TreatLawyerParams.class) {
+                if (COUNTRY_MAP == null) {
+                    COUNTRY_MAP = loadJsonMap("/baseFiles/json/countryAliases.json");
+                }
+            }
+        }
+        return COUNTRY_MAP;
+    }
+
+    /**
+     * Returns the canonical country name for the given alias, or {@code null} if not found.
+     * Uses exact match (after normalization) to avoid false positives from short aliases.
+     */
+    private static String matchCountry(String normalizedInput) {
+        Map<String, List<String>> map = getCountryMap();
+        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+            for (String alias : entry.getValue()) {
+                if (normalizedInput.equals(alias)) {
+                    return entry.getKey();
+                }
+            }
+        }
+        return null;
+    }
+
+    // ── Shared JSON loader ───────────────────────────────────────────────────
+
+    private static Map<String, List<String>> loadJsonMap(String classpathResource) {
+        try (InputStream is = TreatLawyerParams.class.getResourceAsStream(classpathResource)) {
+            if (is != null) {
+                return new ObjectMapper().readValue(is, new TypeReference<Map<String, List<String>>>() {});
+            }
+            System.err.println("Resource not found: " + classpathResource);
+        } catch (Exception e) {
+            System.err.println("Failed to load " + classpathResource + ": " + e.getMessage());
+        }
+        return new HashMap<>();
+    }
+
     private static final Set<String> ABBREVIATIONS = new HashSet<>(Arrays.asList(
             "mr", "ms", "mx", "dr", "prof", "mrs", "miss", "php",
             "master", "sir", "esq", "rev", "att", "llm", "kc",
             "msc", "llb", "nbsp", "dsc", "em", "mag", "mbl",
             "mba", "mbe", "lawyer", "advocate", "advokat",
             "phd", "prof", "univ", "she/her", "he/him",
-            "professor", "lord", "dipl -phys"
+            "professor", "lord", "dipl -phys", "adv"
     ));
 
     private static final String[] VALID_ROLES = {
@@ -114,6 +150,39 @@ public final class TreatLawyerParams {
                 .trim();
 
         return cleaned.isBlank() ? "-----" : cleaned;
+    }
+
+
+    /**
+     * Normalizes a country name to its canonical form as defined in {@code countryAliases.json}.
+     *
+     * <p>Matching is <b>exact</b> (after lowercasing, accent removal, and whitespace collapse)
+     * to avoid false positives from short aliases like "us" or "uk".
+     * If no alias matches, the original value is returned trimmed.
+     *
+     * <p>Examples:
+     * <pre>
+     *   "UK"                     → "England"
+     *   "United Kingdom"         → "England"
+     *   "United States"          → "USA"
+     *   "Russian Federation"     → "Russia"
+     *   "Türkiye"                → "Turkey"
+     *   "Germany"                → "Germany"  (no alias → unchanged)
+     * </pre>
+     */
+    public static String treatCountry(String country) {
+        if (country == null || country.isBlank()) {
+            return country == null ? "-----" : country.trim();
+        }
+
+        String normalized = removeAccents(country)
+                .replaceAll("[\\r\\n\\t]", " ")
+                .replaceAll("\\s+", " ")
+                .toLowerCase()
+                .trim();
+
+        String canonical = matchCountry(normalized);
+        return canonical != null ? canonical : country.trim();
     }
 
 

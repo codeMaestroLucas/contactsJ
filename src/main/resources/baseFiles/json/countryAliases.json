@@ -1,0 +1,131 @@
+{
+  "USA": [
+    "united states of america",
+    "the united states of america",
+    "the united states",
+    "united states",
+    "united estates",
+    "eua",
+    "u.s.a.",
+    "u.s.a",
+    "u.s.",
+    "u.s",
+    "america"
+  ],
+  "England": [
+    "england and wales",
+    "england & wales",
+    "the united kingdom",
+    "united kingdom",
+    "great britain",
+    "britain",
+    "u.k.",
+    "u.k",
+    "uk"
+  ],
+  "the Netherlands": [
+    "the netherlands",
+    "netherlands",
+    "nederland",
+    "holland"
+  ],
+  "the Philippines": [
+    "republic of the philippines",
+    "the philippines",
+    "phillippines",
+    "philippines",
+    "pilipinas"
+  ],
+  "the Cayman Islands": [
+    "the cayman islands",
+    "cayman islands",
+    "cayman island"
+  ],
+  "Korea (South)": [
+    "republic of korea",
+    "south korea",
+    "s. korea"
+  ],
+  "the UAE": [
+    "united arab emirates",
+    "the united arab emirates",
+    "united arab emirate",
+    "u.a.e.",
+    "u.a.e",
+    "uae"
+  ],
+  "the BVI": [
+    "british virgin islands",
+    "the british virgin islands",
+    "b.v.i.",
+    "b.v.i",
+    "bvi"
+  ],
+  "the Czech Republic": [
+    "the czech republic",
+    "czech republic",
+    "czechia"
+  ],
+  "the Dominican Republic": [
+    "the dominican republic",
+    "dominican republic"
+  ],
+  "Russia": [
+    "russian federation",
+    "the russian federation"
+  ],
+  "Turkey": [
+    "turkiye",
+    "republic of turkey",
+    "republic of turkiye"
+  ],
+  "Vietnam": [
+    "viet nam",
+    "socialist republic of vietnam",
+    "socialist republic of viet nam"
+  ],
+  "Myanmar": [
+    "burma"
+  ],
+  "Ivory Coast": [
+    "cote d'ivoire",
+    "cote divoire",
+    "republic of cote d'ivoire"
+  ],
+  "Macau": [
+    "macao",
+    "macao sar",
+    "macau sar"
+  ],
+  "Laos": [
+    "lao pdr",
+    "lao people's democratic republic",
+    "lao peoples democratic republic"
+  ],
+  "Iran": [
+    "islamic republic of iran"
+  ],
+  "North Macedonia": [
+    "republic of north macedonia",
+    "macedonia",
+    "fyrom"
+  ],
+  "Bosnia and Herzegovina": [
+    "bosnia & herzegovina",
+    "bosnia-herzegovina"
+  ],
+  "Trinidad and Tobago": [
+    "trinidad & tobago"
+  ],
+  "Antigua and Barbuda": [
+    "antigua & barbuda"
+  ],
+  "Saint Kitts and Nevis": [
+    "st. kitts and nevis",
+    "st kitts and nevis",
+    "st. kitts & nevis"
+  ],
+  "Papua New Guinea": [
+    "png"
+  ]
+}

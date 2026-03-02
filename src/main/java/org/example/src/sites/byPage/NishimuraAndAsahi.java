@@ -19,7 +19,7 @@ public class NishimuraAndAsahi extends ByPage {
 
     public NishimuraAndAsahi() {
         super(
-                "Nishimura And Asahi",
+                "Nishimura & Asahi",
                 "https://www.nishimura.com/en/people/list?search_keywords_all=&job_title_aggregated_field=&field_member_office_all=All&field_member_job_language_all=All",
                 25
         );

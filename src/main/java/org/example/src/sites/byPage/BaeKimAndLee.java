@@ -19,7 +19,7 @@ public class BaeKimAndLee extends ByPage {
 
     public BaeKimAndLee() {
         super(
-                "Bae Kim And Lee",
+                "Bae Kim & Lee",
                 "https://www.bkl.co.kr/law/member/allList.do?isMain=&pageIndex=1&searchCondition=&url=all&job=&lang=en&memberNo=&searchYn=Y&logFunction=&searchKeyword=a#,1,25,1",
                 10
         );

@@ -32,7 +32,7 @@ public class McDermottWillAndEmery extends ByPage {
 
     public McDermottWillAndEmery() {
         super(
-                "McDermott Will And Emery",
+                "McDermott Will & Emery",
                 "https://www.mwe.com/people/?law=&loc=1153,1156,1157,811,1161,1162,332&tit=140,49762,176,54845,151,174,166,168,57293,15708,57299,51716,51685,57279,57291,49807,55642,163",
                 1
         );

@@ -21,7 +21,7 @@ public class DRAndAJU extends ByPage {
 
     public DRAndAJU() {
         super(
-                "DR And AJU",
+                "DR & AJU",
                 "https://www.draju.com/en/sub/people.html?sT=1?d_t_num=1&d_t_tit=All",
                 17
         );

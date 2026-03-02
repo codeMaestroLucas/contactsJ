@@ -21,7 +21,7 @@ public class ALPNGAndCo extends ByPage {
 
     public ALPNGAndCo() {
         super(
-                "ALP NGAndCo",
+                "ALP NG & Co",
                 "https://www.alp.company/our-people",
                 1
         );

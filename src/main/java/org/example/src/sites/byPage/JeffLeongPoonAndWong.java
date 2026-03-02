@@ -21,7 +21,7 @@ public class JeffLeongPoonAndWong extends ByPage {
 
     public JeffLeongPoonAndWong() {
         super(
-                "Jeff Leong Poon And Wong",
+                "Jeff Leong Poon & Wong",
                 "https://jlpw.com.my/team/",
                 1
         );

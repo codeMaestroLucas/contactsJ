@@ -16,7 +16,7 @@ public class RahmatLimAndPartners extends ByPage {
 
     public RahmatLimAndPartners() {
         super(
-                "Rahmat Lim And Partners",
+                "Rahmat Lim & Partners",
                 "https://www.rahmatlim.com/partners/",
                 4
         );

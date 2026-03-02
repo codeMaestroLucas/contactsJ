@@ -20,7 +20,7 @@ public class LaszczukAndWspolnicy extends ByPage {
 
     public LaszczukAndWspolnicy() {
         super(
-                "Laszczuk And Wspolnicy",
+                "Laszczuk & Wspolnicy",
                 "https://laszczuk.pl/en/aktualnosci/zespol/",
                 1
         );

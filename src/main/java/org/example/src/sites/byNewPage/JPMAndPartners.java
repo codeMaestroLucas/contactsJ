@@ -20,7 +20,7 @@ public class JPMAndPartners extends ByNewPage {
 
     public JPMAndPartners() {
         super(
-                "JPM And Partners",
+                "JPM & Partners",
                 "https://www.jpm.law/lawyers/",
                 1
         );

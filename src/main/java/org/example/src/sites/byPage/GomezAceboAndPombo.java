@@ -30,7 +30,7 @@ public class GomezAceboAndPombo extends ByPage {
 
     public GomezAceboAndPombo() {
         super(
-                "Gomez Acebo And Pombo",
+                "Gomez Acebo & Pombo",
                 "https://ga-p.com/en/people/",
                 4,
                 2

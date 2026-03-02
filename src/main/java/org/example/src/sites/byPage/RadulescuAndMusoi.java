@@ -19,7 +19,7 @@ public class RadulescuAndMusoi extends ByPage {
 
     public RadulescuAndMusoi() {
         super(
-                "Rădulescu And Mușoi",
+                "Rădulescu & Mușoi",
                 "http://radulescu-musoi.ro/who-we-are/",
                 1
         );

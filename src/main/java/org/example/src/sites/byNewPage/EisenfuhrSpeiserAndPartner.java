@@ -16,7 +16,7 @@ import java.util.Objects;
 public class EisenfuhrSpeiserAndPartner extends ByNewPage {
     public EisenfuhrSpeiserAndPartner() {
         super(
-                "Eisenfuhr Speiser And Partner",
+                "Eisenfuhr Speiser & Partner",
                 "https://www.eisenfuhr.com/en/team",
                 1
         );

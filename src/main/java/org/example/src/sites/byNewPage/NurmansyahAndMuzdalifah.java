@@ -20,7 +20,7 @@ public class NurmansyahAndMuzdalifah extends ByNewPage {
 
     public NurmansyahAndMuzdalifah() {
         super(
-                "Nurmansyah And Muzdalifah",
+                "Nurmansyah & Muzdalifah",
                 "https://nm-advocates.com/our-people/",
                 1
         );

@@ -19,7 +19,7 @@ public class PeterAndKim extends ByPage {
 
     public PeterAndKim() {
         super(
-                "Peter And Kim",
+                "Peter & Kim",
                 "https://peterandkim.com/team/",
                 1,
                 2

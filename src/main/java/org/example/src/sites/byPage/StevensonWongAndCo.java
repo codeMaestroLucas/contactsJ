@@ -19,7 +19,7 @@ public class StevensonWongAndCo extends ByPage {
 
     public StevensonWongAndCo() {
         super(
-                "Stevenson Wong And Co",
+                "Stevenson Wong & Co",
                 "https://www.sw-hk.com/our-people/",
                 1
         );

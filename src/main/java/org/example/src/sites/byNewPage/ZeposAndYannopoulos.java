@@ -20,7 +20,7 @@ public class ZeposAndYannopoulos extends ByNewPage {
 
     public ZeposAndYannopoulos() {
         super(
-            "Zepos And Yannopoulos",
+            "Zepos & Yannopoulos",
             "https://www.zeya.com/our-people?page=1",
             11,
             1

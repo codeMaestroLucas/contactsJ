@@ -20,7 +20,7 @@ public class HYLeungAndCo extends ByNewPage {
 
     public HYLeungAndCo() {
         super(
-                "HY Leung And Co",
+                "HY Leung & Co",
                 "https://hyleung.com/our-team-members/",
                 1
         );

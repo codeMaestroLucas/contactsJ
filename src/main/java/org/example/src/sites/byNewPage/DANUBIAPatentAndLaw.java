@@ -21,7 +21,7 @@ public class DANUBIAPatentAndLaw extends ByNewPage {
 
     public DANUBIAPatentAndLaw() {
         super(
-                "DANUBIA Patent And Law",
+                "Danubia Patent & Law",
                 "https://www.danubia.com/danubia-patent-and-law-office/#our-people",
                 1
         );

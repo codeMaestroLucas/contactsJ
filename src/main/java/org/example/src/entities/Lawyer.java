@@ -22,7 +22,7 @@ public final class Lawyer {
         this.link =         link.trim();
         this.role =         treatRole(role);
         this.firm =         firm.trim();
-        this.country =      country.trim();
+        this.country =      treatCountry(country);
         this.practiceArea = treatPracticeArea(practiceArea);
         this.email =        treatEmail(email);
         this.phone =        treatPhone(phone);

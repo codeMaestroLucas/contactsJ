@@ -17,7 +17,7 @@ public class OhEbashiLPCAndPartners extends ByPage {
 
     public OhEbashiLPCAndPartners() {
         super(
-                "Oh-Ebashi LPC And Partners",
+                "Oh-Ebashi LPC & Partners",
                 "https://www.ohebashi.com/en/lawyers/position.php#p01",
                 1,
                 15

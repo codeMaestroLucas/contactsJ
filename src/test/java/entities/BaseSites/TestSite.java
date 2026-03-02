@@ -1,6 +1,8 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites.byPage.Cassels;
+import org.example.src.sites.byPage.Schoenherr;
 import org.example.src.sites.byPage.YuenLaw;
 import org.example.src.utils.Validations;
 
@@ -17,7 +19,7 @@ import java.lang.reflect.Field;
  * This allows you to visualize the site extraction without making real registrations.
  */
 
-class MyTestPage extends YuenLaw {
+class MyTestPage extends Schoenherr {
     /**
      * Constructor that initializes with test logger to avoid affecting production logs
      */
