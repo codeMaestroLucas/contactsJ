@@ -82,7 +82,7 @@ public class Avance extends ByNewPage {
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-        WebElement div = driver.findElement(By.xpath("/html/body/div[2]/section[1]/div[3]/div/div[1]"));
+        WebElement div = driver.findElement(By.tagName("body"));
 
         String[] socials = this.getSocials(div);
 

@@ -39,6 +39,9 @@ public class ByNewPageFirmsBuilder {
             new CTPartners(), new DomnernSomgiatAndBoonma(), new FormosanBrothers(), new GlobalVietnamLawyers(), new SCPT(),
             new VILAF(), new SNRAssociates(), new StratageLaw(),
             new CorneliusLaneAndMufti(), new EconomicLawsPractice(), new FCLaw(), new QuaheWooAndPalmer(), new SIPLaw(),
+            new AdnanSundraAndLowNP(), new AgmonWithTulchinsky(), new AxisLawChambers(), new BalterGuthAloniAndCo(), new Docvit(),
+            new ErdemAndErdem(), new GlobalLawOffice(), new HaidermotaAndCo(), new HalimHongAndQuek(), new ONC(),
+            new ShookLinAndBokNP(), new ShoobAndCo(), new SudathPerera(),
     };
 
     private static final Site[] EUROPE = {
@@ -79,6 +82,7 @@ public class ByNewPageFirmsBuilder {
     private static final Site[] SOUTH_AMERICA = {
             new BrigrardUrrutia(), new Carey(), new CariolaDiezPerezCotapos(), new Ferrere(), new GaiaSilvaGaedeAndAssociados(),
             new LatinAlliance(), new Madrona(), new RMADVAdvogados(), new SargentAndKrahn(), new ZBV(),
+            new NFA(),
     };
 
     private static final Site[] OCEANIA = {
@@ -86,6 +90,8 @@ public class ByNewPageFirmsBuilder {
             new Gadens(), new Grette(), new HeskethHenry(), new Madderns(), new McCulloughRobertson(),
             new NormanWaterhouse(), new RussellMcVeagh(), new SimmonsWolfhagen(), new TompkinsWake(), new WengerVieliAG(),
             new WilsonHarle(), new Wrays(), new YoungList(),
+            new AJLawAndCo(), new ConnollySuthers(), new Corcoran(), new GilbertAndTobin(), new HamiltonLocke(),
+            new HWEbsworth(), new MatthewsFolbigg(), new MellorOlsson(), new WilsonRyanGrose(),
     };
 
     private static final Site[] MUNDIAL = {
@@ -97,6 +103,7 @@ public class ByNewPageFirmsBuilder {
             new OsborneClarke(), new PearlCohen(), new PortolanoCavallo(), new Pulegal(), new QuinEmanuel(),
             new SabaAndCo(), new SimmonsAndSimmons(), new Sorainen(), new TEMPLARS(), new Thommessen(),
             new Vaneps(), new WALLESS(), new KingAndWoodMallesons(), new Adna(), new StephensonHarwood(),
+            new ReinholdCohnGroup(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

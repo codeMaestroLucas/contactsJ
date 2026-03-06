@@ -122,8 +122,7 @@ public class WhiteAndCase extends ByPage {
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("lawyer-name"),
-                By.cssSelector("a")
+                By.cssSelector("a[href='/people/']")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
@@ -131,20 +130,19 @@ public class WhiteAndCase extends ByPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("lawyer-name"),
-                By.cssSelector("a")
+                By.cssSelector("a[href='/people/']")
         };
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        String text = extractor.extractLawyerText(lawyer, byRoleArray, "COUNTRY", LawyerExceptions::countryException);
+        String text = extractor.extractLawyerAttribute(lawyer, byRoleArray, "COUNTRY", "textContent", LawyerExceptions::countryException);
         String office = text.split(",")[1];
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
     }

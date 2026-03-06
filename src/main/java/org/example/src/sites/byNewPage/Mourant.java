@@ -40,8 +40,8 @@ public class Mourant extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUlr = "https://www.mourant.com/home/people.aspx?page=" + (index + 1);
-        String url = index == 0 ? this.link : otherUlr;
+        String otherUrl = "https://www.mourant.com/people/?page=" + (index + 1);
+        String url = index == 0 ? this.link : otherUrl;
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);

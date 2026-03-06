@@ -63,7 +63,21 @@ public class HornAndCo extends ByNewPage {
     }
 
     private String getEmail() {
-        return driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/div[4]/a")).getAttribute("href");
+        try {
+            WebElement emailLink = driver.findElement(By.cssSelector("a[href^='mailto:']"));
+            return emailLink.getAttribute("href");
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    private String getPracticeArea() {
+        try {
+            return driver.findElement(By.cssSelector("div.entry-content p, div.page-content p, article p"))
+                    .getAttribute("textContent");
+        } catch (Exception e) {
+            return "";
+        }
     }
 
     @Override
@@ -78,7 +92,7 @@ public class HornAndCo extends ByNewPage {
                 "role", role,
                 "firm", this.name,
                 "country", "Israel",
-                "practice_area", Objects.requireNonNull(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[1]/div/p[2]")).getAttribute("textContent")),
+                "practice_area", this.getPracticeArea(),
                 "email", this.getEmail(),
                 "phone", "97236378200"
         );

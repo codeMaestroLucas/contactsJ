@@ -16,6 +16,8 @@ import org.openqa.selenium.WebElement;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Data
 public abstract class Site {
@@ -108,20 +110,47 @@ public abstract class Site {
         String email = "";
         String phone = "";
 
-        String[] parts = text.split("[\\s|,;/]+");
+        // 1. Find email via regex — handles "Email:\nfoo@bar.com" and inline formats
+        Matcher emailMatcher = Pattern
+                .compile("[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}")
+                .matcher(text);
+        if (emailMatcher.find()) {
+            email = emailMatcher.group().toLowerCase().trim();
+        }
 
-        for (String part : parts) {
-            String value = part.toLowerCase().trim();
-
-            if ((value.contains("mail") || value.contains("@")) && email.isEmpty() && value.length() > 6) {
-                email = value;
-
-            } else if (phone.isEmpty()) {
-                String cleaned = value.replaceAll("[^0-9]", "");
-                if (cleaned.length() >= 7) phone = cleaned;
+        // 2. Extract phone from the "Phone:" section only, stopping before Fax/Email labels.
+        //    This prevents fax numbers from being picked up as the phone.
+        Matcher phoneSectionMatcher = Pattern
+                .compile("(?i)phone[^:]*:[\\s]*(.+?)(?=\\b(?:fax|email)\\b|$)", Pattern.DOTALL)
+                .matcher(text);
+        if (phoneSectionMatcher.find()) {
+            String phoneSection = phoneSectionMatcher.group(1).trim();
+            // Match the first phone-like token: optional leading +, then digits/spaces/dashes
+            Matcher phoneMatcher = Pattern
+                    .compile("[+]?[\\d][\\d ()\\-]{5,}")
+                    .matcher(phoneSection);
+            if (phoneMatcher.find()) {
+                phone = phoneMatcher.group().replaceAll("[^0-9]", "");
             }
+        }
 
-            if (!email.isEmpty() && !phone.isEmpty()) break;
+        // 3. Fallback: original token-based approach for plain text without labels
+        if (email.isEmpty() || phone.isEmpty()) {
+            String[] parts = text.split("[\\s|,;/]+");
+            for (String part : parts) {
+                String value = part.toLowerCase().trim();
+
+                if (email.isEmpty() && value.contains("@") && value.length() > 6) {
+                    email = value;
+                }
+
+                if (phone.isEmpty()) {
+                    String cleaned = value.replaceAll("[^0-9]", "");
+                    if (cleaned.length() >= 7) phone = cleaned;
+                }
+
+                if (!email.isEmpty() && !phone.isEmpty()) break;
+            }
         }
 
         return new String[]{ email, phone };

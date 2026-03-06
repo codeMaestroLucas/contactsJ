@@ -50,7 +50,7 @@ public class TMPIntellectualProperty extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("a[href*='https://tmp-ip.com/']")};
+        By[] byArray = {By.cssSelector("a[href*='tmp-ip.com/']")};
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
         return link;

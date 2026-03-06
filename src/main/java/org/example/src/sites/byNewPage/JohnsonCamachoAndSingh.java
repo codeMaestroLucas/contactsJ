@@ -74,7 +74,7 @@ public class JohnsonCamachoAndSingh extends ByNewPage {
 
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.xpath("//*[@id=\"bio-top\"]/div/div[1]/div[2]/div[2]/div"));
+        WebElement container = driver.findElement(By.id("bio-top"));
 
         String role = this.getRole(container);
 

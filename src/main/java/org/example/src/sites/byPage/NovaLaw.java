@@ -55,11 +55,15 @@ public class NovaLaw extends ByPage {
 
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        String href = lawyer.findElement(By.className("jet-engine-listing-overlay-wrap")).getAttribute("data-url");
-        if (href == null || href.isEmpty()) {
-            throw LawyerExceptions.linkException(href);
-        }
-        return href;
+        try {
+            String href = lawyer.findElement(By.cssSelector("[data-url]")).getAttribute("data-url");
+            if (href != null && !href.isEmpty()) return href;
+        } catch (Exception ignored) {}
+        try {
+            String href = lawyer.findElement(By.tagName("a")).getAttribute("href");
+            if (href != null && !href.isEmpty()) return href;
+        } catch (Exception ignored) {}
+        throw LawyerExceptions.linkException("No link found");
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {

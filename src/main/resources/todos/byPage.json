@@ -4,62 +4,6 @@
     "link": ""
   },
   {
-    "name": "NFA",
-    "link": "https://www.negraoferrari.com.br/equipe.php"
-  },
-  {
-    "name": "Nassar",
-    "link": "https://www.nassarabogados.com/en/our-team"
-  },
-  {
-    "name": "Lex Atlas",
-    "link": "https://lexatlas.com/en/team/"
-  },
-  {
-    "name": "InterJuris Abogados",
-    "link": "https://interjuris.com/en/team/"
-  },
-  {
-    "name": "BSPZ Law",
-    "link": "https://bspz.law/profissionais/"
-  },
-  {
-    "name": "GNB Law",
-    "link": "https://www.gnblaw.com.br/en/people/"
-  },
-  {
-    "name": "LRI Law",
-    "link": "https://lrilaw.com.br/profissionais/?todos=sim&nome=&cargo=socio&atuacao="
-  },
-  {
-    "name": "LPA Law Firm",
-    "link": "https://www.lpalaw.com/en/team/#associe"
-  },
-  {
-    "name": "Demarest",
-    "link": "https://www.demarest.com.br/en/search-professionals/?nome&cargo=partner&area=Areas%20of%20expertise&escritorio=Offices#professionals"
-  },
-  {
-    "name": "BGBG",
-    "link": "https://bgbg.mx/our-team/our-team-2/?lang=en",
-    "Notes": "Some have the info, other doesnt -> try-catch"
-  },
-  {
-    "name": "Uhthoff",
-    "link": "https://uhthoff.com.mx/nuestro-equipo/"
-  },
-
-  {"sep":  "========================================================================================="},
-
-  {
-    "name": "",
-    "link": ""
-  },
-  {
-    "name": "GvW Graf von Westphalen",
-    "link": "https://www.gvw.com/en/team"
-  },
-  {
     "name": "",
     "link": ""
   }

@@ -14,16 +14,19 @@ import java.util.List;
 
 public final class MyDriver {
     private static WebDriver driver;
+    private static boolean headless = false;
 
     // Private constructor to prevent instantiation
     private MyDriver() {}
 
+    public static void setHeadless(boolean value) {
+        headless = value;
+    }
+
     public static WebDriver getINSTANCE() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            // Disabled: headed mode is more stable for scraping
-            // (fewer anti-bot detections, more reliable element rendering)
-//             options.addArguments("--headless");
+            if (headless) options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-web-security");
