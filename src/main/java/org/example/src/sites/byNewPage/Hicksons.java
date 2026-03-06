@@ -13,38 +13,45 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class ACAndR extends ByNewPage {
+public class Hicksons extends ByNewPage {
+
     private final By[] byRoleArray = {
-            By.cssSelector("h4.tagline")
+            By.cssSelector(".elementor-shortcode p")
     };
 
-    public ACAndR() {
+    public Hicksons() {
         super(
-                "AC&R",
-                "https://acr.amsterdam/en/people",
-                1
+                "Hicksons",
+                "https://www.hicksons.com.au/our-team",
+                7
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
-        MyDriver.waitForPageToLoad();
-        Thread.sleep(1000L);
+        if (index == 0) {
+            this.driver.get(this.link);
+            MyDriver.waitForPageToLoad();
+            Thread.sleep(1000L);
+        } else {
+            List<WebElement> lis = driver.findElements(By.cssSelector("nav.paginate-pagination > ul > li"));
+            lis.get(index).findElement(By.tagName("a")).click();
+            Thread.sleep(5000L);
+        }
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{"partner", "senior associate"};
+        String[] validRoles = {"partner", "counsel", "senior associate"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("li.person > a.link")
+                            By.className("member--wrapper")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -52,46 +59,47 @@ public class ACAndR extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        MyDriver.openNewTab(lawyer.getAttribute("href"));
-        return null;
+        By[] byArray = {By.cssSelector("h4.elementor-heading-title a")};
+        String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
+        MyDriver.openNewTab(link);
+        return link;
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.tagName("h1")
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
+        By[] byArray = {By.cssSelector("h1.elementor-heading-title")};
+        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+    }
+
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        By[] byArray = {By.className("mbp0")};
+        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                    .findElement(By.cssSelector("section.block.title > ul"))
-                    .findElements(By.tagName("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector(".elementor-icon-list-item a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
             return new String[]{"", ""};
         }
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String role = extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
-
         this.openNewTab(lawyer);
-        WebElement div = driver.findElement(By.id("intro"));
+        WebElement div = driver.findElement(By.cssSelector("div[data-id='435856f']"));
+
         String[] socials = this.getSocials(div);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", this.getName(div),
-                "role", role,
+                "role", this.getRole(div),
                 "firm", this.name,
-                "country", "the Netherlands",
+                "country", "Australia",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", "31205224420"
+                "phone", socials[1].isEmpty() ? "61292935300" : socials[1]
         );
     }
 }

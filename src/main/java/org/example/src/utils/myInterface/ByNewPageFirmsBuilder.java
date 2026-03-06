@@ -1,6 +1,7 @@
 package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.sites._standingBy.download.DMDLaw;
 import org.example.src.sites.byNewPage.*;
 import org.example.src.utils.ContinentConfig;
 
@@ -16,94 +17,95 @@ public class ByNewPageFirmsBuilder {
 
     private static final Site[] AFRICA = {
             new ENSAfrica(), new HansOffiaAndAssociates(), new JacksonEttiAndEdu(), new Shalakany(), new Werksmans(),
-            new ZakiHashemAndPartners(), new ZulficarAndPartners(),
+            new ZakiHashemAndPartners(), new ZulficarAndPartners()
     };
 
     private static final Site[] ASIA = {
-            new AOil(), new ArethaLegal(), new BarneaAndCo(), new CityYuwaPartners(), new CovenantChambers(),
-            new DesaiAndDiwanji(), new DSKLegal(), new EBN(), new Fischer(), new FoongAndPartners(),
-            new GornitzkyAndCo(), new HarryElias(), new HarryEliasPartnership(), new HHRLawyers(), new HuiyeLaw(),
-            new HYLeungAndCo(), new KRBLaw(), new LonganLaw(), new MishconKaras(),
-            new MiuraAndPartners(), new Mourant(), new NurmansyahAndMuzdalifah(), new RemfryAndSagar(), new SamvadPartners(),
-            new SolomonAndCo(), new TannerDeWitt(), new TCLaw(), new ChadhaAndCo(),
-            new AJUKimChangAndLee(), new AsiaLiuhIP(), new DonaldsonAndBurkinshaw(), new HastingsAndCo(),
-            new MDLaw(), new Stellex(), new TMPIntellectualProperty(),
-            new AscendantLegal(), new EldanLaw(), new LepaMeirAndCo(),
-            new LSHorizon(), new MohanadassPartnership(), new OneAsiaLawyers(), new QuiasonMakalintal(), new RCLChambersLaw(),
-            new SayatZholshyAndPartners(), new SGAndCoLawyers(), new ShanghaiPacificLegal(),
-            new SudathPereraAssociates(), new TheCapitalLaw(), new TTA(), new TTTAndPartners(), new TommyThomas(),
-            new WooKwanLeeAndLo(), new YossiLevyAndCo(), new ZhongLunLaw(), new LeeAndLee(),
-            new MatryMeiriAndCo(), new RIAABarkerGillette(), new GanLeeAndTan(), new Hauzen(), new HornAndCo(),
-            new Dashnyam(), new EligGurkaynak(), new ErgunAvukatlikBurosu(),
-            new ATIM(), new AzmanDavidsonAndCo(), new BrossAndPartners(), new CapitalEquityLegalGroup(), new ChienYehLaw(),
-            new CTPartners(), new DomnernSomgiatAndBoonma(), new FormosanBrothers(), new GlobalVietnamLawyers(), new SCPT(),
-            new VILAF(), new SNRAssociates(), new StratageLaw(),
-            new CorneliusLaneAndMufti(), new EconomicLawsPractice(), new FCLaw(), new QuaheWooAndPalmer(), new SIPLaw(),
-            new AdnanSundraAndLowNP(), new AgmonWithTulchinsky(), new AxisLawChambers(), new BalterGuthAloniAndCo(), new Docvit(),
-            new ErdemAndErdem(), new GlobalLawOffice(), new HaidermotaAndCo(), new HalimHongAndQuek(), new ONC(),
-            new ShookLinAndBokNP(), new ShoobAndCo(), new SudathPerera(),
+            new AdnanSundraAndLowNP(), new AgmonWithTulchinsky(), new AJUKimChangAndLee(), new AOil(), new ArethaLegal(),
+            new AscendantLegal(), new AsiaLiuhIP(), new AtlasLaw(), new AxisLawChambers(), new AzmanDavidsonAndCo(),
+            new BalterGuthAloniAndCo(), new BarneaAndCo(), new BoaseCohenAndCollins(), new BrossAndPartners(), new CapitalEquityLegalGroup(),
+            new ChadhaAndCo(), new ChienYehLaw(), new CityYuwaPartners(), new CorneliusLaneAndMufti(), new CovenantChambers(),
+            new CTPartners(), new Dashnyam(), new DesaiAndDiwanji(), new DMDLaw(), new Docvit(),
+            new DomnernSomgiatAndBoonma(), new DonaldsonAndBurkinshaw(), new DSKLegal(), new EBN(), new EconomicLawsPractice(),
+            new EJELaw(), new EldanLaw(), new EligGurkaynak(), new ErdemAndErdem(), new ErgunAvukatlikBurosu(),
+            new FCLaw(), new Fischer(), new FoongAndPartners(), new Gall(), new GanLeeAndTan(),
+            new GlobalLawOffice(), new GlobalVietnamLawyers(), new GornitzkyAndCo(), new HaidermotaAndCo(), new HalimHongAndQuek(),
+            new HarryElias(), new HarryEliasPartnership(), new HastingsAndCo(), new Hauzen(), new HHRLawyers(),
+            new HornAndCo(), new HuiyeLaw(), new HYLeungAndCo(), new KRBLaw(), new LeeAndLee(),
+            new LepaMeirAndCo(), new LonganLaw(), new LSHorizon(), new MatryMeiriAndCo(), new MDLaw(),
+            new MishconKaras(), new MiuraAndPartners(), new MohanadassPartnership(), new Mourant(), new NurmansyahAndMuzdalifah(),
+            new ONC(), new OneAsiaLawyers(), new QuaheWooAndPalmer(), new QuiasonMakalintal(), new RCLChambersLaw(),
+            new RemfryAndSagar(), new RIAABarkerGillette(), new RobertsonsSolicitors(), new SamvadPartners(), new SayatZholshyAndPartners(),
+            new SCPT(), new SGAndCoLawyers(), new ShanghaiPacificLegal(), new ShookLinAndBokNP(), new ShoobAndCo(),
+            new SIPLaw(), new SolomonAndCo(), new SNRAssociates(), new Stellex(), new StratageLaw(),
+            new SudathPerera(), new SudathPereraAssociates(), new TannerDeWitt(), new TCLaw(), new TheCapitalLaw(),
+            new TMPIntellectualProperty(), new TokyoInternationalLaw(), new TommyThomas(), new TTA(), new TTTAndPartners(),
+            new VILAF(), new WooKwanLeeAndLo(), new YossiLevyAndCo(), new ZhongLunLaw()
     };
 
     private static final Site[] EUROPE = {
             new ABGIP(), new ACAndR(), new Astrea(), new Avance(), new BadriAndSalimElMeouchiLaw(),
-            new Beauchamps(), new Belgravia(), new Borenius(), new Boyanov(), new BRAUNEISRECHTSANWALTE(),
-            new BurgesSalmon(), new CarneluttiLaw(), new CRCCD(), new DANUBIAPatentAndLaw(), new DGKV(),
-            new Dottir(), new EisenfuhrSpeiserAndPartner(), new Ekelmans(), new EllisonsSolicitors(),
-            new EPAndC(), new FCMLimited(), new FPSLaw(), new FrancisWilksAndJones(), new Frontier(),
-            new Fylgia(), new GittiAndPartners(), new GORG(), new GreeneAndGreeneSolicitors(),
-            new GVZH(), new Hamso(), new HarteBavendamm(), new HaslingerNagele(), new HoffmannEitle(),
-            new Holmes(), new Horten(), new JadekAndPensa(), new JBLaw(), new JWP(),
-            new KallioLaw(), new KambourovAndPartners(), new KBVLLaw(), new KennedyVanderLaan(), new KeystoneLaw(),
-            new KLCLaw(), new Kondrat(), new Kvale(), new KWKRLaw(), new LambadariosLaw(),
-            new LangsethAdvokat(), new LePooleBekema(), new Legalis(), new Lindahl(), new MaikowskiAndNinnemann(),
-            new MeyerKoring(), new MorrisLaw(), new MSBSolicitors(), new NESTOR(), new OgletreeDeakins(),
-            new OneEssexCourt(), new Onsagers(), new ONVLaw(), new Oppenheim(), new Oxera(),
-            new PhilippeAndPartners(), new PinneyTalfourdSolicitors(), new PMP(), new PortaAndConsulentiAssociati(), new Poulschmith(),
-            new PrinzAndPartner(), new PrueferAndPartner(), new PuschWahlig(), new Racine(), new ReinhardSkuhraWeiseAndPartnerGbR(),
-            new RymarzZdortMaruta(), new SampsonCowardLLP(), new SBGK(), new Schoups(), new SKWSchwarz(),
-            new SlaughterAndMay(), new SRSLegal(), new Strelia(), new SZA(), new Szecskay(),
-            new Valfor(), new VanOlmenAndWynant(), new Vischer(), new VossiusAndPartner(), new WardynskiAndPartners(),
-            new WengerVieliAG(), new Wiersholm(), new WikborgRein(), new ZeposAndYannopoulos(),
-            new KonecnaAndZacha(), new BettenAndResch(), new BonnAndSchmitt(), new ZampaPartners(),
-            new KolcuogluDemirkanKocakli(), new SayinLaw(), new Hayes(), new HoxhaMemiAndHoxha(),
-            new GunAndPartners(), new Sherrards(), new Cerraloglu(),
+            new Beauchamps(), new Belgravia(), new BettenAndResch(), new BonnAndSchmitt(), new Borenius(),
+            new Boyanov(), new BRAUNEISRECHTSANWALTE(), new BurgesSalmon(), new CarneluttiLaw(), new Cerraloglu(),
+            new CRCCD(), new DANUBIAPatentAndLaw(), new DGKV(), new Dottir(), new EisenfuhrSpeiserAndPartner(),
+            new Ekelmans(), new EllisonsSolicitors(), new EPAndC(), new FCMLimited(), new FPSLaw(),
+            new FrancisWilksAndJones(), new Frontier(), new Fylgia(), new GittiAndPartners(), new GORG(),
+            new GreeneAndGreeneSolicitors(), new GunAndPartners(), new GVZH(), new Hamso(), new HarteBavendamm(),
+            new HaslingerNagele(), new Hayes(), new HoffmannEitle(), new Holmes(), new Horten(),
+            new HoxhaMemiAndHoxha(), new JadekAndPensa(), new JBLaw(), new JWP(), new KallioLaw(),
+            new KambourovAndPartners(), new KBVLLaw(), new KennedyVanderLaan(), new KeystoneLaw(), new KLCLaw(),
+            new KolcuogluDemirkanKocakli(), new Kondrat(), new KonecnaAndZacha(), new Kvale(), new KWKRLaw(),
+            new LambadariosLaw(), new LangsethAdvokat(), new Legalis(), new LePooleBekema(), new Lindahl(),
+            new MaikowskiAndNinnemann(), new MeyerKoring(), new MorrisLaw(), new MSBSolicitors(), new NESTOR(),
+            new OgletreeDeakins(), new OneEssexCourt(), new Onsagers(), new ONVLaw(), new Oppenheim(),
+            new Oxera(), new PhilippeAndPartners(), new PinneyTalfourdSolicitors(), new PMP(), new PortaAndConsulentiAssociati(),
+            new Poulschmith(), new PrinzAndPartner(), new PrueferAndPartner(), new PuschWahlig(), new Racine(),
+            new ReinhardSkuhraWeiseAndPartnerGbR(), new RymarzZdortMaruta(), new SampsonCowardLLP(), new SayinLaw(), new SBGK(),
+            new Schoups(), new Sherrards(), new SKWSchwarz(), new SlaughterAndMay(), new SRSLegal(),
+            new Strelia(), new SZA(), new Szecskay(), new Valfor(), new VanOlmenAndWynant(),
+            new Vischer(), new VossiusAndPartner(), new ZampaPartners(), new ZeposAndYannopoulos(), new WardynskiAndPartners(),
+            new WengerVieliAG(), new Wiersholm(), new WikborgRein()
     };
 
     private static final Site[] NORTH_AMERICA = {
             new ArthurCox(), new AsafoAndCo(), new BCFLaw(), new BWBLLP(), new FilionWakelyThorupAngeletti(),
             new IbanezParkman(), new KuriBrena(), new MBM(), new McKinneyBancroftAndHughes(), new NaderHayauxAndGoebel(),
-            new PrasadAndCompany(), new Sangra(), new ThompsonDorfmanSweatman(), new VazquezTerceroAndZepeda(),
+            new PrasadAndCompany(), new Sangra(), new ThompsonDorfmanSweatman(), new VazquezTerceroAndZepeda()
     };
 
     private static final Site[] CENTRAL_AMERICA = {
-            new MyersFletcherAndGordon(),
+            new MyersFletcherAndGordon()
     };
 
     private static final Site[] SOUTH_AMERICA = {
             new BrigrardUrrutia(), new Carey(), new CariolaDiezPerezCotapos(), new Ferrere(), new GaiaSilvaGaedeAndAssociados(),
-            new LatinAlliance(), new Madrona(), new RMADVAdvogados(), new SargentAndKrahn(), new ZBV(),
-            new NFA(),
+            new LatinAlliance(), new Madrona(), new NFA(), new RMADVAdvogados(), new SargentAndKrahn(),
+            new ZBV()
     };
 
     private static final Site[] OCEANIA = {
-            new AitkenPartners(), new Baumgartners(), new Chamberlains(), new DeutschMiller(), new DWFoxTucker(),
-            new Gadens(), new Grette(), new HeskethHenry(), new Madderns(), new McCulloughRobertson(),
+            new AJLawAndCo(), new AitkenPartners(), new Baumgartners(), new Chamberlains(), new ConnollySuthers(),
+            new Corcoran(), new DeutschMiller(), new DWFoxTucker(), new Finlaysons(), new Gadens(),
+            new GilbertAndTobin(), new Grette(), new HamiltonLocke(), new HeskethHenry(), new Hicksons(),
+            new HWEbsworth(), new Madderns(), new MatthewsFolbigg(), new McCulloughRobertson(), new MellorOlsson(),
             new NormanWaterhouse(), new RussellMcVeagh(), new SimmonsWolfhagen(), new TompkinsWake(), new WengerVieliAG(),
-            new WilsonHarle(), new Wrays(), new YoungList(),
-            new AJLawAndCo(), new ConnollySuthers(), new Corcoran(), new GilbertAndTobin(), new HamiltonLocke(),
-            new HWEbsworth(), new MatthewsFolbigg(), new MellorOlsson(), new WilsonRyanGrose(),
+            new WilsonHarle(), new WilsonRyanGrose(), new Wrays(), new YoungList()
     };
 
     private static final Site[] MUNDIAL = {
-            new ALGoodbody(), new BDO(), new CerhaHempel(), new Cobalt(), new ControlRisks(),
-            new Cuatrecasas(), new Curtis(), new Dentons(), new Ellex(), new EProint(),
-            new FangdaPartners(), new GuantaoLaw(), new HiggsAndJohnson(), new Houthoof(), new JohnsonCamachoAndSingh(),
-            new JPMAndPartners(), new LatamLex(), new Legance(), new LewissSilkin(), new LexCaribbean(),
-            new MarksAndClerk(), new MdME(), new METIDA(), new MIOLaw(), new Noerr(),
-            new OsborneClarke(), new PearlCohen(), new PortolanoCavallo(), new Pulegal(), new QuinEmanuel(),
-            new SabaAndCo(), new SimmonsAndSimmons(), new Sorainen(), new TEMPLARS(), new Thommessen(),
-            new Vaneps(), new WALLESS(), new KingAndWoodMallesons(), new Adna(), new StephensonHarwood(),
-            new ReinholdCohnGroup(),
+            new Adna(), new ALGoodbody(), new BDO(), new CerhaHempel(), new Cobalt(),
+            new ControlRisks(), new Cuatrecasas(), new Curtis(), new Dentons(), new Ellex(),
+            new EProint(), new FangdaPartners(), new GuantaoLaw(), new HiggsAndJohnson(), new Houthoof(),
+            new JohnsonCamachoAndSingh(), new JPMAndPartners(), new KingAndWoodMallesons(), new LatamLex(), new Legance(),
+            new LewissSilkin(), new LexCaribbean(), new MarksAndClerk(), new MdME(), new METIDA(),
+            new MIOLaw(), new Noerr(), new OsborneClarke(), new PearlCohen(), new PortolanoCavallo(),
+            new Pulegal(), new QuinEmanuel(), new ReinholdCohnGroup(), new SabaAndCo(), new SimmonsAndSimmons(),
+            new Sorainen(), new StephensonHarwood(), new TEMPLARS(), new Thommessen(), new Vaneps(),
+            new WALLESS()
+    };
+
+    private static final Site[] TEST = {
+
     };
 
     // ==================== GETTERS BY CONTINENT ====================

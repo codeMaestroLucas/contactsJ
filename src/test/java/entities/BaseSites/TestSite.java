@@ -1,11 +1,11 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byPage.Uhthoff;
+import org.example.src.sites.to_test.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends Uhthoff {
+class MyTestPage extends _Template {
     public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }
