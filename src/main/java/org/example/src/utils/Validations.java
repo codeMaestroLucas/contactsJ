@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import org.example.exceptions.ValidationExceptions;
 import org.example.src.entities.Lawyer;
-import org.example.src.entities.excel.Contacts;
 import org.example.src.utils.validation.EmailDuplicateChecker;
 
 import java.io.IOException;
@@ -163,7 +162,7 @@ public class Validations {
 
             return countriesToAvoid.stream()
                     .map(CountryData::getCountry)
-                    .filter(java.util.Objects::nonNull)  // ✅ Remove valores nulos
+                    .filter(java.util.Objects::nonNull)  // Remove valores nulos
                     .anyMatch(c -> c.trim().equalsIgnoreCase(firm.trim()));
 
         } catch (IOException e) {
@@ -176,11 +175,7 @@ public class Validations {
      * Checks if the given email was already registered in the current month or in contacts.xlsx.
      */
     private static boolean isEmailAlreadyRegistered(String email, String emailsOfMonthPath) {
-        Contacts contacts = Contacts.getINSTANCE();
-
-        if (EmailOfMonth.isEmailRegisteredInMonth(email, emailsOfMonthPath)) return true;
-
-        return contacts.isEmailRegistered(email);
+        return EmailOfMonth.isEmailRegisteredInMonth(email, emailsOfMonthPath);
     }
 
     /**

@@ -23,7 +23,8 @@ public class CapitalEquityLegalGroup extends ByNewPage {
         );
     }
 
-    String[] validRoles = {
+    //! CHINESE ROLES
+    private final String[] validRoles = {
             "合伙人", "高级合伙人", "管理合伙人", "首席合伙人", "创始合伙人", "顾问", "高级顾问", "律师", "高级律师", "主任", "主席"
     };
 

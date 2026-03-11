@@ -68,7 +68,8 @@ public class HHRLawyers extends ByNewPage {
     private String[] getSocials(WebElement lawyer) {
         try {
             String email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
-            return new String[]{email, ""};
+            assert email != null;
+            return new String[]{email.replace("&subject=greeting%20website", ""), ""};
         } catch (Exception e) {
             return new String[]{"", ""};
         }

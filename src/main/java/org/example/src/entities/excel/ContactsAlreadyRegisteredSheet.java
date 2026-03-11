@@ -25,10 +25,7 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
     // Sheet to write data
     private final Sheet destinationSheet = Sheet.getINSTANCE();
 
-    // Contacts sheet to check for existing emails
-    private final Contacts contacts = Contacts.getINSTANCE();
-
-    public ContactsAlreadyRegisteredSheet() {
+public ContactsAlreadyRegisteredSheet() {
         super(CONFIG.FILTERED_ACTIVE_CONTACTS_FILE, CONFIG.LAWYERS_IN_FILTER);
         this.lastFirmRow = this.getLastFirmCollectedRow();
     }
@@ -117,11 +114,6 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
 
             if (email.isEmpty() || name.isEmpty()) continue;
 
-            if (contacts.isEmailRegistered(email)) {
-                System.out.println("Email '" + email + "' is already registered in Contacts. Skipping.");
-                continue;
-            }
-
             // Reset counters when firm changes
             if (!firm.equals(lastFirm)) {
                 totalLawyersPerFirm = 0;
@@ -158,8 +150,6 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
                 setOfCountriesCollectPerFirm.add(country.toLowerCase().trim());
                 totalLawyersPerFirm++;
                 lawFirmsCollected.add(firm);
-
-                System.out.println("Added lawyer: " + name + " from " + firm + " (" + country + ")");
             }
         }
 
@@ -169,7 +159,6 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
             this.lastFirmRow = 0;
             if (maxReRuns > 0) {
                 maxReRuns--;
-                System.out.println("\n\u001B[32mRe-running registered Lawyers filtering\u001B[0m.\n");
                 this.collectLawyersRegistered();
             }
         }
@@ -181,65 +170,8 @@ public final class ContactsAlreadyRegisteredSheet extends Excel{
         System.out.println("===========================\n");
 
         this.registerLastFirmCollectedRow(i);
-        this.addRedSeparatorLine();
         this.saveSheet();
         this.registerFirmsCollected();
-    }
-
-    /**
-     * Adds a red empty line in the destination sheet to visually separate
-     * contacts collected from different execution phases.
-     */
-    private void addRedSeparatorLine() {
-        try {
-            // Get the destination sheet workbook to create the style
-            Workbook destWorkbook = destinationSheet.getWorkbook();
-            
-            // Create a cell style with red background
-            XSSFCellStyle redStyle = (XSSFCellStyle) destWorkbook.createCellStyle();
-            redStyle.setFillForegroundColor(new XSSFColor(new java.awt.Color(255, 0, 0), null));
-            redStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-            
-            // Get the next available row in the destination sheet
-            org.apache.poi.ss.usermodel.Sheet destSheet = destinationSheet.getSheet();
-            int nextRowNum = destSheet.getLastRowNum() + 1;
-            Row redRow = destSheet.createRow(nextRowNum);
-            
-            // Create empty cells with red background for all columns (assuming 13 columns based on your data)
-            for (int col = 0; col < 13; col++) {
-                Cell cell = redRow.createCell(col);
-                cell.setCellValue("");
-                cell.setCellStyle(redStyle);
-            }
-            
-            // Save the destination sheet
-            destinationSheet.saveSheet();
-            
-            System.out.println("\n\u001B[31m[SEPARATOR] Red line added to mark end of registered contacts phase.\u001B[0m\n");
-            
-        } catch (Exception e) {
-            System.err.println("Error adding red separator line: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Only filters the contacts in the sheet (removes invalid or duplicate rows).
-     */
-    public void filterContactsOnly() {
-        //change the number if needed
-        for (int i = 0; i <= 300; i++) {
-            Row row = this.getSheet().getRow(i);
-            if (row == null) continue;
-
-            String email = getCellValue(row.getCell(5));
-
-            if (contacts.isEmailRegistered(email)) {
-                System.out.println("Email '" + email + "' is already registered. Cleaning up.");
-                sheet.removeRow(row);
-            }
-        }
-        this.saveSheet();
     }
 
     /**

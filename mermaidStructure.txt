@@ -1,0 +1,187 @@
+paste it on https://mermaid.live/
+
+flowchart TD
+    subgraph ENTRY["Entrada"]
+        MAIN["Main.java"]
+    end
+
+    subgraph CONFIG_PKG["org.example.src"]
+        CONFIG["CONFIG.java
+        (limites globais, paths, timeout)"]
+    end
+
+    subgraph ORCHESTRATION["Orquestração de Firmas
+    (utils/myInterface)"]
+        COMPLETED["CompletedFirms
+        (menu CLI + construção da lista)"]
+        BP_BUILDER["ByPageFirmsBuilder
+        (fábrica por continente)"]
+        BNP_BUILDER["ByNewPageFirmsBuilder
+        (fábrica por continente)"]
+        CONTINENT["ContinentConfig
+        (enabled/weight por continente)"]
+    end
+
+    subgraph BASE_SITES["Hierarquia de Sites
+    (entities/BaseSites)"]
+        SITE["Site (abstract)
+        - name, link, totalPages
+        - getLawyersInPage()
+        - getLawyer(WebElement)
+        - registerValidLawyer()
+        - getSocials()"]
+        BY_PAGE["ByPage (abstract)
+        - paginação por URL param"]
+        BY_NEW_PAGE["ByNewPage (abstract)
+        - paginação por nova aba"]
+        SITE --> BY_PAGE
+        SITE --> BY_NEW_PAGE
+    end
+
+    subgraph SITES_IMPL["Sites Concretos
+    (src/sites/byPage & byNewPage)
+    [~200+ classes de firmas]"]
+        FIRMS_BOX["FirmaA extends ByPage
+        FirmaB extends ByNewPage
+        ..."]
+    end
+
+    subgraph ENTITIES["Entidades
+    (entities)"]
+        LAWYER["Lawyer
+        (@Builder, @Data)
+        name, email, role,
+        firm, country, phone..."]
+        MY_DRIVER["MyDriver (Singleton)
+        Selenium ChromeDriver
+        - headless mode
+        - tab management
+        - anti-bot JS"]
+    end
+
+    subgraph EXCEL["Gerenciamento Excel
+    (entities / Apache POI)"]
+        EXCEL_BASE["Excel (base)"]
+        SHEET["Sheet (Singleton)
+        output principal"]
+        REPORTS["Reports (Singleton)
+        métricas de execução"]
+        CONTACTS["Contacts
+        contatos anteriores"]
+        LAST_CHECK["LastCheck
+        última linha registrada"]
+        EXCEL_BASE --> SHEET
+        EXCEL_BASE --> REPORTS
+        EXCEL_BASE --> CONTACTS
+        EXCEL_BASE --> LAST_CHECK
+    end
+
+    subgraph VALIDATION["Validação & Deduplicação
+    (utils)"]
+        VALIDATIONS["Validations
+        - países permanentes/temp
+        - firma na blacklist
+        - duplicata de email
+        - email do mês
+        - país da firma no mês"]
+        EMAIL_DUP["EmailDuplicateChecker (Singleton)
+        Google Sheets login
+        consulta duplicatas globais"]
+        EMAIL_MONTH["EmailOfMonth
+        data/sites/{byPage|byNewPage}/
+        {Firma}.txt"]
+        FIRMS_MONTH["FirmsOMonth
+        data/monthFirms.txt
+        evita re-scraping mensal"]
+        VALIDATIONS --> EMAIL_DUP
+        VALIDATIONS --> EMAIL_MONTH
+    end
+
+    subgraph UTILS["Utilitários
+    (utils)"]
+        EXTRACTOR["Extractor (Singleton)
+        extracts fields from DOM
+        with fallbacks"]
+        TREAT["TreatLawyerParams
+        sanitização dos dados"]
+        ERR_LOG["ErrorLogger (Singleton)
+        tolerância 10 erros/firma
+        log.txt"]
+        SITE_UTILS["SiteUtils (Singleton)
+        DOM navigation helpers"]
+        NO_SLEEP["NoSleep (JNA)
+        previne sleep do sistema"]
+        TIME_CALC["TimeCalculator
+        wrapper de tempo de execução"]
+    end
+
+    subgraph RESOURCES["Recursos (src/main/resources)"]
+        JSON_CFG["continentsConfig.json
+        countriesToAvoidPermanent.json
+        countriesToAvoidTemporary.json
+        firmsToAvoid.json
+        countryAliases.json
+        systemSnapshot.json"]
+        XLSX_FILES["Sheet.xlsx
+        Reports.xlsx
+        Contacts.xlsx
+        filteredCollectedContacts.xlsx
+        LastCheckSheet.xlsx"]
+    end
+
+    subgraph DATA_FOLDER["data/ (runtime)"]
+        DATA_SITES["sites/byPage/{Firma}.txt
+        sites/byNewPage/{Firma}.txt
+        (emails do mês)"]
+        DATA_AVOID["_toAvoid/byPage/{Firma}.txt
+        _toAvoid/byNewPage/{Firma}.txt
+        (emails a evitar)"]
+        MONTH_FILE["monthFirms.txt
+        (firmas já processadas)"]
+    end
+
+    subgraph TEST["Testes
+    (test/java)"]
+        TEST_SITE["TestSite.java
+        - usa reflection
+        - Validations.enableTestMode()
+        - scraping sem registrar dados"]
+    end
+
+    %% Fluxo principal
+    MAIN -->|"1. preventSleep()"| NO_SLEEP
+    MAIN -->|"2. login()"| EMAIL_DUP
+    MAIN -->|"3. collectLawyersRegistered()"| CONTACTS
+    MAIN -->|"4. constructFirms()"| COMPLETED
+    COMPLETED --> BP_BUILDER
+    COMPLETED --> BNP_BUILDER
+    COMPLETED --> CONTINENT
+    COMPLETED --> FIRMS_MONTH
+    CONTINENT -->|"lê"| JSON_CFG
+    BP_BUILDER --> FIRMS_IMPL
+    BNP_BUILDER --> FIRMS_IMPL
+    FIRMS_IMPL -->|extends| BASE_SITES
+
+    MAIN -->|"5. para cada Site"| BASE_SITES
+    BASE_SITES -->|"navega com"| MY_DRIVER
+    BASE_SITES -->|"extrai dados com"| EXTRACTOR
+    BASE_SITES -->|"cria"| LAWYER
+    LAWYER -->|"TreatLawyerParams sanitiza"| TREAT
+    BASE_SITES -->|"valida com"| VALIDATIONS
+    VALIDATIONS -->|"lê blacklists de"| JSON_CFG
+    VALIDATIONS -->|"verifica email em"| DATA_SITES
+    BASE_SITES -->|"registra em"| SHEET
+    BASE_SITES -->|"registra email em"| EMAIL_MONTH
+    EMAIL_MONTH -->|"escreve em"| DATA_SITES
+    BASE_SITES -->|"loga erros em"| ERR_LOG
+    BASE_SITES -->|"usa helpers de"| SITE_UTILS
+    SHEET -->|"escreve em"| XLSX_FILES
+    REPORTS -->|"escreve em"| XLSX_FILES
+    CONTACTS -->|"lê de"| XLSX_FILES
+    FIRMS_MONTH -->|"lê/escreve"| MONTH_FILE
+
+    MAIN -->|"6. cleanUpBetweenSites()"| MY_DRIVER
+    MAIN -->|"7. flushAllLogs()"| ERR_LOG
+    MAIN -->|"7. closeWorkbook()"| REPORTS
+
+    TEST_SITE -->|"testa instâncias de"| BASE_SITES
