@@ -1,0 +1,60 @@
+=====================================================================================================
+                                    ERROR LOG - 2026-03-14 20:34:08
+=====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+                                      ERRORS BY FIRM
+----------------------------------------------------------------------------------------------------
+
+(49 firm(s) omitted — within tolerance)
+
+Class Capital Equity Legal Group [0 lawyers registered, 61 errors]
+   - getLawyerError                 occurred 60 times
+   - openNewTabError                occurred 1 times
+
+Class Wikborg Rein [0 lawyers registered, 45 errors]
+   - getLawyerError                 occurred 45 times
+
+Class Lee And Ko [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 26 times
+
+Class HWL Ebsworth [0 lawyers registered, 20 errors]
+   - getLawyersInPageError          occurred 20 times
+
+Class Keystone Law [0 lawyers registered, 20 errors]
+   - getLawyersInPageError          occurred 17 times
+   - accessPageError                occurred 3 times
+
+Class Pels Rijcken [0 lawyers registered, 17 errors]
+   - getLawyersInPageError          occurred 17 times
+
+Class SFKS Law [0 lawyers registered, 13 errors]
+   - accessPageError                occurred 12 times
+   - getLawyersInPageError          occurred 1 times
+
+Class Mourant [0 lawyers registered, 11 errors]
+   - getLawyersInPageError          occurred 11 times
+
+Class Nova Law [0 lawyers registered, 11 errors]
+   - linkException                  occurred 11 times
+
+----------------------------------------------------------------------------------------------------
+                                      ERROR SUMMARY
+----------------------------------------------------------------------------------------------------
+
+Total errors: 311
+
+Most common errors:
+   getLawyerError                        124  ( 39.9%)
+   getLawyersInPageError                  91  ( 29.3%)
+   accessPageError                        53  ( 17.0%)
+   openNewTabError                        13  (  4.2%)
+   linkException                          11  (  3.5%)
+   TimeoutException                        8  (  2.6%)
+   getRoleError                            7  (  2.3%)
+   emailException                          3  (  1.0%)
+   getPracticeAreaError                    1  (  0.3%)
+
+=====================================================================================================
+Firms processed: 391 | Firms above tolerance (>10 errors): 9
+=====================================================================================================

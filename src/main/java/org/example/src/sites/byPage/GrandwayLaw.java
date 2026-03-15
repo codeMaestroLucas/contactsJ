@@ -120,7 +120,7 @@ public class GrandwayLaw extends ByPage {
                 "firm", this.name,
                 "country", this.getCountry(lawyer),
                 "practice_area", this.getPracticeArea(lawyer),
-                "email", socials[0],
+                "email", socials[0].replace("：", ""),
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );
     }

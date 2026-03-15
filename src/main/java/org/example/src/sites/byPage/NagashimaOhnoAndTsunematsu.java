@@ -34,7 +34,7 @@ public class NagashimaOhnoAndTsunematsu extends ByPage {
 
     public NagashimaOhnoAndTsunematsu() {
         super(
-                "Nagashima Ohno And Tsunematsu",
+                "Nagashima Ohno & Tsunematsu",
                 "https://www.nagashima.com/en/lawyers/",
                 27,
                 2

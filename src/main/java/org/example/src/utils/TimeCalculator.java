@@ -22,13 +22,6 @@ public class TimeCalculator {
         } catch (Exception e) {
             System.err.println("An error occurred during execution: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            long endTime = System.currentTimeMillis();
-            String formattedTime = interfaceUtls.calculateTime(startTime, endTime);
-
-            System.out.println("\n" + "=".repeat(70));
-            System.out.println("\nTotal time: " + formattedTime);
-            System.out.println();
         }
     }
 

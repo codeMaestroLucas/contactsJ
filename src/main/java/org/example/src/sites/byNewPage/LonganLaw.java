@@ -20,7 +20,7 @@ public class LonganLaw extends ByNewPage {
 
     public LonganLaw() {
         super(
-            "LonganLaw",
+            "Longan Law",
             "https://www.longanlaw.com/en/professionals/",
             28
         );

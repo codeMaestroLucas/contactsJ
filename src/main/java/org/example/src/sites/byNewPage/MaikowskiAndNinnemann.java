@@ -17,7 +17,7 @@ public class MaikowskiAndNinnemann extends ByNewPage {
 
     public MaikowskiAndNinnemann() {
         super(
-                "Maikowski And Ninnemann",
+                "Maikowski & Ninnemann",
                 "https://www.maikowski-ninnemann.com/mn-team/partner",
                 1
         );

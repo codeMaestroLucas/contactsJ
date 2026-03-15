@@ -16,7 +16,7 @@ public class SarafAndPartners extends ByPage {
 
     public SarafAndPartners() {
         super(
-                "Saraf and Partners",
+                "Saraf & Partners",
                 "https://sarafpartners.com/our-team/",
                 1
         );

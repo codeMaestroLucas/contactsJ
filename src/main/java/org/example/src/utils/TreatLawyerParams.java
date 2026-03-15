@@ -99,7 +99,7 @@ public final class TreatLawyerParams {
             "msc", "llb", "nbsp", "dsc", "em", "mag", "mbl",
             "mba", "mbe", "lawyer", "advocate", "advokat",
             "phd", "prof", "univ", "she/her", "he/him",
-            "professor", "lord", "dipl -phys", "adv"
+            "professor", "lord", "dipl -phys", "adv", "mgr"
     ));
 
     private static final String[] VALID_ROLES = {

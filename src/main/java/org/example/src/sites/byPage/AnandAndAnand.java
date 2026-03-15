@@ -15,7 +15,7 @@ import java.util.Map;
 public class AnandAndAnand extends ByPage {
     public AnandAndAnand() {
         super(
-                "Anand And Anand",
+                "Anand & Anand",
                 "https://www.anandandanand.com/our-team/page/1/",
                 2
         );

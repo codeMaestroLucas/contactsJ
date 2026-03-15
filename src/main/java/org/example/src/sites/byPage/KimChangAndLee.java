@@ -20,7 +20,7 @@ public class KimChangAndLee extends ByPage {
 
     public KimChangAndLee() {
         super(
-                "Kim ChangAndLee",
+                "Kim Chang & Lee",
                 "https://www.kimchanglee.co.kr/en/member/lawyers.php?seq=&cPage=1&cBlck=1&srchWord=",
                 8
         );

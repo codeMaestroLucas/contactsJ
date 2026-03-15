@@ -5,6 +5,7 @@ import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.entities.excel.Reports;
+import org.example.src.entities.excel.Sheet;
 import org.example.src.utils.ErrorLogger;
 import org.example.src.utils.FirmsOMonth;
 import org.example.src.utils.NoSleep;
@@ -25,10 +26,8 @@ public class Main {
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
 
     private static void getRegisteredContacts() {
-        System.out.println("Starting: Collecting previously registered lawyers...");
         ContactsAlreadyRegisteredSheet contactsSheet = new ContactsAlreadyRegisteredSheet();
         contactsSheet.collectLawyersRegistered();
-        System.out.println("Completed: Filtering and processing complete.");
     }
 
     /**
@@ -38,7 +37,6 @@ public class Main {
      *                         so that the global limit is shared across all calls.
      */
     private static int searchLawyersInWeb(int alreadyCollected) throws InterruptedException {
-        System.out.println("Starting: Searching for new lawyers...");
         int totalLawyersRegistered = 0;
         int redo = 0;
 
@@ -48,7 +46,6 @@ public class Main {
         for (Site site : sites) {
             if (Thread.currentThread().isInterrupted()
                     || (alreadyCollected + totalLawyersRegistered) >= (CONFIG.TOTAL_LAWYERS_TO_GET + CONFIG.LAWYERS_IN_FILTER)) {
-                System.out.println("Stopping lawyer search.");
                 break;
             }
 
@@ -115,8 +112,6 @@ public class Main {
         }
 
         executor.shutdownNow();
-        System.out.println("\n\nCompleted: Lawyer search finished.");
-        System.out.println("\tTotal lawyers collected in web: \u001B[1;31m" + totalLawyersRegistered + "\u001B[0;0m");
         return totalLawyersRegistered;
     }
 
@@ -134,7 +129,6 @@ public class Main {
             }
         });
 
-        System.out.println("\n\n" + "=".repeat(70));
         return result[0];
     }
 
@@ -154,6 +148,8 @@ public class Main {
         } finally {
             // Write any remaining logs that weren't flushed
             ErrorLogger.getINSTANCE().flushAllLogs();
+            // Sort Sheet.xlsx rows: D → J → E → F → C
+            Sheet.getINSTANCE().sortRows();
             // Close the reports workbook to ensure all data is saved
             reports.closeWorkbook();
             // Close the email duplicate checker session

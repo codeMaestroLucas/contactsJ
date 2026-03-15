@@ -20,7 +20,7 @@ public class BoaseCohenAndCollins extends ByNewPage {
 
     public BoaseCohenAndCollins() {
         super(
-                "Boase Cohen And Collins",
+                "Boase Cohen & Collins",
                 "https://www.boasecohencollins.com/people/",
                 1
         );

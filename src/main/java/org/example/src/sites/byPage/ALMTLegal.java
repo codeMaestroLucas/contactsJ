@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class ALMTLegal extends ByPage {
     public ALMTLegal() {
-        super("ALMTLegal", "https://almtlegal.com/mumbai-partner/", 2);
+        super("ALMT Legal", "https://almtlegal.com/mumbai-partner/", 2);
     }
 
     protected void accessPage(int index) throws InterruptedException {
