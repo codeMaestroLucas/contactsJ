@@ -29,14 +29,14 @@ public class LeeAndKo extends ByPage {
     public LeeAndKo() {
         super(
                 "Lee And Ko",
-                "https://www.leeko.com/leenko/member/memberSearchResultList.do?lang=EN&pageNo=2&schKeyword=a",
+                "https://www.leeko.com/leenko/member/memberSearchResultList.do?lang=EN&pageNo=1&schKeyword=a",
                 26
         );
     }
 
 
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "https://www.leeko.com/leenko/member/memberSearchResultList.do?lang=EN&pageNo=2&schKeyword=" + this.letters[index].toLowerCase();
+        String otherUrl = "https://www.leeko.com/leenko/member/memberSearchResultList.do?lang=EN&pageNo=1&schKeyword=" + this.letters[index].toLowerCase();
         String url = index == 0 ? this.link : otherUrl;
         this.driver.get(url);
         MyDriver.waitForPageToLoad();

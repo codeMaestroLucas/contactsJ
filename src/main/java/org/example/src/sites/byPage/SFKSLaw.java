@@ -40,9 +40,12 @@ public class SFKSLaw extends ByPage {
         Thread.sleep(1000L);
 
         if (index == 0) {
-            List<WebElement> elements = driver.findElements(By.cssSelector("dl#menu1 > dd > a, dl#menu3 > dd > a"));
+            List<WebElement> elements = driver.findElements(By.cssSelector("a[href*='member.php']"));
             for (WebElement element : elements) {
-                this.links.add(element.getAttribute("href"));
+                String href = element.getAttribute("href");
+                if (href != null && !href.equals(this.link) && !this.links.contains(href)) {
+                    this.links.add(href);
+                }
             }
         }
     }

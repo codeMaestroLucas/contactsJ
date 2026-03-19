@@ -79,7 +79,6 @@ public class WikborgRein extends ByNewPage {
                 By.className("mb-10"),
                 By.cssSelector("h2")
         };
-        WebElement element = siteUtl.iterateOverBy(byArray, lawyer);
         String role = extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
@@ -95,12 +94,14 @@ public class WikborgRein extends ByNewPage {
 
 
     private String[] getSocials() {
-        String email = ""; String phone = "";
-
-        WebElement socialsDiv = driver.findElement(By.xpath("//*[@id=\"main-content\"]/section/div/div/div[2]/div[2]/div/div[3]/div[1]"));
-        email = socialsDiv.findElement(By.cssSelector("a[href*='mailto:']")).getAttribute("href");
-        phone = socialsDiv.findElement(By.cssSelector("div > div:last-child")).getText();
-
+        String email = "";
+        String phone = "";
+        try {
+            email = driver.findElement(By.cssSelector("a[href*='mailto:']")).getAttribute("href");
+        } catch (Exception ignored) {}
+        try {
+            phone = driver.findElement(By.cssSelector("a[href^='tel:']")).getAttribute("href");
+        } catch (Exception ignored) {}
         return new String[] { email, phone };
     }
 
@@ -109,7 +110,7 @@ public class WikborgRein extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("-mx-6"));
+        WebElement div = driver.findElement(By.tagName("body"));
         String role = this.getRole(div);
         if (role.equals("Invalid Role")) return "Invalid Role";
 

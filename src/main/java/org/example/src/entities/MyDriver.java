@@ -87,6 +87,32 @@ public final class MyDriver {
     }
 
     /**
+     * Scrolls down incrementally (by window.innerHeight) until the page stops growing.
+     * Combines the human-like scroll behaviour of {@link #rollDown} with the automatic
+     * stop condition of {@link #scrollToBottom} — ideal for lazy-loaded pages where the
+     * total number of scrolls is unknown.
+     *
+     * @param sleepTime delay in seconds between each scroll
+     */
+    public static void rollDownToBottom(double sleepTime) throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        long previousHeight = (long) js.executeScript("return document.body.scrollHeight");
+
+        while (true) {
+            js.executeScript("window.scrollBy(0, window.innerHeight);");
+            Thread.sleep((long) (sleepTime * 1000L));
+
+            long currentHeight = (long) js.executeScript("return document.body.scrollHeight");
+            if (currentHeight == previousHeight) break;
+
+            previousHeight = currentHeight;
+        }
+
+        Thread.sleep(1500);
+    }
+
+
+    /**
      * Scrolls to the bottom of the page by repeatedly scrolling until no more content loads.
      * Useful for pages with infinite scroll or lazy-loaded content.
      *

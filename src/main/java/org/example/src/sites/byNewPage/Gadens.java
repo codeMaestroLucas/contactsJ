@@ -37,11 +37,7 @@ public class Gadens extends ByNewPage {
 
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "chairman",
-                "counsel"
-        };
+        String[] validRoles = new String[]{ "partner", "chairman", "counsel"};
 
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));

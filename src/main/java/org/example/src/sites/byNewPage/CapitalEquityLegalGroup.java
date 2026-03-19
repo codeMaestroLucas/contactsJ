@@ -69,6 +69,9 @@ public class CapitalEquityLegalGroup extends ByNewPage {
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         String link = lawyer.getAttribute("href");
+        if (link == null || link.isEmpty()) {
+            link = lawyer.findElement(By.tagName("a")).getAttribute("href");
+        }
         MyDriver.openNewTab(link);
         return link;
     }
@@ -90,7 +93,7 @@ public class CapitalEquityLegalGroup extends ByNewPage {
             }
         }
 
-        return null;
+        return "";
     }
 
     private String[] getSocials(WebElement lawyer) {
@@ -115,7 +118,7 @@ public class CapitalEquityLegalGroup extends ByNewPage {
                 "firm", this.name,
                 "country", "China",
                 "practice_area", "",
-                "email", socials[0].split("：")[1],
+                "email", socials[0].contains("：") ? socials[0].split("：")[1].trim() : socials[0],
                 "phone", socials[1]
         );
     }

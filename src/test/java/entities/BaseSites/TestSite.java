@@ -1,12 +1,14 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.byNewPage.SimontBraun;
+import org.example.src.sites.byNewPage.AgmonWithTulchinsky;
+import org.example.src.sites.byNewPage.MishcondeReya;
+import org.example.src.sites.to_test.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends SimontBraun {
-    public static final boolean HEADLESS = false;
+class MyTestPage extends AgmonWithTulchinsky {
+    public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }
 

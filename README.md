@@ -363,9 +363,14 @@ public final class MyDriver {
 
     public static WebDriver getINSTANCE();
 
+    // Configuration (must be called before getINSTANCE())
+    public static void setHeadless(boolean value);  // default: false
+
     // Navigation methods
     public static void waitForPageToLoad();
-    public static void rollDown(int times, double sleepTime);
+    public static void rollDown(int times, double sleepTime);         // scroll N times by innerHeight
+    public static void rollDownToBottom(double sleepTime);            // scroll by innerHeight until page stops growing
+    public static void scrollToBottom(double sleepTime);              // jump to scrollHeight until page stops growing
     public static void openNewTab(String url);
     public static void closeCurrentTab();
     public static void switchToTab(int index);
@@ -489,8 +494,7 @@ public class Validations {
 2. Check if country is temporarily avoided (disabled continent)
 3. Check if email is on the avoid list
 4. Check if email already collected this month
-5. Check if email exists in Contacts.xlsx
-6. Check if country already collected for this firm (same session)
+5. Check if country already collected for this firm (same session)
 
 ### 5.5 ContinentConfig.java
 
@@ -613,7 +617,6 @@ Central configuration constants.
 public class CONFIG {
     // File paths
     public static String SHEET_FILE = "src/main/resources/baseFiles/excel/Sheet.xlsx";
-    public static String CONTACTS_FILE = "src/main/resources/baseFiles/excel/Contacts.xlsx";
     public static String REPORTS_FILE = "src/main/resources/baseFiles/excel/Reports.xlsx";
     public static String FILTERED_ACTIVE_CONTACTS_FILE = "...filteredCollectedContacts.xlsx";
     public static String LAST_FIRM_REGISTERED_FILE = "...lastRowRegisteredInContacts.txt";
@@ -1057,14 +1060,19 @@ Run `Main.java` with the new scraper to verify:
 ├─────────────────────────────────────────────────────┤
 │ 1. NoSleep.preventSleep()                           │
 │ 2. EmailDuplicateChecker.login()                    │
-│ 3. searchLawyersInWeb()                             │
-│ 4. ErrorLogger.flushAllLogs()                       │
-│ 5. Close resources                                   │
+│ 3. performCompleteSearch()                          │
+│    └─ getRegisteredContacts()                       │
+│    └─ searchLawyersInWeb(0)         [phase 1]       │
+│ 4. searchLawyersInWeb(totalLawyers) [phase 2]       │
+│ 5. finally:                                         │
+│    - ErrorLogger.flushAllLogs()                     │
+│    - Sheet.sortRows()  ← sort by D→J→E→F→C         │
+│    - Close resources                                 │
 └─────────────────────────────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────┐
-│             searchLawyersInWeb()                     │
+│        searchLawyersInWeb(alreadyCollected)          │
 ├─────────────────────────────────────────────────────┤
 │ 1. CompletedFirms.constructFirms()                  │
 │    - Get firms from enabled continents               │
@@ -1139,11 +1147,6 @@ Lawyer Data
 ┌─────────────────────────────────┐
 │ Email collected this month?     │──Yes──▶ REJECT
 │ (data/sites/)                   │
-└─────────────────────────────────┘
-    │ No
-    ▼
-┌─────────────────────────────────┐
-│ Email in Contacts.xlsx?         │──Yes──▶ REJECT
 └─────────────────────────────────┘
     │ No
     ▼

@@ -40,7 +40,7 @@ flowchart TD
 
     subgraph SITES_IMPL["Sites Concretos
     (src/sites/byPage & byNewPage)
-    [~200+ classes de firmas]"]
+    [~874 classes de firmas: 511 byPage + 363 byNewPage]"]
         FIRMS_BOX["FirmaA extends ByPage
         FirmaB extends ByNewPage
         ..."]
@@ -113,6 +113,8 @@ flowchart TD
         previne sleep do sistema"]
         TIME_CALC["TimeCalculator
         wrapper de tempo de execução"]
+        VCARD["VCard
+        geração de arquivos vCard"]
     end
 
     subgraph RESOURCES["Recursos (src/main/resources)"]

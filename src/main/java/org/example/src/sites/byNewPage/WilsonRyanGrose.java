@@ -17,7 +17,7 @@ public class WilsonRyanGrose extends ByNewPage {
 
     public WilsonRyanGrose() {
         super(
-                "wilson/ryan/grose",
+                "wilson ryan grose",
                 "https://www.wrg.com.au/our-knowledge/business/?gad_source=1&gclid=CjwKCAiA74G9BhAEEiwA8kNfpTab-OOGsnN8Up1C0A23jtqE4Jckg5AuA1rc_MB_IDBSsAGE_a3ppBoCHMAQAvD_BwE",
                 1
         );

@@ -2,11 +2,6 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byPage.*;
-import org.example.src.sites.byPage.RP;
-import org.example.src.sites.byPage.SGLALaw;
-import org.example.src.sites.byPage.SarafAndPartners;
-import org.example.src.sites.byPage.ShandongDehengLaw;
-import org.example.src.sites.byPage.SalusLegal;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -53,7 +48,7 @@ public class ByPageFirmsBuilder {
             new Yulchon(), new ZaidIbrahimAndCo(), new ZhongziLaw(),
             new KaiRongLaw(), new SoemadipradjaAndTaher(),
             new RP(), new SarafAndPartners(), new ShandongDehengLaw(), new SGLALaw(),
-
+            new MochtarKaruwinKomar(),
     };
 
     private static final Site[] EUROPE = {
@@ -92,7 +87,8 @@ public class ByPageFirmsBuilder {
             new TucaZbarcea(), new VanDerPutt(), new VBAdvocates(), new VieringJentschuraAndPartner(), new Vinge(),
             new VOPatentsAndTrademarks(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
             new SkauReipurth(), new Snellman(), new SokolNovakTrojanDolecek(), new CravathSwaineAndMoore(),
-            new SalusLegal(),
+            new SalusLegal(), new PatrikiosPavlouAndAssociates(),
+            new MMDAdvokati(), new NaschitzBrandesAmir(), new Niedermüller(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -104,6 +100,7 @@ public class ByPageFirmsBuilder {
             new NautaDutilh(), new NelliganLaw(), new OslerHoskinAndHarcourt(), new OyenWiggs(), new RitchMueller(),
             new RitchMuellerAndNicolau(), new SantamarinaAndSteta(), new SmartAndBiggar(), new StikemanElliott(), new Uhthoff(),
             new UlisesCabrera(), new VillarrealVGF(), new WildeboerDellelce(),
+            new ONeillAndBorges(),
     };
 
     private static final Site[] CENTRAL_AMERICA = {
