@@ -49,6 +49,7 @@ public class ByPageFirmsBuilder {
             new KaiRongLaw(), new SoemadipradjaAndTaher(),
             new RP(), new SarafAndPartners(), new ShandongDehengLaw(), new SGLALaw(),
             new MochtarKaruwinKomar(),
+            new GKCPartners(), new GLAAndCompany(), new JIPYONG(),
     };
 
     private static final Site[] EUROPE = {
@@ -89,6 +90,7 @@ public class ByPageFirmsBuilder {
             new SkauReipurth(), new Snellman(), new SokolNovakTrojanDolecek(), new CravathSwaineAndMoore(),
             new SalusLegal(), new PatrikiosPavlouAndAssociates(),
             new MMDAdvokati(), new NaschitzBrandesAmir(), new Niedermüller(),
+            new GleissLutz(), new LYND(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -100,11 +102,11 @@ public class ByPageFirmsBuilder {
             new NautaDutilh(), new NelliganLaw(), new OslerHoskinAndHarcourt(), new OyenWiggs(), new RitchMueller(),
             new RitchMuellerAndNicolau(), new SantamarinaAndSteta(), new SmartAndBiggar(), new StikemanElliott(), new Uhthoff(),
             new UlisesCabrera(), new VillarrealVGF(), new WildeboerDellelce(),
-            new ONeillAndBorges(),
+            new ONeillAndBorges(), new Farris(),
     };
 
     private static final Site[] CENTRAL_AMERICA = {
-            new GarciaBodan(), new LexAtlas(), new McConnellValdes(), new Nassar(),
+            new GarciaBodan(), new LexAtlas(), new McConnellValdes(), new Nassar(), new Lexincorp(),
     };
 
     private static final Site[] SOUTH_AMERICA = {
@@ -126,7 +128,7 @@ public class ByPageFirmsBuilder {
             new DoogueGeorge(), new DuncanCotterill(), new FpaPatent(), new GordonLegal(), new HarmosHortonLusk(),
             new HoldingRedlich(), new JamesAndWells(), new JohnsonWinterSlattery(), new LaneNeave(), new MacphersonKelley(),
             new MalleyAndCo(), new MBIP(), new MinterEllisonRuddWatts(), new MorayAndAgnew(), new PiperAlderman(),
-            new SierraLegal(), new ThomsonGeer(), new WynnWilliams(),
+            new SierraLegal(), new ThomsonGeer(), new WynnWilliams(), new MayneWetherell(),
     };
 
     private static final Site[] MUNDIAL = {

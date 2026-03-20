@@ -35,7 +35,13 @@ public abstract class Site {
     protected String emailsToAvoidPath;
 
     protected static Map<String, String> OFFICE_TO_COUNTRY;
-    protected static String[] validRoles;
+    protected static String[] validRoles = {
+            "partner", "counsel", "director", "founding",
+            "founder", "principal", "advisor", "president",
+            "shareholder", "head", "chair", "chairman", "silk", "dipl", "dipl.",
+            "senior associate", "managing associate", "associate advisor",
+            "principal associate"
+    };
 
     protected Site(String name, String link, int totalPages, int maxLawyersForSite, String path) {
         this.name = name;
@@ -114,8 +120,13 @@ public abstract class Site {
         Matcher emailMatcher = Pattern
                 .compile("[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}")
                 .matcher(text);
+        Matcher emailMatcher2 = Pattern
+                .compile("[a-zA-Z0-9._%+\\-]+\\(at\\)[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}")
+                .matcher(text);
         if (emailMatcher.find()) {
             email = emailMatcher.group().toLowerCase().trim();
+        } else if (emailMatcher2.find()) {
+            email = emailMatcher2.group().replace("(at)", "@").toLowerCase().trim();
         }
 
         // 2. Extract phone from the "Phone:" section only, stopping before Fax/Email labels.

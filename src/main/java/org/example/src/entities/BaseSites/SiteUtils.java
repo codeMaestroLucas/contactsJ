@@ -102,6 +102,11 @@ public class SiteUtils {
      * @param validRoles    Lowercase keywords; a lawyer is kept if its role contains any of them.
      * @return Filtered list of lawyer WebElements.
      */
+    /** Uses {@link Site#validRoles} as default — call this for new scrapers. */
+    public List<WebElement> filterLawyersInPage(List<WebElement> lawyersInPage, By[] webRole, boolean byText) {
+        return filterLawyersInPage(lawyersInPage, webRole, byText, Site.validRoles);
+    }
+
     public List<WebElement> filterLawyersInPage(List<WebElement> lawyersInPage, By[] webRole,
                                                    boolean byText, String[] validRoles) {
         List<WebElement> validLawyers = new ArrayList<>();
