@@ -1,0 +1,76 @@
+
+Prompt WebScrapping Java
+Contexto do Projeto: Geração de classes Java (Selenium/Apache POI) para web-scraping de sites de advocacia baseados nas classes abstratas ByPage e ByNewPage.
+1. Estrutura Obrigatória da Resposta
+O output deve conter apenas os seguintes itens, nesta ordem:
+1. Cada firma gerada deve estar em um bloco de código separado para que eu possa copiar e colar cada uma.
+2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório src/main/java/org/example/src/sites/to_test/.
+3. Geração das Classes: Código completo dos scrappers, ordenados alfabeticamente.
+4. Bloco de Builders: Código para instanciação das firmas, agrupadas por Tipo de Classe e Continente, com no máximo 5 firmas por linha.
+2. Regras de Código e Implementação
+* Package: package org.example.src.sites.to_test;.
+* Filtro de Roles: Em getLawyersInPage, filtrar advogados por role conforme SchellenbergWittmer.java. Use a variável validRoles já presente em Site.java.
+* Parâmetros: O parâmetro WebElement em getLawyer e auxiliares deve se chamar obrigatoriamente lawyer.
+* Telefones: Seguir o padrão "phone", socials[1].isEmpty() ? "xxxx" : socials[1]. Substituir "xxxx" pelo telefone da firma se encontrado, caso contrário, manter o padrão.
+* Utilitários: Sempre preferir funções de SiteUtils.java e Site.java (especialmente getSocials - `super.getSocials`). Para strings, usar TreatLawyerParams.treatName(name) e treatNameForEmail(name).
+* SEMPRE prefira utilizar a função getSocials() para coletar o email e telefone, preferencialmente utilizando o retorno de `super.getSocials`.
+* Campos Fixos: O campo "firm" em getLawyer deve ser sempre this.name.
+* Extração: Usar a instância extractor (ex: extractor.extractLawyerText(...)) com lambdas de erro de LawyerExceptions.
+* Indentação do super(): Os argumentos dentro do super() devem ter um nível a menos de indentação que o padrão.
+3. Lógica das Classes
+* ByPage: Extração direta dos elementos da lista.
+* ByNewPage: Obrigatório usar this.openNewTab(lawyer) dentro de getLawyer e coletar os dados na subpágina.
+4. Modelo do Builder (Exemplo)
+```Java
+
+// ByPage - Africa
+new FirmaA(), new FirmaB(), new FirmaC(), new FirmaD(), new FirmaE(),
+new FirmaF(),
+
+// ByNewPage - Asia
+new FirmaG(),
+```
+
+5. Tom e Restrições
+* Output Direto: Sem explicações, linha de pensamento ou comentários no código.
+* Correções: Se necessário, usar labels --- ANTIGO --- e --- NOVO ---.
+* Utilize o EXTRACTOR da maneira correta, principalmente em se tratando os erros:
+<ERRADO>
+```java
+"practice_area", extractor.extractLawyerText(container, new By[]{By.xpath("//p[contains(.,'Practice Areas:')]")}, "PRACTICE AREA", (e) -> ""),
+```
+</ERRADO>
+
+<CORRETO>
+```java
+"practice_area", extractor.extractLawyerText(container, new By[]{By.xpath("//p[contains(.,'Practice Areas:')]")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
+```
+</CORRETO>
+
+* Checklist: Realize um checklist interno antes de gerar cada classe para garantir a conformidade com a documentação.
+
+EXEMPLO FINAL DO OUTPUT NECESSÁRIO
+<exemplo>
+# Touch
+```java
+comando touch
+```
+
+# Firmas
+## Nome Firma 1
+código firma 1
+
+
+## Nome Firma 2
+código firma 2
+
+# Builders
+```java// ByPage - continent
+new Firma1(),
+
+// ByNewPage - continent
+new Firma2(),
+``
+</exemplo>
+
+Agora se encerrou a documentação e vou te enviar os dados para que vc possa fazer os scrappers

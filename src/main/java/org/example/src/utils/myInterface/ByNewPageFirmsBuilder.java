@@ -2,6 +2,7 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
+import org.example.src.sites.to_test.*;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -129,6 +130,21 @@ public class ByNewPageFirmsBuilder {
     };
 
     private static final Site[] TEST = {
+            // ByNewPage - Africa
+            new KOAssociates(), new MMAKS(), new MulengaMundashiLegalPractitioners(), new MuvingiAndMugadza(),
+            new CorpusLegal(), new GillGodlontonAndGerrans(), new IkeyiShittuAndCo(), new MMAN(), new SololaAndAkpana(),
+
+            // ByPage - Europe
+            new WIDEN(),
+
+// ByPage - Africa
+            new EngoruMutebi(),
+
+// ByPage - Caribbean
+            new KRySGlobal(),
+
+// ByNewPage - Africa
+            new Bookbinder(), new OraroAndCompany(), new RobinsonBertram(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================
