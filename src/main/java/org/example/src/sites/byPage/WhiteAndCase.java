@@ -122,7 +122,7 @@ public class WhiteAndCase extends ByPage {
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href='/people/']")
+                By.cssSelector("a[href^='/people/']:not([href='/people/'])")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
@@ -130,7 +130,7 @@ public class WhiteAndCase extends ByPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.cssSelector("a[href='/people/']")
+                By.cssSelector("a[href^='/people/']:not([href='/people/'])")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
@@ -143,7 +143,8 @@ public class WhiteAndCase extends ByPage {
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         String text = extractor.extractLawyerAttribute(lawyer, byRoleArray, "COUNTRY", "textContent", LawyerExceptions::countryException);
-        String office = text.split(",")[1];
+        String[] parts = text.split(",");
+        String office = parts.length > 1 ? parts[1] : parts[0];
         return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, office, "USA");
     }
 

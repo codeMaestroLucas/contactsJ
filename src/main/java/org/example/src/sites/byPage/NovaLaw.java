@@ -38,12 +38,11 @@ public class NovaLaw extends ByPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
 
-            WebElement div = wait.until(
-                    ExpectedConditions.presenceOfElementLocated(
-                            By.xpath("//*[@id=\"content\"]/div/div/div/div/div/div/div/div")
+            List<WebElement> lawyers = wait.until(
+                    ExpectedConditions.presenceOfAllElementsLocatedBy(
+                            By.cssSelector("[data-url]")
                     )
             );
-            List<WebElement> lawyers = div.findElements(By.cssSelector("div.elementor-element"));
 
             return siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
         }
@@ -55,14 +54,8 @@ public class NovaLaw extends ByPage {
 
 
     private String getLink(WebElement lawyer) throws LawyerExceptions {
-        try {
-            String href = lawyer.findElement(By.cssSelector("[data-url]")).getAttribute("data-url");
-            if (href != null && !href.isEmpty()) return href;
-        } catch (Exception ignored) {}
-        try {
-            String href = lawyer.findElement(By.tagName("a")).getAttribute("href");
-            if (href != null && !href.isEmpty()) return href;
-        } catch (Exception ignored) {}
+        String href = lawyer.getAttribute("data-url");
+        if (href != null && !href.isEmpty()) return href;
         throw LawyerExceptions.linkException("No link found");
     }
 

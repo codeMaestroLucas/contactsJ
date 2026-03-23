@@ -62,7 +62,7 @@ public class LacourteRaquinTatar extends ByNewPage {
 
         String name = extractor.extractLawyerAttribute(content, new By[]{By.cssSelector(".o-H2")}, "NAME", "textContent", LawyerExceptions::nameException).split(" is a ")[0];
         String role = extractor.extractLawyerAttribute(content, new By[]{By.cssSelector(".o-H2")}, "ROLE", "textContent", LawyerExceptions::roleException).split(" Partner")[0] + " Partner";
-        String[] socials = super.getSocials(content.findElements(By.tagName("a")), false);
+        String[] socials = super.getSocials(content.findElements(By.cssSelector("ul.u-block > li > a")), false);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),

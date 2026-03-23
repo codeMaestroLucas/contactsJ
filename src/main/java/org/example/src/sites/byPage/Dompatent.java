@@ -28,7 +28,7 @@ public class Dompatent extends ByPage {
     public Dompatent() {
         super(
                 "Dompatent",
-                "https://www.dompatent.de/en/ip-experts/",
+                "https://www.dompatent.de/en/team/",
                 15
         );
     }
@@ -40,11 +40,18 @@ public class Dompatent extends ByPage {
             MyDriver.waitForPageToLoad();
             Thread.sleep(1000L);
 
-            List<WebElement> lawyersLinks = driver.findElement(By.id("coach-team-widget-23"))
-                    .findElement(By.className("team"))
-                    .findElements(By.className("coach-team-link-expert"));
+            new WebDriverWait(driver, Duration.ofSeconds(15))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.className("dp-archive-partner")));
+            Thread.sleep(2000L); // wait for JS to populate cards
+
+            List<WebElement> lawyersLinks = driver
+                    .findElement(By.className("dp-archive-partner"))
+                    .findElements(By.cssSelector("a[href*='/en/team/']"));
             for (WebElement lawyer : lawyersLinks) {
-                links.add(lawyer.getAttribute("href"));
+                String href = lawyer.getAttribute("href");
+                if (href != null && !href.equals(this.link) && !this.links.contains(href)) {
+                    links.add(href);
+                }
             }
         }
 

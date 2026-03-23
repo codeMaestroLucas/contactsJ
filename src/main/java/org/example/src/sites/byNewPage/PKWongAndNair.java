@@ -17,7 +17,7 @@ public class PKWongAndNair extends ByNewPage {
 
     public PKWongAndNair() {
         super(
-                "PK WongAndNair",
+                "PK Wong & Nair",
                 "https://pkwongnair.com/directors/",
                 2
         );

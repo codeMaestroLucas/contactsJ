@@ -25,7 +25,7 @@ public class Mourant extends ByNewPage {
     );
 
     private final By[] byRoleArray = {
-            By.cssSelector("span")
+            By.className("role")
     };
 
     public Mourant() {
@@ -64,7 +64,7 @@ public class Mourant extends ByNewPage {
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("div.people-item > h4 > a")
+                            By.className("person-card")
                     )
             );
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
@@ -76,8 +76,9 @@ public class Mourant extends ByNewPage {
 
 
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        MyDriver.openNewTab(lawyer.getAttribute("href"));
-        return null;
+        String href = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("view-link")}, "LINK", "href", LawyerExceptions::linkException);
+        MyDriver.openNewTab(href);
+        return href;
     }
 
 

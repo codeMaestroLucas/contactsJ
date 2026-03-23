@@ -20,15 +20,15 @@ public final class Lawyer {
     @Builder
     public Lawyer(String link, String name, String role, String firm, String country, String practiceArea, @org.jetbrains.annotations.NotNull String email, String phone) {
         this.link =         link.trim();
-        this.role =         treatRole(role);
+        this.role =         treatRole(role.trim());
         this.firm =         firm.trim();
-        this.country =      treatCountry(country);
-        this.practiceArea = treatPracticeArea(practiceArea);
-        this.email =        treatEmail(email);
-        this.phone =        treatPhone(phone);
-        this.specialism =   treatSpecialism(this.role);
+        this.country =      treatCountry(country.trim());
+        this.practiceArea = treatPracticeArea(practiceArea.trim());
+        this.email =        treatEmail(email.trim());
+        this.phone =        treatPhone(phone.trim());
+        this.specialism =   treatSpecialism(this.role.trim());
 
         // Move down so the email be treated and then used for the function `getNameFromEmail`
-        this.name =         name.isEmpty() ? getNameFromEmail(this.email) : treatName(name);
+        this.name =         name.isEmpty() ? getNameFromEmail(this.email) : treatName(name.trim());
     }
 }

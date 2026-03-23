@@ -20,7 +20,7 @@ public class HansOffiaAndAssociates extends ByNewPage {
 
     public HansOffiaAndAssociates() {
         super(
-                "Hans Offia And Associates",
+                "Hans Offia & Associates",
                 "https://hansoffialawfirm.com/team/",
                 1
         );

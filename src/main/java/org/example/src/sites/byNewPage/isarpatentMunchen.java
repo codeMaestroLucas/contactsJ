@@ -13,15 +13,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class ReinhardSkuhraWeiseAndPartnerGbR extends ByNewPage {
+public class isarpatentMunchen extends ByNewPage {
 
     private final By[] byRoleArray = {
             By.cssSelector("div.uabb-blog-posts-description > p")
     };
 
-    public ReinhardSkuhraWeiseAndPartnerGbR() {
+    public isarpatentMunchen() {
         super(
-                "Reinhard Skuhra Weise & Partner GbR",
+                "isarpatent München",
                 "https://www.isarpatent.com/team/partner-von-isarpatent/",
                 1
         );

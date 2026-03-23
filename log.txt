@@ -1,18 +1,43 @@
 =====================================================================================================
-                                    ERROR LOG - 2026-03-14 20:34:08
+                                    ERROR LOG - 2026-03-23 00:18:48
 =====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
                                       ERRORS BY FIRM
 ----------------------------------------------------------------------------------------------------
 
-(49 firm(s) omitted — within tolerance)
+(54 firm(s) omitted — within tolerance)
 
-Class HWL Ebsworth [0 lawyers registered, 20 errors]
-   - getLawyersInPageError          occurred 20 times
+Class White & Case [0 lawyers registered, 574 errors]
+   - getCountryError                occurred 570 times
+   - accessPageError                occurred 4 times
+
+Class Legance [0 lawyers registered, 52 errors]
+   - accessPageError                occurred 33 times
+   - getLawyersInPageError          occurred 19 times
+
+Class Lee And Ko [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 26 times
+
+Class Lacourte Raquin Tatar [1 lawyers registered, 24 errors]
+   - IllegalArgumentException       occurred 24 times
+
+Class Keystone Law [0 lawyers registered, 20 errors]
+   - getLawyersInPageError          occurred 17 times
+   - accessPageError                occurred 3 times
+
+Class Jones Day [3 lawyers registered, 19 errors]
+   - linkException                  occurred 19 times
 
 Class Pels Rijcken [0 lawyers registered, 17 errors]
    - getLawyersInPageError          occurred 17 times
+
+Class Dompatent [0 lawyers registered, 15 errors]
+   - accessPageError                occurred 15 times
+
+Class SFKS Law [0 lawyers registered, 13 errors]
+   - accessPageError                occurred 12 times
+   - getLawyersInPageError          occurred 1 times
 
 Class Mourant [0 lawyers registered, 11 errors]
    - getLawyersInPageError          occurred 11 times
@@ -20,3 +45,24 @@ Class Mourant [0 lawyers registered, 11 errors]
 Class Nova Law [0 lawyers registered, 11 errors]
    - linkException                  occurred 11 times
 
+----------------------------------------------------------------------------------------------------
+                                      ERROR SUMMARY
+----------------------------------------------------------------------------------------------------
+
+Total errors: 882
+
+Most common errors:
+   getCountryError                       570  ( 64.6%)
+   getLawyersInPageError                 106  ( 12.0%)
+   accessPageError                        98  ( 11.1%)
+   linkException                          36  (  4.1%)
+   IllegalArgumentException               24  (  2.7%)
+   openNewTabError                        19  (  2.2%)
+   getLawyerError                         17  (  1.9%)
+   getRoleError                            8  (  0.9%)
+   TimeoutException                        3  (  0.3%)
+   goToPageError                           1  (  0.1%)
+
+=====================================================================================================
+Firms processed: 418 | Firms above tolerance (>10 errors): 11
+=====================================================================================================

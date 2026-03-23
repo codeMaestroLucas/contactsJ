@@ -19,7 +19,7 @@ public class PorwiszAndPartners extends ByPage {
 
     public PorwiszAndPartners() {
         super(
-                "Porwisz and Partners",
+                "Porwisz & Partners",
                 "https://porwisz.pl/en/our-team/",
                 1
         );
@@ -61,15 +61,8 @@ public class PorwiszAndPartners extends ByPage {
     }
 
     private String[] getSocials(WebElement lawyer) {
-        String email = "";
-        String phone = "";
-        try {
-            email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
-            phone = lawyer.findElement(By.cssSelector("a[href^='tel:']")).getAttribute("href");
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-        }
-        return new String[]{email, phone};
+        List<WebElement> socials = lawyer.findElements(By.tagName("a"));
+        return super.getSocials(socials, false);
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {
@@ -78,7 +71,7 @@ public class PorwiszAndPartners extends ByPage {
         return Map.of(
                 "link", this.getLink(lawyer),
                 "name", this.getName(lawyer),
-                "role", "",
+                "role", this.getRole(lawyer),
                 "firm", this.name,
                 "country", "Poland",
                 "practice_area", "",

@@ -17,7 +17,7 @@ public class SchalastAndPartner extends ByNewPage {
 
     public SchalastAndPartner() {
         super(
-                "SchalastAndPartner",
+                "Schalast & Partner",
                 "https://www.schalast.com/en/team/all_attorneys.php",
                 1
         );

@@ -83,7 +83,7 @@ public class JonesDay extends ByPage {
     }
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerAttribute(lawyer, new By[]{}, "LINK", "href", LawyerExceptions::linkException);
+        return extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector("a")}, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) {

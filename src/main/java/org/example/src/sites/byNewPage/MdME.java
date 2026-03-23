@@ -90,9 +90,8 @@ public class MdME extends ByNewPage {
 
     private String constructEmail(String name) {
         if (name == null || name.isEmpty()) return "";
-        name = TreatLawyerParams.treatName(name)
-                .toLowerCase().trim();
-        return name.replace(" ", ".") + "@mdme.com";
+        String[] parts = TreatLawyerParams.treatNameForEmail(name).split(" ");
+        return parts[0] + "." + parts[parts.length - 1] + "@mdme.com";
     }
 
     @Override

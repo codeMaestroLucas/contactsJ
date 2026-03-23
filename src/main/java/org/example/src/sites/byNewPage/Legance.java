@@ -43,22 +43,14 @@ public class Legance extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "managing associate",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            List<WebElement> lawyers = wait.until(
+            return wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("professional-item")
+                            By.xpath("//a[starts-with(@href,'https://www.legance.com/professionals/') and @href!='https://www.legance.com/professionals/' and not(contains(@href,'/page/'))]")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -126,7 +118,7 @@ public class Legance extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.xpath("/html/body/div/div/main/div/article/header/div/div[1]"));
+        WebElement div = driver.findElement(By.cssSelector("article header"));
 
         String[] socials = this.getSocials(div);
 

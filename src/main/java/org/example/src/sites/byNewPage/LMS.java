@@ -68,17 +68,27 @@ public class LMS extends ByNewPage {
         this.openNewTab(lawyer);
 
         WebElement container = driver.findElement(By.className("img-lawyer-col"));
+
+        String role = this.getRole();
+        if (role.equals("Invalid Role")) return "Invalid Role";
+
         String[] socials = this.getSocials(container);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", name,
-                "role", "---- check in the filter in the site",
+                "role", role,
                 "firm", this.name,
                 "country", "Italy",
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "3906696491" : socials[1]
         );
+    }
+
+    private String getRole() {
+        String role = driver.findElement(By.cssSelector("nav.et-menu-nav > ul[id*='menu-lw-'] > li > a")).getAttribute("textContent");
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 }

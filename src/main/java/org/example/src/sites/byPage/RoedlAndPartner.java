@@ -19,7 +19,7 @@ public class RoedlAndPartner extends ByPage {
 
     public RoedlAndPartner() {
         super(
-                "Rödl And Partner",
+                "Rödl & Partner",
                 "https://www.roedl.lt/en/team/",
                 1
         );

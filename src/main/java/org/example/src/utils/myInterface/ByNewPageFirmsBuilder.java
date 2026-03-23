@@ -68,7 +68,7 @@ public class ByNewPageFirmsBuilder {
             new OgletreeDeakins(), new OneEssexCourt(), new Onsagers(), new ONVLaw(), new Oppenheim(),
             new Oxera(), new PhilippeAndPartners(), new PinneyTalfourdSolicitors(), new PMP(), new PortaAndConsulentiAssociati(),
             new Poulschmith(), new PrinzAndPartner(), new PrueferAndPartner(), new PuschWahlig(), new Racine(),
-            new ReinhardSkuhraWeiseAndPartnerGbR(), new RymarzZdortMaruta(), new SampsonCowardLLP(), new SayinLaw(), new SBGK(),
+            new isarpatentMunchen(), new RymarzZdortMaruta(), new SampsonCowardLLP(), new SayinLaw(), new SBGK(),
             new Schoups(), new Sherrards(), new SKWSchwarz(), new SlaughterAndMay(), new SRSLegal(),
             new Strelia(), new SZA(), new Szecskay(), new Valfor(), new VanOlmenAndWynant(),
             new Vischer(), new VossiusAndPartner(), new ZampaPartners(), new ZeposAndYannopoulos(), new WardynskiAndPartners(),

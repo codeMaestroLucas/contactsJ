@@ -68,7 +68,8 @@ public class PillsburyWinthropShawPittman extends ByPage {
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.cssSelector(".module--search-results__column--location > a")};
         String office = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-        if (office.equalsIgnoreCase("London")) return "England";
+        if (office.equalsIgnoreCase("london")) return "England";
+        if (office.equalsIgnoreCase("doha")) return "the UAE";
         return office;
     }
 
