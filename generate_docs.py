@@ -29,7 +29,18 @@ PACKAGES = {
         "src/main/resources/instructions/countryNameConventions.md",
         "mermaidStructure.txt",
     ],
-    "03exemplosByPage": [
+    "03maisDocumentação" : [
+        "src/main/java/org/example/src/utils/ContinentConfig.java",
+         "src/main/java/org/example/src/utils/EmailOfMonth.java",
+         "src/main/java/org/example/src/utils/ErrorLogger.java",
+         "src/main/java/org/example/src/utils/Extractor.java",
+         "src/main/java/org/example/src/utils/FirmsOMonth.java",
+         "src/main/java/org/example/src/utils/NoSleep.java",
+         "src/main/java/org/example/src/utils/TimeCalculator.java",
+         "src/main/java/org/example/src/utils/TreatLawyerParams.java",
+         "src/main/java/org/example/src/utils/Validations.java"
+    ],
+    "04exemplosByPage": [
         "src/main/java/org/example/src/sites/byPage/Roschier.java",
         "src/main/java/org/example/src/sites/byPage/TaylorWessing.java",
         "src/main/java/org/example/src/sites/byPage/Aera.java",
@@ -41,7 +52,7 @@ PACKAGES = {
         "src/main/java/org/example/src/sites/byPage/HannesSnellman.java",
         "src/main/java/org/example/src/sites/byPage/Kinstellar.java",
     ],
-    "04exemplosByNewPage": [
+    "05exemplosByNewPage": [
         "src/main/java/org/example/src/sites/byNewPage/SchellenbergWittmer.java",
         "src/main/java/org/example/src/sites/byNewPage/Gadens.java",
         "src/main/java/org/example/src/sites/byNewPage/ABGIP.java",

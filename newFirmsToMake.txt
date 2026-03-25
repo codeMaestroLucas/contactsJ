@@ -1,7 +1,811 @@
 BYNEWPAGE
 
 
+  {
+    "name": "LA GRO",
+    "link": "https://www.lagro.com/en/employees/",
+    "lawyers":
+    <div class="specialists__grid-item">
+    <a href="https://www.lagro.com/en/employee/iris-arts/" class="card">
+    <div class="card__image">
+    <img src="https://www.lagro.com/app/uploads/2023/10/iris-arts-3-590x590.png" alt="Foto " title="Foto " typeof="foaf:Image" class="image-responsive">
+    </div>
+    <div class="card__wrapper">
+    <div class="card__content">
+    <span class="card__title">
+    Iris Arts
+    </span>
+    <span class="card__subtitle">
+    Attorney at Law
+    </span>
+    </div>
+    <div class="card__actions">
+    <span class="card__action">
+    <svg class="icon icon--arrow-right" title="Arrow right" aria-label="arrow-right">
+    <use xlink:href="/app/themes/lgga/img/svgstore.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+
+    </span>
+    </div>
+    </div>
+    </a>
+    </div>
+    "lawyer":
+    <div class="contact-card">
+    <div class="contact-card__title">
+    Contact details
+    </div>
+    <div class="contact-card__details">
+    <strong> I. E. H. M.  (Iris)  Arts</strong>
+
+    <p>
+    </p><p>Attorney at Law&nbsp;</p>
+    <p>Intellectual property &amp; Technology | Life Sciences &amp; Healthcare</p>
+
+    <p></p>
+    <p>
+    </p>
+    </div>
+    <ul class="contact-card__information">
+    <li class="contact-card__information-item contact-card__information-item--phone">
+    <svg class="icon icon--phone" title="Phone" aria-label="phone">
+    <use xlink:href="/app/themes/lgga/img/svgstore.svg#phone" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+
+    <div class="contact-card__information-item--phone--container">
+    <a href="tel:+31 70 790 0130 ">+31 70 790 0130</a>
+    /
+    <a href="tel:+31 6 1422 2689">+31 6 1422 2689</a>
+    </div>
+    </li>
+    <li class="contact-card__information-item">
+    <svg class="icon icon--mail" title="Mail" aria-label="mail">
+    <use xlink:href="/app/themes/lgga/img/svgstore.svg#mail" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+
+    <a href="mailto:i.arts@lagro.com">i.arts@lagro.com</a>
+    </li>
+    <li class="contact-card__information-item">
+    <svg class="icon icon--linkedin" title="Linkedin" aria-label="linkedin">
+    <use xlink:href="/app/themes/lgga/img/svgstore.svg#linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+
+    <a href="https://www.linkedin.com/in/iris-arts-9b7543184/" target="_blank" rel="nofollow noopener noreferrer">LinkedIn</a>
+    </li>
+    </ul>
+
+    </div>
+  },
+  {
+    "name": "Windt Le Grand Leeuwenburgh",
+    "link": "https://www.windtlegal.com/nl/team",
+    "lawyers":
+    <div class="col-12 col-sm-12 col-md-4 mb-5
+    " data-area="all">
+
+
+
+    <a href="/nl/team/job-bijloo" class="card h-100 shadow-lg card-linkable">
+    <div class="card-img-wrap" style="background-image:url('/media/_thumbs/images/team%202021/Job%20Bijloo700x600-cover-75.jpg');"></div>
+
+    <div class="card-body">
+
+
+
+    <div>
+    <p class="card-title text-dark">Job Bijloo</p>
+
+    <p class="card-text">
+    <small class="d-block mt-2">Advocaat | Counsel</small>
+    </p>
+    </div>
+    <img src="/media/_thumbs/images/team%202021/Job%20Bijloo160x160-cover-90.jpg" width="160" height="160" class="card-img-small ml-auto d-none rounded" alt="">
+
+    </div>
+
+
+    <div class="card-footer">
+    <div class="invisible-filter-list d-none">
+    <span data-filter="Advocaat"></span>						<span data-filter="Financiering-en-zekerheden"></span><span data-filter="insolventie-herstructurering"></span>					</div>
+    </div>
+
+
+
+
+
+
+
+    </a>
+    </div>
+    "lawyer":
+    <aside class="col-lg-5 ml-0 mt-3 mt-lg-0 person-aside order-1 order-lg-2">
+
+
+
+
+    <div class="card shadow-lg">
+    <div class="card-img-wrap" style="background-image:url('/media/_thumbs/images/team%202021/Job%20Bijloo700x600-cover-75.jpg');"></div>
+
+    <div class="card-body">
+    <div class="text-right">
+    <a href="https://www.linkedin.com/in/job-bijloo-0297aa34/" target="_blank" class="text-primary ml-2" data-linkedinbtn=""><i class="fab fa-2x fa-linkedin"></i><span class="linkedin-label">Connect</span></a>							<a title="Download V-card" href="https://www.windtlegal.com/media/files/vcards/Job%20Bijloo.vcf" target="_blank" class="text-primary"><i class="far fa-2x fa-address-card"></i></a>						</div>
+
+
+
+    <p class="card-title text-dark">Job Bijloo</p>
+    <p class="card-text">
+    <span class="d-block mb-4">Advocaat | Counsel</span>							<i class="fas fa-fw text-left fa-phone"></i> 010 2617 500 <br>														<i class="fas fa-fw text-left fa-envelope"></i> <a href="mailto:j.bijloo@windtlegal.com">j.bijloo@windtlegal.com</a> <br>						</p>
+
+    </div>
+
+
+    <div class="card-footer">
+    <div class="invisible-filter-list d-none">
+    <span data-filter="Advocaat"></span>						<span data-filter="Financiering-en-zekerheden"></span><span data-filter="insolventie-herstructurering"></span>					</div>
+    </div>
+
+
+    <div class="card-footer mb-2">
+    <small class="d-block font-weight-bold">Erkenningen</small>
+
+    <div class="d-flex mt-2">
+
+    <div class="mr-auto my-auto">
+    <small class="d-block font-weight-bold">The Legal 500</small>
+    <small class="d-block">Recommended Lawyer 2025</small>
+    </div>
+
+    <figure class="small-logo">
+    <img src="/media/_thumbs/images/recognitions/rl-legal-500_202580x64-75.png" width="80" height="64">
+    </figure>
+
+    </div>
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+    </aside>
+  },
+  {
+    "name": "Rutgers & Posch",
+    "link": "https://www.rutgersposch.com/team/",
+    "lawyers":
+    <div class="pt-persons-col dispute-resolution restructuring-insolvency financial-institutions advocaten" data-name="Analbers" data-order="1" style="position: absolute; left: 0px; top: 0px;">
+    <a class="pt-persons" href="https://www.rutgersposch.com/team/rik-analbers/">
+
+    <figure class="pt-persons__image">
+    <img width="500" height="625" src="https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres-500x625.jpg" class="img-responsive wp-post-image" alt="" decoding="async" fetchpriority="high" srcset="https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres-500x625.jpg 500w, https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres-240x300.jpg 240w, https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres-819x1024.jpg 819w, https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres-768x960.jpg 768w, https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres-1229x1536.jpg 1229w, https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres-1638x2048.jpg 1638w, https://www.rutgersposch.com/wp-content/uploads/2021/11/Rik-Analbers-RP-lowres.jpg 1872w" sizes="(max-width: 500px) 100vw, 500px">								</figure>
+
+
+    <div class="pt-persons__content">
+    <h4 class="pt-persons__title">
+    Rik Analbers								</h4>
+
+
+    <p class="pt-persons__function">
+    Partner									</p>
+
+    </div>
+    </a>
+    </div>
+    "lawyer":
+    <div class="pt-person__data">
+    <div class="pt-person__share">
+
+
+    <a class="pt-person__share__item" href="https://www.rutgersposch.com/wp-content/uploads/1982/01/Rik-Analbers.vcf">
+    <img src="https://www.rutgersposch.com/wp-content/themes/rutgersposch/images/icon-vcard.svg" alt="vCard">
+
+    <span>
+    vCard									</span>
+    </a>
+
+
+    <a class="pt-person__share__item" href="
+    mailto:
+    ?subject=Interessante informatie over Rik Analbers									&amp;body=De informatie op deze website is mogelijk interessant voor jou: https://www.rutgersposch.com/team/rik-analbers/								">
+
+    <img src="https://www.rutgersposch.com/wp-content/themes/rutgersposch/images/icon-share.svg" alt="Delen">
+
+    <span>
+    Delen								</span>
+    </a>
+    </div>
+
+    <div class="pt-person__info pt-person__info--contact">
+    <h3>
+    Contact							</h3>
+
+
+    <a href="tel:+31208913943">
+    +31 20 891 3943								</a>
+
+
+
+    <a href="tel:+31611723929">
+    +31 6 1172 3929								</a>
+
+
+
+    <a href="mailto:rik.analbers@rutgersposch.com">
+    rik.analbers@rutgersposch.com								</a>
+
+    </div>
+
+
+    <div class="pt-person__info">
+    <h3>
+    Rechtsgebieden								</h3>
+
+    <ul>
+
+    <li>
+    <a href="https://www.rutgersposch.com/practice-areas/dispute-resolution/">
+    Dispute Resolution											</a>
+    </li>
+
+
+    <li>
+    <a href="https://www.rutgersposch.com/practice-areas/restructuring-insolvency/">
+    Restructuring &amp; Insolvency											</a>
+    </li>
+
+    </ul>
+    </div>
+
+
+
+    <div class="pt-person__info">
+    <h3>
+    Sectoren								</h3>
+
+    <ul>
+
+    <li>
+    <a href="https://www.rutgersposch.com/sectors/financial-institutions/">
+    Financial Institutions											</a>
+    </li>
+
+    </ul>
+    </div>
+
+
+
+
+    <div class="pt-person__info pt-person__info--social">
+    <h3>
+    Volg mij								</h3>
+
+    <a href="https://www.linkedin.com/in/rik-analbers-7017a324/">
+    LinkedIn								</a>
+    </div>
+
+    </div>
+  },
+  {
+    "name": "ACT LEGAL",
+    "link": "https://actlegal.com/professionals?page=3",
+    "lawyers":
+    <a href="/professionals/barbora-sustrova" class="professional professional-7"><img class="image" src="https://actlegal.com/_nuxt/professionals-bg-cz.CwFq2f-9.webp"><div class="professional-image"><img src="https://api.actlegal.com/uploads/collection/mgr.-barbora-austrova-actlegal-czechia.webp" alt="Mgr. Barbora Šustrová" loading="lazy"></div><div class="professional-content"><h2>Mgr. Barbora Šustrová</h2><p>Senior Associate <br> Czech Office</p><div class="professional-arrow">View profile</div></div></a>
+    "lawyer":
+    <div class="professional-banner-content-info"><h1>Mgr. Barbora Šustrová</h1><p>Senior Associate <br> Czech Office</p><div class="professional-socials"><a href="tel:+420 222 537 500"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAA7CAYAAADFJfKzAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAa0SURBVGhD5Zt7UFRVHMd/i8DyshkBKw1LYzLMzMdM4WBmjTLSTGLiWJRmM/6h9JiEKQ3MGbU0BZRRZhxhahKdRsUiJOlhAyFpVKQkEimNkQoJmqWmsi7L7vb9rdyVZXe5u/ee67J6Zi7cuXvO9/w+53de95xzdaRRuHr16lBIP4srzmq13on/9kun0w3Gs7/x7Fz3dZb/43kT/u8JDw8/o4VZOpGiRqMxzmQyzYTRs6D7GC4l+lakq0VhlAYFBZXp9frjomxUYoxT3vDiAhi3BJBxogyTdKDLsDkRERFb1WqrggVkMoxZA8iH1Roilx75NCCfLFTxL+TiuvtdEWxHR0c8Mt8I0YlKM1aR7ntALw0LC6vxVsMrWADqALoGmWR5m5EG8d8H8HKAcxv3KHgMC9BQgO6E6kyPlG9OpM8APA/ABk+y8wgWbXMIxLitjPdE9CbHOQzg6QD+Ry5fWdgrV66MgxCD8rjZX0NzYGDgMximjvVlYJ+wqLrRqLp1EBjWXyl72NUCD0+AY8573RsDNASgFUg4yQ9AJRMPAvgpAHe5stmtZ9FOdyPBHD8ClUwtxFic5jEs2mkmSmetH4LaTIbtGfAwzwMcgpNnMb8d1dXV1YBYA/wVFnabAwICYkNDQ0/1ZHCCRfXdgwj9aSxVVOboc4oxn051C9s9DfxRkXo/TITqnIDq/INkmoNn4VX+wRfzXa2KqgadlX00scPCq6lwPU8Hb6kA774A7+6ydVz8B5DBgP0dt/fdUqTXYU4CNhbQFhssrzCgB+5zquXPhYCp5Che8bDBChtXLzdTSfnP1NHjpStAH0kpsxMp1IelJY27Eux+PJii1p6Dm3NpR1O7k8z9016nt5JHqJVXk34fOqokHdrrQLRXnjwHq1HjtAfyc2jnCV4odAzRMVPo3aXJauXVpO9Eux3MKw/CeuETn2yivAOnnYwKixxG61emqzFWdVrulXVorxtxs1i1GgQ664opvajWWSokkjbkvOPrdpvNsLsA+7wIWDIdp5VLPqBzFkc1nX4Qrc5dToOEZKJYZJsOs6avkXy6YoleCYvzsqj6ZKfD05FTF1L6zAdFZaFUZx/DHkHqsUoVeqf7o2o3bSj9yf44YcYCmpc4WpS8Gp16rsbtqMZ3qVFxSGs4RauX59MZEybZMxbS/ESfe9RmHkads+zZa7jXC4OFUEv1h7S25Bg9MTeDUuNjREqr0TKK9yybY7lE6958j1oGDKS0pStoDO/f+ThInhXaZu1Mrd9RZl4Z6Yc9SssyUsVWHWUFVy+8N+5pR+PnH1FhRSNFPZRIK9KSlJkoLlUZwxZB72Vxmo5K3368nj6tbaeBsdMoe7FrYNPpGtq8+xDFTZhMj08eTxFBmlhTyNPFdajPb2sibxM1UkXRJiqtO0sxI+NpUdpzFBl4I7czh8spd3sVGXu8KQUGh1Jcwmx6NUXobssq9iwfBSjVDtbWY9HerflUcaSFQqKG09yXXqRHRkRRW92XtH5bJRlc7sM9QLn5aRQuzrBZ/NZzB7zLZxuEDj+ubDxWvp0KKxuo02ylIffeQxdaWuma2w1HobD81hNte58VPWXsyxmd55tpW34B/XLRLOMzobDX32e7YXm7YIu4GiOv1FRbTVX7D9DR1gtuIguFfQWwBTZYg8Ew3GKx/ClvovgYxrYm2lHyDbX9d5kuXbxMHZ0mMlusFHH3JFqzLIUEdMxoqdahWDBvty+lYo58HHNk309krVbiZgxbRJVsPbw6jsVuv3VjqQjh3aMo0TGiitTXOqi+v6L62nkc6gpgkwD7la+NFJU/YJ8GLC9O2IJTwwCwkGVVUQYr1QFoNUCf7JneCRYTjEmIeFBpJv0lXe8dPJee5Yfaz5e1LRKAZmPGlNk7F5f9e/dJtmJE9sczFSUAnePq5Jvbwaz7tAzv19rGKH8IsPkoxtR4gPJSk1Poc+RGdY6BAB+I9IdzUK2AnAiv/uXOMbLTFPTOYyHCHvblRpxcxTJgWzIe25J88MVtkIXllPBuJLy8F7cJcrn64PcaeHMGHPKvXN4ewXYDBwE4H/cuD1TJZaTR7wUAfQOgWKWWDx7DSlJ4912E+824fHlOil+GX0NnVCiPeCOG17CcFMcSRuPDB979m+ZNZiLioklV4EOJdLTPRm/1FMFKmeA9eKrZbGZozb8RQJ6HcGotE6fWKr2FlOKrgpVE0GPPx30WoLX4+uM3QK5C2+SDo6qCEFjJgtviux5XxS19sYU2xqsfvNvDO4W2r7ZQA3p/scVfa/EKJ3/Do9kXW/8DiNKFeoL/PkgAAAAASUVORK5CYII=" alt=""><div class="professional-socials-tooltip">+420 222 537 500</div></a><a href="tel:+420 734 311 388"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAYAAACMGIOFAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAVGSURBVGhD5ZtbbBRVGIDP7FbbbRevgA8GL2gUeUGNiUmtRqLx8iC4XEItD9aYGHwQJRLaBxoogVCDRPRFDQ9CFBWoljbGUF+4aIAYU2gkERNNiCQGNJoY2+4ubFu/f8us7HZ3e2bmzO5JmeSk25nz/+f/5j/nP9dxVAjX+Pj49cPDw4tQ/QDpliuT4zizeP4H9y4UpFMNDQ09PB8ybZJjSiGG3zQyMpJA31LSk6RrfOhOIfMNuroB7gP4Hx86JokEhkyn0/MzmUwXmp8zYVCBjgM1NTUdtbW1p4Po9g2ZTCZvGx0d3czbXokBkSBGTCE7xvNPIpHIhlgsdtZPOZ4hqUozaW8dwK2iwGv9FOpT5iJlv0813kLZf3rR4QkS7y3Ee/sp5GYvhZjMC+hf0Wh0OV49pKtXG3JoaGgtcNL2orrKQ8w3ii1t9fX123XKmBKSNzeD6rkTpSt0FFYyD7btpfq2YptE5ZJXWchUKnUPkVNC+b2VNN5jWYMEpUVU399KyZWE5C059Ht7EVzusdCKZxePxuPxZs+QAHYh3FZxi/0X2EnV3VhMvKgnAVwG4H7/5VVHUuIGwWhfYemTIImiC8h8nIyx6pgaqNQkzmmk6p66UsskSCKpZFgQqKjqCp+k2j5YEhLA53nYU10bjZSeAPSAqynPk9PAiy5XnjdzkNPIiy5ozptZSBprhIg6YLItHt63S31/TnM66ERU0+KXVeNd9Ubq6mUlOW9mIZkTzmNk85OpEs52b1fbjv6uxj0pjKq1m7rU3BvMzdqYi97HXPRMFpJuo51uY6snm8pk7lvXrg6mLnlW1/zmevXY7Td6lislANMa+s0dWUja4wn+PGxKuy2Q8PQTZZ9xZJZBe5TGM+WMRPclWAR5EU/OkkF4M6Cf6QLo5JuAnKM2dr2kZmgIZNKDqmNDt1piuLpK0VTZFxza4w5+vK5hi3aWCci56t33XtFcsjut1qz+SCXCgXxLID83PSG2CRLP7HYIOgf58bS2mzQyWgbZL5DGB+SWQQ5KdT1PdZWlfGOXTZAE1QviSVkEqjVGiCKbIDEnfdV4cvq3yasguvZKm9xFvX1xGrfJD2VYZ3zpcSLw3Kra169QcY23l0n/qLZs+1otDWHEQ/Gd4knj6zoWDdDlFSdkFnId3pTtbWPdiEWQMguZ6c4njQ7tLIKcmE+KP/HkG3j0HY3mo5WlGGRj4jW18I7/xQ/17VHHfv07T5/plQGUvwrkB6Gs8djiSXa77pQt+NxqAGPYM6a26GxYyKJm/sx2wTypKqGtu1Z7SRLIZ4GUWJO/rkN38i33mrQansWZADwC4OOuiXmLVwSgR8jwncX2a5lGs2uk65CduexVbFdLNkoWa2mzM1MvEVUGOLlrEiTenDM2NvYDb2O2nQylrZIze0TUh/DiubKQ8pDzOo8Cepif5tbsw39jlwB8gi5D4kreVXJB2fTWQdiM7pZAsXLKrpoDugfhlrANDKqfavop0VTO+BW9ykIiHKNbGQA026laeg3QBpuwMekLUoQu75V8zE8bI+5XALYA+G85B2ht8sjBJYLRVpvO9WDL23QV6wCcchtUC9J9S4C2EHV38r/RLWGPzSAJWGux8zq+q2uhoBzmBbSD+62kGo8GBsmeQXg33cSmcufoPEfXchZxuPBuzr7K0dAlJE81wiOpVMcezri21dXV/eJRNps9sHFEX/lioJMUxhn0L9G7mbZ30g+cKxMY0lXkfiZBe1nGvadIdT4MSyPTj64vAOu15muCYiAYGcfD8vnE/aTC70JmyxiT+xX7LuQ/Rq2OeP1iudMAAAAASUVORK5CYII=" alt=""><div class="professional-socials-tooltip">+420 734 311 388</div></a><a href="mailto:barbora.sustrova@actlegal-czechia.com"><img src="data:image/png;base64,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" alt="Share via email"><div class="professional-socials-tooltip">barbora.sustrova@actlegal-czechia.com</div></a><!----><span><img src="data:image/png;base64,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" alt=""></span></div></div>
+  },
+  {
+    "name": "LEXENCE",
+    "link": "https://www.lexence.com/en/our-people/?query=&filter_function%5B%5D=partner-en",
+    "lawyers":
+    <div class="member-tile w-full md:w-6/24 relative h-full cursor-pointer">
+    <a href="https://www.lexence.com/en/people/anneke-nijk/" class="block visual js-member " style="padding-top:127.77777777778%;">
+
+
+
+
+    <div class="h-full absolute js-member-image absolute w-full h-full left-0 top-0">
+    <picture>
+    <!-- min-width: 1280px -->
+    <source media="(min-width: 80em)" data-srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-1600x1920.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-scaled.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-scaled.jpeg 3x" srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-1600x1920.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-scaled.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-scaled.jpeg 3x">
+
+    <!-- min-width: 450px -->
+    <source media="(min-width: 28.125em)" data-srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-853x1024.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-1707x2048.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-1707x2048.jpeg 3x" srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-853x1024.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-1707x2048.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-1707x2048.jpeg 3x">
+
+    <!-- max-width: 449px -->
+    <source data-srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-400x480.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-800x960.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-800x960.jpeg 3x" srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-400x480.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-800x960.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-800x960.jpeg 3x">
+
+    <img alt="" class="visual__image js-lazy entered loaded" data-src="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-853x1024.jpeg " width="2133" height="2133" data-ll-status="loaded" src="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-07-website-853x1024.jpeg " style="opacity: 1;">
+    </picture>
+    </div>
+
+
+
+
+
+    <div class="h-full absolute opacity-0 js-member-image-hover absolute w-full h-full left-0 top-0">
+    <picture>
+    <!-- min-width: 1280px -->
+    <source media="(min-width: 80em)" data-srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-1600x1920.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-scaled.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-scaled.jpeg 3x" srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-1600x1920.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-scaled.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-scaled.jpeg 3x">
+
+    <!-- min-width: 450px -->
+    <source media="(min-width: 28.125em)" data-srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-853x1024.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-1707x2048.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-1707x2048.jpeg 3x" srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-853x1024.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-1707x2048.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-1707x2048.jpeg 3x">
+
+    <!-- max-width: 449px -->
+    <source data-srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-400x480.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-800x960.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-800x960.jpeg 3x" srcset="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-400x480.jpeg 1x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-800x960.jpeg 2x, https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-800x960.jpeg 3x">
+
+    <img alt="" class="visual__image js-lazy entered loaded" data-src="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-853x1024.jpeg " width="2133" height="2133" data-ll-status="loaded" src="https://www.lexence.com/wp-content/uploads/2022/01/Anneke_Nijk-05-website-853x1024.jpeg " style="opacity: 1;">
+    </picture>
+    </div>
+
+    </a>
+    <div class="flex flex-col gap-x-8 px-5 pt-6 pb-8 bg-white h-auto md:pt-8 md:pb-12 md:px-10">
+    <a class="block" href="https://www.lexence.com/en/people/anneke-nijk/">
+    <div class="heading heading--6 ">
+    <span class="font-bold">Anneke </span><br>
+    <span class="font-semibold">Nijk</span>
+    </div>
+    <div class="pt-4 heading heading--9 text-darkblue uppercase flex space-x-1.5 ">
+    <p>Lawyer,</p><p>Partner</p>            </div>
+    </a>
+    </div>
+    </div>
+    "lawyer":
+    <div class="px-2/24 md:px-1/24 lg:px-2/24">
+    <div class="flex flex-row flex-wrap gap-2">
+    <a class="block" href="/en/our-people/?filter_expertise[]=employment-law" title="link to expertise">
+
+
+
+    <div class="bg-oker py-2 px-3 block">
+    <p class="text-white heading heading--9 uppercase">Employment law</p>
+    </div>
+
+    </a>
+    </div>
+
+    <h1 class="pt-3 heading heading--1">
+    <span>
+    Anneke                        </span>
+    <span class="block font-semibold">
+    Nijk                        </span>
+    </h1>
+
+    <div class="heading heading--9 pt-4 text-darkblue uppercase flex space-x-1.5">
+    <p>Lawyer,</p>                        <p>Partner</p>                                            </div>
+
+    <div class="flex justify-between pt-8 md:pt-10">
+    <div class="member-contact-details flex flex-col space-y-3 md:space-y-4">
+    <div class="flex items-center">
+
+    <i class="icon w-5 h-5 flex justify-center items-center">
+    <svg viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m12.5 9.178-1.077 1.077a.833.833 0 0 1-1.175.003L8.594 8.621a.833.833 0 1 1 1.172-1.184l1.068 1.073 6.324-6.344H.833A.833.833 0 1 1 .833.5h17.502C19.255.5 20 1.244 20 2.167v11.665c0 .92-.744 1.667-1.665 1.667H5.833a.833.833 0 0 1 0-1.667h11.322L12.5 9.178Zm5.835-5.834L13.678 8l4.656 4.654v-9.31ZM1.668 5.5c0-.46.373-.834.835-.834h4.162a.832.832 0 1 1 0 1.667H2.503a.832.832 0 0 1-.835-.833Zm1.666 5c0-.46.37-.834.833-.834h2.5c.46 0 .834.37.834.833 0 .46-.37.834-.833.834h-2.5a.831.831 0 0 1-.834-.834Z" fill="#000"></path></svg>
+    </i>
+    <a class="text-base ml-3 md:text-lg md:ml-6 text-aubergine a--underline" href="mailto:a.nijk@lexence.com">a.nijk@lexence.com</a>
+    </div>
+    <div class="flex items-center">
+
+    <i class="icon w-5 h-4 flex justify-center items-center">
+    <svg viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.333 15.667V14H1.666v1.667h2.5a.834.834 0 0 1 1.667 0h2.5Zm0-10H1.666v6.666h6.667V5.666Zm0-1.667V2.334H1.666V4h6.667ZM.835.666h8.33c.461 0 .835.372.835.833V16.5c0 .46-.374.832-.835.832H.835A.833.833 0 0 1 0 16.501V1.499c0-.46.374-.833.835-.833Z" fill="#000"></path></svg>
+    </i>
+    <a class="text-base ml-3 md:text-lg md:ml-6 text-aubergine a--underline" href="tel:+31 20 573 6854">+31 20 573 6854</a>
+    </div>
+    <div class="flex items-center">
+
+    <i class="icon w-5 h-4 flex justify-center items-center">
+    <svg viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.333 15.667V14H1.666v1.667h2.5a.834.834 0 0 1 1.667 0h2.5Zm0-10H1.666v6.666h6.667V5.666Zm0-1.667V2.334H1.666V4h6.667ZM.835.666h8.33c.461 0 .835.372.835.833V16.5c0 .46-.374.832-.835.832H.835A.833.833 0 0 1 0 16.501V1.499c0-.46.374-.833.835-.833Z" fill="#000"></path></svg>
+    </i>
+    <a class="text-base ml-3 md:text-lg md:ml-6 text-aubergine a--underline" href="tel:+31 6 1241 0909">+31 6 1241 0909</a>
+    </div>
+    </div>
+
+    <a class="flex items-center justify-center w-10 h-10 -translate-y-2 rounded-full bg-darkblue md:-translate-y-1" href="https://nl.linkedin.com/in/annekenijk" target="_blank" rel="noopener">
+
+    <i class="icon w-4 h-4 shrink-0 transform -translate-y-0.5 flex justify-center items-center">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.996 14H14V8.864c0-2.512-.541-4.447-3.477-4.447-1.412 0-2.36.775-2.746 1.51h-.041V4.652H4.952v9.346H7.85V9.371c0-1.218.23-2.397 1.74-2.397 1.487 0 1.509 1.39 1.509 2.475V14h2.896Z" fill="#fff"></path><path d="M.231 4.653h2.903V14H.231V4.653Z" fill="#fff"></path><path d="M1.681 0C.753 0 0 .753 0 1.681s.753 1.697 1.681 1.697 1.681-.769 1.681-1.697S2.61 0 1.682 0Z" fill="#fff"></path></svg>
+    </i>
+    </a>
+    </div>
+
+    <div class="flex flex-col mt-10 md:mt-14">
+
+
+    <div class="relative py-6 mt-3 text-white px-7 bg-aubergine js-toggle" data-state="">
+    <div class="flex items-stretch justify-between cursor-pointer js-toggle-trigger">
+    <p class="mr-6 font-bold heading heading--7">
+    Recent cases                                </p>
+
+    <div class="flex items-center justify-end w-10">
+
+    <i class="icon w-3 h-2.5 shrink-0 text-white js-toggle-icon flex justify-center items-center">
+    <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.254 4.745h4.562l-.001 2.511-4.56-.001v4.561h-2.51l-.001-4.56-4.56-.001v-2.51h4.561L4.744.185l2.51-.001v4.561Z" fill="currentColor"></path></svg>
+    </i>
+    </div>
+    </div>
+
+    <div class="overflow-hidden js-toggle-content" style="height: 0px;">
+    <ul class="flex flex-col space-y-0.5 pt-6">
+    <li class="flex items-start js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/en/article/lexence-has-assisted-the-shareholders-of-thebalux-holding-b-v-in-the-sale-of-their-stake-to-svedbergs-group/">
+    Lexence has assisted the shareholders of Thebalux Holding B.V. in the sale of their stake to Svedbergs Group.                                            </a>
+    </li>
+    <li class="flex items-start js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/en/article/aac-capital-sluit-deal-met-gardendreams/">
+    AAC Capital sluit deal met Gardendreams                                            </a>
+    </li>
+    <li class="flex items-start js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/en/article/netcompany-acquires-qdelft/">
+    Netcompany acquires QDelft                                            </a>
+    </li>
+    <li class="flex items-start js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/en/article/logistyx-technologies-acquires-transparix/">
+    Logistyx Technologies acquires Transparix                                            </a>
+    </li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="relative py-6 mt-3 text-white px-7 bg-aubergine js-toggle" data-state="">
+    <div class="flex items-stretch justify-between cursor-pointer js-toggle-trigger">
+    <p class="mr-6 font-bold heading heading--7">
+    Publications                                    </p>
+
+    <div class="flex items-center justify-end w-10 text-white">
+
+    <i class="icon w-3 h-2.5 shrink-0 js-toggle-icon flex justify-center items-center">
+    <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.254 4.745h4.562l-.001 2.511-4.56-.001v4.561h-2.51l-.001-4.56-4.56-.001v-2.51h4.561L4.744.185l2.51-.001v4.561Z" fill="currentColor"></path></svg>
+    </i>
+    </div>
+    </div>
+
+    <div class="overflow-hidden js-toggle-content" style="height: 0px;">
+    <ul class="flex flex-col space-y-0.5 pt-6">
+    <li class="flex items-stretch shrink-0 js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon  flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="flex items-center justify-between w-full font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/wp-content/uploads/2024/12/19122024_Def_FloorAnneke_Infosheet_Positie-ZZPers.pdf" target="_blank" rel="noopener">
+    <span class="block">
+    19122024_Def_FloorAnneke_Infosheet_Positie ZZP’ers                                                        </span>
+
+
+    <i class="icon w-[calc(46/16*1rem)] shrink-0 ml-2 pr-1 text-oker js-member-list-icon flex justify-center items-center">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.167 3.333h-4.17L5 16.667h9.998l.002-7.5h-5a.833.833 0 0 1-.833-.834v-5ZM10.833 7.5H15l-4.167-4.167V7.5ZM4.996 1.667h6.09c.23 0 .549.133.708.292l4.58 4.582c.162.161.293.482.293.708v9.418c0 .92-.746 1.666-1.669 1.666H5.002a1.669 1.669 0 0 1-1.669-1.666V3.333c0-.92.747-1.666 1.663-1.666Zm.837 12.5c0-.46.375-.833.83-.833h6.674a.833.833 0 0 1 0 1.667H6.663a.83.83 0 0 1-.83-.834Zm0-2.5c0-.46.376-.833.837-.833h3.326a.833.833 0 1 1 0 1.666H6.67a.833.833 0 0 1-.837-.833Z" fill="currentColor"></path><path d="M23.02 14h1.452v-3.108h1.44c1.56 0 2.724-1.08 2.724-2.664 0-1.596-1.116-2.628-2.724-2.628H23.02V14Zm1.452-4.452V6.944h1.368c.792 0 1.308.54 1.308 1.284 0 .756-.516 1.32-1.308 1.32h-1.368ZM31.093 14h3.216c2.7 0 4.248-1.596 4.248-4.2 0-2.448-1.548-4.2-4.248-4.2h-3.216v1.272h.744v5.856h-.744V14Zm2.196-1.332V6.944h1.02c1.74 0 2.736 1.116 2.736 2.856 0 1.812-1.008 2.868-2.736 2.868h-1.02ZM41.322 14h1.452v-3.432h3.384V9.224h-3.384V6.956h3.624V5.6h-5.076V14Z" fill="currentColor"></path></svg>
+    </i>
+    </a>
+    </li>
+    <li class="flex items-stretch shrink-0 js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon  flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="flex items-center justify-between w-full font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/wp-content/uploads/2024/03/Gebruik-mobiele-telefoon-op-werkvloer-kan-ik-dat-verbieden_.pdf" target="_blank" rel="noopener">
+    <span class="block">
+    Gebruik mobiele telefoon op werkvloer – kan ik dat verbieden_                                                        </span>
+
+
+    <i class="icon w-[calc(46/16*1rem)] shrink-0 ml-2 pr-1 text-oker js-member-list-icon flex justify-center items-center">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.167 3.333h-4.17L5 16.667h9.998l.002-7.5h-5a.833.833 0 0 1-.833-.834v-5ZM10.833 7.5H15l-4.167-4.167V7.5ZM4.996 1.667h6.09c.23 0 .549.133.708.292l4.58 4.582c.162.161.293.482.293.708v9.418c0 .92-.746 1.666-1.669 1.666H5.002a1.669 1.669 0 0 1-1.669-1.666V3.333c0-.92.747-1.666 1.663-1.666Zm.837 12.5c0-.46.375-.833.83-.833h6.674a.833.833 0 0 1 0 1.667H6.663a.83.83 0 0 1-.83-.834Zm0-2.5c0-.46.376-.833.837-.833h3.326a.833.833 0 1 1 0 1.666H6.67a.833.833 0 0 1-.837-.833Z" fill="currentColor"></path><path d="M23.02 14h1.452v-3.108h1.44c1.56 0 2.724-1.08 2.724-2.664 0-1.596-1.116-2.628-2.724-2.628H23.02V14Zm1.452-4.452V6.944h1.368c.792 0 1.308.54 1.308 1.284 0 .756-.516 1.32-1.308 1.32h-1.368ZM31.093 14h3.216c2.7 0 4.248-1.596 4.248-4.2 0-2.448-1.548-4.2-4.248-4.2h-3.216v1.272h.744v5.856h-.744V14Zm2.196-1.332V6.944h1.02c1.74 0 2.736 1.116 2.736 2.856 0 1.812-1.008 2.868-2.736 2.868h-1.02ZM41.322 14h1.452v-3.432h3.384V9.224h-3.384V6.956h3.624V5.6h-5.076V14Z" fill="currentColor"></path></svg>
+    </i>
+    </a>
+    </li>
+    <li class="flex items-stretch shrink-0 js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon  flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="flex items-center justify-between w-full font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/wp-content/uploads/2023/03/Eindversie-Infosheet-Wet-bescherming-klokkenluiders-1-gecomprimeerd.pdf" target="_blank" rel="noopener">
+    <span class="block">
+    Infosheet Wet bescherming klokkenluiders                                                        </span>
+
+
+    <i class="icon w-[calc(46/16*1rem)] shrink-0 ml-2 pr-1 text-oker js-member-list-icon flex justify-center items-center">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.167 3.333h-4.17L5 16.667h9.998l.002-7.5h-5a.833.833 0 0 1-.833-.834v-5ZM10.833 7.5H15l-4.167-4.167V7.5ZM4.996 1.667h6.09c.23 0 .549.133.708.292l4.58 4.582c.162.161.293.482.293.708v9.418c0 .92-.746 1.666-1.669 1.666H5.002a1.669 1.669 0 0 1-1.669-1.666V3.333c0-.92.747-1.666 1.663-1.666Zm.837 12.5c0-.46.375-.833.83-.833h6.674a.833.833 0 0 1 0 1.667H6.663a.83.83 0 0 1-.83-.834Zm0-2.5c0-.46.376-.833.837-.833h3.326a.833.833 0 1 1 0 1.666H6.67a.833.833 0 0 1-.837-.833Z" fill="currentColor"></path><path d="M23.02 14h1.452v-3.108h1.44c1.56 0 2.724-1.08 2.724-2.664 0-1.596-1.116-2.628-2.724-2.628H23.02V14Zm1.452-4.452V6.944h1.368c.792 0 1.308.54 1.308 1.284 0 .756-.516 1.32-1.308 1.32h-1.368ZM31.093 14h3.216c2.7 0 4.248-1.596 4.248-4.2 0-2.448-1.548-4.2-4.248-4.2h-3.216v1.272h.744v5.856h-.744V14Zm2.196-1.332V6.944h1.02c1.74 0 2.736 1.116 2.736 2.856 0 1.812-1.008 2.868-2.736 2.868h-1.02ZM41.322 14h1.452v-3.432h3.384V9.224h-3.384V6.956h3.624V5.6h-5.076V14Z" fill="currentColor"></path></svg>
+    </i>
+    </a>
+    </li>
+    <li class="flex items-stretch shrink-0 js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon  flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="flex items-center justify-between w-full font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/wp-content/uploads/2024/12/Infosheet_Positie-ZZPers-3.pdf" target="_blank" rel="noopener">
+    <span class="block">
+    Infosheet_Positie ZZP’ers                                                        </span>
+
+
+    <i class="icon w-[calc(46/16*1rem)] shrink-0 ml-2 pr-1 text-oker js-member-list-icon flex justify-center items-center">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.167 3.333h-4.17L5 16.667h9.998l.002-7.5h-5a.833.833 0 0 1-.833-.834v-5ZM10.833 7.5H15l-4.167-4.167V7.5ZM4.996 1.667h6.09c.23 0 .549.133.708.292l4.58 4.582c.162.161.293.482.293.708v9.418c0 .92-.746 1.666-1.669 1.666H5.002a1.669 1.669 0 0 1-1.669-1.666V3.333c0-.92.747-1.666 1.663-1.666Zm.837 12.5c0-.46.375-.833.83-.833h6.674a.833.833 0 0 1 0 1.667H6.663a.83.83 0 0 1-.83-.834Zm0-2.5c0-.46.376-.833.837-.833h3.326a.833.833 0 1 1 0 1.666H6.67a.833.833 0 0 1-.837-.833Z" fill="currentColor"></path><path d="M23.02 14h1.452v-3.108h1.44c1.56 0 2.724-1.08 2.724-2.664 0-1.596-1.116-2.628-2.724-2.628H23.02V14Zm1.452-4.452V6.944h1.368c.792 0 1.308.54 1.308 1.284 0 .756-.516 1.32-1.308 1.32h-1.368ZM31.093 14h3.216c2.7 0 4.248-1.596 4.248-4.2 0-2.448-1.548-4.2-4.248-4.2h-3.216v1.272h.744v5.856h-.744V14Zm2.196-1.332V6.944h1.02c1.74 0 2.736 1.116 2.736 2.856 0 1.812-1.008 2.868-2.736 2.868h-1.02ZM41.322 14h1.452v-3.432h3.384V9.224h-3.384V6.956h3.624V5.6h-5.076V14Z" fill="currentColor"></path></svg>
+    </i>
+    </a>
+    </li>
+    <li class="flex items-stretch shrink-0 js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon  flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="flex items-center justify-between w-full font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.lexence.com/wp-content/uploads/2024/10/Pas-op_-opstarttijd-voor-een-dienst-kan-betaalde-arbeidstijd-zijn.pdf" target="_blank" rel="noopener">
+    <span class="block">
+    Pas op_ opstarttijd voor een dienst kan betaalde arbeidstijd zijn                                                        </span>
+
+
+    <i class="icon w-[calc(46/16*1rem)] shrink-0 ml-2 pr-1 text-oker js-member-list-icon flex justify-center items-center">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.167 3.333h-4.17L5 16.667h9.998l.002-7.5h-5a.833.833 0 0 1-.833-.834v-5ZM10.833 7.5H15l-4.167-4.167V7.5ZM4.996 1.667h6.09c.23 0 .549.133.708.292l4.58 4.582c.162.161.293.482.293.708v9.418c0 .92-.746 1.666-1.669 1.666H5.002a1.669 1.669 0 0 1-1.669-1.666V3.333c0-.92.747-1.666 1.663-1.666Zm.837 12.5c0-.46.375-.833.83-.833h6.674a.833.833 0 0 1 0 1.667H6.663a.83.83 0 0 1-.83-.834Zm0-2.5c0-.46.376-.833.837-.833h3.326a.833.833 0 1 1 0 1.666H6.67a.833.833 0 0 1-.837-.833Z" fill="currentColor"></path><path d="M23.02 14h1.452v-3.108h1.44c1.56 0 2.724-1.08 2.724-2.664 0-1.596-1.116-2.628-2.724-2.628H23.02V14Zm1.452-4.452V6.944h1.368c.792 0 1.308.54 1.308 1.284 0 .756-.516 1.32-1.308 1.32h-1.368ZM31.093 14h3.216c2.7 0 4.248-1.596 4.248-4.2 0-2.448-1.548-4.2-4.248-4.2h-3.216v1.272h.744v5.856h-.744V14Zm2.196-1.332V6.944h1.02c1.74 0 2.736 1.116 2.736 2.856 0 1.812-1.008 2.868-2.736 2.868h-1.02ZM41.322 14h1.452v-3.432h3.384V9.224h-3.384V6.956h3.624V5.6h-5.076V14Z" fill="currentColor"></path></svg>
+    </i>
+    </a>
+    </li>
+    <li class="flex items-stretch shrink-0 js-member-list">
+
+    <i class="icon w-2 h-2 shrink-0 transform translate-y-2 js-member-list-icon  flex justify-center items-center">
+    <svg viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.307 3.81 6.5 0 10.693 2.098 13l3.807-4.193L8 6.5 5.905 4.193l-.002-.001L2.098 0 0 2.307Z" fill="#D4A500"></path></svg>
+    </i>
+
+    <a class="flex items-center justify-between w-full font-display font-bold js-member-list-text pl-1.5 pr-2.5" href="https://www.evofenedex.nl/kennis/juridisch/arbeidsrecht/zorgvuldig-reorganiseren-begint-met-goede-onderbouwing-van-noodzaak" target="_blank" rel="noopener">
+    <span class="block">
+    Zorgvuldig reorganiseren begint met goede onderbouwing van noodzaak                                                        </span>
+
+
+    <i class="icon w-[calc(46/16*1rem)] shrink-0 ml-2 pr-1 text-oker js-member-list-icon flex justify-center items-center">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.167 3.333h-4.17L5 16.667h9.998l.002-7.5h-5a.833.833 0 0 1-.833-.834v-5ZM10.833 7.5H15l-4.167-4.167V7.5ZM4.996 1.667h6.09c.23 0 .549.133.708.292l4.58 4.582c.162.161.293.482.293.708v9.418c0 .92-.746 1.666-1.669 1.666H5.002a1.669 1.669 0 0 1-1.669-1.666V3.333c0-.92.747-1.666 1.663-1.666Zm.837 12.5c0-.46.375-.833.83-.833h6.674a.833.833 0 0 1 0 1.667H6.663a.83.83 0 0 1-.83-.834Zm0-2.5c0-.46.376-.833.837-.833h3.326a.833.833 0 1 1 0 1.666H6.67a.833.833 0 0 1-.837-.833Z" fill="currentColor"></path><path d="M23.02 14h1.452v-3.108h1.44c1.56 0 2.724-1.08 2.724-2.664 0-1.596-1.116-2.628-2.724-2.628H23.02V14Zm1.452-4.452V6.944h1.368c.792 0 1.308.54 1.308 1.284 0 .756-.516 1.32-1.308 1.32h-1.368ZM31.093 14h3.216c2.7 0 4.248-1.596 4.248-4.2 0-2.448-1.548-4.2-4.248-4.2h-3.216v1.272h.744v5.856h-.744V14Zm2.196-1.332V6.944h1.02c1.74 0 2.736 1.116 2.736 2.856 0 1.812-1.008 2.868-2.736 2.868h-1.02ZM41.322 14h1.452v-3.432h3.384V9.224h-3.384V6.956h3.624V5.6h-5.076V14Z" fill="currentColor"></path></svg>
+    </i>
+    </a>
+    </li>
+
+
+    </ul>
+    </div>
+    </div>
+    <!-- END -->
+
+
+    </div>
+    </div>
+  },
+
+
+  {
+    "name": "Daniel Law",
+    "link": "https://www.daniel-ip.com/en/team/",
+    "lawyers":
+    <div class="et_pb_column et_pb_column_1_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough">
+
+
+
+
+    <div class="et_pb_module et_pb_team_member et_pb_team_member_0 et_clickable clearfix  et_pb_text_align_right et_pb_bg_layout_light">
+
+
+
+
+    <div class="et_pb_team_member_image et-waypoint et_pb_animation_off et-animated"><picture decoding="async" class="wp-image-394">
+    <source type="image/webp" srcset="https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores.png.webp 228w, https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores-214x300.png.webp 214w" sizes="(max-width: 228px) 100vw, 228px">
+    <img fetchpriority="high" decoding="async" width="228" height="319" src="https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores.png" alt="Alicia Daniel-Shores" srcset="https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores.png 228w, https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores-214x300.png 214w" sizes="(max-width: 228px) 100vw, 228px">
+    </picture>
+    </div>
+    <div class="et_pb_team_member_description">
+    <h4 class="et_pb_module_header">Alicia Daniel-Shores</h4>
+
+
+
+    </div>
+    </div>
+    </div>
+    "lawyer":
+    <div class="et_pb_column et_pb_column_1_2 et_pb_column_1_tb_body  et_pb_css_mix_blend_mode_passthrough">
+
+
+
+
+    <div class="et_pb_module et_pb_text et_pb_text_1_tb_body  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+
+
+    <div class="et_pb_text_inner">Alicia Daniel-Shores</div>
+    </div><div class="et_pb_module et_pb_text et_pb_text_2_tb_body  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+
+
+    <div class="et_pb_text_inner">Senior Partner &amp; CEO</div>
+    </div><div class="et_pb_module et_pb_icon et_pb_icon_0_tb_body">
+    <a href="https://www.linkedin.com/in/alicia-daniel-shores-1473a426/" target="_blank"><span class="et_pb_icon_wrap "><span class="et-pb-icon"></span></span></a>
+    </div><div class="et_pb_module et_pb_icon et_pb_icon_1_tb_body">
+    <a href="mailto:alicia.daniel-shores@daniel-ip.com" target="_blank"><span class="et_pb_icon_wrap "><span class="et-pb-icon"></span></span></a>
+    </div><div class="et_pb_module et_pb_image et_pb_image_0_tb_body">
+
+
+
+
+    <span class="et_pb_image_wrap "><picture decoding="async" title="Alicia-Daniel-Shores" class="wp-image-394">
+    <source type="image/webp" srcset="https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores.png.webp 228w, https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores-214x300.png.webp 214w" sizes="(max-width: 228px) 100vw, 228px">
+    <img fetchpriority="high" decoding="async" width="228" height="319" src="https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores.png" alt="" srcset="https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores.png 228w, https://www.daniel.com.br/wp-content/uploads/2021/09/Alicia-Daniel-Shores-214x300.png 214w" sizes="(max-width: 228px) 100vw, 228px">
+    </picture>
+    </span>
+    </div><div class="et_pb_module et_pb_text et_pb_text_3_tb_body  et_pb_text_align_left et_pb_bg_layout_light">
+
+
+
+
+    <div class="et_pb_text_inner"><p>Alicia has devoted her law practice to the representation of global companies and entrepreneurs, guiding them from the initial protection of their “light-bulb” idea to the implementation, policing and defense of their intellectual property in Brazil.</p>
+    <p>With more than 30 years of IP legal experience, Alicia held key positions in different areas of Daniel Law before assuming leadership of the firm in 2005. Following in the footsteps of her distinguished father, Denis Daniel, Alicia is passionate about creating client partnerships that promote innovation and growth.</p>
+    <p>Alicia received her degree in Law from the Pontifical Catholic University in Rio de Janeiro and was admitted to the Brazilian Bar Association (OAB) in 1987.</p>
+    </div>
+    </div><div class="et_pb_module et_pb_toggle et_pb_toggle_0_tb_body et_pb_toggle_item  et_pb_toggle_close">
+
+
+
+
+    <h5 class="et_pb_toggle_title">Practice Areas</h5>
+    <div class="et_pb_toggle_content clearfix">Copyright<br>
+    Domain Names<br>
+    Geographical Indications<br>
+    Trademarks<br>
+    Trade Secrets and Confidential Information<br>
+    Unfair Competition</div>
+    </div><div class="et_pb_module et_pb_toggle et_pb_toggle_1_tb_body et_pb_toggle_item  et_pb_text_align_left et_pb_toggle_close">
+
+
+
+
+    <h3 class="et_pb_toggle_title">Education</h3>
+    <div class="et_pb_toggle_content clearfix">Degree in Law from the Pontifical Catholic University of Rio de Janeiro in 1984.</div>
+    </div><div class="et_pb_module et_pb_toggle et_pb_toggle_2_tb_body et_pb_toggle_item  et_pb_text_align_left et_pb_toggle_close">
+
+
+
+
+    <h3 class="et_pb_toggle_title">Affiliations, Commissions and Collegiate</h3>
+    <div class="et_pb_toggle_content clearfix">Member of the Brazilian Bar Association, registered in the States of Rio de Janeiro and São Paulo.</div>
+    </div><div class="et_pb_module et_pb_toggle et_pb_toggle_3_tb_body et_pb_toggle_item  et_pb_text_align_left et_pb_toggle_close">
+
+
+
+
+    <h3 class="et_pb_toggle_title">Languages</h3>
+    <div class="et_pb_toggle_content clearfix">Portuguese, English, French and Spanish.</div>
+    </div>
+    </div>
+  },
+  {
+    "name": "Finnius",
+    "link": "https://finnius.com/en/team/",
+    "lawyers":
+    <div class="member-item">
+    <a href="https://finnius.com/en/teammembers/casper-riekerk/">
+    <figure class="member-figure">
+    <img alt="Casper Riekerk" src="https://finnius.com/wp-content/uploads/2024/02/Casper-teampagina-LR.jpg">
+    <figcaption>
+    <h3 class="member-name">Casper Riekerk</h3>
+
+
+    </figcaption>
+    </figure>
+    </a>
+    </div>
+    "lawyer":
+    <div class="feat-image__holder" style="background: url('https://finnius.com/wp-content/uploads/2018/09/Casper__00-1200x1800.jpg') no-repeat center top / cover">
+    <div class="contact-info">
+    <p>T +31 (0)20 767 01 80<br>
+    T +31 (0)20 767 01 89<br>
+    M +31 (0)6 31 67 03 92<br>
+    <a href="mailto:casper.riekerk@finnius.com">casper.riekerk@finnius.com</a></p>
+    <a style="margin-top: 10px" target="_blank" href="https://www.linkedin.com/in/casper-riekerk-aa58392b/"><img style="height: 26px;" src="https://finnius.com/wp-content/themes/finnius-theme/assets/img/linkedin-logo.svg"></a>
+    </div>
+    </div>
+  },
+  {
+    "name": "Suarez Consultoria",
+    "link": "https://www.suarezconsultoria.com/team-4",
+    "lawyers":
+    <div role="listitem" class="_FiCX"><!--$--><div id="comp-ldyxcgu2__00000000-0000-0000-0000-000000000006" class="comp-ldyxcgu2__00000000-0000-0000-0000-000000000006 YzqVVZ wixui-repeater__item"><div id="bgLayers_comp-ldyxcgu2__00000000-0000-0000-0000-000000000006" data-hook="bgLayers" data-motion-part="BG_LAYER comp-ldyxcgu2__00000000-0000-0000-0000-000000000006" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-ldyxcgu2__00000000-0000-0000-0000-000000000006" data-motion-part="BG_MEDIA comp-ldyxcgu2__00000000-0000-0000-0000-000000000006" class="VgO9Yg"></div></div><div data-mesh-id="comp-ldyxcgu2__00000000-0000-0000-0000-000000000006inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-ldyxcgu2__00000000-0000-0000-0000-000000000006inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-ldyxcguf1__00000000-0000-0000-0000-000000000006" class="MazNVa comp-ldyxcguf1__00000000-0000-0000-0000-000000000006 wixui-image rYiAuL" title="Dr_edited_edited.png"><a data-testid="linkElement" href="https://www.suarezconsultoria.com/team-4/edgar-su%C3%A1rez-ortiz" target="_self" class="j7pOnl"><wow-image id="img_comp-ldyxcguf1__00000000-0000-0000-0000-000000000006" class="jhxvbR BI8PVQ" data-image-info="{&quot;containerId&quot;:&quot;comp-ldyxcguf1__00000000-0000-0000-0000-000000000006&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:279,&quot;targetHeight&quot;:285,&quot;isLQIP&quot;:false,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:2002,&quot;height&quot;:2204,&quot;uri&quot;:&quot;e9790f_3ba21fd64cb2448285729178ed2df588~mv2.png&quot;,&quot;name&quot;:&quot;Image-empty-state.png&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-ldyxcguf1__00000000-0000-0000-0000-000000000006" data-bg-effect-name="" data-has-ssr-src=""><img src="https://static.wixstatic.com/media/e9790f_3ba21fd64cb2448285729178ed2df588~mv2.png/v1/fill/w_279,h_285,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png" alt="Edgar Suárez
+    Ortiz" style="width:279px;height:285px;object-fit:cover" width="279" height="285" srcset="
+    "https"://static.wixstatic.com/media/e9790f_3ba21fd64cb2448285729178ed2df588~mv2.png/v1/fill/w_279,h_285,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png 1x, https://static.wixstatic.com/media/e9790f_3ba21fd64cb2448285729178ed2df588~mv2.png/v1/fill/w_558,h_570,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image-empty-state.png 2x" fetchpriority="high"></wow-image></a></div><!--/$--><!--$--><div id="comp-ldyxcgul1__00000000-0000-0000-0000-000000000006" class="MMl86N zQ9jDz qvSjx3 Vq6kJx comp-ldyxcgul1__00000000-0000-0000-0000-000000000006 wixui-rich-text" data-testid="richTextElement"><h2 class="font_2 wixui-rich-text__text" style="font-size:20px; line-height:1.4em;"><span style="font-size:20px;" class="wixui-rich-text__text">Edgar Suárez<br>Ortiz</span></h2></div><!--/$--><!--$--><div id="comp-ldyxcgut__00000000-0000-0000-0000-000000000006" class="MMl86N zQ9jDz qvSjx3 Vq6kJx comp-ldyxcgut__00000000-0000-0000-0000-000000000006 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:1.6em;"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_15 wixui-rich-text__text">Socio Director y Fundador</span></span></p></div><!--/$--><!--$--><div id="comp-ldyxcgv01__00000000-0000-0000-0000-000000000006" class="MMl86N zQ9jDz qvSjx3 Vq6kJx comp-ldyxcgv01__00000000-0000-0000-0000-000000000006 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:14px; line-height:1.6em;"><span style="letter-spacing:0em;" class="wixui-rich-text__text"><span style="font-size:14px;" class="wixui-rich-text__text">Abogado y Economista con más de 28 años de experiencia asesorando empresas de familia.</span></span></p></div><!--/$--><!--$--><div class="comp-ldyxcgvb1__00000000-0000-0000-0000-000000000006 Vq4wYb" id="comp-ldyxcgvb1__00000000-0000-0000-0000-000000000006" aria-disabled="false"><a data-testid="linkElement" href="https://www.suarezconsultoria.com/team-4/edgar-su%C3%A1rez-ortiz" target="_self" class="uUxqWY wixui-button PlZyDq" aria-disabled="false" aria-label="Leer más"><span class="wJVzSK wixui-button__label">Leer más</span></a></div><!--/$--></div></div></div><!--/$--></div>
+    "lawyer":,
+    <div id="comp-ldyxcg6d" class="comp-ldyxcg6d YzqVVZ wixui-column-strip__column"><div id="bgLayers_comp-ldyxcg6d" data-hook="bgLayers" data-motion-part="BG_LAYER comp-ldyxcg6d" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-ldyxcg6d" data-motion-part="BG_MEDIA comp-ldyxcg6d" class="VgO9Yg"></div></div><div data-mesh-id="comp-ldyxcg6dinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-ldyxcg6dinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div class="comp-ldyxcg6s1 FubTgk" id="comp-ldyxcg6s1" aria-disabled="false"><a data-testid="linkElement" href="https://www.suarezconsultoria.com/team-4" target="_self" class="uDW_Qe wixui-button PlZyDq" aria-disabled="false" aria-label="Volver"><span class="l7_2fn wixui-button__label">Volver</span></a></div><!--/$--><!--$--><div id="comp-ldyxcg7c" class="MMl86N zQ9jDz qvSjx3 Vq6kJx comp-ldyxcg7c wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:46px;"><span style="font-size:46px;" class="wixui-rich-text__text">Edgar Suárez<br>Ortiz</span></h1></div><!--/$--><!--$--><div id="comp-ldyxcg7s" class="MMl86N zQ9jDz qvSjx3 Vq6kJx comp-ldyxcg7s wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:20px;"><span style="color:rgb(159, 107, 35);" class="wixui-rich-text__text"><span style="font-size:20px;" class="wixui-rich-text__text">Socio Director y Fundador</span></span></p></div><!--/$--><!--$--><div id="comp-le4a9754" class="MMl86N zQ9jDz qvSjx3 Vq6kJx comp-le4a9754 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:14px; line-height:1.5em;"><span style="color:rgb(159, 107, 35);" class="wixui-rich-text__text"><span style="font-size:14px;" class="wixui-rich-text__text"><span style="letter-spacing:0em;" class="wixui-rich-text__text"><a data-auto-recognition="true" href="mailto:esuarez@suarezconsultoria.com">esuarez@suarezconsultoria.com</a></span></span></span></p></div><!--/$--><!--$--><div id="comp-le4aa885" class="MMl86N zQ9jDz qvSjx3 Vq6kJx comp-le4aa885 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:14px; line-height:1.5em;"><span style="color:rgb(159, 107, 35);" class="wixui-rich-text__text"><span style="font-size:14px;" class="wixui-rich-text__text"><span style="letter-spacing:0em;" class="wixui-rich-text__text">(+57) 314 3328252  (+57) 314 3340761</span></span></span></p></div><!--/$--><div id="comp-ldyxcg7w" class="QrIus  comp-ldyxcg7w"><div class="comp-ldyxcg7w"><style>.comp-ldyxcg7w {
+  },
+  {
+    "name": "Atlas Advokater",
+    "link": "https://atlasadvokater.com/om-oss/team",
+    "lawyers":
+    <article class="focus group hover:cursor-pointer rounded-t-5xl group mx-auto max-w-md ring-0"><div class="mb-6 overflow-hidden rounded-t-5xl"><img alt="" width="4704" height="5227" decoding="async" data-nimg="1" class="rounded-t-5xl aspect-card object-cover transition-transform duration-500 group-hover:scale-105" sizes="(min-width: 1512px) 324px, (min-width: 1024px) calc(25vw - 2rem), (min-width: 768px) calc(33.33vw - 2rem), (min-width: 640px) calc(50vw - 2rem), (min-width: 482px) 448px, calc(100vw - 2rem)" srcset="/_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=16&amp;q=75 16w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=32&amp;q=75 32w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=48&amp;q=75 48w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=64&amp;q=75 64w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=96&amp;q=75 96w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=128&amp;q=75 128w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=256&amp;q=75 256w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=3840&amp;q=75 3840w" style="color: transparent;" src="/_next/image?url=https%3A%2F%2Fmedia.atlasadvokater.com%2Fproduction%2Fmedia%2FJennica.jpg%3F2025-04-16T12%3A01%3A13.402Z&amp;w=3840&amp;q=75"></div><h2 class="mb-3 text-xl font-semibold"><a href="/om-oss/team/jennica-paulette">Jennica Paulette</a></h2><p class="mb-3">Advokat</p><ul class="mb-3 flex flex-col gap-0.5" data-exclude=""><li><a href="tel:0868442902" class="
+    focus underline-offset-4
+    hover:underline
+    ">08-684 429 02</a></li><li><a href="tel:0720223902" class="
+    focus underline-offset-4
+    hover:underline
+    ">072-022 39 02</a></li><li><a href="mailto:jennica@atlasadvokater.com" class="
+    focus underline-offset-4
+    hover:underline
+    ">jennica@atlasadvokater.com</a></li></ul><span class="
+    flex items-center
+    group-hover:underline
+    " id="«r1e»" aria-hidden="true">Läs mer<svg class="aspect-square ml-0.5 size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true"><use href="/icons.svg?f69b172#caret"></use></svg></span></article>
+    "note": validRoles = {"advokat"}
+  },
+
 
 BYPAGE
 
 
+  {
+    "name": "Al Alawi & Co",
+    "link": "https://www.alalawico.com/experts/",
+    "lawyers":
+    <div class="gdlr-core-item-list gdlr-core-personnel-list-column  gdlr-core-column-20 gdlr-core-column-first gdlr-core-item-pdlr clearfix"><div class="gdlr-core-personnel-list clearfix gdlr-core-outer-frame-element" style="box-shadow: 0 0 45px rgba(10, 10, 10,0.08) ; -moz-box-shadow: 0 0 45px rgba(10, 10, 10,0.08) ; -webkit-box-shadow: 0 0 45px rgba(10, 10, 10,0.08) ; border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;"><div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-hover-element gdlr-core-zoom-on-hover gdlr-core-grayscale-effect"><a href="https://www.alalawico.com/personnel/dr-ali-khamis-al-alawi/"><img src="https://www.alalawico.com/wp-content/uploads/2023/06/Dr.-Ali-Khamis-Al-Alawi.jpg" alt="" width="599" height="551" title="Dr.-Ali-Khamis-Al-Alawi"></a><div class="gdlr-core-hover-opacity"></div></div><div class="gdlr-core-personnel-list-content-wrap "><h3 class="gdlr-core-personnel-list-title" style="font-size: 16px ;font-weight: 600 ;letter-spacing: 3px ;margin-bottom: 4px ;"><a href="https://www.alalawico.com/personnel/dr-ali-khamis-al-alawi/">Dr. Ali Khamis Al Alawi</a></h3><div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 13px ;font-weight: 500 ;font-style: normal ;letter-spacing: 2px ;text-transform: uppercase ;">Founder &amp; Senior Partner</div><div class="gdlr-core-personnel-list-social"><span class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px ;display: block ;"><a href="http://facebook.com/#" target="_blank" class="gdlr-core-social-network-icon" title="facebook"><i class="fa fa-facebook"></i></a><a href="http://facebook.com/#" target="_blank" class="gdlr-core-social-network-icon" title="linkedin"><i class="fa fa-linkedin"></i></a><a href="http://twitter.com/#" target="_blank" class="gdlr-core-social-network-icon" title="twitter"><i class="fa fa-twitter"></i></a></span>
+    </div></div></div></div>
+    "lawyer":
+    <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "><div class="gdlr-core-pbf-element"><div class="gdlr-core-image-item gdlr-core-item-pdb  gdlr-core-center-align gdlr-core-item-pdlr" style="padding-bottom: 0px ;"><div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-width: 0px;margin: 0px 0px 37px 0px;"><img src="https://www.alalawico.com/wp-content/uploads/2023/06/Dr.-Ali-Khamis-Al-Alawi.jpg" alt="" width="599" height="551" title="Dr.-Ali-Khamis-Al-Alawi"></div></div></div><div class="gdlr-core-pbf-element"><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 25px ;"><div class="gdlr-core-title-item-title-wrap "><h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 22px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;">Dr. Ali Khamis Mubarak Al Alawi<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-style: normal ;letter-spacing: 0px ;margin-top: 5px ;">Founder &amp; Senior Partner</span></div></div><div class="gdlr-core-pbf-element"><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align gdlr-core-no-p-space" style="padding-bottom: 10px ;"><div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;color: #323232 ;"><p><span style="font-weight: bold; margin-right: 10px;">Email</span> a.alalawi@alalawico.com</p>
+    </div></div></div><div class="gdlr-core-pbf-element"><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;"><div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;color: #323232 ;"><p><span style="font-weight: bold; margin-right: 10px;">Phone</span> +968 24699761/ 2</p>
+    </div></div></div><div class="gdlr-core-pbf-element"><div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-item-pdlr gdlr-direction-horizontal"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;margin-right: 16px ;"><i class="fa fa-facebook"></i></a><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="linkedin" style="font-size: 18px ;margin-right: 16px ;"><i class="fa fa-linkedin"></i></a><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;margin-right: 16px ;"><i class="fa fa-twitter"></i></a></div></div></div>
+  },
+  {
+    "name": "Zan Hub",
+    "link": "https://www.zanhub.com/en/team/",
+    "lawyers":
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="row">
+    <div class="block-item-command">
+
+    <a class="block-item-img" href="/en/team/madiyar-bekturganov_1/">
+    <img src="/upload/iblock/87d/87d78294a5fa4aa4b891b8cf003fa502.png" alt="Madiyar Bekturganov" title="Madiyar Bekturganov">
+    </a>
+    <a class="item-command-title" href="/en/team/madiyar-bekturganov_1/">Madiyar Bekturganov</a>
+    <div class="item-command-job">Managing Partner (Astana)</div>
+
+    </div>
+    </div>
+    </div>
+    "lawyer":
+    <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="row">
+    <img class="block-detail-img" alt="Madiyar Bekturganov" title="Madiyar Bekturganov" src="/upload/iblock/87d/87d78294a5fa4aa4b891b8cf003fa502.png">
+    </div>
+    </div>
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+    <div class="detail-page-txt" style="min-height: auto">
+    <div class="detail-command-title" href="/en/team/madiyar-bekturganov_1/">Madiyar Bekturganov</div>
+    <div class="detail-command-job">Managing Partner (Astana)</div>
+
+    <a href="tel:+ 7 7172 47 67 00" class="detail-command-work-phone">
+    Т:
+    + 7 7172 47 67 00										</a>
+
+
+    <a href="mailto:madiyar.bekturganov@zanhub.com" class="detail-command-email">
+    madiyar.bekturganov@zanhub.com										</a>
+
+    </div>
+    </div>
+    </div>
+  },
