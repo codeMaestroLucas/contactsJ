@@ -1,4 +1,4 @@
-package org.example.src.entities.excel;
+    package org.example.src.entities.excel;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -163,12 +163,6 @@ public ContactsAlreadyRegisteredSheet() {
             }
         }
 
-        System.out.println("\n=== Collection Complete ===");
-        System.out.println("Total lawyers added: " + totalLawyers);
-        System.out.println("Firms collected: " + lawFirmsCollected.size());
-        System.out.println("Last row processed: " + i);
-        System.out.println("===========================\n");
-
         this.registerLastFirmCollectedRow(i);
         this.saveSheet();
         this.registerFirmsCollected();
@@ -200,6 +194,10 @@ public ContactsAlreadyRegisteredSheet() {
             default -> "";
         };
     }
+
+
+    public int getTotalLawyers()           { return totalLawyers; }
+    public int getLawFirmsCollectedCount() { return lawFirmsCollected.size(); }
 
 
     public static void main(String[] args) {

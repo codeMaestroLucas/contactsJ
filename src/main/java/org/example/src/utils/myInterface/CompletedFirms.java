@@ -435,8 +435,8 @@ public class CompletedFirms {
         Map<String, Object> prevMundial = (Map<String, Object>) previous.get("mundial");
         String prevTimestamp = (String) previous.get("timestamp");
 
-        final int COL  = 14;   // visible width of each data column
-        final int LINE = 1 + 18 + 3 + (COL + 3) * 4;  // " " + name + " │ " + (col + " │ ") x4
+        final int COL  = 14;
+        final int LINE = 1 + 18 + 3 + (COL + 3) * 4;
 
         String title = "| SYSTEM STATE COMPARISON |";
         int padding = (LINE - title.length()) / 2;
@@ -523,17 +523,109 @@ public class CompletedFirms {
     }
 
 
+    // ==================== AVAILABLE FIRMS ====================
+
+    private static int countAvailable(Site[] firms) {
+        int count = 0;
+        for (Site site : firms) {
+            if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) count++;
+        }
+        return count;
+    }
+
+    private static int countAvailableLawyers(Site[] firms) {
+        int total = 0;
+        for (Site site : firms) {
+            if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name))
+                total += site.maxLawyersForSite;
+        }
+        return total;
+    }
+
+    /**
+     * Shows firms still available for future executions:
+     * 1. Broken down by active continents (excluding firms already in monthFirms.txt)
+     * 2. Total across ALL continents (including disabled) not yet in monthFirms.txt
+     */
+    private static void showAvailableFirms() {
+        int lineLength = 100;
+
+        // ── PART 1: active continents ──────────────────────────────────────────
+        String title1 = "| FIRMAS DISPONÍVEIS — CONTINENTES ATIVOS |";
+        int pad1 = (lineLength - title1.length()) / 2;
+        System.out.println("\n" + "=".repeat(lineLength));
+        System.out.println(" ".repeat(pad1) + title1);
+        System.out.println("=".repeat(lineLength));
+
+        System.out.printf(" %-18s │ %10s │ %10s │ %12s │ %14s%n",
+                "Continente", "ByPage", "ByNewPage", "Disponíveis", "Max Lawyers");
+        System.out.println("-".repeat(lineLength));
+
+        Object[][] allContinents = {
+                {"Africa",          ByPageFirmsBuilder.getAfrica(),         ByNewPageFirmsBuilder.getAfrica()},
+                {"Asia",            ByPageFirmsBuilder.getAsia(),           ByNewPageFirmsBuilder.getAsia()},
+                {"Europe",          ByPageFirmsBuilder.getEurope(),         ByNewPageFirmsBuilder.getEurope()},
+                {"North America",   ByPageFirmsBuilder.getNorthAmerica(),   ByNewPageFirmsBuilder.getNorthAmerica()},
+                {"Central America", ByPageFirmsBuilder.getCentralAmerica(), ByNewPageFirmsBuilder.getCentralAmerica()},
+                {"South America",   ByPageFirmsBuilder.getSouthAmerica(),   ByNewPageFirmsBuilder.getSouthAmerica()},
+                {"Oceania",         ByPageFirmsBuilder.getOceania(),        ByNewPageFirmsBuilder.getOceania()},
+        };
+
+        int activeAvailFirms   = 0;
+        int activeAvailLawyers = 0;
+
+        for (Object[] row : allContinents) {
+            String name       = (String) row[0];
+            Site[] byPage     = (Site[]) row[1];
+            Site[] byNewPage  = (Site[]) row[2];
+
+            if (!ContinentConfig.isContinentEnabled(name)) continue;
+
+            int avBP  = countAvailable(byPage);
+            int avBNP = countAvailable(byNewPage);
+            int avTot = avBP + avBNP;
+            int avLaw = countAvailableLawyers(byPage) + countAvailableLawyers(byNewPage);
+
+            activeAvailFirms   += avTot;
+            activeAvailLawyers += avLaw;
+
+            System.out.printf(" %-18s │ %10d │ %10d │ %12d │ %14d%n",
+                    name, avBP, avBNP, avTot, avLaw);
+        }
+
+        // Mundial (always active)
+        Site[] mBP  = ByPageFirmsBuilder.getMundial();
+        Site[] mBNP = ByNewPageFirmsBuilder.getMundial();
+        int mAvBP   = countAvailable(mBP);
+        int mAvBNP  = countAvailable(mBNP);
+        int mAvTot  = mAvBP + mAvBNP;
+        int mAvLaw  = countAvailableLawyers(mBP) + countAvailableLawyers(mBNP);
+
+        activeAvailFirms   += mAvTot;
+        activeAvailLawyers += mAvLaw;
+
+        System.out.println("-".repeat(lineLength));
+        System.out.printf(" %-18s │ %10d │ %10d │ %12d │ %14d%n",
+                "Mundial", mAvBP, mAvBNP, mAvTot, mAvLaw);
+        System.out.println("=".repeat(lineLength));
+        System.out.printf(" %sTOTAL (ativos):%s  %s%d firmas%s disponíveis  |  %s%d advogados%s à registrar%n",
+                BOLD, RESET, GREEN, activeAvailFirms, RESET, BLUE, activeAvailLawyers, RESET);
+        System.out.println("=".repeat(lineLength));
+    }
+
+
     // ==================== MENU ====================
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n" + "=".repeat(35));
+            System.out.println("\n" + "=".repeat(45));
             System.out.println("  1. Ver todas as firmas");
             System.out.println("  2. Verificar estado do sistema");
+            System.out.println("  3. Firmas disponíveis");
             System.out.println("  0. Sair");
-            System.out.println("=".repeat(35));
+            System.out.println("=".repeat(45));
             System.out.print("Escolha uma opcao: ");
 
             String input = scanner.nextLine().trim();
@@ -541,6 +633,7 @@ public class CompletedFirms {
             switch (input) {
                 case "1" -> showAllFirmsCompleted();
                 case "2" -> showSystemState();
+                case "3" -> showAvailableFirms();
                 case "0" -> {
                     saveSnapshot();
                     scanner.close();

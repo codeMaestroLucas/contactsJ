@@ -25,9 +25,10 @@ public class Main {
     private static final MyInterfaceUtls instance = MyInterfaceUtls.getINSTANCE();
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
 
-    private static void getRegisteredContacts() {
+    private static ContactsAlreadyRegisteredSheet getRegisteredContacts() {
         ContactsAlreadyRegisteredSheet contactsSheet = new ContactsAlreadyRegisteredSheet();
         contactsSheet.collectLawyersRegistered();
+        return contactsSheet;
     }
 
     /**
@@ -115,33 +116,89 @@ public class Main {
         return totalLawyersRegistered;
     }
 
+    /** Returns [contactLawyers, contactFirms, webLawyers1] */
     @SneakyThrows
-    private static int performCompleteSearch() {
-//        Few contacts were
-        calculateTimeOfExecution(Main::getRegisteredContacts);
+    private static int[] performCompleteSearch() {
+        final ContactsAlreadyRegisteredSheet[] sheetHolder = {null};
+        calculateTimeOfExecution(() -> sheetHolder[0] = getRegisteredContacts());
 
-        final int[] result = {0};
+        // Compute BEFORE Phase 2 so the cap is shared with Phase 1's results
+        ContactsAlreadyRegisteredSheet sheet = sheetHolder[0];
+        int contactLawyers = sheet != null ? sheet.getTotalLawyers()           : 0;
+        int contactFirms   = sheet != null ? sheet.getLawFirmsCollectedCount() : 0;
+
+        final int[] web1 = {0};
+        final int alreadyFromContacts = contactLawyers;
         calculateTimeOfExecution(() -> {
             try {
-                result[0] = searchLawyersInWeb(0);
+                web1[0] = searchLawyersInWeb(alreadyFromContacts);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         });
 
-        return result[0];
+        return new int[]{ contactLawyers, contactFirms, web1[0] };
+    }
+
+    private static void printExecutionSummary(
+            int contactLawyers, int contactFirms,
+            int webLawyers1, int webLawyers2,
+            String totalTime) {
+
+        final String RESET  = "\u001B[0m";
+        final String BOLD   = "\u001B[1m";
+        final String BLUE   = "\u001B[34m";
+        final String YELLOW = "\u001B[33m";
+        final String DIM    = "\u001B[2m";
+
+        int total = contactLawyers + webLawyers1 + webLawyers2;
+        int lineLen = 70;
+        String title = "EXECUTION SUMMARY";
+        int pad = (lineLen - title.length()) / 2;
+
+        System.out.println("\n" + "═".repeat(lineLen));
+        System.out.println(" ".repeat(pad) + BOLD + title + RESET);
+        System.out.println("═".repeat(lineLen));
+        System.out.printf(" %-28s │ %9s │  %s%n", "Phase", "Lawyers", "Details");
+        System.out.println("─".repeat(lineLen));
+
+        System.out.printf(" %-28s │ %s%9d%s │  %s%d firms processed%s%n",
+                "1 · Filtered Contacts",
+                BLUE + BOLD, contactLawyers, RESET,
+                DIM, contactFirms, RESET);
+
+        System.out.printf(" %-28s │ %s%9d%s │  %s—%s%n",
+                "2 · Web Search",
+                BLUE + BOLD, webLawyers1, RESET,
+                DIM, RESET);
+
+        System.out.printf(" %-28s │ %s%9d%s │  %s—%s%n",
+                "3 · Web Search (2nd pass)",
+                BLUE + BOLD, webLawyers2, RESET,
+                DIM, RESET);
+
+        System.out.println("─".repeat(lineLen));
+        System.out.printf(" %s%-28s │ %9d%s │%n", BOLD, "TOTAL", total, RESET);
+        System.out.println("═".repeat(lineLen));
+        System.out.printf("  Total time : %s%s%s%n", YELLOW + BOLD, totalTime, RESET);
+        System.out.println("═".repeat(lineLen));
     }
 
     public static void main(String[] args) {
         long globalStart = System.currentTimeMillis();
-        int totalLawyers = 0;
+
+        int contactLawyers = 0, contactFirms = 0, webLawyers1 = 0, webLawyers2 = 0;
 
         NoSleep.preventSleep(); // block sleep
         EmailDuplicateChecker.getINSTANCE().login();
         try {
-            totalLawyers += performCompleteSearch();
+            int[] phase1 = performCompleteSearch();
+            contactLawyers = phase1[0];
+            contactFirms   = phase1[1];
+            webLawyers1    = phase1[2];
+
             // Pass what was already collected so the global cap is shared between both phases
-            totalLawyers += searchLawyersInWeb(totalLawyers);
+            webLawyers2 = searchLawyersInWeb(contactLawyers + webLawyers1);
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -156,12 +213,8 @@ public class Main {
             EmailDuplicateChecker.getINSTANCE().close();
             NoSleep.allowSleep(); // allow sleep again when finished
 
-            // Final summary
             String totalTime = instance.calculateTime(globalStart, System.currentTimeMillis());
-            System.out.println("\n" + "=".repeat(70));
-            System.out.printf("  Total time: \u001B[1;33m%s\u001B[0m%n", totalTime);
-            System.out.printf("  Total lawyers registered: \u001B[1;31m%d\u001B[0m%n", totalLawyers);
-            System.out.println("=".repeat(70));
+            printExecutionSummary(contactLawyers, contactFirms, webLawyers1, webLawyers2, totalTime);
         }
     }
 }

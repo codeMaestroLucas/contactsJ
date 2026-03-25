@@ -17,8 +17,7 @@ public class ByPageFirmsBuilder {
     private static final Site[] AFRICA = {
             new Adsero(), new ALPNGAndCo(), new AlukoAndOyebode(), new AmanAndPartners(), new Ashitiva(),
             new BentsiEnchillLetsaAndAnkomah(), new EldibAdvocates(), new FisherQuarmbyAndPfeifer(), new KantorAndImmerman(), new ShahidLaw(),
-            new STBB(), new TheartMey(),
-            new SPAAjibadeAndCo(),
+            new CoxYeats(), new EngoruMutebi(), new STBB(), new TheartMey(), new SPAAjibadeAndCo(),
     };
 
     private static final Site[] ASIA = {
@@ -90,7 +89,7 @@ public class ByPageFirmsBuilder {
             new SkauReipurth(), new Snellman(), new SokolNovakTrojanDolecek(), new CravathSwaineAndMoore(),
             new SalusLegal(), new PatrikiosPavlouAndAssociates(),
             new MMDAdvokati(), new NaschitzBrandesAmir(), new Niedermüller(),
-            new GleissLutz(), new LYND(),
+            new GleissLutz(), new LYND(), new WIDEN(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -148,6 +147,7 @@ public class ByPageFirmsBuilder {
             new SpencerWest(), new SprusonAndFerguson(), new SquirePattonBoggs(), new StewartMcKelvey(), new SullivanAndWorcester(),
             new TahotaLaw(), new TaylorWessing(), new Walkers(), new WatsonFarleyAndWilliams(), new WhiteAndCase(),
             new WilliamFry(), new Willkie(), new WinstonAndStrawn(),
+            new KRySGlobal(),
     };
 
     private static final Site[] TEST = {};
