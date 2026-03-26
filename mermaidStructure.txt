@@ -1,137 +1,160 @@
 paste it on https://mermaid.live/
 
 flowchart TD
-    subgraph ENTRY["Entrada"]
-        MAIN["Main.java"]
+    subgraph MODULE_FIRMS["Módulo: firms"]
+        subgraph ENTRY["Entrada"]
+            MAIN["Main.java"]
+        end
+
+        subgraph ORCHESTRATION["Orquestração de Firmas
+        (utils/myInterface)"]
+            COMPLETED["CompletedFirms
+            (menu CLI + construção da lista)"]
+            BP_BUILDER["ByPageFirmsBuilder
+            (fábrica por continente)"]
+            BNP_BUILDER["ByNewPageFirmsBuilder
+            (fábrica por continente)"]
+        end
+
+        subgraph SITES_IMPL["Sites Concretos
+        (src/sites/byPage & byNewPage)
+        [~1007 classes de firmas: 535 byPage + 472 byNewPage]"]
+            FIRMS_BOX["FirmaA extends ByPage
+            FirmaB extends ByNewPage
+            ..."]
+        end
     end
 
-    subgraph CONFIG_PKG["org.example.src"]
-        CONFIG["CONFIG.java
-        (limites globais, paths, timeout)"]
+    subgraph MODULE_CORE["Módulo: core"]
+        subgraph CONFIG_PKG["org.example.src"]
+            CONFIG["CONFIG.java
+            (limites globais, paths, timeout)"]
+        end
+
+        subgraph BASE_SITES["Hierarquia de Sites
+        (entities/BaseSites)"]
+            SITE["Site (abstract)
+            - name, link, totalPages
+            - getLawyersInPage()
+            - getLawyer(WebElement)
+            - registerValidLawyer()
+            - getSocials()"]
+            BY_PAGE["ByPage (abstract)
+            - paginação por URL param"]
+            BY_NEW_PAGE["ByNewPage (abstract)
+            - paginação por nova aba"]
+            SITE --> BY_PAGE
+            SITE --> BY_NEW_PAGE
+        end
+
+        subgraph TO_TEST["Firmas em Teste
+        (src/sites/to_test)"]
+            TO_TEST_BOX["NovaFirmaA extends ByPage
+            NovaFirmaB extends ByNewPage
+            ..."]
+        end
+
+        subgraph ENTITIES["Entidades
+        (entities)"]
+            LAWYER["Lawyer
+            (@Builder, @Data)
+            name, email, role,
+            firm, country, phone..."]
+            MY_DRIVER["MyDriver (Singleton)
+            Selenium ChromeDriver
+            - headless mode
+            - tab management
+            - anti-bot JS"]
+        end
+
+        subgraph EXCEL["Gerenciamento Excel
+        (entities / Apache POI)"]
+            EXCEL_BASE["Excel (base)"]
+            SHEET["Sheet (Singleton)
+            output principal"]
+            REPORTS["Reports (Singleton)
+            métricas de execução"]
+            CONTACTS["Contacts
+            contatos anteriores"]
+            LAST_CHECK["LastCheck
+            última linha registrada"]
+            EXCEL_BASE --> SHEET
+            EXCEL_BASE --> REPORTS
+            EXCEL_BASE --> CONTACTS
+            EXCEL_BASE --> LAST_CHECK
+        end
+
+        subgraph VALIDATION["Validação & Deduplicação
+        (utils)"]
+            VALIDATIONS["Validations
+            - países permanentes/temp
+            - firma na blacklist
+            - duplicata de email
+            - email do mês
+            - país da firma no mês"]
+            EMAIL_DUP["EmailDuplicateChecker (Singleton)
+            Google Sheets login
+            consulta duplicatas globais"]
+            EMAIL_MONTH["EmailOfMonth
+            data/sites/{byPage|byNewPage}/
+            {Firma}.txt"]
+            FIRMS_MONTH["FirmsOMonth
+            data/monthFirms.txt
+            evita re-scraping mensal"]
+            VALIDATIONS --> EMAIL_DUP
+            VALIDATIONS --> EMAIL_MONTH
+        end
+
+        subgraph UTILS["Utilitários
+        (utils)"]
+            EXTRACTOR["Extractor (Singleton)
+            extracts fields from DOM
+            with fallbacks"]
+            TREAT["TreatLawyerParams
+            sanitização dos dados"]
+            ERR_LOG["ErrorLogger (Singleton)
+            tolerância 10 erros/firma
+            log.txt"]
+            SITE_UTILS["SiteUtils (Singleton)
+            DOM navigation helpers"]
+            NO_SLEEP["NoSleep (JNA)
+            previne sleep do sistema"]
+            VCARD["VCard
+            geração de arquivos vCard"]
+        end
+
+        subgraph UTILS_IFACE["Interface Utilitária
+        (utils/myInterface)"]
+            CONTINENT["ContinentConfig
+            (enabled/weight por continente)"]
+            MY_IFACE_UTLS["MyInterfaceUtls
+            (helpers CLI e tempo)"]
+        end
+
+        subgraph RESOURCES["Recursos (core/src/main/resources)"]
+            JSON_CFG["continentsConfig.json
+            countriesToAvoidPermanent.json
+            countriesToAvoidTemporary.json
+            firmsToAvoid.json
+            countryAliases.json
+            systemSnapshot.json"]
+            XLSX_FILES["Sheet.xlsx
+            Reports.xlsx
+            Contacts.xlsx
+            filteredCollectedContacts.xlsx
+            LastCheckSheet.xlsx"]
+        end
+
+        subgraph TEST["Testes
+        (core/src/test/java)"]
+            TEST_SITE["TestSite.java
+            - usa reflection
+            - Validations.enableTestMode()
+            - scraping sem registrar dados"]
+        end
     end
 
-    subgraph ORCHESTRATION["Orquestração de Firmas
-    (utils/myInterface)"]
-        COMPLETED["CompletedFirms
-        (menu CLI + construção da lista)"]
-        BP_BUILDER["ByPageFirmsBuilder
-        (fábrica por continente)"]
-        BNP_BUILDER["ByNewPageFirmsBuilder
-        (fábrica por continente)"]
-        CONTINENT["ContinentConfig
-        (enabled/weight por continente)"]
-    end
-
-    subgraph BASE_SITES["Hierarquia de Sites
-    (entities/BaseSites)"]
-        SITE["Site (abstract)
-        - name, link, totalPages
-        - getLawyersInPage()
-        - getLawyer(WebElement)
-        - registerValidLawyer()
-        - getSocials()"]
-        BY_PAGE["ByPage (abstract)
-        - paginação por URL param"]
-        BY_NEW_PAGE["ByNewPage (abstract)
-        - paginação por nova aba"]
-        SITE --> BY_PAGE
-        SITE --> BY_NEW_PAGE
-    end
-
-    subgraph SITES_IMPL["Sites Concretos
-    (src/sites/byPage & byNewPage)
-    [~874 classes de firmas: 511 byPage + 363 byNewPage]"]
-        FIRMS_BOX["FirmaA extends ByPage
-        FirmaB extends ByNewPage
-        ..."]
-    end
-
-    subgraph ENTITIES["Entidades
-    (entities)"]
-        LAWYER["Lawyer
-        (@Builder, @Data)
-        name, email, role,
-        firm, country, phone..."]
-        MY_DRIVER["MyDriver (Singleton)
-        Selenium ChromeDriver
-        - headless mode
-        - tab management
-        - anti-bot JS"]
-    end
-
-    subgraph EXCEL["Gerenciamento Excel
-    (entities / Apache POI)"]
-        EXCEL_BASE["Excel (base)"]
-        SHEET["Sheet (Singleton)
-        output principal"]
-        REPORTS["Reports (Singleton)
-        métricas de execução"]
-        CONTACTS["Contacts
-        contatos anteriores"]
-        LAST_CHECK["LastCheck
-        última linha registrada"]
-        EXCEL_BASE --> SHEET
-        EXCEL_BASE --> REPORTS
-        EXCEL_BASE --> CONTACTS
-        EXCEL_BASE --> LAST_CHECK
-    end
-
-    subgraph VALIDATION["Validação & Deduplicação
-    (utils)"]
-        VALIDATIONS["Validations
-        - países permanentes/temp
-        - firma na blacklist
-        - duplicata de email
-        - email do mês
-        - país da firma no mês"]
-        EMAIL_DUP["EmailDuplicateChecker (Singleton)
-        Google Sheets login
-        consulta duplicatas globais"]
-        EMAIL_MONTH["EmailOfMonth
-        data/sites/{byPage|byNewPage}/
-        {Firma}.txt"]
-        FIRMS_MONTH["FirmsOMonth
-        data/monthFirms.txt
-        evita re-scraping mensal"]
-        VALIDATIONS --> EMAIL_DUP
-        VALIDATIONS --> EMAIL_MONTH
-    end
-
-    subgraph UTILS["Utilitários
-    (utils)"]
-        EXTRACTOR["Extractor (Singleton)
-        extracts fields from DOM
-        with fallbacks"]
-        TREAT["TreatLawyerParams
-        sanitização dos dados"]
-        ERR_LOG["ErrorLogger (Singleton)
-        tolerância 10 erros/firma
-        log.txt"]
-        SITE_UTILS["SiteUtils (Singleton)
-        DOM navigation helpers"]
-        NO_SLEEP["NoSleep (JNA)
-        previne sleep do sistema"]
-        TIME_CALC["TimeCalculator
-        wrapper de tempo de execução"]
-        VCARD["VCard
-        geração de arquivos vCard"]
-    end
-
-    subgraph RESOURCES["Recursos (src/main/resources)"]
-        JSON_CFG["continentsConfig.json
-        countriesToAvoidPermanent.json
-        countriesToAvoidTemporary.json
-        firmsToAvoid.json
-        countryAliases.json
-        systemSnapshot.json"]
-        XLSX_FILES["Sheet.xlsx
-        Reports.xlsx
-        Contacts.xlsx
-        filteredCollectedContacts.xlsx
-        LastCheckSheet.xlsx"]
-    end
-
-    subgraph DATA_FOLDER["data/ (runtime)"]
+    subgraph DATA_FOLDER["data/ (runtime - raiz do projeto)"]
         DATA_SITES["sites/byPage/{Firma}.txt
         sites/byNewPage/{Firma}.txt
         (emails do mês)"]
@@ -142,13 +165,8 @@ flowchart TD
         (firmas já processadas)"]
     end
 
-    subgraph TEST["Testes
-    (test/java)"]
-        TEST_SITE["TestSite.java
-        - usa reflection
-        - Validations.enableTestMode()
-        - scraping sem registrar dados"]
-    end
+    %% Dependência entre módulos
+    MODULE_FIRMS -->|"depende de"| MODULE_CORE
 
     %% Fluxo principal
     MAIN -->|"1. preventSleep()"| NO_SLEEP
@@ -160,9 +178,10 @@ flowchart TD
     COMPLETED --> CONTINENT
     COMPLETED --> FIRMS_MONTH
     CONTINENT -->|"lê"| JSON_CFG
-    BP_BUILDER --> FIRMS_IMPL
-    BNP_BUILDER --> FIRMS_IMPL
-    FIRMS_IMPL -->|extends| BASE_SITES
+    BP_BUILDER --> SITES_IMPL
+    BNP_BUILDER --> SITES_IMPL
+    SITES_IMPL -->|extends| BASE_SITES
+    TO_TEST_BOX -->|extends| BASE_SITES
 
     MAIN -->|"5. para cada Site"| BASE_SITES
     BASE_SITES -->|"navega com"| MY_DRIVER

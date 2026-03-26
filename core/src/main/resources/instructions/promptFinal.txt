@@ -6,11 +6,11 @@ Contexto do Projeto: Geração de classes Java (Selenium/Apache POI) para web-sc
 O output deve conter apenas os seguintes itens, nesta ordem:
     1. Cada firma gerada deve estar em um bloco de código separado para que eu possa copiar e colar cada uma.
 
-    2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório src/main/java/org/example/src/sites/to_test/.
+    2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório core/src/main/java/org/example/src/sites/to_test/ (módulo core do projeto multi-módulo Maven).
 
     3. Geração das Classes: Código completo dos scrappers, ordenados alfabeticamente.
 
-    4. Bloco de Builders: Código para instanciação das firmas, agrupadas por Tipo de Classe e Continente, com no máximo 5 firmas por linha.
+    4. Bloco de Builders: Código para instanciação das firmas, agrupadas por Tipo de Classe e Continente, com no máximo 5 firmas por linha. Os builders estão em firms/src/main/java/org/example/src/utils/myInterface/ (ByNewPageFirmsBuilder.java e ByPageFirmsBuilder.java).
 
 2. Regras de Código e Implementação
     * Package: package org.example.src.sites.to_test;.
