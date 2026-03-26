@@ -1260,7 +1260,7 @@ When generating scraper classes for AI/automated tools:
 
 1. **`touch` Command** (create files):
    ```bash
-   touch src/main/java/org/example/src/sites/to_test/Firm1.java src/main/java/org/example/src/sites/to_test/Firm2.java
+   touch core/src/main/java/org/example/src/sites_to_testFirm1.java core/src/main/java/org/example/src/sites_to_testFirm2.java
    ```
 
 2. **Class Generation** (for each firm):
