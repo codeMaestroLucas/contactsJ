@@ -74,7 +74,7 @@ public class Validations {
      * File: countriesToAvoidPermanent.json
      */
     private static boolean isAPermanentCountryToAvoid(String country) {
-        Path filePath = Paths.get("src/main/resources/baseFiles/json/countriesToAvoidPermanent.json");
+        Path filePath = Paths.get("core/src/main/resources/baseFiles/json/countriesToAvoidPermanent.json");
         ObjectMapper mapper = new ObjectMapper();
 
         try {
@@ -114,7 +114,7 @@ public class Validations {
      * File: continentsConfig.json (enabled/disabled settings)
      */
     private static boolean isATemporaryCountryToAvoid(String country) {
-        Path filePath = Paths.get("src/main/resources/baseFiles/json/countriesToAvoidTemporary.json");
+        Path filePath = Paths.get("core/src/main/resources/baseFiles/json/countriesToAvoidTemporary.json");
         ObjectMapper mapper = new ObjectMapper();
 
         try {
@@ -149,7 +149,7 @@ public class Validations {
      * Checks if a given firm is in the "firmToAvoid.json" file.
      */
     public static boolean isAFirmToAVoid(String firm) {
-        Path filePath = Paths.get("src/main/resources/baseFiles/json/firmsToAvoid.json");
+        Path filePath = Paths.get("core/src/main/resources/baseFiles/json/firmsToAvoid.json");
         ObjectMapper mapper = new ObjectMapper();
 
         try {

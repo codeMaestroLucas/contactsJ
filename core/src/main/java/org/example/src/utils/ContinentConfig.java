@@ -21,7 +21,7 @@ import java.util.*;
  */
 public class ContinentConfig {
 
-    private static final Path CONFIG_PATH = Paths.get("src/main/resources/baseFiles/json/continentsConfig.json");
+    private static final Path CONFIG_PATH = Paths.get("core/src/main/resources/baseFiles/json/continentsConfig.json");
     private static final ObjectMapper mapper = new ObjectMapper();
 
     // Cache for continent configuration
