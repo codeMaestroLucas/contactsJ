@@ -2,6 +2,7 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byPage.*;
+import org.example.src.sites.byPage.CliffeDekkerHofmeyr;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class ByPageFirmsBuilder {
             new Adsero(), new ALPNGAndCo(), new AlukoAndOyebode(), new AmanAndPartners(), new Ashitiva(),
             new BentsiEnchillLetsaAndAnkomah(), new EldibAdvocates(), new FisherQuarmbyAndPfeifer(), new KantorAndImmerman(), new ShahidLaw(),
             new CoxYeats(), new EngoruMutebi(), new STBB(), new TheartMey(), new SPAAjibadeAndCo(),
+            new AFMpanga(), new CliffeDekkerHofmeyr(),
     };
 
     private static final Site[] ASIA = {
@@ -47,8 +49,8 @@ public class ByPageFirmsBuilder {
             new Yulchon(), new ZaidIbrahimAndCo(), new ZhongziLaw(),
             new KaiRongLaw(), new SoemadipradjaAndTaher(),
             new RP(), new SarafAndPartners(), new ShandongDehengLaw(), new SGLALaw(),
-            new MochtarKaruwinKomar(),
-            new GKCPartners(), new GLAAndCompany(), new JIPYONG(),
+            new GKCPartners(), new GLAAndCompany(), new JIPYONG(), new AlHamadLegal(), new AlMarkazLaw(),
+            new DehehengLaw(), new ShookLinBok(), new MochtarKaruwinKomar(),
     };
 
     private static final Site[] EUROPE = {
@@ -89,7 +91,8 @@ public class ByPageFirmsBuilder {
             new SkauReipurth(), new Snellman(), new SokolNovakTrojanDolecek(), new CravathSwaineAndMoore(),
             new SalusLegal(), new PatrikiosPavlouAndAssociates(),
             new MMDAdvokati(), new NaschitzBrandesAmir(), new Niedermüller(),
-            new GleissLutz(), new LYND(), new WIDEN(),
+            new GleissLutz(), new LYND(), new WIDEN(), new ARQUIS(), new BARGERPREKOP(),
+            new Bernitsas(), new DKCO(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -106,6 +109,7 @@ public class ByPageFirmsBuilder {
 
     private static final Site[] CENTRAL_AMERICA = {
             new GarciaBodan(), new LexAtlas(), new McConnellValdes(), new Nassar(), new Lexincorp(),
+            new DelcoLaw(),
     };
 
     private static final Site[] SOUTH_AMERICA = {

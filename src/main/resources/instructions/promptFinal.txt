@@ -1,4 +1,4 @@
-Prompt WebScrapping Java
+# Prompt WebScrapping Java
 
 Contexto do Projeto: Geração de classes Java (Selenium/Apache POI) para web-scraping de sites de advocacia baseados nas classes abstratas ByPage e ByNewPage.
 
@@ -15,6 +15,14 @@ O output deve conter apenas os seguintes itens, nesta ordem:
 2. Regras de Código e Implementação
     * Package: package org.example.src.sites.to_test;.
     * Filtro de Roles: Em getLawyersInPage, filtrar advogados por role conforme SchellenbergWittmer.java. Use a variável validRoles já presente em Site.java.
+        - Lembre-se de utilizar o
+        ```java
+            private final By[] byRoleArray = {
+                    By.cssSelector("")
+            };
+        ```
+        apenas quando a role do advogado for coletada na primeira página e puder ser reaproveitado em outras partes do código da classe. Se não for possível, utilize o array criado para validar e na nova página colete a role do advogado
+
     * Parâmetros: O parâmetro WebElement em getLawyer e auxiliares deve se chamar obrigatoriamente lawyer.
     * Telefones: Seguir o padrão "phone", socials[1].isEmpty() ? "xxxx" : socials[1]. Substituir "xxxx" pelo telefone da firma se encontrado, caso contrário, manter o padrão.
     * Utilitários: Sempre preferir funções de SiteUtils.java e Site.java (especialmente getSocials - `super.getSocials`). Para strings, usar TreatLawyerParams.treatName(name) e treatNameForEmail(name).
@@ -38,7 +46,25 @@ new FirmaF(),
 new FirmaG(),
 ```
 
-5. Tom e Restrições
+5. Casos interessantes
+    * Caso o site seja do tipo ByNewPage e não exista maneira de se validar a role do advogado na primeira etapa, faça o seguinte:
+```java
+private String getRole(WebElement content) throws LawyerExceptions {
+    String role = extractor.extractLawyerText(content, new By[] {By.tagName("h3")}, "ROLE", LawyerExceptions::roleException);
+    boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+    return validPosition ? role : "Invalid Role";
+}
+
+@Override
+protected Object getLawyer(WebElement lawyer) throws Exception {
+    this.openNewTab(lawyer);
+    WebElement content = driver.findElement(By.className("col-md-12"));
+
+    String role = this.getRole(content);
+    if (role.equals("Invalid Role")) return "Invalid Role";
+```
+
+## Erros e Observações
     * Output Direto: Sem explicações, linha de pensamento ou comentários no código.
     * Correções: Se necessário, usar labels --- ANTIGO --- e --- NOVO ---.
     * Utilize o EXTRACTOR da maneira correta, principalmente em se tratando os erros:
@@ -52,6 +78,27 @@ new FirmaG(),
 ```java
 WebElement container = driver.findElement(By.xpath("<xpath>"));
 "practice_area", extractor.extractLawyerText(container, new By[]{By.xpath("//p[contains(.,'Practice Areas:')]")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
+```
+</CORRETO>
+
+    * Não utilize os ByArrays dessa maneira, prefira-os dentro dos extractors aos externos
+<ERRADO>
+```java
+By[] nameBy = {By.xpath("//div[@class='name']")};
+By[] roleBy = {By.xpath("//div[@class='post']")};
+
+return Map.of(
+        "name", extractor.extractLawyerText(driver.findElement(By.tagName("body")), nameBy, "NAME", LawyerExceptions::nameException),
+        "role", extractor.extractLawyerText(driver.findElement(By.tagName("body")), roleBy, "ROLE", LawyerExceptions::roleException),
+```
+</ERRADO>
+
+<CORRETO>
+```java
+return Map.of(
+        "link", Objects.requireNonNull(driver.getCurrentUrl()),
+        "name", extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[] {By.xpath("//div[@class='name']")}, "NAME", LawyerExceptions::nameException),
+        "role", extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[] {By.xpath("//div[@class='post']")}, "ROLE", LawyerExceptions::roleException),
 ```
 </CORRETO>
 

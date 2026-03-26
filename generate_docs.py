@@ -36,7 +36,6 @@ PACKAGES = {
          "src/main/java/org/example/src/utils/Extractor.java",
          "src/main/java/org/example/src/utils/FirmsOMonth.java",
          "src/main/java/org/example/src/utils/NoSleep.java",
-         "src/main/java/org/example/src/utils/TimeCalculator.java",
          "src/main/java/org/example/src/utils/TreatLawyerParams.java",
          "src/main/java/org/example/src/utils/Validations.java"
     ],

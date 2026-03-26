@@ -18,7 +18,6 @@ import org.example.src.entities.MyDriver;
 import java.util.List;
 import java.util.concurrent.*;
 
-import static org.example.src.utils.TimeCalculator.calculateTimeOfExecution;
 
 public class Main {
     private static final Reports reports = Reports.getINSTANCE();
@@ -118,26 +117,16 @@ public class Main {
 
     /** Returns [contactLawyers, contactFirms, webLawyers1] */
     @SneakyThrows
-    private static int[] performCompleteSearch() {
-        final ContactsAlreadyRegisteredSheet[] sheetHolder = {null};
-        calculateTimeOfExecution(() -> sheetHolder[0] = getRegisteredContacts());
+    private static int[] performCompleteSearch() throws InterruptedException {
+        ContactsAlreadyRegisteredSheet sheet = getRegisteredContacts();
 
         // Compute BEFORE Phase 2 so the cap is shared with Phase 1's results
-        ContactsAlreadyRegisteredSheet sheet = sheetHolder[0];
-        int contactLawyers = sheet != null ? sheet.getTotalLawyers()           : 0;
-        int contactFirms   = sheet != null ? sheet.getLawFirmsCollectedCount() : 0;
+        int contactLawyers = sheet.getTotalLawyers();
+        int contactFirms   = sheet.getLawFirmsCollectedCount();
 
-        final int[] web1 = {0};
-        final int alreadyFromContacts = contactLawyers;
-        calculateTimeOfExecution(() -> {
-            try {
-                web1[0] = searchLawyersInWeb(alreadyFromContacts);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        });
+        int web1 = searchLawyersInWeb(contactLawyers);
 
-        return new int[]{ contactLawyers, contactFirms, web1[0] };
+        return new int[]{ contactLawyers, contactFirms, web1 };
     }
 
     private static void printExecutionSummary(

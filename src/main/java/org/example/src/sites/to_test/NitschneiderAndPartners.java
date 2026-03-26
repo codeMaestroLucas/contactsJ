@@ -42,7 +42,7 @@ public class NitschneiderAndPartners extends ByNewPage {
     }
 
     @Override
-    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
+    public String openNewTab(WebElement lawyer) throws InterruptedException {
         MyDriver.clickOnElement(lawyer);
         Thread.sleep(1000L);
         return driver.getCurrentUrl();

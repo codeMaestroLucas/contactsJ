@@ -110,7 +110,7 @@ public abstract class ByNewPage extends Site {
     // ABSTRACT METHODS
     @Override
     protected abstract List<WebElement> getLawyersInPage();
-    public abstract String openNewTab(WebElement lawyer) throws LawyerExceptions;
+    public abstract String openNewTab(WebElement lawyer) throws LawyerExceptions, InterruptedException;
     @Override
     protected abstract Object getLawyer(WebElement lawyer) throws Exception;
     protected abstract void accessPage(int index) throws InterruptedException;
