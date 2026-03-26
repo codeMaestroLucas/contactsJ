@@ -46,7 +46,7 @@ public class Mourant extends ByNewPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        MyDriver.clickOnAddBtn(By.cssSelector("div.cookie_button.accept_cookie > p > a"));
+        MyDriver.clickOnAddBtn(By.id("cookiescript_accept"));
     }
 
 
