@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class LeeInternational extends ByNewPage {
+public class Frasers extends ByNewPage {
 
-    public LeeInternational() {
+    public Frasers() {
         super(
-                "Lee International",
-                "https://www.leeinternational.com/home/etc/searchResultPf.php?stx=a",
+                "Frasers",
+                "https://www.frasersvn.com/senior-legal-team",
                 1
         );
     }
@@ -33,7 +33,7 @@ public class LeeInternational extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.cf > li")));
+            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".item .team")));
         } catch (Exception e) {
             return List.of();
         }
@@ -49,22 +49,28 @@ public class LeeInternational extends ByNewPage {
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("profile"));
+        WebElement container = driver.findElement(By.className("content-text"));
 
-        String name = extractor.extractLawyerText(container, new By[]{By.className("name")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(container, new By[]{By.className("position")}, "ROLE", LawyerExceptions::roleException);
+        String role = this.getRole(container);
+        if (role.equals("Invalid Role")) return "Invalid Role";
 
-        String[] socials = super.getSocials(container.findElements(By.cssSelector(".contact p")), true);
+        String[] socials = super.getSocialsFromText(container.findElement(By.cssSelector(".info-content")).getText());
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", name,
+                "name", extractor.extractLawyerText(container, new By[]{By.className("title")}, "NAME", LawyerExceptions::nameException),
                 "role", role,
                 "firm", this.name,
-                "country", "Korea (South)",
+                "country", "Vietnam",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "82222626000" : socials[1]
+                "phone", socials[1].isEmpty() ? "842838242733" : socials[1]
         );
+    }
+
+    private String getRole(WebElement container) throws LawyerExceptions {
+        String role = extractor.extractLawyerText(container, new By[]{By.className("position")}, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 }

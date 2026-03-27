@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -33,8 +33,8 @@ public class CNPLaw extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("h3.lawger-archive-name > a")));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.xpath("./../../a[contains(@class,'wpgb-block-7')]")}, true);
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("article.wpgb-card")));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("wpgb-card-body")}, true);
         } catch (Exception e) {
             return List.of();
         }
@@ -42,7 +42,7 @@ public class CNPLaw extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = lawyer.getAttribute("href");
+        String link = lawyer.findElement(By.className("wpgb-card-layer-link")).getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }
@@ -61,18 +61,16 @@ public class CNPLaw extends ByNewPage {
         this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("lawyer-template-hero-content"));
 
-        String name = extractor.extractLawyerText(container, new By[]{By.className("lawyer-template-hero-title")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(container, new By[]{By.className("lawyer-template-title")}, "ROLE", LawyerExceptions::roleException);
         String[] socials = this.getSocials(container);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", name,
-                "role", role,
+                "name", extractor.extractLawyerText(container, new By[]{By.className("lawyer-template-hero-title")}, "NAME", LawyerExceptions::nameException),
+                "role", extractor.extractLawyerText(container, new By[]{By.className("lawyer-template-title")}, "ROLE", LawyerExceptions::roleException),
                 "firm", this.name,
                 "country", "Singapore",
                 "practice_area", "",
-                "email", socials[0],
+                "email", socials[0].split("\\?")[0],
                 "phone", socials[1].isEmpty() ? "6563238383" : socials[1]
         );
     }

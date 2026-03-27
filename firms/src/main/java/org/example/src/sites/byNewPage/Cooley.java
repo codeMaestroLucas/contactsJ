@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -13,19 +13,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import static java.util.Map.entry;
+
 public class Cooley extends ByNewPage {
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("beijing", "China"),
+            entry("brussels", "Belgium"),
+            entry("hong kong", "China"),
+            entry("london", "England"),
+            entry("shanghai", "China"),
+            entry("singapore", "Singapore")
+    );
 
     public Cooley() {
         super(
                 "Cooley",
-                "https://www.cooley.com/people#t=cooley-coveo-tab-people-listing",
-                1
+                "https://www.cooley.com/people#t=cooley-coveo-tab-people-listing&sort=%40personsortname%20ascending&layout=card&f:cooley-offices-facet=[Beijing,Hong%20Kong,London,Seattle,Brussels,Shanghai,Singapore]",
+                5,
+                3
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        String otherUrl = "https://www.cooley.com/people#first=" + (index * 15) + "&t=cooley-coveo-tab-people-listing&sort=%40personsortname%20ascending&layout=card&f:cooley-offices-facet=[Beijing,Brussels,Hong%20Kong,London,Seattle,Shanghai,Singapore]";
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(2000);
     }
@@ -49,23 +62,27 @@ public class Cooley extends ByNewPage {
         return link;
     }
 
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        String country = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector("div[data-field='@personprimaryoffice']")}, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "USA");
+    }
+
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String countryText = extractor.extractLawyerText(lawyer, new By[]{By.xpath(".//div[contains(@class,'teaser-position')][2]")}, "COUNTRY", LawyerExceptions::countryException);
-
+        String country = getCountry(lawyer);
         this.openNewTab(lawyer);
         WebElement hero = driver.findElement(By.className("hero-person"));
 
         String name = extractor.extractLawyerText(hero, new By[]{By.className("name")}, "NAME", LawyerExceptions::nameException);
         String role = extractor.extractLawyerText(hero, new By[]{By.className("eyebrow")}, "ROLE", LawyerExceptions::roleException);
-        String email = extractor.extractLawyerAttribute(hero, new By[]{By.cssSelector("a[href^='mailto:']")}, "EMAIL", "textContent", LawyerExceptions::emailException);
+        String email = extractor.extractLawyerAttribute(hero, new By[]{By.cssSelector("a[href*='mailto:']")}, "EMAIL", "textContent", LawyerExceptions::emailException);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", countryText,
+                "country", country,
                 "practice_area", "",
                 "email", email,
                 "phone", "xxxxxx"

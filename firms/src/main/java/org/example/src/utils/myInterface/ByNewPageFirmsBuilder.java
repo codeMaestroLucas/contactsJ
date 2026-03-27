@@ -25,7 +25,7 @@ public class ByNewPageFirmsBuilder {
             new MMAKS(), new MMAN(), new MulengaMundashiLegalPractitioners(), new MusibauAdetunbiAndCo(), new MuvingiAndMugadza(),
             new OraroAndCompany(), new RobinsonBertram(), new SenekalSimmonds(), new SLKB(),
             new AdamsAndAdams(), new AfricaseAttorneys(), new ALCAlieldeanWeshahi(), new AshongBenjamin(), new BennaniAndAssocies(),
-            new TNP(), new JLDAndMBLegal(),
+            new TNP(), new JLDAndMBLegal(), new ChazaiWamba(), new DualeOviaAlexAdedipe(),
     };
 
     private static final Site[] ASIA = {
@@ -59,6 +59,9 @@ public class ByNewPageFirmsBuilder {
             new AECO(), new AlBusaidyMansoorJamal(), new AlYaqoutAlFouzan(), new ANSS(),
             new ASAR(), new BLCASSOCIATES(), new BossYoung(), new BunAssociates(),
             new AlAlawiCo(), new ZanHub(),
+            new CC(), new ChanceBridge(), new CNPLaw(), new CoEffortLaw(), new CollyerLaw(),
+            new DavidsonAndCo(), new DFDL(), new Frasers(),
+            new KanKrishme(), new LeeInternational(), new LeeTsaiAndPartners(), new ManuelaAntonio(), new OonBazul(),
     };
 
     private static final Site[] EUROPE = {
@@ -143,20 +146,14 @@ public class ByNewPageFirmsBuilder {
             new Sorainen(), new StephensonHarwood(), new TEMPLARS(), new Thommessen(), new Vaneps(),
             new WALLESS(), new SullivanAndCromwell(), new SdzlegalSchindhelm(),
             new EmploymentLawAlliance(), new RiadSalehAndPartners(), new Luther(),
-            new ArochiLindner(), new Bracewell(),
+            new ArochiLindner(), new Bracewell(), new Cooley(),
     };
 
     private static final Site[] TEST = {
 // ByPage - Africa
             new PoswaIncorporated(), // new site coming soon
 
-// ByNewPage - Africa
-            new ChazaiWamba(), new DualeOviaAlexAdedipe(), new TripleOKLaw(),
-
 // ByNewPage - Asia
-            new CC(), new ChanceBridge(), new CNPLaw(), new CoEffortLaw(), new CollyerLaw(),
-            new Cooley(), new DavidsonAndCo(), new DFDL(), new DNP(), new Frasers(),
-            new KanKrishme(), new LeeInternational(), new LeeTsaiAndPartners(), new ManuelaAntonio(), new OonBazul(),
             new RHTLaw(), new SarmientoLoriegaLaw(), new Skrine(), new SOIP(), new TillekeGibbins(),
             new Tongshang(), new TSMP(), new WithersKhattarWong(), new YKVN(), new YouMe(),
 

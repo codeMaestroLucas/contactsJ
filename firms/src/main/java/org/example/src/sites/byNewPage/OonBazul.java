@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class OonBazul extends ByNewPage {
 
@@ -33,8 +32,7 @@ public class OonBazul extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("fusion-portfolio-post")));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.cssSelector(".fusion-post-content p")}, true);
+            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("fusion-portfolio-post")));
         } catch (Exception e) {
             return List.of();
         }
@@ -42,26 +40,24 @@ public class OonBazul extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("fusion-portfolio-post-title"), By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
+        String link = lawyer.findElement(By.cssSelector("a[href*='https://oonbazul.com/lawyers/']")).getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector("h2.entry-title.fusion-post-title")}, "NAME", LawyerExceptions::nameException);
+        String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("white-portfolio-box"));
-
-        String name = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.className("fusion-title-heading")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.className("fusion-person-content-sep")}, "ROLE", LawyerExceptions::roleException);
 
         String contactInfo = extractor.extractLawyerText(container, new By[]{By.className("content-container")}, "CONTACT INFO", (e) -> null);
         String[] socials = super.getSocialsFromText(contactInfo);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", link,
                 "name", name,
-                "role", role,
+                "role", "Partner",
                 "firm", this.name,
                 "country", "Singapore",
                 "practice_area", "",

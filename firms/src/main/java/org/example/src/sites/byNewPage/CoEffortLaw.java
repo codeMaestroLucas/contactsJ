@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -19,13 +19,17 @@ public class CoEffortLaw extends ByNewPage {
         super(
                 "Co-effort Law",
                 "http://www.co-effort.com/en/en_personnel/personnel_list",
-                1
+                2
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        if (index == 0) {
+            this.driver.get(this.link);
+        } else {
+            MyDriver.clickOnElement(By.xpath("//*[@id=\"en\"]/div[2]/div[3]/div[2]/div/button[2]"));
+        }
         MyDriver.waitForPageToLoad();
     }
 
@@ -49,26 +53,30 @@ public class CoEffortLaw extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("info_name")}, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("info_type")}, "ROLE", "textContent", LawyerExceptions::roleException);
+
         this.openNewTab(lawyer);
+        Thread.sleep(2000);
         WebElement container = driver.findElement(By.className("info_list"));
+        String[] socials = super.getSocials(container.findElements(By.tagName("div")), true);
+        if (socials[0].isEmpty()) {
+            socials = super.getSocialsFromText(container.getAttribute("textContent"));
+        }
 
-        String name = extractor.extractLawyerText(container, new By[]{By.tagName("h5")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(null, new By[]{By.className("info_type")}, "ROLE", LawyerExceptions::roleException);
-        String country = extractor.extractLawyerText(container, new By[]{By.xpath(".//div[contains(text(),'Office')]/following-sibling::div")}, "COUNTRY", LawyerExceptions::countryException);
-        String practice = extractor.extractLawyerText(container, new By[]{By.xpath(".//div[contains(text(),'Practice Area')]/following-sibling::div")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
+        if (socials[0].isEmpty()) return "Invalid role";
 
-        String email = extractor.extractLawyerText(container, new By[]{By.xpath(".//span[contains(text(),'Email')]/following-sibling::span")}, "EMAIL", LawyerExceptions::emailException);
-        String phone = extractor.extractLawyerText(container, new By[]{By.xpath(".//span[contains(text(),'Phone')]/following-sibling::span")}, "PHONE", (e) -> null);
+
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", country,
-                "practice_area", practice,
-                "email", email,
-                "phone", phone == null || phone.isEmpty() ? "862168866151" : phone
+                "country", "China",
+                "practice_area", extractor.extractLawyerAttribute(container, new By[]{By.xpath(".//div[contains(text(),'Practice Area')]/following-sibling::div")}, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException),
+                "email", socials[0].replace("：", ""),
+                "phone", socials[1].isEmpty() ? "862168866151" : socials[1]
         );
     }
 }

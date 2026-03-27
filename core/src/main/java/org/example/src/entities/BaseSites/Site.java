@@ -98,8 +98,8 @@ public abstract class Site {
                     ? Objects.requireNonNull(social.getAttribute("textContent")).toLowerCase().trim()
                     : Objects.requireNonNull(social.getAttribute("href")).toLowerCase().trim();
 
-            if ((value.contains("mail") || value.contains("@")) && email.isEmpty()) {
-                email = value;
+            if (value.contains("mail") && email.isEmpty()) {
+                if ((value.contains("@")) || value.contains("(at)")) email = value;
 
             } else if (phone.isEmpty()) {
                 String cleaned = value.replaceAll("[^0-9]", "");
@@ -115,6 +115,27 @@ public abstract class Site {
     protected String[] getSocialsFromText(String text) {
         String email = "";
         String phone = "";
+
+        // 0. Handle labeled format: "D : (853) 2837 2623" or "E  : ruicunha@ccadvog.com"
+        Set<String> emailLabels = Set.of("e", "email", "mail");
+        Set<String> phoneLabels = Set.of("d", "t", "tel", "phone", "p", "direct", "dial", "mobile", "m", "cell");
+
+        Matcher labeledMatcher = Pattern
+                .compile("(?m)^[ \\t]*([A-Za-z]{1,10})[ \\t]*:[ \\t]*(.+?)[ \\t]*$")
+                .matcher(text);
+
+        while (labeledMatcher.find() && (email.isEmpty() || phone.isEmpty())) {
+            String label = labeledMatcher.group(1).toLowerCase();
+            String value = labeledMatcher.group(2).trim();
+
+            if (email.isEmpty() && emailLabels.contains(label) && value.contains("@")) {
+                email = value.toLowerCase();
+            }
+            if (phone.isEmpty() && phoneLabels.contains(label)) {
+                String cleaned = value.replaceAll("[^0-9]", "");
+                if (cleaned.length() >= 7) phone = cleaned;
+            }
+        }
 
         // 1. Find email via regex — handles "Email:\nfoo@bar.com" and inline formats
         Matcher emailMatcher = Pattern
@@ -142,6 +163,20 @@ public abstract class Site {
                     .matcher(phoneSection);
             if (phoneMatcher.find()) {
                 phone = phoneMatcher.group().replaceAll("[^0-9]", "");
+            }
+        }
+
+        // 2b. Standalone phone line: "+84 24 3946 1203" — whole line is only phone characters
+        if (phone.isEmpty()) {
+            for (String line : text.split("[\\r\\n]+")) {
+                String trimmed = line.trim();
+                if (trimmed.matches("[+]?[\\d][\\d\\s().\\-]{5,}")) {
+                    String cleaned = trimmed.replaceAll("[^0-9]", "");
+                    if (cleaned.length() >= 7) {
+                        phone = cleaned;
+                        break;
+                    }
+                }
             }
         }
 

@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -11,21 +11,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ChanceBridge extends ByNewPage {
 
     public ChanceBridge() {
         super(
                 "Chance Bridge",
-                "https://chancebridge.com/en/zyry/1/?pid=1",
-                5
+                "https://chancebridge.com/en/zyry/",
+                10
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String url = index == 0 ? this.link : "https://chancebridge.com/en/zyry/" + (index + 1) + "/?pid=1";
-        this.driver.get(url);
+        if (index == 0) {
+            this.driver.get(this.link);
+        } else {
+            MyDriver.clickOnElement(By.xpath("/html/body/div[2]/div[3]/div[5]/a[5]"));
+        }
+        Thread.sleep(1000);
         MyDriver.waitForPageToLoad();
     }
 
@@ -49,24 +54,25 @@ public class ChanceBridge extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("name")}, "NAME", "textContentr", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("subname")}, "ROLE", "textContentr", LawyerExceptions::roleException);
+        String pa = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("viw")}, "PRACTICE AREA", "textContentr", LawyerExceptions::practiceAreaException);
+
         this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("person-link-type"));
-
-        String name = driver.findElement(By.cssSelector(".person-name h1")).getText().split("\n")[0].trim();
-        String role = driver.findElement(By.className("person-title")).getText();
 
         List<WebElement> socialElements = container.findElements(By.className("person-list-desc"));
         String[] socials = super.getSocials(socialElements, true);
 
         return Map.of(
-                "link", driver.getCurrentUrl(),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", name,
                 "role", role,
                 "firm", this.name,
                 "country", "China",
-                "practice_area", "",
+                "practice_area", pa,
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "861085870075" : socials[1]
+                "phone", socials[1].isEmpty() ? "861085419666" : socials[1]
         );
     }
 }

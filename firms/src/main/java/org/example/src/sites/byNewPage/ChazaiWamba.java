@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ChazaiWamba extends ByNewPage {
 
@@ -33,7 +34,7 @@ public class ChazaiWamba extends ByNewPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("daimg")));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("span")}, true);
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("span")}, false);
         } catch (Exception e) {
             return List.of();
         }
@@ -52,20 +53,19 @@ public class ChazaiWamba extends ByNewPage {
         WebElement container = driver.findElement(By.className("equicolcontent"));
 
         String name = driver.findElement(By.tagName("h1")).getText().split(" is ")[0].trim();
-        String role = extractor.extractLawyerText(container, new By[]{By.tagName("h1")}, "ROLE", LawyerExceptions::roleException);
 
         List<WebElement> socialElements = container.findElements(By.cssSelector(".icopar a"));
         String[] socials = super.getSocials(socialElements, false);
 
         return Map.of(
-                "link", driver.getCurrentUrl(),
+                "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", name,
-                "role", role,
+                "role", extractor.extractLawyerText(container, new By[]{By.tagName("h1")}, "ROLE", LawyerExceptions::roleException),
                 "firm", this.name,
                 "country", "Cameroon",
                 "practice_area", extractor.extractLawyerText(container, new By[]{By.className("puceComp")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "" : socials[1]
+                "phone", socials[1].isEmpty() ? "237233432617" : socials[1]
         );
     }
 }

@@ -2,7 +2,6 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byPage.*;
-import org.example.src.sites.byPage.CliffeDekkerHofmeyr;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class ByPageFirmsBuilder {
             new Adsero(), new ALPNGAndCo(), new AlukoAndOyebode(), new AmanAndPartners(), new Ashitiva(),
             new BentsiEnchillLetsaAndAnkomah(), new EldibAdvocates(), new FisherQuarmbyAndPfeifer(), new KantorAndImmerman(), new ShahidLaw(),
             new CoxYeats(), new EngoruMutebi(), new STBB(), new TheartMey(), new SPAAjibadeAndCo(),
-            new AFMpanga(), new CliffeDekkerHofmeyr(),
+            new AFMpanga(), new CliffeDekkerHofmeyr(), new TripleOKLaw()
     };
 
     private static final Site[] ASIA = {

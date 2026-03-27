@@ -132,9 +132,10 @@ public final class TreatLawyerParams {
 
         // Normalize for JSON lookup: lowercase, & → "and", collapse whitespace
         String normalized = practiceArea
-                .replace("&amp;", " and ")
-                .replaceAll("(?i)\\s*&\\s*", " and ")
                 .toLowerCase()
+                .replace("&amp;", " and ")
+                .replace("practice area", " ")
+                .replaceAll("(?i)\\s*&\\s*", " and ")
                 .replaceAll("\\s+", " ")
                 .trim();
 
