@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Tongshang extends ByNewPage {
+public class RHTLaw extends ByNewPage {
 
-    public Tongshang() {
+    public RHTLaw() {
         super(
-                "Tongshang",
-                "http://www.tongshang.com/en/professionals/",
+                "RHT Law",
+                "https://www.rhtlawasia.com/partners/",
                 1
         );
     }
@@ -33,8 +33,7 @@ public class Tongshang extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".li > a")));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("zc")}, true);
+            return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("jet-listing-grid__item")));
         } catch (Exception e) {
             return List.of();
         }
@@ -42,7 +41,7 @@ public class Tongshang extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = lawyer.getAttribute("href");
+        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
         return link;
     }
@@ -50,24 +49,20 @@ public class Tongshang extends ByNewPage {
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("con_l"));
+        WebElement container = driver.findElement(By.xpath("/html/body/div[1]/section[1]/div/div[2]/div"));
 
         String name = extractor.extractLawyerText(container, new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(container, new By[]{By.className("zc")}, "ROLE", LawyerExceptions::roleException);
-        String practice = extractor.extractLawyerText(container, new By[]{By.className("ly")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
-
-        List<WebElement> links = container.findElements(By.tagName("a"));
-        String[] socials = super.getSocials(links, false);
+        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
                 "name", name,
-                "role", role,
+                "role", "Partner",
                 "firm", this.name,
-                "country", "China",
-                "practice_area", practice,
+                "country", "Singapore",
+                "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "861065637181" : socials[1]
+                "phone", "6563816868"
         );
     }
 }

@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class YKVN extends ByNewPage {
+public class Tongshang extends ByNewPage {
 
-    public YKVN() {
+    public Tongshang() {
         super(
-                "YKVN",
-                "https://ykvn-law.com/lawyer/#partner",
+                "Tongshang",
+                "http://www.tongshang.com/en/professionals/",
                 1
         );
     }
@@ -27,14 +27,16 @@ public class YKVN extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        // More than 30 rolls but the page is slow to load more
+        MyDriver.clickOnElementMultipleTimes(By.id("list_more"), 4, 2.5);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("mk-employee-item")));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("team-member-position")}, true);
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".li > a")));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("zc")}, true);
         } catch (Exception e) {
             return List.of();
         }
@@ -42,7 +44,7 @@ public class YKVN extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("team-member-name")}, "LINK", "href", LawyerExceptions::linkException);
+        String link = lawyer.getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }
@@ -50,21 +52,19 @@ public class YKVN extends ByNewPage {
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("vc_column-inner"));
 
-        String name = extractor.extractLawyerText(container, new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(container, new By[]{By.xpath(".//p/strong")}, "ROLE", LawyerExceptions::roleException);
+        WebElement container = driver.findElement(By.className("con_l"));
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", name,
-                "role", role,
+                "name", extractor.extractLawyerText(container, new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException),
+                "role", extractor.extractLawyerText(container, new By[]{By.className("zc")}, "ROLE", LawyerExceptions::roleException),
                 "firm", this.name,
-                "country", "Vietnam",
-                "practice_area", "",
+                "country", "China",
+                "practice_area", extractor.extractLawyerText(container, new By[]{By.className("ly")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "842838223155" : socials[1]
+                "phone", socials[1].isEmpty() ? "861065637181" : socials[1]
         );
     }
 }

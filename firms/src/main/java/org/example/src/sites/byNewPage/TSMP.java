@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class SOIP extends ByNewPage {
+public class TSMP extends ByNewPage {
 
-    public SOIP() {
+    public TSMP() {
         super(
-                "S&O IP",
-                "https://www.so-ipr.com/our-team",
+                "TSMP",
+                "https://www.tsmplaw.com/our-people/",
                 1
         );
     }
@@ -33,8 +33,8 @@ public class SOIP extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("team-item")));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("desc")}, true);
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("globalThumbnailStyling-people")));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.cssSelector("p.subText")}, true);
         } catch (Exception e) {
             return List.of();
         }
@@ -49,22 +49,18 @@ public class SOIP extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("title")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("desc")}, "ROLE", LawyerExceptions::roleException);
-
         this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("contact"));
-        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
+        WebElement container = driver.findElement(By.className("peopleDetailsWrap"));
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", name,
-                "role", role,
+                "name", extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException),
+                "role", extractor.extractLawyerText(container, new By[]{By.xpath(".//p[contains(.,'Partner')]")}, "ROLE", LawyerExceptions::roleException),
                 "firm", this.name,
-                "country", "Vietnam",
+                "country", "Singapore",
                 "practice_area", "",
-                "email", socials[0],
-                "phone", socials[1].isEmpty() ? "842873009678" : socials[1]
+                "email", extractor.extractLawyerText(container, new By[]{By.tagName("a")}, "EMAIL", LawyerExceptions::emailException),
+                "phone", "6565344877"
         );
     }
 }

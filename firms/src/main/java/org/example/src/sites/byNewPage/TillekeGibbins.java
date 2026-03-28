@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -27,14 +27,16 @@ public class TillekeGibbins extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        MyDriver.rollDown(60, 0.8);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("section.elementor-top-section")));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("elementor-icon-list-text")}, true);
+            WebElement div = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+            List<WebElement> lawyers = div.findElements(By.cssSelector("section.elementor-top-section"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("div")}, false);
         } catch (Exception e) {
             return List.of();
         }
@@ -50,9 +52,9 @@ public class TillekeGibbins extends ByNewPage {
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-        WebElement panel = driver.findElement(By.className("elementor-widget-populated"));
+        WebElement panel = driver.findElement(By.xpath("/html/body/div/section[1]/div[2]/div[2]/div"));
 
-        String name = extractor.extractLawyerText(panel, new By[]{By.cssSelector("h2.elementor-heading-title")}, "NAME", LawyerExceptions::nameException);
+        String name = driver.findElement(By.xpath("/html/body/div/section[1]/div[2]/div[2]/div/section/div/div/div/div[2]/div/h2")).getAttribute("textContent");
         String role = extractor.extractLawyerText(panel, new By[]{By.cssSelector("h5.elementor-heading-title")}, "ROLE", LawyerExceptions::roleException);
         String[] socials = super.getSocials(panel.findElements(By.tagName("a")), false);
 

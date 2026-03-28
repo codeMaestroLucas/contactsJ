@@ -5,7 +5,7 @@ import org.example.src.sites_to_test.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends RHTLaw {
+class MyTestPage extends ACTLEGAL {
     public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }
