@@ -97,7 +97,7 @@ public class ByNewPageFirmsBuilder {
             new SlaughterAndMay(), new SRSLegal(), new Strelia(), new SZA(), new Szecskay(),
             new Valfor(), new VanOlmenAndWynant(), new Vischer(), new VossiusAndPartner(), new WardynskiAndPartners(),
             new WengerVieliAG(), new WierzbowskiAndPartners(), new Wiersholm(), new WikborgRein(), new ZampaPartners(),
-            new ZeposAndYannopoulos()
+            new ZeposAndYannopoulos(), new ACTLEGAL(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -151,7 +151,7 @@ public class ByNewPageFirmsBuilder {
             new DeCampsVasquezVarela(),
 
 // ByNewPage - Europe
-            new ACTLEGAL(), new AtlasAdvokater(), new BGLegal(), new CasesLacambra(), new CCALegal(),
+            new AtlasAdvokater(), new BGLegal(), new CasesLacambra(), new CCALegal(),
             new CCSLegal(), new ChryssesDemetriades(), new Darrois(), new DeGaulleFleurance(), new DePardieu(),
             new Desfilis(), new DSMAvocats(), new EliasNeocleous(), new Finnius(), new GrigorescuStefanica(),
             new Kneppelhout(), new LAGRO(), new Lexence(), new NitschneiderAndPartners(), new RutgersPosch(),

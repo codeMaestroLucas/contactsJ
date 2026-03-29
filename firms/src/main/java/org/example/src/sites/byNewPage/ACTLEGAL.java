@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
+
+import static java.util.Map.entry;
 
 public class ACTLEGAL extends ByNewPage {
 
@@ -19,9 +20,28 @@ public class ACTLEGAL extends ByNewPage {
         super(
                 "ACT LEGAL",
                 "https://actlegal.com/professionals?page=3",
-                1
+                1,
+                3
         );
     }
+
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("austria", "Austria"),
+            entry("belgium", "Belgium"),
+            entry("bulgaria", "Bulgaria"),
+            entry("czechia", "the Czech Republic"),
+            entry("france", "France"),
+            entry("germany", "Germany"),
+            entry("hungary", "Hungary"),
+            entry("italy", "Italy"),
+            entry("netherlands", "the Netherlands"),
+            entry("poland", "Poland"),
+            entry("portugal", "Portugal"),
+            entry("romania", "Romania"),
+            entry("slovakia", "Slovakia"),
+            entry("spain", "Spain"),
+            entry("western balkans", "Western Balkans")
+    );
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
@@ -57,14 +77,21 @@ public class ACTLEGAL extends ByNewPage {
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", link,
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", "the Czech Republic",
+                "country", this.getCountry(),
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "420222537500" : socials[1]
         );
+    }
+
+    private String getCountry() {
+        String country = driver.findElement(By.className("professional-contact")).getAttribute("innerHTML");
+        String[] split = country.split("<br>");
+        country = split[split.length - 1].replace("</p>", "");
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "----");
     }
 }
