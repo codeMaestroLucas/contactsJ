@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -31,10 +31,10 @@ public class DeCampsVasquezVarela extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        By[] byRoleArray = {By.tagName("b")};
+        By[] byRoleArray = {By.className("name")};
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.attorneys li")));
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.peopleList li")));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
         } catch (Exception e) {
             return List.of();
@@ -54,8 +54,8 @@ public class DeCampsVasquezVarela extends ByNewPage {
         By[] byName = {By.cssSelector("span.name a")};
         By[] byRole = {By.tagName("b")};
 
-        String name = extractor.extractLawyerText(lawyer, byName, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, byRole, "ROLE", LawyerExceptions::roleException);
+        String name = extractor.extractLawyerAttribute(lawyer, byName, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, byRole, "ROLE", "textContent", LawyerExceptions::roleException);
 
         this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("topAddress"));
@@ -67,7 +67,7 @@ public class DeCampsVasquezVarela extends ByNewPage {
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", "Dominican Republic",
+                "country", "the Dominican Republic",
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "8095678444" : socials[1]

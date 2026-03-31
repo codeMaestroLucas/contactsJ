@@ -3,6 +3,7 @@ package org.example.src.sites.byNewPage;
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
+import org.example.src.utils.VCard;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class Mourant extends ByNewPage {
     public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
@@ -25,8 +25,10 @@ public class Mourant extends ByNewPage {
     );
 
     private final By[] byRoleArray = {
-            By.className("role")
+            By.className("wp-component-card-contact__job-title")
     };
+
+    private final VCard vCard = VCard.withDefaultPatterns();
 
     public Mourant() {
         super(
@@ -40,34 +42,26 @@ public class Mourant extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "https://www.mourant.com/people/?page=" + (index + 1);
-        String url = index == 0 ? this.link : otherUrl;
-        this.driver.get(url);
+        this.driver.get(link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
         MyDriver.clickOnAddBtn(By.id("cookiescript_accept"));
+        MyDriver.clickOnElementMultipleTimes(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div/div/div[4]/button"), 10, 1);
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "chair",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("person-card")
+                            By.className("wp-component-card-contact__content")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -76,7 +70,7 @@ public class Mourant extends ByNewPage {
 
 
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String href = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("view-link")}, "LINK", "href", LawyerExceptions::linkException);
+        String href = extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector("a[href*='https://www.mourant.com/people/']")}, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(href);
         return href;
     }
@@ -92,21 +86,19 @@ public class Mourant extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("role")
+                By.tagName("h2")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
 
     private String[] getSocials() {
-        WebElement lawyer = driver.findElement(By.cssSelector("div.share.hide_on_mobile"));
         try {
-            List<WebElement> socials = lawyer
-                    .findElements(By.cssSelector("ul > li > a"));
-            return super.getSocials(socials, false);
-
+            WebElement vcardLink = driver.findElement(By.cssSelector("a[href$='.vcf']"));
+            String href = vcardLink.getAttribute("href");
+            return vCard.getSocials(href);
         } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
+            System.err.println("Mourant: error fetching vCard — " + e.getMessage());
             return new String[]{"", ""};
         }
     }
@@ -114,18 +106,17 @@ public class Mourant extends ByNewPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String link = this.openNewTab(lawyer);
 
-        WebElement div = driver
-                .findElement(By.className("people-quote"))
-                .findElement(By.className("row-content"));
+        WebElement div = driver.findElement(By.className("wp-component-person-connect__link-blocks"));
+        WebElement header = driver.findElement(By.className("wp-block-hero-block__heading-group"));
 
         String[] socials = this.getSocials();
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", this.getName(div),
-                "role", this.getRole(div),
+                "link", link,
+                "name", this.getName(header),
+                "role", this.getRole(header),
                 "firm", this.name,
                 "country", siteUtl.getCountryBasedInOfficeByPhone(OFFICE_TO_COUNTRY, socials[1], socials[1]),
                 "practice_area", "",

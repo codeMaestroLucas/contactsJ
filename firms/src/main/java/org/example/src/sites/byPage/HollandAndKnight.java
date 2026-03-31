@@ -28,7 +28,7 @@ public class HollandAndKnight extends ByPage {
 
     public HollandAndKnight() {
         super(
-                "Holland And Knight",
+                "Holland & Knight",
                 "",
                 4,
                 2

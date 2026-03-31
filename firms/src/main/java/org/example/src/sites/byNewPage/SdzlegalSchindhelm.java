@@ -24,9 +24,6 @@ public class SdzlegalSchindhelm extends ByNewPage {
 
     private String currentCountry = "";
 
-    private final String[] validRoles = {"partner", "counsel", "principal", "director", "head", "senior associate"};
-
-
     private static final Map<String, String> COUNTRY_LINKS = Map.ofEntries(
             Map.entry("Poland", "https://pl.schindhelm.com/en/team"),
             Map.entry("Austria", "https://at.schindhelm.com/en/team"),
@@ -95,8 +92,7 @@ public class SdzlegalSchindhelm extends ByNewPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElements(By.tagName("a"));
-            return super.getSocials(socials, true);
+            return super.getSocialsFromText(lawyer.getText());
         } catch (Exception e) {
             return new String[]{"", ""};
         }

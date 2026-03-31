@@ -135,9 +135,6 @@ public class EmploymentLawAlliance extends ByNewPage {
             entry("zambia", "Zambia")
     );
 
-    private final String[] validRoles = new String[]{"partner", "counsel", "head", "shareholder", "founder", "director", "principal", "adviser", "advisor", "manager", "chair", "managing associate", "senior associate"};
-
-
     public EmploymentLawAlliance() {
         super(
                 "Employment Law Alliance",

@@ -4,6 +4,7 @@ import org.example.exceptions.LawyerExceptions;
 import org.example.src.CONFIG;
 import org.example.src.entities.MyDriver;
 import org.example.src.utils.Validations;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -78,6 +79,15 @@ public abstract class ByNewPage extends Site {
                     if (shouldStop) {
                         break pageLoop; // Break out of both loops
                     }
+                } catch (StaleElementReferenceException e) {
+                    // DOM was refreshed between fetching the list and reading the element.
+                    // Re-fetch the list and retry the same index.
+                    try {
+                        lawyersInPage = this.getLawyersInPage();
+                        if (lawyersInPage != null && index < lawyersInPage.size()) {
+                            index--; // will be incremented by the for-loop, retrying same position
+                        }
+                    } catch (Exception ignored) {}
                 } catch (Exception e) {
                     String context = String.format(
                             "Error reading %dth lawyer at page %d",

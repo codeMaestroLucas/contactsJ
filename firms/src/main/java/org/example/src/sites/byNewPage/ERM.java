@@ -35,7 +35,9 @@ public class ERM extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".border-current")));
+
+            WebElement until = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"_main\"]/section/div/div[1]")));
+            List<WebElement> lawyers = until.findElements(By.cssSelector("div.block.h-full"));
             return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("capitalize")}, true);
         } catch (Exception e) {
             return List.of();
@@ -52,22 +54,23 @@ public class ERM extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector(".ltr\\:font-sortsMillGoudy")}, "NAME", LawyerExceptions::nameException);
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector("div.italic.text-2xl")}, "NAME", LawyerExceptions::nameException);
         String role = extractor.extractLawyerText(lawyer, new By[]{By.className("capitalize")}, "ROLE", LawyerExceptions::roleException);
+        String pa = lawyer.getAttribute("textContent");
 
-        this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.tagName("main"));
+        String link = this.openNewTab(lawyer);
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
+        WebElement container = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//section[1]/div/div[2]")));
 
-        List<WebElement> a = container.findElements(By.tagName("a"));
-        String[] socials = super.getSocials(a, false);
+        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", link,
                 "name", name,
                 "role", role,
                 "firm", this.name,
                 "country", "Israel",
-                "practice_area", extractor.extractLawyerText(container, new By[]{By.cssSelector(".flex.flex-wrap")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
+                "practice_area", pa,
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "97236061600" : socials[1]
         );

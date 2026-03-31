@@ -93,7 +93,7 @@ public class HHRLawyers extends ByNewPage {
                 "firm", this.name,
                 "country", "Indonesia",
                 "practice_area", "",
-                "email", socials[0],
+                "email", socials[0].replace("&subject=greeting%20website", ""),
                 "phone", "622150913991"
         );
     }

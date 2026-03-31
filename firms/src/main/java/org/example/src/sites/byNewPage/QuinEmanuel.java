@@ -55,17 +55,14 @@ public class QuinEmanuel extends ByNewPage {
     @Override
     protected void accessPage(int index) throws InterruptedException {
         String otherUrl = "https://www.quinnemanuel.com/attorneys#byCountry=1757&byChar=all&byProfileType=&bySearch=&byOffice=&byPracticeArea=&byLawClerk=&byAdp=&currentPage=" + index;
-        this.driver.get(this.link);
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner", "counsel", "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
@@ -73,7 +70,7 @@ public class QuinEmanuel extends ByNewPage {
                             By.className("atn-details")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -81,7 +78,7 @@ public class QuinEmanuel extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{By.className("attorney-rewrite")};
+        By[] byArray = new By[]{By.cssSelector("a[href*='https://www.quinnemanuel.com/attorneys/']")};
         String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
         return link;
@@ -110,25 +107,18 @@ public class QuinEmanuel extends ByNewPage {
     }
 
     private String[] getSocials(WebElement lawyer) {
-        try {
-            String email = lawyer.findElement(By.cssSelector("a[href*='mailto:']")).getAttribute("href");
-            String phone = lawyer.findElement(By.cssSelector("a[href*='tel:']")).getAttribute("href");
-            return new String[]{email, phone};
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
-        }
+        return super.getSocials(lawyer.findElements(By.tagName("a")), false);
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String link = this.openNewTab(lawyer);
         WebElement div = driver.findElement(By.className("right-info"));
 
         String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", link,
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,

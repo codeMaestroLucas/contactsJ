@@ -10,7 +10,10 @@
     "u.s.a",
     "u.s.",
     "u.s",
-    "america"
+    "america",
+    "washington",
+    "washington d.c.",
+    "washington dc"
   ],
   "England": [
     "england and wales",
@@ -21,30 +24,36 @@
     "britain",
     "u.k.",
     "u.k",
-    "uk"
+    "uk",
+    "london"
   ],
   "the Netherlands": [
     "the netherlands",
     "netherlands",
     "nederland",
-    "holland"
+    "holland",
+    "amsterdam"
   ],
   "the Philippines": [
     "republic of the philippines",
     "the philippines",
     "phillippines",
     "philippines",
-    "pilipinas"
+    "pilipinas",
+    "manila"
   ],
   "the Cayman Islands": [
     "the cayman islands",
     "cayman islands",
-    "cayman island"
+    "cayman island",
+    "george town",
+    "georgetown"
   ],
   "Korea (South)": [
     "republic of korea",
     "south korea",
-    "s. korea"
+    "s. korea",
+    "seoul"
   ],
   "the UAE": [
     "united arab emirates",
@@ -52,45 +61,58 @@
     "united arab emirate",
     "u.a.e.",
     "u.a.e",
-    "uae"
+    "uae",
+    "abu dhabi"
   ],
-  "the BVI": [
+  "the British Virgin Islands": [
     "british virgin islands",
-    "the british virgin islands",
+    "the bvi",
     "b.v.i.",
     "b.v.i",
-    "bvi"
+    "bvi",
+    "road town"
   ],
   "the Czech Republic": [
     "the czech republic",
     "czech republic",
-    "czechia"
+    "czechia",
+    "prague"
   ],
   "the Dominican Republic": [
     "the dominican republic",
-    "dominican republic"
+    "dominican republic",
+    "santo domingo"
   ],
   "Russia": [
     "russian federation",
-    "the russian federation"
+    "the russian federation",
+    "moscow"
   ],
   "Turkey": [
     "turkiye",
     "republic of turkey",
-    "republic of turkiye"
+    "republic of turkiye",
+    "ankara"
   ],
   "Vietnam": [
     "viet nam",
     "socialist republic of vietnam",
-    "socialist republic of viet nam"
+    "socialist republic of viet nam",
+    "hanoi"
   ],
   "Myanmar": [
-    "burma"
+    "burma",
+    "naypyidaw",
+    "naypyitaw",
+    "yangon",
+    "rangoon"
   ],
   "Ivory Coast": [
     "cote d'ivoire",
     "cote divoire",
-    "republic of cote d'ivoire"
+    "republic of cote d'ivoire",
+    "yamoussoukro",
+    "abidjan"
   ],
   "Macau": [
     "macao",
@@ -100,32 +122,43 @@
   "Laos": [
     "lao pdr",
     "lao people's democratic republic",
-    "lao peoples democratic republic"
+    "lao peoples democratic republic",
+    "vientiane"
   ],
   "Iran": [
-    "islamic republic of iran"
+    "islamic republic of iran",
+    "tehran",
+    "teheran"
   ],
   "North Macedonia": [
     "republic of north macedonia",
     "macedonia",
-    "fyrom"
+    "fyrom",
+    "skopje"
   ],
   "Bosnia and Herzegovina": [
     "bosnia & herzegovina",
-    "bosnia-herzegovina"
+    "bosnia-herzegovina",
+    "sarajevo"
   ],
   "Trinidad and Tobago": [
-    "trinidad & tobago"
+    "trinidad & tobago",
+    "port of spain"
   ],
   "Antigua and Barbuda": [
-    "antigua & barbuda"
+    "antigua & barbuda",
+    "saint john's",
+    "st. john's",
+    "st. johns"
   ],
   "Saint Kitts and Nevis": [
     "st. kitts and nevis",
     "st kitts and nevis",
-    "st. kitts & nevis"
+    "st. kitts & nevis",
+    "basseterre"
   ],
   "Papua New Guinea": [
-    "png"
+    "png",
+    "port moresby"
   ]
 }

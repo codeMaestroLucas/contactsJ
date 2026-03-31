@@ -15,8 +15,7 @@ import java.util.Objects;
 
 public class TannerDeWitt extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className(""),
-            By.cssSelector("")
+            By.tagName("span"),
     };
 
     public TannerDeWitt() {
@@ -32,30 +31,21 @@ public class TannerDeWitt extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
-        Thread.sleep(1000L);
-
-        // Click on add btn
-//        MyDriver.clickOnElement(By.id(""));
+        Thread.sleep(500);
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "counsel",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("ul.people-list > li > a")
+                            By.cssSelector("ul.people-list > li")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -64,8 +54,9 @@ public class TannerDeWitt extends ByNewPage {
 
 
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        MyDriver.openNewTab(lawyer.getAttribute("href"));
-        return null;
+        String link = lawyer.findElement(By.tagName("a")).getAttribute("href");
+        MyDriver.openNewTab(link);
+        return link;
     }
 
 
@@ -79,48 +70,37 @@ public class TannerDeWitt extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
+                By.className("lawyer-title")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
-
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className(""),
-                By.cssSelector("")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-    }
-
-
     private String[] getSocials(WebElement lawyer) {
+        WebElement div = lawyer.findElement(By.className("section-lawyer"));
+        String[] socials = super.getSocialsFromText(div.getText());
         String email = ""; String phone = "";
 
         email = driver.findElement(By.id("profile-email")).getAttribute("href");
-        //todo: check
-        phone = driver.findElement(By.className("section-lawyer")).getText();
 
-        return new String[]{ email, phone };
+        return new String[]{ email, socials[1] };
     }
 
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String link = this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className(""));
+        WebElement div = driver.findElement(By.id("content"));
 
         String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", link,
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,
                 "country", "Hong Kong",
-                "practice_area", this.getCountry(div),
+                "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "" : socials[1]
         );

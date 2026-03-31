@@ -20,8 +20,6 @@ public class BDO extends ByNewPage {
 
     private String currentCountry = "";
 
-    private final String[] validRoles = { "partner", "counsel", "advisor", "director", "senior associate" };
-
     public BDO() {
         super(
             "BDO",
@@ -62,8 +60,7 @@ public class BDO extends ByNewPage {
             "https://www.bdo.ch/en-gb/our-people",
             "https://www.bdo.tn/en-gb/our-people",
             "https://www.bdo.com.tr/en-gb/our-people",
-            "https://www.bdomexico.com/en-gb/our-people",
-//            "",
+            "https://www.bdomexico.com/en-gb/our-people"
     };
 
 
@@ -203,7 +200,7 @@ public class BDO extends ByNewPage {
                             By.className("person-card__details")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);

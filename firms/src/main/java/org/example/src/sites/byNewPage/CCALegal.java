@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -17,7 +17,7 @@ public class CCALegal extends ByNewPage {
     public CCALegal() {
         super(
                 "CCA",
-                "https://www.cca.law/en/team/",
+                "https://www.cca.law/en/team/?all",
                 1
         );
     }
@@ -32,7 +32,7 @@ public class CCALegal extends ByNewPage {
     protected List<WebElement> getLawyersInPage() {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("card")));
+            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div.equipa-list > a.card")));
             return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("card-subtitle")}, true);
         } catch (Exception e) {
             return List.of();
@@ -48,24 +48,26 @@ public class CCALegal extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("main-content"));
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("card-title")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("card-subtitle")}, "ROLE", LawyerExceptions::roleException);
 
-        String name = extractor.extractLawyerText(container, new By[]{By.className("page-title")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(container, new By[]{By.className("card-subtitle")}, "ROLE", LawyerExceptions::roleException);
 
-        List<WebElement> socialElements = container.findElements(By.cssSelector(".box-text a"));
+        String link = this.openNewTab(lawyer);
+        WebElement container = driver.findElement(By.xpath("//footer/div[1]/div[3]/div[2]/div/div[2]"));
+
+
+        List<WebElement> socialElements = container.findElements(By.tagName("a"));
         String[] socials = super.getSocials(socialElements, false);
 
         return Map.of(
-                "link", driver.getCurrentUrl(),
+                "link", link,
                 "name", name,
                 "role", role,
                 "firm", this.name,
                 "country", "Portugal",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "" : socials[1]
+                "phone", socials[1].isEmpty() ? "351223190888" : socials[1]
         );
     }
 }

@@ -52,7 +52,7 @@ public class CorneliusLaneAndMufti extends ByNewPage {
 
     private String[] getSocials(WebElement container) {
         try {
-            WebElement emailEl = container.findElement(By.cssSelector("a[href^='mailto:']"));
+            WebElement emailEl = container.findElement(By.cssSelector("a[href*='mailto:']"));
             return new String[]{emailEl.getText().trim(), "92518350467"};
         } catch (Exception e) {
             return new String[]{"", "92518350467"};

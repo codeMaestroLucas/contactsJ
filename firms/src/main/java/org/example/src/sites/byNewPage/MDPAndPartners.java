@@ -17,7 +17,7 @@ public class MDPAndPartners extends ByNewPage {
 
     public MDPAndPartners() {
         super(
-                "MDP And Partners",
+                "MDP & Partners",
                 "https://mdplegal.co/partners/",
                 1
         );

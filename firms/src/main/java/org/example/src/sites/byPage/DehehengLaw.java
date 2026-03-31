@@ -56,11 +56,6 @@ public class DehehengLaw extends ByPage {
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String getCountry(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector(".icon-dingwei + p")};
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-    }
-
     private String[] getSocials(WebElement lawyer) {
         try {
             List<WebElement> infoLines = lawyer.findElements(By.cssSelector(".txt1 div"));
@@ -79,7 +74,7 @@ public class DehehengLaw extends ByPage {
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,
-                "country", this.getCountry(lawyer),
+                "country", "China",
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "861052192888" : socials[1]

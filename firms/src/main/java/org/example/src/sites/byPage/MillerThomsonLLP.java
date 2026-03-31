@@ -37,10 +37,6 @@ public class MillerThomsonLLP extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner", "director", "counsel"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
@@ -48,7 +44,7 @@ public class MillerThomsonLLP extends ByNewPage {
                             By.className("team-card__content")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -70,10 +66,7 @@ public class MillerThomsonLLP extends ByNewPage {
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("team-card__job")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
     }
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
@@ -92,27 +85,22 @@ public class MillerThomsonLLP extends ByNewPage {
     }
 
     private String[] getSocials(WebElement lawyer) {
-        try {
-            String email = lawyer.findElement(By.cssSelector("a[href^='mailto:']")).getAttribute("href");
-            String phone = lawyer.findElement(By.cssSelector("a[href^='tel:']")).getAttribute("href");
-            return new String[]{email, phone};
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
-        }
+        return super.getSocials(lawyer.findElements(By.tagName("a")), false);
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String role = getRole(lawyer);
+
+        String link = this.openNewTab(lawyer);
         WebElement div = driver.findElement(By.className("member-details"));
 
         String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", link,
                 "name", this.getName(div),
-                "role", this.getRole(div),
+                "role", role,
                 "firm", this.name,
                 "country", this.getCountry(div),
                 "practice_area", this.getPracticeArea(driver.findElement(By.id("industries-expertise"))),

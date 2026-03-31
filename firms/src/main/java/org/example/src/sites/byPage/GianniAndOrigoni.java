@@ -15,7 +15,7 @@ import java.util.Map;
 public class GianniAndOrigoni extends ByPage {
     public GianniAndOrigoni() {
         super(
-                "Gianni And Origoni",
+                "Gianni & Origoni",
                 "https://www.gop.it/people.php?lang=eng",
                 1,
                 3

@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -18,7 +18,7 @@ public class BGLegal extends ByNewPage {
     public BGLegal() {
         super(
                 "BG Legal",
-                "https://bg.legal/en/who-are-we/",
+                "https://bg.legal/en/our-people",
                 1
         );
     }
@@ -49,9 +49,9 @@ public class BGLegal extends ByNewPage {
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.cssSelector(".text.flex.flex-column"));
+        WebElement container = driver.findElement(By.xpath("//*[@id=\"main\"]/section/section[1]/div/div/div[2]/div[1]/div[2]"));
 
-        String role = extractor.extractLawyerText(container, new By[]{By.className("intro")}, "ROLE", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerText(driver.findElement(By.tagName("main")), new By[]{By.className("description")}, "ROLE", LawyerExceptions::roleException);
 
         if (!this.siteUtl.isValidPosition(role, validRoles)) {
             return "Invalid Role";

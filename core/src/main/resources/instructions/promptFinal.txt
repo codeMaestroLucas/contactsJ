@@ -30,6 +30,22 @@ O output deve conter apenas os seguintes itens, nesta ordem:
     * Campos Fixos: O campo "firm" em getLawyer deve ser sempre this.name.
     * Extração: Usar a instância extractor (ex: extractor.extractLawyerText(...)) com lambdas de erro de LawyerExceptions.
     * Indentação do super(): Os argumentos dentro do super() devem ter um nível a menos de indentação que o padrão.
+    * SEMPRE prefira utilizar a função openLink da seguinte forma:
+
+<ERRADO>
+```java
+this.openNewTab(lawyer);
+```
+</ERRADO>
+
+<CORRETO>
+```java
+String link = this.openNewTab(lawyer);
+
+return Map.of(
+        "link", link,
+```
+</CORRETO>
 
 3. Lógica das Classes
     * ByPage: Extração direta dos elementos da lista.

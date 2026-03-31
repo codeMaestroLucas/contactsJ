@@ -1,4 +1,4 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -18,13 +18,15 @@ public class CasesLacambra extends ByNewPage {
         super(
                 "Cases & Lacambra",
                 "https://www.caseslacambra.com/professionals/",
-                1
+                3
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        String otherUrl = "https://www.caseslacambra.com/professionals/page/" + (index + 1) + "/";
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
     }
 
@@ -48,22 +50,22 @@ public class CasesLacambra extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("t-professional"));
+        String link = this.openNewTab(lawyer);
+        WebElement container = driver.findElement(By.className("s-template-professional"));
 
-        String name = extractor.extractLawyerText(container, new By[]{By.className("c-professional-hero__name")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(container, new By[]{By.className("c-professional-hero__role")}, "ROLE", LawyerExceptions::roleException);
+        String name = extractor.extractLawyerText(container, new By[]{By.className("c-professional-header__name")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(container, new By[]{By.className("c-professional-header__subheading")}, "ROLE", LawyerExceptions::roleException);
 
-        List<WebElement> socialElements = container.findElements(By.cssSelector("a[href^='mailto:']"));
-        String[] socials = super.getSocials(socialElements, false);
+        String[] socials = super.getSocials(container.findElement(By.className("c-professional-contact")).findElements(By.tagName("a")), false);
         String phone = extractor.extractLawyerText(container, new By[]{By.className("c-professional-contact__item-wrapper")}, "PHONE", LawyerExceptions::phoneException);
+        String country = phone.startsWith("34") ? "Spain" : "USA";
 
         return Map.of(
-                "link", driver.getCurrentUrl(),
+                "link", link,
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", "Spain",
+                "country", country,
                 "practice_area", "",
                 "email", socials[0],
                 "phone", phone.isEmpty() ? "376728001" : phone

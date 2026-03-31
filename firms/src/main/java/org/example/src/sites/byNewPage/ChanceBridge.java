@@ -54,15 +54,12 @@ public class ChanceBridge extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("name")}, "NAME", "textContentr", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("subname")}, "ROLE", "textContentr", LawyerExceptions::roleException);
-        String pa = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("viw")}, "PRACTICE AREA", "textContentr", LawyerExceptions::practiceAreaException);
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("name")}, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("subname")}, "ROLE", "textContent", LawyerExceptions::roleException);
+        String pa = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("viw")}, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException);
 
         this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("person-link-type"));
-
-        List<WebElement> socialElements = container.findElements(By.className("person-list-desc"));
-        String[] socials = super.getSocials(socialElements, true);
+        String[] socials = super.getSocialsFromText(driver.findElement(By.className("person-link-type")).getText());
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),

@@ -1,6 +1,7 @@
 package org.example.src.utils.validation;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -192,7 +193,12 @@ public final class EmailDuplicateChecker {
             driver = null;
             isLoggedIn = false;
         }
-        
+
+        // Clear any lingering interrupt flag so ChromeDriver creation isn't blocked.
+        // This is critical when restartDriver() is called from a thread that was
+        // interrupted by future.cancel(true) — without this, new ChromeDriver() can fail.
+        Thread.interrupted();
+
         // Initialize new driver
         initializeDriver();
     }
@@ -209,6 +215,19 @@ public final class EmailDuplicateChecker {
             return false;
         }
 
+        // Driver can be null if a previous restartDriver() failed (e.g. interrupted thread).
+        // Recover here so that subsequent firms are not affected.
+        if (driver == null) {
+            try {
+                Thread.interrupted(); // clear stale interrupt flag from the previous thread
+                initializeDriver();
+                isLoggedIn = false;
+            } catch (Exception e) {
+                System.err.println("EmailDuplicateChecker: Cannot initialize driver - " + e.getMessage());
+                return false;
+            }
+        }
+
         try {
             // Login on first use
             if (!isLoggedIn) {
@@ -218,19 +237,24 @@ public final class EmailDuplicateChecker {
             // Ensure page is ready with all required elements
             ensurePageIsReady();
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            WebDriverWait waitInput = new WebDriverWait(driver, Duration.ofSeconds(10));
 
             // Wait for email input and enter email
             WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(EMAIL_INPUT));
             emailInput.clear();
             emailInput.sendKeys(email);
-
-            wait.until(ExpectedConditions.elementToBeClickable(By.id("check-button"))).click();
+            Thread.sleep(1000);
+            emailInput.sendKeys(Keys.ENTER);
+            WebElement resultContainer = null;
 
             // Wait for result container to appear
-            WebElement resultContainer = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(RESULT_CONTAINER)
-            );
+            try {
+                resultContainer = waitInput.until(ExpectedConditions.visibilityOfElementLocated(RESULT_CONTAINER));
+            } catch (Exception e) {
+                emailInput.sendKeys(Keys.ENTER);
+                resultContainer = waitInput.until(ExpectedConditions.visibilityOfElementLocated(RESULT_CONTAINER));
+            }
 
             // Check if it has the "result-clean" class
             String resultClass = resultContainer.getAttribute("class");

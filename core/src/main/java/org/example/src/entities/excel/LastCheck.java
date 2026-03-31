@@ -7,6 +7,8 @@ import org.example.src.CONFIG;
 import org.example.src.utils.NoSleep;
 import org.example.src.utils.validation.EmailDuplicateChecker;
 
+import java.util.Comparator;
+
 /**
  * Class to validate emails in a spreadsheet using EmailDuplicateChecker.
  * Iterates through all rows, checks if emails are registered on the site,
@@ -104,6 +106,20 @@ public final class LastCheck extends Excel {
         this.closeWorkbook();
     }
 
+    /**
+     * Sorts all data rows by: D (Country) → J (Firm) → E (Practice Area) → F (Link) → C (Phone).
+     * No header row — sort starts from row 0.
+     */
+    public void sortRows() {
+        Comparator<String[]> comparator = Comparator.comparing((String[] r) -> r[3])
+                .thenComparing(r -> r[9])
+                .thenComparing(r -> r[4])
+                .thenComparing(r -> r[5])
+                .thenComparing(r -> r[2]);
+        super.sortRows(comparator, 10, 0);
+    }
+
+
     public static void main(String[] args) {
         LastCheck checker = new LastCheck();
 
@@ -113,6 +129,7 @@ public final class LastCheck extends Excel {
         } finally {
             // Always cleanup resources
             checker.cleanup();
+            checker.sortRows();
             NoSleep.allowSleep(); // allow sleep again when finished
         }
     }

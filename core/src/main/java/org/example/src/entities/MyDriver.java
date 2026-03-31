@@ -170,6 +170,74 @@ public final class MyDriver {
 
 
     /**
+     * CMD+Clicks (Mac) / CTRL+Clicks (Windows/Linux) the element, waits for the browser
+     * to open a new tab, then switches to it — equivalent to {@link #openNewTab(String)}
+     * but triggered by a user gesture instead of a direct URL navigation.
+     *
+     * @param by locator for the element
+     */
+    public static void cmdClickOnElement(By by) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+        cmdClickOnElement(element);
+    }
+
+    /**
+     * CMD+Clicks (Mac) / CTRL+Clicks (Windows/Linux) the element, waits for the browser
+     * to open a new tab, then switches to it — equivalent to {@link #openNewTab(String)}
+     * but triggered by a user gesture instead of a direct URL navigation.
+     *
+     * @param element the element to CMD+Click
+     */
+    public static void cmdClickOnElement(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement elementToClick = wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        Keys modifier = System.getProperty("os.name").toLowerCase().contains("mac")
+                ? Keys.COMMAND
+                : Keys.CONTROL;
+
+        java.util.Set<String> handlesBefore = driver.getWindowHandles();
+
+        try {
+            new Actions(driver)
+                    .keyDown(modifier)
+                    .click(elementToClick)
+                    .keyUp(modifier)
+                    .perform();
+        } catch (Exception e) {
+            try {
+                new Actions(driver)
+                        .moveToElement(elementToClick)
+                        .pause(Duration.ofMillis(500))
+                        .keyDown(modifier)
+                        .click(elementToClick)
+                        .keyUp(modifier)
+                        .perform();
+            } catch (Exception hoverException) {
+                ((JavascriptExecutor) driver).executeScript(
+                        "arguments[0].dispatchEvent(new MouseEvent('click', " +
+                        "{bubbles:true, cancelable:true, metaKey:true, ctrlKey:true}));",
+                        elementToClick
+                );
+            }
+        }
+
+        // Wait for the new tab to appear and switch to it
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(d -> d.getWindowHandles().size() > handlesBefore.size());
+
+        String newHandle = driver.getWindowHandles().stream()
+                .filter(h -> !handlesBefore.contains(h))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("CMD+Click did not open a new tab"));
+
+        driver.switchTo().window(newHandle);
+        waitForPageToLoad();
+    }
+
+
+    /**
      * Waits until 10sec to find an element and then perform a click.
      * @param by locator for the element
      */

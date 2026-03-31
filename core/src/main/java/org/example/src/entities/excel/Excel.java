@@ -5,10 +5,12 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.example.src.entities.Lawyer;
 
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 @Getter
 public class Excel {
@@ -96,6 +98,58 @@ public class Excel {
         this.saveSheet();
     }
 
+
+    /**
+     * Sorts rows starting from {@code startRow} using the given comparator.
+     *
+     * @param comparator  defines the sort order; each element is a String[] with one entry per column
+     * @param numColumns  number of columns to read per row
+     * @param startRow    first row index to include in the sort (0 = no header, 1 = skip header)
+     * @return the number of data rows sorted (useful for subclasses that track row counters)
+     */
+    public int sortRows(Comparator<String[]> comparator, int numColumns, int startRow) {
+        int lastRow = this.sheet.getLastRowNum();
+        if (lastRow < startRow) return 0;
+
+        // 1. Collect all data rows as String[]
+        List<String[]> rows = new ArrayList<>();
+        for (int i = startRow; i <= lastRow; i++) {
+            Row row = this.sheet.getRow(i);
+            if (row == null) continue;
+            String[] cells = new String[numColumns];
+            for (int j = 0; j < numColumns; j++) {
+                Cell cell = row.getCell(j);
+                cells[j] = (cell != null) ? cell.getStringCellValue() : "";
+            }
+            rows.add(cells);
+        }
+
+        // 2. Sort
+        rows.sort(comparator);
+
+        // 3. Remove all data rows (descending to avoid index gaps)
+        for (int i = lastRow; i >= startRow; i--) {
+            Row row = this.sheet.getRow(i);
+            if (row != null) this.sheet.removeRow(row);
+        }
+
+        // 4. Re-write in sorted order
+        for (int i = 0; i < rows.size(); i++) {
+            Row newRow = this.sheet.createRow(startRow + i);
+            String[] cells = rows.get(i);
+            for (int j = 0; j < cells.length; j++) {
+                newRow.createCell(j).setCellValue(cells[j]);
+            }
+        }
+
+        this.saveSheet();
+        return rows.size();
+    }
+
+    /** Convenience overload for sheets with a header row (startRow = 1). */
+    public int sortRows(Comparator<String[]> comparator, int numColumns) {
+        return sortRows(comparator, numColumns, 1);
+    }
 
     /**
      * Creates or Gets a row, and then insert all the content given

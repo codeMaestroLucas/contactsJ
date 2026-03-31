@@ -9,20 +9,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class KeystoneLaw extends ByNewPage {
     private final By[] byRoleArray = {
-            By.className("jobtitle")
+            By.tagName("p")
     };
 
     public KeystoneLaw() {
         super(
             "Keystone Law",
             "https://www.keystonelaw.com/lawyers",
-            20,
+            27,
             1
         );
     }
@@ -30,33 +32,24 @@ public class KeystoneLaw extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        String otherUrl = "https://www.keystonelaw.com/lawyers?lang=en&sf_paged=" + (index + 1);
+        String otherUrl = "https://keystonelaw.com/lawyers/?_paged=" + (index + 1);
         String url = index == 0 ? this.link : otherUrl;
         this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
 
-        if (index > 0) return;
+        if (index == 0) MyDriver.clickOnAddBtn(By.className("cky-btn-accept"));
+        MyDriver.scrollToBottom(0.5);
 
-        MyDriver.clickOnAddBtn(By.id("ccc-notify-accept"));
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "senior associate"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            List<WebElement> lawyers = wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("staff-details")
-                    )
-            );
+            WebElement div = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main\"]/div[1]/div[1]")));
+            List<WebElement> lawyers = div.findElements(By.cssSelector("a[href*='https://keystonelaw.com/lawyers/']"));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
 
         } catch (Exception e) {
@@ -66,18 +59,14 @@ public class KeystoneLaw extends ByNewPage {
 
 
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.cssSelector("a")
-        };
-        String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-        MyDriver.openNewTab(link);
-        return link;
+        MyDriver.cmdClickOnElement(lawyer);
+        return driver.getCurrentUrl();
     }
 
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("name")
+                By.tagName("h1")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
@@ -85,44 +74,28 @@ public class KeystoneLaw extends ByNewPage {
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("jobtitle")
+                By.tagName("p")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
 
-    private String getPracticeArea() throws LawyerExceptions {
-        WebElement lawyer = driver.findElement(By.className("tab-panels"));
-        By[] byArray = new By[]{
-                By.cssSelector("ul > li")
-        };
-        return extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
-    }
-
-
-    private String[] getSocials(WebElement lawyer) {
-        try {
-            List<WebElement> socials = lawyer
-                    .findElements(By.cssSelector("p > a"));
-            return super.getSocials(socials, false);
-
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
-        }
+    private String getPracticeArea() {
+        return driver.findElement(By.xpath("//*[@id=\"main\"]/div[1]/div[2]/div[2]/p[1]")).getAttribute("textContent");
     }
 
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String link = this.openNewTab(lawyer);
 
-        WebElement div = driver.findElement(By.className("staff-header"));
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+        WebElement div = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main\"]/div[1]/div[1]/div/div[2]")));
 
-        String[] socials = this.getSocials(div);
+        String[] socials = super.getSocialsFromText(div.getAttribute("textContent"));
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", link,
                 "name", this.getName(div),
                 "role", this.getRole(div),
                 "firm", this.name,

@@ -1,7 +1,7 @@
-package org.example.src.sites_to_test;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
-import org.example.src.entities.BaseSites.ByNewPage;
+import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,9 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
-public class AtlasAdvokater extends ByNewPage {
+public class AtlasAdvokater extends ByPage {
 
     public AtlasAdvokater() {
         super(
@@ -42,30 +41,19 @@ public class AtlasAdvokater extends ByNewPage {
     }
 
     @Override
-    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
-        MyDriver.openNewTab(link);
-        return link;
-    }
-
-    @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.tagName("main"));
-
-        String name = extractor.extractLawyerText(container, new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(container, new By[]{By.cssSelector("p.text-xl")}, "ROLE", LawyerExceptions::roleException);
-        String[] socials = super.getSocials(container.findElements(By.cssSelector("ul.flex-col a")), false);
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h2")}, "NAME", LawyerExceptions::nameException);
+        String[] socials = super.getSocials(lawyer.findElements(By.tagName("a")), false);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
+                "link", lawyer.findElement(By.cssSelector("a[href*='/om-oss/team/']")).getAttribute("href"),
                 "name", name,
-                "role", role,
+                "role", "Advokat",
                 "firm", this.name,
                 "country", "Sweden",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "0868442900" : socials[1]
+                "phone", socials[1].isEmpty() ? "868442902" : socials[1]
         );
     }
 }

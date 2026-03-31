@@ -22,7 +22,8 @@ public class Legance extends ByNewPage {
         super(
             "Legance",
             "https://www.legance.com/professionals/",
-            52
+            56,
+                2
         );
     }
 
@@ -46,58 +47,34 @@ public class Legance extends ByNewPage {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
 
-            return wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.xpath("//a[starts-with(@href,'https://www.legance.com/professionals/') and @href!='https://www.legance.com/professionals/' and not(contains(@href,'/page/'))]")
+            WebElement div = wait.until(
+                    ExpectedConditions.presenceOfElementLocated(
+                            By.id("professionisti")
                     )
             );
-
+            List<WebElement> lawyers = div.findElements(By.className("row"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.cssSelector("p.ruoloProfe")}, true);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
     }
 
-
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        MyDriver.openNewTab(lawyer.getAttribute("href"));
-        return null;
+        String link = lawyer.findElement(By.cssSelector("a.nomeProfe")).getAttribute("href");
+        MyDriver.openNewTab(link);
+        return link;
     }
-
-
-    private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("professional-banner-header"),
-                By.className("entry-title")
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME",  "textContent",LawyerExceptions::nameException);
-    }
-
-
-    private String getRole(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = new By[]{
-                By.className("professional-banner-header"),
-                By.className("text-uppercase"),
-        };
-        return extractor.extractLawyerAttribute(lawyer, byArray, "ROLE",  "textContent",LawyerExceptions::roleException);
-    }
-
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("professional-banner-header"),
-                By.cssSelector("a[href^='https://www.legance.com/office/']")
+                By.xpath("/html/body/div[2]/main/section[2]/div/div/div[2]/div[1]/div[1]/span[2]"),
         };
         String country = extractor.extractLawyerAttribute(lawyer, byArray, "COUNTRY",  "textContent",LawyerExceptions::countryException);
         return country.toLowerCase().contains("london") ? "England" : "Italy";
     }
 
-    private String getPracticeArea() throws LawyerExceptions {
-        WebElement lawyer = driver
-                .findElement(By.cssSelector("a.text-decoration-none[href^='https://www.legance.com/practice-areas/']"));
-        By[] byArray = new By[]{
-                By.className("font-weight-normal")
-        };
-           return extractor.extractLawyerAttribute(lawyer, byArray, "PRACTICE AREA",  "textContent",LawyerExceptions::practiceAreaException);
+    private String getPracticeArea() {
+        return driver.findElement(By.xpath("/html/body/div[2]/main/section[2]/div/div/div[2]/div[3]/a/span/span")).getAttribute("textContent");
     }
 
 
@@ -116,16 +93,18 @@ public class Legance extends ByNewPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String name = lawyer.findElement(By.cssSelector("a.nomeProfe")).getAttribute("textContent");
+        String role = lawyer.findElement(By.cssSelector("p.ruoloProfe")).getAttribute("textContent");
 
-        WebElement div = driver.findElement(By.cssSelector("article header"));
+        String link = this.openNewTab(lawyer);
 
+        WebElement div = driver.findElement(By.className("contact-actions"));
         String[] socials = this.getSocials(div);
 
         return Map.of(
-                "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", this.getName(div),
-                "role", this.getRole(div),
+                "link", link,
+                "name", name,
+                "role", role,
                 "firm", this.name,
                 "country", this.getCountry(div),
                 "practice_area", this.getPracticeArea(),

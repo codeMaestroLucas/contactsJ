@@ -28,8 +28,8 @@ public class LeeAndKo extends ByPage {
 
     public LeeAndKo() {
         super(
-                "Lee And Ko",
-                "https://www.leeko.com/leenko/member/memberSearchResultList.do?lang=EN&pageNo=1&schKeyword=a",
+                "Lee & Ko",
+                "https://www.leeko.com/fleenko/member/memberSearchResultList.do?lang=EN&pageNo=1&schKeyword=a",
                 26
         );
     }
@@ -45,11 +45,6 @@ public class LeeAndKo extends ByPage {
 
 
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner",
-                "advisor"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
@@ -57,7 +52,7 @@ public class LeeAndKo extends ByPage {
                             By.cssSelector("div.leeko-member__list > a.leeko-member-item")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
