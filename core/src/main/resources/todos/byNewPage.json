@@ -59,8 +59,7 @@
   },
   {
     "name": "AS Papadimitriou & Partners",
-    "link": "https://saplegal.gr/people/",
-    "Note": "Check if there's any more lawyer to register"
+    "link": "https://saplegal.gr/people/"
   },
   {
     "name": "SANDS",
@@ -1129,8 +1128,7 @@
   },
   {
     "name": "Prado Vidigal",
-    "link": "https://pradovidigal.com.br/en/our-team/",
-    "Note": "Check if there's any more lawyer to register"
+    "link": "https://pradovidigal.com.br/en/our-team/"
   },
   {
     "name": "PNM Adovagos",
@@ -1728,179 +1726,9 @@
 
   {"sep":  "=============================="},
 
-  {
-    "name": "Mosveldtt Law",
-    "link": "https://mosveldttlaw.com/people/partners/"
-  },
-  {
-    "name": "Platon Martinez Flores San Pedro & Leaño",
-    "link": "https://platonmartinez.com/team"
-  },
-  {
-    "name": "GRUBA LAW",
-    "link": "https://grubalaw.com/our-lawyers/"
-  },
-  {
-    "name": "MVGS",
-    "link": "https://mvgslaw.com/our_people/"
-  },
-  {
-    "name": "C&G",
-    "link": "https://www.cagatlaw.com/our-partners/"
-  },
-  {
-    "name": "ACCRALAW",
-    "link": "https://accralaw.com/our-lawyers/?_accra_role=60",
-    "Note": "see this vídeo later https://www.youtube.com/watch?v=Y9JDrTG1vWc&pp=ygUYI2NvbnRlbnRwcm90ZWN0aW9uYnlwYXNz"
-  },
-  {
-    "name": "FGE Ebrahim Hosain",
-    "link": "https://www.fge-eh.com/people/"
-  },
-  {
-    "name": "",
-    "link": "https://www.kk-advocates.com/team"
-  },
-  {
-    "name": "AYMP",
-    "link": "https://www.aymp.law/partners",
-    "Note": "Check if there's any more lawyer to register"
-  },
-  {
-    "name": "William Hendrik & Siregar Djojonegoro",
-    "link": "https://whsdlaw.com/people-2/"
-  },
-  {
-    "name": "Soemadipradja & Taher",
-    "link": "https://soemadipradjataher.com/people"
-  },
-  {
-    "name": "UMBRA",
-    "link": "https://umbra.law/lawyers/"
-  },
-  {
-    "name": "MKK",
-    "link": "http://www.mkklaw.net/attorneys_main_eng.asp"
-  },
-  {
-    "name": "Archeus Law",
-    "link": "https://archeuslaw.com/team/"
-  },
-  {
-    "name": "Lakshmikumaran & Sridharan",
-    "link": "https://www.lakshmisri.com/people?people=a"
-  },
-  {
-    "name": "JPM Law",
-    "link": "https://jmp.law/professionals/"
-  },
-  {
-    "name": "Vaish",
-    "link": "https://www.vaishlaw.com/our-team/",
-    "Note": "Click to load more. Check how many already are registred"
-  },
-  {
-    "name": "",
-    "link": "https://www.vaishlaw.com/our-team/"
-  },
-  {
-    "name": "Prosoll Law",
-    "link": "https://prosolllaw.com/core-team/"
-  },
-  {
-    "name": "Clasis Law",
-    "link": "https://clasislaw.com/team#"
-  },
-  {
-    "name": "Chandhiok & Mahajan",
-    "link": "https://www.chandhiok.com/our-team"
-  },
-  {
-    "name": "Argus",
-    "link": "https://www.argus-p.com/our-people/our-partners/"
-  },
-  {
-    "name": "Numen Law",
-    "link": "https://numenlaw.com/teams.php"
-  },
-  {
-    "name": "Luthra & Luthra",
-    "link": "https://luthra.com/partners/"
-  },
-  {
-    "name": "Poovayya",
-    "link": "https://www.poovayya.net/our-people/"
-  },
-  {
-    "name": "Cyril Amarchand Mangaldas",
-    "link": "https://www.cyrilshroff.com/people-partners/"
-  },
-  {
-    "name": "AZB",
-    "link": "https://www.azbpartners.com/people/"
-  },
-  {
-    "name": "Bowers",
-    "link": "https://bowers.law/team/"
-  },
-  {
-    "name": "Zhong Lun",
-    "link": "https://en.zhonglun.com/team"
-  },
-  {
-    "name": "Gallant",
-    "link": "https://www.gallantho.com/our-professionals"
-  },
-  {
-    "name": "Wilkinson & Grist",
-    "link": "http://www.wilgrist.com/wng/index.php/en/our-people",
-    "Note": "Check how to get the email: 1. Clicking 2. Generating"
-  },
-  {
-    "name": "Joint-Win",
-    "link": "http://www.joint-win.com/En/lawyer/lists/job/2/catid/114"
-  },
-  {
-    "name": "Anli",
-    "link": "https://www.anlilaw.com/100043/?dd=&ly=&key=partner&zm="
-  },
-  {
-    "name": "Haiwen",
-    "link": "http://www.haiwen-law.com/64/"
-  },
-  {
-    "name": "Duan & Duan",
-    "link": "https://www.duanduan.com/team"
-  },
-  {
-    "name": "Hylands",
-    "link": "https://en.hylandslaw.com/team/"
-  },
-  {
-    "name": "Merits & Tree",
-    "link": "http://www.meritsandtree.com/en/personnel/"
-  },
-  {
-    "name": "Hai Run",
-    "link": "https://www.hairunlawyer.com/en/personnel/?lb=1162&dd=&ly=&zm=&text=#topbox"
-  },
-  {
-    "name": "Chance Bridge",
-    "link": "https://chancebridge.com/en/zyry/"
-  },
-  {
-    "name": "Kangda",
-    "link": "http://en.kangdalawyers.com/team",
-    "Note": "Avoid 1st"
-  },
-  {
-    "name": "Hui Zhong",
-    "link": "http://www.huizhonglaw.com/en/index.php/group"
-  },
-  {
-    "name": "Jingtian & Gongcheng",
-    "link": "https://www.jingtian.com/en/zyry/?text=&zyly=&bgdd=&key="
-  },
+
+
+
   {
     "name": "KWM",
     "link": "https://www.kwm.com/global/en/people.html"

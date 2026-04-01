@@ -6,7 +6,7 @@ Contexto do Projeto: Geração de classes Java (Selenium/Apache POI) para web-sc
 O output deve conter apenas os seguintes itens, nesta ordem:
     1. Cada firma gerada deve estar em um bloco de código separado para que eu possa copiar e colar cada uma.
 
-    2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório core/src/main/java/org/example/src/sites/to_test/.
+    2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório core/src/main/java/org/example/src/sites/to_test.
 
     3. Geração das Classes: Código completo dos scrappers, ordenados alfabeticamente.
 
@@ -30,6 +30,39 @@ O output deve conter apenas os seguintes itens, nesta ordem:
     * Campos Fixos: O campo "firm" em getLawyer deve ser sempre this.name.
     * Extração: Usar a instância extractor (ex: extractor.extractLawyerText(...)) com lambdas de erro de LawyerExceptions.
     * Indentação do super(): Os argumentos dentro do super() devem ter um nível a menos de indentação que o padrão.
+    * Em caso de ser pertencente à classe de ByNewPage, SEMPRE prefira coletar os dados presente na primeira página
+<ERRADO>
+```java
+protected Object getLawyer(WebElement lawyer) throws Exception {
+    this.openNewTab(lawyer);
+    WebElement container = driver.findElement(By.className("gdlr-core-pbf-column-content"));
+
+    String name = extractor.extractLawyerText(container, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
+    String role = extractor.extractLawyerText(container, new By[]{By.className("gdlr-core-title-item-caption")}, "ROLE", LawyerExceptions::roleException);
+
+    return Map.of(
+            "link", Objects.requireNonNull(driver.getCurrentUrl()),
+            "name", name,
+```
+</ERRADO>
+
+<CORRETO>
+```java
+    protected Object getLawyer(WebElement lawyer) throws Exception {
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("gdlr-core-title-item-caption")}, "ROLE", LawyerExceptions::roleException);
+
+        String link = this.openNewTab(lawyer);
+
+        WebElement container = driver.findElement(By.className("gdlr-core-pbf-column-content"));
+
+        return Map.of(
+                "link", link,
+                "name", name,
+
+```
+</CORRETO>
+
     * SEMPRE prefira utilizar a função openLink da seguinte forma:
 
 <ERRADO>

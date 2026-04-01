@@ -1,0 +1,30 @@
+// ByPage - Africa
+            new PoswaIncorporated(),
+
+// ByNewPage - Asia
+            new ACCRALAW(), new AYMP(), new CG(), new FGEEbrahimHosain(), new GRUBALAW(),
+            new KKAdvocates(), new MVGS(), new MosveldttLaw(), new PlatonMartinez(), new WilliamHendrikSiregarDjojonegoro(),
+
+            // ByPage - Asia
+            new MKK(), new NumenLaw(),
+
+// ByNewPage - Asia
+            new ArcheusLaw(), new Argus(), new ClasisLaw(), new JPMLaw(), new LakshmikumaranSridharan(),
+            new LuthraAndLuthra(), new SoemadipradjaTaher(), new UMBRA(), new Vaish(),
+
+// ByNewPage - North America
+            new Chaitons(), new CoxAndPalmer(), new CurtisDawe(), new DunnCox(), new Harris(),
+
+// ByNewPage - South America
+            new DanielLaw(), new DSNavarroCastex(), new MadrugaBTW(), new RojasLawFirm(), new SuarezConsultoria(),
+
+            // ByPage - Asia
+            new WilkinsonGrist(),
+
+// ByNewPage - Asia
+            new AZB(), new Anli(), new Bowers(), new CyrilAmarchandMangaldas(), new Gallant(),
+            new JointWin(), new Poovayya(), new ZhongLun(),
+
+            // ByNewPage - ASIA
+            new DuanDuan(), new HaiRun(), new Haiwen(), new HuiZhong(),
+            new Hylands(), new JingtianGongcheng(), new Kangda(), new MeritsTree(),

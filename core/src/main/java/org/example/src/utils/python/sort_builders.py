@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 """
-Sorts firm entries alphabetically within each continent array in:
+Sorts firm entries alphabetically within arrays in:
   - ByPageFirmsBuilder.java
   - ByNewPageFirmsBuilder.java
 
-Rules:
+Rules (Opção 1 — Ordenar Builders):
   - Firms are sorted alphabetically (case-insensitive) by class name
   - Precisely 5 firms per line
   - Commented-out firms (// new ClassName()) are sorted together with active ones
     but each occupies its own line (cannot be safely mixed mid-line)
   - Section/structural comments (e.g. // ByPage - Africa) are discarded
   - Continental divisions and all other code outside the arrays are untouched
+  - TEST array is NOT touched
+
+Rules (Opção 2 — Ordenar Test em ByNewPage):
+  - Only operates on ByNewPageFirmsBuilder.java
+  - Sorts firms alphabetically WITHIN each section of the TEST array
+  - Section headers (// ByPage - X, // ByNewPage - X) are preserved
+  - Inline comments attached to a firm (e.g. // new site coming soon) are preserved
 """
 
 import re
@@ -21,7 +28,7 @@ import os
 ITEMS_PER_LINE = 5
 ENTRY_INDENT   = "            "   # 12 spaces — matches existing file style
 
-# Arrays whose contents must NOT be sorted (preserved exactly as written)
+# Arrays whose contents must NOT be sorted by run_sort_builders()
 SKIP_ARRAYS = {"TEST"}
 
 # Script is at: core/src/main/java/org/example/src/utils/python/
@@ -40,12 +47,32 @@ BUILDER_FILES = [
     ),
 ]
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+BYNEWPAGE_FILE = BUILDER_FILES[1]
 
-_CLASS_RE    = re.compile(r'new\s+(\w+)\s*\(\)')
-_ACTIVE_RE   = re.compile(r'new\s+\w+\s*\(\)')
+# ── Shared regexes ────────────────────────────────────────────────────────────
+
+_CLASS_RE     = re.compile(r'new\s+(\w+)\s*\(\)')
+_ACTIVE_RE    = re.compile(r'new\s+\w+\s*\(\)')
 _COMMENTED_RE = re.compile(r'//\s*new\s+\w+\s*\(\)')
 
+# Captures section headers inside the TEST array: // ByPage - X or // ByNewPage - X
+_SECTION_HEADER_RE = re.compile(
+    r'^(//\s*(?:ByPage|ByNewPage)\s*-\s*.+)$', re.MULTILINE
+)
+
+# Trailing inline comment that is NOT a commented-out firm entry
+_TRAILING_COMMENT_RE = re.compile(r'\s*(//(?!\s*new\s+\w+\s*\(\)).*)$')
+
+# Full array block
+_ARRAY_RE = re.compile(
+    r"([ \t]*private static final Site\[\] (\w+) = \{)"  # group 1: opening, group 2: name
+    r"(.*?)"                                               # group 3: body
+    r"([ \t]*\};)",                                        # group 4: closing
+    re.DOTALL,
+)
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _class_name(text: str) -> str:
     """Return the class name from 'new ClassName()' (with or without leading //)."""
@@ -55,14 +82,11 @@ def _class_name(text: str) -> str:
 
 def _parse_entries(body: str) -> list[tuple[str, str, bool]]:
     """
-    Scan *body* (the text between { and }) and return every firm entry as:
+    Scan *body* and return every firm entry as:
         (sort_key, canonical_entry, is_commented)
 
-    - Active entries  → captured as 'new ClassName()'
-    - Commented firms → captured as '// new ClassName()'
-    - Structural/section comments (e.g. '// ByPage - Africa') are ignored.
-    - Trailing inline comments after an active entry (e.g. '// new site coming soon')
-      that do NOT start with 'new' are ignored.
+    Structural/section comments are ignored.
+    Trailing inline comments after an active entry are ignored.
     """
     entries: list[tuple[str, str, bool]] = []
 
@@ -72,15 +96,11 @@ def _parse_entries(body: str) -> list[tuple[str, str, bool]]:
             continue
 
         if stripped.startswith("//"):
-            # Could be a structural comment or a commented-out firm.
-            # A commented firm matches: // new ClassName()
             m = _COMMENTED_RE.match(stripped)
             if m:
                 raw = m.group(0)
-                entries.append((_class_name(raw).lower(), raw, True))
-            # else: structural comment → skip
+                entries.append((_class_name(raw).lower(), raw, False))
         else:
-            # Active line — may contain several 'new ClassName()' entries
             for m in _ACTIVE_RE.finditer(stripped):
                 raw = m.group(0)
                 entries.append((_class_name(raw).lower(), raw, False))
@@ -88,13 +108,54 @@ def _parse_entries(body: str) -> list[tuple[str, str, bool]]:
     return entries
 
 
+def _parse_entries_with_trailing(body: str) -> list[tuple[str, str, bool, str]]:
+    """
+    Like _parse_entries but also captures inline comments attached to a firm entry.
+    Returns: (sort_key, canonical_entry, is_commented, trailing_comment)
+
+    Example input line:
+        new PoswaIncorporated(), // new site coming soon
+    Result:
+        ('poswaincorporated', 'new PoswaIncorporated()', False, '// new site coming soon')
+    """
+    entries: list[tuple[str, str, bool, str]] = []
+
+    for line in body.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+
+        if stripped.startswith("//"):
+            m = _COMMENTED_RE.match(stripped)
+            if m:
+                raw = m.group(0)
+                entries.append((_class_name(raw).lower(), raw, True, ""))
+            # else: section header — caller handles it
+        else:
+            matches = list(_ACTIVE_RE.finditer(stripped))
+            if not matches:
+                continue
+
+            # Check for a trailing inline comment after the last firm on this line
+            last_end = matches[-1].end()
+            remainder = stripped[last_end:]
+            trailing_m = _TRAILING_COMMENT_RE.match(remainder)
+            trailing = trailing_m.group(1) if trailing_m else ""
+
+            for i, m in enumerate(matches):
+                raw = m.group(0)
+                # Attach trailing comment only to the last firm on the line
+                t = trailing if i == len(matches) - 1 else ""
+                entries.append((_class_name(raw).lower(), raw, False, t))
+
+    return entries
+
+
 def _format_entries(entries: list[tuple[str, str, bool]]) -> str:
     """
-    Produce the sorted, formatted array body.
-
-    Active entries are grouped ITEMS_PER_LINE per line.
-    Each commented entry is placed on its own line (at its sorted position),
-    flushing any buffered active entries first.
+    Format (sort_key, canonical_entry, is_commented) entries.
+    Active entries: grouped ITEMS_PER_LINE per line.
+    Commented entries: own line (flush active buffer first).
     """
     if not entries:
         return "\n"
@@ -116,19 +177,41 @@ def _format_entries(entries: list[tuple[str, str, bool]]) -> str:
             active_buf.append(raw)
 
     flush()
-
     return "\n" + "\n".join(lines) + "\n"
 
 
-# ── Core processor ────────────────────────────────────────────────────────────
+def _format_entries_with_trailing(entries: list[tuple[str, str, bool, str]]) -> str:
+    """
+    Like _format_entries but handles trailing inline comments.
+    An entry with a non-empty trailing_comment is placed on its own line.
+    """
+    if not entries:
+        return "\n"
 
-_ARRAY_RE = re.compile(
-    r"([ \t]*private static final Site\[\] (\w+) = \{)"  # group 1: opening line, group 2: array name
-    r"(.*?)"                                               # group 3: body
-    r"([ \t]*\};)",                                        # group 4: closing
-    re.DOTALL,
-)
+    lines: list[str] = []
+    active_buf: list[str] = []
 
+    def flush():
+        for i in range(0, len(active_buf), ITEMS_PER_LINE):
+            chunk = active_buf[i : i + ITEMS_PER_LINE]
+            lines.append(ENTRY_INDENT + " ".join(e + "," for e in chunk))
+        active_buf.clear()
+
+    for _, raw, commented, trailing in entries:
+        if commented:
+            flush()
+            lines.append(ENTRY_INDENT + raw + ",")
+        elif trailing:
+            flush()
+            lines.append(ENTRY_INDENT + raw + ", " + trailing)
+        else:
+            active_buf.append(raw)
+
+    flush()
+    return "\n" + "\n".join(lines) + "\n"
+
+
+# ── Opção 1: Ordenar Builders ─────────────────────────────────────────────────
 
 def _sort_block(match: re.Match) -> str:
     opening    = match.group(1)
@@ -136,20 +219,18 @@ def _sort_block(match: re.Match) -> str:
     body       = match.group(3)
     closing    = match.group(4)
 
-    # Leave skipped arrays untouched
     if array_name in SKIP_ARRAYS:
         return match.group(0)
 
     entries = _parse_entries(body)
-
     if not entries:
-        return match.group(0)  # leave empty arrays as-is
+        return match.group(0)
 
-    entries.sort(key=lambda t: t[0])  # sort by lower-case class name
+    entries.sort(key=lambda t: t[0])
     return opening + _format_entries(entries) + closing
 
 
-def process_file(path: str) -> None:
+def _process_file(path: str) -> None:
     print(f"\nProcessing: {os.path.relpath(path, PROJECT_ROOT)}")
 
     with open(path, encoding="utf-8") as fh:
@@ -164,12 +245,96 @@ def process_file(path: str) -> None:
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(updated)
 
-    # Report how many arrays were touched (compare full match strings)
     original_arrays = _ARRAY_RE.findall(original)
     updated_arrays  = _ARRAY_RE.findall(updated)
-    changed = sum(o != u for o, u in zip(original_arrays, updated_arrays))
-    changed -= sum(1 for o, u in zip(original_arrays, updated_arrays) if o[1] in SKIP_ARRAYS)
+    changed = sum(
+        o != u and o[1] not in SKIP_ARRAYS
+        for o, u in zip(original_arrays, updated_arrays)
+    )
     print(f"  ✓ {changed} array(s) re-sorted and saved.")
+
+
+def run_sort_builders() -> None:
+    print("\n── Ordenando Builders ──")
+    for path in BUILDER_FILES:
+        if not os.path.exists(path):
+            print(f"\n[ERROR] File not found: {path}")
+            continue
+        _process_file(path)
+
+
+# ── Opção 2: Ordenar Test em ByNewPage ────────────────────────────────────────
+
+def _sort_test_body(body: str) -> str:
+    """
+    Split the TEST array body into sections by their // ByPage/ByNewPage headers,
+    merge duplicate headers, sort entries within each section, and reassemble.
+    """
+    # re.split with a capturing group keeps the delimiters in the result list.
+    # Result alternates: [pre_text, header1, block1, header2, block2, ...]
+    parts = _SECTION_HEADER_RE.split(body)
+
+    pre_text = parts[0]
+
+    # Collect entries grouped by header, preserving first-seen order
+    seen_order: list[str] = []
+    sections: dict[str, list] = {}
+
+    i = 1
+    while i < len(parts):
+        header = parts[i]
+        block  = parts[i + 1] if i + 1 < len(parts) else ""
+
+        entries = _parse_entries_with_trailing(block)
+
+        if header not in sections:
+            seen_order.append(header)
+            sections[header] = []
+        sections[header].extend(entries)
+
+        i += 2
+
+    output_parts: list[str] = [pre_text]
+
+    for header in seen_order:
+        entries = sections[header]
+        entries.sort(key=lambda t: t[0])
+        formatted = _format_entries_with_trailing(entries) if entries else "\n"
+        output_parts.append("\n" + header)
+        output_parts.append(formatted)
+
+    return "".join(output_parts)
+
+
+def run_sort_test() -> None:
+    path = BYNEWPAGE_FILE
+    print(f"\n── Ordenando TEST em {os.path.relpath(path, PROJECT_ROOT)} ──")
+
+    if not os.path.exists(path):
+        print(f"  [ERROR] File not found: {path}")
+        return
+
+    with open(path, encoding="utf-8") as fh:
+        original = fh.read()
+
+    def sort_test_block(match: re.Match) -> str:
+        if match.group(2) != "TEST":
+            return match.group(0)
+        opening = match.group(1)
+        body    = match.group(3)
+        closing = match.group(4)
+        return opening + _sort_test_body(body) + closing
+
+    updated = _ARRAY_RE.sub(sort_test_block, original)
+
+    if updated == original:
+        print("  — TEST already sorted, no changes written.")
+        return
+
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(updated)
+
+    print("  ✓ TEST array re-sorted and saved.")
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
@@ -178,12 +343,22 @@ def main() -> None:
     print("=" * 60)
     print("  Firm Builder Sorter")
     print("=" * 60)
+    print()
+    print("  1. Ordenar Builders")
+    print("  2. Ordenar Test em ByNewPage")
+    print("  3. Realizar ambas operações")
+    print()
+    choice = input("Escolha uma opção (1-3): ").strip()
 
-    for path in BUILDER_FILES:
-        if not os.path.exists(path):
-            print(f"\n[ERROR] File not found: {path}")
-            continue
-        process_file(path)
+    if choice == "1":
+        run_sort_builders()
+    elif choice == "2":
+        run_sort_test()
+    elif choice == "3":
+        run_sort_builders()
+        run_sort_test()
+    else:
+        print("Opção inválida.")
 
     print("\nDone.")
 
