@@ -27,7 +27,6 @@ O output deve conter apenas os seguintes itens, nesta ordem:
     * Telefones: Seguir o padrão "phone", socials[1].isEmpty() ? "xxxx" : socials[1]. Substituir "xxxx" pelo telefone da firma se encontrado, caso contrário, manter o padrão.
     * Utilitários: Sempre preferir funções de SiteUtils.java e Site.java (especialmente getSocials - `super.getSocials`). Para strings, usar TreatLawyerParams.treatName(name) e treatNameForEmail(name).
     * SEMPRE prefira utilizar a função getSocials() - tanto para texto individual com a opção true ou pelo href com a opção false - ou getSocialsFromText() - para coletar o texto todo de uma div e coletar o email e telefone - para coletar o email e telefone, preferencialmente utilizando o retorno de `super.getSocials`.
-    * Campos Fixos: O campo "firm" em getLawyer deve ser sempre this.name.
     * Extração: Usar a instância extractor (ex: extractor.extractLawyerText(...)) com lambdas de erro de LawyerExceptions.
     * Indentação do super(): Os argumentos dentro do super() devem ter um nível a menos de indentação que o padrão.
     * Em caso de ser pertencente à classe de ByNewPage, SEMPRE prefira coletar os dados presente na primeira página
@@ -79,6 +78,31 @@ return Map.of(
         "link", link,
 ```
 </CORRETO>
+
+
+    *  Sempre utilizar o wait do MyDriver
+
+
+<ERRADO>
+```java
+@Override
+protected List<WebElement> getLawyersInPage() {
+    try {
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
+        List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.wow > li")));
+```
+</ERRADO>
+
+<CORRETO>
+```java
+@Override
+protected List<WebElement> getLawyersInPage() {
+    try {
+        return MyDriver.wait.findElements(By.cssSelector("h2 > a[href*='https://jmp.law/people/']"));
+```
+</CORRETO>
+
+
 
 3. Lógica das Classes
     * ByPage: Extração direta dos elementos da lista.

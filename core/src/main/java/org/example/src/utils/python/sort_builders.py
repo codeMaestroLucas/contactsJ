@@ -340,28 +340,29 @@ def run_sort_test() -> None:
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
-    print("=" * 60)
-    print("  Firm Builder Sorter")
-    print("=" * 60)
-    print()
-    print("  1. Ordenar Builders")
-    print("  2. Ordenar Test em ByNewPage")
-    print("  3. Realizar ambas operações")
-    print()
-    choice = input("Escolha uma opção (1-3): ").strip()
+    while (True):
+        print("=" * 60)
+        print("  Firm Builder Sorter")
+        print("=" * 60)
+        print()
+        print("  1. Ordenar Builders")
+        print("  2. Ordenar Test em ByNewPage")
+        print("  3. Realizar ambas operações")
+        print("  4. Sair")
+        print()
+        choice = input("Escolha uma opção (1-4): ").strip()
 
-    if choice == "1":
-        run_sort_builders()
-    elif choice == "2":
-        run_sort_test()
-    elif choice == "3":
-        run_sort_builders()
-        run_sort_test()
-    else:
-        print("Opção inválida.")
-
-    print("\nDone.")
-
+        if choice == "1":
+            run_sort_builders()
+        elif choice == "2":
+            run_sort_test()
+        elif choice == "3":
+            run_sort_builders()
+            run_sort_test()
+        elif choice == "4":
+            break
+        else:
+            print("Opção inválida.")
 
 if __name__ == "__main__":
     main()

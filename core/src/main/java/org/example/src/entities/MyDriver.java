@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -15,7 +16,6 @@ import java.util.List;
 public final class MyDriver {
     private static WebDriver driver;
     private static boolean headless = false;
-
     // Private constructor to prevent instantiation
     private MyDriver() {}
 
@@ -373,10 +373,24 @@ public final class MyDriver {
         }
     }
 
-    public static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
+    /** Waits up to 10 seconds before looking up elements. Usage: {@code MyDriver.wait.findElements(by)} */
+    public static final WaitWrapper wait = new WaitWrapper(10);
+
+    public static final class WaitWrapper {
+        private final int seconds;
+
+        private WaitWrapper(int seconds) {
+            this.seconds = seconds;
+        }
+
+        public WebElement findElement(By by) {
+            return new WebDriverWait(driver, Duration.ofSeconds(seconds))
+                    .until(ExpectedConditions.presenceOfElementLocated(by));
+        }
+
+        public List<WebElement> findElements(By by) {
+            return new WebDriverWait(driver, Duration.ofSeconds(seconds))
+                    .until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
         }
     }
 }

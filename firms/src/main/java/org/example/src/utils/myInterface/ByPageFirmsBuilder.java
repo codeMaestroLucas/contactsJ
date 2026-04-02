@@ -25,30 +25,30 @@ public class ByPageFirmsBuilder {
             new AbeIkuboAndKatayama(), new ABNR(), new ABSAndCo(), new ACIP(), new ADCOLaw(),
             new AdnanSundraAndLowP(), new Aequitas(), new AlHamadLegal(), new AllBrightLaw(), new AllenAndGledhill(),
             new AlMarkazLaw(), new ALMTLegal(), new Amicus(), new AMTLaw(), new AnandAndAnand(),
-            new AnhadLaw(), new AquinasLawAlliance(), new AronTadmorLevy(), new ASAndHCliffordChance(), new AssegafHamzahAndPartners(),
-            new AtsumiAndSakai(), new BaeKimAndLee(), new BeijingEastIP(), new BhandariNaqviRiaz(), new BharuchaAndPartners(),
-            new BraunPartners(), new BSALaw(), new BTGAdvaya(), new CFNLaw(), new ChandlerMHM(),
-            new ChuoSogoLPC(), new DaiichiFuyo(), new Deacons(), new DehehengLaw(), new DhavalVussonjiAndAssociates(),
-            new DhirAndDhir(), new DLAndFDeSaram(), new DRAndAJU(), new DrewAndNapier(), new EastAndConcord(),
-            new FironLaw(), new FirstLawPC(), new FJAndGDeSaram(), new FKNKLaw(), new FoxAndMandal(),
-            new GKCPartners(), new GLAAndCompany(), new GrandwayLaw(), new GrossAndCo(), new GulapaLaw(),
-            new GuoyaoQindaoLaw(), new Helmsman(), new HFAndCo(), new HiswaraBunjaminAndTandjung(), new Hiways(),
-            new HowseWilliams(), new HugillAndIp(), new IndiaLawOffices(), new JeffLeongPoonAndWong(), new JiaYuanLaw(),
-            new JinchengTongdaAndNeal(), new JIPYONG(), new JTJBInternationalLawyers(), new JuslawsAndConsult(), new K1Chamber(),
-            new KaiRongLaw(), new KECOLegal(), new KhaitanAndCo(), new KimChangAndLee(), new KLaw(),
-            new KochharAndCo(), new KojimaLaw(), new LeeAndKo(), new LegacyLaw(), new Lektou(),
-            new Llinks(), new LNT(), new MakesAndPartners(), new MASLaw(), new MeitarLaw(),
-            new MochtarKaruwinKomar(), new MohsinTayebalyAndCo(), new MomoOMatsuoAndNamba(), new MoriHamadaAndMatsumoto(), new MorogluArseven(),
-            new MZMLegal(), new NagashimaOhnoAndTsunematsu(), new NishimuraAndAsahi(), new OcampoAndSuralvo(), new OhEbashiLPCAndPartners(),
-            new OldhamLiAndNie(), new Paksoy(), new PhoenixLegal(), new PSL(), new PunoLaw(),
-            new RahmatLimAndPartners(), new RamdasAndWong(), new RomuloLawFirm(), new RP(), new SagaLegal(),
-            new SarafAndPartners(), new SEUM(), new SFKSLaw(), new SGLALaw(), new ShandongDehengLaw(),
-            new ShinAndKim(), new ShookLinAndBokP(), new ShookLinBok(), new SHorowitzAndCo(), new SinghaniaAndPartners(),
-            new SoemadipradjaAndTaher(), new SokSiphanaAndAssociates(), new SteinmetzHaringGurman(), new StevensonWongAndCo(), new TianYuan(),
-            new TiruchelvamAssociates(), new TMIAssociates(), new Trilegal(), new TsarAndTsai(), new UshijimaAndPartners(),
-            new VALaw(), new VanguardLawyersTokyo(), new VellaniAndVellani(), new VeritasLegal(), new Virtus(),
-            new VisionAndAssociates(), new WongPartnership(), new YoonAndYang(), new YuenLaw(), new Yulchon(),
-            new ZaidIbrahimAndCo(), new ZhongziLaw(),
+            new AnhadLaw(), new Anli(), new AquinasLawAlliance(), new AronTadmorLevy(), new ASAndHCliffordChance(),
+            new AssegafHamzahAndPartners(), new AtsumiAndSakai(), new BaeKimAndLee(), new BeijingEastIP(), new BhandariNaqviRiaz(),
+            new BharuchaAndPartners(), new BraunPartners(), new BSALaw(), new BTGAdvaya(), new CFNLaw(),
+            new ChandlerMHM(), new ChuoSogoLPC(), new DaiichiFuyo(), new Deacons(), new DehehengLaw(),
+            new DhavalVussonjiAndAssociates(), new DhirAndDhir(), new DLAndFDeSaram(), new DRAndAJU(), new DrewAndNapier(),
+            new EastAndConcord(), new FironLaw(), new FirstLawPC(), new FJAndGDeSaram(), new FKNKLaw(),
+            new FoxAndMandal(), new GKCPartners(), new GLAAndCompany(), new GrandwayLaw(), new GrossAndCo(),
+            new GulapaLaw(), new GuoyaoQindaoLaw(), new Helmsman(), new HFAndCo(), new HiswaraBunjaminAndTandjung(),
+            new Hiways(), new HowseWilliams(), new HugillAndIp(), new IndiaLawOffices(), new JeffLeongPoonAndWong(),
+            new JiaYuanLaw(), new JinchengTongdaAndNeal(), new JIPYONG(), new JTJBInternationalLawyers(), new JuslawsAndConsult(),
+            new K1Chamber(), new KaiRongLaw(), new KECOLegal(), new KhaitanAndCo(), new KimChangAndLee(),
+            new KLaw(), new KochharAndCo(), new KojimaLaw(), new LeeAndKo(), new LegacyLaw(),
+            new Lektou(), new Llinks(), new LNT(), new MakesAndPartners(), new MASLaw(),
+            new MeitarLaw(), new MochtarKaruwinKomar(), new MohsinTayebalyAndCo(), new MomoOMatsuoAndNamba(), new MoriHamadaAndMatsumoto(),
+            new MorogluArseven(), new MZMLegal(), new NagashimaOhnoAndTsunematsu(), new NishimuraAndAsahi(), new NumenLaw(),
+            new OcampoAndSuralvo(), new OhEbashiLPCAndPartners(), new OldhamLiAndNie(), new Paksoy(), new PhoenixLegal(),
+            new PSL(), new PunoLaw(), new RahmatLimAndPartners(), new RamdasAndWong(), new RomuloLawFirm(),
+            new RP(), new SagaLegal(), new SarafAndPartners(), new SEUM(), new SFKSLaw(),
+            new SGLALaw(), new ShandongDehengLaw(), new ShinAndKim(), new ShookLinAndBokP(), new ShookLinBok(),
+            new SHorowitzAndCo(), new SinghaniaAndPartners(), new SoemadipradjaAndTaher(), new SokSiphanaAndAssociates(), new SteinmetzHaringGurman(),
+            new StevensonWongAndCo(), new TianYuan(), new TiruchelvamAssociates(), new TMIAssociates(), new Trilegal(),
+            new TsarAndTsai(), new UshijimaAndPartners(), new VALaw(), new VanguardLawyersTokyo(), new VellaniAndVellani(),
+            new VeritasLegal(), new Virtus(), new VisionAndAssociates(), new WongPartnership(), new YoonAndYang(),
+            new YuenLaw(), new Yulchon(), new ZaidIbrahimAndCo(), new ZhongziLaw(),
     };
 
     private static final Site[] EUROPE = {
@@ -89,6 +89,7 @@ public class ByPageFirmsBuilder {
             new StoneKing(), new SuarezDeVivero(), new ThomasBodstrom(), new Titov(), new TucaZbarcea(),
             new VanDerPutt(), new VBAdvocates(), new VieringJentschuraAndPartner(), new Vinge(), new VOPatentsAndTrademarks(),
             new WIDEN(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
+            new AugustDebouzy(), new MusatAsociatii(), new PolitisPartners(), new RadovanovicStojanovic(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -100,11 +101,12 @@ public class ByPageFirmsBuilder {
             new MLTAikins(), new NautaDutilh(), new NelliganLaw(), new ONeillAndBorges(), new OslerHoskinAndHarcourt(),
             new OyenWiggs(), new RitchMueller(), new RitchMuellerAndNicolau(), new SantamarinaAndSteta(), new SmartAndBiggar(),
             new StikemanElliott(), new Uhthoff(), new UlisesCabrera(), new VillarrealVGF(), new WildeboerDellelce(),
+            new Patterson(),
     };
 
     private static final Site[] CENTRAL_AMERICA = {
             new DelcoLaw(), new GarciaBodan(), new LexAtlas(), new Lexincorp(), new McConnellValdes(),
-            new Nassar(),
+            new Nassar(), new GalindoAriasLopez(),
     };
 
     private static final Site[] SOUTH_AMERICA = {
