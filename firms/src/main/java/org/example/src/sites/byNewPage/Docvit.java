@@ -38,16 +38,14 @@ public class Docvit extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner", "advisor", "counsel", "senior associate"};
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
                     ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("people-item")
+                            By.className("people-right")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -71,20 +69,11 @@ public class Docvit extends ByNewPage {
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
-    private String[] getSocials(WebElement lawyer) {
-        try {
-            List<WebElement> ps = lawyer.findElements(By.tagName("p"));
-            return super.getSocials(ps, true);
-        } catch (Exception e) {
-            return new String[]{"", ""};
-        }
-    }
-
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
         WebElement div = driver.findElement(By.className("people-basic-left"));
-        String[] socials = this.getSocials(div);
+        String[] socials = super.getSocialsFromText(div.getText());
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
@@ -93,7 +82,7 @@ public class Docvit extends ByNewPage {
                 "firm", this.name,
                 "country", "China",
                 "practice_area", "",
-                "email", socials[0].split("：")[1],
+                "email", socials[0],
                 "phone", socials[1].isEmpty() ? "861085861018" : socials[1]
         );
     }

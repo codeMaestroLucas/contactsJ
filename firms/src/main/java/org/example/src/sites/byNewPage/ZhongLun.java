@@ -29,6 +29,7 @@ public class ZhongLun extends ByNewPage {
             MyDriver.waitForPageToLoad();
         } else {
             MyDriver.clickOnElement(By.xpath("//*[@id=\"dataList\"]/div/div/a[8]"));
+            Thread.sleep(2500);
         }
     }
 

@@ -2,7 +2,9 @@ package org.example.src.entities.excel;
 
 import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.utils.Stopwatch;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public final class Reports extends Excel {
@@ -32,5 +34,12 @@ public final class Reports extends Excel {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void sortRows() {
+        Comparator<String[]> comparator =
+            Comparator.comparingInt((String[] r) -> Stopwatch.parseSeconds(r[2]))
+                      .thenComparingInt(r -> -Stopwatch.parseSeconds(r[1]));
+        this.sortRows(comparator, 3);
     }
 }

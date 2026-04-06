@@ -91,7 +91,7 @@ public class OhEbashiLPCAndPartners extends ByPage {
                 "country", "Japan",
                 "practice_area", "",
                 "email", email,
-                "phone", "xxxxxx"
+                "phone", "81662081500"
         );
     }
 }

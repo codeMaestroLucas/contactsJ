@@ -15,9 +15,6 @@ import java.util.Objects;
 
 public class GlobalLawOffice extends ByNewPage {
 
-    private final String[] validRoles = {"partner", "counsel", "head", "founder", "managing associate", "senior associate"};
-
-
     public GlobalLawOffice() {
         super(
                 "Global Law Office",

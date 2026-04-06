@@ -9,6 +9,7 @@ import org.example.src.entities.excel.Sheet;
 import org.example.src.utils.ErrorLogger;
 import org.example.src.utils.FirmsOMonth;
 import org.example.src.utils.NoSleep;
+import org.example.src.utils.Stopwatch;
 import org.example.src.utils.myInterface.CompletedFirms;
 import org.example.src.utils.myInterface.MyInterfaceUtls;
 import org.example.src.utils.validation.EmailDuplicateChecker;
@@ -21,7 +22,6 @@ import java.util.concurrent.*;
 
 public class Main {
     private static final Reports reports = Reports.getINSTANCE();
-    private static final MyInterfaceUtls instance = MyInterfaceUtls.getINSTANCE();
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
 
     private static ContactsAlreadyRegisteredSheet getRegisteredContacts() {
@@ -39,6 +39,8 @@ public class Main {
     private static int searchLawyersInWeb(int alreadyCollected) throws InterruptedException {
         int totalLawyersRegistered = 0;
         int redo = 0;
+        int firmsProcessed = 0;
+        final int DRIVER_RESTART_INTERVAL = 35;
 
         List<Site> sites = CompletedFirms.constructFirms();
         ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -50,7 +52,8 @@ public class Main {
             }
 
             interfaceUtls.header(site.name);
-            long initTime = System.currentTimeMillis();
+            Stopwatch siteTimer = new Stopwatch();
+            siteTimer.start();
 
             Future<Void> future = executor.submit(() -> {
                 site.searchForLawyers(false);
@@ -90,21 +93,29 @@ public class Main {
                 }
 
             } finally {
-                long endTime = System.currentTimeMillis();
-                reports.createReportRow(site, instance.calculateTime(initTime, endTime));
+                siteTimer.stop();
+                reports.createReportRow(site, siteTimer.format());
                 redo = 0;
+                firmsProcessed++;
 
                 // Clean up browser state between sites (clear cookies, close extra tabs)
                 try {
                     MyDriver.cleanUpBetweenSites();
                 } catch (Exception ignored) {}
 
+                // Preventive restart every N firms to avoid browser memory/state degradation
+                if (firmsProcessed % DRIVER_RESTART_INTERVAL == 0) {
+                    System.out.println("[Driver] Restarting browser after " + DRIVER_RESTART_INTERVAL + " firms...");
+                    MyDriver.restartDriver();
+                }
+
                 // If the previous site timed out or was interrupted, the executor's thread
                 // may still be running or have a stale interrupt flag.
-                // Recreate the executor so the next site gets a fresh, clean thread.
+                // Recreate the executor and browser so the next site gets a fresh, clean state.
                 if (needsNewExecutor) {
                     executor.shutdownNow();
                     executor = Executors.newSingleThreadExecutor();
+                    MyDriver.restartDriver();
                 }
 
                 Thread.sleep(2500);
@@ -174,7 +185,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        long globalStart = System.currentTimeMillis();
+        Stopwatch globalTimer = new Stopwatch();
+        globalTimer.start();
 
         int contactLawyers = 0, contactFirms = 0, webLawyers1 = 0, webLawyers2 = 0;
 
@@ -196,13 +208,15 @@ public class Main {
             ErrorLogger.getINSTANCE().flushAllLogs();
             // Sort Sheet.xlsx rows: D → J → E → F → C
             Sheet.getINSTANCE().sortRows();
+            // Sort Reports.xlsx: lawyersRegistered ASC, then time DESC
+            reports.sortRows();
             // Close the reports workbook to ensure all data is saved
             reports.closeWorkbook();
             // Close the email duplicate checker session
             EmailDuplicateChecker.getINSTANCE().close();
             NoSleep.allowSleep(); // allow sleep again when finished
 
-            String totalTime = instance.calculateTime(globalStart, System.currentTimeMillis());
+            String totalTime = globalTimer.format();
             printExecutionSummary(contactLawyers, contactFirms, webLawyers1, webLawyers2, totalTime);
         }
     }

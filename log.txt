@@ -1,0 +1,36 @@
+=====================================================================================================
+                                    ERROR LOG - 2026-04-05 16:33:47
+=====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+                                      ERRORS BY FIRM
+----------------------------------------------------------------------------------------------------
+
+(37 firm(s) omitted — within tolerance)
+
+Class Lee & Ko [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 26 times
+
+Class Balter, Guth, Aloni & Co [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 26 times
+
+Class Maheshwari & Co [0 lawyers registered, 18 errors]
+   - openNewTabError                occurred 18 times
+
+----------------------------------------------------------------------------------------------------
+                                      ERROR SUMMARY
+----------------------------------------------------------------------------------------------------
+
+Total errors: 136
+
+Most common errors:
+   accessPageError                        59  ( 43.4%)
+   openNewTabError                        23  ( 16.9%)
+   getLawyerError                         23  ( 16.9%)
+   getLawyersInPageError                  23  ( 16.9%)
+   getRoleError                            7  (  5.1%)
+   getPracticeAreaError                    1  (  0.7%)
+
+=====================================================================================================
+Firms processed: 143 | Firms above tolerance (>10 errors): 3
+=====================================================================================================

@@ -53,7 +53,7 @@ public class ByNewPageFirmsBuilder {
             new LepaMeirAndCo(), new LHAG(), new LonganLaw(), new LSHorizon(), new LuthraAndLuthra(),
             new MachasAndPartners(), new MaheshwariAndCo(), new ManuelaAntonio(), new MAQLegal(), new MatryMeiriAndCo(),
             new MDLaw(), new MDPAndPartners(), new Meysan(), new MishconKaras(), new MiuraAndPartners(),
-            new MKK(), new MohanadassPartnership(), new MosveldttLaw(), new Mourant(), new MVGS(),
+            new MohanadassPartnership(), new MosveldttLaw(), new Mourant(), new MVGS(),
             new NunoSimoesAndAssociados(), new NurmansyahAndMuzdalifah(), new ONC(), new OneAsiaLawyers(), new OonBazul(),
             new PKWongAndNair(), new PlatonMartinez(), new Poovayya(), new PremierChambers(), new ProvidenceLaw(),
             new QuaheWooAndPalmer(), new QuiasonMakalintal(), new RajaniAssociates(), new RCLChambersLaw(), new RemfryAndSagar(),

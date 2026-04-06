@@ -7,7 +7,7 @@ import org.example.src.sites.to_test.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends FatimaFreitas {
+class MyTestPage extends ADVANTBeiten {
     public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }

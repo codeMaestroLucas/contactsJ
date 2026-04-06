@@ -342,6 +342,19 @@ public final class MyDriver {
 
     
     /**
+     * Quits the current browser and resets the driver to null.
+     * The next call to getINSTANCE() will start a fresh Chrome process.
+     */
+    public static void restartDriver() {
+        if (driver != null) {
+            try {
+                driver.quit();
+            } catch (Exception ignored) {}
+            driver = null;
+        }
+    }
+
+    /**
      * Cleans up browser state between site executions without closing the browser.
      * - Closes any extra tabs (keeps only the first one)
      * - Clears cookies to prevent session/state leakage between sites

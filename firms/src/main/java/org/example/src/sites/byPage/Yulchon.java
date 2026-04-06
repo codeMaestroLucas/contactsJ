@@ -59,11 +59,6 @@ public class Yulchon extends ByPage {
         }
     }
 
-    private String getLink(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.cssSelector("a[href*='fnDetailView']")};
-        return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
-    }
-
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.cssSelector(".mb_name p:first-child")};
         String name1 = extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
@@ -83,7 +78,7 @@ public class Yulchon extends ByPage {
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
         return Map.of(
-                "link", this.getLink(lawyer),
+                "link", "---",
                 "name", this.getName(lawyer),
                 "role", this.getRole(lawyer),
                 "firm", this.name,

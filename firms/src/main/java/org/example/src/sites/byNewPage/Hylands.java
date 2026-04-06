@@ -69,7 +69,7 @@ public class Hylands extends ByNewPage {
                 "firm", this.name,
                 "country", "China",
                 "practice_area", practice,
-                "email", socials[0],
+                "email", socials[0].replace("：", ""),
                 "phone", socials[1].isEmpty() ? "861065028888" : socials[1]
         );
     }

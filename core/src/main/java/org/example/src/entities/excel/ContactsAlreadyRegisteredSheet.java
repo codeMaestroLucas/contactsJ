@@ -92,12 +92,6 @@ public ContactsAlreadyRegisteredSheet() {
         int addedThisRun = 0;
         int lastRowNum = this.getSheet().getLastRowNum();
 
-        System.out.println("\n=== Starting collectLawyersRegistered ===");
-        System.out.println("Starting from row: " + this.lastFirmRow);
-        System.out.println("Last row in sheet: " + lastRowNum);
-        System.out.println("Target lawyers: " + CONFIG.LAWYERS_IN_FILTER);
-        System.out.println("==========================================\n");
-
         for (i = this.lastFirmRow; i <= lastRowNum; i++) {
 
             if (totalLawyers == CONFIG.LAWYERS_IN_FILTER) break;

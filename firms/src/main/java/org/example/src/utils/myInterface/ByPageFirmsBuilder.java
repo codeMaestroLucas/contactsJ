@@ -39,7 +39,7 @@ public class ByPageFirmsBuilder {
             new KLaw(), new KochharAndCo(), new KojimaLaw(), new LeeAndKo(), new LegacyLaw(),
             new Lektou(), new Llinks(), new LNT(), new MakesAndPartners(), new MASLaw(),
             new MeitarLaw(), new MochtarKaruwinKomar(), new MohsinTayebalyAndCo(), new MomoOMatsuoAndNamba(), new MoriHamadaAndMatsumoto(),
-            new MorogluArseven(), new MZMLegal(), new NagashimaOhnoAndTsunematsu(), new NishimuraAndAsahi(), new NumenLaw(),
+            new MorogluArseven(), new MZMLegal(), new NagashimaOhnoAndTsunematsu(), new NumenLaw(),
             new OcampoAndSuralvo(), new OhEbashiLPCAndPartners(), new OldhamLiAndNie(), new Paksoy(), new PhoenixLegal(),
             new PSL(), new PunoLaw(), new RahmatLimAndPartners(), new RamdasAndWong(), new RomuloLawFirm(),
             new RP(), new SagaLegal(), new SarafAndPartners(), new SEUM(), new SFKSLaw(),
