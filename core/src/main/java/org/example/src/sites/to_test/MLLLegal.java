@@ -19,6 +19,11 @@ public class MLLLegal extends ByNewPage {
         );
     }
 
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.of(
+            "london", "England",
+            "madrid", "Spain"
+    );
+
     @Override
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
@@ -41,6 +46,12 @@ public class MLLLegal extends ByNewPage {
         MyDriver.openNewTab(link);
         return link;
     }
+    
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        String country = extractor.extractLawyerText(lawyer, new By[] {By.tagName("p")}, "COUNTRY", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "Switzerland");
+    }
+    
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
@@ -57,7 +68,7 @@ public class MLLLegal extends ByNewPage {
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", "Switzerland",
+                "country", this.getCountry(container),
                 "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "41585520400" : socials[1]

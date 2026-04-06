@@ -58,7 +58,7 @@ public class CAINS extends ByNewPage {
                 "role", role,
                 "firm", this.name,
                 "country", "Isle of Man",
-                "practice_area", "",
+                "practice_area", role,
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "441624638300" : socials[1]
         );

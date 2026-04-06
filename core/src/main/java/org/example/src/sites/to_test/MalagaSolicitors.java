@@ -28,8 +28,7 @@ public class MalagaSolicitors extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            List<WebElement> lawyers = MyDriver.getINSTANCE().findElements(By.className("gdlr-core-personnel-list"));
-            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("gdlr-core-personnel-list-title")}, true);
+            return MyDriver.getINSTANCE().findElements(By.className("gdlr-core-personnel-list"));
         } catch (Exception e) {
             return List.of();
         }
@@ -48,8 +47,12 @@ public class MalagaSolicitors extends ByNewPage {
 
         String link = this.openNewTab(lawyer);
 
+
         WebElement container = driver.findElement(By.className("gdlr-core-pbf-column-content"));
-        String[] socials = super.getSocialsFromText(container.getText());
+        String role = this.getRole(container);
+        if (role.equals("Invalid Role")) return "Invalid Role";
+
+        String[] socials = super.getSocialsFromText(driver.findElement(By.xpath("//*[@id=\"attorna-page-wrapper\"]/div/div[3]/div[2]/div/div[2]/div/div/div[2]/div/div")).getText());
 
         return Map.of(
                 "link", link,
@@ -61,5 +64,11 @@ public class MalagaSolicitors extends ByNewPage {
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "34952901225" : socials[1]
         );
+    }
+
+    private String getRole(WebElement lawyer) throws LawyerExceptions {
+        String role = extractor.extractLawyerText(lawyer, new By[] {By.xpath("//*[@id=\"attorna-page-wrapper\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/span")}, "ROLE", LawyerExceptions::roleException);
+        boolean validPosition = siteUtl.isValidPosition(role, validRoles);
+        return validPosition ? role : "Invalid Role";
     }
 }

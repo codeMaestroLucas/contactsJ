@@ -50,7 +50,7 @@ public class NGA extends ByNewPage {
         String link = this.openNewTab(lawyer);
 
         WebElement container = driver.findElement(By.className("qodef-page-content-section"));
-        String[] socials = super.getSocials(container.findElements(By.className("qodef-m-title-text")), true);
+        String[] socials = super.getSocialsFromText(container.getText());
         String practice = extractor.extractLawyerText(container, new By[]{By.cssSelector(".elementor-element-988a14a + .elementor-element .qodef-e-title-text")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
 
         return Map.of(
@@ -61,7 +61,7 @@ public class NGA extends ByNewPage {
                 "country", "Portugal",
                 "practice_area", practice,
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "351210900300" : socials[1]
+                "phone", "351210900300"
         );
     }
 }

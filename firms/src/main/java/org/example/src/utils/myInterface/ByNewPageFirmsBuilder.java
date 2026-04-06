@@ -165,8 +165,10 @@ public class ByNewPageFirmsBuilder {
             new AlburquerqueAbogados(), new BenedettiCL(), new FabregaMolinoMulino(),
 
 // ByNewPage - Europe
-            new ADVANTBeiten(), new ASPapadimitriouPartners(), new CAINS(), new CamilleriPreziosi(), new FGGHIP(),
-            new LulliusPartners(), new MalagaSolicitors(), new Miranda(), new MLLLegal(), new NagyTrocsanyi(),
+            new FGGHIP(), // ñ consegui acessar o site
+            new ADVANTBeiten(), new ASPapadimitriouPartners(), new CAINS(), new CamilleriPreziosi(),
+            new MalagaSolicitors(), new Miranda(), new MLLLegal(), new NagyTrocsanyi(),
+
             new NGA(), new NicolasKanellopoulos(), new NiedererKraftFrey(), new PHH(), new PhilipLee(),
             new Plesner(), new Quinz(), new Rask(), new RKKW(), new RojsPeljhan(),
             new RTPR(), new RuzickaPartners(), new SadkowskiWspolnicy(), new SANDS(), new SchneeweissWeixelbaum(),

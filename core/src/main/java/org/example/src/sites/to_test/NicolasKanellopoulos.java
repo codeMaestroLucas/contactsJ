@@ -28,7 +28,18 @@ public class NicolasKanellopoulos extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("gdlr-core-personnel-list"));
+            int[] indexes = {3, 5, 7, 8 ,9};
+
+            WebElement div = MyDriver.wait.findElement(By.xpath("//*[@id=\"infinite-page-wrapper\"]/div/div/div/div/div[2]"));
+            List<WebElement> lawyers = div.findElements(By.className("gdlr-core-personnel-list-column"));
+
+            for (int index : indexes) {
+                String xpath = "//*[@id=\"infinite-page-wrapper\"]/div/div/div/div/div[" + index + "]";
+                div = div.findElement(By.xpath(xpath));
+                lawyers.addAll(div.findElements(By.className("gdlr-core-personnel-list-column")));
+            }
+
+            return lawyers;
         } catch (Exception e) {
             return List.of();
         }
@@ -47,18 +58,13 @@ public class NicolasKanellopoulos extends ByNewPage {
 
         String link = this.openNewTab(lawyer);
 
-        WebElement container = driver.findElement(By.className("gdlr-core-pbf-wrapper-container"));
-        String role = extractor.extractLawyerText(container, new By[]{By.className("gdlr-core-title-item-caption")}, "ROLE", LawyerExceptions::roleException);
-
-        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
-        if (socials[0].isEmpty()) {
-            socials = super.getSocialsFromText(container.getText());
-        }
+        driver.findElement(By.className("gdlr-core-pbf-wrapper-container"));
+        String[] socials = super.getSocialsFromText(driver.findElement(By.xpath("//*[@id=\"infinite-page-wrapper\"]/div/div[2]/div/div/div[2]/div/div")).getText());
 
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", role,
+                "role", "-----",
                 "firm", this.name,
                 "country", "Greece",
                 "practice_area", "",

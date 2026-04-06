@@ -28,7 +28,7 @@ public class NagyTrocsanyi extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.cssSelector(".nameBoxParent a, ul.peopleList li a"));
+            return MyDriver.wait.findElements(By.xpath("//*[@id=\"peopleSection\"]/div[4]/ul[1]/li"));
         } catch (Exception e) {
             return List.of();
         }
@@ -36,9 +36,8 @@ public class NagyTrocsanyi extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = lawyer.getAttribute("href");
-        MyDriver.openNewTab(link);
-        return link;
+        MyDriver.cmdClickOnElement(lawyer);
+        return driver.getCurrentUrl();
     }
 
     @Override

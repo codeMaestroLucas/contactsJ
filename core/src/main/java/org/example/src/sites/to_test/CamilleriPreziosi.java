@@ -23,6 +23,7 @@ public class CamilleriPreziosi extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        MyDriver.clickOnElementMultipleTimes(By.id("loadMoreLawyers"), 3, 1);
     }
 
     @Override

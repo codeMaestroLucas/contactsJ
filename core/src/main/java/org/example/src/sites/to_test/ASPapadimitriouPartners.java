@@ -49,7 +49,8 @@ public class ASPapadimitriouPartners extends ByNewPage {
 
         WebElement container = driver.findElement(By.className("lawyer-profile"));
         String role = extractor.extractLawyerText(container, new By[]{By.className("caption")}, "ROLE", LawyerExceptions::roleException);
-        String[] socials = super.getSocials(container.findElement(By.className("lawyer-contact")).findElements(By.className("title")), true);
+        String[] socials = super.getSocialsFromText(container.findElement(By.className("lawyer-contact")).getText());
+        socials[0] = container.findElement(By.cssSelector("a")).getAttribute("href");
 
         return Map.of(
                 "link", link,
