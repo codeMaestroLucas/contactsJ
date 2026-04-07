@@ -33,4 +33,8 @@ public class LawyerExceptions extends Exception{
     public static LawyerExceptions phoneException(String phone) {
         return new LawyerExceptions("Invalid PHONE: " + phone);
     }
+
+    public static LawyerExceptions socialsException(String socials) {
+        return new LawyerExceptions("Invalid SOCIALS: " + socials);
+    }
 }

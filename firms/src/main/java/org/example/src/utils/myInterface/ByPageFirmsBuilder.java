@@ -90,6 +90,8 @@ public class ByPageFirmsBuilder {
             new VanDerPutt(), new VBAdvocates(), new VieringJentschuraAndPartner(), new Vinge(), new VOPatentsAndTrademarks(),
             new WIDEN(), new WolfTheiss(), new ZamfirescuRacotiPredoiu(),
             new AugustDebouzy(), new MusatAsociatii(), new PolitisPartners(), new RadovanovicStojanovic(),
+
+            new MaleckiLegal(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -120,6 +122,7 @@ public class ByPageFirmsBuilder {
             new NelsonWiliansAndAdvogados(), new OlarteMoure(), new PayetReyCauviPerez(), new PPOAbogados(), new RennoPenteadoSampaioAdvogados(),
             new RobortellaEPeres(), new SerranoMartinezCMA(), new TauilAndChequer(), new Tavares(), new TraviesoEvansArriaAndRengel(),
             new Tumnet(), new Vouga(), new WaldAntunesVitaEBlattner(),
+            new PalmaLaw(),
     };
 
     private static final Site[] OCEANIA = {

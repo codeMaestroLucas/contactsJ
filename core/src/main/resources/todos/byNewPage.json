@@ -16,38 +16,7 @@
 
   { "sep": "=== Europe ===" },
 
-  {
-    "name": "M&P Legal",
-    "link": "https://www.mplegal.im/profiles"
-  },
-  {
-    "name": "Monard",
-    "link": "https://monardlaw.be/en/teams/"
-  },
-  {
-    "name": "Małecki Legal",
-    "link": "https://maleckilegal.pl/en/team/"
-  },
-  {
-    "name": "Madirazza & Partners",
-    "link": "https://madirazza.hr/team/"
-  },
-  {
-    "name": "LXA",
-    "link": "https://www.lxa.nl/en/our-office/"
-  },
-  {
-    "name": "Lundgrens",
-    "link": "https://lundgrens.dk/en/page/our-employees?role=152&speciality=All"
-  },
-  {
-    "name": "Lund Elmer Sandager",
-    "link": "https://les.dk/en/professionals"
-  },
-  {
-    "name": "GPA Advogados",
-    "link": "https://www.gpasa.pt/en/team/"
-  },
+
   {
     "name": "PRA",
     "link": "https://pra.pt/en/team_type/partners/"
@@ -694,71 +663,6 @@
 
   { "sep": "=== South America ===" },
 
-  {
-    "name": "SPS Advogados",
-    "link": "https://spsadvogados.com/en/equipa-2/socios/"
-  },
-  {
-    "name": "SouzaOkawa",
-    "link": "https://souzaokawa.com.br/en/"
-  },
-  {
-    "name": "Silveiro",
-    "link": "https://silveiro.com.br/equipe/"
-  },
-  {
-    "name": "Rosselló Abogados",
-    "link": "https://rossellolaw.com/en/attorneys/"
-  },
-  {
-    "name": "Romeu Amaral Advogados",
-    "link": "https://romeuamaral.com.br/en/#team"
-  },
-  {
-    "name": "Robalino",
-    "link": "https://www.robalinolaw.com/en/profesionales"
-  },
-  {
-    "name": "Ried Fabres",
-    "link": "https://www.riedfabres.cl/en/cargo/partners/"
-  },
-  {
-    "name": "Rayes & Fagundes",
-    "link": "https://rfaa.com.br/en/our-team/",
-    "Note": "Check if is an valid firm"
-  },
-  {
-    "name": "Puga Ortiz",
-    "link": "https://pugaortiz.cl/equipo/"
-  },
-  {
-    "name": "Pérez-Llorca",
-    "link": "https://www.perezllorca.com/en/?s=&post_type%5B%5D=abogado&tiposhidden=partner&tipos=partner"
-  },
-  {
-    "name": "PSTBN",
-    "link": "https://www.pstbn.com.py/en/abogados-ingles/"
-  },
-  {
-    "name": "Palma Law",
-    "link": "https://www.palma.cl/en/"
-  },
-  {
-    "name": "Palacios Lleras",
-    "link": "https://www.palacioslleras.com/our-team/#partners"
-  },
-  {
-    "name": "Osterling",
-    "link": "https://osterlingfirm.com/el-equipo/"
-  },
-  {
-    "name": "Orizzo Marques Advogados",
-    "link": "https://orizzomarques.com.br/en/partners/"
-  },
-  {
-    "name": "Novotny Advogados",
-    "link": "https://www.novotny.com.br/en/professionals"
-  },
   {
     "name": "Molina Ríos",
     "link": "https://molinarios.cl/"

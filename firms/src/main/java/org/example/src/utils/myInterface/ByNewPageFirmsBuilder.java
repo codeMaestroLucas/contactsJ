@@ -2,7 +2,11 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.to_test.*;
+import org.example.src.sites.byPage.MaleckiLegal;
+import org.example.src.sites.byPage.PalmaLaw;
+import org.example.src.sites.to_test.africa.*;
+import org.example.src.sites.to_test.americas.*;
+import org.example.src.sites.to_test.europe.*;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -25,6 +29,7 @@ public class ByNewPageFirmsBuilder {
             new OraroAndCompany(), new Ortus(), new PerchstoneAndGraeys(), new RDSPartners(), new RobinsonBertram(),
             new RONNLaw(), new SenekalSimmonds(), new Shalakany(), new Shalakany(), new SLKB(),
             new TNP(), new Werksmans(), new ZakiHashemAndPartners(), new ZulficarAndPartners(),
+            new FatimaFreitas(), new UdoUdomaBeloOsagie(),
     };
 
     private static final Site[] ASIA = {
@@ -109,6 +114,13 @@ public class ByNewPageFirmsBuilder {
             new VanOlmenAndWynant(), new Vischer(), new VisionConsulting(), new VossiusAndPartner(), new WardynskiAndPartners(),
             new WengerVieliAG(), new Wiersholm(), new WierzbowskiAndPartners(), new WikborgRein(), new WindtLeGrand(),
             new ZampaPartners(), new ZeposAndYannopoulos(),
+            new ADVANTBeiten(), new ASPapadimitriouPartners(), new CAINS(), new CamilleriPreziosi(),
+            new MalagaSolicitors(), new Miranda(), new MLLLegal(), new NagyTrocsanyi(),
+            new NGA(), new NicolasKanellopoulos(), new NiedererKraftFrey(), new PHH(), new PhilipLee(),
+            new Plesner(), new Quinz(), new Rask(), new RKKW(), new RojsPeljhan(),
+            new RTPR(), new RuzickaPartners(), new SadkowskiWspolnicy(), new SANDS(), new SchneeweissWeixelbaum(),
+            new SchrammOehler(), new SenicaPartners(), new Setterwalls(), new SGP(),
+            new SkilsLaw(), new SkrastinsDzenis(), new SouriadakisTsibris(), new StehlinAssocies(),
     };
 
     private static final Site[] NORTH_AMERICA = {
@@ -117,11 +129,12 @@ public class ByNewPageFirmsBuilder {
             new LivingstonAlexanderAndLevy(), new MBM(), new McKinneyBancroftAndHughes(), new NaderHayauxAndGoebel(), new NunesScholefieldDeLeonAndCo(),
             new PattersonMairHamilton(), new PietrantoniMendezAndAlvarezLLC(), new Pitblado(), new PrasadAndCompany(), new Sangra(),
             new SangraMollerLLP(), new ThompsonDorfmanSweatman(), new VazquezTerceroAndZepeda(),
+            new MedinaGarnesAbogados(),
     };
 
     private static final Site[] CENTRAL_AMERICA = {
             new Alcogal(), new DeCampsVasquezVarela(), new GuzmanAriza(), new IcazaGonzalezRuizAndAleman(), new Lovill(),
-            new MorganAndMorgan(), new MyersFletcherAndGordon(),
+            new MorganAndMorgan(), new MyersFletcherAndGordon(), new AlburquerqueAbogados(), new FabregaMolinoMulino(),
     };
 
     private static final Site[] SOUTH_AMERICA = {
@@ -155,28 +168,19 @@ public class ByNewPageFirmsBuilder {
     };
 
     private static final Site[] TEST = {
-// ByPage - Africa
+            // ByPage - Africa
             new PoswaIncorporated(),
+            // ByPage - Europe
+            new PerezLlorca(),
 
-// ByNewPage - Africa
-            new FatimaFreitas(), new UdoUdomaBeloOsagie(),
 
-// ByNewPage - Central America
-            new AlburquerqueAbogados(), new BenedettiCL(), new FabregaMolinoMulino(),
+// ByNewPage - Americas
+            new NovotnyAdvogados(), new Osterling(), new PalaciosLleras(), new PSTBN(), new PugaOrtiz(),
+            new RiedFabres(), new Robalino(), new RomeuAmaralAdvogados(), new RosselloAbogados(),
 
 // ByNewPage - Europe
-            new FGGHIP(), // ñ consegui acessar o site
-            new ADVANTBeiten(), new ASPapadimitriouPartners(), new CAINS(), new CamilleriPreziosi(),
-            new MalagaSolicitors(), new Miranda(), new MLLLegal(), new NagyTrocsanyi(),
-
-            new NGA(), new NicolasKanellopoulos(), new NiedererKraftFrey(), new PHH(), new PhilipLee(),
-            new Plesner(), new Quinz(), new Rask(), new RKKW(), new RojsPeljhan(),
-            new RTPR(), new RuzickaPartners(), new SadkowskiWspolnicy(), new SANDS(), new SchneeweissWeixelbaum(),
-            new SchrammOehler(), new SenicaPartners(), new Setterwalls(), new SGP(), new SimonsenVogtWiig(),
-            new SkilsLaw(), new SkrastinsDzenis(), new SouriadakisTsibris(), new StehlinAssocies(),
-
-// ByNewPage - Mundial
-            new MedinaGarnesAbogados(),
+            new FGGHIP(), new GPAAdvogados(), new LundElmerSandager(), new LXA(), new MadirazzaPartners(),
+            new Monard(), new MPLegal(), new SPSAdvogados(),
 
 // ByNewPage - North America
             new AcedoSantamarin(), new BCB(), new CervantesAbogados(), new Chaitons(), new CoxAndPalmer(),

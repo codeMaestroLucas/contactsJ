@@ -6,14 +6,26 @@ Contexto do Projeto: Geração de classes Java (Selenium/Apache POI) para web-sc
 O output deve conter apenas os seguintes itens, nesta ordem:
     1. Cada firma gerada deve estar em um bloco de código separado para que eu possa copiar e colar cada uma.
 
-    2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório core/src/main/java/org/example/src/sites/to_test.
+    2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório core/src/main/java/org/example/src/sites/to_test/<continentCorrespondente> .
+        Ex.:
+        - Africa: core/src/main/java/org/example/src/sites/to_test/africa
+        - Americas: core/src/main/java/org/example/src/sites/to_test/americas
+        - Asia: core/src/main/java/org/example/src/sites/to_test/asia
+        - Europe: core/src/main/java/org/example/src/sites/to_test/europe
+        - Oceania: core/src/main/java/org/example/src/sites/to_test/oceania
 
     3. Geração das Classes: Código completo dos scrappers, ordenados alfabeticamente.
 
     4. Bloco de Builders: Código para instanciação das firmas, agrupadas por Tipo de Classe e Continente, com no máximo 5 firmas por linha. Os builders estão em firms/src/main/java/org/example/src/utils/myInterface/ (ByNewPageFirmsBuilder.java e ByPageFirmsBuilder.java).
 
 2. Regras de Código e Implementação
-    * Package: package org.example.src.sites.to_test;.
+    * Package: O package deve corresponder ao diretório onde o arquivo será criado:
+        - Raiz (to_test/): `package org.example.src.sites.to_test;`
+        - Africa (to_test/africa/): `package org.example.src.sites.to_test.africa;`
+        - Americas (to_test/americas/): `package org.example.src.sites.to_test.americas;`
+        - Asia (to_test/asia/): `package org.example.src.sites.to_test.asia;`
+        - Europe (to_test/europe/): `package org.example.src.sites.to_test.europe;`
+        - Oceania (to_test/oceania/): `package org.example.src.sites.to_test.oceania;`
     * Filtro de Roles: Em getLawyersInPage, filtrar advogados por role conforme SchellenbergWittmer.java. Use a variável validRoles já presente em Site.java.
         - Lembre-se de utilizar o
         ```java
@@ -82,7 +94,6 @@ return Map.of(
 
     *  Sempre utilizar o wait do MyDriver
 
-
 <ERRADO>
 ```java
 @Override
@@ -102,6 +113,20 @@ protected List<WebElement> getLawyersInPage() {
 ```
 </CORRETO>
 
+    * Em hipótese alguma utilize o tratamento de erro da seguinte forma
+
+<ERRADO>
+```java
+```
+String[] socials = super.getSocialsFromText(extractor.extractLawyerText(lawyer, new By[]{By.className("meta")}, "SOCIALS", (e)->""));
+```
+</ERRADO>
+
+<CORRETO>
+```java
+String[] socials = super.getSocialsFromText(extractor.extractLawyerText(lawyer, new By[]{By.className("meta")}, "SOCIALS", LawyerExceptions::socialsException));
+```
+</CORRETO>
 
 
 3. Lógica das Classes
@@ -183,7 +208,7 @@ return Map.of(
 EXEMPLO FINAL DO OUTPUT NECESSÁRIO
 <exemplo>
 # Touch
-```java
+```bash
 comando touch
 ```
 
