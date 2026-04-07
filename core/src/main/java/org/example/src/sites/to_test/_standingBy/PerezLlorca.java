@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.europe;
+package org.example.src.sites.to_test._standingBy;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;

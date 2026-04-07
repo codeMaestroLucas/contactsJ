@@ -11,7 +11,7 @@ import org.example.src.sites.to_test.oceania.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends PerezLlorca {
+class MyTestPage extends GPAAdvogados {
     public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }

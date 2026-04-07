@@ -2,9 +2,9 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.byPage.MaleckiLegal;
-import org.example.src.sites.byPage.PalmaLaw;
-import org.example.src.sites.to_test.africa.*;
+import org.example.src.sites.to_test._standingBy.FGGHIP;
+import org.example.src.sites.to_test._standingBy.PerezLlorca;
+import org.example.src.sites.to_test._standingBy.PoswaIncorporated;
 import org.example.src.sites.to_test.americas.*;
 import org.example.src.sites.to_test.europe.*;
 import org.example.src.utils.ContinentConfig;
@@ -122,7 +122,6 @@ public class ByNewPageFirmsBuilder {
     };
 
     private static final Site[] AMERICAS = {
-
 // North America
             new ArthurCox(), new AsafoAndCo(), new BCFLaw(), new BensonBuffett(), new BoyneClarke(),
             new BWBLLP(), new FilionWakelyThorupAngeletti(), new IbanezParkman(), new KuriBrena(), new Leaf(),
@@ -165,28 +164,24 @@ public class ByNewPageFirmsBuilder {
     };
 
     private static final Site[] TEST = {
-            // ByPage - Africa
-            new PoswaIncorporated(),
-            // ByPage - Europe
-            new PerezLlorca(),
-
-
-// ByNewPage - Americas
-            new NovotnyAdvogados(), new Osterling(), new PalaciosLleras(), new PSTBN(), new PugaOrtiz(),
-            new RiedFabres(), new Robalino(), new RomeuAmaralAdvogados(), new RosselloAbogados(),
-
 // ByNewPage - Europe
-            new FGGHIP(), new GPAAdvogados(), new LundElmerSandager(), new LXA(), new MadirazzaPartners(),
+            new GPAAdvogados(), new LundElmerSandager(), new LXA(), new MadirazzaPartners(),
             new Monard(), new MPLegal(), new SPSAdvogados(),
 
-// ByNewPage - Americas
+// ByNewPage
+// North America
             new AcedoSantamarin(), new BCB(), new CervantesAbogados(), new Chaitons(), new CoxAndPalmer(),
             new Creel(), new CurtisDawe(), new DeHoyosAviles(), new DunnCox(), new FishmanFlanzMelandPaquin(),
             new Harris(), new KanukaThuringer(), new Lavery(), new Lerners(), new MalpicaIturbeBujParedes(),
             new MGGL(), new PerezCorreaGonzalez(), new RGRH(), new RoblesMiaja(), new SIERRALatam(),
             new VilaAbogados(),
+
+// South America
             new DanielLaw(), new DSNavarroCastex(), new FitzwilliamStone(), new GumucioAbogados(), new MadrugaBTW(),
-            new MGDalyPartners(), new RojasLawFirm(), new SuarezConsultoria(), new TorresPlazAraujo(), new WilkinsonGrist(),
+            new MGDalyPartners(), new MirandaAmado(), new MitraniCaballero(), new MolinaRios(), new NovotnyAdvogados(),
+            new Osterling(), new PalaciosLleras(), new PSTBN(), new PugaOrtiz(), new RiedFabres(),
+            new Robalino(), new RojasLawFirm(), new RomeuAmaralAdvogados(), new RosselloAbogados(), new SuarezConsultoria(),
+            new TorresPlazAraujo(), new WilkinsonGrist(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.europe;
+package org.example.src.sites.to_test._standingBy;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -30,7 +30,7 @@ public class FGGHIP extends ByNewPage {
         try {
             List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".owl-item:not(.cloned) .team-container"));
             // remove last lawyer as per instruction
-            if (!lawyers.isEmpty()) lawyers.remove(lawyers.size() - 1);
+            if (!lawyers.isEmpty()) lawyers.removeLast();
             return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("team-content")}, true);
         } catch (Exception e) {
             return List.of();

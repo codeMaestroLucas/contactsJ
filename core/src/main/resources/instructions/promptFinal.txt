@@ -134,14 +134,34 @@ String[] socials = super.getSocialsFromText(extractor.extractLawyerText(lawyer, 
     * ByNewPage: Obrigatório usar this.openNewTab(lawyer) dentro de getLawyer e coletar os dados na subpágina.
 
 4. Modelo do Builder (Exemplo)
-```Java
 
+    * Para todos os continentes exceto Americas, o comentário segue o padrão `// ByPage - <Continente>` ou `// ByNewPage - <Continente>`.
+    * Para Americas, o array AMERICAS é único e subdivido internamente em três regiões. As novas firmas DEVEM ser inseridas sob o sub-comentário correto: `// North America`, `// Central America` ou `// South America`.
+
+```Java
 // ByPage - Africa
 new FirmaA(), new FirmaB(), new FirmaC(), new FirmaD(), new FirmaE(),
 new FirmaF(),
 
+
+// ByPage - Americas
+// North America
+new FirmaNA1(), new FirmaNA2(),
+
+// South America
+new FirmaSA1(),
+
+
 // ByNewPage - Asia
 new FirmaG(),
+
+
+// ByNewPage - Americas
+// Central America
+new FirmaCA1(),
+
+// South America
+new FirmaSA2(), new FirmaSA3(),
 ```
 
 5. Casos interessantes
@@ -221,12 +241,23 @@ código firma 1
 código firma 2
 
 # Builders
-```java// ByPage - continent
+```java
+// ByPage - Africa
 new Firma1(),
 
-// ByNewPage - continent
+// ByPage - Americas
+// North America
 new Firma2(),
-``
+// South America
+new Firma3(),
+
+// ByNewPage - Europe
+new Firma4(),
+
+// ByNewPage - Americas
+// Central America
+new Firma5(),
+```
 </exemplo>
 
 ------
