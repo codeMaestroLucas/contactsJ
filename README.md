@@ -648,13 +648,11 @@ public class CONFIG {
 
 ```json
 {
-  "Africa":          { "enabled": true },
-  "Asia":            { "enabled": true },
-  "Europe":          { "enabled": true },
-  "North America":   { "enabled": false },
-  "Central America": { "enabled": false },
-  "South America":   { "enabled": false },
-  "Oceania":         { "enabled": true }
+  "Africa":   { "enabled": true,  "weight": 1 },
+  "Asia":     { "enabled": true,  "weight": 3 },
+  "Europe":   { "enabled": true,  "weight": 1 },
+  "Americas": { "enabled": false, "weight": 1 },
+  "Oceania":  { "enabled": true,  "weight": 2 }
 }
 ```
 
@@ -679,28 +677,37 @@ public class CONFIG {
 
 ```java
 // In ByPageFirmsBuilder.java or ByNewPageFirmsBuilder.java
-private static final Site[] AFRICA = {
-    new FirmA(), new FirmB(),
+private static final Site[] AFRICA  = { new FirmA(), new FirmB(), ... };
+private static final Site[] ASIA    = { ... };
+private static final Site[] EUROPE  = { ... };
+private static final Site[] AMERICAS = {
+// North America
+    new FirmNA1(), new FirmNA2(), ...,
+// Central America
+    new FirmCA1(), ...,
+// South America
+    new FirmSA1(), new FirmSA2(), ...,
 };
-private static final Site[] ASIA = { ... };
-private static final Site[] EUROPE = { ... };
-private static final Site[] NORTH_AMERICA = { ... };
-private static final Site[] CENTRAL_AMERICA = { ... };
-private static final Site[] SOUTH_AMERICA = { ... };
 private static final Site[] OCEANIA = { ... };
 private static final Site[] MUNDIAL = { ... };  // Always included
 
-// Getters for statistics
-public static Site[] getAfrica() { return AFRICA; }
-// ... etc
+// Getters
+public static Site[] getAfrica()   { return AFRICA; }
+public static Site[] getAsia()     { return ASIA; }
+public static Site[] getEurope()   { return EUROPE; }
+public static Site[] getAmericas() { return AMERICAS; }
+public static Site[] getOceania()  { return OCEANIA; }
+public static Site[] getMundial()  { return MUNDIAL; }
 
 // Build method respects configuration
 public static Site[] build() {
     List<Site> sites = new ArrayList<>();
 
-    if (ContinentConfig.isContinentEnabled("Africa"))
-        sites.addAll(Arrays.asList(AFRICA));
-    // ... repeat for each continent
+    if (ContinentConfig.isContinentEnabled("Africa"))   sites.addAll(Arrays.asList(AFRICA));
+    if (ContinentConfig.isContinentEnabled("Asia"))     sites.addAll(Arrays.asList(ASIA));
+    if (ContinentConfig.isContinentEnabled("Europe"))   sites.addAll(Arrays.asList(EUROPE));
+    if (ContinentConfig.isContinentEnabled("Americas")) sites.addAll(Arrays.asList(AMERICAS));
+    if (ContinentConfig.isContinentEnabled("Oceania"))  sites.addAll(Arrays.asList(OCEANIA));
 
     sites.addAll(Arrays.asList(MUNDIAL)); // Always add
 
@@ -710,16 +717,14 @@ public static Site[] build() {
 
 ### 7.5 Available Continents
 
-| Continent | Code Identifier | Notes |
-|-----------|-----------------|-------|
-| Africa | `AFRICA` | |
-| Asia | `ASIA` | |
-| Europe | `EUROPE` | |
-| North America | `NORTH_AMERICA` | |
-| Central America | `CENTRAL_AMERICA` | |
-| South America | `SOUTH_AMERICA` | |
-| Oceania | `OCEANIA` | |
-| Mundial (Global) | `MUNDIAL` | Always included |
+| Continent | Array identifier | Config key | Notes |
+|-----------|-----------------|------------|-------|
+| Africa | `AFRICA` | `"Africa"` | |
+| Asia | `ASIA` | `"Asia"` | |
+| Europe | `EUROPE` | `"Europe"` | |
+| Americas | `AMERICAS` | `"Americas"` | North + Central + South America combined; internally divided by `// North America`, `// Central America`, `// South America` comments |
+| Oceania | `OCEANIA` | `"Oceania"` | |
+| Mundial (Global) | `MUNDIAL` | *(always on)* | Always included regardless of config |
 
 NOTE: If the country registered if from more than one continent, like Turkey (Asia and Europe), guarantee that the continent
 showed is in EUROPE
@@ -1311,13 +1316,11 @@ Controls which continents are active.
 
 ```json
 {
-  "Africa":          { "enabled": true },
-  "Asia":            { "enabled": true },
-  "Europe":          { "enabled": true },
-  "North America":   { "enabled": false },
-  "Central America": { "enabled": false },
-  "South America":   { "enabled": false },
-  "Oceania":         { "enabled": true }
+  "Africa":   { "enabled": true,  "weight": 1 },
+  "Asia":     { "enabled": true,  "weight": 3 },
+  "Europe":   { "enabled": true,  "weight": 1 },
+  "Americas": { "enabled": false, "weight": 1 },
+  "Oceania":  { "enabled": true,  "weight": 2 }
 }
 ```
 
@@ -1416,4 +1419,4 @@ vCard.parse(vcfText);                     // parse already-loaded VCF text
 
 ---
 
-*Document generated: February 2026*
+*Document generated: March 2026*

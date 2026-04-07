@@ -11,9 +11,23 @@ flowchart TD
             COMPLETED["CompletedFirms
             (menu CLI + construção da lista)"]
             BP_BUILDER["ByPageFirmsBuilder
-            (fábrica por continente)"]
+            (fábrica por continente)
+            Arrays: AFRICA · ASIA · EUROPE
+            AMERICAS · OCEANIA · MUNDIAL"]
             BNP_BUILDER["ByNewPageFirmsBuilder
-            (fábrica por continente)"]
+            (fábrica por continente)
+            Arrays: AFRICA · ASIA · EUROPE
+            AMERICAS · OCEANIA · MUNDIAL"]
+        end
+
+        subgraph AMERICAS_NOTE["AMERICAS array
+        (North · Central · South America)"]
+            AMERICAS_BOX["// North America
+            new FirmNA1(), ...
+            // Central America
+            new FirmCA1(), ...
+            // South America
+            new FirmSA1(), ..."]
         end
 
         subgraph SITES_IMPL["Sites Concretos
@@ -126,7 +140,9 @@ flowchart TD
         subgraph UTILS_IFACE["Interface Utilitária
         (utils/myInterface)"]
             CONTINENT["ContinentConfig
-            (enabled/weight por continente)"]
+            (enabled/weight por continente)
+            Chaves: Africa · Asia · Europe
+            Americas · Oceania"]
             MY_IFACE_UTLS["MyInterfaceUtls
             (helpers CLI e tempo)"]
         end
@@ -138,11 +154,26 @@ flowchart TD
             firmsToAvoid.json
             countryAliases.json
             systemSnapshot.json"]
+            TODOS_JSON["todos/byNewPage.json
+            (fila de firmas a implementar)"]
             XLSX_FILES["Sheet.xlsx
             Reports.xlsx
             Contacts.xlsx
             filteredCollectedContacts.xlsx
             LastCheckSheet.xlsx"]
+        end
+
+        subgraph PYTHON_TOOLS["Scripts Python
+        (utils/python)"]
+            SORT_PY["sort_builders.py
+            ordena arrays dos builders
+            (AMERICAS: por sub-seção)"]
+            CAT_PY["categorize_firms.py
+            classifica firmas do byNewPage.json
+            por continente via TLD/keywords"]
+            GEN_DOCS_PY["generate_docs.py
+            empacota docs em .zip
+            para contexto do chat"]
         end
 
         subgraph TEST["Testes
@@ -178,6 +209,8 @@ flowchart TD
     COMPLETED --> CONTINENT
     COMPLETED --> FIRMS_MONTH
     CONTINENT -->|"lê"| JSON_CFG
+    BP_BUILDER --> AMERICAS_NOTE
+    BNP_BUILDER --> AMERICAS_NOTE
     BP_BUILDER --> SITES_IMPL
     BNP_BUILDER --> SITES_IMPL
     SITES_IMPL -->|extends| BASE_SITES
@@ -206,3 +239,9 @@ flowchart TD
     MAIN -->|"7. closeWorkbook()"| REPORTS
 
     TEST_SITE -->|"testa instâncias de"| BASE_SITES
+
+    %% Scripts Python
+    SORT_PY -.->|"reordena"| BP_BUILDER
+    SORT_PY -.->|"reordena"| BNP_BUILDER
+    CAT_PY -.->|"classifica entradas de"| TODOS_JSON
+    GEN_DOCS_PY -.->|"empacota"| JSON_CFG
