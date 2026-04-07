@@ -5,11 +5,7 @@
 
   "Europe":              { "enabled": true,  "weight": 1 },
 
-  "North America":       { "enabled": false, "weight": 1 },
-
-  "Central America":     { "enabled": false, "weight": 1 },
-
-  "South America":       { "enabled": false, "weight": 1 },
+  "Americas":            { "enabled": false, "weight": 1 },
 
   "Oceania":             { "enabled": true,  "weight": 2 }
 }

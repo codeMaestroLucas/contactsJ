@@ -43,7 +43,7 @@
     "countries": []
   },
 
-  "North America": {
+  "Americas": {
     "countries": [
       { "Country": "Mexico" },
       { "Country": "Canada" },
@@ -51,12 +51,7 @@
       { "Country": "USA" },
       { "Country": "United States" },
       { "Country": "United States of America" },
-      { "Country": "EUA" }
-    ]
-  },
-
-  "Central America": {
-    "countries": [
+      { "Country": "EUA" },
       { "Country": "the Bahamas" },
       { "Country": "Barbados" },
       { "Country": "Belize" },
@@ -73,12 +68,7 @@
       { "Country": "Saint Kitts and Nevis" },
       { "Country": "Saint Lucia" },
       { "Country": "Saint Vincent and the Grenadines" },
-      { "Country": "Trinidad and Tobago" }
-    ]
-  },
-
-  "South America": {
-    "countries": [
+      { "Country": "Trinidad and Tobago" },
       { "Country": "Argentina" },
       { "Country": "Bolivia" },
       { "Country": "Brazil" },
@@ -91,8 +81,7 @@
       { "Country": "Suriname" },
       { "Country": "Uruguay" },
       { "Country": "Curaçao" },
-      { "Country": "Trinidad & Tobago" },
-      { "Country": "Trinidad and Tobago" }
+      { "Country": "Trinidad & Tobago" }
     ]
   },
 

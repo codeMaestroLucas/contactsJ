@@ -16,20 +16,10 @@
       "maxLawyers" : 400,
       "byPage" : 187
     },
-    "North America" : {
-      "byNewPage" : 23,
-      "maxLawyers" : 69,
-      "byPage" : 41
-    },
-    "Central America" : {
-      "byNewPage" : 7,
-      "maxLawyers" : 16,
-      "byPage" : 7
-    },
-    "South America" : {
-      "byNewPage" : 17,
-      "maxLawyers" : 67,
-      "byPage" : 48
+    "Americas" : {
+      "byNewPage" : 47,
+      "maxLawyers" : 152,
+      "byPage" : 96
     },
     "Oceania" : {
       "byNewPage" : 31,

@@ -44,9 +44,7 @@ public class CompletedFirms {
             "Africa", ByPageFirmsBuilder::getAfrica,
             "Asia", ByPageFirmsBuilder::getAsia,
             "Europe", ByPageFirmsBuilder::getEurope,
-            "North America", ByPageFirmsBuilder::getNorthAmerica,
-            "Central America", ByPageFirmsBuilder::getCentralAmerica,
-            "South America", ByPageFirmsBuilder::getSouthAmerica,
+            "Americas", ByPageFirmsBuilder::getAmericas,
             "Oceania", ByPageFirmsBuilder::getOceania
     );
 
@@ -54,9 +52,7 @@ public class CompletedFirms {
             "Africa", ByNewPageFirmsBuilder::getAfrica,
             "Asia", ByNewPageFirmsBuilder::getAsia,
             "Europe", ByNewPageFirmsBuilder::getEurope,
-            "North America", ByNewPageFirmsBuilder::getNorthAmerica,
-            "Central America", ByNewPageFirmsBuilder::getCentralAmerica,
-            "South America", ByNewPageFirmsBuilder::getSouthAmerica,
+            "Americas", ByNewPageFirmsBuilder::getAmericas,
             "Oceania", ByNewPageFirmsBuilder::getOceania
     );
 
@@ -140,9 +136,7 @@ public class CompletedFirms {
                 {"Africa",          ByPageFirmsBuilder.getAfrica(),         ByNewPageFirmsBuilder.getAfrica()},
                 {"Asia",            ByPageFirmsBuilder.getAsia(),           ByNewPageFirmsBuilder.getAsia()},
                 {"Europe",          ByPageFirmsBuilder.getEurope(),         ByNewPageFirmsBuilder.getEurope()},
-                {"North America",   ByPageFirmsBuilder.getNorthAmerica(),   ByNewPageFirmsBuilder.getNorthAmerica()},
-                {"Central America", ByPageFirmsBuilder.getCentralAmerica(), ByNewPageFirmsBuilder.getCentralAmerica()},
-                {"South America",   ByPageFirmsBuilder.getSouthAmerica(),   ByNewPageFirmsBuilder.getSouthAmerica()},
+                {"Americas",        ByPageFirmsBuilder.getAmericas(),       ByNewPageFirmsBuilder.getAmericas()},
                 {"Oceania",         ByPageFirmsBuilder.getOceania(),        ByNewPageFirmsBuilder.getOceania()},
         };
 
@@ -315,7 +309,7 @@ public class CompletedFirms {
 
     private static final ObjectMapper snapshotMapper = new ObjectMapper();
     private static final String[] CONTINENT_NAMES = {
-            "Africa", "Asia", "Europe", "North America", "Central America", "South America", "Oceania"
+            "Africa", "Asia", "Europe", "Americas", "Oceania"
     };
 
     /**
@@ -565,9 +559,7 @@ public class CompletedFirms {
                 {"Africa",          ByPageFirmsBuilder.getAfrica(),         ByNewPageFirmsBuilder.getAfrica()},
                 {"Asia",            ByPageFirmsBuilder.getAsia(),           ByNewPageFirmsBuilder.getAsia()},
                 {"Europe",          ByPageFirmsBuilder.getEurope(),         ByNewPageFirmsBuilder.getEurope()},
-                {"North America",   ByPageFirmsBuilder.getNorthAmerica(),   ByNewPageFirmsBuilder.getNorthAmerica()},
-                {"Central America", ByPageFirmsBuilder.getCentralAmerica(), ByNewPageFirmsBuilder.getCentralAmerica()},
-                {"South America",   ByPageFirmsBuilder.getSouthAmerica(),   ByNewPageFirmsBuilder.getSouthAmerica()},
+                {"Americas",        ByPageFirmsBuilder.getAmericas(),       ByNewPageFirmsBuilder.getAmericas()},
                 {"Oceania",         ByPageFirmsBuilder.getOceania(),        ByNewPageFirmsBuilder.getOceania()},
         };
 

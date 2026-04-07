@@ -655,13 +655,7 @@
 
 
 
-  { "sep": "=== North America ===" },
-
-
-  { "sep": "=== Central America ===" },
-
-
-  { "sep": "=== South America ===" },
+  { "sep": "=== Americas ===" },
 
   {
     "name": "Molina Ríos",

@@ -4,7 +4,7 @@ Sorts firm entries alphabetically within arrays in:
   - ByPageFirmsBuilder.java
   - ByNewPageFirmsBuilder.java
 
-Rules (Opção 1 — Ordenar Builders):
+Rules:
   - Firms are sorted alphabetically (case-insensitive) by class name
   - Precisely 5 firms per line
   - Commented-out firms (// new ClassName()) are sorted together with active ones
@@ -12,12 +12,8 @@ Rules (Opção 1 — Ordenar Builders):
   - Section/structural comments (e.g. // ByPage - Africa) are discarded
   - Continental divisions and all other code outside the arrays are untouched
   - TEST array is NOT touched
-
-Rules (Opção 2 — Ordenar Test em ByNewPage):
-  - Only operates on ByNewPageFirmsBuilder.java
-  - Sorts firms alphabetically WITHIN each section of the TEST array
-  - Section headers (// ByPage - X, // ByNewPage - X) are preserved
-  - Inline comments attached to a firm (e.g. // new site coming soon) are preserved
+  - AMERICAS array is sorted within each sub-section (// North America,
+    // Central America, // South America) — sub-section order is preserved
 """
 
 import re
@@ -30,6 +26,10 @@ ENTRY_INDENT   = "            "   # 12 spaces — matches existing file style
 
 # Arrays whose contents must NOT be sorted by run_sort_builders()
 SKIP_ARRAYS = {"TEST"}
+
+# Arrays that contain named sub-sections (// North America, etc.) whose
+# relative order must be preserved; entries are sorted WITHIN each sub-section.
+SECTION_SORTED_ARRAYS = {"AMERICAS"}
 
 # Script is at: core/src/main/java/org/example/src/utils/python/
 # Project root is 9 levels up.
@@ -47,17 +47,17 @@ BUILDER_FILES = [
     ),
 ]
 
-BYNEWPAGE_FILE = BUILDER_FILES[1]
-
 # ── Shared regexes ────────────────────────────────────────────────────────────
 
 _CLASS_RE     = re.compile(r'new\s+(\w+)\s*\(\)')
 _ACTIVE_RE    = re.compile(r'new\s+\w+\s*\(\)')
 _COMMENTED_RE = re.compile(r'//\s*new\s+\w+\s*\(\)')
 
-# Captures section headers inside the TEST array: // ByPage - X or // ByNewPage - X
+# Captures section headers inside the TEST array (// ByPage - X, // ByNewPage - X)
+# and inside the AMERICAS array (// North America, // Central America, // South America).
 _SECTION_HEADER_RE = re.compile(
-    r'^(//\s*(?:ByPage|ByNewPage)\s*-\s*.+)$', re.MULTILINE
+    r'^([ \t]*//\s*(?:(?:ByPage|ByNewPage)\s*-\s*.+|North America|Central America|South America))$',
+    re.MULTILINE
 )
 
 # Trailing inline comment that is NOT a commented-out firm entry
@@ -222,6 +222,9 @@ def _sort_block(match: re.Match) -> str:
     if array_name in SKIP_ARRAYS:
         return match.group(0)
 
+    if array_name in SECTION_SORTED_ARRAYS:
+        return opening + _sort_test_body(body) + closing
+
     entries = _parse_entries(body)
     if not entries:
         return match.group(0)
@@ -263,7 +266,7 @@ def run_sort_builders() -> None:
         _process_file(path)
 
 
-# ── Opção 2: Ordenar Test em ByNewPage ────────────────────────────────────────
+# ── Section-aware sort (used internally for AMERICAS) ─────────────────────────
 
 def _sort_test_body(body: str) -> str:
     """
@@ -306,63 +309,7 @@ def _sort_test_body(body: str) -> str:
     return "".join(output_parts)
 
 
-def run_sort_test() -> None:
-    path = BYNEWPAGE_FILE
-    print(f"\n── Ordenando TEST em {os.path.relpath(path, PROJECT_ROOT)} ──")
-
-    if not os.path.exists(path):
-        print(f"  [ERROR] File not found: {path}")
-        return
-
-    with open(path, encoding="utf-8") as fh:
-        original = fh.read()
-
-    def sort_test_block(match: re.Match) -> str:
-        if match.group(2) != "TEST":
-            return match.group(0)
-        opening = match.group(1)
-        body    = match.group(3)
-        closing = match.group(4)
-        return opening + _sort_test_body(body) + closing
-
-    updated = _ARRAY_RE.sub(sort_test_block, original)
-
-    if updated == original:
-        print("  — TEST already sorted, no changes written.")
-        return
-
-    with open(path, "w", encoding="utf-8") as fh:
-        fh.write(updated)
-
-    print("  ✓ TEST array re-sorted and saved.")
-
-
 # ── Entry point ───────────────────────────────────────────────────────────────
 
-def main() -> None:
-    while (True):
-        print("=" * 60)
-        print("  Firm Builder Sorter")
-        print("=" * 60)
-        print()
-        print("  1. Ordenar Builders")
-        print("  2. Ordenar Test em ByNewPage")
-        print("  3. Realizar ambas operações")
-        print("  4. Sair")
-        print()
-        choice = input("Escolha uma opção (1-4): ").strip()
-
-        if choice == "1":
-            run_sort_builders()
-        elif choice == "2":
-            run_sort_test()
-        elif choice == "3":
-            run_sort_builders()
-            run_sort_test()
-        elif choice == "4":
-            break
-        else:
-            print("Opção inválida.")
-
 if __name__ == "__main__":
-    main()
+    run_sort_builders()

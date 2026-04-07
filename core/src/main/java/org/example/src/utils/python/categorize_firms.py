@@ -18,33 +18,33 @@ def get_continent(entry):
 
     # ---- explicit country/region keywords in notes ----
     if 'trinidad' in note_lower:
-        return 'Central America'
+        return 'Americas'
     if 'botswana' in note_lower or 'namibia' in note_lower:
         return 'Africa'
     if 'kyrgyzstan' in note_lower:
         return 'Asia'
     if 'brazil' in note_lower or 'brasil' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'argentina' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'chile' in note_lower or 'chilean' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'peru' in note_lower or 'perú' in note_lower or 'peruvian' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'venezuela' in note_lower or 'venezuelan' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'bolivia' in note_lower or 'bolivian' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'colombia' in note_lower or 'colombian' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'ecuador' in note_lower or 'ecuadorian' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'uruguay' in note_lower:
-        return 'South America'
+        return 'Americas'
     if 'paraguay' in note_lower:
-        return 'South America'
+        return 'Americas'
 
-    # ---- South America TLDs ----
+    # ---- Americas TLDs ----
     sa_tld_patterns = [
         r'\.com\.br', r'\.adv\.br', r'\.nom\.br', r'\.br/',
         r'\.com\.ar', r'\.ar/',
@@ -58,7 +58,7 @@ def get_continent(entry):
     ]
     for pat in sa_tld_patterns:
         if re.search(pat, url):
-            return 'South America'
+            return 'Americas'
 
     # ---- Africa TLDs ----
     africa_tld_patterns = [
@@ -177,15 +177,15 @@ def get_continent(entry):
         if re.search(pat, url):
             return 'Oceania'
 
-    # ---- North America TLDs ----
+    # ---- Americas (North) TLDs ----
     north_america_tld_patterns = [
         r'\.ca/', r'\.ca$', r'\.com\.ca',
     ]
     for pat in north_america_tld_patterns:
         if re.search(pat, url):
-            return 'North America'
+            return 'Americas'
 
-    # ---- Central America TLDs ----
+    # ---- Americas (Central) TLDs ----
     central_america_tld_patterns = [
         r'\.com\.mx', r'\.mx/',
         r'\.com\.pa', r'\.pa/',
@@ -203,10 +203,10 @@ def get_continent(entry):
     ]
     for pat in central_america_tld_patterns:
         if re.search(pat, url):
-            return 'Central America'
+            return 'Americas'
 
     # ---- Keyword-based disambiguation for .com domains ----
-    # South America keywords
+    # Americas keywords
     sa_keywords = [
         'advogados', 'advocacia', 'advogado', 'advs',
         'abogados', 'abogado', 'abogada',
@@ -242,64 +242,64 @@ def get_continent(entry):
     ]
     for kw in sa_keywords:
         if kw in all_text:
-            return 'South America'
+            return 'Americas'
 
-    # URL-path based South America hints
+    # URL-path based Americas hints
     if re.search(r'/equipo|/equipe|/socios|/socias|/nosotros', url):
         # Could be Spanish/Portuguese - likely SA or Spain
         # Further disambiguate
         if any(x in url for x in ['chile', 'peru', 'argentina', 'colombia', 'venezuela', 'bolivia', 'ecuador', 'uruguay', 'paraguay', 'brazil', 'brasil']):
-            return 'South America'
+            return 'Americas'
 
     # Known specific domain to continent mappings (manually curated)
     known_domains = {
-        # South America
-        'almeidalaw.com.br': 'South America',
-        'estudiodelion.com.pe': 'South America',
-        'gumucioabogados.com.bo': 'South America',
-        'souzaokawa.com': 'South America',
-        'silveiro.com.br': 'South America',
-        'spsadvogados.com': 'South America',  # Portuguese "equipa"
-        'romeuamaral.com.br': 'South America',
-        'rolimgoulart.com': 'South America',
-        'robalinolaw.com': 'South America',
-        'riedfabres.cl': 'South America',
-        'rayesfagundes.com.br': 'South America',
-        'pugaortiz.cl': 'South America',
-        'pstbn.com.py': 'South America',
-        'palmalaw.cl': 'South America',
-        'palacioslleras.com': 'South America',
-        'osterlinglaw.com': 'South America',
-        'novotnyadvogados.com.br': 'South America',
-        'mirandaamado.com.pe': 'South America',
-        'molinarios.cl': 'South America',
-        'mitrani.com': 'South America',
-        'lcgadvogados.com.br': 'South America',
-        'lecabogados.com.ve': 'South America',
-        'lavinabogados.cl': 'South America',
-        'labbeabogados.legal': 'South America',
-        'hdlegal.cl': 'South America',
-        'hopeduggansilva.com.ar': 'South America',
-        'guerreroolivos.cl': 'South America',
-        'grossbrown.com.py': 'South America',
-        'garrido.com': 'South America',
-        'ferradanehme.cl': 'South America',
-        'dscasahierro.pe': 'South America',
-        'diblasi.com.br': 'South America',
-        'diasdesouza.com.br': 'South America',
-        'duartegarcia.com.br': 'South America',
-        'dempaire.com.ve': 'South America',
-        'ctpadvogados.com.br': 'South America',
-        'crialesurcullo.com': 'South America',
-        'cblm.com.br': 'South America',
-        'chediak.com.br': 'South America',
-        'cassagne.com.ar': 'South America',
-        'bronsysalas.com.ar': 'South America',
-        'bragard.com.uy': 'South America',
-        'ayresribeiro.com.br': 'South America',
-        'araquereyna.com': 'South America',
-        'antequera.legal': 'South America',
-        'abe.com.br': 'South America',
+        # Americas
+        'almeidalaw.com.br': 'Americas',
+        'estudiodelion.com.pe': 'Americas',
+        'gumucioabogados.com.bo': 'Americas',
+        'souzaokawa.com': 'Americas',
+        'silveiro.com.br': 'Americas',
+        'spsadvogados.com': 'Americas',  # Portuguese "equipa"
+        'romeuamaral.com.br': 'Americas',
+        'rolimgoulart.com': 'Americas',
+        'robalinolaw.com': 'Americas',
+        'riedfabres.cl': 'Americas',
+        'rayesfagundes.com.br': 'Americas',
+        'pugaortiz.cl': 'Americas',
+        'pstbn.com.py': 'Americas',
+        'palmalaw.cl': 'Americas',
+        'palacioslleras.com': 'Americas',
+        'osterlinglaw.com': 'Americas',
+        'novotnyadvogados.com.br': 'Americas',
+        'mirandaamado.com.pe': 'Americas',
+        'molinarios.cl': 'Americas',
+        'mitrani.com': 'Americas',
+        'lcgadvogados.com.br': 'Americas',
+        'lecabogados.com.ve': 'Americas',
+        'lavinabogados.cl': 'Americas',
+        'labbeabogados.legal': 'Americas',
+        'hdlegal.cl': 'Americas',
+        'hopeduggansilva.com.ar': 'Americas',
+        'guerreroolivos.cl': 'Americas',
+        'grossbrown.com.py': 'Americas',
+        'garrido.com': 'Americas',
+        'ferradanehme.cl': 'Americas',
+        'dscasahierro.pe': 'Americas',
+        'diblasi.com.br': 'Americas',
+        'diasdesouza.com.br': 'Americas',
+        'duartegarcia.com.br': 'Americas',
+        'dempaire.com.ve': 'Americas',
+        'ctpadvogados.com.br': 'Americas',
+        'crialesurcullo.com': 'Americas',
+        'cblm.com.br': 'Americas',
+        'chediak.com.br': 'Americas',
+        'cassagne.com.ar': 'Americas',
+        'bronsysalas.com.ar': 'Americas',
+        'bragard.com.uy': 'Americas',
+        'ayresribeiro.com.br': 'Americas',
+        'araquereyna.com': 'Americas',
+        'antequera.legal': 'Americas',
+        'abe.com.br': 'Americas',
         # Asia
         'tttandpartners.com': 'Asia',
         'thecapitallaw.com': 'Asia',
@@ -348,9 +348,7 @@ def main():
         'Africa',
         'Asia',
         'Europe',
-        'North America',
-        'Central America',
-        'South America',
+        'Americas',
         'Oceania',
         'uncategorized',
     ]

@@ -45,16 +45,9 @@
   ],
 
 
-  "North America": [],
-
-
-  "Central America": [
+  "Americas": [
     { "Country": "Antigua and Barbuda" },
-    { "Country": "Cuba" }
-  ],
-
-
-  "South America": [
+    { "Country": "Cuba" },
     { "Country": "Venezuela" }
   ],
 
