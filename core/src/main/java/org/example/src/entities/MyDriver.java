@@ -183,15 +183,19 @@ public final class MyDriver {
     }
 
     /**
-     * CMD+Clicks (Mac) / CTRL+Clicks (Windows/Linux) the element, waits for the browser
-     * to open a new tab, then switches to it — equivalent to {@link #openNewTab(String)}
-     * but triggered by a user gesture instead of a direct URL navigation.
+     * CMD+Clicks (Mac) / CTRL+Clicks (Windows/Linux) the element and switches to the result
+     * in a new tab — equivalent to {@link #openNewTab(String)} but triggered by a user gesture.
+     * <p>
+     * If the page ignores the modifier key and navigates in the same tab instead of opening a
+     * new one, this method captures the destination URL, navigates back to the previous page,
+     * and opens the destination in a new tab manually.
      *
      * @param element the element to CMD+Click
      */
     public static void cmdClickOnElement(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement elementToClick = wait.until(ExpectedConditions.elementToBeClickable(element));
+        String previousLink = driver.getCurrentUrl();
 
         Keys modifier = System.getProperty("os.name").toLowerCase().contains("mac")
                 ? Keys.COMMAND
@@ -223,17 +227,32 @@ public final class MyDriver {
             }
         }
 
-        // Wait for the new tab to appear and switch to it
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(d -> d.getWindowHandles().size() > handlesBefore.size());
+        // Check if a new tab was opened (short timeout — new tabs appear quickly)
+        boolean newTabOpened = false;
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(d -> d.getWindowHandles().size() > handlesBefore.size());
+            newTabOpened = true;
+        } catch (Exception ignored) {}
 
-        String newHandle = driver.getWindowHandles().stream()
-                .filter(h -> !handlesBefore.contains(h))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("CMD+Click did not open a new tab"));
-
-        driver.switchTo().window(newHandle);
-        waitForPageToLoad();
+        if (newTabOpened) {
+            String newHandle = driver.getWindowHandles().stream()
+                    .filter(h -> !handlesBefore.contains(h))
+                    .findFirst()
+                    .orElseThrow(() -> new RuntimeException("CMD+Click did not open a new tab"));
+            driver.switchTo().window(newHandle);
+            waitForPageToLoad();
+        } else {
+            // Page ignored the modifier and navigated in the same tab.
+            // Capture the destination, go back, then open it in a new tab.
+            waitForPageToLoad();
+            String navigatedUrl = driver.getCurrentUrl();
+            if (!navigatedUrl.equals(previousLink)) {
+                driver.navigate().back();
+                waitForPageToLoad();
+                openNewTab(navigatedUrl);
+            }
+        }
     }
 
 

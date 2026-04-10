@@ -135,6 +135,8 @@ public final class TreatLawyerParams {
                 .toLowerCase()
                 .replace("&amp;", " and ")
                 .replace("practice area", " ")
+                .replace("practice areas", " ")
+                .replace("practices", " ")
                 .replaceAll("(?i)\\s*&\\s*", " and ")
                 .replaceAll("\\s+", " ")
                 .trim();

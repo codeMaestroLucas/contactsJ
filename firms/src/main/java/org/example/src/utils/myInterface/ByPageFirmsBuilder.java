@@ -93,16 +93,17 @@ public class ByPageFirmsBuilder {
     };
 
     private static final Site[] AMERICAS = {
+
 // North America
             new BarristonLaw(), new BennettJones(), new BLGLaw(), new BurnetDuckworthAndPalmer(), new Cassels(),
-            new ClarkWilson(), new CozenOConnor(), new DaleAndLessmann(), new DeethWilliamsWall(), new DillonEustace(),
-            new ECLegalRubio(), new Farris(), new FillmoreRiley(), new FoglerRubinoff(), new Goodmans(),
-            new GrahamThompson(), new HeadrickRizikAlvarezAndFernandez(), new HNA(), new Langlois(), new LawsonLundell(),
-            new LEGlobal(), new LoopstraNixon(), new McDougallGauley(), new McKercher(), new MijaresAngoitiaCortesAndFuentes(),
-            new MLTAikins(), new NautaDutilh(), new NelliganLaw(), new ONeillAndBorges(), new OslerHoskinAndHarcourt(),
-            new OyenWiggs(), new Patterson(), new RitchMueller(), new RitchMuellerAndNicolau(), new SantamarinaAndSteta(),
-            new SmartAndBiggar(), new StikemanElliott(), new Uhthoff(), new UlisesCabrera(), new VillarrealVGF(),
-            new WildeboerDellelce(),
+            new Chanis(), new ClarkWilson(), new CozenOConnor(), new DaleAndLessmann(), new DeethWilliamsWall(),
+            new DillonEustace(), new ECLegalRubio(), new Farris(), new FillmoreRiley(), new FoglerRubinoff(),
+            new Goodmans(), new GrahamThompson(), new HeadrickRizikAlvarezAndFernandez(), new HNA(), new Langlois(),
+            new LawsonLundell(), new LEGlobal(), new LoopstraNixon(), new McDougallGauley(), new McKercher(),
+            new MijaresAngoitiaCortesAndFuentes(), new MLTAikins(), new NautaDutilh(), new NelliganLaw(), new ONeillAndBorges(),
+            new OslerHoskinAndHarcourt(), new OyenWiggs(), new Patterson(), new RamosRipollSchuster(), new RitchMueller(),
+            new RitchMuellerAndNicolau(), new SantamarinaAndSteta(), new SmartAndBiggar(), new StikemanElliott(), new Uhthoff(),
+            new UlisesCabrera(), new VillarrealVGF(), new WildeboerDellelce(),
 
 // Central America
             new DelcoLaw(), new GalindoAriasLopez(), new GarciaBodan(), new LexAtlas(), new Lexincorp(),
@@ -116,9 +117,9 @@ public class ByPageFirmsBuilder {
             new Felsberg(), new FLH(), new GNBLaw(), new GSALegal(), new HernandezAndCia(),
             new LacazMartinsPereiraNetoGurevichAndSchoueri(), new LEFOSSE(), new LRILaw(), new MachadoMeyer(), new MattosEngelbergEchenique(),
             new MENPA(), new MontauryPimentaMachadoAndVieiraDeMello(), new MQMGLD(), new MUC(), new MunizLaw(),
-            new NelsonWiliansAndAdvogados(), new OlarteMoure(), new PalmaLaw(), new PayetReyCauviPerez(), new PPOAbogados(),
-            new RennoPenteadoSampaioAdvogados(), new RobortellaEPeres(), new SerranoMartinezCMA(), new TauilAndChequer(), new Tavares(),
-            new TraviesoEvansArriaAndRengel(), new Tumnet(), new Vouga(), new WaldAntunesVitaEBlattner(),
+            new NelsonWiliansAndAdvogados(), new OlarteMoure(), new PalaciosLleras(), new PalmaLaw(), new PayetReyCauviPerez(),
+            new PPOAbogados(), new RennoPenteadoSampaioAdvogados(), new RobortellaEPeres(), new SerranoMartinezCMA(), new TauilAndChequer(),
+            new Tavares(), new TraviesoEvansArriaAndRengel(), new Tumnet(), new Vouga(), new WaldAntunesVitaEBlattner(),
     };
 
     private static final Site[] OCEANIA = {

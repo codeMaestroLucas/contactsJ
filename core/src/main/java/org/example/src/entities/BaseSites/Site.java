@@ -98,7 +98,7 @@ public abstract class Site {
                     ? Objects.requireNonNull(social.getAttribute("textContent")).toLowerCase().trim()
                     : Objects.requireNonNull(social.getAttribute("href")).toLowerCase().trim();
 
-            if (value.contains("mail") && email.isEmpty()) {
+            if (value.contains("mail") || (value.contains("to")) && email.isEmpty()) {
                 if ((value.contains("@")) || value.contains("(at)")) email = value;
 
             } else if (phone.isEmpty()) {
@@ -159,7 +159,7 @@ public abstract class Site {
             String phoneSection = phoneSectionMatcher.group(1).trim();
             // Match the first phone-like token: optional leading +, then digits/spaces/dashes
             Matcher phoneMatcher = Pattern
-                    .compile("[+]?[\\d][\\d ()\\-]{5,}")
+                    .compile("[+]?[(]?[\\d][\\d ()\\-]{5,}")
                     .matcher(phoneSection);
             if (phoneMatcher.find()) {
                 phone = phoneMatcher.group().replaceAll("[^0-9]", "");
@@ -170,7 +170,7 @@ public abstract class Site {
         if (phone.isEmpty()) {
             for (String line : text.split("[\\r\\n]+")) {
                 String trimmed = line.trim();
-                if (trimmed.matches("[+]?[\\d][\\d\\s().\\-]{5,}")) {
+                if (trimmed.matches("[+]?[(]?[\\d][\\d\\s().\\-]{5,}")) {
                     String cleaned = trimmed.replaceAll("[^0-9]", "");
                     if (cleaned.length() >= 7) {
                         phone = cleaned;
