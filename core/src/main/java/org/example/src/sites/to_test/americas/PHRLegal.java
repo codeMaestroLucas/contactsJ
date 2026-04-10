@@ -46,13 +46,15 @@ public class PHRLegal extends ByNewPage {
         String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("elementor-widget-populated"));
 
+        String role = extractor.extractLawyerText(container, new By[]{By.cssSelector(".elementor-widget-text-editor p")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
         String phone = extractor.extractLawyerText(container, new By[]{By.className("ae-acf-content-wrapper")}, "PHONE", LawyerExceptions::phoneException);
 
         return Map.of(
                 "link", link,
                 "name", extractor.extractLawyerText(container, new By[]{By.tagName("h2")}, "NAME", LawyerExceptions::nameException),
-                "role", extractor.extractLawyerText(container, new By[]{By.cssSelector(".elementor-widget-text-editor p")}, "ROLE", LawyerExceptions::roleException),
+                "role", role,
                 "firm", this.name,
                 "country", "Colombia",
                 "practice_area", "",

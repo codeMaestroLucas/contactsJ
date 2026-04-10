@@ -28,7 +28,8 @@ public class Landslog extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector(".vc_column-inner"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".vc_column-inner"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.tagName("p")}, true);
     }
 
     @Override

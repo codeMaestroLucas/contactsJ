@@ -48,12 +48,14 @@ public class BaraonaMarshall extends ByNewPage {
         String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("wpb_wrapper"));
 
+        String role = extractor.extractLawyerText(container, new By[]{By.xpath("//p[contains(.,'Partner') or contains(.,'Associate')]")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocialsFromText(extractor.extractLawyerText(container, new By[]{By.tagName("div")}, "SOCIALS", LawyerExceptions::socialsException));
 
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", extractor.extractLawyerText(container, new By[]{By.xpath("//p[contains(.,'Partner') or contains(.,'Associate')]")}, "ROLE", LawyerExceptions::roleException),
+                "role", role,
                 "firm", this.name,
                 "country", "Chile",
                 "practice_area", "",

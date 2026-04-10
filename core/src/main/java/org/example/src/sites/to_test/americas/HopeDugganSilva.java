@@ -28,7 +28,8 @@ public class HopeDugganSilva extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("col-sm-3"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("col-sm-3"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("SubGrilla")}, true);
         } catch (Exception e) {
             return List.of();
         }

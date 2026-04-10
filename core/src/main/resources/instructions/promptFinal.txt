@@ -1,144 +1,112 @@
 # Prompt WebScrapping Java
 
-Contexto do Projeto: Geração de classes Java (Selenium/Apache POI) para web-scraping de sites de advocacia baseados nas classes abstratas ByPage e ByNewPage.
+**Contexto**: Geração de classes Java (Selenium/Apache POI) para web-scraping de sites de advocacia baseados nas classes abstratas ByPage e ByNewPage.
 
-1. Estrutura Obrigatória da Resposta
-O output deve conter apenas os seguintes itens, nesta ordem:
-    1. Cada firma gerada deve estar em um bloco de código separado para que eu possa copiar e colar cada uma.
+---
 
-    2. Comando touch tbm deve ser uma caixa de texto copiável: Uma única linha para criar todos os arquivos no diretório core/src/main/java/org/example/src/sites/to_test/<continentCorrespondente> .
-        Ex.:
-        - Africa: core/src/main/java/org/example/src/sites/to_test/africa
-        - Americas: core/src/main/java/org/example/src/sites/to_test/americas
-        - Asia: core/src/main/java/org/example/src/sites/to_test/asia
-        - Europe: core/src/main/java/org/example/src/sites/to_test/europe
-        - Oceania: core/src/main/java/org/example/src/sites/to_test/oceania
+## 1. Estrutura Obrigatória do Output
 
-    3. Geração das Classes: Código completo dos scrappers, ordenados alfabeticamente.
+O output deve conter **apenas** os seguintes itens, nesta ordem:
 
-    4. Bloco de Builders: Código para instanciação das firmas, agrupadas por Tipo de Classe e Continente, com no máximo 5 firmas por linha. Os builders estão em firms/src/main/java/org/example/src/utils/myInterface/ (ByNewPageFirmsBuilder.java e ByPageFirmsBuilder.java).
+1. **Touch**: Uma única linha `touch` para criar todos os arquivos no diretório correto.
+2. **Firmas**: Código completo dos scrapers em blocos separados, ordenados alfabeticamente.
+3. **Builders**: Código de instanciação das firmas, agrupadas por Tipo e Continente (máx. 5 por linha).
 
-2. Regras de Código e Implementação
-    * Package: O package deve corresponder ao diretório onde o arquivo será criado:
-        - Raiz (to_test/): `package org.example.src.sites.to_test;`
-        - Africa (to_test/africa/): `package org.example.src.sites.to_test.africa;`
-        - Americas (to_test/americas/): `package org.example.src.sites.to_test.americas;`
-        - Asia (to_test/asia/): `package org.example.src.sites.to_test.asia;`
-        - Europe (to_test/europe/): `package org.example.src.sites.to_test.europe;`
-        - Oceania (to_test/oceania/): `package org.example.src.sites.to_test.oceania;`
-    * Filtro de Roles: Em getLawyersInPage, filtrar advogados por role conforme SchellenbergWittmer.java. Use a variável validRoles já presente em Site.java.
-        - Lembre-se de utilizar o
-        ```java
-            private final By[] byRoleArray = {
-                    By.cssSelector("")
-            };
-        ```
-        apenas quando a role do advogado for coletada na primeira página e puder ser reaproveitado em outras partes do código da classe. Se não for possível, utilize o array criado para validar e na nova página colete a role do advogado
+**Diretórios por continente:**
+- Africa:   `core/src/main/java/org/example/src/sites/to_test/africa`
+- Americas: `core/src/main/java/org/example/src/sites/to_test/americas`
+- Asia:     `core/src/main/java/org/example/src/sites/to_test/asia`
+- Europe:   `core/src/main/java/org/example/src/sites/to_test/europe`
+- Oceania:  `core/src/main/java/org/example/src/sites/to_test/oceania`
 
-    * Parâmetros: O parâmetro WebElement em getLawyer e auxiliares deve se chamar obrigatoriamente lawyer.
-    * Telefones: Seguir o padrão "phone", socials[1].isEmpty() ? "xxxx" : socials[1]. Substituir "xxxx" pelo telefone da firma se encontrado, caso contrário, manter o padrão.
-    * Utilitários: Sempre preferir funções de SiteUtils.java e Site.java (especialmente getSocials - `super.getSocials`). Para strings, usar TreatLawyerParams.treatName(name) e treatNameForEmail(name).
-    * SEMPRE prefira utilizar a função getSocials() - tanto para texto individual com a opção true ou pelo href com a opção false - ou getSocialsFromText() - para coletar o texto todo de uma div e coletar o email e telefone - para coletar o email e telefone, preferencialmente utilizando o retorno de `super.getSocials`.
-    * Extração: Usar a instância extractor (ex: extractor.extractLawyerText(...)) com lambdas de erro de LawyerExceptions.
-    * Indentação do super(): Os argumentos dentro do super() devem ter um nível a menos de indentação que o padrão.
-    * Em caso de ser pertencente à classe de ByNewPage, SEMPRE prefira coletar os dados presente na primeira página
-<ERRADO>
+---
+
+## 2. Lógica das Classes
+
+- **ByPage**: Extração direta dos elementos da lista.
+- **ByNewPage**: Obrigatório usar `this.openNewTab(lawyer)` dentro de `getLawyer`. Sempre prefira coletar dados disponíveis na primeira página antes de abrir nova aba.
+
 ```java
+// CORRETO - dados da 1ª página extraídos antes do openNewTab
 protected Object getLawyer(WebElement lawyer) throws Exception {
-    this.openNewTab(lawyer);
+    String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
+    String role = extractor.extractLawyerText(lawyer, new By[]{By.className("gdlr-core-title-item-caption")}, "ROLE", LawyerExceptions::roleException);
+
+    // Bem como outros dados que puderem ser coletados na 1ª página
+
+    String link = this.openNewTab(lawyer);
     WebElement container = driver.findElement(By.className("gdlr-core-pbf-column-content"));
 
-    String name = extractor.extractLawyerText(container, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
-    String role = extractor.extractLawyerText(container, new By[]{By.className("gdlr-core-title-item-caption")}, "ROLE", LawyerExceptions::roleException);
-
     return Map.of(
-            "link", Objects.requireNonNull(driver.getCurrentUrl()),
+            "link", link,
             "name", name,
+            ...
+    );
+}
 ```
-</ERRADO>
 
-<CORRETO>
-```java
-    protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("gdlr-core-title-item-caption")}, "ROLE", LawyerExceptions::roleException);
+---
 
-        String link = this.openNewTab(lawyer);
+## 3. Regras de Implementação
 
-        WebElement container = driver.findElement(By.className("gdlr-core-pbf-column-content"));
+### 3.1 Package
 
-        return Map.of(
-                "link", link,
-                "name", name,
+O package deve corresponder ao diretório de destino:
+- `package org.example.src.sites.to_test;`
+- `package org.example.src.sites.to_test.africa;`
+- `package org.example.src.sites.to_test.americas;`
+- `package org.example.src.sites.to_test.asia;`
+- `package org.example.src.sites.to_test.europe;`
+- `package org.example.src.sites.to_test.oceania;`
 
-```
-</CORRETO>
+### 3.2 Filtro de Roles
 
-    * SEMPRE prefira utilizar a função openLink da seguinte forma:
-
-<ERRADO>
-```java
-this.openNewTab(lawyer);
-```
-</ERRADO>
-
-<CORRETO>
-```java
-String link = this.openNewTab(lawyer);
-
-return Map.of(
-        "link", link,
-```
-</CORRETO>
-
-
-    *  Sempre utilizar o wait do MyDriver
-
-<ERRADO>
+**Role disponível na 1ª página** (elemento `lawyer` da listagem) → usar `filterLawyersInPage` em `getLawyersInPage()`:
 ```java
 @Override
 protected List<WebElement> getLawyersInPage() {
-    try {
-        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
-        List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.wow > li")));
+    List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("..."));
+    return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.cssSelector("...")}, true);
+}
 ```
-</ERRADO>
 
-<CORRETO>
+**Role disponível apenas na 2ª página** (extraída de `container` ou `driver.findElement`) → usar `isValidPosition` em `getLawyer()`, logo após extrair a role:
 ```java
-@Override
-protected List<WebElement> getLawyersInPage() {
-    try {
-        return MyDriver.wait.findElements(By.cssSelector("h2 > a[href*='https://jmp.law/people/']"));
+String role = extractor.extractLawyerText(container, new By[]{By.cssSelector("...")}, "ROLE", LawyerExceptions::roleException);
+if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
 ```
-</CORRETO>
 
-    * Em hipótese alguma utilize o tratamento de erro da seguinte forma
+> Use `private final By[] byRoleArray = { By.cssSelector("") };` como campo de classe **apenas** quando o seletor de role for reutilizado em outros métodos além de `getLawyersInPage`.
 
-<ERRADO>
+### 3.3 Extração de Dados
+
+- Usar a instância `extractor` (`extractor.extractLawyerText(...)`) com lambdas de `LawyerExceptions` — nunca lambdas vazias `(e) -> ""`.
+- Preferir `getSocials()` (com `true` para texto individual, `false` para href) ou `getSocialsFromText()` para coletar email e telefone.
+- Usar `super.getSocials` onde possível.
+- O parâmetro `WebElement` em `getLawyer` e auxiliares deve se chamar **obrigatoriamente** `lawyer`.
+- `extractLawyerText` deve receber um `WebElement` container, nunca diretamente o `driver`.
+
+### 3.4 Utilitários e Formatação
+
+- Preferir funções de `SiteUtils.java` e `Site.java`.
+- Para strings: `TreatLawyerParams.treatName(name)` e `treatNameForEmail(name)`.
+- Telefones: `"phone", socials[1].isEmpty() ? "xxxx" : socials[1]` — substituir `"xxxx"` pelo telefone da firma se encontrado.
+- Indentação do `super()`: argumentos com um nível a menos que o padrão.
+- Sempre usar `MyDriver.wait` — nunca criar `WebDriverWait` local.
+- Sempre capturar o retorno de `openNewTab`: `String link = this.openNewTab(lawyer);`.
+- `By[]` inline nos extractors — nunca declarar como variáveis externas.
+
+---
+
+## 4. Modelo do Builder
+
+Os builders estão em `firms/src/main/java/org/example/src/utils/myInterface/` (`ByNewPageFirmsBuilder.java` e `ByPageFirmsBuilder.java`).
+
+- Continentes (exceto Americas): comentário `// ByPage - <Continente>` ou `// ByNewPage - <Continente>`.
+- Americas: array único, subdividido internamente em `// North America`, `// Central America`, `// South America`.
+- Máximo 5 firmas por linha.
+
 ```java
-```
-String[] socials = super.getSocialsFromText(extractor.extractLawyerText(lawyer, new By[]{By.className("meta")}, "SOCIALS", (e)->""));
-```
-</ERRADO>
-
-<CORRETO>
-```java
-String[] socials = super.getSocialsFromText(extractor.extractLawyerText(lawyer, new By[]{By.className("meta")}, "SOCIALS", LawyerExceptions::socialsException));
-```
-</CORRETO>
-
-
-3. Lógica das Classes
-    * ByPage: Extração direta dos elementos da lista.
-    * ByNewPage: Obrigatório usar this.openNewTab(lawyer) dentro de getLawyer e coletar os dados na subpágina.
-
-4. Modelo do Builder (Exemplo)
-
-    * Para todos os continentes exceto Americas, o comentário segue o padrão `// ByPage - <Continente>` ou `// ByNewPage - <Continente>`.
-    * Para Americas, o array AMERICAS é único e subdivido internamente em três regiões. As novas firmas DEVEM ser inseridas sob o sub-comentário correto: `// North America`, `// Central America` ou `// South America`.
-
-```Java
 // ByPage - Africa
 new FirmaA(), new FirmaB(), new FirmaC(), new FirmaD(), new FirmaE(),
 new FirmaF(),
@@ -164,81 +132,57 @@ new FirmaCA1(),
 new FirmaSA2(), new FirmaSA3(),
 ```
 
-5. Casos interessantes
-    * Caso o site seja do tipo ByNewPage e não exista maneira de se validar a role do advogado na primeira etapa, faça o seguinte:
-```java
-private String getRole(WebElement content) throws LawyerExceptions {
-    String role = extractor.extractLawyerText(content, new By[] {By.tagName("h3")}, "ROLE", LawyerExceptions::roleException);
-    boolean validPosition = siteUtl.isValidPosition(role, validRoles);
-    return validPosition ? role : "Invalid Role";
-}
+---
 
+## 5. Casos Especiais
+
+**ByNewPage sem validação de role na 1ª página** — delegar a validação para um método auxiliar:
+```java
 @Override
 protected Object getLawyer(WebElement lawyer) throws Exception {
     this.openNewTab(lawyer);
     WebElement content = driver.findElement(By.className("col-md-12"));
 
-    String role = this.getRole(content);
-    if (role.equals("Invalid Role")) return "Invalid Role";
+    String role = extractor.extractLawyerText(container, new By[]{By.("")}, "ROLE", LawyerExceptions::roleException);
+    if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
+
 ```
 
-## Erros e Observações
-    * Output Direto: Sem explicações, linha de pensamento ou comentários no código.
-    * Correções: Se necessário, usar labels --- ANTIGO --- e --- NOVO ---.
-    * Utilize o EXTRACTOR da maneira correta, principalmente em se tratando os erros:
-<ERRADO>
-```java
-"practice_area", extractor.extractLawyerText(driver, new By[]{By.xpath("//p[contains(.,'Practice Areas:')]")}, "PRACTICE AREA", (e) -> ""),
+---
+
+## 6. Anti-padrões — Checklist Interno
+
+> Antes de gerar cada classe, verificar todos os itens abaixo.
+
+| # | Anti-padrão | Correção |
+|---|---|---|
+| 1 | Dados na subpágina quando disponíveis na 1ª (ByNewPage) | Extrair da 1ª página antes de chamar `openNewTab` |
+| 2 | `this.openNewTab(lawyer)` sem capturar retorno | `String link = this.openNewTab(lawyer);` |
+| 3 | `new WebDriverWait(this.driver, Duration.ofSeconds(10))` | `MyDriver.wait.findElements(...)` |
+| 4 | Lambda vazia `(e) -> ""` em `extractLawyerText` ou `extractLawyerAttribute`  | `LawyerExceptions::socialsException` (ou equivalente) |
+| 5 | `By[] nameBy = {...}` declarado fora e passado como variável | `new By[] {...}` inline dentro do extractor |
+| 6 | `extractor.extractLawyerText(driver, ...)` direto no driver | `WebElement container = driver.findElement(...);` → `extractor.extractLawyerText(container, ...)` |
+
+---
+
+## 7. Formato do Output
+
 ```
-</ERRADO>
-
-<CORRETO>
-```java
-WebElement container = driver.findElement(By.xpath("<xpath>"));
-"practice_area", extractor.extractLawyerText(container, new By[]{By.xpath("//p[contains(.,'Practice Areas:')]")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
-```
-</CORRETO>
-
-    * Não utilize os ByArrays dessa maneira, prefira-os dentro dos extractors aos externos
-<ERRADO>
-```java
-By[] nameBy = {By.xpath("//div[@class='name']")};
-By[] roleBy = {By.xpath("//div[@class='post']")};
-
-return Map.of(
-        "name", extractor.extractLawyerText(driver.findElement(By.tagName("body")), nameBy, "NAME", LawyerExceptions::nameException),
-        "role", extractor.extractLawyerText(driver.findElement(By.tagName("body")), roleBy, "ROLE", LawyerExceptions::roleException),
-```
-</ERRADO>
-
-<CORRETO>
-```java
-return Map.of(
-        "link", Objects.requireNonNull(driver.getCurrentUrl()),
-        "name", extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[] {By.xpath("//div[@class='name']")}, "NAME", LawyerExceptions::nameException),
-        "role", extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[] {By.xpath("//div[@class='post']")}, "ROLE", LawyerExceptions::roleException),
-```
-</CORRETO>
-
-    * Checklist: Realize um checklist interno antes de gerar cada classe para garantir a conformidade com a documentação.
-
-
-------
-
-EXEMPLO FINAL DO OUTPUT NECESSÁRIO
-<exemplo>
 # Touch
 ```bash
-comando touch
+touch ...
 ```
 
 # Firmas
 ## Nome Firma 1
+```java
 código firma 1
-
+```
 
 ## Nome Firma 2
+```java
 código firma 2
+```
 
 # Builders
 ```java
@@ -258,7 +202,7 @@ new Firma4(),
 // Central America
 new Firma5(),
 ```
-</exemplo>
+```
 
 ------
 

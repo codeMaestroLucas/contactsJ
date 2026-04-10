@@ -28,7 +28,8 @@ public class BruzzoneYGonzalez extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("et_pb_column_1_3"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("et_pb_column_1_3"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.cssSelector("p")}, true);
         } catch (Exception e) {
             return List.of();
         }

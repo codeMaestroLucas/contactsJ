@@ -28,7 +28,8 @@ public class ErnestoBorges extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("equipe-item"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("equipe-item"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.tagName("p")}, true);
         } catch (Exception e) {
             return List.of();
         }

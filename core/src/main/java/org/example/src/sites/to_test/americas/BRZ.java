@@ -48,12 +48,14 @@ public class BRZ extends ByNewPage {
         String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("profissionalIntro"));
 
+        String role = extractor.extractLawyerText(container, new By[]{By.tagName("strong")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", extractor.extractLawyerText(container, new By[]{By.tagName("strong")}, "ROLE", LawyerExceptions::roleException),
+                "role", role,
                 "firm", this.name,
                 "country", extractor.extractLawyerText(container, new By[]{By.tagName("p")}, "COUNTRY", LawyerExceptions::countryException),
                 "practice_area", "",

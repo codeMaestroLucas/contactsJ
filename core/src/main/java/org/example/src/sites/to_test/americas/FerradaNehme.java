@@ -28,7 +28,8 @@ public class FerradaNehme extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("team-item"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("team-item"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("paragraph-pink-small")}, true);
         } catch (Exception e) {
             return List.of();
         }

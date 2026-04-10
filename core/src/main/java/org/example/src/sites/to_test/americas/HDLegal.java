@@ -29,7 +29,8 @@ public class HDLegal extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.cssSelector("li > a[data-item]"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("li > a[data-item]"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("persona-term")}, true);
         } catch (Exception e) {
             return List.of();
         }

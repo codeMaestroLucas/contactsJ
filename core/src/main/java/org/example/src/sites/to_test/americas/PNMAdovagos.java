@@ -50,6 +50,7 @@ public class PNMAdovagos extends ByNewPage {
         WebElement container = driver.findElement(By.className("ptb_col1-1"));
 
         String role = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.className("entry-title")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String practice = extractor.extractLawyerText(container, new By[]{By.className("ptb__reas_de_atua_o")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
         String[] socials = super.getSocials(container.findElements(By.tagName("p")), false);
 

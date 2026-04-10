@@ -28,7 +28,8 @@ public class SibincicNovakPartners extends ByPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.className("grey-area"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.className("grey-area"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.tagName("p")}, true);
     }
 
     @Override

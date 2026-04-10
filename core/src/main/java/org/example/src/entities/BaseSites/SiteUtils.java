@@ -119,7 +119,7 @@ public class SiteUtils {
                 if (element == null) continue;
 
                 // Resolve role text ───────────────────────────────────────────
-                String role = byText ? element.getText() : null;
+                String role = byText ? element.getText() : element.getAttribute("innerHTML");
 
                 // getText() returns "" for hidden elements; fall back to textContent
                 if (role == null || role.isBlank()) {

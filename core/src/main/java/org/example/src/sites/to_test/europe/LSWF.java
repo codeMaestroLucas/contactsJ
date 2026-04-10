@@ -48,6 +48,7 @@ public class LSWF extends ByNewPage {
         WebElement content = driver.findElement(By.className("wp-block-column"));
 
         String role = extractor.extractLawyerText(content, new By[]{By.tagName("h1")}, "ROLE", LawyerExceptions::roleException).split("\n")[1];
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(content.findElements(By.tagName("a")), false);
 
         return Map.of(

@@ -28,7 +28,8 @@ public class MPATradeLaw extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("item-columns"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("item-columns"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("team-info")}, true);
         } catch (Exception e) {
             return List.of();
         }

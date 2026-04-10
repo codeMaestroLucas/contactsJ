@@ -27,7 +27,8 @@ public class TrenchRossiWatanabe extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("lawyer"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("lawyer"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("article__excerpt")}, true);
         } catch (Exception e) {
             return List.of();
         }

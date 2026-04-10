@@ -50,6 +50,7 @@ public class GuerreroOlivos extends ByNewPage {
         WebElement container = MyDriver.wait.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[2]/div"));
 
         String role = extractor.extractLawyerText(container, new By[]{By.xpath(".//span[contains(text(),'PARTNER')]")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocialsFromText(container.getText());
 
         return Map.of(

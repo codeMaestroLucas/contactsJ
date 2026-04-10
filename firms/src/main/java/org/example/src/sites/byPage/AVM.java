@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -40,11 +40,11 @@ public class AVM extends ByPage {
 
         return Map.of(
                 "link", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("colaborador-card_nome")}, "LINK", "href", LawyerExceptions::linkException),
-                "name", extractor.extractLawyerText(lawyer, new By[]{By.className("colaborador-card_nome")}, "NAME", LawyerExceptions::nameException),
-                "role", extractor.extractLawyerText(lawyer, new By[]{By.className("colaborador-card_posicao")}, "ROLE", LawyerExceptions::roleException),
+                "name", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("colaborador-card_nome")}, "NAME", "textContent", LawyerExceptions::nameException),
+                "role", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("colaborador-card_posicao")}, "ROLE", "textContent", LawyerExceptions::roleException),
                 "firm", this.name,
                 "country", "Angola",
-                "practice_area", extractor.extractLawyerText(lawyer, new By[]{By.className("colaborador-card_resumo")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
+                "practice_area", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("colaborador-card_resumo")}, "PRACTICE AREA", "textContent", LawyerExceptions::practiceAreaException),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "244222397126" : socials[1]
         );

@@ -49,6 +49,7 @@ public class PradoVidigal extends ByNewPage {
 
         WebElement container = driver.findElement(By.className("content-wrapper"));
         String role = extractor.extractLawyerText(container, new By[]{By.tagName("p")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(

@@ -48,6 +48,7 @@ public class BaschRameh extends ByNewPage {
 
         WebElement container = driver.findElement(By.className("info"));
         String role = extractor.extractLawyerText(container, new By[]{By.tagName("h4")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(

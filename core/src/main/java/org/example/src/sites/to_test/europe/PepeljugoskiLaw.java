@@ -28,7 +28,8 @@ public class PepeljugoskiLaw extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("div.elementor-column-wrap.elementor-element-populated"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.elementor-column-wrap.elementor-element-populated"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.tagName("span")}, true);
     }
 
     @Override

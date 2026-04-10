@@ -48,6 +48,7 @@ public class RossiMaffiniMilmanGrando extends ByNewPage {
         String link = this.openNewTab(lawyer);
 
         String role = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.id("template-k7LOFl1n#3")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(driver.findElements(By.className("el-item")), false);
 
         return Map.of(

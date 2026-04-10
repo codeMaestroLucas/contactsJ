@@ -28,7 +28,8 @@ public class Lembeye extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("elementor-image-box-wrapper"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("elementor-image-box-wrapper"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("elementor-image-box-description")}, true);
         } catch (Exception e) {
             return List.of();
         }

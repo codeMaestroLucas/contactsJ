@@ -53,7 +53,7 @@ public class Abe extends ByNewPage {
 
         WebElement container = driver.findElement(By.className("nome-email"));
         String role = extractor.extractLawyerText(container, new By[]{By.tagName("h4")}, "ROLE", LawyerExceptions::roleException);
-
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(driver.findElements(By.cssSelector(".phone-email a")), false);
 
         return Map.of(

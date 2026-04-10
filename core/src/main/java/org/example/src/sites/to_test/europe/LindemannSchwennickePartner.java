@@ -27,7 +27,8 @@ public class LindemannSchwennickePartner extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.cssSelector(".team-overview > ul > li"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".team-overview > ul > li"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("team-overview--position")}, true);
         } catch (Exception e) {
             return List.of();
         }

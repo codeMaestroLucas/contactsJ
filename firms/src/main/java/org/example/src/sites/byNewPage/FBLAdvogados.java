@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class FBLAdvogados extends ByNewPage {
 
@@ -30,7 +29,9 @@ public class FBLAdvogados extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("gallery-item-container"));
+            List<WebElement> elements = MyDriver.wait.findElements(By.className("gallery-item-container"));
+            elements.removeFirst();elements.removeFirst();elements.removeFirst();
+            return elements;
         } catch (Exception e) {
             return List.of();
         }
@@ -38,24 +39,21 @@ public class FBLAdvogados extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = lawyer.findElement(By.className("item-action")).getAttribute("data-id");
-        // Wix specific navigation usually happens via click or URL construct, but data-id/ idx are indicators.
-        // Based on Wix structure provided, we click the item-action.
-        MyDriver.clickOnElement(lawyer.findElement(By.className("item-action")));
-        MyDriver.waitForPageToLoad();
+        MyDriver.cmdClickOnElement(lawyer);
         return driver.getCurrentUrl();
     }
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("info-element-title")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("info-element-description")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
 
         WebElement container = MyDriver.wait.findElement(By.id("comp-ls1pjqv2"));
 
-        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
+        String name = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.className("wixui-rich-text__text")}, "ROLE", LawyerExceptions::roleException);
+
+        String[] socials = super.getSocials(driver.findElement(By.tagName("body")).findElements(By.cssSelector("p > a")), false);
 
         return Map.of(
                 "link", link,

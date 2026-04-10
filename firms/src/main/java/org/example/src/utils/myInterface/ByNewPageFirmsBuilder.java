@@ -2,7 +2,7 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.to_test.africa.*;
+import org.example.src.sites.byPage.AVM;
 import org.example.src.sites.to_test.americas.*;
 import org.example.src.sites.to_test.europe.*;
 import org.example.src.utils.ContinentConfig;
@@ -27,7 +27,7 @@ public class ByNewPageFirmsBuilder {
             new MuvingiAndMugadza(), new OraroAndCompany(), new Ortus(), new PerchstoneAndGraeys(), new RDSPartners(),
             new RobinsonBertram(), new RONNLaw(), new SenekalSimmonds(), new Shalakany(), new Shalakany(),
             new SLKB(), new TNP(), new UdoUdomaBeloOsagie(), new Werksmans(), new ZakiHashemAndPartners(),
-            new ZulficarAndPartners(),
+            new ZulficarAndPartners(), new FBLAdvogados(),
     };
 
     private static final Site[] ASIA = {
@@ -145,6 +145,7 @@ public class ByNewPageFirmsBuilder {
             new MitraniCaballero(), new MolinaRios(), new NFA(), new NovotnyAdvogados(), new OFarrell(),
             new Osterling(), new PGLaw(), new PSTBN(), new PugaOrtiz(), new RiedFabres(),
             new RMADVAdvogados(), new RomeuAmaralAdvogados(), new RosselloAbogados(), new SargentAndKrahn(), new ZBV(),
+            new MottaFernandes(),
     };
 
     private static final Site[] OCEANIA = {
@@ -172,9 +173,6 @@ public class ByNewPageFirmsBuilder {
     };
 
     private static final Site[] TEST = {
-            // ByPage - Africa
-            new AVM(),
-
 // ByPage - Americas
 // South America
             new BalmacedaCoxPina(), new BarcellosTucunduva(), new BenitesVargasUgaz(), new DiasDeSouza(), new MachadoAssociados(),
@@ -182,9 +180,6 @@ public class ByNewPageFirmsBuilder {
 
 // ByPage - Europe
             new AndersenTaxLegalIberia(), new GElíasMuñoz(), new SibincicNovakPartners(),
-
-// ByNewPage - Africa
-            new FBLAdvogados(), new MottaFernandes(),
 
 // ByNewPage - Americas
 // North America

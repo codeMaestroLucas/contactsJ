@@ -33,7 +33,8 @@ public class BBGS extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("div[role='listitem'] div.YzqVVZ"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div[role='listitem'] div.YzqVVZ"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.cssSelector("div[id*='comp-lws6hanu'] p")}, true);
     }
 
     @Override

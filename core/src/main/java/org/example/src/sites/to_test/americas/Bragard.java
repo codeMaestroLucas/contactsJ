@@ -28,7 +28,8 @@ public class Bragard extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("collection-item"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("collection-item"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("category")}, true);
         } catch (Exception e) {
             return List.of();
         }

@@ -48,6 +48,7 @@ public class SachaCalmon extends ByNewPage {
         String link = this.openNewTab(lawyer);
 
         String role = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.xpath("//*[@id=\"main-content\"]/div/div/div[2]/div/div[2]/div/div/div/div[1]/h3")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(driver.findElements(By.cssSelector(".info a")), false);
 
         return Map.of(

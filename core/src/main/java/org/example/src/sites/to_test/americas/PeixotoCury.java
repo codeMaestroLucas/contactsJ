@@ -28,7 +28,8 @@ public class PeixotoCury extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.cssSelector("div.grid-item"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.grid-item"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("badge")}, true);
         } catch (Exception e) {
             return List.of();
         }

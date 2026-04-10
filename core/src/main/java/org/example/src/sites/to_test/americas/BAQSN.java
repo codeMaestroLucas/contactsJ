@@ -49,6 +49,7 @@ public class BAQSN extends ByNewPage {
 
         WebElement container = MyDriver.wait.findElement(By.className("elementor-widget-container"));
         String role = extractor.extractLawyerText(container, new By[]{By.xpath("//div[contains(text(), 'PARTNER')]")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String email = extractor.extractLawyerText(container, new By[]{By.xpath("//div[contains(text(), '@')]")}, "EMAIL", LawyerExceptions::emailException);
 
         return Map.of(

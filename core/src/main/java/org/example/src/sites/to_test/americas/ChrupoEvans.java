@@ -28,7 +28,8 @@ public class ChrupoEvans extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("listar-integrante__integrante"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("listar-integrante__integrante"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("subtitulo")}, true);
         } catch (Exception e) {
             return List.of();
         }

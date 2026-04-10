@@ -48,7 +48,7 @@ public class Cassagne extends ByNewPage {
         WebElement container = MyDriver.wait.findElement(By.xpath("/html/body/div/section/div/div[1]/div/section[2]/div"));
         String name = extractor.extractLawyerText(MyDriver.getINSTANCE().findElement(By.tagName("body")), new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException);
         String role = extractor.extractLawyerText(MyDriver.getINSTANCE().findElement(By.tagName("body")), new By[]{By.tagName("h2")}, "ROLE", LawyerExceptions::roleException);
-
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         List<WebElement> socialLinks = container.findElements(By.tagName("a"));
         String[] socials = super.getSocials(socialLinks, false);
 

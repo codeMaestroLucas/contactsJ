@@ -50,6 +50,7 @@ public class FischerCia extends ByNewPage {
         WebElement container = MyDriver.wait.findElement(By.className("elementor-widget-populated"));
 
         String role = extractor.extractLawyerText(container, new By[]{By.tagName("h6")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(

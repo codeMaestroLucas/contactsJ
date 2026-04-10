@@ -49,6 +49,7 @@ public class Brunswick extends ByNewPage {
 
         WebElement container = MyDriver.wait.findElement(By.className("gdlr-column-shortcode"));
         String role = extractor.extractLawyerText(container, new By[]{By.className("rougerouge")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
 
         List<WebElement> socialIcons = container.findElements(By.tagName("a"));
         String[] socials = super.getSocials(socialIcons, false);

@@ -29,7 +29,8 @@ public class MundieEAdvogados extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("gallery-item-container"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("gallery-item-container"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("info-element-title")}, true);
         } catch (Exception e) {
             return List.of();
         }

@@ -49,6 +49,7 @@ public class SantosBevilaquaAdvogados extends ByNewPage {
 
         WebElement container = driver.findElement(By.className("blocos"));
         String role = extractor.extractLawyerText(container, new By[]{By.xpath("//li[contains(text(), 'Partner')]")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String practice = extractor.extractLawyerText(container, new By[]{By.className("pAreas")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
         String[] socials = super.getSocials(container.findElement(By.className("pContato")).findElements(By.tagName("a")), false);
 

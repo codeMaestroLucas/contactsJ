@@ -15,29 +15,31 @@ public class AndersenTaxLegalIberia extends ByPage {
         super(
                 "Andersen Tax & Legal Iberia",
                 "https://pt.andersen.com/lawyers/",
-                1
+                3
         );
     }
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        String otherUrl = "https://pt.andersen.com/lawyers/page/" + (index + 1) + "/";
+        String url = index == 0 ? this.link : otherUrl;
+        this.driver.get(url);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("li.data.row"));
+        String[] validRoles = {"sócio", "sócia", "director", "partner", "counsel", "senior associate"};
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("li.data.row"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("perfil-cargo")}, true, validRoles);
     }
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         String name = extractor.extractLawyerText(lawyer, new By[]{By.className("perfil-nome")}, "NAME", LawyerExceptions::nameException);
         String role = extractor.extractLawyerText(lawyer, new By[]{By.className("perfil-cargo")}, "ROLE", LawyerExceptions::roleException);
-        String country = extractor.extractLawyerText(lawyer, new By[]{By.className("perfil-vcard")}, "COUNTRY", LawyerExceptions::countryException);
         String practiceArea = extractor.extractLawyerText(lawyer, new By[]{By.className("perfil-areas")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
-
         String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector(".perfil-nome a")}, "LINK", "href", LawyerExceptions::linkException);
 
         String[] socials = super.getSocials(lawyer.findElements(By.cssSelector("a")), false);
@@ -47,7 +49,7 @@ public class AndersenTaxLegalIberia extends ByPage {
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", country,
+                "country", "Portugal",
                 "practice_area", practiceArea,
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "351213511120" : socials[1]

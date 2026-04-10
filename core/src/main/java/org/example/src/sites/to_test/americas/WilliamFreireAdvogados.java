@@ -28,7 +28,8 @@ public class WilliamFreireAdvogados extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("gdlr-core-personnel-list"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("gdlr-core-personnel-list"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("gdlr-core-personnel-list-position")}, true);
         } catch (Exception e) {
             return List.of();
         }

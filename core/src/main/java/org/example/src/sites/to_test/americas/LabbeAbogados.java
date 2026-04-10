@@ -29,7 +29,8 @@ public class LabbeAbogados extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("multicolumn-card"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("multicolumn-card"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("rte")}, true);
         } catch (Exception e) {
             return List.of();
         }

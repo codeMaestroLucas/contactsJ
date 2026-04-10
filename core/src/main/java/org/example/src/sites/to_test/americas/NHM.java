@@ -28,7 +28,8 @@ public class NHM extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("nhm-card"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("nhm-card"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("info")}, true);
         } catch (Exception e) {
             return List.of();
         }

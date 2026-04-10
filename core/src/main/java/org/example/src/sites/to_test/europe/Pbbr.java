@@ -27,7 +27,8 @@ public class Pbbr extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.cssSelector("div.col a.card-team"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.col a.card-team"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("card-subtile")}, true);
         } catch (Exception e) {
             return List.of();
         }

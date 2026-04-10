@@ -28,7 +28,8 @@ public class Leadell extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("li.team-member"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("li.team-member"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("position")}, true);
     }
 
     @Override

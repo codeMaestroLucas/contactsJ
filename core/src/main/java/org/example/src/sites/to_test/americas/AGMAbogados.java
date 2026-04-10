@@ -51,6 +51,7 @@ public class AGMAbogados extends ByNewPage {
         WebElement container = driver.findElement(By.className("card-body"));
 
         String role = extractor.extractLawyerText(container, new By[]{By.tagName("h6")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(container.findElements(By.cssSelector(".socials-wrapper a")), false);
 
         return Map.of(

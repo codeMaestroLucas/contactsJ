@@ -27,7 +27,8 @@ public class MelloTorres extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.cssSelector("div.item-socio"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.item-socio"));
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.cssSelector("p.color-blue2")}, true);
         } catch (Exception e) {
             return List.of();
         }

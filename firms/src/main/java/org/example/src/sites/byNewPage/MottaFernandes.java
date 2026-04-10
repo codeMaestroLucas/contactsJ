@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -26,8 +26,11 @@ public class MottaFernandes extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
+        String[] validRoles = {"sócio", "sócia", "conselheiro", "conselheira"};
         try {
-            return MyDriver.wait.findElements(By.cssSelector("li.images"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("li.images"));
+            lawyers.removeFirst();
+            return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("a")}, false, validRoles);
         } catch (Exception e) {
             return List.of();
         }
@@ -35,9 +38,8 @@ public class MottaFernandes extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = lawyer.findElement(By.tagName("a")).getAttribute("href");
-        MyDriver.openNewTab(link);
-        return link;
+        MyDriver.cmdClickOnElement(lawyer);
+        return driver.getCurrentUrl();
     }
 
     @Override
@@ -45,6 +47,9 @@ public class MottaFernandes extends ByNewPage {
         String name = extractor.extractLawyerText(lawyer, new By[]{By.className("nome")}, "NAME", LawyerExceptions::nameException);
 
         String link = this.openNewTab(lawyer);
+
+        WebElement container = MyDriver.wait.findElement(By.className("detalhes"));
+
         WebElement socialContainer = driver.findElement(By.xpath("//*[@id=\"nossa-equipe-detalhe\"]/div[2]/div[1]/div[1]/div[2]"));
 
         String[] socials = super.getSocialsFromText(extractor.extractLawyerText(socialContainer, new By[]{By.tagName("p")}, "SOCIALS", LawyerExceptions::socialsException));
@@ -52,7 +57,7 @@ public class MottaFernandes extends ByNewPage {
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", "Partner",
+                "role", "----",
                 "firm", this.name,
                 "country", "Brazil",
                 "practice_area", "",

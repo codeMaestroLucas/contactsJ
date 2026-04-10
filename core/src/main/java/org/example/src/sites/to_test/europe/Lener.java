@@ -31,7 +31,8 @@ public class Lener extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("div.col-md-2.mb-5"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.col-md-2.mb-5"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[] {By.className("card-subtitle")}, true);
     }
 
     @Override

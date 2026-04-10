@@ -29,7 +29,7 @@ public class BenitesVargasUgaz extends ByPage {
 
         for (WebElement lawyer : allLawyers) {
             try {
-                String role = extractor.extractLawyerText(lawyer, new By[]{By.className("dmach-postmeta-value")}, "ROLE", (e) -> "");
+                String role = extractor.extractLawyerText(lawyer, new By[]{By.className("dmach-postmeta-value")}, "ROLE", LawyerExceptions::roleException);
                 WebElement vCardBtn = lawyer.findElement(By.linkText("Download VCard"));
 
                 if (siteUtl.isValidPosition(role, validRoles) && vCardBtn.isDisplayed()) {

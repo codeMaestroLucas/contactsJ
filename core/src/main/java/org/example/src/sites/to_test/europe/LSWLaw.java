@@ -48,6 +48,7 @@ public class LSWLaw extends ByNewPage {
         WebElement header = driver.findElement(By.cssSelector("div.flex.flex-col.justify-end"));
 
         String role = extractor.extractLawyerText(header, new By[]{By.tagName("h2")}, "ROLE", LawyerExceptions::roleException);
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(header.findElements(By.tagName("a")), false);
 
         return Map.of(
