@@ -21,11 +21,13 @@ public final class EmailDuplicateChecker {
     private static EmailDuplicateChecker INSTANCE;
     private WebDriver driver;
     private boolean isLoggedIn = false;
+    private boolean connectedToExternalBrowser = false;
 
+    private static final String REMOTE_DEBUG_ADDRESS = "localhost:9222";
     private static final String LOGIN_URL = "https://globallawexperts.com/login/?redirect_to=https%3A%2F%2Fgloballawexperts.com%2Fdashboard%2F";
-    private static final String DUPLICATE_CHECKER_URL = "https://globallawexperts.com/lead-duplicate-checker/";
     private static final String USERNAME = "contact@kfroisconsulting.com";
     private static final String PASSWORD = "Fo5KdZhSNxT!y1bQpkPh)6qg";
+    private static final String DUPLICATE_CHECKER_URL = "https://globallawexperts.com/lead-duplicate-checker/";
 
     // Locators
     private static final By USERNAME_INPUT = By.name("login_username");
@@ -46,9 +48,26 @@ public final class EmailDuplicateChecker {
     }
 
     /**
-     * Initializes the WebDriver with Chrome options
+     * Initializes the WebDriver.
+     * First attempts to connect to an existing Chrome session with remote debugging on
+     * REMOTE_DEBUG_ADDRESS (started manually by the user, who already passed Cloudflare
+     * and logged in). Falls back to launching a new ChromeDriver if no external session
+     * is available.
      */
     private void initializeDriver() {
+        // Try to connect to an existing browser opened by the user
+        try {
+            ChromeOptions externalOptions = new ChromeOptions();
+            externalOptions.setDebuggerAddress(REMOTE_DEBUG_ADDRESS);
+            this.driver = new ChromeDriver(externalOptions);
+            this.connectedToExternalBrowser = true;
+            this.isLoggedIn = true; // user already authenticated manually
+            System.out.println("EmailDuplicateChecker: Connected to external browser session on " + REMOTE_DEBUG_ADDRESS);
+            return;
+        } catch (Exception e) {
+            // No external browser available — fall through to launch a new one
+        }
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-gpu");
         options.addArguments("--ignore-certificate-errors");
@@ -62,13 +81,20 @@ public final class EmailDuplicateChecker {
         options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
 
         this.driver = new ChromeDriver(options);
+        this.connectedToExternalBrowser = false;
     }
 
     /**
      * Performs login on globallawexperts.com
-     * Only executed once during the first email check
+     * Only executed once during the first email check.
+     * Skipped when connected to an external browser (user already logged in manually).
      */
     public void login() {
+        if (connectedToExternalBrowser) {
+            isLoggedIn = true;
+            return;
+        }
+
         try {
             driver.get(LOGIN_URL);
             
@@ -182,16 +208,19 @@ public final class EmailDuplicateChecker {
     }
 
     /**
-     * Closes and reinitializes the WebDriver
+     * Closes and reinitializes the WebDriver.
+     * When connected to an external browser, does not call quit() to avoid
+     * closing the user's manually-opened Chrome session.
      */
     private void restartDriver() {
         try {
-            if (driver != null) {
+            if (driver != null && !connectedToExternalBrowser) {
                 driver.quit();
             }
         } catch (Exception e) {} finally {
             driver = null;
             isLoggedIn = false;
+            connectedToExternalBrowser = false;
         }
 
         // Clear any lingering interrupt flag so ChromeDriver creation isn't blocked.
