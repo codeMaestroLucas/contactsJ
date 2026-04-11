@@ -9,11 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Amprimo extends ByNewPage {
-
-    private final By[] byRoleArray = {
-            By.className("the7-taxonomies")
-    };
-
     public Amprimo() {
         super(
                 "Amprimo",
@@ -31,8 +26,7 @@ public class Amprimo extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("e-loop-item"));
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
+            return MyDriver.wait.findElements(By.className("e-loop-item"));
         } catch (Exception e) {
             return List.of();
         }
@@ -48,7 +42,6 @@ public class Amprimo extends ByNewPage {
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         String name = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector("h1 a")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
 
@@ -58,7 +51,7 @@ public class Amprimo extends ByNewPage {
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", role,
+                "role", "Partner",
                 "firm", this.name,
                 "country", "Peru",
                 "practice_area", "",

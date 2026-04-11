@@ -27,7 +27,10 @@ public class BaleraBerbelMitne extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("et_pb_column_1_4"));
+            WebElement div = MyDriver.wait.findElement(By.id("socios"));
+            List<WebElement> lawyers = div.findElements(By.className("et_pb_column"));
+            lawyers.removeFirst();
+            return lawyers;
         } catch (Exception e) {
             return List.of();
         }
@@ -35,6 +38,7 @@ public class BaleraBerbelMitne extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
+        // todo fix link
         String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector("a")}, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
         return link;
@@ -42,12 +46,12 @@ public class BaleraBerbelMitne extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("et_pb_text_inner")}, "NAME", LawyerExceptions::nameException);
+        String name = lawyer.getText();
 
         String link = this.openNewTab(lawyer);
 
-        WebElement container = driver.findElement(By.className("et_pb_column_1_3"));
-        String[] socials = super.getSocials(container.findElements(By.tagName("span")), true);
+        String email = MyDriver.wait.findElement(By.xpath("//div/div/div[3]/div[2]/div[1]/div[2]/div/div[2]/h4/span")).getAttribute("textContent");
+
 
         return Map.of(
                 "link", link,
@@ -56,8 +60,8 @@ public class BaleraBerbelMitne extends ByNewPage {
                 "firm", this.name,
                 "country", "Brazil",
                 "practice_area", "",
-                "email", socials[0],
-                "phone", socials[1].isEmpty() ? "551130740520" : socials[1]
+                "email", email,
+                "phone", "551130740520"
         );
     }
 }

@@ -53,13 +53,14 @@ public class AGMAbogados extends ByNewPage {
         String role = extractor.extractLawyerText(container, new By[]{By.tagName("h6")}, "ROLE", LawyerExceptions::roleException);
         if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(container.findElements(By.cssSelector(".socials-wrapper a")), false);
+        String country = extractor.extractLawyerText(container, new By[]{By.className("office-item")}, "COUNTRY", LawyerExceptions::countryException).toLowerCase();
 
         return Map.of(
                 "link", link,
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", "Spain",
+                "country", country.contains("mexico") ? "Mexico" : "Spain",
                 "practice_area", extractor.extractLawyerText(container, new By[]{By.className("services-wrapper")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "34934871122" : socials[1]

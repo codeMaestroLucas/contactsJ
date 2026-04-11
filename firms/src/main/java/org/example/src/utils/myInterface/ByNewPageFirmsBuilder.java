@@ -2,9 +2,7 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.byPage.AVM;
 import org.example.src.sites.to_test.americas.*;
-import org.example.src.sites.to_test.europe.*;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -118,6 +116,9 @@ public class ByNewPageFirmsBuilder {
             new SZA(), new Szecskay(), new Valfor(), new VanOlmenAndWynant(), new Vischer(),
             new VisionConsulting(), new VossiusAndPartner(), new WardynskiAndPartners(), new WengerVieliAG(), new Wiersholm(),
             new WierzbowskiAndPartners(), new WikborgRein(), new WindtLeGrand(), new ZampaPartners(), new ZeposAndYannopoulos(),
+            new Landslog(), new Lener(), new LindemannSchwennickePartner(),
+            new LMCR(), new LSWF(), new LSWLaw(), new Mariscal(), new Pbbr(),
+            new PepeljugoskiLaw(), new UriaMenendez(),
     };
 
     private static final Site[] AMERICAS = {
@@ -178,9 +179,6 @@ public class ByNewPageFirmsBuilder {
             new BalmacedaCoxPina(), new BarcellosTucunduva(), new BenitesVargasUgaz(), new DiasDeSouza(), new MachadoAssociados(),
             new RodrigoEliasMedrano(), new Rubio(), new SchneiderPugliese(), new Spingarn(), new UrendaRencoretOrregoYDorr(),
 
-// ByPage - Europe
-            new AndersenTaxLegalIberia(), new GElíasMuñoz(), new SibincicNovakPartners(),
-
 // ByNewPage - Americas
 // North America
             new AGMAbogados(), new Littler(),
@@ -202,11 +200,6 @@ public class ByNewPageFirmsBuilder {
             new Santivanez(), new SantosBevilaquaAdvogados(), new Silva(), new SiqueiraCastro(), new TAGD(),
             new TrenchRossiWatanabe(), new UribeHenao(), new VBDAdvogados(), new VBSOAdvogados(), new Velloza(),
             new VieiraRezendeAdvogados(), new WilliamFreireAdvogados(), new WongtschowskiKleimanAdvogados(), new ZuzunagaAssereto(),
-
-// ByNewPage - Europe
-            new Brunswick(), new Landslog(), new Leadell(), new Lener(), new LindemannSchwennickePartner(),
-            new LMCR(), new LSWF(), new LSWLaw(), new Mariscal(), new Pbbr(),
-            new PepeljugoskiLaw(), new PerezLlorca(), new UriaMenendez(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

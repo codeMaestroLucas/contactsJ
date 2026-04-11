@@ -32,7 +32,7 @@ public class AlbagliZaliasnik extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".et_pb_column_1_3"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.et_pb_row.et_pb_row_3.et_pb_equal_columns.et_pb_gutters3"));
             return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
         } catch (Exception e) {
             return List.of();
@@ -41,7 +41,7 @@ public class AlbagliZaliasnik extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
+        String link = lawyer.findElement(By.tagName("a")).getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }

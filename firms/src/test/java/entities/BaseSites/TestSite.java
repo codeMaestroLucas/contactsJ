@@ -3,18 +3,12 @@ package entities.BaseSites;
 import org.example.src.entities.BaseSites.Site;
 //import org.example.src.sites.byPage.*;
 //import org.example.src.sites.byNewPage.*;
-
-import org.example.src.sites.to_test.africa.*;
 import org.example.src.sites.to_test.americas.*;
-import org.example.src.sites.to_test.asia.*;
-import org.example.src.sites.to_test.europe.*;
-import org.example.src.sites.to_test.oceania.*;
-
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends AndersenTaxLegalIberia {
-    public static final boolean HEADLESS = false;
+class MyTestPage extends BaleraBerbelMitne {
+    public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }
 

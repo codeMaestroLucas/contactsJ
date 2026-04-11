@@ -11,9 +11,7 @@ import java.util.Map;
 
 public class Abe extends ByNewPage {
 
-    private final By[] byRoleArray = {
-            By.cssSelector(".nome-email h4")
-    };
+    private final String[] validRoles = {"sócio", "sócia", "socio", "socio", "diretor","diretora", "conselheiro", "conselheira", "associado senior", "associada senior"};
 
     public Abe() {
         super(
@@ -53,7 +51,7 @@ public class Abe extends ByNewPage {
 
         WebElement container = driver.findElement(By.className("nome-email"));
         String role = extractor.extractLawyerText(container, new By[]{By.tagName("h4")}, "ROLE", LawyerExceptions::roleException);
-        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
+        if (!siteUtl.isValidPosition(role, this.validRoles)) return "Invalid Role";
         String[] socials = super.getSocials(driver.findElements(By.cssSelector(".phone-email a")), false);
 
         return Map.of(

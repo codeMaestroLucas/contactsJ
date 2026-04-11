@@ -23,6 +23,39 @@ import java.util.function.Supplier;
 
 @Getter
 public class CompletedFirms {
+    // ==================== MENU ====================
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n" + "=".repeat(45));
+            System.out.println("  1. Ver todas as firmas");
+            System.out.println("  2. Verificar estado do sistema");
+            System.out.println("  3. Firmas disponíveis");
+            System.out.println("  0. Sair");
+            System.out.println("=".repeat(45));
+            System.out.print("Escolha uma opcao: ");
+
+            String input = scanner.nextLine().trim();
+
+            switch (input) {
+                case "1" -> showAllFirmsCompleted();
+                case "2" -> showSystemState();
+                case "3" -> showAvailableFirms();
+                case "0" -> {
+                    saveSnapshot();
+                    scanner.close();
+                    return;
+                }
+                default -> System.out.println(" " + RED + "Opcao invalida." + RESET);
+            }
+        }
+    }
+
+
+    // FUNCTIONS
+
     private static Site[] getByPage() { return ByPageFirmsBuilder.build(); }
     private static Site[] getByNewPage() { return ByNewPageFirmsBuilder.build(); }
 
@@ -603,36 +636,5 @@ public class CompletedFirms {
         System.out.printf(" %sTOTAL (ativos):%s  %s%d firmas%s disponíveis  |  %s%d advogados%s à registrar%n",
                 BOLD, RESET, GREEN, activeAvailFirms, RESET, BLUE, activeAvailLawyers, RESET);
         System.out.println("=".repeat(lineLength));
-    }
-
-
-    // ==================== MENU ====================
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.println("\n" + "=".repeat(45));
-            System.out.println("  1. Ver todas as firmas");
-            System.out.println("  2. Verificar estado do sistema");
-            System.out.println("  3. Firmas disponíveis");
-            System.out.println("  0. Sair");
-            System.out.println("=".repeat(45));
-            System.out.print("Escolha uma opcao: ");
-
-            String input = scanner.nextLine().trim();
-
-            switch (input) {
-                case "1" -> showAllFirmsCompleted();
-                case "2" -> showSystemState();
-                case "3" -> showAvailableFirms();
-                case "0" -> {
-                    saveSnapshot();
-                    scanner.close();
-                    return;
-                }
-                default -> System.out.println(" " + RED + "Opcao invalida." + RESET);
-            }
-        }
     }
 }
