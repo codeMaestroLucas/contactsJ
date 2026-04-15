@@ -78,26 +78,83 @@ if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
 
 > Use `private final By[] byRoleArray = { By.cssSelector("") };` como campo de classe **apenas** quando o seletor de role for reutilizado em outros métodos além de `getLawyersInPage`.
 
-### 3.3 Extração de Dados
+### 3.3 Utilização Correta de Funcionalidades
 
-- Usar a instância `extractor` (`extractor.extractLawyerText(...)`) com lambdas de `LawyerExceptions` — nunca lambdas vazias `(e) -> ""`.
-- Preferir `getSocials()` (com `true` para texto individual, `false` para href) ou `getSocialsFromText()` para coletar email e telefone.
-- Usar `super.getSocials` onde possível.
+#### 3.3.1 LawyerExceptions — referência completa
+
+Cada campo do `Map` final possui seu método de exception correspondente. **Nunca** use lambda vazia `(e) -> ""` — sempre passe o método adequado ao campo extraído:
+
+| Campo extraído | Method reference |
+|---|---|
+| link | `LawyerExceptions::linkException` |
+| name | `LawyerExceptions::nameException` |
+| role | `LawyerExceptions::roleException` |
+| country | `LawyerExceptions::countryException` |
+| practice_area | `LawyerExceptions::practiceAreaException` |
+| email | `LawyerExceptions::emailException` |
+| phone | `LawyerExceptions::phoneException` |
+| socials (genérico) | `LawyerExceptions::socialsException` |
+
+#### 3.3.2 extractLawyerText e extractLawyerAttribute
+
+Ambos recebem: `(WebElement container, By[] locators, String fieldName, Function<String, LawyerExceptions> exceptionSupplier)`.
+
+```java
+// Texto — usa getText()
+String name = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector("h3.name")}, "NAME", LawyerExceptions::nameException);
+
+// Atributo — usa getAttribute(attrName)
+String link = extractor.extractLawyerAttribute(lawyer,new By[]{By.tagName("a")},"LINK","href",LawyerExceptions::linkException);
+
+// Navegação aninhada via array de locators
+String role = extractor.extractLawyerText(lawyer,new By[]{By.className("info"), By.cssSelector("span.role")},"ROLE",LawyerExceptions::roleException);
+```
+
+Regras obrigatórias:
+- O primeiro argumento é sempre um `WebElement` container — **nunca** passar `driver` diretamente.
+- Os `By[]` são declarados **inline** — nunca como variáveis externas (exceto `byRoleArray`, quando reutilizado em outro método além de `getLawyersInPage`).
 - O parâmetro `WebElement` em `getLawyer` e auxiliares deve se chamar **obrigatoriamente** `lawyer`.
-- `extractLawyerText` deve receber um `WebElement` container, nunca diretamente o `driver`.
 
-### 3.4 Utilitários e Formatação
+#### 3.3.3 getSocials e getSocialsFromText
 
-- Preferir funções de `SiteUtils.java` e `Site.java`.
-- Para strings: `TreatLawyerParams.treatName(name)` e `treatNameForEmail(name)`.
-- Telefones: `"phone", socials[1].isEmpty() ? "xxxx" : socials[1]` — substituir `"xxxx"` pelo telefone da firma se encontrado.
-- Indentação do `super()`: argumentos com um nível a menos que o padrão.
-- Sempre usar `MyDriver.wait` — nunca criar `WebDriverWait` local.
-- Sempre capturar o retorno de `openNewTab`: `String link = this.openNewTab(lawyer);`.
-- `By[]` inline nos extractors — nunca declarar como variáveis externas.
+Retornam sempre `String[]{ email, phone }` — strings vazias quando não encontrado.
+
+```java
+// getSocials — a partir de uma lista de WebElements (links/textos da página)
+// true  → usa getText() de cada elemento
+// false → usa getAttribute("href") de cada elemento
+String[] socials = this.getSocials(container.findElements(By.cssSelector("a.contact")), true);
+
+// super.getSocials — delega ao Site.java (preferível quando disponível)
+String[] socials = super.getSocials(lawyer);
+
+// getSocialsFromText — a partir de texto bruto (HTML ou texto corrido)
+String rawText = container.getAttribute("innerHTML");
+String[] socials = this.getSocialsFromText(rawText);
+
+String email = socials[0];
+String phone = socials[1];
+```
+
+Preferência: `super.getSocials` > `getSocials(list, bool)` > `getSocialsFromText`.
+
+#### 3.3.4 Formatação de strings para uso em emails
+
+```java
+// Gera versão do nome adequada para compor e-mail
+String emailName = TreatLawyerParams.treatNameForEmail(name);
+```
+
+#### 3.3.5 Regras operacionais
+
+- **Telefone fallback**: `"phone", socials[1].isEmpty() ? "xxxx" : socials[1]` — substituir `"xxxx"` pelo número fixo da firma quando conhecido.
+- **WebDriverWait**: sempre usar `MyDriver.wait` — nunca instanciar `new WebDriverWait(driver, ...)` local.
+- **openNewTab**: sempre capturar o retorno — `String link = this.openNewTab(lawyer);`.
+- **Indentação do `super()`**: argumentos com um nível a menos que o padrão do arquivo.
+- Preferir funções de `SiteUtils.java` e `Site.java` antes de implementar lógica própria.
 
 
-### 3.5 Construtor
+### 3.4 Construtor
 
 Utilize o construtor da seguinte forma:
 ```java
@@ -110,7 +167,7 @@ Utilize o construtor da seguinte forma:
     }
 ```
 
-### 3.6 ByNewPage — `openNewTab` obrigatório
+### 3.5 ByNewPage — `openNewTab` obrigatório
 
 Todo `getLawyer` de uma classe ByNewPage **deve** chamar `this.openNewTab(lawyer)` e sempre capturar o retorno em `link`:
 

@@ -5,105 +5,11 @@
     "sep": "=== Africa ==="
   },
   {
-    "name": "Spoor & Fisher",
-    "link": "https://spoor.com/our-people/"
-  },
-  {
-    "name": "Tabacks",
-    "link": "https://www.tabacks.com/people"
-  },
-  {
-    "name": "Mboya Wangongu & Waiyaki Advocates",
-    "link": "https://lexgroupafrica.com/our-partners/"
-  },
-  {
-    "name": "Eldib & Co",
-    "link": "https://eldib.com/team/"
-  },
-  {
-    "name": "H&G Chambers",
-    "link": "https://www.handgadvocates.com/people"
-  },
-  {
-    "name": "ABL Partners LP",
-    "link": "https://ablpartnerslp.com/about/"
-  },
-  {
-    "name": "J-K Gadzama LLP",
-    "link": "https://j-kgadzamallp.com/index.php/our-people/partners"
-  },
-  {
-    "name": "Pac Solicitors",
-    "link": "https://pacsolicitors.com/our-people/"
-  },
-  {
-    "name": "Detail Commercial Solicitors",
-    "link": "https://www.detailsolicitors.com/our-team/"
-  },
-  {
-    "name": "Livingspring Solicitors",
-    "link": "https://livingspringsolicitors.com/our-legal-team/"
-  },
-  {
-    "name": "Rosenut Solicitors",
-    "link": "https://rosenutsolicitors.com/team"
-  },
-  {
-    "name": "Afe Babalola & Co",
-    "link": "https://afebabalola.com/people/"
-  },
-  {
-    "name": "Kenna",
-    "link": "https://kennapartners.com/counsel/"
-  },
-  {
-    "name": "Banwo & Ighodalo",
-    "link": "https://www.banwo-ighodalo.com/people/partners"
-  },
-  {
-    "name": "Punuka",
-    "link": "https://punuka.com/about/people/partners/"
-  },
-  {
-    "name": "Tope Adebayo LP",
-    "link": "https://topeadebayolp.com/our-people/"
-  },
-  {
-    "name": "Ukiri Lijadu",
-    "link": "https://www.ul-law.com/our-team/"
-  },
-  {
     "name": "Nakudu Law Partners",
     "link": "https://nakudulawpartners.com/nakudu--our-team.html"
   },
-  {
-    "name": "Olaniwun Ajayi",
-    "link": "https://www.olaniwunajayi.net/lawyers/"
-  },
-  {
-    "name": "AJUMOGOBIA & OKEKE",
-    "link": "https://www.ajumogobiaokeke.com/people/"
-  },
-  {
-    "name": "Ojukwu Faotu & Yusuf",
-    "link": "https://ofy-lawyers.com/lawyers/"
-  },
-  {
-    "name": "Olisa Agbakoba Legal",
-    "link": "https://oal.law/people/"
-  },
-  {
-    "name": "Bowmans",
-    "link": "https://bowmanslaw.com/our-people/"
-  },
-  {
-    "name": "Ritz Attorneys at Law",
-    "link": "https://www.ritzattorneys.com/team/"
-  },
-  {
-    "name": "ALN",
-    "link": "https://aln.africa/team/"
-  },
+
+
 
 
   {
@@ -473,48 +379,10 @@
   {
     "sep": "=== Europe ==="
   },
-  {
-    "name": "Lakatos Köves & Partners",
-    "link": "https://www.lakatoskoves.hu/partners-and-lawyers"
-  },
-  {
-    "name": "Koutalidis Law ",
-    "link": "https://www.koutalidis.gr/lawyers/"
-  },
-  {
-    "name": "Karatzas & Partners",
-    "link": "https://karatza-partners.gr/ourpeople/"
-  },
-  {
-    "name": "Juris",
-    "link": "https://juris.is/starfsfolk/0/Partners"
-  },
-  {
-    "name": "Jonsson & Hall",
-    "link": "https://law.is/en/our-team/"
-  },
-  {
-    "name": "Jeantet",
-    "link": "https://www.jeantet.fr/en/?name=&s=&search-lawyer=&fonction=17&office=&expertise="
-  },
-  {
-    "name": "Ioannides Demetriou LLC",
-    "link": "https://www.idlaw.com.cy/people/"
-  },
-  {
-    "name": "HVG Law",
-    "link": "https://www.hvglaw.nl/en/our-people/",
-    "Note": "check for partners. Email formatt (name1).(name2).(nameX)@hvglaw.nl",
-    "Ex.:": "Arie Dirk de With === arie.dirk.de.with@hvglaw.nl"
-  },
-  {
-    "name": "Homburger",
-    "link": "https://www.homburger.ch/en/team?presentation=portrait&position=240"
-  },
-  {
-    "name": "Hoffmann Liebs Fritsch & Partner",
-    "link": "https://www.hoffmannliebs.de/en/?searchType=PROPERTIES&s="
-  },
+
+  {"=======================":  "=============================="},
+
+
   {
     "name": "Heussen",
     "link": "https://www.heussen-law.nl/en/team"
@@ -1208,23 +1076,8 @@
     "name": "KNP Law",
     "link": "https://www.knplaw.com/en/lawyers/"
   },
-  {
-    "name": "https://walless.com/the-team/",
-    "link": "Walless"
-  },
-  {
-    "name": "TRINITI Law Firm",
-    "link": "https://triniti.eu/people/?_sft_person_positions=partner"
-  },
-  {
-    "name": "Hedman",
-    "link": "https://hedman.legal/team/",
-    "Note": "just 4"
-  },
-  {
-    "name": "TGS Baltic",
-    "link": "https://www.tgsbaltic.com/en/lawyers/"
-  },
+
+
 
 
   {

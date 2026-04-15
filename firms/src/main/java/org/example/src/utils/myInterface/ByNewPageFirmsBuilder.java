@@ -191,31 +191,39 @@ public class ByNewPageFirmsBuilder {
     };
 
     private static final Site[] TEST = {
-            // ByNewPage - Mundial
-            new Clyde(), new EdwinCoe(), new Garrigues(), new Trowers(),
+// ByPage - Africa
+            new Bowmans(), new Kenna(), new OjukwuFaotuYusuf(), new RitzAttorneysAtLaw(), new SpoorAndFisher(),
+            new UkiriLijadu(),
+
+// ByPage - Americas
+// South America
+            new AraujoPolicastro(), new AzevedoSette(), new FCGD(), new LevySalomao(), new LOBaptista(),
+            new StoccheForbes(),
+
+// ByPage - Europe
+            new Hedman(),
+
+// ByNewPage - Africa
+            new ABLPartnersLP(), new AJUMOGOBIAOKEKE(), new ALN(), new BanwoIghodalo(), new DetailCommercialSolicitors(),
+            new EldibAndCo(), new HGChambers(), new JKGadzamaLLP(), new MboyaWangonguWaiyaki(), new OlaniwunAjayi(),
+            new OlisaAgbakobaLegal(), new PacSolicitors(), new Punuka(), new RosenutSolicitors(), new Tabacks(),
+            new TopeAdebayoLP(),
 
 // ByNewPage - Americas
 // Central America
             new GuerraGonzalez(),
 
 // South America
-            new MontesOlivos(),
+            new BronsSalas(), new Cascione(), new CRFRojas(), new DannemannSiemsen(), new DHC(),
+            new DiasCarneiro(), new EstudioBunge(), new FreitasLeite(), new GBreuer(), new GusmaoELabrunie(),
+            new HDS(), new KLA(), new NicholsonCano(), new RCTZZ(), new Severgnini(),
+            new TozziniFreire(), new VidigalNeto(),
 
 // ByNewPage - Europe
-            new NetCraman(),
+            new HoffmannLiebs(), new Homburger(), new NetCraman(), new TEGOS(), new TRINITILawFirm(),
 
-// ByPage - Americas
-// South America
-            new AraujoPolicastro(), new AzevedoSette(), new FCGD(), new LOBaptista(), new LevySalomao(),
-            new StoccheForbes(),
-
-// ByNewPage - Americas
-// South America
-            new BronsSalas(), new DHC(), new EstudioBunge(), new GBreuer(), new HDS(),
-            new NicholsonCano(), new RCTZZ(), new Severgnini(), new VidigalNeto(),
-            new CRFRojas(), new Cascione(),
-            new DannemannSiemsen(), new DiasCarneiro(), new FreitasLeite(), new GusmaoELabrunie(), new KLA(),
-            new TozziniFreire(),
+// ByNewPage - Mundial
+            new Clyde(), new EdwinCoe(), new Garrigues(), new Trowers(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

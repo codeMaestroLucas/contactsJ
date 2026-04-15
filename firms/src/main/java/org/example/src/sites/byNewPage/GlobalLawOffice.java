@@ -66,8 +66,7 @@ public class GlobalLawOffice extends ByNewPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> paragraphs = lawyer.findElements(By.cssSelector(".icon_right p"));
-            return super.getSocials(paragraphs, true);
+            return super.getSocialsFromText(lawyer.findElement(By.cssSelector(".icon_right")).getText());
         } catch (Exception e) {
             return new String[]{"", ""};
         }

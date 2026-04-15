@@ -20,5 +20,5 @@ public class CONFIG {
     public static int TOTAL_LAWYERS_TO_GET = 270;
     public static int LAWYERS_IN_FILTER = 80;
 
-    public static int TIMEOUT_MINUTES = 4;
+    public static int TIMEOUT_MINUTES = 3;
 }
