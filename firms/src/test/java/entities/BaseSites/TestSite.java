@@ -7,7 +7,7 @@ import org.example.src.sites.to_test.americas.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends BaleraBerbelMitne {
+class MyTestPage extends _Template {
     public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }

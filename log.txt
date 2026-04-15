@@ -1,36 +1,54 @@
 =====================================================================================================
-                                    ERROR LOG - 2026-04-05 16:33:47
+                                    ERROR LOG - 2026-04-12 00:30:37
 =====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
                                       ERRORS BY FIRM
 ----------------------------------------------------------------------------------------------------
 
-(37 firm(s) omitted — within tolerance)
+(51 firm(s) omitted — within tolerance)
 
-Class Lee & Ko [0 lawyers registered, 26 errors]
-   - accessPageError                occurred 26 times
+Class Duan & Duan [1 lawyers registered, 91 errors]
+   - accessPageError                occurred 91 times
+
+Class Global Law Office [0 lawyers registered, 29 errors]
+   - accessPageError                occurred 29 times
+
+Class TAN Law [0 lawyers registered, 29 errors]
+   - accessPageError                occurred 29 times
 
 Class Balter, Guth, Aloni & Co [0 lawyers registered, 26 errors]
    - accessPageError                occurred 26 times
 
-Class Maheshwari & Co [0 lawyers registered, 18 errors]
-   - openNewTabError                occurred 18 times
+Class Lee & Ko [0 lawyers registered, 26 errors]
+   - accessPageError                occurred 26 times
+
+Class BLC & ASSOCIATES [0 lawyers registered, 12 errors]
+   - getLawyerError                 occurred 12 times
+
+Class Soemadipradja & Taher [1 lawyers registered, 11 errors]
+   - linkException                  occurred 11 times
+
+Class Tilleke & Gibbins [1 lawyers registered, 11 errors]
+   - openNewTabError                occurred 11 times
 
 ----------------------------------------------------------------------------------------------------
                                       ERROR SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-Total errors: 136
+Total errors: 331
 
 Most common errors:
-   accessPageError                        59  ( 43.4%)
-   openNewTabError                        23  ( 16.9%)
-   getLawyerError                         23  ( 16.9%)
-   getLawyersInPageError                  23  ( 16.9%)
-   getRoleError                            7  (  5.1%)
-   getPracticeAreaError                    1  (  0.7%)
+   accessPageError                       207  ( 62.5%)
+   getLawyerError                         46  ( 13.9%)
+   getLawyersInPageError                  26  (  7.9%)
+   openNewTabError                        22  (  6.6%)
+   linkException                          11  (  3.3%)
+   getRoleError                           10  (  3.0%)
+   emailException                          7  (  2.1%)
+   getPracticeAreaError                    1  (  0.3%)
+   getNameError                            1  (  0.3%)
 
 =====================================================================================================
-Firms processed: 143 | Firms above tolerance (>10 errors): 3
+Firms processed: 394 | Firms above tolerance (>10 errors): 8
 =====================================================================================================

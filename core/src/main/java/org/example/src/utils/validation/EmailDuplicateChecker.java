@@ -23,7 +23,7 @@ public final class EmailDuplicateChecker {
     private boolean isLoggedIn = false;
     private boolean connectedToExternalBrowser = false;
 
-    private static final String REMOTE_DEBUG_ADDRESS = "localhost:9222";
+    private static final String REMOTE_DEBUG_ADDRESS = "127.0.0.1:9222";
     private static final String LOGIN_URL = "https://globallawexperts.com/login/?redirect_to=https%3A%2F%2Fgloballawexperts.com%2Fdashboard%2F";
     private static final String USERNAME = "contact@kfroisconsulting.com";
     private static final String PASSWORD = "Fo5KdZhSNxT!y1bQpkPh)6qg";
@@ -55,19 +55,21 @@ public final class EmailDuplicateChecker {
      * is available.
      */
     private void initializeDriver() {
-        // Try to connect to an existing browser opened by the user
+        // 1st attempt: connect to a browser already open on the debug port
+        if (tryConnectToExternalBrowser()) return;
+
+        // No browser found — launch one and wait for the user to log in manually
         try {
-            ChromeOptions externalOptions = new ChromeOptions();
-            externalOptions.setDebuggerAddress(REMOTE_DEBUG_ADDRESS);
-            this.driver = new ChromeDriver(externalOptions);
-            this.connectedToExternalBrowser = true;
-            this.isLoggedIn = true; // user already authenticated manually
-            System.out.println("EmailDuplicateChecker: Connected to external browser session on " + REMOTE_DEBUG_ADDRESS);
-            return;
+            launchChromeWithDebugging();
         } catch (Exception e) {
-            // No external browser available — fall through to launch a new one
+            System.err.println("EmailDuplicateChecker: Could not launch Chrome automatically - " + e.getMessage());
         }
 
+        // 2nd attempt: connect after the user logs in
+        if (tryConnectToExternalBrowser()) return;
+
+        // Final fallback: let Selenium manage its own browser (no Cloudflare bypass)
+        System.err.println("EmailDuplicateChecker: Could not connect to external browser — launching managed browser (login will likely fail due to Cloudflare)");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-gpu");
         options.addArguments("--ignore-certificate-errors");
@@ -82,6 +84,42 @@ public final class EmailDuplicateChecker {
 
         this.driver = new ChromeDriver(options);
         this.connectedToExternalBrowser = false;
+    }
+
+    private boolean tryConnectToExternalBrowser() {
+        try {
+            ChromeOptions externalOptions = new ChromeOptions();
+            externalOptions.setExperimentalOption("debuggerAddress", REMOTE_DEBUG_ADDRESS);
+            this.driver = new ChromeDriver(externalOptions);
+            this.connectedToExternalBrowser = true;
+            this.isLoggedIn = true;
+            System.out.println("EmailDuplicateChecker: Connected to external browser session on " + REMOTE_DEBUG_ADDRESS);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private void launchChromeWithDebugging() throws Exception {
+        System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
+        System.out.println(  "║  Abrindo Chrome para autenticação manual...                  ║");
+        System.out.println(  "╠══════════════════════════════════════════════════════════════╣");
+        System.out.println(  "║  1. Acesse:  globallawexperts.com                            ║");
+        System.out.println(  "║  2. Passe o Cloudflare                                       ║");
+        System.out.println(  "║  3. Faça login                                               ║");
+        System.out.println(  "║  4. Volte aqui e pressione ENTER para continuar              ║");
+        System.out.println(  "╚══════════════════════════════════════════════════════════════╝\n");
+
+        new ProcessBuilder(
+            "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            "--remote-debugging-port=9222",
+            "--user-data-dir=/tmp/gle-session"
+        ).start();
+
+        Thread.sleep(3000); // wait for Chrome to start
+
+        System.out.print("Pressione ENTER após fazer login no globallawexperts.com... ");
+        new java.util.Scanner(System.in).nextLine();
     }
 
     /**
@@ -246,11 +284,12 @@ public final class EmailDuplicateChecker {
 
         // Driver can be null if a previous restartDriver() failed (e.g. interrupted thread).
         // Recover here so that subsequent firms are not affected.
+        // Note: do NOT override isLoggedIn here — initializeDriver() already sets it correctly
+        // (true when connecting to external browser, false when launching a new one).
         if (driver == null) {
             try {
                 Thread.interrupted(); // clear stale interrupt flag from the previous thread
                 initializeDriver();
-                isLoggedIn = false;
             } catch (Exception e) {
                 System.err.println("EmailDuplicateChecker: Cannot initialize driver - " + e.getMessage());
                 return false;

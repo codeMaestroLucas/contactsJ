@@ -113,7 +113,7 @@ public class SiteUtils {
 
         for (WebElement lawyer : lawyersInPage) {
             try {
-                WebElement element = iterateOverBy(webRole, lawyer);
+                WebElement element = (webRole == null) ? lawyer : iterateOverBy(webRole, lawyer);
 
                 // Guard: locator not found for this card
                 if (element == null) continue;

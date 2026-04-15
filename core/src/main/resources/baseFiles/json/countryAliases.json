@@ -25,14 +25,17 @@
     "u.k.",
     "u.k",
     "uk",
-    "london"
+    "london",
+    "londres"
   ],
   "the Netherlands": [
     "the netherlands",
     "netherlands",
     "nederland",
     "holland",
-    "amsterdam"
+    "holanda",
+    "amsterdam",
+    "the hague"
   ],
   "the Philippines": [
     "republic of the philippines",
@@ -53,7 +56,9 @@
     "republic of korea",
     "south korea",
     "s. korea",
-    "seoul"
+    "korea republic",
+    "seoul",
+    "seul"
   ],
   "the UAE": [
     "united arab emirates",
@@ -62,7 +67,8 @@
     "u.a.e.",
     "u.a.e",
     "uae",
-    "abu dhabi"
+    "abu dhabi",
+    "dubai"
   ],
   "the British Virgin Islands": [
     "british virgin islands",
@@ -76,17 +82,22 @@
     "the czech republic",
     "czech republic",
     "czechia",
-    "prague"
+    "cesko",
+    "prague",
+    "praha"
   ],
   "the Dominican Republic": [
     "the dominican republic",
     "dominican republic",
+    "republica dominicana",
     "santo domingo"
   ],
   "Russia": [
     "russian federation",
     "the russian federation",
-    "moscow"
+    "russia",
+    "moscow",
+    "moscou"
   ],
   "Turkey": [
     "turkiye",
@@ -103,6 +114,7 @@
   ],
   "Myanmar": [
     "burma",
+    "birmania",
     "naypyidaw",
     "naypyitaw",
     "yangon",
@@ -118,36 +130,45 @@
   "Macau": [
     "macao",
     "macao sar",
-    "macau sar"
+    "macau sar",
+    "aomen"
   ],
   "Laos": [
     "lao pdr",
     "lao people's democratic republic",
     "lao peoples democratic republic",
+    "laos",
     "vientiane"
   ],
   "Iran": [
     "islamic republic of iran",
+    "iran",
     "tehran",
     "teheran"
   ],
   "North Macedonia": [
     "republic of north macedonia",
     "macedonia",
+    "north macedonia",
     "fyrom",
     "skopje"
   ],
   "Bosnia and Herzegovina": [
     "bosnia & herzegovina",
     "bosnia-herzegovina",
+    "bosnia",
+    "herzegovina",
     "sarajevo"
   ],
   "Trinidad and Tobago": [
     "trinidad & tobago",
+    "trinidad and tobago",
+    "trinidad",
     "port of spain"
   ],
   "Antigua and Barbuda": [
     "antigua & barbuda",
+    "antigua and barbuda",
     "saint john's",
     "st. john's",
     "st. johns"
@@ -156,10 +177,520 @@
     "st. kitts and nevis",
     "st kitts and nevis",
     "st. kitts & nevis",
+    "st kitts & nevis",
+    "saint christopher and nevis",
     "basseterre"
   ],
   "Papua New Guinea": [
     "png",
+    "papua new guinea",
     "port moresby"
+  ],
+  "China": [
+    "peoples republic of china",
+    "prc",
+    "mainland china",
+    "beijing",
+    "peking"
+  ],
+  "Taiwan": [
+    "republic of china",
+    "chinese taipei",
+    "taiwan roc",
+    "taipei"
+  ],
+  "Singapore": [
+    "singapore",
+    "republic of singapore",
+    "singapura",
+    "singapure"
+  ],
+  "Germany": [
+    "deutschland",
+    "federal republic of germany",
+    "frg",
+    "berlin",
+    "berlim"
+  ],
+  "France": [
+    "french republic",
+    "republique francaise",
+    "paris"
+  ],
+  "Italy": [
+    "italia",
+    "italian republic",
+    "repubblica italiana",
+    "rome",
+    "roma"
+  ],
+  "Spain": [
+    "españa",
+    "espana",
+    "kingdom of spain",
+    "madrid"
+  ],
+  "Canada": [
+    "ca",
+    "ottawa"
+  ],
+  "Australia": [
+    "commonwealth of australia",
+    "au",
+    "canberra"
+  ],
+  "Brazil": [
+    "brasil",
+    "federative republic of brazil",
+    "republica federativa do brasil",
+    "brasilia"
+  ],
+  "Japan": [
+    "nippon",
+    "nihon",
+    "tokyo",
+    "toquio"
+  ],
+  "Switzerland": [
+    "confederation helvetica",
+    "swiss confederation",
+    "suisse",
+    "schweiz",
+    "svizzera",
+    "bern",
+    "berne"
+  ],
+  "Belgium": [
+    "belgique",
+    "belgië",
+    "belgien",
+    "brussels",
+    "bruxelas"
+  ],
+  "Austria": [
+    "österreich",
+    "vienna",
+    "viena"
+  ],
+  "Sweden": [
+    "sverige",
+    "kingdom of sweden",
+    "stockholm",
+    "estocolmo"
+  ],
+  "Norway": [
+    "norge",
+    "noreg",
+    "kingdom of norway",
+    "oslo"
+  ],
+  "Denmark": [
+    "danmark",
+    "copenhagen",
+    "copenhague"
+  ],
+  "Finland": [
+    "suomi",
+    "helsinki"
+  ],
+  "Ireland": [
+    "republic of ireland",
+    "éire",
+    "dublin"
+  ],
+  "Portugal": [
+    "portuguese republic",
+    "lisbon",
+    "lisboa"
+  ],
+  "Greece": [
+    "hellas",
+    "hellenic republic",
+    "athens",
+    "atenas"
+  ],
+  "Poland": [
+    "polska",
+    "republic of poland",
+    "warsaw",
+    "varsovia"
+  ],
+  "Hungary": [
+    "magyarország",
+    "budapest"
+  ],
+  "South Africa": [
+    "rsa",
+    "republic of south africa",
+    "pretoria",
+    "cape town",
+    "bloemfontein"
+  ],
+  "Mexico": [
+    "mexico df",
+    "united mexican states",
+    "mexico city",
+    "cidade do mexico"
+  ],
+  "Argentina": [
+    "argentine republic",
+    "buenos aires"
+  ],
+  "India": [
+    "bharat",
+    "republic of india",
+    "new delhi",
+    "nova delhi"
+  ],
+  "New Zealand": [
+    "aotearoa",
+    "wellington"
+  ],
+  "Egypt": [
+    "arab republic of egypt",
+    "cairo"
+  ],
+  "Saudi Arabia": [
+    "ksa",
+    "kingdom of saudi arabia",
+    "riyadh"
+  ],
+  "Ukraine": [
+    "ukrayina",
+    "kyiv",
+    "kiev"
+  ],
+  "Afghanistan": [
+    "islamic emirate of afghanistan",
+    "kabul",
+    "cabul"
+  ],
+  "Albania": [
+    "republic of albania",
+    "shqipëria",
+    "tirana"
+  ],
+  "Algeria": [
+    "algerie",
+    "argélia",
+    "algiers",
+    "argel"
+  ],
+  "Angola": [
+    "republic of angola",
+    "luanda"
+  ],
+  "Armenia": [
+    "hayastan",
+    "yerevan"
+  ],
+  "Azerbaijan": [
+    "azerbaidjan",
+    "azerbaijão",
+    "baku"
+  ],
+  "the Bahamas": [
+    "bahamas",
+    "commonwealth of the bahamas",
+    "nassau"
+  ],
+  "Bangladesh": [
+    "peoples republic of bangladesh",
+    "dhaka"
+  ],
+  "Barbados": [
+    "bridgetown"
+  ],
+  "Belarus": [
+    "bielorrússia",
+    "minsk"
+  ],
+  "Bulgaria": [
+    "bylgariya",
+    "sofia"
+  ],
+  "Chile": [
+    "republic of chile",
+    "santiago"
+  ],
+  "Colombia": [
+    "republic of colombia",
+    "bogota"
+  ],
+  "Costa Rica": [
+    "san jose"
+  ],
+  "Croatia": [
+    "hrvatska",
+    "croacia",
+    "zagreb"
+  ],
+  "Cuba": [
+    "havana",
+    "la habana"
+  ],
+  "Ecuador": [
+    "equador",
+    "quito"
+  ],
+  "Estonia": [
+    "eesti",
+    "tallinn"
+  ],
+  "Georgia": [
+    "sakartvelo",
+    "tbilisi"
+  ],
+  "Ghana": [
+    "gana",
+    "accra"
+  ],
+  "Guatemala": [
+    "guatemala city",
+    "cidade da guatemala"
+  ],
+  "Iceland": [
+    "island",
+    "islândia",
+    "reykjavik"
+  ],
+  "Indonesia": [
+    "ri",
+    "jakarta"
+  ],
+  "Israel": [
+    "state of israel",
+    "jerusalem"
+  ],
+  "Jamaica": [
+    "kingston"
+  ],
+  "Kazakhstan": [
+    "caiaquistão",
+    "astana",
+    "nur-sultan"
+  ],
+  "Kenya": [
+    "quênia",
+    "nairobi"
+  ],
+  "Luxembourg": [
+    "luxemburgo",
+    "luxembourg city"
+  ],
+  "Malaysia": [
+    "malasia",
+    "kuala lumpur"
+  ],
+  "Malta": [
+    "valletta"
+  ],
+  "Morocco": [
+    "marrocos",
+    "maroc",
+    "rabat"
+  ],
+  "Nigeria": [
+    "abuja"
+  ],
+  "Pakistan": [
+    "paquistão",
+    "islamabad"
+  ],
+  "Panama": [
+    "panama city",
+    "cidade do panama"
+  ],
+  "Peru": [
+    "lima"
+  ],
+  "Romania": [
+    "romênia",
+    "bucharest",
+    "bucareste"
+  ],
+  "Serbia": [
+    "srbija",
+    "servia",
+    "belgrade",
+    "belgrado"
+  ],
+  "Slovakia": [
+    "slovensko",
+    "eslovaquia",
+    "bratislava"
+  ],
+  "Slovenia": [
+    "slovenija",
+    "eslovenia",
+    "ljubljana",
+    "liubliana"
+  ],
+  "Thailand": [
+    "tailandia",
+    "bangkok"
+  ],
+  "Uruguay": [
+    "uruguai",
+    "montevideo"
+  ],
+  "Venezuela": [
+    "caracas"
+  ],
+  "Andorra": [
+    "principality of andorra",
+    "andorra la vella"
+  ],
+  "Bahrain": [
+    "bahrein",
+    "kingdom of bahrain",
+    "manama"
+  ],
+  "Belize": [
+    "belmopan"
+  ],
+  "Bolivia": [
+    "plurinational state of bolivia",
+    "sucre",
+    "la paz"
+  ],
+  "Cambodia": [
+    "camboja",
+    "kingdom of cambodia",
+    "phnom penh"
+  ],
+  "Cameroon": [
+    "camarões",
+    "republic of cameroon",
+    "yaounde"
+  ],
+  "Cyprus": [
+    "chipre",
+    "republic of cyprus",
+    "nicosia"
+  ],
+  "El Salvador": [
+    "san salvador"
+  ],
+  "Estonia": [
+    "eesti",
+    "republic of estonia",
+    "tallinn"
+  ],
+  "Ethiopia": [
+    "etiópia",
+    "addis ababa"
+  ],
+  "Haiti": [
+    "port-au-prince",
+    "porto principe"
+  ],
+  "Honduras": [
+    "tegucigalpa"
+  ],
+  "Iraq": [
+    "iraque",
+    "republic of iraq",
+    "baghdad",
+    "bagdá"
+  ],
+  "Jordan": [
+    "jordânia",
+    "hashemite kingdom of jordan",
+    "amman"
+  ],
+  "Kuwait": [
+    "state of kuwait",
+    "kuwait city",
+    "cidade do kuwait"
+  ],
+  "Lebanon": [
+    "líbano",
+    "lebanese republic",
+    "beirut",
+    "beirute"
+  ],
+  "Libya": [
+    "líbia",
+    "state of libya",
+    "tripoli"
+  ],
+  "Lithuania": [
+    "lietuva",
+    "lituânia",
+    "vilnius"
+  ],
+  "Latvia": [
+    "latvija",
+    "letonia",
+    "riga"
+  ],
+  "Moldova": [
+    "republic of moldova",
+    "moldavia",
+    "chisinau"
+  ],
+  "Monaco": [
+    "principality of monaco",
+    "monaco-ville"
+  ],
+  "Montenegro": [
+    "podgorica"
+  ],
+  "Nepal": [
+    "kathmandu"
+  ],
+  "Nicaragua": [
+    "managua"
+  ],
+  "Oman": [
+    "omã",
+    "sultanate of oman",
+    "muscat"
+  ],
+  "Paraguay": [
+    "paraguai",
+    "republic of paraguay",
+    "asuncion",
+    "assunção"
+  ],
+  "Qatar": [
+    "catar",
+    "state of qatar",
+    "doha"
+  ],
+  "Senegal": [
+    "republic of senegal",
+    "dakar"
+  ],
+  "Sri Lanka": [
+    "ceylon",
+    "colombo",
+    "sri jayawardenepura kotte"
+  ],
+  "Sudan": [
+    "sudão",
+    "republic of the sudan",
+    "khartoum"
+  ],
+  "Tanzania": [
+    "united republic of tanzania",
+    "dodoma",
+    "dar es salaam"
+  ],
+  "Tunisia": [
+    "tunisia",
+    "tunisian republic",
+    "tunis"
+  ],
+  "Uzbekistan": [
+    "uzbequistão",
+    "tashkent"
+  ],
+  "Zambia": [
+    "lusaka"
+  ],
+  "Zimbabwe": [
+    "harare"
   ]
 }

@@ -96,6 +96,30 @@ if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
 - Sempre capturar o retorno de `openNewTab`: `String link = this.openNewTab(lawyer);`.
 - `By[]` inline nos extractors — nunca declarar como variáveis externas.
 
+
+### 3.5 Construtor
+
+Utilize o construtor da seguinte forma:
+```java
+    public FirmA() {
+        super(
+                "Frim A",
+                "siteLink",
+                1
+        );
+    }
+```
+
+### 3.6 ByNewPage — `openNewTab` obrigatório
+
+Todo `getLawyer` de uma classe ByNewPage **deve** chamar `this.openNewTab(lawyer)` e sempre capturar o retorno em `link`:
+
+```java
+String link = this.openNewTab(lawyer);
+```
+
+A ausência dessa chamada invalida a classe. A captura do retorno é obrigatória mesmo que `link` não seja incluído no `Map` final.
+
 ---
 
 ## 4. Modelo do Builder
@@ -150,7 +174,43 @@ protected Object getLawyer(WebElement lawyer) throws Exception {
 
 ---
 
-## 6. Anti-padrões — Checklist Interno
+## 6. VCard
+
+> **Use `VCard` apenas quando explicitamente solicitado nos dados da firma.** Nunca o inclua por padrão ou especulativamente.
+
+Declare como campo privado da classe:
+
+```java
+// Padrões padrão — funciona para a maioria dos sites
+private final VCard vCard = VCard.withDefaultPatterns();
+
+// — ou — padrões customizados quando o site usa estrutura não-padrão
+private final VCard vCard = new VCard(
+    "X-EMAIL[^:\\r\\n]*:([^\\r\\n]+)",
+    "X-TEL[^:\\r\\n]*:([^\\r\\n]+)"
+);
+```
+
+Dentro de `getLawyer`, obtenha o `href` do link `.vcf` e chame `getSocials`:
+
+```java
+String vcardHref = lawyer.findElement(By.cssSelector("a.vcard")).getAttribute("href");
+
+// Endpoint público (sem necessidade de sessão do browser):
+String[] socials = vCard.getSocials(vcardHref);
+
+// — ou — quando o endpoint exige cookies da sessão ativa:
+String[] socials = vCard.getSocials(driver, vcardHref);
+
+String email = socials[0];
+String phone  = socials[1];
+```
+
+Retorna `String[]{ email, phone }` — strings vazias quando não encontrado.
+
+---
+
+## 7. Anti-padrões — Checklist Interno
 
 > Antes de gerar cada classe, verificar todos os itens abaixo.
 
@@ -158,14 +218,16 @@ protected Object getLawyer(WebElement lawyer) throws Exception {
 |---|---|---|
 | 1 | Dados na subpágina quando disponíveis na 1ª (ByNewPage) | Extrair da 1ª página antes de chamar `openNewTab` |
 | 2 | `this.openNewTab(lawyer)` sem capturar retorno | `String link = this.openNewTab(lawyer);` |
-| 3 | `new WebDriverWait(this.driver, Duration.ofSeconds(10))` | `MyDriver.wait.findElements(...)` |
-| 4 | Lambda vazia `(e) -> ""` em `extractLawyerText` ou `extractLawyerAttribute`  | `LawyerExceptions::socialsException` (ou equivalente) |
-| 5 | `By[] nameBy = {...}` declarado fora e passado como variável | `new By[] {...}` inline dentro do extractor |
-| 6 | `extractor.extractLawyerText(driver, ...)` direto no driver | `WebElement container = driver.findElement(...);` → `extractor.extractLawyerText(container, ...)` |
+| 3 | Classe ByNewPage sem chamada a `this.openNewTab(lawyer)` em `getLawyer` | Toda classe ByNewPage **deve** chamar `openNewTab` — ver seção 3.6 |
+| 4 | `new WebDriverWait(this.driver, Duration.ofSeconds(10))` | `MyDriver.wait.findElements(...)` |
+| 5 | Lambda vazia `(e) -> ""` em `extractLawyerText` ou `extractLawyerAttribute`  | `LawyerExceptions::socialsException` (ou equivalente) |
+| 6 | `By[] nameBy = {...}` declarado fora e passado como variável | `new By[] {...}` inline dentro do extractor |
+| 7 | `extractor.extractLawyerText(driver, ...)` direto no driver | `WebElement container = driver.findElement(...);` → `extractor.extractLawyerText(container, ...)` |
+| 8 | `VCard` incluído sem ser solicitado nos dados da firma | Remover — `VCard` só é usado quando explicitamente pedido (ver seção 6) |
 
 ---
 
-## 7. Formato do Output
+## 8. Formato do Output
 
 ```
 # Touch
