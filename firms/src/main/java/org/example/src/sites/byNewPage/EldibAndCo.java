@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Map;
 
-public class OlisaAgbakobaLegal extends ByNewPage {
+public class EldibAndCo extends ByNewPage {
 
-    public OlisaAgbakobaLegal() {
+    public EldibAndCo() {
         super(
-                "Olisa Agbakoba Legal",
-                "https://oal.law/people/",
+                "Eldib & Co",
+                "https://eldib.com/team/",
                 1
         );
     }
@@ -26,24 +26,24 @@ public class OlisaAgbakobaLegal extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".team-inner"));
-        return siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("post-designation-head")}, true);
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("article.Card__team"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("job")}, true);
     }
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
+        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("Card__overlay")}, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
         return link;
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("post-title")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("post-designation-head")}, "ROLE", LawyerExceptions::roleException);
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("title")}, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("job")}, "ROLE", "textContent", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("team-info"));
+        WebElement container = driver.findElement(By.className("col-lg-7"));
 
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
@@ -52,10 +52,10 @@ public class OlisaAgbakobaLegal extends ByNewPage {
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", "Nigeria",
+                "country", "Egypt",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "+234 1 271 9327" : socials[1]
+                "phone", socials[1].isEmpty() ? "2034852150" : socials[1]
         );
     }
 }

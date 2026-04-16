@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -26,26 +26,27 @@ public class MboyaWangonguWaiyaki extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.elementor-element-cbec36f"));
-        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("h5")}, true);
+        return MyDriver.wait.findElements(By.cssSelector("a.elementor-button.elementor-button-link.elementor-size-sm[href*='https://lexgroupafrica.com/']"));
     }
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
+        String link = lawyer.getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("title")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h5")}, "ROLE", LawyerExceptions::roleException);
-
         String link = this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("elementor-element-1ff30a1"));
 
-        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
+        WebElement container = MyDriver.wait.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div[2]/div/div[2]"));
+        String role = container.getText();
+        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
+
+        String name = extractor.extractLawyerText(container, new By[]{By.cssSelector("h4.elementor-heading-title")}, "NAME", LawyerExceptions::nameException);
+
+        String[] socials = super.getSocialsFromText(role);
 
         return Map.of(
                 "link", link,

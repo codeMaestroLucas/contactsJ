@@ -19,6 +19,8 @@ public class ByPageFirmsBuilder {
             new Ashitiva(), new AVM(), new BentsiEnchillLetsaAndAnkomah(), new CliffeDekkerHofmeyr(), new CoxYeats(),
             new EldibAdvocates(), new EngoruMutebi(), new FisherQuarmbyAndPfeifer(), new KantorAndImmerman(), new ShahidLaw(),
             new SPAAjibadeAndCo(), new STBB(), new TheartMey(), new TripleOKLaw(),
+            new Bowmans(), new Kenna(), new OjukwuFaotuYusuf(), new RitzAttorneysAtLaw(), new SpoorAndFisher(),
+            new UkiriLijadu(),
     };
 
     private static final Site[] ASIA = {

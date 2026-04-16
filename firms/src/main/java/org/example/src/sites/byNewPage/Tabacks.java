@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -54,7 +54,7 @@ public class Tabacks extends ByNewPage {
                 "firm", this.name,
                 "country", "South Africa",
                 "practice_area", extractor.extractLawyerText(container, new By[]{By.xpath("//a[contains(@href, '/practices/')]")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
-                "email", socials[0],
+                "email", socials[0].replace("?", ""),
                 "phone", socials[1].isEmpty() ? "27113587700" : socials[1]
         );
     }

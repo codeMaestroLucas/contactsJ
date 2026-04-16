@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -32,20 +32,20 @@ public class RosenutSolicitors extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
+        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector("h3 a[href*='/team-detail/']")}, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(link);
         return link;
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.tagName("span")}, "ROLE", LawyerExceptions::roleException);
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("h3")}, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("span")}, "ROLE", "textContent", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("attorney-single-info"));
 
-        String[] socials = super.getSocialsFromText(extractor.extractLawyerText(container, new By[]{By.tagName("ul")}, "SOCIALS", LawyerExceptions::socialsException));
+        String[] socials = super.getSocialsFromText(extractor.extractLawyerAttribute(container, new By[]{By.tagName("ul")}, "SOCIALS", "textContent", LawyerExceptions::socialsException));
 
         return Map.of(
                 "link", link,
@@ -55,7 +55,7 @@ public class RosenutSolicitors extends ByNewPage {
                 "country", "Nigeria",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", "234 813 634 3816"
+                "phone", "2348136343816"
         );
     }
 }

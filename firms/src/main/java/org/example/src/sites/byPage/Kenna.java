@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -22,17 +22,21 @@ public class Kenna extends ByPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        MyDriver.clickOnElementMultipleTimes(
+                By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/section/main[2]/div[2]/button"),
+                20, 0.5
+        );
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
         List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("a[href^='/people/']"));
-        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("p")}, true);
+        return this.siteUtl.filterLawyersInPage(lawyers, null, true);
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String[] socials = super.getSocials(lawyer.findElements(By.tagName("p")), true);
+        String[] socials = super.getSocialsFromText(lawyer.getText());
 
         return Map.of(
                 "link", extractor.extractLawyerAttribute(lawyer, new By[]{}, "LINK", "href", LawyerExceptions::linkException),

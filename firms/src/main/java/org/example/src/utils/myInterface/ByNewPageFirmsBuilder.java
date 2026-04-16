@@ -2,7 +2,6 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.to_test.africa.*;
 import org.example.src.sites.to_test.americas.*;
 import org.example.src.utils.ContinentConfig;
 
@@ -27,6 +26,10 @@ public class ByNewPageFirmsBuilder {
             new RDSPartners(), new RobinsonBertram(), new RONNLaw(), new SenekalSimmonds(), new Shalakany(),
             new Shalakany(), new SLKB(), new TNP(), new UdoUdomaBeloOsagie(), new Werksmans(),
             new ZakiHashemAndPartners(), new ZulficarAndPartners(),
+            new ABLPartnersLP(), new AJUMOGOBIAOKEKE(), new ALN(), new BanwoIghodalo(),
+            new EldibAndCo(), new JKGadzamaLLP(), new MboyaWangonguWaiyaki(), new OlaniwunAjayi(),
+            new OlisaAgbakobaLegal(), new PacSolicitors(), new Punuka(), new RosenutSolicitors(), new Tabacks(),
+            new TopeAdebayoLP(),
     };
 
     private static final Site[] ASIA = {
@@ -172,7 +175,7 @@ public class ByNewPageFirmsBuilder {
             new Hicksons(), new HWEbsworth(), new Madderns(), new MatthewsFolbigg(), new McCulloughRobertson(),
             new MellorOlsson(), new NormanWaterhouse(), new RussellMcVeagh(), new SimmonsWolfhagen(), new SimpsonGrierson(),
             new TompkinsWake(), new WengerVieliAG(), new WilsonHarle(), new WilsonRyanGrose(), new Wrays(),
-            new YoungList(),
+            new YoungList(), new GriffithHack(),
     };
 
     private static final Site[] MUNDIAL = {
@@ -190,20 +193,10 @@ public class ByNewPageFirmsBuilder {
     };
 
     private static final Site[] TEST = {
-// ByPage - Africa
-            new Bowmans(), new Kenna(), new OjukwuFaotuYusuf(), new RitzAttorneysAtLaw(), new SpoorAndFisher(),
-            new UkiriLijadu(),
-
 // ByPage - Americas
 // South America
             new AraujoPolicastro(), new AzevedoSette(), new FCGD(), new LevySalomao(), new LOBaptista(),
             new StoccheForbes(),
-
-// ByNewPage - Africa
-            new ABLPartnersLP(), new AJUMOGOBIAOKEKE(), new ALN(), new BanwoIghodalo(), new DetailCommercialSolicitors(),
-            new EldibAndCo(), new HGChambers(), new JKGadzamaLLP(), new MboyaWangonguWaiyaki(), new OlaniwunAjayi(),
-            new OlisaAgbakobaLegal(), new PacSolicitors(), new Punuka(), new RosenutSolicitors(), new Tabacks(),
-            new TopeAdebayoLP(),
 
 // ByNewPage - Americas
 // Central America

@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.oceania;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -50,7 +50,7 @@ public class GriffithHack extends ByNewPage {
         String link = this.openNewTab(lawyer);
 
         WebElement container = driver.findElement(By.className("main-header"));
-        String[] socials = super.getSocials(container.findElements(By.cssSelector(".std-hero__contact-details a")), false);
+        String[] socials = super.getSocialsFromText(container.getText());
 
         return Map.of(
                 "link", link,

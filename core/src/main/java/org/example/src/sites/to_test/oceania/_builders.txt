@@ -1,2 +1,0 @@
-// ByNewPage - Oceania
-            new GriffithHack(),

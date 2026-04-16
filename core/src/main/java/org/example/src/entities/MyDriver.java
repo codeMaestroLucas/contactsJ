@@ -342,6 +342,29 @@ public final class MyDriver {
     }
 
     /**
+     * Opens a new tab via JavaScript's {@code window.open} instead of Selenium's
+     * {@code newWindow} API. More reliable for JS-heavy / headless-Chrome environments
+     * where the Selenium-native call may be silently ignored.
+     *
+     * @param url absolute URL to navigate to in the new tab
+     */
+    public static void openNewTabWithJS(String url) {
+        java.util.Set<String> handlesBefore = driver.getWindowHandles();
+        ((JavascriptExecutor) driver).executeScript("window.open(arguments[0], '_blank');", url);
+
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(d -> d.getWindowHandles().size() > handlesBefore.size());
+
+        String newHandle = driver.getWindowHandles().stream()
+                .filter(h -> !handlesBefore.contains(h))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("window.open did not create a new tab"));
+
+        driver.switchTo().window(newHandle);
+        waitForPageToLoad();
+    }
+
+    /**
      * Swtich to a new tab in the index passen
      */
     public static void switchToTab(int index) {

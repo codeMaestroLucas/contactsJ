@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Map;
 
-public class ABLPartnersLP extends ByNewPage {
+public class TopeAdebayoLP extends ByNewPage {
 
-    public ABLPartnersLP() {
+    public TopeAdebayoLP() {
         super(
-                "ABL Partners LP",
-                "https://ablpartnerslp.com/about/",
+                "Tope Adebayo LP",
+                "https://topeadebayolp.com/our-people/",
                 1
         );
     }
@@ -26,8 +26,8 @@ public class ABLPartnersLP extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.expert-single"));
-        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("span")}, true);
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".e-loop-item"));
+        return siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("elementor-post-info__item")}, true);
     }
 
     @Override
@@ -39,13 +39,13 @@ public class ABLPartnersLP extends ByNewPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("elementor-post-info__item")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("attorneys-info"));
+        WebElement container = driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div[1]/div[2]"));
 
-        String role = extractor.extractLawyerText(container, new By[]{By.xpath("//li[contains(.,'Positon:')]")}, "ROLE", LawyerExceptions::roleException).replace("Positon:", "").trim();
-        String[] socials = super.getSocials(container.findElements(By.tagName("li")), true);
+        String[] socials = super.getSocialsFromText(extractor.extractLawyerText(container, new By[]{By.className("elementor-icon-list-items")}, "SOCIALS", LawyerExceptions::socialsException));
 
         return Map.of(
                 "link", link,
@@ -53,9 +53,9 @@ public class ABLPartnersLP extends ByNewPage {
                 "role", role,
                 "firm", this.name,
                 "country", "Nigeria",
-                "practice_area", extractor.extractLawyerText(container, new By[]{By.xpath("//li[contains(.,'Practice Area:')]")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException).replace("Practice Area:", "").trim(),
+                "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "2348182824007" : socials[1]
+                "phone", socials[1].isEmpty() ? "+234-1-628-4627" : socials[1]
         );
     }
 }

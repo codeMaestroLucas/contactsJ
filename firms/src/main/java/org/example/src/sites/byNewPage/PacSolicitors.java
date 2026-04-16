@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -26,21 +26,21 @@ public class PacSolicitors extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.eael-flipbox-container"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("a.eael-elements-flip-box-flip-card[href*='https://pacsolicitors.com/']"));
         return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.tagName("p")}, true);
     }
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
+        String link = lawyer.getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.tagName("p")}, "ROLE", LawyerExceptions::roleException);
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("h3")}, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("p")}, "ROLE", "textContent", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("elementor-widget-wrap"));

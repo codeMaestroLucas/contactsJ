@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Map;
 
-public class JKGadzamaLLP extends ByNewPage {
+public class OlisaAgbakobaLegal extends ByNewPage {
 
-    public JKGadzamaLLP() {
+    public OlisaAgbakobaLegal() {
         super(
-                "J-K Gadzama LLP",
-                "https://j-kgadzamallp.com/index.php/our-people/partners",
+                "Olisa Agbakoba Legal",
+                "https://oal.law/people/",
                 1
         );
     }
@@ -26,7 +26,8 @@ public class JKGadzamaLLP extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("div.addon-root-feature"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".team-inner"));
+        return siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("post-designation-head")}, true);
     }
 
     @Override
@@ -38,22 +39,23 @@ public class JKGadzamaLLP extends ByNewPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h3")}, "NAME", LawyerExceptions::nameException);
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("post-title")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("post-designation-head")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("sppb-addon-text-block"));
+        WebElement container = driver.findElement(By.className("team-info"));
 
-        String[] socials = super.getSocialsFromText(container.getText());
+        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", "Partner",
+                "role", role,
                 "firm", this.name,
                 "country", "Nigeria",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", "23496233400"
+                "phone", socials[1].isEmpty() ? "+234 1 271 9327" : socials[1]
         );
     }
 }

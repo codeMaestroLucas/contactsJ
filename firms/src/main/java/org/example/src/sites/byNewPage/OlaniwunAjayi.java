@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test.africa;
+package org.example.src.sites.byNewPage;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -22,6 +22,11 @@ public class OlaniwunAjayi extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        MyDriver.clickOnElementMultipleTimes(
+                By.id("load-more"),
+                10, 0.5
+
+        );
     }
 
     @Override
@@ -43,9 +48,9 @@ public class OlaniwunAjayi extends ByNewPage {
         String role = extractor.extractLawyerText(lawyer, new By[]{By.tagName("p")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("elementor-element-b4cbf0b"));
+        WebElement container = driver.findElement(By.xpath("//*[@id=\"page\"]/div/div[1]/div/div"));
 
-        String[] socials = super.getSocials(container.findElements(By.className("elementor-icon-list-item")), true);
+        String[] socials = super.getSocialsFromText(container.getText());
 
         return Map.of(
                 "link", link,
