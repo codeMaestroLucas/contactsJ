@@ -90,7 +90,7 @@ public class ByPageFirmsBuilder {
             new Snellman(), new SokolNovakTrojanDolecek(), new Stibbe(), new StoneKing(), new SuarezDeVivero(),
             new ThomasBodstrom(), new Titov(), new TucaZbarcea(), new VanDerPutt(), new VBAdvocates(),
             new VieringJentschuraAndPartner(), new Vinge(), new VOPatentsAndTrademarks(), new WIDEN(), new WolfTheiss(),
-            new ZamfirescuRacotiPredoiu(),
+            new ZamfirescuRacotiPredoiu(), new Hedman(),
     };
 
     private static final Site[] AMERICAS = {

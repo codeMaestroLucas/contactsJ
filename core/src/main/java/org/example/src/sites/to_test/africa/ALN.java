@@ -8,7 +8,26 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.Map.entry;
+
 public class ALN extends ByNewPage {
+
+    public static final Map<String, String> OFFICE_TO_COUNTRY = Map.ofEntries(
+            entry("algeria", "Algeria"),
+            entry("côte d’ivoire", "Ivory Coast"),
+            entry("ethiopia", "Ethiopia"),
+            entry("ghana", "Ghana"),
+            entry("guinea", "Guinea"),
+            entry("kenya", "Kenya"),
+            entry("mauritius", "Mauritius"),
+            entry("morocco", "Morocco"),
+            entry("nigeria", "Nigeria"),
+            entry("rwanda", "Rwanda"),
+            entry("sudan", "Sudan"),
+            entry("tanzania", "Tanzania"),
+            entry("uae", "the UAE"),
+            entry("uganda", "Uganda")
+    );
 
     public ALN() {
         super(
@@ -22,6 +41,11 @@ public class ALN extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        // More than 30 rolls
+        MyDriver.clickOnElementMultipleTimes(
+                By.id("load-member"),
+                5, 1
+        );
     }
 
     @Override
@@ -36,24 +60,32 @@ public class ALN extends ByNewPage {
         MyDriver.openNewTab(link);
         return link;
     }
+    
+    private String getCountry(WebElement lawyer) throws LawyerExceptions {
+        String country = extractor.extractLawyerAttribute(lawyer, new By[] {By.className("role")}, "COUNTRY", "textContent", LawyerExceptions::countryException);
+        return siteUtl.getCountryBasedInOffice(OFFICE_TO_COUNTRY, country, "Zambia");
+    }
+    
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h2")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("role")}, "ROLE", LawyerExceptions::roleException);
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("h2")}, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("role")}, "ROLE", "textContent", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("profile__information"));
 
+        String country = getCountry(container);
+
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
-        String phone = extractor.extractLawyerText(container, new By[]{By.className("phone")}, "PHONE", LawyerExceptions::socialsException);
+        String phone = extractor.extractLawyerAttribute(container, new By[]{By.className("phone")}, "PHONE", "textContent", LawyerExceptions::socialsException);
 
         return Map.of(
                 "link", link,
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", "Zambia",
+                "country", country,
                 "practice_area", "",
                 "email", socials[0],
                 "phone", phone.replace("Telephone:", "").trim()

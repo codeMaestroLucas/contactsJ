@@ -13,7 +13,7 @@ public class BanwoIghodalo extends ByNewPage {
     public BanwoIghodalo() {
         super(
                 "Banwo & Ighodalo",
-                "https://www.banwo-ighodalo.com/people/",
+                "https://www.banwo-ighodalo.com/our-people/partners/",
                 1
         );
     }
@@ -38,17 +38,17 @@ public class BanwoIghodalo extends ByNewPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("sc_team_item_title")}, "NAME", LawyerExceptions::nameException);
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("sc_team_item_title")}, "NAME", "textContent", LawyerExceptions::nameException);
 
         String link = this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("elementor-widget-wrap"));
+        WebElement container = driver.findElement(By.xpath("/html/body/div[1]/div/header/div/section/div[2]/div/div/section[3]/div/div[2]/div/div[5]/div"));
 
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", "Lawyer",
+                "role", "Partner",
                 "firm", this.name,
                 "country", "Nigeria",
                 "practice_area", "",

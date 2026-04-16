@@ -55,7 +55,7 @@ public class ABLPartnersLP extends ByNewPage {
                 "country", "Nigeria",
                 "practice_area", extractor.extractLawyerText(container, new By[]{By.xpath("//li[contains(.,'Practice Area:')]")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException).replace("Practice Area:", "").trim(),
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "2348080435069" : socials[1]
+                "phone", socials[1].isEmpty() ? "2348182824007" : socials[1]
         );
     }
 }

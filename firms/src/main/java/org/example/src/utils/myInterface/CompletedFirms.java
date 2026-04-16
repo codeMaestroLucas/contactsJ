@@ -545,7 +545,9 @@ public class CompletedFirms {
         }
 
         System.out.println("=".repeat(LINE));
-        System.out.printf(" Last snapshot: %s%s%s%n", DIM, prevTimestamp, RESET);
+        String formattedTimestamp = LocalDateTime.parse(prevTimestamp)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        System.out.printf(" Last snapshot: %s%s%s%n", DIM, formattedTimestamp, RESET);
         System.out.println("=".repeat(LINE));
     }
 

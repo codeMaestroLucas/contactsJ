@@ -2,12 +2,8 @@ package org.example.src.utils.myInterface;
 
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.to_test.*;
 import org.example.src.sites.to_test.africa.*;
 import org.example.src.sites.to_test.americas.*;
-import org.example.src.sites.to_test.asia.*;
-import org.example.src.sites.to_test.europe.*;
-import org.example.src.sites.to_test.oceania.*;
 import org.example.src.utils.ContinentConfig;
 
 import java.util.ArrayList;
@@ -123,6 +119,9 @@ public class ByNewPageFirmsBuilder {
             new Szecskay(), new UriaMenendez(), new Valfor(), new VanOlmenAndWynant(), new Vischer(),
             new VisionConsulting(), new VossiusAndPartner(), new WardynskiAndPartners(), new WengerVieliAG(), new Wiersholm(),
             new WierzbowskiAndPartners(), new WikborgRein(), new WindtLeGrand(), new ZampaPartners(), new ZeposAndYannopoulos(),
+            new HoffmannLiebs(), new Homburger(), new NetCraman(), new TEGOS(), new TRINITILawFirm(),
+            new EdwinCoe(), new HVGLaw(), new IoannidesDemetriouLLC(), new Jeantet(), new JonssonAndHall(),
+            new KaratzasAndPartners(), new LakatosKovesPartners(),
     };
 
     private static final Site[] AMERICAS = {
@@ -187,7 +186,7 @@ public class ByNewPageFirmsBuilder {
             new PearlCohen(), new PortolanoCavallo(), new Pulegal(), new QuinEmanuel(), new ReinholdCohnGroup(),
             new RiadSalehAndPartners(), new SabaAndCo(), new SdzlegalSchindhelm(), new SimmonsAndSimmons(), new Sorainen(),
             new StephensonHarwood(), new SullivanAndCromwell(), new TEMPLARS(), new Thommessen(), new Vaneps(),
-            new WALLESS(), new WithersKhattarWong(),
+            new WALLESS(), new WithersKhattarWong(), new Clyde(), new Garrigues(), new Trowers(),
     };
 
     private static final Site[] TEST = {
@@ -199,9 +198,6 @@ public class ByNewPageFirmsBuilder {
 // South America
             new AraujoPolicastro(), new AzevedoSette(), new FCGD(), new LevySalomao(), new LOBaptista(),
             new StoccheForbes(),
-
-// ByPage - Europe
-            new Hedman(),
 
 // ByNewPage - Africa
             new ABLPartnersLP(), new AJUMOGOBIAOKEKE(), new ALN(), new BanwoIghodalo(), new DetailCommercialSolicitors(),
@@ -218,12 +214,6 @@ public class ByNewPageFirmsBuilder {
             new DiasCarneiro(), new EstudioBunge(), new FreitasLeite(), new GBreuer(), new GusmaoELabrunie(),
             new HDS(), new KLA(), new NicholsonCano(), new RCTZZ(), new Severgnini(),
             new TozziniFreire(), new VidigalNeto(),
-
-// ByNewPage - Europe
-            new HoffmannLiebs(), new Homburger(), new NetCraman(), new TEGOS(), new TRINITILawFirm(),
-
-// ByNewPage - Mundial
-            new Clyde(), new EdwinCoe(), new Garrigues(), new Trowers(),
     };
 
     // ==================== GETTERS BY CONTINENT ====================

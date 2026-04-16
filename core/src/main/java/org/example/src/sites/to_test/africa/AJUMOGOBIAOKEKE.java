@@ -14,13 +14,23 @@ public class AJUMOGOBIAOKEKE extends ByNewPage {
         super(
                 "AJUMOGOBIA & OKEKE",
                 "https://www.ajumogobiaokeke.com/people/",
-                1
+                3
         );
     }
 
+    String[] links = {
+        "https://www.ajumogobiaokeke.com/people/",
+        "https://www.ajumogobiaokeke.com/people/associate-partners/",
+        "https://www.ajumogobiaokeke.com/people/associate-partners/senior-associates/"
+
+    };
+
+    String currentRole = "";
+
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        this.driver.get(this.links[index]);
+        currentRole = index == 2 ? "Senior Associates" : "Partner";
         MyDriver.waitForPageToLoad();
     }
 
@@ -43,15 +53,12 @@ public class AJUMOGOBIAOKEKE extends ByNewPage {
         String link = this.openNewTab(lawyer);
         WebElement container = driver.findElement(By.className("ult-content-box"));
 
-        String role = extractor.extractLawyerText(container, new By[]{By.className("uvc-sub-heading")}, "ROLE", LawyerExceptions::roleException).split("\n")[0];
-        if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
-
         String[] socials = super.getSocialsFromText(extractor.extractLawyerText(container, new By[]{By.className("uvc-sub-heading")}, "SOCIALS", LawyerExceptions::socialsException));
 
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", role,
+                "role", currentRole,
                 "firm", this.name,
                 "country", "Nigeria",
                 "practice_area", "",
