@@ -181,23 +181,24 @@ A ausência dessa chamada invalida a classe. A captura do retorno é obrigatóri
 
 ## 4. Modelo do Builder
 
-O builder está em `firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java`.
+Cada continente possui um arquivo `_builders.txt` no diretório correspondente em `core/src/main/java/org/example/src/sites/to_test/<continente>/`.
 
-- Continentes (exceto Americas): firmas inseridas diretamente no array do continente correspondente, sem comentário de tipo.
-- Americas: array único, subdividido internamente em `// North America`, `// Central America`, `// South America`.
-- Máximo 5 firmas por linha.
+- Continentes (exceto Americas): firmas listadas diretamente, sem comentário de tipo. Máximo 5 por linha.
+- Americas: subdividido internamente em `// North America`, `// Central America`, `// South America`. Máximo 5 por linha.
 
-```java
-// Africa
+O output deve ser um comando `cat >>` por continente que **anexa** as novas firmas ao respectivo `_builders.txt`:
+
+```bash
+cat >> core/src/main/java/org/example/src/sites/to_test/africa/_builders.txt << 'EOF'
 new FirmaA(), new FirmaB(), new FirmaC(), new FirmaD(), new FirmaE(),
 new FirmaF(),
+EOF
 
-
-// Asia
+cat >> core/src/main/java/org/example/src/sites/to_test/asia/_builders.txt << 'EOF'
 new FirmaG(),
+EOF
 
-
-// Americas
+cat >> core/src/main/java/org/example/src/sites/to_test/americas/_builders.txt << 'EOF'
 // North America
 new FirmaNA1(), new FirmaNA2(),
 
@@ -206,7 +207,10 @@ new FirmaCA1(),
 
 // South America
 new FirmaSA1(), new FirmaSA2(), new FirmaSA3(),
+EOF
 ```
+
+Omitir o comando para continentes sem novas firmas.
 
 ---
 
@@ -298,23 +302,26 @@ código firma 1
 código firma 2
 ```
 
-# Builders
-```java
-// Africa
+# Append Builders
+```bash
+cat >> core/src/main/java/org/example/src/sites/to_test/africa/_builders.txt << 'EOF'
 new Firma1(),
+EOF
 
-// Americas
+cat >> core/src/main/java/org/example/src/sites/to_test/europe/_builders.txt << 'EOF'
+new Firma4(),
+EOF
+
+cat >> core/src/main/java/org/example/src/sites/to_test/americas/_builders.txt << 'EOF'
 // North America
 new Firma2(),
-// South America
-new Firma3(),
 
-// Europe
-new Firma4(),
-
-// Americas
 // Central America
 new Firma5(),
+
+// South America
+new Firma3(),
+EOF
 ```
 ```
 

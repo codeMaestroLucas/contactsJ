@@ -1,6 +1,2 @@
-// ByPage - Asia
-            new YUHONGIP(),
-
-// ByNewPage - Asia
-            new JuliusCreasy(), new JunHe(), new KRISHNASAURASTRI(),
-            new NaschitzBrandesAmir(), new RKDewan(), new RNA(), new Wanhuida(),
+new YUHONGIP(),new JuliusCreasy(), new JunHe(), new KRISHNASAURASTRI(),
+new NaschitzBrandesAmir(), new RKDewan(), new RNA(), new Wanhuida(),

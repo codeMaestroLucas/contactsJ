@@ -293,7 +293,7 @@ def _sort_test_body(body: str) -> str:
 
         i += 2
 
-    output_parts: list[str] = [pre_text]
+    output_parts: list[str] = [pre_text.rstrip('\n') + '\n\n']
 
     for header in seen_order:
         entries = sections[header]
