@@ -1,7 +1,6 @@
 package org.example.src.utils.validation;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,6 +33,7 @@ public final class EmailDuplicateChecker {
     private static final By PASSWORD_INPUT = By.name("login_password");
     private static final By LOGIN_BUTTON = By.xpath("/html/body/div[1]/div/div/div[2]/div/div/div/form/div[3]/div[4]/button");
     private static final By EMAIL_INPUT = By.id("email-input");
+    private static final By CHECK_BUTTON = By.id("check-button");
     private static final By RESULT_CONTAINER = By.id("result-container");
 
     private EmailDuplicateChecker() {
@@ -306,22 +306,27 @@ public final class EmailDuplicateChecker {
             ensurePageIsReady();
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-            WebDriverWait waitInput = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait waitResult = new WebDriverWait(driver, Duration.ofSeconds(30));
 
             // Wait for email input and enter email
             WebElement emailInput = wait.until(ExpectedConditions.presenceOfElementLocated(EMAIL_INPUT));
             emailInput.clear();
             emailInput.sendKeys(email);
-            Thread.sleep(1000);
-            emailInput.sendKeys(Keys.ENTER);
+            Thread.sleep(500);
+
+            // Click the check button (more reliable than ENTER key via Selenium)
+            WebElement checkButton = wait.until(ExpectedConditions.elementToBeClickable(CHECK_BUTTON));
+            checkButton.click();
+
             WebElement resultContainer = null;
 
-            // Wait for result container to appear
+            // Wait for result container to appear (AJAX response)
             try {
-                resultContainer = waitInput.until(ExpectedConditions.visibilityOfElementLocated(RESULT_CONTAINER));
+                resultContainer = waitResult.until(ExpectedConditions.visibilityOfElementLocated(RESULT_CONTAINER));
             } catch (Exception e) {
-                emailInput.sendKeys(Keys.ENTER);
-                resultContainer = waitInput.until(ExpectedConditions.visibilityOfElementLocated(RESULT_CONTAINER));
+                // Retry once with button click
+                checkButton.click();
+                resultContainer = waitResult.until(ExpectedConditions.visibilityOfElementLocated(RESULT_CONTAINER));
             }
 
             // Check if it has the "result-clean" class
