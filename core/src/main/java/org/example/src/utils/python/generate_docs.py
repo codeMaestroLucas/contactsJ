@@ -22,12 +22,10 @@ PACKAGES = {
         "README.md",
     ],
     # ── Orquestração e configuração de continentes ────────────────────────────
-    # Builders (arrays AFRICA/ASIA/EUROPE/AMERICAS/OCEANIA/MUNDIAL),
-    # CompletedFirms (menu CLI + peso de continentes), ContinentConfig,
-    # e todos os JSONs de configuração de continentes/países.
+    # Builder unificado (arrays por continente), CompletedFirms (menu CLI +
+    # peso de continentes), ContinentConfig, e JSONs de configuração.
     "02orquestracao": [
-        "firms/src/main/java/org/example/src/utils/myInterface/ByPageFirmsBuilder.java",
-        "firms/src/main/java/org/example/src/utils/myInterface/ByNewPageFirmsBuilder.java",
+        "firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java",
         "firms/src/main/java/org/example/src/utils/myInterface/CompletedFirms.java",
         "core/src/main/java/org/example/src/utils/ContinentConfig.java",
         "firms/src/main/java/org/example/Main.java",
@@ -48,40 +46,37 @@ PACKAGES = {
         "core/src/main/resources/instructions/countryNameConventions.md",
         "mermaidStructure.txt",
     ],
-    # ── Exemplos ByPage ───────────────────────────────────────────────────────
+    # ── Exemplos de firmas (ByPage strategy) ─────────────────────────────────
     "04exemplosByPage": [
-        "firms/src/main/java/org/example/src/sites/byPage/Roschier.java",
-        "firms/src/main/java/org/example/src/sites/byPage/TaylorWessing.java",
-        "firms/src/main/java/org/example/src/sites/byPage/Aera.java",
-        "firms/src/main/java/org/example/src/sites/byPage/AlTamimi.java",
-        "firms/src/main/java/org/example/src/sites/byPage/Andersen.java",
-        "firms/src/main/java/org/example/src/sites/byPage/Blakes.java",
-        "firms/src/main/java/org/example/src/sites/byPage/ClarkWilson.java",
-        "firms/src/main/java/org/example/src/sites/byPage/DechertLLP.java",
-        "firms/src/main/java/org/example/src/sites/byPage/HannesSnellman.java",
-        "firms/src/main/java/org/example/src/sites/byPage/Kinstellar.java",
+        "firms/src/main/java/org/example/src/sites/europe/Roschier.java",
+        "firms/src/main/java/org/example/src/sites/mundial/TaylorWessing.java",
+        "firms/src/main/java/org/example/src/sites/europe/Aera.java",
+        "firms/src/main/java/org/example/src/sites/mundial/AlTamimi.java",
+        "firms/src/main/java/org/example/src/sites/americas/Andersen.java",
+        "firms/src/main/java/org/example/src/sites/mundial/Blakes.java",
+        "firms/src/main/java/org/example/src/sites/americas/ClarkWilson.java",
+        "firms/src/main/java/org/example/src/sites/europe/DechertLLP.java",
+        "firms/src/main/java/org/example/src/sites/europe/HannesSnellman.java",
+        "firms/src/main/java/org/example/src/sites/mundial/Kinstellar.java",
     ],
-    # ── Exemplos ByNewPage ────────────────────────────────────────────────────
+    # ── Exemplos de firmas (ByNewPage strategy) ───────────────────────────────
     "05exemplosByNewPage": [
-        "firms/src/main/java/org/example/src/sites/byNewPage/SchellenbergWittmer.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/Gadens.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/ABGIP.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/ALGoodbody.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/ArthurCox.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/AsafoAndCo.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/Borenius.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/BurgesSalmon.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/ENSAfrica.java",
-        "firms/src/main/java/org/example/src/sites/byNewPage/Ellex.java",
+        "firms/src/main/java/org/example/src/sites/europe/SchellenbergWittmer.java",
+        "firms/src/main/java/org/example/src/sites/oceania/Gadens.java",
+        "firms/src/main/java/org/example/src/sites/europe/ABGIP.java",
+        "firms/src/main/java/org/example/src/sites/mundial/ALGoodbody.java",
+        "firms/src/main/java/org/example/src/sites/americas/ArthurCox.java",
+        "firms/src/main/java/org/example/src/sites/americas/AsafoAndCo.java",
+        "firms/src/main/java/org/example/src/sites/europe/Borenius.java",
+        "firms/src/main/java/org/example/src/sites/europe/BurgesSalmon.java",
+        "firms/src/main/java/org/example/src/sites/africa/ENSAfrica.java",
+        "firms/src/main/java/org/example/src/sites/mundial/Ellex.java",
     ],
 }
 
 # Files that share the same basename across packages need a custom archive name.
 # Key: relative path (from PROJECT_ROOT) → name to use inside the zip.
-ARCNAME_OVERRIDES = {
-    "firms/src/main/java/org/example/src/sites/byPage/_Template.java":    "_Template_byPage.java",
-    "firms/src/main/java/org/example/src/sites/byNewPage/_Template.java": "_Template_byNewPage.java",
-}
+ARCNAME_OVERRIDES = {}
 
 DOWNLOADS = os.path.join(os.path.expanduser("~"), "Downloads")
 OUTPUT = os.path.join(DOWNLOADS, "documentação.zip")

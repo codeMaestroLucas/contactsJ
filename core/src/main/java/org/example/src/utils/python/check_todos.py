@@ -6,7 +6,8 @@ Verifies which firms in the TODO JSON files have already been implemented as
 .java files, and removes duplicates (by URL) within each JSON file.
 
 Steps:
-  1. Scan all .java files in the ByPage and ByNewPage dirs to collect known URLs.
+  1. Scan all .java files in the continent dirs (africa, asia, europe, americas,
+     oceania, mundial) and in to_test to collect known URLs.
   2. For each JSON file in todos/:
      a. Remove intra-file URL duplicates (keep first occurrence).
      b. Remove entries whose URL matches a known Java implementation URL.
@@ -26,9 +27,15 @@ PROJECT_ROOT = _SCRIPT_DIR
 for _ in range(9):
     PROJECT_ROOT = os.path.dirname(PROJECT_ROOT)
 
-TODO_DIR          = os.path.join(PROJECT_ROOT, "core/src/main/resources/todos")
-FIRMS_BYPAGE_DIR  = os.path.join(PROJECT_ROOT, "firms/src/main/java/org/example/src/sites/byPage")
-FIRMS_BYNEWPAGE_DIR = os.path.join(PROJECT_ROOT, "core/src/main/java/org/example/src/sites/to_test")
+TODO_DIR = os.path.join(PROJECT_ROOT, "core/src/main/resources/todos")
+
+_FIRMS_SITES = os.path.join(PROJECT_ROOT, "firms/src/main/java/org/example/src/sites")
+FIRMS_CONTINENT_DIRS = [
+    os.path.join(_FIRMS_SITES, continent)
+    for continent in ("africa", "asia", "europe", "americas", "oceania", "mundial")
+]
+# Also scan to_test (staging firms not yet in production)
+TO_TEST_DIR = os.path.join(PROJECT_ROOT, "core/src/main/java/org/example/src/sites/to_test")
 
 JSON_FILES = ["byPage.json", "byNewPage.json", "uncategorized.json"]
 
@@ -145,7 +152,7 @@ def process_file(path, java_urls):
 
 def main():
     print("Scanning Java implementations...")
-    java_urls = collect_java_urls(FIRMS_BYPAGE_DIR, FIRMS_BYNEWPAGE_DIR)
+    java_urls = collect_java_urls(*FIRMS_CONTINENT_DIRS, TO_TEST_DIR)
     print(f"  Found {len(java_urls)} URLs across Java files.\n")
 
     total_removed = 0

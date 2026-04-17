@@ -3,7 +3,7 @@ package entities.BaseSites;
 import org.example.src.entities.BaseSites.Site;
 //import org.example.src.sites.byPage.*;
 //import org.example.src.sites.byNewPage.*;
-import org.example.src.sites.byNewPage.GriffithHack;
+import org.example.src.sites.oceania.GriffithHack;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 

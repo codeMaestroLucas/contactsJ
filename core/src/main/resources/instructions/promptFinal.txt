@@ -181,36 +181,31 @@ A ausência dessa chamada invalida a classe. A captura do retorno é obrigatóri
 
 ## 4. Modelo do Builder
 
-Os builders estão em `firms/src/main/java/org/example/src/utils/myInterface/` (`ByNewPageFirmsBuilder.java` e `ByPageFirmsBuilder.java`).
+O builder está em `firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java`.
 
-- Continentes (exceto Americas): comentário `// ByPage - <Continente>` ou `// ByNewPage - <Continente>`.
+- Continentes (exceto Americas): firmas inseridas diretamente no array do continente correspondente, sem comentário de tipo.
 - Americas: array único, subdividido internamente em `// North America`, `// Central America`, `// South America`.
 - Máximo 5 firmas por linha.
 
 ```java
-// ByPage - Africa
+// Africa
 new FirmaA(), new FirmaB(), new FirmaC(), new FirmaD(), new FirmaE(),
 new FirmaF(),
 
 
-// ByPage - Americas
-// North America
-new FirmaNA1(), new FirmaNA2(),
-
-// South America
-new FirmaSA1(),
-
-
-// ByNewPage - Asia
+// Asia
 new FirmaG(),
 
 
-// ByNewPage - Americas
+// Americas
+// North America
+new FirmaNA1(), new FirmaNA2(),
+
 // Central America
 new FirmaCA1(),
 
 // South America
-new FirmaSA2(), new FirmaSA3(),
+new FirmaSA1(), new FirmaSA2(), new FirmaSA3(),
 ```
 
 ---
@@ -305,19 +300,19 @@ código firma 2
 
 # Builders
 ```java
-// ByPage - Africa
+// Africa
 new Firma1(),
 
-// ByPage - Americas
+// Americas
 // North America
 new Firma2(),
 // South America
 new Firma3(),
 
-// ByNewPage - Europe
+// Europe
 new Firma4(),
 
-// ByNewPage - Americas
+// Americas
 // Central America
 new Firma5(),
 ```

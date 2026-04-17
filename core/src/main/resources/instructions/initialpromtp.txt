@@ -7,7 +7,7 @@ Vou te enviar a documentação do projeto em pacotes (.zip). Leia tudo com aten�
 Os pacotes chegam nesta ordem:
 
 1. **01documentacao** — hierarquia base (`Site`, `ByPage`, `ByNewPage`, `SiteUtils`, `Lawyer`, `MyDriver`, `Extractor`, `Validations`, `CONFIG`), README completo e diagrama de arquitetura (mermaid)
-2. **02orquestracao** — builders (`ByPageFirmsBuilder`, `ByNewPageFirmsBuilder`, `CompletedFirms`), `ContinentConfig` e todos os JSONs de configuração de continentes e países
+2. **02orquestracao** — builder (`FirmsBuilder`, `CompletedFirms`), `ContinentConfig` e todos os JSONs de configuração de continentes e países
 3. **03utils** — utilitários Java (`ErrorLogger`, `FirmsOMonth`, `TreatLawyerParams`, etc.) e scripts Python de manutenção
 4. **04exemplosByPage** — exemplos reais de scrapers `ByPage`
 5. **05exemplosByNewPage** — exemplos reais de scrapers `ByNewPage`
@@ -18,7 +18,7 @@ Os pacotes chegam nesta ordem:
 - Os continentes são: **Africa, Asia, Europe, Americas, Oceania**
 - **Americas** é um único array no builder, subdividido internamente por comentários `// North America`, `// Central America`, `// South America` — novas firmas devem sempre ser inseridas sob o sub-comentário correto
 - Novos scrapers vão em `core/src/main/java/org/example/src/sites/to_test/<continente>/` enquanto estão sendo testados
-- Os builders ficam em `firms/src/main/java/org/example/src/utils/myInterface/`
+- O **builder** fica em `firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java`
 
 ## Regra
 

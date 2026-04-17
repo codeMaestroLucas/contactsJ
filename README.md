@@ -1,7 +1,7 @@
 # Law Firm Web Scraper - Complete Documentation
 
 > **Version:** 2.1
-> **Last Updated:** February 2026
+> **Last Updated:** April 2026
 > **Platform:** Java 17+ with Selenium WebDriver
 
 ---
@@ -100,7 +100,7 @@ This application automates the collection of lawyer contact information from law
 | **Singleton** | `MyDriver`, `ErrorLogger`, `Extractor`, `SiteUtils` | Single instance management |
 | **Template Method** | `Site` → `ByPage`/`ByNewPage` | Define scraping algorithm structure |
 | **Strategy** | `ByPage` vs `ByNewPage` | Different scraping approaches |
-| **Builder** | `Lawyer.builder()`, `ByPageFirmsBuilder` | Object construction |
+| **Builder** | `Lawyer.builder()`, `FirmsBuilder` | Object construction |
 
 ### 2.3 Scraping Strategies
 
@@ -181,8 +181,7 @@ project-root/
     │           ├── Validations.java      # Validation rules
     │           │
     │           └── myInterface/
-    │               ├── ByPageFirmsBuilder.java
-    │               ├── ByNewPageFirmsBuilder.java
+    │               ├── FirmsBuilder.java
     │               ├── CompletedFirms.java
     │               └── MyInterfaceUtls.java
     │
@@ -665,7 +664,7 @@ public class CONFIG {
 
 ### 7.3 Affected Components
 
-1. **Builders** (`ByPageFirmsBuilder.java`, `ByNewPageFirmsBuilder.java`)
+1. **Builder** (`FirmsBuilder.java`)
    - Only include firms from enabled continents
    - `MUNDIAL` (global) firms always included
 
@@ -676,7 +675,7 @@ public class CONFIG {
 ### 7.4 Firm Organization in Builders
 
 ```java
-// In ByPageFirmsBuilder.java or ByNewPageFirmsBuilder.java
+// In FirmsBuilder.java
 private static final Site[] AFRICA  = { new FirmA(), new FirmB(), ... };
 private static final Site[] ASIA    = { ... };
 private static final Site[] EUROPE  = { ... };
@@ -764,7 +763,7 @@ NOTE: Inside ASIA, put a difference between other countries and ISRAEL just with
 ### 8.2 ByPage Template
 
 ```java
-package org.example.src.sites.byPage;
+package org.example.src.sites.to_test.europe;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -901,7 +900,7 @@ public class NewFirmName extends ByPage {
 ### 8.3 ByNewPage Template
 
 ```java
-package org.example.src.sites.byNewPage;
+package org.example.src.sites.to_test.europe;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -1034,10 +1033,10 @@ public class NewFirmName extends ByNewPage {
 
 Add to the appropriate builder in the correct continent array:
 
-**File:** `ByPageFirmsBuilder.java` or `ByNewPageFirmsBuilder.java`
+**File:** `FirmsBuilder.java`
 
 ```java
-// Example: Adding a European firm to ByNewPageFirmsBuilder
+// Example: Adding a European firm to FirmsBuilder
 private static final Site[] EUROPE = {
     new ExistingFirm1(),
     new ExistingFirm2(),
@@ -1274,11 +1273,17 @@ When generating scraper classes for AI/automated tools:
 
 3. **Builder Lines** (at end):
    ```text
-   // ByPage - Europe
+   // Europe
    new FirmA(), new FirmB(),
 
-   // ByNewPage - Asia
+   // Asia
    new FirmC(), new FirmD(),
+
+   // Americas
+   // North America
+   new FirmE(),
+   // South America
+   new FirmF(),
    ```
 
 ### 11.2 Formatting Rules

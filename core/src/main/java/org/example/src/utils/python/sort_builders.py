@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """
 Sorts firm entries alphabetically within arrays in:
-  - ByPageFirmsBuilder.java
-  - ByNewPageFirmsBuilder.java
+  - FirmsBuilder.java
 
 Rules:
   - Firms are sorted alphabetically (case-insensitive) by class name
   - Precisely 5 firms per line
   - Commented-out firms (// new ClassName()) are sorted together with active ones
     but each occupies its own line (cannot be safely mixed mid-line)
-  - Section/structural comments (e.g. // ByPage - Africa) are discarded
+  - Structural/separator comments that are not firm entries are discarded
   - Continental divisions and all other code outside the arrays are untouched
   - TEST array is NOT touched
   - AMERICAS array is sorted within each sub-section (// North America,
@@ -39,11 +38,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, *[".."] * 9))
 BUILDER_FILES = [
     os.path.join(
         PROJECT_ROOT,
-        "firms/src/main/java/org/example/src/utils/myInterface/ByPageFirmsBuilder.java",
-    ),
-    os.path.join(
-        PROJECT_ROOT,
-        "firms/src/main/java/org/example/src/utils/myInterface/ByNewPageFirmsBuilder.java",
+        "firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java",
     ),
 ]
 
@@ -53,10 +48,10 @@ _CLASS_RE     = re.compile(r'new\s+(\w+)\s*\(\)')
 _ACTIVE_RE    = re.compile(r'new\s+\w+\s*\(\)')
 _COMMENTED_RE = re.compile(r'//\s*new\s+\w+\s*\(\)')
 
-# Captures section headers inside the TEST array (// ByPage - X, // ByNewPage - X)
-# and inside the AMERICAS array (// North America, // Central America, // South America).
+# Captures sub-section headers inside the AMERICAS array
+# (// North America, // Central America, // South America).
 _SECTION_HEADER_RE = re.compile(
-    r'^([ \t]*//\s*(?:(?:ByPage|ByNewPage)\s*-\s*.+|North America|Central America|South America))$',
+    r'^([ \t]*//\s*(?:North America|Central America|South America))$',
     re.MULTILINE
 )
 
@@ -270,8 +265,9 @@ def run_sort_builders() -> None:
 
 def _sort_test_body(body: str) -> str:
     """
-    Split the TEST array body into sections by their // ByPage/ByNewPage headers,
-    merge duplicate headers, sort entries within each section, and reassemble.
+    Split the AMERICAS array body into its sub-sections
+    (// North America, // Central America, // South America),
+    merge duplicate headers, sort entries within each sub-section, and reassemble.
     """
     # re.split with a capturing group keeps the delimiters in the result list.
     # Result alternates: [pre_text, header1, block1, header2, block2, ...]

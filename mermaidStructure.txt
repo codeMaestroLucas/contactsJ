@@ -10,11 +10,7 @@ flowchart TD
         (utils/myInterface)"]
             COMPLETED["CompletedFirms
             (menu CLI + construção da lista)"]
-            BP_BUILDER["ByPageFirmsBuilder
-            (fábrica por continente)
-            Arrays: AFRICA · ASIA · EUROPE
-            AMERICAS · OCEANIA · MUNDIAL"]
-            BNP_BUILDER["ByNewPageFirmsBuilder
+            BUILDER["FirmsBuilder
             (fábrica por continente)
             Arrays: AFRICA · ASIA · EUROPE
             AMERICAS · OCEANIA · MUNDIAL"]
@@ -31,8 +27,8 @@ flowchart TD
         end
 
         subgraph SITES_IMPL["Sites Concretos
-        (src/sites/byPage & byNewPage)
-        [~1007 classes de firmas: 535 byPage + 472 byNewPage]"]
+        (src/sites/africa · asia · europe · americas · oceania · mundial)
+        [~1007 classes de firmas por continente]"]
             FIRMS_BOX["FirmaA extends ByPage
             FirmaB extends ByNewPage
             ..."]
@@ -204,15 +200,12 @@ flowchart TD
     MAIN -->|"2. login()"| EMAIL_DUP
     MAIN -->|"3. collectLawyersRegistered()"| CONTACTS
     MAIN -->|"4. constructFirms()"| COMPLETED
-    COMPLETED --> BP_BUILDER
-    COMPLETED --> BNP_BUILDER
+    COMPLETED --> BUILDER
     COMPLETED --> CONTINENT
     COMPLETED --> FIRMS_MONTH
     CONTINENT -->|"lê"| JSON_CFG
-    BP_BUILDER --> AMERICAS_NOTE
-    BNP_BUILDER --> AMERICAS_NOTE
-    BP_BUILDER --> SITES_IMPL
-    BNP_BUILDER --> SITES_IMPL
+    BUILDER --> AMERICAS_NOTE
+    BUILDER --> SITES_IMPL
     SITES_IMPL -->|extends| BASE_SITES
     TO_TEST_BOX -->|extends| BASE_SITES
 
@@ -241,7 +234,6 @@ flowchart TD
     TEST_SITE -->|"testa instâncias de"| BASE_SITES
 
     %% Scripts Python
-    SORT_PY -.->|"reordena"| BP_BUILDER
-    SORT_PY -.->|"reordena"| BNP_BUILDER
+    SORT_PY -.->|"reordena"| BUILDER
     CAT_PY -.->|"classifica entradas de"| TODOS_JSON
     GEN_DOCS_PY -.->|"empacota"| JSON_CFG

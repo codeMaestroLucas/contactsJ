@@ -56,8 +56,7 @@ public class CompletedFirms {
 
     // FUNCTIONS
 
-    private static Site[] getByPage() { return ByPageFirmsBuilder.build(); }
-    private static Site[] getByNewPage() { return ByNewPageFirmsBuilder.build(); }
+    private static Site[] getFirms() { return FirmsBuilder.build(); }
 
     public final static MyInterfaceUtls interfaceUtls = MyInterfaceUtls.getINSTANCE();
 
@@ -72,21 +71,13 @@ public class CompletedFirms {
     private static final String DIM = "\u001B[2m";
 
 
-    // Continent name → getter for each builder
-    private static final Map<String, Supplier<Site[]>> BY_PAGE_GETTERS = Map.of(
-            "Africa", ByPageFirmsBuilder::getAfrica,
-            "Asia", ByPageFirmsBuilder::getAsia,
-            "Europe", ByPageFirmsBuilder::getEurope,
-            "Americas", ByPageFirmsBuilder::getAmericas,
-            "Oceania", ByPageFirmsBuilder::getOceania
-    );
-
-    private static final Map<String, Supplier<Site[]>> BY_NEW_PAGE_GETTERS = Map.of(
-            "Africa", ByNewPageFirmsBuilder::getAfrica,
-            "Asia", ByNewPageFirmsBuilder::getAsia,
-            "Europe", ByNewPageFirmsBuilder::getEurope,
-            "Americas", ByNewPageFirmsBuilder::getAmericas,
-            "Oceania", ByNewPageFirmsBuilder::getOceania
+    // Continent name → getter
+    private static final Map<String, Supplier<Site[]>> BY_CONTINENT_GETTERS = Map.of(
+            "Africa",   FirmsBuilder::getAfrica,
+            "Asia",     FirmsBuilder::getAsia,
+            "Europe",   FirmsBuilder::getEurope,
+            "Americas", FirmsBuilder::getAmericas,
+            "Oceania",  FirmsBuilder::getOceania
     );
 
 
@@ -122,8 +113,7 @@ public class CompletedFirms {
 
         // Mundial firms — weight 0, always last
         List<Site> mundialFirms = new ArrayList<>();
-        collectFilteredFirms(ByPageFirmsBuilder.getMundial(), mundialFirms);
-        collectFilteredFirms(ByNewPageFirmsBuilder.getMundial(), mundialFirms);
+        collectFilteredFirms(FirmsBuilder.getMundial(), mundialFirms);
         Collections.shuffle(mundialFirms);
         result.addAll(mundialFirms);
 
@@ -131,11 +121,8 @@ public class CompletedFirms {
     }
 
     private static void collectFirmsFromContinent(String continent, List<Site> dest) {
-        Supplier<Site[]> byPage = BY_PAGE_GETTERS.get(continent);
-        Supplier<Site[]> byNewPage = BY_NEW_PAGE_GETTERS.get(continent);
-
-        if (byPage != null) collectFilteredFirms(byPage.get(), dest);
-        if (byNewPage != null) collectFilteredFirms(byNewPage.get(), dest);
+        Supplier<Site[]> getter = BY_CONTINENT_GETTERS.get(continent);
+        if (getter != null) collectFilteredFirms(getter.get(), dest);
     }
 
     private static void collectFilteredFirms(Site[] firms, List<Site> dest) {
@@ -148,10 +135,10 @@ public class CompletedFirms {
 
 
     /**
-     * Shows continent configuration with firms breakdown by ByPage and ByNewPage.
+     * Shows continent configuration with firms breakdown.
      */
     private static void showContinentBreakdown() {
-        int lineLength = 100;
+        int lineLength = 80;
         String title = "| CONTINENT CONFIGURATION |";
         int padding = (lineLength - title.length()) / 2;
 
@@ -160,17 +147,16 @@ public class CompletedFirms {
         System.out.println("=".repeat(lineLength));
 
         // Header
-        System.out.printf(" %-18s │ %6s │ %6s │ %10s │ %10s │ %12s │ %12s%n",
-                "Continent", "Status", "Weight", "ByPage", "ByNewPage", "Total Firms", "Max Lawyers");
+        System.out.printf(" %-18s │ %6s │ %6s │ %12s │ %12s%n",
+                "Continent", "Status", "Weight", "Total Firms", "Max Lawyers");
         System.out.println("-".repeat(lineLength));
 
-        // Continent data structure: name, byPageGetter, byNewPageGetter
         Object[][] continents = {
-                {"Africa",          ByPageFirmsBuilder.getAfrica(),         ByNewPageFirmsBuilder.getAfrica()},
-                {"Asia",            ByPageFirmsBuilder.getAsia(),           ByNewPageFirmsBuilder.getAsia()},
-                {"Europe",          ByPageFirmsBuilder.getEurope(),         ByNewPageFirmsBuilder.getEurope()},
-                {"Americas",        ByPageFirmsBuilder.getAmericas(),       ByNewPageFirmsBuilder.getAmericas()},
-                {"Oceania",         ByPageFirmsBuilder.getOceania(),        ByNewPageFirmsBuilder.getOceania()},
+                {"Africa",   FirmsBuilder.getAfrica()},
+                {"Asia",     FirmsBuilder.getAsia()},
+                {"Europe",   FirmsBuilder.getEurope()},
+                {"Americas", FirmsBuilder.getAmericas()},
+                {"Oceania",  FirmsBuilder.getOceania()},
         };
 
         int totalEnabled = 0, totalDisabled = 0;
@@ -178,21 +164,20 @@ public class CompletedFirms {
         int lawyersEnabled = 0, lawyersDisabled = 0;
 
         for (Object[] continent : continents) {
-            String name = (String) continent[0];
-            Site[] byPage = (Site[]) continent[1];
-            Site[] byNewPage = (Site[]) continent[2];
+            String name  = (String) continent[0];
+            Site[] firms = (Site[]) continent[1];
 
-            boolean enabled = ContinentConfig.isContinentEnabled(name);
-            int weight = ContinentConfig.getContinentWeight(name);
-            int totalFirms = byPage.length + byNewPage.length;
-            int maxLawyers = countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage);
+            boolean enabled    = ContinentConfig.isContinentEnabled(name);
+            int weight         = ContinentConfig.getContinentWeight(name);
+            int totalFirms     = firms.length;
+            int maxLawyers     = countTotalMaxLawyer(firms);
 
             String statusIcon = enabled ? GREEN + "ON " + RESET : RED + "OFF" + RESET;
-            String lineColor = enabled ? "" : DIM;
-            String endColor = enabled ? "" : RESET;
+            String lineColor  = enabled ? "" : DIM;
+            String endColor   = enabled ? "" : RESET;
 
-            System.out.printf("%s %-18s │ %s   │ %6d │ %10d │ %10d │ %12d │ %12d%s%n",
-                    lineColor, name, statusIcon, weight, byPage.length, byNewPage.length, totalFirms, maxLawyers, endColor);
+            System.out.printf("%s %-18s │ %s   │ %6d │ %12d │ %12d%s%n",
+                    lineColor, name, statusIcon, weight, totalFirms, maxLawyers, endColor);
 
             if (enabled) {
                 totalEnabled++;
@@ -206,22 +191,21 @@ public class CompletedFirms {
         }
 
         // Mundial (always enabled, weight 0)
-        Site[] mundialByPage = ByPageFirmsBuilder.getMundial();
-        Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
-        int mundialTotal = mundialByPage.length + mundialByNewPage.length;
-        int mundialLawyers = countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage);
+        Site[] mundial      = FirmsBuilder.getMundial();
+        int mundialTotal    = mundial.length;
+        int mundialLawyers  = countTotalMaxLawyer(mundial);
 
         System.out.println("-".repeat(lineLength));
-        System.out.printf(" %-18s │ %s%s%s   │ %6d │ %10d │ %10d │ %12d │ %12d%n",
-                "Mundial", CYAN, "***", RESET, 0, mundialByPage.length, mundialByNewPage.length, mundialTotal, mundialLawyers);
+        System.out.printf(" %-18s │ %s%s%s   │ %6d │ %12d │ %12d%n",
+                "Mundial", CYAN, "***", RESET, 0, mundialTotal, mundialLawyers);
 
         // Summary
         System.out.println("=".repeat(lineLength));
 
-        int grandTotalFirms = firmsEnabled + firmsDisabled + mundialTotal;
+        int grandTotalFirms   = firmsEnabled + firmsDisabled + mundialTotal;
         int grandTotalLawyers = lawyersEnabled + lawyersDisabled + mundialLawyers;
-        int activeFirms = firmsEnabled + mundialTotal;
-        int activeLawyers = lawyersEnabled + mundialLawyers;
+        int activeFirms       = firmsEnabled + mundialTotal;
+        int activeLawyers     = lawyersEnabled + mundialLawyers;
 
         System.out.printf("%n %sSUMMARY:%s%n", BOLD, RESET);
         System.out.printf("   Continents: %s%d enabled%s / %s%d disabled%s%n",
@@ -236,7 +220,7 @@ public class CompletedFirms {
 
 
     /**
-     * A log print to count all sites completed (only enabled continents)
+     * A log print to count all active sites by continent (only enabled continents)
      */
     private static int showSitesCompleted() {
         int lineLength = 90;
@@ -246,20 +230,27 @@ public class CompletedFirms {
         System.out.println("\n" + "-".repeat(padding) + title + "-".repeat(padding));
 
         Object[][] categories = {
-                { "ByPage",    getByPage()    },
-                { "ByNewPage", getByNewPage() },
+                { "Africa",   FirmsBuilder.getAfrica()   },
+                { "Asia",     FirmsBuilder.getAsia()     },
+                { "Europe",   FirmsBuilder.getEurope()   },
+                { "Americas", FirmsBuilder.getAmericas() },
+                { "Oceania",  FirmsBuilder.getOceania()  },
+                { "Mundial",  FirmsBuilder.getMundial()  },
         };
 
         int grandTotal = 0;
-        int totalFirmsRegistered = 0;
+        int totalFirmsActive = 0;
 
         for (Object[] category : categories) {
             String label = (String) category[0];
             Site[] firms = (Site[]) category[1];
 
+            // Skip disabled continents (Mundial is always shown)
+            if (!label.equals("Mundial") && !ContinentConfig.isContinentEnabled(label)) continue;
+
             int totalToRegister = countTotalMaxLawyer(firms);
             grandTotal += totalToRegister;
-            totalFirmsRegistered += firms.length;
+            totalFirmsActive += firms.length;
 
             System.out.printf(" - %-10s %s%-30s%s To Register: %s%d%s%n",
                     label + ":", YELLOW, firms.length + " firms", RESET, BLUE, totalToRegister, RESET);
@@ -267,7 +258,7 @@ public class CompletedFirms {
 
         System.out.println("-".repeat(lineLength));
         System.out.printf("  %sTotal Active Firms:%s %s%-15d%s %sMax Lawyers:%s %s%d%s%n",
-                BOLD, RESET, YELLOW, totalFirmsRegistered, RESET, BOLD, RESET, BLUE, grandTotal, RESET);
+                BOLD, RESET, YELLOW, totalFirmsActive, RESET, BOLD, RESET, BLUE, grandTotal, RESET);
         System.out.println("-".repeat(lineLength));
 
         return grandTotal;
@@ -354,26 +345,20 @@ public class CompletedFirms {
 
         Map<String, Map<String, Integer>> continents = new LinkedHashMap<>();
         for (String name : CONTINENT_NAMES) {
-            Supplier<Site[]> byPageGetter = BY_PAGE_GETTERS.get(name);
-            Supplier<Site[]> byNewPageGetter = BY_NEW_PAGE_GETTERS.get(name);
-
-            Site[] byPage = byPageGetter != null ? byPageGetter.get() : new Site[0];
-            Site[] byNewPage = byNewPageGetter != null ? byNewPageGetter.get() : new Site[0];
+            Supplier<Site[]> getter = BY_CONTINENT_GETTERS.get(name);
+            Site[] firms = getter != null ? getter.get() : new Site[0];
 
             continents.put(name, Map.of(
-                    "byPage", byPage.length,
-                    "byNewPage", byNewPage.length,
-                    "maxLawyers", countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage)
+                    "total",      firms.length,
+                    "maxLawyers", countTotalMaxLawyer(firms)
             ));
         }
         snapshot.put("continents", continents);
 
-        Site[] mundialByPage = ByPageFirmsBuilder.getMundial();
-        Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
+        Site[] mundial = FirmsBuilder.getMundial();
         snapshot.put("mundial", Map.of(
-                "byPage", mundialByPage.length,
-                "byNewPage", mundialByNewPage.length,
-                "maxLawyers", countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage)
+                "total",      mundial.length,
+                "maxLawyers", countTotalMaxLawyer(mundial)
         ));
 
         return snapshot;
@@ -463,85 +448,69 @@ public class CompletedFirms {
         String prevTimestamp = (String) previous.get("timestamp");
 
         final int COL  = 14;
-        final int LINE = 1 + 18 + 3 + (COL + 3) * 4;
+        final int LINE = 1 + 18 + 3 + (COL + 3) * 2;
 
         String title = "| SYSTEM STATE COMPARISON |";
         int padding = (LINE - title.length()) / 2;
 
         System.out.println("\n" + "=".repeat(LINE));
-        System.out.println(" ".repeat(padding) + title);
+        System.out.println(" ".repeat(Math.max(0, padding)) + title);
         System.out.println("=".repeat(LINE));
 
         // Header — plain %Ns works here because there are no ANSI codes
-        System.out.printf(" %-18s │ %"+COL+"s │ %"+COL+"s │ %"+COL+"s │ %"+COL+"s%n",
-                "Continent", "ByPage", "ByNewPage", "Total Firms", "Max Lawyers");
+        System.out.printf(" %-18s │ %"+COL+"s │ %"+COL+"s%n",
+                "Continent", "Total Firms", "Max Lawyers");
         System.out.println("-".repeat(LINE));
 
         for (String name : CONTINENT_NAMES) {
-            Supplier<Site[]> byPageGetter    = BY_PAGE_GETTERS.get(name);
-            Supplier<Site[]> byNewPageGetter = BY_NEW_PAGE_GETTERS.get(name);
+            Supplier<Site[]> getter = BY_CONTINENT_GETTERS.get(name);
+            Site[] firms = getter != null ? getter.get() : new Site[0];
 
-            Site[] byPage    = byPageGetter    != null ? byPageGetter.get()    : new Site[0];
-            Site[] byNewPage = byNewPageGetter != null ? byNewPageGetter.get() : new Site[0];
-
-            int curByPage    = byPage.length;
-            int curByNewPage = byNewPage.length;
-            int curTotal     = curByPage + curByNewPage;
-            int curLawyers   = countTotalMaxLawyer(byPage) + countTotalMaxLawyer(byNewPage);
+            int curTotal   = firms.length;
+            int curLawyers = countTotalMaxLawyer(firms);
 
             Map<String, Object> prev = prevContinents != null ? prevContinents.get(name) : null;
 
-            // Use %s with pre-padded cells so ANSI codes don't affect column alignment
             if (prev != null) {
-                int prevByPage    = (int) prev.get("byPage");
-                int prevByNewPage = (int) prev.get("byNewPage");
-                int prevTotal     = prevByPage + prevByNewPage;
-                int prevLawyers   = (int) prev.get("maxLawyers");
+                // Backward-compat: old snapshots had "byPage"+"byNewPage"; new ones have "total"
+                int prevTotal = prev.containsKey("total")
+                        ? (int) prev.get("total")
+                        : ((int) prev.getOrDefault("byPage", 0) + (int) prev.getOrDefault("byNewPage", 0));
+                int prevLawyers = (int) prev.getOrDefault("maxLawyers", 0);
 
-                System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
+                System.out.printf(" %-18s │ %s │ %s%n",
                         name,
-                        formatCell(curByPage,    prevByPage,    COL),
-                        formatCell(curByNewPage, prevByNewPage, COL),
-                        formatCell(curTotal,     prevTotal,     COL),
-                        formatCell(curLawyers,   prevLawyers,   COL));
+                        formatCell(curTotal,   prevTotal,   COL),
+                        formatCell(curLawyers, prevLawyers, COL));
             } else {
-                System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
+                System.out.printf(" %-18s │ %s │ %s%n",
                         name,
-                        formatCell(curByPage,    COL),
-                        formatCell(curByNewPage, COL),
-                        formatCell(curTotal,     COL),
-                        formatCell(curLawyers,   COL));
+                        formatCell(curTotal,   COL),
+                        formatCell(curLawyers, COL));
             }
         }
 
         // Mundial row
-        Site[] mundialByPage    = ByPageFirmsBuilder.getMundial();
-        Site[] mundialByNewPage = ByNewPageFirmsBuilder.getMundial();
-        int curMByPage    = mundialByPage.length;
-        int curMByNewPage = mundialByNewPage.length;
-        int curMTotal     = curMByPage + curMByNewPage;
-        int curMLawyers   = countTotalMaxLawyer(mundialByPage) + countTotalMaxLawyer(mundialByNewPage);
+        Site[] mundial  = FirmsBuilder.getMundial();
+        int curMTotal   = mundial.length;
+        int curMLawyers = countTotalMaxLawyer(mundial);
 
         System.out.println("-".repeat(LINE));
         if (prevMundial != null) {
-            int prevMByPage    = (int) prevMundial.get("byPage");
-            int prevMByNewPage = (int) prevMundial.get("byNewPage");
-            int prevMTotal     = prevMByPage + prevMByNewPage;
-            int prevMLawyers   = (int) prevMundial.get("maxLawyers");
+            int prevMTotal = prevMundial.containsKey("total")
+                    ? (int) prevMundial.get("total")
+                    : ((int) prevMundial.getOrDefault("byPage", 0) + (int) prevMundial.getOrDefault("byNewPage", 0));
+            int prevMLawyers = (int) prevMundial.getOrDefault("maxLawyers", 0);
 
-            System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
+            System.out.printf(" %-18s │ %s │ %s%n",
                     "Mundial",
-                    formatCell(curMByPage,    prevMByPage,    COL),
-                    formatCell(curMByNewPage, prevMByNewPage, COL),
-                    formatCell(curMTotal,     prevMTotal,     COL),
-                    formatCell(curMLawyers,   prevMLawyers,   COL));
+                    formatCell(curMTotal,   prevMTotal,   COL),
+                    formatCell(curMLawyers, prevMLawyers, COL));
         } else {
-            System.out.printf(" %-18s │ %s │ %s │ %s │ %s%n",
+            System.out.printf(" %-18s │ %s │ %s%n",
                     "Mundial",
-                    formatCell(curMByPage,    COL),
-                    formatCell(curMByNewPage, COL),
-                    formatCell(curMTotal,     COL),
-                    formatCell(curMLawyers,   COL));
+                    formatCell(curMTotal,   COL),
+                    formatCell(curMLawyers, COL));
         }
 
         System.out.println("=".repeat(LINE));
@@ -572,68 +541,58 @@ public class CompletedFirms {
     }
 
     /**
-     * Shows firms still available for future executions:
-     * 1. Broken down by active continents (excluding firms already in monthFirms.txt)
-     * 2. Total across ALL continents (including disabled) not yet in monthFirms.txt
+     * Shows firms still available for future executions, broken down by active continents
+     * (excluding firms already in monthFirms.txt).
      */
     private static void showAvailableFirms() {
-        int lineLength = 100;
+        int lineLength = 80;
 
-        // ── PART 1: active continents ──────────────────────────────────────────
         String title1 = "| FIRMAS DISPONÍVEIS — CONTINENTES ATIVOS |";
         int pad1 = (lineLength - title1.length()) / 2;
         System.out.println("\n" + "=".repeat(lineLength));
-        System.out.println(" ".repeat(pad1) + title1);
+        System.out.println(" ".repeat(Math.max(0, pad1)) + title1);
         System.out.println("=".repeat(lineLength));
 
-        System.out.printf(" %-18s │ %10s │ %10s │ %12s │ %14s%n",
-                "Continente", "ByPage", "ByNewPage", "Disponíveis", "Max Lawyers");
+        System.out.printf(" %-18s │ %12s │ %14s%n",
+                "Continente", "Disponíveis", "Max Lawyers");
         System.out.println("-".repeat(lineLength));
 
         Object[][] allContinents = {
-                {"Africa",          ByPageFirmsBuilder.getAfrica(),         ByNewPageFirmsBuilder.getAfrica()},
-                {"Asia",            ByPageFirmsBuilder.getAsia(),           ByNewPageFirmsBuilder.getAsia()},
-                {"Europe",          ByPageFirmsBuilder.getEurope(),         ByNewPageFirmsBuilder.getEurope()},
-                {"Americas",        ByPageFirmsBuilder.getAmericas(),       ByNewPageFirmsBuilder.getAmericas()},
-                {"Oceania",         ByPageFirmsBuilder.getOceania(),        ByNewPageFirmsBuilder.getOceania()},
+                {"Africa",   FirmsBuilder.getAfrica()},
+                {"Asia",     FirmsBuilder.getAsia()},
+                {"Europe",   FirmsBuilder.getEurope()},
+                {"Americas", FirmsBuilder.getAmericas()},
+                {"Oceania",  FirmsBuilder.getOceania()},
         };
 
         int activeAvailFirms   = 0;
         int activeAvailLawyers = 0;
 
         for (Object[] row : allContinents) {
-            String name       = (String) row[0];
-            Site[] byPage     = (Site[]) row[1];
-            Site[] byNewPage  = (Site[]) row[2];
+            String name  = (String) row[0];
+            Site[] firms = (Site[]) row[1];
 
             if (!ContinentConfig.isContinentEnabled(name)) continue;
 
-            int avBP  = countAvailable(byPage);
-            int avBNP = countAvailable(byNewPage);
-            int avTot = avBP + avBNP;
-            int avLaw = countAvailableLawyers(byPage) + countAvailableLawyers(byNewPage);
+            int avTot = countAvailable(firms);
+            int avLaw = countAvailableLawyers(firms);
 
             activeAvailFirms   += avTot;
             activeAvailLawyers += avLaw;
 
-            System.out.printf(" %-18s │ %10d │ %10d │ %12d │ %14d%n",
-                    name, avBP, avBNP, avTot, avLaw);
+            System.out.printf(" %-18s │ %12d │ %14d%n", name, avTot, avLaw);
         }
 
         // Mundial (always active)
-        Site[] mBP  = ByPageFirmsBuilder.getMundial();
-        Site[] mBNP = ByNewPageFirmsBuilder.getMundial();
-        int mAvBP   = countAvailable(mBP);
-        int mAvBNP  = countAvailable(mBNP);
-        int mAvTot  = mAvBP + mAvBNP;
-        int mAvLaw  = countAvailableLawyers(mBP) + countAvailableLawyers(mBNP);
+        Site[] mundial = FirmsBuilder.getMundial();
+        int mAvTot = countAvailable(mundial);
+        int mAvLaw = countAvailableLawyers(mundial);
 
         activeAvailFirms   += mAvTot;
         activeAvailLawyers += mAvLaw;
 
         System.out.println("-".repeat(lineLength));
-        System.out.printf(" %-18s │ %10d │ %10d │ %12d │ %14d%n",
-                "Mundial", mAvBP, mAvBNP, mAvTot, mAvLaw);
+        System.out.printf(" %-18s │ %12d │ %14d%n", "Mundial", mAvTot, mAvLaw);
         System.out.println("=".repeat(lineLength));
         System.out.printf(" %sTOTAL (ativos):%s  %s%d firmas%s disponíveis  |  %s%d advogados%s à registrar%n",
                 BOLD, RESET, GREEN, activeAvailFirms, RESET, BLUE, activeAvailLawyers, RESET);
