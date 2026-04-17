@@ -39,7 +39,7 @@ public class FirmsBuilder {
             new Shalakany(), new Shalakany(), new SLKB(), new SPAAjibadeAndCo(), new SpoorAndFisher(),
             new STBB(), new Tabacks(), new TheartMey(), new TNP(), new TopeAdebayoLP(),
             new TripleOKLaw(), new UdoUdomaBeloOsagie(), new UkiriLijadu(), new Werksmans(), new ZakiHashemAndPartners(),
-            new ZulficarAndPartners(),
+            new ZulficarAndPartners(), new MatoukBassiouny(), new VDAPartners(),
     };
 
     private static final Site[] ASIA = {
@@ -201,6 +201,9 @@ public class FirmsBuilder {
             new VOPatentsAndTrademarks(), new VossiusAndPartner(), new WardynskiAndPartners(), new WengerVieliAG(), new WIDEN(),
             new Wiersholm(), new WierzbowskiAndPartners(), new WikborgRein(), new WindtLeGrand(), new WolfTheiss(),
             new ZamfirescuRacotiPredoiu(), new ZampaPartners(), new ZeposAndYannopoulos(),
+            new GardosMosonyiTomori(), new HeldBerdnikAstner(), new Heuking(), new Heussen(),
+            new GeorgiadesPelides(), new GESSEL(), new GiesePartner(), new GrafIsola(),
+            new GLNS(), new AbreuAdvogados(), new AskewsLegal(), new MoraisLeitao(),
     };
 
     private static final Site[] AMERICAS = {

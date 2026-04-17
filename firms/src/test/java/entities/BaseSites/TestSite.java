@@ -1,11 +1,11 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.europe.Stek;
+import org.example.src.sites.to_test.americas.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends Stek {
+class MyTestPage extends AnayaDiazIbanez {
     public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }

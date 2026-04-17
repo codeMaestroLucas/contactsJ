@@ -118,7 +118,10 @@ public abstract class Site {
 
         // 0. Handle labeled format: "D : (853) 2837 2623" or "E  : ruicunha@ccadvog.com"
         Set<String> emailLabels = Set.of("e", "email", "mail");
-        Set<String> phoneLabels = Set.of("d", "t", "tel", "phone", "p", "direct", "dial", "mobile", "m", "cell");
+        Set<String> phoneLabels = Set.of(
+                "d +", "t +", "tel +", "phone +", "p +", "direct +", "dial +", "mobile +", "m +", "cell +",
+                "d", "t", "tel", "phone", "p", "direct", "dial", "mobile", "m", "cell"
+        );
 
         Matcher labeledMatcher = Pattern
                 .compile("(?m)^[ \\t]*([A-Za-z]{1,10})[ \\t]*:[ \\t]*(.+?)[ \\t]*$")

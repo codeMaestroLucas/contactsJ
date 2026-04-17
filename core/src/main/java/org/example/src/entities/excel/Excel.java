@@ -100,40 +100,74 @@ public class Excel {
 
 
     /**
-     * Sorts rows starting from {@code startRow} using the given comparator.
-     *
-     * @param comparator  defines the sort order; each element is a String[] with one entry per column
-     * @param numColumns  number of columns to read per row
-     * @param startRow    first row index to include in the sort (0 = no header, 1 = skip header)
-     * @return the number of data rows sorted (useful for subclasses that track row counters)
+     * Sorts by a single column.
+     * Empty/phantom rows are excluded from the result and removed from the sheet.
      */
+    public int sortRows(int colIndex, int numColumns, int startRow) {
+        return sortRowsCore(Comparator.comparing(r -> r[colIndex]), numColumns, startRow);
+    }
+
+    public int sortRows(int colIndex, int numColumns) {
+        return sortRows(colIndex, numColumns, 1);
+    }
+
+    /**
+     * Sorts by multiple columns in priority order (nested sort).
+     * Empty/phantom rows are excluded from the result and removed from the sheet.
+     *
+     * @param colIndexes  columns to sort by, in descending priority order
+     */
+    public int sortRows(int[] colIndexes, int numColumns, int startRow) {
+        if (colIndexes == null || colIndexes.length == 0) return 0;
+        Comparator<String[]> comparator = Comparator.comparing((String[] r) -> r[colIndexes[0]]);
+        for (int i = 1; i < colIndexes.length; i++) {
+            final int idx = colIndexes[i];
+            comparator = comparator.thenComparing(r -> r[idx]);
+        }
+        return sortRowsCore(comparator, numColumns, startRow);
+    }
+
+    public int sortRows(int[] colIndexes, int numColumns) {
+        return sortRows(colIndexes, numColumns, 1);
+    }
+
+    /** Kept for callers that build their own Comparator (e.g. Reports, LastCheck). */
     public int sortRows(Comparator<String[]> comparator, int numColumns, int startRow) {
+        return sortRowsCore(comparator, numColumns, startRow);
+    }
+
+    public int sortRows(Comparator<String[]> comparator, int numColumns) {
+        return sortRowsCore(comparator, numColumns, 1);
+    }
+
+    /** Core sort: reads, filters phantom rows, sorts, removes, rewrites. */
+    private int sortRowsCore(Comparator<String[]> comparator, int numColumns, int startRow) {
         int lastRow = this.sheet.getLastRowNum();
         if (lastRow < startRow) return 0;
 
-        // 1. Collect all data rows as String[]
         List<String[]> rows = new ArrayList<>();
         for (int i = startRow; i <= lastRow; i++) {
             Row row = this.sheet.getRow(i);
             if (row == null) continue;
+
             String[] cells = new String[numColumns];
+            boolean hasData = false;
             for (int j = 0; j < numColumns; j++) {
-                Cell cell = row.getCell(j);
-                cells[j] = (cell != null) ? cell.getStringCellValue() : "";
+                cells[j] = readCell(row.getCell(j));
+                if (!cells[j].isBlank()) hasData = true;
             }
+            if (!hasData) continue;
+
             rows.add(cells);
         }
 
-        // 2. Sort
         rows.sort(comparator);
 
-        // 3. Remove all data rows (descending to avoid index gaps)
         for (int i = lastRow; i >= startRow; i--) {
             Row row = this.sheet.getRow(i);
             if (row != null) this.sheet.removeRow(row);
         }
 
-        // 4. Re-write in sorted order
         for (int i = 0; i < rows.size(); i++) {
             Row newRow = this.sheet.createRow(startRow + i);
             String[] cells = rows.get(i);
@@ -146,9 +180,18 @@ public class Excel {
         return rows.size();
     }
 
-    /** Convenience overload for sheets with a header row (startRow = 1). */
-    public int sortRows(Comparator<String[]> comparator, int numColumns) {
-        return sortRows(comparator, numColumns, 1);
+    private static String readCell(Cell cell) {
+        if (cell == null) return "";
+        return switch (cell.getCellType()) {
+            case STRING -> cell.getStringCellValue().trim();
+            case NUMERIC -> {
+                if (DateUtil.isCellDateFormatted(cell)) yield cell.getDateCellValue().toString();
+                yield Double.toString(cell.getNumericCellValue());
+            }
+            case BOOLEAN -> Boolean.toString(cell.getBooleanCellValue());
+            case FORMULA -> cell.getCellFormula();
+            default -> "";
+        };
     }
 
     /**

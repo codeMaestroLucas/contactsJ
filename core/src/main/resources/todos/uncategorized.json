@@ -1,10 +1,5 @@
 [
   {
-    "name": "Abreu Advogados",
-    "link": "https://abreuadvogados.com/en/people/",
-    "Note": "Download VCard"
-  },
-  {
     "name": "Asia Law",
     "link": "https://www.asialaw.com/",
     "special": "site of firms"
@@ -14,46 +9,6 @@
     "link": "https://www.leaders-in-law.com/find-an-expert/",
     "special": "site of firms -> get sites from here - the automation of this site is terrible, so collect the sites and delete when concluded",
     "note": "Continue on Angola"
-  },
-  {
-    "name": "Jorge Neto Valente",
-    "link": "https://www.jnvlegal.com/our-team/",
-    "Note": "Download VCard"
-  },
-  {
-    "name": "KalikovaAndAssociates",
-    "link": "http://www.k-a.kg/eng/persons",
-    "Notes": "Country === Kyrgyzstan. Download VCard"
-  },
-  {
-    "name": "Lollato Lopes Rangel Ribeiro Advogados",
-    "link": "https://lollato.com.br/en/#profissionais",
-    "Note": "Download VCard"
-  },
-  {
-    "name": "Matouk Bassiouny",
-    "link": "https://matoukbassiouny.com/people/",
-    "Note": "Download VCard"
-  },
-  {
-    "name": "Morais Leitão",
-    "link": "https://www.mlgts.pt/en/people/partners/",
-    "Note": "Download VCard"
-  },
-  {
-    "name": "SyCipLaw",
-    "link": "https://syciplaw.com/lawyers/?_sft_position=partner",
-    "Note": "Download VCard"
-  },
-  {
-    "name": "VDA Partners",
-    "link": "https://www.vda.pt/en/people/?f_letter=a",
-    "Note": "Download VCard"
-  },
-  {
-    "name": "Askews Legal",
-    "link": "https://askewslegal.co/meet-our-team/?_gl=1*csp8tc*_up*MQ..*_gs*MQ..&gclid=CjwKCAiA74G9BhAEEiwA8kNfpS02J4AL4Ox5moNCqjxrZuf1wb40sRWJkqVa2JBnUQZMdDBKJerbfxoCC8kQAvD_BwE",
-    "Note": "Download VCard"
   },
   {
     "name": "",

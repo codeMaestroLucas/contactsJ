@@ -1,3 +1,2 @@
-new GardosMosonyiTomori(), new HeldBerdnikAstner(), new Heuking(), new Heussen(),
-new GeorgiadesPelides(), new GESSEL(), new GiesePartner(), new GrafIsola(),
-new GLNS(),
+new FerreiraPintoCardigos(), new Florent(), new GPBL(),
+new FBT(), new FellnerWratzfeldPartner(), new ResponseLegal(),

@@ -16,3 +16,21 @@ new PattonMorenoAsvat(), new RCTZZ(), new RebazaAlcazarDeLasCasas(), new Severgn
 new VidigalNeto(),
 // Central America
 new BDSAsesores(), new FacioYCanas(), new HulbertVolio(), new PelleranoYHerrera(),
+// South America
+new LollatoLopesRangelRibeiro(),
+// Central America
+new AguilarCastilloLove(),
+
+// South America
+new Alessandri(), new AMYA(), new CastroLeivaRendon(), new DuranYOsorio(), new LewinYWills(),
+// Central America
+new AltaBatalla(),
+
+// South America
+new LloredaCamacho(), new Mendoza(),
+// South America
+new NoetingerYArmando(), new RolimGoulart(), new RossoAlbaRouges(), new TanoiraCassagne(),
+// South America
+new OFarrell(),
+// South America
+new Alfaro(), new BerettaGodoy(), new Bomchil(),

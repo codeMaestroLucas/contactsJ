@@ -6,11 +6,30 @@
 
 ## 1. Estrutura Obrigatória do Output
 
-O output deve conter **apenas** os seguintes itens, nesta ordem:
+O output deve conter **apenas um único bloco bash** que, ao ser colado no terminal, cria todos os arquivos com seu conteúdo e atualiza os builders.
 
-1. **Touch**: Uma única linha `touch` para criar todos os arquivos no diretório correto.
-2. **Firmas**: Código completo dos scrapers em blocos separados, ordenados alfabeticamente.
-3. **Builders**: Código de instanciação das firmas, agrupadas por Tipo e Continente (máx. 5 por linha).
+Formato do bloco:
+
+```bash
+cat > <caminho>.java << 'EOF'
+<código completo da firma>
+EOF
+
+cat > <caminho2>.java << 'EOF'
+<código completo da firma 2>
+EOF
+
+cat >> core/src/main/java/org/example/src/sites/to_test/<continente>/_builders.txt << 'EOF'
+new FirmaA(), new FirmaB(),
+EOF
+```
+
+Regras do bloco único:
+- Use `cat >` para criar/sobrescrever arquivos `.java` (cria o arquivo e insere o conteúdo).
+- Use `cat >>` para **anexar** ao `_builders.txt` do continente correspondente.
+- Firmas ordenadas **alfabeticamente** dentro do bloco.
+- Builders ao final, agrupados por continente. Omitir continentes sem novas firmas.
+- **Não** incluir `touch`, blocos de código avulsos, comentários explicativos ou qualquer texto fora do bloco bash.
 
 **Diretórios por continente:**
 - Africa:   `core/src/main/java/org/example/src/sites/to_test/africa`
@@ -186,31 +205,7 @@ Cada continente possui um arquivo `_builders.txt` no diretório correspondente e
 - Continentes (exceto Americas): firmas listadas diretamente, sem comentário de tipo. Máximo 5 por linha.
 - Americas: subdividido internamente em `// North America`, `// Central America`, `// South America`. Máximo 5 por linha.
 
-O output deve ser um comando `cat >>` por continente que **anexa** as novas firmas ao respectivo `_builders.txt`:
-
-```bash
-cat >> core/src/main/java/org/example/src/sites/to_test/africa/_builders.txt << 'EOF'
-new FirmaA(), new FirmaB(), new FirmaC(), new FirmaD(), new FirmaE(),
-new FirmaF(),
-EOF
-
-cat >> core/src/main/java/org/example/src/sites/to_test/asia/_builders.txt << 'EOF'
-new FirmaG(),
-EOF
-
-cat >> core/src/main/java/org/example/src/sites/to_test/americas/_builders.txt << 'EOF'
-// North America
-new FirmaNA1(), new FirmaNA2(),
-
-// Central America
-new FirmaCA1(),
-
-// South America
-new FirmaSA1(), new FirmaSA2(), new FirmaSA3(),
-EOF
-```
-
-Omitir o comando para continentes sem novas firmas.
+O builder é gerado como `cat >>` no final do bloco bash único (ver seção 1).
 
 ---
 
@@ -274,7 +269,7 @@ Retorna `String[]{ email, phone }` — strings vazias quando não encontrado.
 |---|---|---|
 | 1 | Dados na subpágina quando disponíveis na 1ª (ByNewPage) | Extrair da 1ª página antes de chamar `openNewTab` |
 | 2 | `this.openNewTab(lawyer)` sem capturar retorno | `String link = this.openNewTab(lawyer);` |
-| 3 | Classe ByNewPage sem chamada a `this.openNewTab(lawyer)` em `getLawyer` | Toda classe ByNewPage **deve** chamar `openNewTab` — ver seção 3.6 |
+| 3 | Classe ByNewPage sem chamada a `this.openNewTab(lawyer)` em `getLawyer` | Toda classe ByNewPage **deve** chamar `openNewTab` — ver seção 3.5 |
 | 4 | `new WebDriverWait(this.driver, Duration.ofSeconds(10))` | `MyDriver.wait.findElements(...)` |
 | 5 | Lambda vazia `(e) -> ""` em `extractLawyerText` ou `extractLawyerAttribute`  | `LawyerExceptions::socialsException` (ou equivalente) |
 | 6 | `By[] nameBy = {...}` declarado fora e passado como variável | `new By[] {...}` inline dentro do extractor |
@@ -285,44 +280,30 @@ Retorna `String[]{ email, phone }` — strings vazias quando não encontrado.
 
 ## 8. Formato do Output
 
-```
-# Touch
+O output é **um único bloco bash**. Nada fora dele.
+
 ```bash
-touch ...
-```
+cat > core/src/main/java/org/example/src/sites/to_test/europe/FirmaA.java << 'EOF'
+package org.example.src.sites.to_test.europe;
+// código completo
+EOF
 
-# Firmas
-## Nome Firma 1
-```java
-código firma 1
-```
-
-## Nome Firma 2
-```java
-código firma 2
-```
-
-# Append Builders
-```bash
-cat >> core/src/main/java/org/example/src/sites/to_test/africa/_builders.txt << 'EOF'
-new Firma1(),
+cat > core/src/main/java/org/example/src/sites/to_test/europe/FirmaB.java << 'EOF'
+package org.example.src.sites.to_test.europe;
+// código completo
 EOF
 
 cat >> core/src/main/java/org/example/src/sites/to_test/europe/_builders.txt << 'EOF'
-new Firma4(),
+new FirmaA(), new FirmaB(),
 EOF
 
 cat >> core/src/main/java/org/example/src/sites/to_test/americas/_builders.txt << 'EOF'
 // North America
-new Firma2(),
-
-// Central America
-new Firma5(),
+new FirmaNA1(),
 
 // South America
-new Firma3(),
+new FirmaSA1(),
 EOF
-```
 ```
 
 ------

@@ -4,7 +4,6 @@ import org.example.src.CONFIG;
 import org.example.src.entities.Lawyer;
 import org.example.src.utils.Validations;
 
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -73,11 +72,6 @@ public final class Sheet extends Excel {
      * D (Country) → J (Firm) → E (Practice Area) → F (Link) → C (Phone)
      */
     public void sortRows() {
-        Comparator<String[]> comparator = Comparator.comparing((String[] r) -> r[3])
-                .thenComparing(r -> r[9])
-                .thenComparing(r -> r[4])
-                .thenComparing(r -> r[5])
-                .thenComparing(r -> r[2]);
-        this.currentRow = super.sortRows(comparator, 10) + 1;
+        this.currentRow = super.sortRows(new int[]{3, 9, 4, 5, 2}, 10) + 1;
     }
 }

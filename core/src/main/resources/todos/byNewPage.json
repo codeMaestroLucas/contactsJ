@@ -17,81 +17,6 @@
   },
 
 
-
-  {
-    "name": "Alta Batalla",
-    "link": "https://www.batalla.com/en/talent"
-  },
-  {
-    "name": "BLP",
-    "link": "https://blplegal.com/our-people/",
-    "Note": "check if the filter is working"
-  },
-  {
-    "name": "Aguilar Castillo Love",
-    "link": "https://www.aguilarcastillolove.com/our-people"
-  },
-  {
-    "name": "Mendoza",
-    "link": "https://mendoza.com.co/people/"
-  },
-  {
-    "name": "Durán & Osorio",
-    "link": "https://www.duranyosorio.com/en/team"
-  },
-  {
-    "name": "AMYA",
-    "link": "https://www.amya.com.co/en/our-team"
-  },
-  {
-    "name": "Lloreda Camacho & Co",
-    "link": "https://lloredacamacho.com/en/partners/"
-  },
-  {
-    "name": "Lewin & Wills",
-    "link": "https://lewinywills.com/en/miembros/"
-  },
-  {
-    "name": "Castro Leiva Rendón",
-    "link": "https://castroleiva.com/en/nosotros/#equipo"
-  },
-  {
-    "name": "Alessandri",
-    "link": "https://alessandri.legal/en/our-team/"
-  },
-  {
-    "name": "Rolim Goulart",
-    "link": "https://www.rolim.com/en/professionals/"
-  },
-  {
-    "name": "Rosso Alba & Rougès",
-    "link": "https://www.rossoalba.com/professionals/"
-  },
-  {
-    "name": "Noetinger & Armando",
-    "link": "https://noetingeryarmando.com/en/staff/"
-  },
-  {
-    "name": "Tanoira Cassagne",
-    "link": "https://www.tanoiracassagne.com/en/perfil/"
-  },
-  {
-    "name": "O'Farrell",
-    "link": "https://www.estudio-ofarrell.com/en/team/"
-  },
-  {
-    "name": "Bomchil",
-    "link": "https://bomchil.com/en/equipo/",
-    "Note": "click partner opt"
-  },
-  {
-    "name": "Beretta Godoy",
-    "link": "https://www.berettagodoy.com/#Equipo"
-  },
-  {
-    "name": "Alfaro",
-    "link": "http://www.alfaromergers.com/members.php?len=en"
-  },
   {
     "name": "Marval",
     "link": "https://www.marval.com/profesionales?lang=en"
@@ -237,31 +162,6 @@
 
   {"=======================":  "======================="},
 
-
-  {
-    "name": "GPBL",
-    "link": "https://www.gpblex.it/en/people/"
-  },
-  {
-    "name": "Florent",
-    "link": "https://www.florent.nl/team/"
-  },
-  {
-    "name": "Ferreira Pinto Cardigos",
-    "link": "https://www.fpclegal.pt/en/team/"
-  },
-  {
-    "name": "Fellner Wratzfeld & Partner",
-    "link": "https://www.fwp.at/en/lawyers"
-  },
-  {
-    "name": "FBT",
-    "link": "https://www.fbt-avocats.ch/en/avocats-equipe/#(mediaboxes-grid-5d38449fddf41|filter_1)=.category_portfolio_entries-629;"
-  },
-  {
-    "name": "Response Legal",
-    "link": "https://response-legal.lt/en/team/"
-  },
   {
     "name": "Elmann",
     "link": "https://elmann.dk/en/personer-side/"

@@ -48,31 +48,10 @@ public class Validations {
         return TEST_MODE;
     }
 
-    /**
-     * Checks if a given country should be avoided.
-     * Combines two sources:
-     * 1. PERMANENT countries - ALWAYS avoided (countriesToAvoidPermanent.json)
-     * 2. TEMPORARY countries - Only avoided when enabled (countriesToAvoidTemporary.json)
-     * 
-     * @param country The country to check
-     * @return true if the country should be avoided, false otherwise
-     */
     public static boolean isACountryToAvoid(String country) {
-        // Check permanent countries first (always avoided)
-        if (isAPermanentCountryToAvoid(country)) {
-            return true;
-        }
-        
-        // Check temporary countries (only if enabled)
-        return isATemporaryCountryToAvoid(country);
+        return isAPermanentCountryToAvoid(country);
     }
 
-    /**
-     * Checks if a country is in the PERMANENT avoid list.
-     * These countries are ALWAYS avoided, regardless of any enabled flag.
-     * 
-     * File: countriesToAvoidPermanent.json
-     */
     private static boolean isAPermanentCountryToAvoid(String country) {
         Path filePath = Paths.get("core/src/main/resources/baseFiles/json/countriesToAvoidPermanent.json");
         ObjectMapper mapper = new ObjectMapper();
@@ -99,48 +78,6 @@ public class Validations {
 
         } catch (IOException e) {
             System.err.println("Error reading permanent countries data: " + e.getMessage());
-            return false;
-        }
-    }
-
-    /**
-     * Checks if a country is in the TEMPORARY avoid list AND the continent is DISABLED.
-     *
-     * Logic:
-     * - Continent enabled  = true  → Firms are built, countries are NOT avoided
-     * - Continent enabled  = false → Firms are NOT built, countries ARE avoided
-     *
-     * File: countriesToAvoidTemporary.json (countries list)
-     * File: continentsConfig.json (enabled/disabled settings)
-     */
-    private static boolean isATemporaryCountryToAvoid(String country) {
-        Path filePath = Paths.get("core/src/main/resources/baseFiles/json/countriesToAvoidTemporary.json");
-        ObjectMapper mapper = new ObjectMapper();
-
-        try {
-            String jsonContent = Files.readString(filePath);
-
-            // Read the structure: Map<Continent, ContinentData>
-            Map<String, ContinentData> continentDataMap = mapper.readValue(
-                    jsonContent,
-                    new TypeReference<Map<String, ContinentData>>() {}
-            );
-
-            // Flatten all countries from DISABLED continents only (using ContinentConfig)
-            // Countries from disabled continents should be avoided
-            List<String> countriesToAvoid = continentDataMap.entrySet().stream()
-                    .filter(entry -> !ContinentConfig.isContinentEnabled(entry.getKey())) // DISABLED continents
-                    .flatMap(entry -> entry.getValue().getCountries().stream())
-                    .map(CountryData::getCountry)
-                    .filter(Objects::nonNull)
-                    .collect(Collectors.toList());
-
-            // Check if the country is in the list of countries to avoid
-            return countriesToAvoid.stream()
-                    .anyMatch(c -> c.trim().equalsIgnoreCase(country.trim()));
-
-        } catch (IOException e) {
-            System.err.println("Error reading temporary countries data: " + e.getMessage());
             return false;
         }
     }
@@ -251,20 +188,6 @@ public class Validations {
         return EmailDuplicateChecker.getINSTANCE().isEmailClean(email);
     }
 
-    /**
-     * Helper class to represent continent data from JSON.
-     * The enabled/disabled state is now controlled by continentsConfig.json.
-     */
-    @Getter
-    @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
-    public static class ContinentData {
-        @JsonProperty("countries")
-        private List<CountryData> countries = new ArrayList<>();
-    }
-
-    /**
-     * Helper class to represent country data from JSON.
-     */
     @Getter
     @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
     public static class CountryData {
