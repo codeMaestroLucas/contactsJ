@@ -1,54 +1,43 @@
 =====================================================================================================
-                                    ERROR LOG - 2026-04-12 00:30:37
+                                    ERROR LOG - 2026-04-18 05:40:49
 =====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
                                       ERRORS BY FIRM
 ----------------------------------------------------------------------------------------------------
 
-(51 firm(s) omitted — within tolerance)
+(24 firm(s) omitted — within tolerance)
 
-Class Duan & Duan [1 lawyers registered, 91 errors]
-   - accessPageError                occurred 91 times
+Class Robles Miaja [0 lawyers registered, 20 errors]
+   - emailException                 occurred 20 times
 
-Class Global Law Office [0 lawyers registered, 29 errors]
-   - accessPageError                occurred 29 times
+Class Arthur Cox [1 lawyers registered, 15 errors]
+   - accessPageError                occurred 11 times
+   - getLawyersInPageError          occurred 4 times
 
-Class TAN Law [0 lawyers registered, 29 errors]
-   - accessPageError                occurred 29 times
+Class CAR Advogados [0 lawyers registered, 14 errors]
+   - getLawyerError                 occurred 14 times
 
-Class Balter, Guth, Aloni & Co [0 lawyers registered, 26 errors]
-   - accessPageError                occurred 26 times
+Class Myers Fletcher And Gordon [0 lawyers registered, 13 errors]
+   - getLawyerError                 occurred 13 times
 
-Class Lee & Ko [0 lawyers registered, 26 errors]
-   - accessPageError                occurred 26 times
-
-Class BLC & ASSOCIATES [0 lawyers registered, 12 errors]
-   - getLawyerError                 occurred 12 times
-
-Class Soemadipradja & Taher [1 lawyers registered, 11 errors]
-   - linkException                  occurred 11 times
-
-Class Tilleke & Gibbins [1 lawyers registered, 11 errors]
-   - openNewTabError                occurred 11 times
+Class LEFOSSE [0 lawyers registered, 11 errors]
+   - getLawyersInPageError          occurred 11 times
 
 ----------------------------------------------------------------------------------------------------
                                       ERROR SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-Total errors: 331
+Total errors: 139
 
 Most common errors:
-   accessPageError                       207  ( 62.5%)
-   getLawyerError                         46  ( 13.9%)
-   getLawyersInPageError                  26  (  7.9%)
-   openNewTabError                        22  (  6.6%)
-   linkException                          11  (  3.3%)
-   getRoleError                           10  (  3.0%)
-   emailException                          7  (  2.1%)
-   getPracticeAreaError                    1  (  0.3%)
-   getNameError                            1  (  0.3%)
+   getLawyersInPageError                  47  ( 33.8%)
+   getLawyerError                         37  ( 26.6%)
+   emailException                         22  ( 15.8%)
+   openNewTabError                        17  ( 12.2%)
+   accessPageError                        15  ( 10.8%)
+   getPracticeAreaError                    1  (  0.7%)
 
 =====================================================================================================
-Firms processed: 394 | Firms above tolerance (>10 errors): 8
+Firms processed: 311 | Firms above tolerance (>10 errors): 5
 =====================================================================================================

@@ -32,10 +32,7 @@ public class FBT extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("post_title-1")}, "LINK", "onclick", (e) -> {
-            String attr = lawyer.findElement(By.className("post_title-1")).getAttribute("onclick");
-            return attr.split("'")[1];
-        });
+        String link = lawyer.findElement(By.className("post_title-1")).getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }
