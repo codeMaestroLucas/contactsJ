@@ -268,6 +268,9 @@ public class FirmsBuilder {
             new Tavares(), new TraviesoEvansArriaAndRengel(), new TrenchRossiWatanabe(), new Tumnet(), new UrendaRencoretOrregoYDorr(),
             new VBDAdvogados(), new VBSOAdvogados(), new Velloza(), new VieiraRezendeAdvogados(), new Vouga(),
             new WaldAntunesVitaEBlattner(), new WilliamFreireAdvogados(), new WongtschowskiKleimanAdvogados(), new ZBV(), new ZuzunagaAssereto(),
+            new ARIFA(),
+            new Alessandri(),
+            new AltaBatalla(),
     };
 
     private static final Site[] OCEANIA = {

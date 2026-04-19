@@ -10,6 +10,7 @@ import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
 import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.utils.ContinentConfig;
+import org.example.src.utils.FirmsExhausted;
 import org.example.src.utils.FirmsOMonth;
 
 import java.io.File;
@@ -33,6 +34,7 @@ public class CompletedFirms {
             System.out.println("  1. Ver todas as firmas");
             System.out.println("  2. Verificar estado do sistema");
             System.out.println("  3. Firmas disponíveis");
+            System.out.println("  4. Firmas esgotadas");
             System.out.println("  0. Sair");
             System.out.println("=".repeat(45));
             System.out.print("Escolha uma opcao: ");
@@ -43,6 +45,7 @@ public class CompletedFirms {
                 case "1" -> showAllFirmsCompleted();
                 case "2" -> showSystemState();
                 case "3" -> showAvailableFirms();
+                case "4" -> showExhaustedFirms();
                 case "0" -> {
                     saveSnapshot();
                     scanner.close();
@@ -127,7 +130,9 @@ public class CompletedFirms {
 
     private static void collectFilteredFirms(Site[] firms, List<Site> dest) {
         for (Site site : firms) {
-            if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) {
+            if (site != null
+                    && !FirmsOMonth.isFirmRegisteredInMonth(site.name)
+                    && !FirmsExhausted.isFirmExhausted(site.name)) {
                 dest.add(site);
             }
         }
@@ -526,7 +531,9 @@ public class CompletedFirms {
     private static int countAvailable(Site[] firms) {
         int count = 0;
         for (Site site : firms) {
-            if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name)) count++;
+            if (site != null
+                    && !FirmsOMonth.isFirmRegisteredInMonth(site.name)
+                    && !FirmsExhausted.isFirmExhausted(site.name)) count++;
         }
         return count;
     }
@@ -534,7 +541,9 @@ public class CompletedFirms {
     private static int countAvailableLawyers(Site[] firms) {
         int total = 0;
         for (Site site : firms) {
-            if (site != null && !FirmsOMonth.isFirmRegisteredInMonth(site.name))
+            if (site != null
+                    && !FirmsOMonth.isFirmRegisteredInMonth(site.name)
+                    && !FirmsExhausted.isFirmExhausted(site.name))
                 total += site.maxLawyersForSite;
         }
         return total;
@@ -596,6 +605,48 @@ public class CompletedFirms {
         System.out.println("=".repeat(lineLength));
         System.out.printf(" %sTOTAL (ativos):%s  %s%d firmas%s disponíveis  |  %s%d advogados%s à registrar%n",
                 BOLD, RESET, GREEN, activeAvailFirms, RESET, BLUE, activeAvailLawyers, RESET);
+        System.out.println("=".repeat(lineLength));
+    }
+
+
+    // ==================== EXHAUSTED FIRMS ====================
+
+    private static void showExhaustedFirms() {
+        int lineLength = 80;
+
+        String title = "| FIRMAS ESGOTADAS |";
+        int pad = (lineLength - title.length()) / 2;
+        System.out.println("\n" + "=".repeat(lineLength));
+        System.out.println(" ".repeat(Math.max(0, pad)) + title);
+        System.out.println("=".repeat(lineLength));
+
+        Path path = Path.of(CONFIG.EXHAUSTED_FIRMS_FILE);
+        List<String> names;
+        try {
+            if (!Files.exists(path)) {
+                names = List.of();
+            } else {
+                names = Files.readAllLines(path).stream()
+                        .map(String::trim)
+                        .filter(s -> !s.isEmpty())
+                        .toList();
+            }
+        } catch (IOException e) {
+            System.err.println("Erro ao ler arquivo de firmas esgotadas: " + e.getMessage());
+            return;
+        }
+
+        if (names.isEmpty()) {
+            System.out.printf(" %sNenhuma firma esgotada registrada.%s%n", GREEN, RESET);
+        } else {
+            for (int i = 0; i < names.size(); i++) {
+                System.out.printf(" %2d. %s%s%s%n", i + 1, RED, names.get(i), RESET);
+            }
+        }
+
+        System.out.println("=".repeat(lineLength));
+        System.out.printf(" %sTotal esgotadas:%s %s%d%s  %s(apague data/exhaustedFirms.txt para resetar)%s%n",
+                BOLD, RESET, RED, names.size(), RESET, DIM, RESET);
         System.out.println("=".repeat(lineLength));
     }
 }

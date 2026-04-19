@@ -43,7 +43,7 @@ public class AguilarCastilloLove extends ByNewPage {
         String role = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector(".meta-title span")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
-        WebElement container = driver.findElement(By.className("sqs-block-html"));
+        WebElement container = driver.findElement(By.xpath("//div/div/p"));
 
         String[] socials = super.getSocialsFromText(container.getText());
 

@@ -7,6 +7,7 @@ import org.example.src.entities.excel.ContactsAlreadyRegisteredSheet;
 import org.example.src.entities.excel.Reports;
 import org.example.src.entities.excel.Sheet;
 import org.example.src.utils.ErrorLogger;
+import org.example.src.utils.FirmsExhausted;
 import org.example.src.utils.FirmsOMonth;
 import org.example.src.utils.NoSleep;
 import org.example.src.utils.Stopwatch;
@@ -71,6 +72,8 @@ public class Main {
                 if (site.lawyersRegistered > 0) {
                     FirmsOMonth.registerFirmMonth(site.name);
                     totalLawyersRegistered += site.lawyersRegistered;
+                } else if (site.lawyersAttempted > 0) {
+                    FirmsExhausted.register(site.name);
                 }
 
             } catch (TimeoutException e) {
@@ -117,6 +120,8 @@ public class Main {
                         if (newLawyers > 0) {
                             FirmsOMonth.registerFirmMonth(site.name);
                             totalLawyersRegistered += newLawyers;
+                        } else if (site.lawyersAttempted > 0 && site.lawyersRegistered == 0) {
+                            FirmsExhausted.register(site.name);
                         }
                     } catch (TimeoutException | ExecutionException retryEx) {
                         retryFuture.cancel(true);
@@ -186,6 +191,8 @@ public class Main {
                 if (site.lawyersRegistered > 0) {
                     FirmsOMonth.registerFirmMonth(site.name);
                     totalLawyersRegistered += site.lawyersRegistered;
+                } else if (site.lawyersAttempted > 0) {
+                    FirmsExhausted.register(site.name);
                 }
 
             } catch (TimeoutException e) {
@@ -315,6 +322,8 @@ public class Main {
             ErrorLogger.getINSTANCE().flushAllLogs();
             // Sort Sheet.xlsx rows: D → J → E → F → C
             Sheet.getINSTANCE().sortRows();
+            // Close the Sheet workbook to release the file handle
+            Sheet.getINSTANCE().closeWorkbook();
             // Sort Reports.xlsx: lawyersRegistered ASC, then time DESC
             reports.sortRows();
             // Close the reports workbook to ensure all data is saved

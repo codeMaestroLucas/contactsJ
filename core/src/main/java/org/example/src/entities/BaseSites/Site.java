@@ -24,6 +24,7 @@ public abstract class Site {
     public final String name;
     protected final String link;
     public int lawyersRegistered;
+    public int lawyersAttempted;
     protected final int totalPages;
     public final int maxLawyersForSite;
     protected Set<String> lastCountries = new HashSet<>();
@@ -207,7 +208,8 @@ public abstract class Site {
 
     protected void addLawyer(Lawyer lawyer) {
         Sheet sheet = Sheet.getINSTANCE();
-        sheet.addLawyer(lawyer, true);
+        boolean added = sheet.addLawyer(lawyer, true);
+        if (!added) return;
 
         EmailOfMonth.registerEmailOfMonth(lawyer.getEmail(), this.getEmailsOfMonthPath());
 
@@ -233,6 +235,8 @@ public abstract class Site {
                 }
                 return false;
             }
+
+            this.lawyersAttempted++;
 
             Lawyer lawyerToRegister = Lawyer.builder()
                     .link(map.get("link"))

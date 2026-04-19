@@ -14,6 +14,7 @@ public class CONFIG {
     public static String BY_PAGE_FILE = "byPage/";
     public static String BY_NEW_PAGE_FILE = "byNewPage/";
     public static String MONTH_FILE = "data/monthFirms.txt";
+    public static String EXHAUSTED_FIRMS_FILE = "data/exhaustedFirms.txt";
     public static String SYSTEM_SNAPSHOT_FILE = "core/src/main/resources/baseFiles/json/systemSnapshot.json";
 
     // OTHERS

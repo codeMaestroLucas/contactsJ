@@ -24,6 +24,7 @@ public class Validations {
      * Set to true in test classes to prevent actual lawyer registration.
      */
     private static boolean TEST_MODE = false;
+    private static int testModeCount = 0;
 
     /**
      * Enable test mode - all validations will fail.
@@ -47,6 +48,9 @@ public class Validations {
     public static boolean isTestMode() {
         return TEST_MODE;
     }
+
+    public static void resetTestModeCount() { testModeCount = 0; }
+    public static int getTestModeCount() { return testModeCount; }
 
     public static boolean isACountryToAvoid(String country) {
         return isAPermanentCountryToAvoid(country);
@@ -136,6 +140,7 @@ public class Validations {
 
         // ✅ TEST MODE: Always fail validation to prevent registration
         if (TEST_MODE) {
+            testModeCount++;
             throw ValidationExceptions.testModeActive();
         }
 
