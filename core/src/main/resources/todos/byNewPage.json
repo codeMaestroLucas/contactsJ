@@ -1,6 +1,4 @@
 [
-
-
   {
     "sep": "=== Africa ==="
   },
@@ -10,61 +8,8 @@
   },
 
 
-
-
   {
     "sep": "=== Americas ==="
-  },
-
-
-  {
-    "name": "Marval",
-    "link": "https://www.marval.com/profesionales?lang=en"
-  },
-  {
-    "name": "Bruchou & Funes de Rioja",
-    "link": "https://bruchoufunes.com/en/profesionales/"
-  },
-  {
-    "name": "PGLaw",
-    "link": "https://pg.law/equipe/"
-  },
-  {
-    "name": "Licks",
-    "link": "https://www.lickslegal.com/our-team?position=Partner%2CFounding+Partner"
-  },
-  {
-    "name": "Travieso Evans Arria Rengel & Paz",
-    "link": "https://www.traviesoevans.com/travieso/en/dt_team/"
-  },
-  {
-    "name": "CorralRosales",
-    "link": "https://corralrosales.com/en/partners-2/"
-  },
-  {
-    "name": "Cancio, Nadal & Rivera",
-    "link": "https://www.cnr.law/attorneys",
-    "Note": "email formatt == (firstName).(lastName)@cnr.law",
-    "Ex.:": "Carlos A. González Soler === cgonzales@cnr.law"
-  },
-  {
-    "name": "Henlin Gibson Henlin",
-    "link": "https://www.henlin.pro/team",
-    "Note": "email formatt == (firstName)(lastName)@henlin.pro"
-  },
-  {
-    "name": "Delaney Partners",
-    "link": "https://delaneypartners.com/"
-  },
-  {
-    "name": "VSV",
-    "link": "https://vsvlegal.com/en/",
-    "Note": "all partners in the main page. email formatt === (firstNameLetter)(lastName)@altalegal.com",
-    "Ex.:": "Julio Valdés === jvaldes@altalegal.com"
-  },
-  {
-    "name": "Vega Guerrero",
-    "link": "https://vegaguerrero.com/our-team/?lang=en"
   },
 
 
@@ -80,10 +25,6 @@
     "link": "https://www.anomalegal.com/attorneys/"
   },
   {
-    "name": "King Stubb & Kasiva",
-    "link": "https://ksandk.com/people/?_location=new-delhi"
-  },
-  {
     "name": "Del Rosario & Del Rosario",
     "link": "https://www.delrosariolaw.com/en/the-firm/attorneys",
     "Note": "Different phones for different locations, check this"
@@ -92,10 +33,6 @@
     "name": "Cruz Marcelo & Tenefrancia",
     "link": "https://cruzmarcelo.com/our-lawyers/",
     "Note": "All seniors already registred. Might test this latter, to check if is true"
-  },
-  {
-    "name": "SyCip",
-    "link": "https://www.syciplaw.com/lawyers/partners"
   },
   {
     "name": "Arceo & Tandoc",
@@ -120,10 +57,6 @@
   {
     "name": "Obeid & Partners",
     "link": "https://obeidpartners.com/meet-the-team/"
-  },
-  {
-    "name": "RIAA Barker Gillette",
-    "link": "https://riaabarkergillette.com/pk/our-team/"
   },
   {
     "name": "Tri Nasr",
@@ -159,101 +92,15 @@
   {
     "sep": "=== Europe ==="
   },
-
-  {"=======================":  "======================="},
-
-  {
-    "name": "Elmann",
-    "link": "https://elmann.dk/en/personer-side/"
-  },
-  {
-    "name": "E+H Rechtsanwälte",
-    "link": "https://www.eh.at/en/team/?lastname=&position=partnerin&eh_group=0&eh_location=0"
-  },
-  {
-    "name": "Ecovis ProventusLaw",
-    "link": "https://ecovis.lt/team/"
-  },
-  {
-    "name": "Čechová & Partners",
-    "link": "https://www.cechova.sk/people/"
-  },
-  {
-    "name": "DVLAW",
-    "link": "https://www.dvlaw.gr/team-category/our-people/"
-  },
-  {
-    "name": "DVDW",
-    "link": "https://www.dvdw.nl/en/about-dvdw/"
-  },
-  {
-    "name": "DORDA",
-    "link": "https://www.dorda.at/en/team?f%5B0%5D=roles%3A10"
-  },
-  {
-    "name": "Živković Samardžić",
-    "link": "https://www.zslaw.rs/our-people-2/#partners"
-  },
   {
     "name": "Stratulat Albulescu",
     "link": "https://saa.ro/en/our-people/"
   },
+
   {
-    "name": "SK&S Law Firm",
-    "link": "https://skslegal.pl/en/team/"
+    "=======================": "======================="
   },
-  {
-    "name": "MOLITOR",
-    "link": "https://molitorlegal.lu/our-team/#partners"
-  },
-  {
-    "name": "GZG",
-    "link": "https://gzg.com.cy/people/?group=1"
-  },
-  {
-    "name": "Divjak Topić Bahtijarević & Krka Law",
-    "link": "https://dtb.hr/#our-professionals"
-  },
-  {
-    "name": "Delphi",
-    "link": "https://www.delphi.se/en/coworkers/?search=&off=&pos=173&comp="
-  },
-  {
-    "name": "D&B David si Baias",
-    "link": "https://www.david-baias.ro/en/our-team/"
-  },
-  {
-    "name": "Czabański Gałuszyński",
-    "link": "https://czabanski-galuszynski.pl/en/lawyers/"
-  },
-  {
-    "name": "CS Associados",
-    "link": "https://www.csassociados.pt/en/lawyers/?f_kw=&f_pos=4&f_area=&f_setor="
-  },
-  {
-    "name": "Richardson Lissack",
-    "link": "https://www.richardsonlissack.co.uk/our-lawyers/"
-  },
-  {
-    "name": "Chevalier & Sciales",
-    "link": "https://www.cs-avocats.lu/partners/"
-  },
-  {
-    "name": "CasePro",
-    "link": "https://www.casepro.bg/en"
-  },
-  {
-    "name": "Cambrian",
-    "link": "https://www.cambrian.be/team/"
-  },
-  {
-    "name": "BSP",
-    "link": "https://www.bsp.lu/lu/people?expertise=All&job_title=33&name="
-  },
-  {
-    "name": "Bruun & Hjejle",
-    "link": "https://www.bruunhjejle.dk/people?job_title_target_id=25&major_target_id=All&title="
-  },
+
   {
     "name": "Brouxel & Rabia",
     "link": "https://brouxelrabia.lu/our-lawyers/"
@@ -321,14 +168,6 @@
   {
     "name": "AKL",
     "link": "https://www.aklawfirm.gr/team"
-  },
-  {
-    "name": "Langseth",
-    "link": "https://langsethadvokat.no/om-oss/oversikt-partnere/?_gl=1*12njgmy*_up*MQ..*_gs*MQ..&gclid=CjwKCAiAneK8BhAVEiwAoy2HYWMa94C8f4qgFgGu6Q6Ow_Uj24mYn5I40qH3YEdEebE51ejtAnD8ehoC9c8QAvD_BwE"
-  },
-  {
-    "name": "Setterwalls",
-    "link": "https://setterwalls.se/en/our-people/?f_f=522&f_a=&f_i=&f_o=&e_s=&f_l=&f_p=1&f_q=12"
   },
   {
     "name": "Gernandt & Danielsson",
@@ -775,11 +614,6 @@
     "link": "https://www.loyensloeff.com/people/?Titles=Partner"
   },
   {
-    "name": "Arendt & Medernach",
-    "link": "https://www.arendt.com/about-us/our-people/?_title_function=partner",
-    "Note": "Directors + 40"
-  },
-  {
     "name": "Moyal & Simon",
     "link": "https://moyal-simon.com/en/team/"
   },
@@ -791,8 +625,6 @@
     "name": "KNP Law",
     "link": "https://www.knplaw.com/en/lawyers/"
   },
-
-
 
 
   {
@@ -810,5 +642,10 @@
   {
     "name": "",
     "link": ""
+  },
+
+
+  {
+    "sep": "=== Similar (possibly already implemented) ==="
   }
 ]

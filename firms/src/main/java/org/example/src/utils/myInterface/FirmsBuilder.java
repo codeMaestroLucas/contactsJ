@@ -209,7 +209,7 @@ public class FirmsBuilder {
     private static final Site[] AMERICAS = {
             // North America
             new AGMAbogados(), new ArthurCox(), new AsafoAndCo(), new BarristonLaw(), new Basham(),
-            new BCB(), new BCFLaw(), new BennettJones(), new BensonBuffett(), new BLGLaw(),
+            new BCB(), new BCFLaw(), new BennettJones(), new BLGLaw(),
             new BoyneClarke(), new BurnetDuckworthAndPalmer(), new BWBLLP(), new Cassels(), new CervantesAbogados(),
             new Chaitons(), new Chanis(), new ClarkWilson(), new CoxAndPalmer(), new CozenOConnor(),
             new Creel(), new CurtisDawe(), new DaleAndLessmann(), new DeethWilliamsWall(), new DeHoyosAviles(),
@@ -224,7 +224,7 @@ public class FirmsBuilder {
             new OMG(), new ONeillAndBorges(), new OslerHoskinAndHarcourt(), new OyenWiggs(), new Patterson(),
             new PattersonMairHamilton(), new PerezCorreaGonzalez(), new PietrantoniMendezAndAlvarezLLC(), new Pitblado(), new PrasadAndCompany(),
             new RamosRipollSchuster(), new RGRH(), new RitchMueller(), new RitchMuellerAndNicolau(), new RoblesMiaja(),
-            new Sangra(), new SangraMollerLLP(), new SantamarinaAndSteta(), new SIERRALatam(), new SmartAndBiggar(),
+            new SangraMollerLLP(), new SantamarinaAndSteta(), new SIERRALatam(), new SmartAndBiggar(),
             new StikemanElliott(), new ThompsonDorfmanSweatman(), new Uhthoff(), new UlisesCabrera(), new VazquezTerceroAndZepeda(),
             new VilaAbogados(), new VillarrealVGF(), new WildeboerDellelce(),
 

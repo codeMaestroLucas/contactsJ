@@ -82,7 +82,7 @@ public class EsguerraJHR extends ByPage {
                 "firm", this.name,
                 "country", "Colombia",
                 "practice_area", "",
-                "email", socials[0],
+                "email", socials[0].replace("%20", ""),
                 "phone", socials[1].isEmpty() ? "576013122900" : socials[1]
         );
     }

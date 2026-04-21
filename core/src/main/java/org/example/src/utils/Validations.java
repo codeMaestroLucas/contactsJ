@@ -18,6 +18,14 @@ import java.util.stream.Collectors;
  */
 public class Validations {
 
+    private static final Map<String, List<String>> CONTINENT_TO_TEMP_KEYS = Map.of(
+            "Africa",   List.of("Africa"),
+            "Asia",     List.of("Asia"),
+            "Europe",   List.of("Europe"),
+            "Americas", List.of("Americas"),
+            "Oceania",  List.of("Oceania")
+    );
+
     /**
      * TEST MODE FLAG
      * When true, all validations will ALWAYS fail (for testing extraction only).
@@ -53,7 +61,39 @@ public class Validations {
     public static int getTestModeCount() { return testModeCount; }
 
     public static boolean isACountryToAvoid(String country) {
-        return isAPermanentCountryToAvoid(country);
+        return isAPermanentCountryToAvoid(country) || isATemporaryCountryToAvoid(country);
+    }
+
+    private static boolean isATemporaryCountryToAvoid(String country) {
+        Set<String> disabledContinents = ContinentConfig.getDisabledContinents();
+        if (disabledContinents.isEmpty()) return false;
+
+        Path filePath = Paths.get("core/src/main/resources/baseFiles/json/countriesToAvoidTemporary.json");
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            String jsonContent = Files.readString(filePath);
+            Map<String, ContinentCountries> data = mapper.readValue(
+                    jsonContent,
+                    new TypeReference<Map<String, ContinentCountries>>() {}
+            );
+
+            for (String disabledContinent : disabledContinents) {
+                List<String> tempKeys = CONTINENT_TO_TEMP_KEYS.getOrDefault(disabledContinent, List.of());
+                for (String key : tempKeys) {
+                    ContinentCountries continentData = data.get(key);
+                    if (continentData == null || continentData.getCountries() == null) continue;
+                    boolean found = continentData.getCountries().stream()
+                            .map(CountryData::getCountry)
+                            .filter(Objects::nonNull)
+                            .anyMatch(c -> c.trim().equalsIgnoreCase(country.trim()));
+                    if (found) return true;
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading temporary countries data: " + e.getMessage());
+        }
+        return false;
     }
 
     private static boolean isAPermanentCountryToAvoid(String country) {
@@ -198,5 +238,12 @@ public class Validations {
     public static class CountryData {
         @JsonProperty("Country")
         private String Country;
+    }
+
+    @Getter
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
+    public static class ContinentCountries {
+        @JsonProperty("countries")
+        private List<CountryData> countries;
     }
 }

@@ -23,11 +23,64 @@ public class BatchTestRunner {
         MyDriver.setHeadless(true);
         Validations.enableTestMode();
 
-        List<FirmEntry> firms = discoverFirms();
+        Map<String, List<FirmEntry>> byContinent = discoverByContinent();
         Scanner scanner = new Scanner(System.in);
-        int total = firms.size();
 
-        System.out.printf("%n═══ BatchTestRunner: %d firmas encontradas ═══%n%n", total);
+        while (true) {
+            String chosen = selectContinent(scanner, byContinent);
+            if (chosen == null) {
+                System.out.println("Encerrando.");
+                break;
+            }
+
+            List<FirmEntry> firms = byContinent.get(chosen);
+            boolean quit = runContinent(scanner, firms, chosen);
+            if (quit) {
+                System.out.println("Encerrando.");
+                break;
+            }
+
+            System.out.printf("%n✓ Pasta '%s' concluída.%n", chosen);
+        }
+    }
+
+    private static String selectContinent(Scanner scanner, Map<String, List<FirmEntry>> byContinent) {
+        List<String> available = CONTINENT_ORDER.stream()
+                .filter(byContinent::containsKey)
+                .toList();
+
+        if (available.isEmpty()) {
+            System.out.println("Nenhuma firma encontrada em nenhuma pasta.");
+            return null;
+        }
+
+        System.out.println("\n╔══════════════════════════════════════════════╗");
+        System.out.println("║         Selecione uma pasta para testar      ║");
+        System.out.println("╠══════════════════════════════════════════════╣");
+        for (int i = 0; i < available.size(); i++) {
+            String c = available.get(i);
+            int count = byContinent.get(c).size();
+            System.out.printf("║  [%d] %-30s %3d firma(s) ║%n", i + 1, c, count);
+        }
+        System.out.println("║  [0] Sair                                    ║");
+        System.out.println("╚══════════════════════════════════════════════╝");
+
+        while (true) {
+            System.out.print("Escolha: ");
+            String input = scanner.nextLine().trim();
+            try {
+                int choice = Integer.parseInt(input);
+                if (choice == 0) return null;
+                if (choice >= 1 && choice <= available.size()) return available.get(choice - 1);
+            } catch (NumberFormatException ignored) {}
+            System.out.printf("Opção inválida. Digite um número entre 0 e %d.%n", available.size());
+        }
+    }
+
+    /** Returns true if the user chose to quit mid-run. */
+    private static boolean runContinent(Scanner scanner, List<FirmEntry> firms, String continent) {
+        int total = firms.size();
+        System.out.printf("%n═══ %s: %d firma(s) encontrada(s) ═══%n%n", continent.toUpperCase(), total);
 
         for (int i = 0; i < firms.size(); i++) {
             FirmEntry entry = firms.get(i);
@@ -53,7 +106,7 @@ public class BatchTestRunner {
             System.out.printf("=> Extraiu %d advogado(s) em %.1fs%s%n%n",
                     extracted, elapsed / 1000.0, crashed ? " [com erro]" : "");
 
-            String action = prompt(scanner, entry.className);
+            String action = promptFirm(scanner, entry.className);
             switch (action) {
                 case "a" -> {
                     try {
@@ -63,22 +116,18 @@ public class BatchTestRunner {
                     }
                 }
                 case "s" -> System.out.println("Skipado.");
-                case "q" -> {
-                    System.out.println("Encerrando.");
-                    return;
-                }
+                case "q" -> { return true; }
                 case "r" -> {
-                    i--; // retry same firm
+                    i--;
                     System.out.println("Repetindo...");
                 }
             }
             System.out.println();
         }
-
-        System.out.println("✓ Todas as firmas processadas.");
+        return false;
     }
 
-    private static String prompt(Scanner scanner, String firmName) {
+    private static String promptFirm(Scanner scanner, String firmName) {
         while (true) {
             System.out.printf("[A]provar e mover / [S]kipar / [Q]uit / [R]etry ? ");
             String input = scanner.nextLine().trim().toLowerCase();
@@ -87,11 +136,12 @@ public class BatchTestRunner {
         }
     }
 
-    private static List<FirmEntry> discoverFirms() throws IOException {
-        List<FirmEntry> result = new ArrayList<>();
+    private static Map<String, List<FirmEntry>> discoverByContinent() throws IOException {
+        Map<String, List<FirmEntry>> result = new LinkedHashMap<>();
         for (String continent : CONTINENT_ORDER) {
             Path dir = Paths.get(TO_TEST_SRC + continent);
             if (!Files.isDirectory(dir)) continue;
+            List<FirmEntry> firms = new ArrayList<>();
             try (Stream<Path> files = Files.list(dir)) {
                 files.filter(p -> p.toString().endsWith(".java"))
                         .map(p -> {
@@ -99,8 +149,9 @@ public class BatchTestRunner {
                             return new FirmEntry(name, continent);
                         })
                         .sorted(Comparator.comparing(e -> e.className))
-                        .forEach(result::add);
+                        .forEach(firms::add);
             }
+            if (!firms.isEmpty()) result.put(continent, firms);
         }
         return result;
     }

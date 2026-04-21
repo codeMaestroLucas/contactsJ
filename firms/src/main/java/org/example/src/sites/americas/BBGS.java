@@ -67,7 +67,6 @@ public class BBGS extends ByNewPage {
         String link = this.openNewTab(lawyer);
 
         WebElement container = MyDriver.wait.findElement(By.tagName("main"));
-        String s = extractor.extractLawyerAttribute(container, new By[]{By.tagName("p")}, "SOCIALS","textContent" ,LawyerExceptions::socialsException);
         String[] socials = super.getSocialsFromText(container.getText());
 
         return Map.of(

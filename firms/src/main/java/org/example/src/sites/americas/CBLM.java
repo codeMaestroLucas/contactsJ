@@ -28,7 +28,8 @@ public class CBLM extends ByNewPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.cssSelector(".elementor-widget-image a"));
+            WebElement div = MyDriver.wait.findElement(By.xpath("//*[@id=\"content\"]/div/div/section[2]/div/div/div/section/div"));
+            return div.findElements(By.cssSelector(".elementor-widget-image a[href*='http://cblm.com.br/']"));
         } catch (Exception e) {
             return List.of();
         }

@@ -54,8 +54,7 @@ public class ZBV extends ByNewPage {
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
-        By[] byArray = {By.className("heading-33")};
-        return extractor.extractLawyerText(driver.findElement(By.className("div-block-70")), byArray, "NAME", LawyerExceptions::nameException);
+        return driver.findElement(By.xpath("/html/body/section[1]/div/div/div[1]/div/div[2]/h3")).getAttribute("textContent");
     }
 
     private String[] getSocials(WebElement container) {
@@ -82,7 +81,7 @@ public class ZBV extends ByNewPage {
 
         return Map.of(
                 "link", Objects.requireNonNull(driver.getCurrentUrl()),
-                "name", this.getName(),
+                "name", getName(lawyer),
                 "role", "Partner",
                 "firm", this.name,
                 "country", "Argentina",

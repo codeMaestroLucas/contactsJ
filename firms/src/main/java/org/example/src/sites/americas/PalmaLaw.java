@@ -28,7 +28,8 @@ public class PalmaLaw extends ByPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("perfil"));
+            List<WebElement> lawyers = MyDriver.wait.findElements(By.className("perfil"));
+            return this.siteUtl.filterLawyersInPage(lawyers, null, true);
         } catch (Exception e) {
             return List.of();
         }

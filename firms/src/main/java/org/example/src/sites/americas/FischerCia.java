@@ -43,7 +43,8 @@ public class FischerCia extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = lawyer.getText();
+        String[] split = lawyer.getText().split(",");
+        String name = split[1] + " " + split[0];
 
         String link = this.openNewTab(lawyer);
 

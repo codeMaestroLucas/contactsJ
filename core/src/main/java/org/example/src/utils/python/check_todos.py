@@ -10,13 +10,16 @@ Steps:
      oceania, mundial) and in to_test to collect known URLs.
   2. For each JSON file in todos/:
      a. Remove intra-file URL duplicates (keep first occurrence).
-     b. Remove entries whose URL matches a known Java implementation URL.
+     b. Remove entries whose URL exactly matches a known Java implementation URL.
+     c. Move entries whose domain matches a known Java domain (but URL differs)
+        to a dedicated "Similar" section at the bottom of the file.
   3. Print a summary.
 """
 
 import json
 import os
 import re
+from urllib.parse import urlparse
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -74,12 +77,30 @@ def is_valid(obj):
     )
 
 
-def url_matches(json_link, java_urls):
+_SIMILAR_SEP = "=== Similar (possibly already implemented) ==="
+
+
+def _domain(url):
+    """Return the normalized netloc of a URL, stripping leading 'www.'."""
+    try:
+        host = urlparse(url).netloc.lower()
+        return host[4:] if host.startswith("www.") else host
+    except Exception:
+        return ""
+
+
+def url_exact_matches(json_link, java_urls):
     """True if json_link equals, contains, or is contained by any Java URL."""
     for java_url in java_urls:
         if java_url == json_link or java_url in json_link or json_link in java_url:
             return True
     return False
+
+
+def url_domain_matches(json_link, java_domains):
+    """True if json_link shares a domain with any known Java implementation."""
+    d = _domain(json_link)
+    return bool(d) and d in java_domains
 
 
 def write_json_with_sep_spacing(f, data):
@@ -105,22 +126,43 @@ def write_json_with_sep_spacing(f, data):
 
 def process_file(path, java_urls):
     """
-    Load a JSON array, remove duplicate and implemented entries, save, and
-    return (initial_valid, dup_removed, impl_removed).
+    Load a JSON array, remove duplicate and implemented entries, move
+    domain-similar entries to a dedicated section, save, and return
+    (initial_valid, dup_removed, impl_removed, similar_moved).
     """
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
 
+    # Strip the "Similar" section written by previous runs so it is recomputed.
+    in_similar = False
+    stripped = []
+    for obj in data:
+        if isinstance(obj, dict) and obj.get("sep") == _SIMILAR_SEP:
+            in_similar = True
+            continue
+        if in_similar:
+            # Drop entries that were previously classified as similar; they will
+            # be re-evaluated from scratch against the current Java URL set.
+            if isinstance(obj, dict) and "sep" in obj:
+                # A new (non-similar) separator ends the similar block.
+                in_similar = False
+                stripped.append(obj)
+            # Otherwise skip — entry gets re-evaluated below.
+        else:
+            stripped.append(obj)
+    data = stripped
+
+    java_domains  = {_domain(u) for u in java_urls if _domain(u)}
     initial_valid = sum(1 for obj in data if is_valid(obj))
 
-    seen_urls     = set()
-    dup_removed   = 0
-    impl_removed  = 0
-    cleaned       = []
+    seen_urls    = set()
+    dup_removed  = 0
+    impl_removed = 0
+    similar      = []
+    cleaned      = []
 
     for obj in data:
         if not is_valid(obj):
-            # Separator / empty placeholder — keep as-is
             cleaned.append(obj)
             continue
 
@@ -130,20 +172,29 @@ def process_file(path, java_urls):
         if link in seen_urls:
             dup_removed += 1
             continue
-
         seen_urls.add(link)
 
-        # 2. Already-implemented check
-        if url_matches(link, java_urls):
+        # 2. Exact / substring match → already implemented, remove entirely
+        if url_exact_matches(link, java_urls):
             impl_removed += 1
+            continue
+
+        # 3. Same domain → move to the "Similar" section
+        if url_domain_matches(link, java_domains):
+            similar.append(obj)
             continue
 
         cleaned.append(obj)
 
+    # Append the "Similar" block at the end if there are any candidates.
+    if similar:
+        cleaned.append({"sep": _SIMILAR_SEP})
+        cleaned.extend(similar)
+
     with open(path, "w", encoding="utf-8") as f:
         write_json_with_sep_spacing(f, cleaned)
 
-    return initial_valid, dup_removed, impl_removed
+    return initial_valid, dup_removed, impl_removed, len(similar)
 
 
 # ---------------------------------------------------------------------------
@@ -165,29 +216,30 @@ def main():
             continue
 
         try:
-            initial, dups, impl = process_file(path, java_urls)
+            initial, dups, impl, similar = process_file(path, java_urls)
         except json.JSONDecodeError as e:
             print(f"  [ERROR] {filename} has invalid JSON and was skipped: {e}")
-            results.append((filename, -1, 0, 0))
+            results.append((filename, -1, 0, 0, 0))
             continue
 
         removed = dups + impl
         total_removed += removed
-        results.append((filename, initial, dups, impl))
+        results.append((filename, initial, dups, impl, similar))
 
     # Summary
     print("=" * 40)
     print("SUMMARY")
     print("=" * 40)
-    for filename, initial, dups, impl in results:
+    for filename, initial, dups, impl, similar in results:
         print(f"\n{filename}")
         if initial == -1:
             print(f"  [SKIPPED — invalid JSON, fix manually]")
             continue
-        removed  = dups + impl
-        after    = initial - removed
+        removed = dups + impl
+        after   = initial - removed - similar
         print(f"  Valid entries (before):          {initial}")
-        print(f"  Valid entries (after):           {after}")
+        print(f"  Valid entries kept:              {after}")
+        print(f"  Moved to Similar section:        {similar}")
         print(f"  Removed (intra-file duplicates): {dups}")
         print(f"  Removed (already implemented):   {impl}")
 

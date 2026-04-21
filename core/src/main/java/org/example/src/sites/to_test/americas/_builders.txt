@@ -34,3 +34,15 @@ new NoetingerYArmando(), new RolimGoulart(), new RossoAlbaRouges(), new TanoiraC
 new OFarrell(),
 // South America
 new Alfaro(), new BerettaGodoy(), new Bomchil(),
+// Central America
+new VSV(),
+
+// South America
+new BruchouFunesDeRioja(), new CorralRosales(), new Licks(), new Marval(),
+// North America
+new HenlinGibsonHenlin(),
+
+// Central America
+new DelaneyPartners(),
+// North America
+new VegaGuerrero(),

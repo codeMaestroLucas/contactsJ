@@ -45,6 +45,11 @@ public class HopeDugganSilva extends ByNewPage {
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
         String name = extractor.extractLawyerText(lawyer, new By[]{By.className("TituloGrilla")}, "NAME", LawyerExceptions::nameException);
+        try {
+            String[] split = name.split(",");
+            name = split[1] + " "  + split[0];
+        } catch (Exception e) {}
+
         String role = extractor.extractLawyerText(lawyer, new By[]{By.className("SubGrilla")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
