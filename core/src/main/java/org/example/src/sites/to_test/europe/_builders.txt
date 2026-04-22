@@ -1,8 +1,0 @@
-new FerreiraPintoCardigos(), new Florent(), new GPBL(),
-new FBT(), new FellnerWratzfeldPartner(), new ResponseLegal(),
-new EHRechtsanwalte(), new Elmann(),
-new CechovaAndPartners(), new DVDW(), new DVLAW(), new EcovisProventusLaw(),
-new CzabanskiGaluszynski(), new DBDavidSiBaias(), new Delphi(), new DivjakTopicBahtijarevic(), new GZG(),
-new CasePro(), new ChevalierSciales(), new CSAssociados(), new RichardsonLissack(),
-new BruunHjejle(), new Cambrian(), new Dorda(), new Molitor(), new SKS(),
-new ZivkovicSamardzic(),

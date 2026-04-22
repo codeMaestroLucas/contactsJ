@@ -20,8 +20,13 @@ public class KLA extends ByNewPage {
 
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
-        MyDriver.waitForPageToLoad();
+        if (index == 0) {
+            this.driver.get(this.link);
+            MyDriver.waitForPageToLoad();
+        } else {
+            MyDriver.clickOnElement(By.cssSelector("div.jet-filters-pagination__item.prev-next.next"));
+            Thread.sleep(2000);
+        }
     }
 
     @Override
@@ -47,7 +52,7 @@ public class KLA extends ByNewPage {
         return Map.of(
                 "link", link,
                 "name", name,
-                "role", "Lawyer",
+                "role", "",
                 "firm", this.name,
                 "country", "Brazil",
                 "practice_area", "",

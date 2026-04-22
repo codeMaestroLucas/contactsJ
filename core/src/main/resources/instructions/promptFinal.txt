@@ -18,17 +18,11 @@ EOF
 cat > <caminho2>.java << 'EOF'
 <código completo da firma 2>
 EOF
-
-cat >> core/src/main/java/org/example/src/sites/to_test/<continente>/_builders.txt << 'EOF'
-new FirmaA(), new FirmaB(),
-EOF
 ```
 
 Regras do bloco único:
 - Use `cat >` para criar/sobrescrever arquivos `.java` (cria o arquivo e insere o conteúdo).
-- Use `cat >>` para **anexar** ao `_builders.txt` do continente correspondente.
 - Firmas ordenadas **alfabeticamente** dentro do bloco.
-- Builders ao final, agrupados por continente. Omitir continentes sem novas firmas.
 - **Não** incluir `touch`, blocos de código avulsos, comentários explicativos ou qualquer texto fora do bloco bash.
 
 **Diretórios por continente:**
@@ -54,7 +48,7 @@ protected Object getLawyer(WebElement lawyer) throws Exception {
     // Bem como outros dados que puderem ser coletados na 1ª página
 
     String link = this.openNewTab(lawyer);
-    WebElement container = driver.findElement(By.className("gdlr-core-pbf-column-content"));
+    WebElement container = MyDriver.wait.findElement(By.className("gdlr-core-pbf-column-content"));
 
     return Map.of(
             "link", link,
@@ -198,17 +192,6 @@ A ausência dessa chamada invalida a classe. A captura do retorno é obrigatóri
 
 ---
 
-## 4. Modelo do Builder
-
-Cada continente possui um arquivo `_builders.txt` no diretório correspondente em `core/src/main/java/org/example/src/sites/to_test/<continente>/`.
-
-- Continentes (exceto Americas): firmas listadas diretamente, sem comentário de tipo. Máximo 5 por linha.
-- Americas: subdividido internamente em `// North America`, `// Central America`, `// South America`. Máximo 5 por linha.
-
-O builder é gerado como `cat >>` no final do bloco bash único (ver seção 1).
-
----
-
 ## 5. Casos Especiais
 
 **ByNewPage sem validação de role na 1ª página** — delegar a validação para um método auxiliar:
@@ -291,18 +274,6 @@ EOF
 cat > core/src/main/java/org/example/src/sites/to_test/europe/FirmaB.java << 'EOF'
 package org.example.src.sites.to_test.europe;
 // código completo
-EOF
-
-cat >> core/src/main/java/org/example/src/sites/to_test/europe/_builders.txt << 'EOF'
-new FirmaA(), new FirmaB(),
-EOF
-
-cat >> core/src/main/java/org/example/src/sites/to_test/americas/_builders.txt << 'EOF'
-// North America
-new FirmaNA1(),
-
-// South America
-new FirmaSA1(),
 EOF
 ```
 

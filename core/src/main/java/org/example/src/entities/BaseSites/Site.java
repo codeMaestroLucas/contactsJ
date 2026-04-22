@@ -277,6 +277,13 @@ public abstract class Site {
                 // Log all other exceptions
                 errorLogger.log(this.name, e, showLogs);
             }
+
+            if (Validations.isTestMode() && Validations.getTestModeCount() >= this.getMaxLawyersForSite()) {
+                System.out.printf("No more than %d lawyer(s) needed for the firm %s.%n",
+                        this.getMaxLawyersForSite(), this.getName());
+                return true;
+            }
+
         } else {
             System.err.println("Invalid lawyer data structure.");
         }

@@ -95,6 +95,13 @@
                 <artifactId>junit-jupiter</artifactId>
                 <version>RELEASE</version>
             </dependency>
+
+            <!-- Classpath scanning for dynamic firm discovery -->
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>0.10.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
