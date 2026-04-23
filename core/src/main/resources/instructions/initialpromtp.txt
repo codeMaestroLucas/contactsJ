@@ -1,24 +1,42 @@
 Este chat será utilizado para criar scrapers de sites de firmas de advocacia em Java com Selenium.
 
-Vou te enviar a documentação do projeto em pacotes (.zip). Leia tudo com atenção e guarde o contexto — não comente, não explique, apenas absorva.
+Vou te enviar a documentação do projeto em 3 pacotes (.zip). Leia tudo com atenção e guarde o contexto — não comente, não explique, apenas absorva.
 
-## O que vou enviar
+## Pacote 1 — Hierarquia base de scraping
 
-Os pacotes chegam nesta ordem:
+- **ByNewPage.java** — estratégia que abre cada perfil individualmente
+- **ByPage.java** — estratégia com dados visíveis na listagem
+- **Site.java** — classe base da hierarquia
+- **SiteUtils.java** — utilitários de site (filtros, validações de role)
+- **Lawyer.java** — entidade do advogado
+- **MyDriver.java** — wrapper do WebDriver
+- **TreatLawyerParams.java** — formatação de parâmetros
+- **Validations.java** — validações gerais
 
-1. **01documentacao** — hierarquia base (`Site`, `ByPage`, `ByNewPage`, `SiteUtils`, `Lawyer`, `MyDriver`, `Extractor`, `Validations`, `CONFIG`), README completo e diagrama de arquitetura (mermaid)
-2. **02orquestracao** — builder (`FirmsBuilder`, `CompletedFirms`), `ContinentConfig` e todos os JSONs de configuração de continentes e países
-3. **03utils** — utilitários Java (`ErrorLogger`, `FirmsOMonth`, `TreatLawyerParams`, etc.) e scripts Python de manutenção
-4. **04exemplosByPage** — exemplos reais de scrapers `ByPage`
-5. **05exemplosByNewPage** — exemplos reais de scrapers `ByNewPage`
+## Pacote 2 — Utilitários de controle
 
-## Pontos críticos para absorver
+- **VCard.java** — extração de contatos via .vcf
+- **Extractor.java** — extração de texto e atributos de WebElements
+- **ErrorLogger.java** — log de erros de execução
 
-- Existem duas estratégias de scraping: **ByPage** (dados visíveis na listagem) e **ByNewPage** (requer abrir cada perfil individualmente)
-- Os continentes são: **Africa, Asia, Europe, Americas, Oceania**
-- **Americas** é um único array no builder, subdividido internamente por comentários `// North America`, `// Central America`, `// South America` — novas firmas devem sempre ser inseridas sob o sub-comentário correto
-- Novos scrapers vão em `core/src/main/java/org/example/src/sites/to_test/<continente>/` enquanto estão sendo testados
-- O **builder** fica em `firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java`
+## Pacote 3 — Runner, config & recursos
+
+- **Main.java** — ponto de entrada da execução
+- **FirmsBuilder.java** — lista e orquestra as firmas a executar
+- **CONFIG.java** — configurações globais do projeto
+- **ContinentConfig.java** — configuração por continente
+- **LawyerExceptions.java**, **ValidationExceptions.java** — exceções do domínio
+- **map.md** — mapa do sistema
+- **continentsConfig.json** — configuração por continente
+- **countryAliases.json** — mapeamento de nomes de países
+- **countryNameConventions.md** — convenções de nomenclatura de países
+
+## Pontos críticos
+
+- Duas estratégias: **ByPage** (dados na listagem) e **ByNewPage** (abre cada perfil)
+- Continentes: **Africa, Asia, Europe, Americas, Oceania**
+- **Americas** é um único array no builder, subdividido por comentários `// North America`, `// Central America`, `// South America`
+- Novos scrapers vão em `firms/src/main/java/org/example/src/sites/<continente>/`
 
 ## Regra
 

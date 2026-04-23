@@ -5,6 +5,7 @@ import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 import java.util.Map;
 
@@ -43,8 +44,8 @@ public class Homburger extends ByNewPage {
         String role = extractor.extractLawyerText(lawyer, new By[]{By.className("lawyers__lawyer__position")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
+        WebElement container = MyDriver.wait.findElement(By.className("lawyer__contact-menu"));
 
-        WebElement container = driver.findElement(By.className("lawyer__contact-menu"));
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
@@ -55,7 +56,7 @@ public class Homburger extends ByNewPage {
                 "country", "Switzerland",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "41432221000" : socials[1]
+                "phone", socials[1].isEmpty() ? "41432221609" : socials[1]
         );
     }
 }

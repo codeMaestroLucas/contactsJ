@@ -5,6 +5,7 @@ import org.example.src.entities.BaseSites.ByPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 import java.util.Map;
 
@@ -32,17 +33,19 @@ public class Hedman extends ByPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("teammember__info__name")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("teammember__info__title")}, "ROLE", LawyerExceptions::roleException);
         String[] socials = super.getSocials(lawyer.findElements(By.tagName("a")), false);
 
         return Map.of(
-                "link", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("teammember__info__name"), By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException),
-                "name", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("teammember__info__name")}, "NAME", "textContent", LawyerExceptions::nameException),
-                "role", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("teammember__info__title")}, "ROLE", "textContent", LawyerExceptions::roleException),
+                "link", extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector("p.teammember__info__name a")}, "LINK", "href", LawyerExceptions::linkException),
+                "name", name,
+                "role", role,
                 "firm", this.name,
                 "country", "Estonia",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", "3726645250"
+                "phone", socials[1].isEmpty() ? "3726645250" : socials[1]
         );
     }
 }

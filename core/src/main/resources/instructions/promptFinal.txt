@@ -6,7 +6,7 @@
 
 ## 1. Estrutura Obrigatória do Output
 
-O output deve conter **apenas um único bloco bash** que, ao ser colado no terminal, cria todos os arquivos com seu conteúdo e atualiza os builders.
+O output deve conter **apenas um único bloco bash** que, ao ser executado, cria todos os arquivos com seu conteúdo.
 
 Formato do bloco:
 
@@ -26,11 +26,11 @@ Regras do bloco único:
 - **Não** incluir `touch`, blocos de código avulsos, comentários explicativos ou qualquer texto fora do bloco bash.
 
 **Diretórios por continente:**
-- Africa:   `core/src/main/java/org/example/src/sites/to_test/africa`
-- Americas: `core/src/main/java/org/example/src/sites/to_test/americas`
-- Asia:     `core/src/main/java/org/example/src/sites/to_test/asia`
-- Europe:   `core/src/main/java/org/example/src/sites/to_test/europe`
-- Oceania:  `core/src/main/java/org/example/src/sites/to_test/oceania`
+- Africa:   `firms/src/main/java/org/example/src/sites/africa`
+- Americas: `firms/src/main/java/org/example/src/sites/americas`
+- Asia:     `firms/src/main/java/org/example/src/sites/asia`
+- Europe:   `firms/src/main/java/org/example/src/sites/europe`
+- Oceania:  `firms/src/main/java/org/example/src/sites/oceania`
 
 ---
 
@@ -65,12 +65,11 @@ protected Object getLawyer(WebElement lawyer) throws Exception {
 ### 3.1 Package
 
 O package deve corresponder ao diretório de destino:
-- `package org.example.src.sites.to_test;`
-- `package org.example.src.sites.to_test.africa;`
-- `package org.example.src.sites.to_test.americas;`
-- `package org.example.src.sites.to_test.asia;`
-- `package org.example.src.sites.to_test.europe;`
-- `package org.example.src.sites.to_test.oceania;`
+- `package org.example.src.sites.africa;`
+- `package org.example.src.sites.americas;`
+- `package org.example.src.sites.asia;`
+- `package org.example.src.sites.europe;`
+- `package org.example.src.sites.oceania;`
 
 ### 3.2 Filtro de Roles
 

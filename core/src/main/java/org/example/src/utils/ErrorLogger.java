@@ -90,8 +90,7 @@ public class ErrorLogger {
         // Skip validation exceptions - they're not extraction errors
         if (e instanceof ValidationExceptions) return;
 
-        // Silently ignore practice area errors
-        if (e instanceof LawyerExceptions && e.getMessage() != null && e.getMessage().contains("PRACTICE")) return;
+        if (e instanceof LawyerExceptions le && le.category == LawyerExceptions.Category.PRACTICE) return;
 
         String errorType = categorizeError(e);
 
@@ -115,8 +114,7 @@ public class ErrorLogger {
     public void log(String firmName, Exception e, boolean showLogs, String context) {
         if (e instanceof ValidationExceptions) return;
 
-        // Silently ignore practice area errors
-        if (e instanceof LawyerExceptions && e.getMessage() != null && e.getMessage().contains("PRACTICE")) return;
+        if (e instanceof LawyerExceptions le && le.category == LawyerExceptions.Category.PRACTICE) return;
 
         String errorType = categorizeError(e);
 
@@ -138,22 +136,20 @@ public class ErrorLogger {
      * Categorizes an exception into a simple, actionable error type.
      */
     private String categorizeError(Exception e) {
-        if (e instanceof LawyerExceptions) {
-            String msg = e.getMessage();
-            if (msg == null) return "lawyerException";
-
-            if (msg.contains("LINK")) return "linkException";
-            if (msg.contains("NAME")) return "nameException";
-            if (msg.contains("EMAIL")) return "emailException";
-            if (msg.contains("PHONE")) return "phoneException";
-            if (msg.contains("ROLE")) return "roleException";
-            if (msg.contains("COUNTRY")) return "countryException";
-            if (msg.contains("PRACTICE")) return "practiceAreaException";
-
-            return "lawyerException";
+        if (e instanceof LawyerExceptions le) {
+            return switch (le.category) {
+                case LINK     -> "linkException";
+                case NAME     -> "nameException";
+                case EMAIL    -> "emailException";
+                case PHONE    -> "phoneException";
+                case ROLE     -> "roleException";
+                case COUNTRY  -> "countryException";
+                case PRACTICE -> "practiceAreaException";
+                case SOCIALS  -> "socialsException";
+                default       -> "lawyerException";
+            };
         }
 
-        // Extract method name from stack trace for other exceptions
         String methodName = extractMethodFromStack(e);
         if (methodName != null) {
             return methodName + "Error";

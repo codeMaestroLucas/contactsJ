@@ -5,6 +5,7 @@ import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 import java.util.Map;
 
@@ -14,8 +15,7 @@ public class TEGOS extends ByNewPage {
         super(
                 "TEGOS",
                 "https://tegos.legal/people/",
-                1,
-                2
+                1
         );
     }
 
@@ -23,10 +23,6 @@ public class TEGOS extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
-        MyDriver.clickOnElementMultipleTimes(
-                By.xpath("/html/body/main/section[2]/div/div[2]/div[1]/div[2]/span"),
-                8, 0.5
-        );
     }
 
     @Override
@@ -46,11 +42,10 @@ public class TEGOS extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         String name = extractor.extractLawyerText(lawyer, new By[]{By.className("people-list-title")}, "NAME", LawyerExceptions::nameException);
         String role = extractor.extractLawyerText(lawyer, new By[]{By.className("people-list-tags")}, "ROLE", LawyerExceptions::roleException);
-        String country = extractor.extractLawyerText(lawyer, new By[]{By.className("people-list-location")}, "COUNTRY", LawyerExceptions::countryException);
 
         String link = this.openNewTab(lawyer);
+        WebElement container = MyDriver.wait.findElement(By.className("single-people-intro-right-info"));
 
-        WebElement container = driver.findElement(By.className("single-people-intro-right-info"));
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
@@ -58,10 +53,10 @@ public class TEGOS extends ByNewPage {
                 "name", name,
                 "role", role,
                 "firm", this.name,
-                "country", country,
+                "country", "Estonia",
                 "practice_area", "",
                 "email", socials[0],
-                "phone", socials[1].isEmpty() ? "3726257700" : socials[1]
+                "phone", socials[1].isEmpty() ? "3725151115" : socials[1]
         );
     }
 }

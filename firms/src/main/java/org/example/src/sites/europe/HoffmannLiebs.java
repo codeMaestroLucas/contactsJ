@@ -5,6 +5,7 @@ import org.example.src.entities.BaseSites.ByNewPage;
 import org.example.src.entities.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class HoffmannLiebs extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("ul.wse-result > li"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("ul.wse-results > li"));
         return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("wse-result-position")}, true);
     }
 
@@ -39,13 +40,13 @@ public class HoffmannLiebs extends ByNewPage {
 
     @Override
     public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("wse-result-name")}, "NAME", "textContent", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("wse-result-position")}, "ROLE", "textContent", LawyerExceptions::roleException);
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("wse-result-name")}, "NAME", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("wse-result-position")}, "ROLE", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
+        WebElement container = MyDriver.wait.findElement(By.className("elementor-widget-populated"));
 
-        WebElement container = driver.findElement(By.xpath("/html/body/div[1]/section[1]/div/div/div/section/div/div[1]/div"));
-        String[] socials = super.getSocialsFromText(container.getAttribute("innerHTML"));
+        String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
 
         return Map.of(
                 "link", link,

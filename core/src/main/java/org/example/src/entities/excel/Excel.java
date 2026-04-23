@@ -209,8 +209,6 @@ public class Excel {
             for (int i = 0; i < args.length; i++) {
                 row.createCell(i).setCellValue(args[i]);
             }
-
-            this.saveSheet();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

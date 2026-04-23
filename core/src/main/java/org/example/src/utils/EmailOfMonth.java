@@ -3,27 +3,41 @@ package org.example.src.utils;
 import java.io.*;
 import java.nio.file.*;
 import java.time.LocalDate;
+import java.util.*;
 
 public class EmailOfMonth {
     private static final String currentFormattedDate = String.format(
-            "%d/%d\n",LocalDate.now().getMonthValue(), LocalDate.now().getYear()
+            "%d/%d\n", LocalDate.now().getMonthValue(), LocalDate.now().getYear()
     );
+    private static final Map<String, Set<String>> cache = new HashMap<>();
 
-    /**
-     * Formats the string line to be inserted in the file.
-     */
     private static String generateStringToFile(String email) {
         int emptySpaces = 70 - email.length();
         return email + " ".repeat(emptySpaces) + currentFormattedDate;
     }
 
+    private static Set<String> getOrLoad(String emailFilePath) {
+        return cache.computeIfAbsent(emailFilePath, path -> {
+            Set<String> emails = new HashSet<>();
+            try {
+                String content = Files.readString(Path.of(path));
+                for (String line : content.split("\n")) {
+                    String trimmed = line.trim();
+                    if (!trimmed.isEmpty()) {
+                        String[] parts = trimmed.split("\\s+");
+                        if (parts.length > 0 && !parts[0].isEmpty()) {
+                            emails.add(parts[0].toLowerCase());
+                        }
+                    }
+                }
+            } catch (IOException ignored) {}
+            return emails;
+        });
+    }
 
-    /**
-     * Registers the given email in the file with the current month and year.
-     */
     public static void registerEmailOfMonth(String email, String emailFilePath) {
+        getOrLoad(emailFilePath).add(email.toLowerCase().trim());
         String line = generateStringToFile(email);
-
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(emailFilePath, true))) {
             writer.write(line);
         } catch (IOException e) {
@@ -31,19 +45,7 @@ public class EmailOfMonth {
         }
     }
 
-
-    /**
-     * Checks if the email is already registered in the file for the current month.
-     */
     public static boolean isEmailRegisteredInMonth(String email, String emailFilePath) {
-        try {
-            String content = Files.readString(Path.of(emailFilePath));
-            return content.toLowerCase().contains(email);
-
-        } catch (IOException e) {
-            System.err.println("Error reading file: " + e.getMessage());
-            return false;
-        }
+        return getOrLoad(emailFilePath).contains(email.toLowerCase().trim());
     }
 }
-

@@ -5,11 +5,9 @@ import org.example.src.entities.Lawyer;
 import org.example.src.utils.Validations;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 public final class Sheet extends Excel {
-    private static Sheet INSTANCE;
 
     private Set<String> lastCountries = new HashSet<>();
     private String lastFirm = "";
@@ -20,11 +18,12 @@ public final class Sheet extends Excel {
         this.eraseLastSheet();
     }
 
+    private static final class Holder {
+        static final Sheet INSTANCE = new Sheet();
+    }
+
     public static Sheet getINSTANCE() {
-        if (Objects.isNull(INSTANCE)) {
-            INSTANCE = new Sheet();
-        }
-        return INSTANCE;
+        return Holder.INSTANCE;
     }
 
 

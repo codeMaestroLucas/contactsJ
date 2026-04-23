@@ -7,76 +7,51 @@ _SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, *[".."] * 9))
 
 PACKAGES = {
-    # ── Documentação principal ────────────────────────────────────────────────
-    # Base da hierarquia, entidades centrais, README e diagrama de arquitetura.
+    # ── Pacote 1: Hierarquia base de scraping ────────────────────────────────
+    # Classes fundamentais que todo scraper herda ou usa diretamente.
     "01documentacao": [
-        "core/src/main/java/org/example/src/entities/BaseSites/Site.java",
-        "core/src/main/java/org/example/src/entities/BaseSites/ByPage.java",
         "core/src/main/java/org/example/src/entities/BaseSites/ByNewPage.java",
+        "core/src/main/java/org/example/src/entities/BaseSites/ByPage.java",
+        "core/src/main/java/org/example/src/entities/BaseSites/Site.java",
         "core/src/main/java/org/example/src/entities/BaseSites/SiteUtils.java",
         "core/src/main/java/org/example/src/entities/Lawyer.java",
         "core/src/main/java/org/example/src/entities/MyDriver.java",
-        "core/src/main/java/org/example/src/utils/Extractor.java",
-        "core/src/main/java/org/example/src/utils/Validations.java",
-        "core/src/main/java/org/example/src/CONFIG.java",
-        "README.md",
-    ],
-    # ── Orquestração e configuração de continentes ────────────────────────────
-    # Builder unificado (arrays por continente), CompletedFirms (menu CLI +
-    # peso de continentes), ContinentConfig, e JSONs de configuração.
-    "02orquestracao": [
-        "firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java",
-        "firms/src/main/java/org/example/src/utils/myInterface/CompletedFirms.java",
-        "core/src/main/java/org/example/src/utils/ContinentConfig.java",
-        "firms/src/main/java/org/example/Main.java",
-        "core/src/main/resources/baseFiles/json/continentsConfig.json",
-        "core/src/main/resources/baseFiles/json/countriesToAvoidPermanent.json",
-        "core/src/main/java/org/example/src/utils/EmailOfMonth.java",
-        "core/src/main/resources/baseFiles/json/countriesToAvoidTemporary.json"
-    ],
-    # ── Utilitários e scripts Python ──────────────────────────────────────────
-    # Utils Java (validação, extração, logging) + scripts de manutenção Python.
-    "03utils": [
-        "core/src/main/java/org/example/src/utils/ErrorLogger.java",
-        "core/src/main/java/org/example/src/utils/FirmsOMonth.java",
-        "core/src/main/java/org/example/src/utils/NoSleep.java",
         "core/src/main/java/org/example/src/utils/TreatLawyerParams.java",
+        "core/src/main/java/org/example/src/utils/Validations.java",
+    ],
+
+    # ── Pacote 2: Utilitários de controle ────────────────────────────
+    # Entidades Utilitários de rastreamento de execução.
+    "02utils": [
+        "core/src/main/java/org/example/src/utils/VCard.java",
+        "core/src/main/java/org/example/src/utils/Extractor.java",
+        "core/src/main/java/org/example/src/utils/ErrorLogger.java",
+    ],
+
+    # ── Pacote 3: Runner, config & exceções ──────────────────────────────────
+    # Ponto de entrada, configuração global, orquestração e exceções.
+    "03runner_config": [
+        "firms/src/main/java/org/example/Main.java",
+        "firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java",
+        "core/src/main/java/org/example/src/CONFIG.java",
+        "core/src/main/java/org/example/src/utils/ContinentConfig.java",
+        "core/src/main/java/org/example/exceptions/LawyerExceptions.java",
+        "core/src/main/java/org/example/exceptions/ValidationExceptions.java",
+        "core/src/main/resources/instructions/map.md",
+        "core/src/main/resources/baseFiles/json/continentsConfig.json",
         "core/src/main/resources/baseFiles/json/countryAliases.json",
-        "core/src/main/resources/baseFiles/json/practiceAreas.json",
         "core/src/main/resources/instructions/countryNameConventions.md",
-        "mermaidStructure.txt",
-    ],
-    # ── Exemplos de firmas (ByPage strategy) ─────────────────────────────────
-    "04exemplosByPage": [
-        "firms/src/main/java/org/example/src/sites/europe/Roschier.java",
-        "firms/src/main/java/org/example/src/sites/mundial/TaylorWessing.java",
-        "firms/src/main/java/org/example/src/sites/europe/Aera.java",
-        "firms/src/main/java/org/example/src/sites/mundial/AlTamimi.java",
-        "firms/src/main/java/org/example/src/sites/americas/Andersen.java",
-        "firms/src/main/java/org/example/src/sites/mundial/Blakes.java",
-        "firms/src/main/java/org/example/src/sites/americas/ClarkWilson.java",
-        "firms/src/main/java/org/example/src/sites/europe/DechertLLP.java",
-        "firms/src/main/java/org/example/src/sites/europe/HannesSnellman.java",
-        "firms/src/main/java/org/example/src/sites/mundial/Kinstellar.java",
-    ],
-    # ── Exemplos de firmas (ByNewPage strategy) ───────────────────────────────
-    "05exemplosByNewPage": [
-        "firms/src/main/java/org/example/src/sites/europe/SchellenbergWittmer.java",
-        "firms/src/main/java/org/example/src/sites/oceania/Gadens.java",
-        "firms/src/main/java/org/example/src/sites/europe/ABGIP.java",
-        "firms/src/main/java/org/example/src/sites/mundial/ALGoodbody.java",
-        "firms/src/main/java/org/example/src/sites/americas/ArthurCox.java",
-        "firms/src/main/java/org/example/src/sites/americas/AsafoAndCo.java",
-        "firms/src/main/java/org/example/src/sites/europe/Borenius.java",
-        "firms/src/main/java/org/example/src/sites/europe/BurgesSalmon.java",
-        "firms/src/main/java/org/example/src/sites/africa/ENSAfrica.java",
-        "firms/src/main/java/org/example/src/sites/mundial/Ellex.java",
     ],
 }
 
 # Files that share the same basename across packages need a custom archive name.
 # Key: relative path (from PROJECT_ROOT) → name to use inside the zip.
-ARCNAME_OVERRIDES = {}
+ARCNAME_OVERRIDES = {
+    "firms/src/main/java/org/example/src/utils/myInterface/FirmsBuilder.java": "FirmsBuilder.java",
+    "firms/src/main/java/org/example/src/utils/myInterface/CompletedFirms.java": "CompletedFirms.java",
+    "core/src/main/java/org/example/src/utils/myInterface/MyInterfaceUtls.java": "MyInterfaceUtls.java",
+    "core/src/main/java/org/example/src/utils/validation/EmailDuplicateChecker.java": "EmailDuplicateChecker.java",
+}
 
 DOWNLOADS = os.path.join(os.path.expanduser("~"), "Downloads")
 OUTPUT = os.path.join(DOWNLOADS, "documentação.zip")

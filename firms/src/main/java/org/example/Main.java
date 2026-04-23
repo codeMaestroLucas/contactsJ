@@ -26,6 +26,7 @@ public class Main {
     private static final Reports reports = Reports.getINSTANCE();
     private static final MyInterfaceUtls interfaceUtls = CompletedFirms.interfaceUtls;
     private static final List<Site> failedFirms = new ArrayList<>();
+    private static final int DRIVER_RESTART_INTERVAL = 35;
 
     private static ContactsAlreadyRegisteredSheet getRegisteredContacts() {
         ContactsAlreadyRegisteredSheet contactsSheet = new ContactsAlreadyRegisteredSheet();
@@ -34,19 +35,27 @@ public class Main {
     }
 
     /**
-     * Searches for lawyers across all active firms, stopping once the global cap is reached.
+     * Core execution loop: runs a list of sites with the given timeout and options.
      *
-     * @param alreadyCollected number of lawyers already registered in previous phases,
-     *                         so that the global limit is shared across all calls.
+     * @param sites                 sites to run
+     * @param timeoutMinutes        per-site timeout
+     * @param collectFailures       if true, timed-out/errored sites go into failedFirms
+     * @param enableRestartInterval if true, restarts the browser every DRIVER_RESTART_INTERVAL firms
+     * @param alreadyCollected      lawyers already registered before this call (for the global cap)
+     * @param headerPrefix          prefix for the console header (e.g. "[RETRY] ")
      */
-    private static int searchLawyersInWeb(int alreadyCollected, boolean collectFailures) throws InterruptedException {
+    private static int runSites(
+            List<Site> sites,
+            int timeoutMinutes,
+            boolean collectFailures,
+            boolean enableRestartInterval,
+            int alreadyCollected,
+            String headerPrefix
+    ) throws InterruptedException {
         if (collectFailures) failedFirms.clear();
 
         int totalLawyersRegistered = 0;
         int firmsProcessed = 0;
-        final int DRIVER_RESTART_INTERVAL = 35;
-
-        List<Site> sites = CompletedFirms.constructFirms();
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         for (Site site : sites) {
@@ -55,7 +64,7 @@ public class Main {
                 break;
             }
 
-            interfaceUtls.header(site.name);
+            interfaceUtls.header(headerPrefix + site.name);
             Stopwatch siteTimer = new Stopwatch();
             siteTimer.start();
 
@@ -67,7 +76,7 @@ public class Main {
             boolean needsNewExecutor = false;
 
             try {
-                future.get(CONFIG.TIMEOUT_MINUTES, TimeUnit.MINUTES);
+                future.get(timeoutMinutes, TimeUnit.MINUTES);
 
                 if (site.lawyersRegistered > 0) {
                     FirmsOMonth.registerFirmMonth(site.name);
@@ -86,9 +95,7 @@ public class Main {
 
             } catch (ExecutionException e) {
                 future.cancel(true);
-                if (e.getCause() != null) {
-                    e.getCause().printStackTrace();
-                }
+                if (e.getCause() != null) e.getCause().printStackTrace();
                 if (collectFailures) failedFirms.add(site);
 
             } finally {
@@ -96,15 +103,11 @@ public class Main {
                 reports.createReportRow(site, siteTimer.format());
                 firmsProcessed++;
 
-                // Clean up browser state between sites (clear cookies, close extra tabs)
                 try {
                     MyDriver.cleanUpBetweenSites();
                 } catch (Exception ignored) {}
 
-                // Preventive restart every N firms to avoid browser memory/state degradation.
-                // Re-execute the same firm on the fresh browser with a 2-minute timeout,
-                // since it ran on an accumulated-state browser and may have been affected.
-                if (firmsProcessed % DRIVER_RESTART_INTERVAL == 0) {
+                if (enableRestartInterval && firmsProcessed % DRIVER_RESTART_INTERVAL == 0) {
                     MyDriver.restartDriver();
 
                     int lawyersBeforeRetry = site.lawyersRegistered;
@@ -134,9 +137,6 @@ public class Main {
                     }
                 }
 
-                // If the previous site timed out or was interrupted, the executor's thread
-                // may still be running or have a stale interrupt flag.
-                // Recreate the executor and browser so the next site gets a fresh, clean state.
                 if (needsNewExecutor) {
                     executor.shutdownNow();
                     executor = Executors.newSingleThreadExecutor();
@@ -152,85 +152,21 @@ public class Main {
     }
 
     /**
-     * Re-runs firms that failed (timeout or error) during Phase 1 with a fresh browser
-     * and a reduced 2-minute timeout. Failures here are not retried again.
-     *
-     * @param alreadyCollected total lawyers already registered, for shared global cap
-     * @return number of lawyers registered during the retry
+     * Searches for lawyers across all active firms, stopping once the global cap is reached.
+     */
+    private static int searchLawyersInWeb(int alreadyCollected, boolean collectFailures) throws InterruptedException {
+        List<Site> sites = CompletedFirms.constructFirms();
+        return runSites(sites, CONFIG.TIMEOUT_MINUTES, collectFailures, true, alreadyCollected, "");
+    }
+
+    /**
+     * Re-runs firms that failed during Phase 1 with a fresh browser and a 2-minute timeout.
      */
     private static int retryFailedFirms(int alreadyCollected) throws InterruptedException {
         if (failedFirms.isEmpty()) return 0;
-
         System.out.println("[Retry] Restarting browser before retry phase...");
         MyDriver.restartDriver();
-
-        int totalLawyersRegistered = 0;
-        final int RETRY_TIMEOUT_MINUTES = 2;
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-
-        for (Site site : failedFirms) {
-            if (Thread.currentThread().isInterrupted()
-                    || (alreadyCollected + totalLawyersRegistered) >= (CONFIG.TOTAL_LAWYERS_TO_GET + CONFIG.LAWYERS_IN_FILTER)) {
-                break;
-            }
-
-            interfaceUtls.header("[RETRY] " + site.name);
-            Stopwatch siteTimer = new Stopwatch();
-            siteTimer.start();
-
-            Future<Void> future = executor.submit(() -> {
-                site.searchForLawyers(false);
-                return null;
-            });
-
-            boolean needsNewExecutor = false;
-
-            try {
-                future.get(RETRY_TIMEOUT_MINUTES, TimeUnit.MINUTES);
-
-                if (site.lawyersRegistered > 0) {
-                    FirmsOMonth.registerFirmMonth(site.name);
-                    totalLawyersRegistered += site.lawyersRegistered;
-                } else if (site.lawyersAttempted > 0) {
-                    FirmsExhausted.register(site.name);
-                }
-
-            } catch (TimeoutException e) {
-                System.err.println("[Retry] Timeout exceeded for site: " + site.name);
-                future.cancel(true);
-                needsNewExecutor = true;
-
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                System.err.println("[Retry] Search interrupted for site: " + site.name);
-
-            } catch (ExecutionException e) {
-                System.err.println("[Retry] Error in " + site.name + ": " + e.getMessage());
-                future.cancel(true);
-                if (e.getCause() != null) {
-                    e.getCause().printStackTrace();
-                }
-
-            } finally {
-                siteTimer.stop();
-                reports.createReportRow(site, siteTimer.format());
-
-                try {
-                    MyDriver.cleanUpBetweenSites();
-                } catch (Exception ignored) {}
-
-                if (needsNewExecutor) {
-                    executor.shutdownNow();
-                    executor = Executors.newSingleThreadExecutor();
-                    MyDriver.restartDriver();
-                }
-
-                Thread.sleep(2500);
-            }
-        }
-
-        executor.shutdownNow();
-        return totalLawyersRegistered;
+        return runSites(new ArrayList<>(failedFirms), 2, false, false, alreadyCollected, "[RETRY] ");
     }
 
     /** Returns [contactLawyers, contactFirms, webLawyers1, retryLawyers] */
@@ -238,7 +174,6 @@ public class Main {
     private static int[] performCompleteSearch() throws InterruptedException {
         ContactsAlreadyRegisteredSheet sheet = getRegisteredContacts();
 
-        // Compute BEFORE Phase 2 so the cap is shared with Phase 1's results
         int contactLawyers = sheet.getTotalLawyers();
         int contactFirms   = sheet.getLawFirmsCollectedCount();
 
@@ -303,7 +238,7 @@ public class Main {
 
         int contactLawyers = 0, contactFirms = 0, webLawyers1 = 0, retryLawyers = 0, webLawyers2 = 0;
 
-        NoSleep.preventSleep(); // block sleep
+        NoSleep.preventSleep();
         EmailDuplicateChecker.getINSTANCE().login();
         try {
             int[] phase1 = performCompleteSearch();
@@ -312,25 +247,18 @@ public class Main {
             webLawyers1    = phase1[2];
             retryLawyers   = phase1[3];
 
-            // Pass what was already collected so the global cap is shared between both phases
             webLawyers2 = searchLawyersInWeb(contactLawyers + webLawyers1 + retryLawyers, false);
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
-            // Write any remaining logs that weren't flushed
             ErrorLogger.getINSTANCE().flushAllLogs();
-            // Sort Sheet.xlsx rows: D → J → E → F → C
             Sheet.getINSTANCE().sortRows();
-            // Close the Sheet workbook to release the file handle
             Sheet.getINSTANCE().closeWorkbook();
-            // Sort Reports.xlsx: lawyersRegistered ASC, then time DESC
             reports.sortRows();
-            // Close the reports workbook to ensure all data is saved
             reports.closeWorkbook();
-            // Close the email duplicate checker session
             EmailDuplicateChecker.getINSTANCE().close();
-            NoSleep.allowSleep(); // allow sleep again when finished
+            NoSleep.allowSleep();
 
             String totalTime = globalTimer.format();
             printExecutionSummary(contactLawyers, contactFirms, webLawyers1, retryLawyers, webLawyers2, totalTime);
