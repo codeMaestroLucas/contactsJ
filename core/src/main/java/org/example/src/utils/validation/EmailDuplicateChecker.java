@@ -101,14 +101,19 @@ public final class EmailDuplicateChecker {
     }
 
     private void launchChromeWithDebugging() throws Exception {
-        System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
-        System.out.println(  "║  Abrindo Chrome para autenticação manual...                  ║");
-        System.out.println(  "╠══════════════════════════════════════════════════════════════╣");
-        System.out.println(  "║  1. Acesse:  globallawexperts.com                            ║");
-        System.out.println(  "║  2. Passe o Cloudflare                                       ║");
-        System.out.println(  "║  3. Faça login                                               ║");
-        System.out.println(  "║  4. Volte aqui e pressione ENTER para continuar              ║");
-        System.out.println(  "╚══════════════════════════════════════════════════════════════╝\n");
+        String sep = "═".repeat(102);
+        System.out.println("\n╔" + sep + "╗");
+        System.out.printf(   "║  %-100s║%n", "Abrindo Chrome para autenticação manual...");
+        System.out.println(   "╠" + sep + "╣");
+        System.out.printf(   "║  %-100s║%n", "1. Acesse:");
+        System.out.printf(   "║     %-97s║%n", LOGIN_URL);
+        System.out.printf(   "║  %-100s║%n", "2. Faça login");
+        System.out.printf(   "║     USUÁRIO: %-88s║%n", USERNAME);
+        System.out.printf(   "║     SENHA:   %-88s║%n", PASSWORD);
+        System.out.printf(   "║  %-100s║%n", "3. Acesse:");
+        System.out.printf(   "║     %-97s║%n", DUPLICATE_CHECKER_URL);
+        System.out.printf(   "║  %-100s║%n", "4. Volte aqui e pressione ENTER para continuar");
+        System.out.println(   "╚" + sep + "╝\n");
 
         new ProcessBuilder(
             "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
