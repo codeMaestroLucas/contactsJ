@@ -25,12 +25,15 @@ Regras do bloco único:
 - Firmas ordenadas **alfabeticamente** dentro do bloco.
 - **Não** incluir `touch`, blocos de código avulsos, comentários explicativos ou qualquer texto fora do bloco bash.
 
+> ⚠️ **OBRIGATÓRIO: todas as firmas devem ser criadas dentro do diretório `to_test`.**
+> Nunca escrever direto em `sites/africa`, `sites/europe`, etc. — sempre `sites/to_test/<continente>`.
+
 **Diretórios por continente:**
-- Africa:   `firms/src/main/java/org/example/src/sites/africa`
-- Americas: `firms/src/main/java/org/example/src/sites/americas`
-- Asia:     `firms/src/main/java/org/example/src/sites/asia`
-- Europe:   `firms/src/main/java/org/example/src/sites/europe`
-- Oceania:  `firms/src/main/java/org/example/src/sites/oceania`
+- Africa:   `core/src/main/java/org/example/src/sites/to_test/africa`
+- Americas: `core/src/main/java/org/example/src/sites/to_test/americas`
+- Asia:     `core/src/main/java/org/example/src/sites/to_test/asia`
+- Europe:   `core/src/main/java/org/example/src/sites/to_test/europe`
+- Oceania:  `core/src/main/java/org/example/src/sites/to_test/oceania`
 
 ---
 
@@ -64,12 +67,12 @@ protected Object getLawyer(WebElement lawyer) throws Exception {
 
 ### 3.1 Package
 
-O package deve corresponder ao diretório de destino:
-- `package org.example.src.sites.africa;`
-- `package org.example.src.sites.americas;`
-- `package org.example.src.sites.asia;`
-- `package org.example.src.sites.europe;`
-- `package org.example.src.sites.oceania;`
+O package deve corresponder ao diretório `to_test` de destino:
+- `package org.example.src.sites.to_test.africa;`
+- `package org.example.src.sites.to_test.americas;`
+- `package org.example.src.sites.to_test.asia;`
+- `package org.example.src.sites.to_test.europe;`
+- `package org.example.src.sites.to_test.oceania;`
 
 ### 3.2 Filtro de Roles
 
@@ -160,7 +163,7 @@ String emailName = TreatLawyerParams.treatNameForEmail(name);
 #### 3.3.5 Regras operacionais
 
 - **Telefone fallback**: `"phone", socials[1].isEmpty() ? "xxxx" : socials[1]` — substituir `"xxxx"` pelo número fixo da firma quando conhecido.
-- **WebDriverWait**: sempre usar `MyDriver.wait` — nunca instanciar `new WebDriverWait(driver, ...)` local.
+- **WebDriverWait**: sempre usar `MyDriver.wait` — nunca instanciar `new WebDriverWait(driver, ...)` local. Usar `MyDriver.wait.findElement(...)` / `MyDriver.wait.findElements(...)` diretamente — **nunca** `MyDriver.wait.until(d -> d.findElement(...))`.
 - **openNewTab**: sempre capturar o retorno — `String link = this.openNewTab(lawyer);`.
 - **Indentação do `super()`**: argumentos com um nível a menos que o padrão do arquivo.
 - Preferir funções de `SiteUtils.java` e `Site.java` antes de implementar lógica própria.
@@ -257,6 +260,7 @@ Retorna `String[]{ email, phone }` — strings vazias quando não encontrado.
 | 6 | `By[] nameBy = {...}` declarado fora e passado como variável | `new By[] {...}` inline dentro do extractor |
 | 7 | `extractor.extractLawyerText(driver, ...)` direto no driver | `WebElement container = driver.findElement(...);` → `extractor.extractLawyerText(container, ...)` |
 | 8 | `VCard` incluído sem ser solicitado nos dados da firma | Remover — `VCard` só é usado quando explicitamente pedido (ver seção 6) |
+| 9 | `MyDriver.wait.until(d -> d.findElement(...))` | `MyDriver.wait.findElement(...)` — `wait` já expõe `findElement` diretamente |
 
 ---
 

@@ -15,19 +15,27 @@ public class SPVS extends ByPage {
         super(
                 "SPVS",
                 "https://spvs.ro/teodora-stoian-en/",
-                1
+                5
         );
     }
 
+    String[] links = {
+            "https://spvs.ro/teodora-stoian-en/",
+            "https://spvs.ro/liria-poenaru-en/",
+            "https://spvs.ro/alexandru-volcov-en/",
+            "https://spvs.ro/liviu-samoila-en/",
+            "https://spvs.ro/diana-vlasceanu-en/"
+    };
+
     @Override
     protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
+        this.driver.get(links[index]);
         MyDriver.waitForPageToLoad();
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("div.tcb-col[data-css*='tve-u-63fd20add08625']"));
+        return MyDriver.wait.findElements(By.tagName("body"));
     }
 
     @Override
@@ -42,7 +50,7 @@ public class SPVS extends ByPage {
                 "role", role,
                 "firm", this.name,
                 "country", "Romania",
-                "practice_area", extractor.extractLawyerText(lawyer, new By[]{By.cssSelector("div[data-css*='tve-u-63fd20add08670']")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
+                "practice_area", "",
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "40729822500" : socials[1]
         );

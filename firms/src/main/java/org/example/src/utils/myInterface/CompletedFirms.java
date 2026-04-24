@@ -645,7 +645,7 @@ public class CompletedFirms {
         }
 
         System.out.println("=".repeat(lineLength));
-        System.out.printf(" %sTotal esgotadas:%s %s%d%s  %s(apague data/exhaustedFirms.txt para resetar)%s%n",
+        System.out.printf(" %sTotal esgotadas:%s %s%d%s%n",
                 BOLD, RESET, RED, names.size(), RESET, DIM, RESET);
         System.out.println("=".repeat(lineLength));
     }

@@ -23,42 +23,44 @@ public class BorelBarbey extends ByNewPage {
     }
 
     @Override
-    protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector(".oneTeamInLoopResultGrid"));
-        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.cssSelector(".poste")}, true);
+    protected void accessPage(int index) throws InterruptedException {
+        this.driver.get(this.link);
+        MyDriver.waitForPageToLoad();
     }
 
     @Override
-    protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector(".avocat_name")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.cssSelector(".poste")}, "ROLE", LawyerExceptions::roleException);
+    protected List<WebElement> getLawyersInPage() {
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.oneTeamInLoopResultGrid"));
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("poste")}, true);
+    }
+
+    @Override
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
+        String link = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("bg-wrap-link")}, "LINK", "href", LawyerExceptions::linkException);
+        MyDriver.openNewTab(link);
+        return link;
+    }
+
+    @Override
+    public Object getLawyer(WebElement lawyer) throws Exception {
+        String name = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("avocat_name")}, "NAME", "textContent", LawyerExceptions::nameException);
+        String role = extractor.extractLawyerAttribute(lawyer, new By[]{By.className("poste")}, "ROLE", "textContent", LawyerExceptions::roleException);
 
         String link = this.openNewTab(lawyer);
-        WebElement container = MyDriver.wait.findElement(By.cssSelector(".wpb_wrapper"));
+        WebElement container = MyDriver.wait.findElement(By.className("wpb_wrapper"));
 
-        String vcardHref = extractor.extractLawyerAttribute(container, new By[]{By.cssSelector("a[href*='vcard']")}, "VCARD", "href", LawyerExceptions::socialsException);
-        
+        String vcardHref = extractor.extractLawyerAttribute(container, new By[]{By.className("qravocatLink")}, "VCARD", "href", LawyerExceptions::socialsException);
         String[] socials = vCard.getSocials(vcardHref);
-        String email = socials[0];
-        String phone = socials[1];
 
         return Map.of(
                 "link", link,
                 "name", name,
                 "role", role,
+                "firm", this.name,
                 "country", "Switzerland",
-                "email", email,
-                "phone", phone.isEmpty() ? "+41 22 707 18 00" : phone
+                "practice_area", "",
+                "email", socials[0],
+                "phone", socials[1].isEmpty() ? "41227071800" : socials[1]
         );
-    }
-
-    @Override
-    protected void accessPage(int index) throws InterruptedException {
-        this.driver.get(this.link);
-    }
-
-    @Override
-    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
     }
 }

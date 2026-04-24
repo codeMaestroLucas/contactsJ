@@ -34,7 +34,6 @@ public class Uhthoff extends ByPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = {"partner", "senior associate"};
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10));
 

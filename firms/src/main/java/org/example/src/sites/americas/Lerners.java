@@ -53,7 +53,7 @@ public class Lerners extends ByNewPage {
 
         WebElement container = driver.findElement(By.cssSelector("[data-framer-name='contact']"));
         String[] socials = super.getSocials(container.findElements(By.tagName("a")), false);
-        String country = socials[0].startsWith("+44") ? "London" : "Canada";
+        String country = socials[0].startsWith("+44") ? "England" : "Canada";
 
         return Map.of(
                 "link", link,

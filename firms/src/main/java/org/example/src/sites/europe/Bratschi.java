@@ -14,7 +14,7 @@ public class Bratschi extends ByNewPage {
     public Bratschi() {
         super(
                 "Bratschi",
-                "https://www.bratschi.ch/en/team?search=&personFunktion%5B13%5D=51543&personFunktion%5B4%5D=51677&personFunktion%5B9%5D=51662&personFunktion%5B11%5D=51568&offset=0&limit=12&viewmode=card",
+                "https://www.bratschi.ch/en/team?search=&personFunktion%5B11%5D=51663&personFunktion%5B4%5D=51677&personFunktion%5B5%5D=54170&personFunktion%5B6%5D=127024&personFunktion%5B7%5D=202451&personFunktion%5B10%5D=51662&personFunktion%5B12%5D=51568&personFunktion%5B13%5D=51612&personFunktion%5B14%5D=51543&offset=0&limit=12&viewmode=card",
                 1
         );
     }
@@ -23,12 +23,17 @@ public class Bratschi extends ByNewPage {
     protected void accessPage(int index) throws InterruptedException {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+
+        // More than 30 clicks
+        MyDriver.clickOnElementMultipleTimes(
+                By.id("load-more-oob"),
+                3, 0.5
+        );
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("article.border-bottom"));
-        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.cssSelector("small.text-grey")}, true);
+        return MyDriver.wait.findElements(By.cssSelector("article.border-bottom"));
     }
 
     @Override

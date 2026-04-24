@@ -1,12 +1,12 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.americas.VSV;
+import org.example.src.sites.to_test.europe.*;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends VSV {
-    public static final boolean HEADLESS = true;
+class MyTestPage extends PotJonker {
+    public static final boolean HEADLESS = false;
 
     public MyTestPage() { super(); }
 

@@ -36,8 +36,6 @@ public class GaiaSilvaGaedeAndAssociados extends ByNewPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{"partner"};
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
@@ -45,7 +43,7 @@ public class GaiaSilvaGaedeAndAssociados extends ByNewPage {
                             By.className("team-card")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, true);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }

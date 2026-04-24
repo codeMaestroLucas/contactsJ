@@ -37,10 +37,6 @@ public class RobortellaEPeres extends ByPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        String[] validRoles = new String[]{
-                "partner"
-        };
-
         try {
             WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
             List<WebElement> lawyers = wait.until(
@@ -48,7 +44,7 @@ public class RobortellaEPeres extends ByPage {
                             By.cssSelector("div.equipecarrossel-infos")
                     )
             );
-            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false, validRoles);
+            return this.siteUtl.filterLawyersInPage(lawyers, byRoleArray, false);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }

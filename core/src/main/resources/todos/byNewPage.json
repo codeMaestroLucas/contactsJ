@@ -1,7 +1,11 @@
 [
+
+
   {
     "sep": "=== Africa ==="
   },
+
+
   {
     "name": "Nakudu Law Partners",
     "link": "https://nakudulawpartners.com/nakudu--our-team.html"
@@ -13,9 +17,13 @@
   },
 
 
+
+
   {
     "sep": "=== Asia ==="
   },
+
+
   {
     "name": "SSMP Law",
     "link": "https://ssmp.co/people/"
@@ -92,237 +100,15 @@
   {
     "sep": "=== Europe ==="
   },
+
+
   {
     "name": "Stratulat Albulescu",
     "link": "https://saa.ro/en/our-people/"
   },
-
-  {
-    "=======================": "======================="
-  },
-
-
-
-  {
-    "name": "Arntzen de Besche",
-    "link": "https://www.adeb.no/en/employees?position=Partner"
-  },
-  {
-    "name": "Argo",
-    "link": "https://www.argo-law.be/people/"
-  },
-  {
-    "name": "AP Legal",
-    "link": "https://ap-legal.rs/our-team/"
-  },
-  {
-    "name": "Aegis Law",
-    "link": "https://www.aegislaw.cz/en#lide"
-  },
-  {
-    "name": "Advel",
-    "link": "https://advel.is/en/home/starfsfolk/"
-  },
-  {
-    "name": "ACI Partners",
-    "link": "https://aci.md/legal-team/"
-  },
-  {
-    "name": "AKL",
-    "link": "https://www.aklawfirm.gr/team"
-  },
-  {
-    "name": "Gernandt & Danielsson",
-    "link": "https://www.gda.se/en/our-people/?query=&title=217&title=7"
-  },
-  {
-    "name": "Mannheimer Swartling",
-    "link": "https://www.mannheimerswartling.se/en/our-people/?position=%5B4869%5D"
-  },
-  {
-    "name": "Workx",
-    "link": "https://www.workxadvocaten.nl/en/team/"
-  },
-  {
-    "name": "CLEERDIN & HAMER",
-    "link": "https://cleerdin-hamer.nl/advocaten/"
-  },
-  {
-    "name": "Pot Jonker",
-    "link": "https://www.potjonker.nl/en/our-people/?FUNCTION=132&EXPERTISE="
-  },
-  {
-    "name": "GMW lawyers",
-    "link": "https://www.gmw.nl/en/lawyers/"
-  },
-  {
-    "name": "",
-    "link": "https://www.poelmannvandenbroek.nl/en/people/advocaten#filters"
-  },
-  {
-    "name": "WILLEMSPARK",
-    "link": "https://willemsparkadvocaten.nl/advocaten/"
-  },
-  {
-    "name": "VDB Law",
-    "link": "https://vdb-law.nl/uw-adviseurs/notariaat"
-  },
-  {
-    "name": "Blenheim",
-    "link": "https://www.blenheim.nl/advocaten/"
-  },
-  {
-    "name": "Fruytier",
-    "link": "https://www.flib.nl/advocaten"
-  },
-  {
-    "name": "L&A",
-    "link": "https://www.lenaadvocaten.nl/ons-team/#onze-advocaten"
-  },
-  {
-    "name": "Wintertaling",
-    "link": "https://wintertaling.nl/team/"
-  },
-  {
-    "name": "HEKKELMAN",
-    "link": "https://www.hekkelman.nl/onze-mensen/"
-  },
-  {
-    "name": "Lennox",
-    "link": "https://lennox.nl/en/team/"
-  },
   {
     "name": "LEGALTREE",
     "link": "https://legaltree.nl/en/our-partners/"
-  },
-  {
-    "name": "TRUST",
-    "link": "https://trustadvocaten.be/eng/team"
-  },
-  {
-    "name": "Straatman Koster",
-    "link": "https://en.straatmankoster.nl/team"
-  },
-  {
-    "name": "DVDK Law",
-    "link": "https://www.dvdk.nl/team"
-  },
-  {
-    "name": "Wijn & Stael",
-    "link": "https://www.wijnenstael.nl/en/our-people"
-  },
-  {
-    "name": "TKP",
-    "link": "https://www.traple.pl/en/people/",
-    "Note": "Select only partners, all seniors already registred"
-  },
-  {
-    "name": "PREU BOHLIG & PARTNERS",
-    "link": "https://preubohlig.de/team/?lang=en"
-  },
-  {
-    "name": "Miller Canfield",
-    "link": "https://millercanfield.pl/en/attorneys/"
-  },
-  {
-    "name": "Boontje",
-    "link": "https://boontje.nl/en/ons-team/"
-  },
-  {
-    "name": "Kyriakides Georgopoulos",
-    "link": "https://kglawfirm.gr/people/?pos=2"
-  },
-  {
-    "name": "KŠB",
-    "link": "https://www.ksb.cz/en/lide"
-  },
-  {
-    "name": "Jiménez & Lozano",
-    "link": "https://www.jlabogados.es/abogados-madrid/"
-  },
-  {
-    "name": "Adriaanse van der Weel",
-    "link": "https://avdw.nl/ons-team"
-  },
-  {
-    "name": "GLIMSTEDT BERNOTAS & PARTNERS",
-    "link": "https://www.glimstedt.lt/en/lawyers/"
-  },
-  {
-    "name": "HEDMAN PARTNERS",
-    "link": "https://hedmanpartners.fi/tiimi/"
-  },
-  {
-    "name": "BACH",
-    "link": "https://bachlaw.dk/en/employees/"
-  },
-  {
-    "name": "SCHRADE & PARTNER",
-    "link": "https://schrade-partner.de/team/"
-  },
-  {
-    "name": "HAJDUK & PARTNERS",
-    "link": "https://www.hajduk.cz/en/team/"
-  },
-  {
-    "name": "Endors",
-    "link": "https://www.endors.cz/our-team"
-  },
-  {
-    "name": "Wise 3",
-    "link": "https://wise3.sk/tim/"
-  },
-  {
-    "name": "Tassos Papadopoulos & Associates LLC",
-    "link": "https://www.tplawJersey.com.cy/people",
-    "Note": "email formatt == (firstNameLetter)(lastName)@tplaw.com.cy",
-    "Ex.:": "Alexia Kountouri === akountouri@tplaw.com.cy"
-  },
-  {
-    "name": "Rowedder Zimmermann Hass",
-    "link": "https://www.rowedder.de/de/rechtsanwaelte"
-  },
-  {
-    "name": "Z/C/H Legal v.o.s",
-    "link": "https://www.nirris.cz/en/team/"
-  },
-  {
-    "name": "Vainanidis, Economou & Associates Law Firm",
-    "link": "https://ve-legal.gr/en/people"
-  },
-  {
-    "name": "Trägårdh Advokatbyrå AB",
-    "link": "https://www.tragardh.se/en/employee/"
-  },
-  {
-    "name": "Tassos Papadopoulos & Associates LLC",
-    "link": "https://www.tplaw.com.cy/people"
-  },
-  {
-    "name": "RWP Rechtsanwälte",
-    "link": "https://rwp.de/berater/duesseldorf/?lang=en",
-    "Note": "more pages in locations"
-  },
-  {
-    "name": "Rassers Advocaten",
-    "link": "https://rassers.nl/team/"
-  },
-  {
-    "name": "POROBIJA & ŠPOLJARIĆ",
-    "link": "https://www.psod.hr/en/team-members",
-    "Note": "aks for Juniors Part"
-  },
-  {
-    "name": "Popov, Arnaudov & Partners",
-    "link": "https://popovarnaudov.bg/en/our-team/"
-  },
-  {
-    "name": "Kellerhals Carrard",
-    "link": "https://kellerhals-carrard.ch/en/team?position=161"
-  },
-  {
-    "name": "HH Partners",
-    "link": "https://www.hhpartners.fi/en/staff/"
   },
   {
     "name": "Germus & Partners",
@@ -334,78 +120,10 @@
     "link": "https://espanhaassociados.pt/team-2/?lang=en"
   },
   {
-    "name": "DQ Advocates",
-    "link": "https://dq.im/legal-advisory/"
+    "=======================": "======================="
   },
-  {
-    "name": "Adam & Bleser",
-    "link": "https://www.adam-bleser.lu/our-people/ "
-  },
-  {
-    "name": "PlasBossinade",
-    "link": "https://www.plasbossinade.nl/onze-mensen",
-    "Note": "only Notary"
-  },
-  {
-    "name": "Kooijman Autar",
-    "link": "https://www.kooijmanautar.nl/our-people",
-    "Note": "Notary === Partner?? Check"
-  },
-  {
-    "name": "Workx Attorneys",
-    "link": "https://www.workxadvocaten.nl/team/"
-  },
-  {
-    "name": "Boumans Advocaten",
-    "link": "https://boumansadvocaten.nl/over-ons/"
-  },
-  {
-    "name": "Den Hollander Advocaten",
-    "link": "https://www.denhollander.nl/ons-team"
-  },
-  {
-    "name": "Hekkelman",
-    "link": "https://www.hekkelman.nl/onze-mensen/?_gl=1*14sqxgw*_up*MQ..*_ga*MjA2MzI0Nzk4Ny4xNzM2MzQ3Nzgz*_ga_HYMGNW47FY*MTczNjM0Nzc4Mi4xLjAuMTczNjM0Nzc4Mi4wLjAuNTE0MDMyOTQ3",
-    "Note": "Check if is an valid firm - Notary & Officer"
-  },
-  {
-    "name": "Aantjes Zevenberg Advocaten",
-    "link": "https://www.aantjeszevenberg.nl/over-ons/"
-  },
-  {
-    "name": "Douffet Heuts",
-    "link": "https://www.douffetheuts.nl/advocaten"
-  },
-  {
-    "name": "Spreksel advocaten",
-    "link": "https://www.sprekseladvocaten.nl/eng/team"
-  },
-  {
-    "name": "LexQuire",
-    "link": "https://lexquire.nl/mensen/"
-  },
-  {
-    "name": "MEIJERS | Canatan",
-    "link": "https://www.meijerscanatan.nl/en/lawyers/"
-  },
-  {
-    "name": "Vanberkel",
-    "link": "https://www.vbprofs.nl/teamleden",
-    "Note": "AVOID: c.beelen@vbprofs.nl"
-  },
-  {
-    "name": "Otis",
-    "link": "https://www.otisadvocaten.nl/ons-team-otis/"
-  },
-  {
-    "name": "Caluwaerts Uytterhoeven",
-    "link": "https://www.legaloffice.be/team"
-  },
-  {
-    "name": "Zirngibl",
-    "link": "https://zirngibl.de/lawyers/?lang=en",
-    "Note": "Email reverse"
-  },
+
+
   {
     "name": "NMCG Avocats Associés",
     "link": "https://www.nmcg.fr/nos-avocats-experts/?status=4#filter"
@@ -493,10 +211,6 @@
     "Note": "Jersey"
   },
   {
-    "name": "SSW Pragmatic Solutions",
-    "link": "https://ssw.solutions/zespol/?_grupa_zepou=partner"
-  },
-  {
     "name": "Paul Q",
     "link": "https://www.paulqlaw.com/en/our-lawyers"
   },
@@ -521,10 +235,6 @@
   {
     "name": "Ellul & Cruz",
     "link": "https://www.ellulcruz.com/our-people"
-  },
-  {
-    "name": "Elliott Duffy Garrett",
-    "link": "https://www.edglegal.com/our-people/?pg=2"
   },
   {
     "name": "Burness Paull",
@@ -604,10 +314,5 @@
   {
     "name": "",
     "link": ""
-  },
-
-
-  {
-    "sep": "=== Similar (possibly already implemented) ==="
   }
 ]

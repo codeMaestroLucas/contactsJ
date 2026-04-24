@@ -99,6 +99,8 @@ public abstract class Site {
                     ? Objects.requireNonNull(social.getAttribute("textContent")).toLowerCase().trim()
                     : Objects.requireNonNull(social.getAttribute("href")).toLowerCase().trim();
 
+            if (byText && value.isEmpty()) value = Objects.requireNonNull(social.getAttribute("innerText"));
+
             if (value.contains("mail") || (value.contains("to")) && email.isEmpty()) {
                 if ((value.contains("@")) || value.contains("(at)")) email = value;
 

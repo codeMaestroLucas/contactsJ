@@ -1,3 +1,0 @@
-new BabicAndPartners(), new BojanovicAndPartners(), new Bratschi(), new SPVS(),
-new BabicPartners(), new BojanovicPartners(), new Bratschi(), new SPVS(),
-new BorelBarbey(), new BrouxelRabia(),
