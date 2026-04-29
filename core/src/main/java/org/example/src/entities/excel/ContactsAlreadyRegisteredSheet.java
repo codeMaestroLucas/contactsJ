@@ -196,6 +196,7 @@ public ContactsAlreadyRegisteredSheet() {
 
     public static void main(String[] args) {
         // Remember to change the LastRow to 0
+        new FilteredContactsNormalizer(CONFIG.FILTERED_ACTIVE_CONTACTS_FILE).normalize();
         ContactsAlreadyRegisteredSheet sheet1 = new ContactsAlreadyRegisteredSheet();
         sheet1.collectLawyersRegistered();
     }

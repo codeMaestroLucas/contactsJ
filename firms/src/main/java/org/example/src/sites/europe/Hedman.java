@@ -28,19 +28,17 @@ public class Hedman extends ByPage {
     @Override
     protected List<WebElement> getLawyersInPage() {
         List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.teammember__info"));
-        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("teammember__info__title")}, true);
+        return this.siteUtl.filterLawyersInPage(lawyers, new By[]{By.className("teammember__info__title")}, true, validRoles);
     }
 
     @Override
-    public Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.className("teammember__info__name")}, "NAME", LawyerExceptions::nameException);
-        String role = extractor.extractLawyerText(lawyer, new By[]{By.className("teammember__info__title")}, "ROLE", LawyerExceptions::roleException);
+    protected Object getLawyer(WebElement lawyer) throws Exception {
         String[] socials = super.getSocials(lawyer.findElements(By.tagName("a")), false);
 
         return Map.of(
                 "link", extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector("p.teammember__info__name a")}, "LINK", "href", LawyerExceptions::linkException),
-                "name", name,
-                "role", role,
+                "name", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("teammember__info__name")}, "NAME", "textContent", LawyerExceptions::nameException),
+                "role", extractor.extractLawyerAttribute(lawyer, new By[]{By.className("teammember__info__title")}, "ROLE", "textContent", LawyerExceptions::roleException),
                 "firm", this.name,
                 "country", "Estonia",
                 "practice_area", "",

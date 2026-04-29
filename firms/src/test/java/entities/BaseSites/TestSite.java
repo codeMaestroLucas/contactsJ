@@ -1,12 +1,12 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.to_test.europe.*;
+import org.example.src.sites.mundial.Harneys;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-class MyTestPage extends PotJonker {
-    public static final boolean HEADLESS = false;
+    class MyTestPage extends Harneys {
+    public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }
 

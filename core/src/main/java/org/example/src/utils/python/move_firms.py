@@ -12,11 +12,14 @@ Project root is 9 levels up.
 
 import os
 import shutil
+import sys
 
 _SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, *[".."] * 9))
 
 CONTINENTS = ["africa", "americas", "asia", "europe", "mundial", "oceania"]
+
+APPROVED_FILE = os.path.join(PROJECT_ROOT, "data", "approvedBatchFirms.txt")
 
 SOURCE_BASE = os.path.join(
     PROJECT_ROOT,
@@ -193,5 +196,93 @@ def main():
         print(f"Concluído. {total} arquivo(s) movido(s) com sucesso.")
 
 
+def _remove_from_approved(entries: set[str]) -> None:
+    """Remove as entradas fornecidas do approvedBatchFirms.txt."""
+    if not entries or not os.path.isfile(APPROVED_FILE):
+        return
+    with open(APPROVED_FILE, encoding="utf-8") as f:
+        remaining = [l for l in f if l.strip() not in entries]
+    with open(APPROVED_FILE, "w", encoding="utf-8") as f:
+        f.writelines(remaining)
+
+
+def load_approved() -> dict[str, list[str]]:
+    grouped: dict[str, list[str]] = {}
+    if not os.path.isfile(APPROVED_FILE):
+        print("Arquivo de aprovadas não encontrado.")
+        return grouped
+    with open(APPROVED_FILE, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if "/" not in line:
+                continue
+            continent, firm = line.split("/", 1)
+            grouped.setdefault(continent, []).append(firm + ".java")
+    return grouped
+
+
+def main_approved():
+    approved = load_approved()
+    if not approved:
+        print("Nenhuma firma aprovada encontrada.")
+        return
+
+    to_move: dict[str, list[str]] = {}
+    for continent, files in approved.items():
+        existing = [f for f in files
+                    if os.path.isfile(os.path.join(SOURCE_BASE, continent, f))]
+        if existing:
+            to_move[continent] = existing
+
+    # Entradas já movidas anteriormente (não estão em to_test, mas aprovadas)
+    stale_entries: set[str] = set()
+    for continent, files in approved.items():
+        for filename in files:
+            entry = f"{continent}/{filename[:-5]}"
+            if entry not in {f"{c}/{f[:-5]}" for c, fs in to_move.items() for f in fs}:
+                stale_entries.add(entry)
+
+    if not to_move and not stale_entries:
+        print("Nenhuma firma aprovada encontrada em to_test/.")
+        return
+
+    if stale_entries:
+        print(f"  ↩  {len(stale_entries)} entrada(s) obsoleta(s) removida(s) do arquivo aprovadas:\n")
+        for e in sorted(stale_entries):
+            print(f"       {e}")
+        print()
+
+    if not to_move:
+        _remove_from_approved(stale_entries)
+        print("Nada a mover. Entradas obsoletas limpas com sucesso.")
+        return
+
+    total = sum(len(v) for v in to_move.values())
+    print(f"Movendo {total} firma(s) aprovada(s)...\n")
+
+    errors = []
+    moved_entries: set[str] = set()
+    for continent, files in to_move.items():
+        for filename in files:
+            try:
+                move_firm(filename, continent)
+                moved_entries.add(f"{continent}/{filename[:-5]}")
+                print(f"  ✓  {filename}  ({continent})")
+            except Exception as e:
+                errors.append((filename, continent, str(e)))
+                print(f"  ✗  {filename}  ({continent}) — ERRO: {e}")
+
+    _remove_from_approved(moved_entries | stale_entries)
+
+    print()
+    if errors:
+        print(f"Concluído com {len(errors)} erro(s).")
+    else:
+        print(f"Concluído. {total} arquivo(s) movido(s) com sucesso.")
+
+
 if __name__ == "__main__":
-    main()
+    if "--approved" in sys.argv:
+        main_approved()
+    else:
+        main()

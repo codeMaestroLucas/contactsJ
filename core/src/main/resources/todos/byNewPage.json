@@ -4,8 +4,9 @@
   {
     "sep": "=== Africa ==="
   },
-
-
+  {
+    "=======================": "======================="
+  },
   {
     "name": "Nakudu Law Partners",
     "link": "https://nakudulawpartners.com/nakudu--our-team.html"
@@ -22,79 +23,17 @@
   {
     "sep": "=== Asia ==="
   },
-
-
-  {
-    "name": "SSMP Law",
-    "link": "https://ssmp.co/people/"
-  },
   {
     "name": "Anoma Legal",
     "link": "https://www.anomalegal.com/attorneys/"
   },
   {
-    "name": "Del Rosario & Del Rosario",
-    "link": "https://www.delrosariolaw.com/en/the-firm/attorneys",
-    "Note": "Different phones for different locations, check this"
+    "=======================": "======================="
   },
-  {
-    "name": "Cruz Marcelo & Tenefrancia",
-    "link": "https://cruzmarcelo.com/our-lawyers/",
-    "Note": "All seniors already registred. Might test this latter, to check if is true"
-  },
-  {
-    "name": "Arceo & Tandoc",
-    "link": "https://tandoclawfirm.com/about-us/"
-  },
-  {
-    "name": "",
-    "link": "https://www.dialog.am/en/staff"
-  },
-  {
-    "name": "Vivien Chan & Co",
-    "link": "https://www.vcclawservices.com/#menu2"
-  },
-  {
-    "name": "Yang & Co",
-    "link": "http://www.yangandco.com/"
-  },
-  {
-    "name": "Surridge & Beecheno",
-    "link": "https://www.surridgeandbeecheno.com/our-people/"
-  },
-  {
-    "name": "Obeid & Partners",
-    "link": "https://obeidpartners.com/meet-the-team/"
-  },
-  {
-    "name": "Tri Nasr",
-    "link": "https://trinasr.com/our-team/"
-  },
-  {
-    "name": "Pioneer Law Associates",
-    "link": "https://pioneerlaw.com/teams/"
-  },
-  {
-    "name": "Mulla & Mulla & Craigie Blunt & Caroe",
-    "link": "https://mullas.net/people/"
-  },
-  {
-    "name": "IABF Law Firm",
-    "link": "https://iab-net.com/our-people/"
-  },
-  {
-    "name": "Gurulkan Çakır Günay",
-    "link": "https://www.gurulkan.com/people",
-    "Note": "Just 3. PHONE: +90 (212) 215 30 00"
-  },
-  {
-    "name": "Shearn Delamore & Co",
-    "link": "https://www.shearndelamore.com/our-people/partners/"
-  },
-  {
-    "name": "IndusLaw",
-    "link": "https://induslaw.com/people/"
-  },
+
+
+
+
 
 
   {
@@ -120,182 +59,13 @@
     "link": "https://espanhaassociados.pt/team-2/?lang=en"
   },
   {
-    "=======================": "======================="
-  },
-
-
-  {
-    "name": "NMCG Avocats Associés",
-    "link": "https://www.nmcg.fr/nos-avocats-experts/?status=4#filter"
-  },
-  {
-    "name": "Flynn O'Driscoll LLP",
-    "link": "https://www.fod.ie/people"
-  },
-  {
-    "name": "Lindsays",
-    "link": "https://www.lindsays.co.uk/our-people",
-    "Note": "avoid - helenkidd@lindsays.co.uk"
-  },
-  {
-    "name": "Waldmann Petitpierre",
-    "link": "https://www.lawyers.ch/anwaelte/"
-  },
-  {
-    "name": "Elvinger Hoss Prussen",
-    "link": "https://elvingerhoss.lu/about-us/our-team?f%5B0%5D=categories%3A654"
-  },
-  {
-    "name": "Bán, S. Szabó, Rausch & Partners Law Firm",
-    "link": "https://www.bansszabo.hu/en/our-team/"
-  },
-  {
-    "name": "Glimstedt",
-    "link": "https://www.glimstedt.ee/en/lawyers/",
-    "Note": "click partner opt. Just 4"
-  },
-  {
-    "name": "STADLER VÖLKEL",
-    "link": "https://sv.law/en/people"
-  },
-  {
-    "name": "Stentors",
-    "link": "https://stentors.eu/"
-  },
-  {
-    "name": "PRK Partners",
-    "link": "https://www.prkpartners.com/our-team?search_advanced%5Bpersons_name%5D=a&search_advanced%5Bpersons_specs%5D=&search_advanced%5Bpersons_places%5D=&submit=submit#search_advanced",
-    "Note": "Send Keys"
-  },
-  {
-    "name": "Volterra Fietta",
-    "link": "https://volterrafietta.com/our-people#partners"
-  },
-  {
-    "name": "CBR & Associés",
-    "link": "https://www.cbr-law.com/en/#Team"
-  },
-  {
-    "name": "Rutland & Partners",
-    "link": "https://rutlandandpartners.com/en/meet-the-team/"
-  },
-  {
-    "name": "Elliott Duffy Garrett",
-    "link": "https://www.edglegal.com/our-people/"
-  },
-  {
     "name": "Vesco Giaretta",
     "link": "https://www.vescogiaretta.com/professionisti/",
     "Note": "email formatt == (firstName).(thirdName)@cnr.law",
     "Ex.:": "Lisa Zausa === lisa.zausa@vescogiaretta.com"
   },
   {
-    "name": "Studio Rock",
-    "link": "https://studiorock.net/en/professionals/"
-  },
-  {
-    "name": "SSW",
-    "link": "https://ssw.solutions/en/team/?_team_pos=partner"
-  },
-  {
-    "name": "Zdolsek",
-    "link": "https://zdolsek.com/lawyers/"
-  },
-  {
-    "name": "YARDS",
-    "link": "https://yards-avocats.com/en/team/"
-  },
-  {
-    "name": "Voisin",
-    "link": "https://www.voisinlaw.com/people",
-    "Note": "Jersey"
-  },
-  {
-    "name": "Paul Q",
-    "link": "https://www.paulqlaw.com/en/our-lawyers"
-  },
-  {
-    "name": "LEADELL",
-    "link": "https://www.leadell.com/"
-  },
-  {
-    "name": "Kuit Steinart Levy",
-    "link": "https://www.kuits.com/meet-the-team/"
-  },
-  {
-    "name": "Gecic Law",
-    "link": "https://www.geciclaw.com/people/"
-  },
-  {
-    "name": "Fenech Farrugia Fiott",
-    "link": "https://www.fff-legal.com/our-people/",
-    "Note": "email formatt === (firstNameLetter)(lastName)@fff-legal.com. Check for partners",
-    "Ex.:": "Christian Farrugia === cfarrugia@fff-legal.com"
-  },
-  {
-    "name": "Ellul & Cruz",
-    "link": "https://www.ellulcruz.com/our-people"
-  },
-  {
-    "name": "Burness Paull",
-    "link": "https://www.burnesspaull.com/people/?contentTags=2292%2C2053%2C1906%2C1928%2C2567"
-  },
-  {
-    "name": "Babbé",
-    "link": "https://www.babbelegal.com/people/"
-  },
-  {
-    "name": "B. Cremades y Asociados",
-    "link": "https://www.cremades.com/en/lawyers/"
-  },
-  {
-    "name": "Van Diepen",
-    "link": "https://vandiepen.com/en/lawyer/",
-    "Note": "New page just to check if is an partner or not"
-  },
-  {
-    "name": "Van Doorne",
-    "link": "https://www.vandoorne.com/en/our-people/"
-  },
-  {
-    "name": "De Brauw Blackstone Westbroek",
-    "link": "https://www.debrauw.com/people?r=030&r=040&q="
-  },
-  {
-    "name": "Fenech & Fenech Advocates",
-    "link": "https://fenechlaw.com/people/"
-  },
-  {
-    "name": "IURIS Law Firm",
-    "link": "https://iurismalta.com/about-us/#about_us_lawyers"
-  },
-  {
-    "name": "Mamo TCV Advocates",
-    "link": "https://www.mamotcv.com/our-people/"
-  },
-  {
-    "name": "WH Partners",
-    "link": "https://whpartners.eu/about/our-people/"
-  },
-  {
-    "name": "Chetcuti Cauchi Advocates",
-    "link": "https://www.ccmalta.com/our-people"
-  },
-  {
-    "name": "Loyens & Loeff",
-    "link": "https://www.loyensloeff.com/people/?Titles=Partner"
-  },
-  {
-    "name": "Moyal & Simon",
-    "link": "https://moyal-simon.com/en/team/"
-  },
-  {
-    "name": "Motieka",
-    "link": "https://motieka.com/team/"
-  },
-  {
-    "name": "KNP Law",
-    "link": "https://www.knplaw.com/en/lawyers/"
+    "=======================": "======================="
   },
 
 

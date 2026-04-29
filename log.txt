@@ -1,18 +1,37 @@
 =====================================================================================================
-                                    ERROR LOG - 2026-04-18 22:50:18
+                                    ERROR LOG - 2026-04-25 22:19:20
 =====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
                                       ERRORS BY FIRM
 ----------------------------------------------------------------------------------------------------
 
-(27 firm(s) omitted — within tolerance)
+(39 firm(s) omitted — within tolerance)
+
+Class Eversheds Sutherland [3 lawyers registered, 92 errors]
+   - accessPageError                occurred 92 times
+
+Class Rolim Goulart [0 lawyers registered, 48 errors]
+   - getLawyerError                 occurred 48 times
+
+Class Esche [1 lawyers registered, 29 errors]
+   - getLawyerError                 occurred 28 times
+   - openNewTabError                occurred 1 times
+
+Class KBVL Law [1 lawyers registered, 22 errors]
+   - getLawyerError                 occurred 22 times
 
 Class Robles Miaja [0 lawyers registered, 20 errors]
    - emailException                 occurred 20 times
 
-Class Arthur Cox [1 lawyers registered, 15 errors]
-   - accessPageError                occurred 11 times
+Class Brasil Salomao e Matthes [0 lawyers registered, 18 errors]
+   - getLawyersInPageError          occurred 18 times
+
+Class FBL Advogados [0 lawyers registered, 18 errors]
+   - openNewTabError                occurred 18 times
+
+Class Arthur Cox [1 lawyers registered, 16 errors]
+   - accessPageError                occurred 12 times
    - getLawyersInPageError          occurred 4 times
 
 Class CAR Advogados [0 lawyers registered, 14 errors]
@@ -28,16 +47,16 @@ Class LEFOSSE [0 lawyers registered, 11 errors]
                                       ERROR SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-Total errors: 145
+Total errors: 374
 
 Most common errors:
-   getLawyersInPageError                  46  ( 31.7%)
-   getLawyerError                         41  ( 28.3%)
-   emailException                         24  ( 16.6%)
-   accessPageError                        19  ( 13.1%)
-   openNewTabError                        14  (  9.7%)
-   getPracticeAreaError                    1  (  0.7%)
+   getLawyerError                        134  ( 35.8%)
+   accessPageError                       109  ( 29.1%)
+   getLawyersInPageError                  62  ( 16.6%)
+   openNewTabError                        40  ( 10.7%)
+   emailException                         22  (  5.9%)
+   IllegalArgumentException                7  (  1.9%)
 
 =====================================================================================================
-Firms processed: 306 | Firms above tolerance (>10 errors): 5
+Firms processed: 385 | Firms above tolerance (>10 errors): 11
 =====================================================================================================

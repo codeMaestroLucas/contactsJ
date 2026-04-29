@@ -100,7 +100,7 @@ public final class TreatLawyerParams {
             "mba", "mbe", "lawyer", "advocate", "advokat",
             "phd", "prof", "univ", "she/her", "he/him",
             "professor", "lord", "dipl -phys", "adv", "mgr",
-            "ph d", "mmag", "cpa"
+            "ph d", "mmag", "cpa", "m sc"
     ));
 
     private static final String[] VALID_ROLES = {
@@ -278,12 +278,22 @@ public final class TreatLawyerParams {
     public static String treatEmail(String email) {
         if (email == null) return "";
         email = removeAccents(email);
+
+        // Extract email from markdown link: [text](mailto:email@domain.com)
+        java.util.regex.Matcher markdownMatcher = java.util.regex.Pattern
+                .compile("\\[.*?\\]\\(mailto:([^)]+)\\)")
+                .matcher(email.trim());
+        if (markdownMatcher.find()) {
+            email = markdownMatcher.group(1);
+        }
+
         return email.replaceAll("\\?.*$", "")
                 .toLowerCase()
                 .replace("mailto", "")
                 .replace("email", "")
                 .replace("e-mail", "")
                 .replace(":", "")
+                .replace("%20", "")
                 .trim();
     }
 

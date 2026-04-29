@@ -27,7 +27,8 @@ public class Otis extends ByPage {
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        return MyDriver.wait.findElements(By.cssSelector("div.et_pb_column"));
+        List<WebElement> lawyers = MyDriver.wait.findElements(By.cssSelector("div.et_pb_column"));
+        return this.siteUtl.filterLawyersInPage(lawyers, null, true);
     }
 
     @Override

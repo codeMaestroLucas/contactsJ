@@ -14,12 +14,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Pulegal extends ByNewPage {
-    String[] validRoles = new String[]{
-            "partner",
-            "counsel",
-            "director"
-    };
-
     public Pulegal() {
         super(
             "Pulegal",

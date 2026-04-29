@@ -10,6 +10,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.nio.file.Paths;
 
 public class BatchTestRunner {
 
@@ -52,12 +53,36 @@ public class BatchTestRunner {
             String c = continents.get(i);
             bar("  " + (i + 1) + ". " + c + "  (" + byContinent.get(c).size() + " firmas)");
         }
+        bar("  M. Mover todas as firmas aprovadas");
         bar();
         System.out.print("| Opção: ");
-        int ci = Integer.parseInt(sc.nextLine().trim()) - 1;
+        String input = sc.nextLine().trim();
         bar();
         printLine();
 
+        if (input.equalsIgnoreCase("M")) {
+            moveFirmsApproved();
+            sc.close();
+            return;
+        }
+
+        int ci;
+        try {
+            ci = Integer.parseInt(input) - 1;
+        } catch (NumberFormatException e) {
+            bar("  Opção inválida: \"" + input + "\"");
+            bar();
+            printLine();
+            sc.close();
+            return;
+        }
+        if (ci < 0 || ci >= continents.size()) {
+            bar("  Opção inválida: \"" + input + "\" (escolha entre 1 e " + continents.size() + ")");
+            bar();
+            printLine();
+            sc.close();
+            return;
+        }
         String continent = continents.get(ci);
 
         // ── Filtra firmas já aprovadas em execuções anteriores ────────
@@ -159,6 +184,17 @@ public class BatchTestRunner {
         printLine();
 
         sc.close();
+    }
+
+    // ── Mover aprovadas ───────────────────────────────────────────────
+
+    private static void moveFirmsApproved() throws Exception {
+        String script = Paths.get("core", "src", "main", "java", "org", "example",
+                "src", "utils", "python", "move_firms.py").toString();
+        ProcessBuilder pb = new ProcessBuilder("python3", script, "--approved");
+        pb.inheritIO();
+        pb.directory(new File(System.getProperty("user.dir")));
+        pb.start().waitFor();
     }
 
     // ── Persistência ──────────────────────────────────────────────────

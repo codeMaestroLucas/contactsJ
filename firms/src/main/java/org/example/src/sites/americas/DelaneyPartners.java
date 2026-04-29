@@ -15,7 +15,7 @@ public class DelaneyPartners extends ByPage {
         super(
                 "Delaney Partners",
                 "",
-                9
+                8
         );
     }
 
@@ -25,7 +25,6 @@ public class DelaneyPartners extends ByPage {
             "https://delaneypartners.com/attorneys/samuel-r-brown/",
             "https://delaneypartners.com/attorneys/jillian-chase-jones/",
             "https://delaneypartners.com/attorneys/john-delaney-bahamas/",
-            "https://delaneypartners.com/attorneys/bryann-v-hepburn/",
             "https://delaneypartners.com/attorneys/pamela-l-klonaris/",
             "https://delaneypartners.com/attorneys/edward-j-marshall-ii/",
             "https://delaneypartners.com/attorneys/sofia-j-papageorge/"
