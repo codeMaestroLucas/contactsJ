@@ -34,31 +34,20 @@ public class LatinAlliance extends ByNewPage {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
-
-//        MyDriver.clickOnAddBtn(By.id(""));
     }
 
 
     @Override
     protected List<WebElement> getLawyersInPage() {
-        try {
-            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            return wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.cssSelector("a.et_pb_button[href^='https://latinalliance.co/en/']")
-                    )
-            );
-
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to find lawyer elements", e);
-        }
+        WebElement div = MyDriver.wait.findElement(By.xpath("//*[@id=\"post-17499\"]/div/div/div/div[2]"));
+        return div.findElements(By.cssSelector("a.et_pb_button[href^='https://latinalliance.co/en/']"));
     }
 
 
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        MyDriver.openNewTab(lawyer.getAttribute("href"));
-        return null;
+        String link = lawyer.getAttribute("href");
+        MyDriver.openNewTab(link);
+        return link;
     }
 
 
@@ -82,15 +71,10 @@ public class LatinAlliance extends ByNewPage {
 
 
     private String[] getSocials(WebElement lawyer) {
-        try {
-            List<WebElement> socials = lawyer
-                    .findElements(By.cssSelector("div.et_pb_text_inner > p"));
-            return super.getSocials(socials, true);
+        String[] socials = super.getSocialsFromText(lawyer.getText());
+        if (socials[0].isEmpty()) socials = super.getSocialsFromText(lawyer.getAttribute("innerText"));
+        return socials;
 
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
-        }
     }
 
 
@@ -98,7 +82,7 @@ public class LatinAlliance extends ByNewPage {
     public Object getLawyer(WebElement lawyer) throws Exception {
         this.openNewTab(lawyer);
 
-        WebElement div = driver
+        WebElement div = MyDriver.wait
                 .findElement(By.className("et_pb_row"))
                 .findElement(By.className("et_pb_column_1"));
 

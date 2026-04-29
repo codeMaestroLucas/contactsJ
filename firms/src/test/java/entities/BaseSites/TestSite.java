@@ -1,12 +1,12 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.mundial.Harneys;
+import org.example.src.sites.to_test.americas.PosseHerreraRuiz;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-    class MyTestPage extends Harneys {
-    public static final boolean HEADLESS = true;
+    class MyTestPage extends PosseHerreraRuiz {
+    public static final boolean HEADLESS = false;
 
     public MyTestPage() { super(); }
 

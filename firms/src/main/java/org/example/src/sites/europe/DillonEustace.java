@@ -33,18 +33,14 @@ public class DillonEustace extends ByPage {
         MyDriver.waitForPageToLoad();
         Thread.sleep(1000L);
         MyDriver.clickOnAddBtn(By.id("cookiescript_accept"));
+        MyDriver.scrollToBottom(0.5);
     }
 
     protected List<WebElement> getLawyersInPage() {
-        By[] webRole = new By[]{
-                By.className("styles_detail__Cs__D")
-        };
-        String[] validRoles = new String[]{"partner", "counsel", "senior associate"};
-
         try {
-            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-            List<WebElement> lawyers = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("styles_content___cPpV")));
-            return this.siteUtl.filterLawyersInPage(lawyers, webRole, true, validRoles);
+            WebElement div = MyDriver.wait.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div[2]"));
+            List<WebElement> lawyers = div.findElements(By.cssSelector("div[class*='styles_content___']"));
+            return this.siteUtl.filterLawyersInPage(lawyers, null, true);
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
         }
@@ -52,30 +48,28 @@ public class DillonEustace extends ByPage {
 
     public String getLink(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("styles_name__m66C_"),
-                By.cssSelector("a")
+                By.cssSelector("h2[class*='styles_name__'] > a")
         };
         return extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("styles_name__m66C_"),
-                By.cssSelector("a")
+                By.cssSelector("h2[class*='styles_name__'] > a")
         };
         return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("styles_detail__Cs__D")
+                By.cssSelector("p[class*='styles_detail']")
         };
         return extractor.extractLawyerText(lawyer, byArray, "ROLE", LawyerExceptions::roleException);
     }
 
     private String getCountry(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("styles_detail__Cs__D")
+                By.cssSelector("p[class*='styles_detail']")
         };
         String text = extractor.extractLawyerText(lawyer, byArray, "COUNTRY", LawyerExceptions::countryException);
         String[] options = text.split(",");
@@ -85,14 +79,14 @@ public class DillonEustace extends ByPage {
 
     private String getPracticeArea(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = new By[]{
-                By.className("styles_expertise__CecK5")
+                By.cssSelector("p[class*='styles_expertise_']")
         };
         return extractor.extractLawyerText(lawyer, byArray, "PRACTICE AREA", LawyerExceptions::practiceAreaException);
     }
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer.findElement(By.className("styles_links__6LPJw")).findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
         } catch (Exception e) {
             System.err.println("Error getting socials: " + e.getMessage());

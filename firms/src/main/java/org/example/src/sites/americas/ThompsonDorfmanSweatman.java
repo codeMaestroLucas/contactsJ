@@ -13,13 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ThompsonDorfmanSweatman extends ByNewPage {
-    String[] validRoles = new String[]{
-            "partner",
-            "counsel",
-            "director",
-            "senior associate"
-    };
-
     public ThompsonDorfmanSweatman() {
         super(
                 "Thompson Dorfman Sweatman",
@@ -39,13 +32,7 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
 
     protected List<WebElement> getLawyersInPage() {
         try {
-            WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
-
-            return wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.className("_staff_content")
-                    )
-            );
+            return MyDriver.wait.findElements(By.className("_staff-card__content"));
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to find lawyer elements", e);
@@ -55,17 +42,14 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
 
     public String openNewTab(WebElement lawyer) {
         try {
-            By[] byArray = {By.cssSelector("a[href^='https://www.tdslaw.com/lawyers/']")};
+            By[] byArray = {By.cssSelector("a[href*='https://www.tdslaw.com/lawyers/']")};
             String link = extractor.extractLawyerAttribute(lawyer, byArray, "LINK", "href", LawyerExceptions::linkException);
             MyDriver.openNewTab(link);
+            return link;
         } catch (LawyerExceptions e) {
             System.err.println("Failed to open new tab: " + e.getMessage());
         }
         return null;
-    }
-
-    public String getLink() {
-        return driver.getCurrentUrl();
     }
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
@@ -97,9 +81,7 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
 
     private String[] getSocials(WebElement lawyer) {
         try {
-            List<WebElement> socials = lawyer
-                    .findElement(By.className("_flex-container"))
-                    .findElements(By.cssSelector("a"));
+            List<WebElement> socials = lawyer.findElements(By.cssSelector("a"));
             return super.getSocials(socials, false);
 
         } catch (Exception e) {
@@ -110,18 +92,20 @@ public class ThompsonDorfmanSweatman extends ByNewPage {
 
 
     public Object getLawyer(WebElement lawyer) throws Exception {
-        this.openNewTab(lawyer);
+        String[] socials = this.getSocials(lawyer);
 
-        WebElement divOuter = driver.findElement(By.className("_general-content"));
+        String link = this.openNewTab(lawyer);
+
+        WebElement divOuter = MyDriver.wait.findElement(By.className("_general-content"));
+
         String role = this.getRole(divOuter);
         if (role.equals("Invalid Role")) return "Invalid Role";
 
         WebElement divContent = driver.findElement(By.className("_single-people"));
 
-        String[] socials = this.getSocials(divContent);
 
         return Map.of(
-                "link", this.getLink(),
+                "link", link,
                 "name", this.getName(divContent),
                 "role", role,
                 "firm", this.name,

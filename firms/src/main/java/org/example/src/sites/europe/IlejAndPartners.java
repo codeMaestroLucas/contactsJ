@@ -72,7 +72,7 @@ public class IlejAndPartners extends ByNewPage {
                 "firm", this.name,
                 "country", "Croatia",
                 "practice_area", "",
-                "email", email,
+                "email", email.replace("e:", ""),
                 "phone", phone.isEmpty() ? "38515634111" : phone
         );
     }

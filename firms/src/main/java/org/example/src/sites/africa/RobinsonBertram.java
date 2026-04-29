@@ -62,7 +62,7 @@ public class RobinsonBertram extends ByNewPage {
                 "name", name,
                 "role", "Partner",
                 "firm", this.name,
-                "country", "Swaziland",
+                "country", "Eswatini",
                 "practice_area", "",
                 "email", email,
                 "phone", "26824042826"

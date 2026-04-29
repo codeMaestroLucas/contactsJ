@@ -56,23 +56,19 @@ public class Elverdam extends ByPage {
 
     private String getName(WebElement lawyer) throws LawyerExceptions {
         By[] byArray = {By.className("associates__name")};
-        return extractor.extractLawyerText(lawyer, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(lawyer, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement lawyer) throws LawyerExceptions {
-        return extractor.extractLawyerText(lawyer, byRoleArray, "ROLE", LawyerExceptions::roleException);
+        return extractor.extractLawyerAttribute(lawyer, byRoleArray, "ROLE", "textContent", LawyerExceptions::roleException);
     }
 
     private String[] getSocials(WebElement lawyer) {
-        String email = "";
-        String phone = "";
-        try {
-            email = lawyer.findElement(By.className("associates__mail")).getText();
-            phone = lawyer.findElement(By.className("associates__phone")).getText();
-        } catch (Exception e) {
-            // Socials not found
+        String[] socials = super.getSocialsFromText(lawyer.getText());
+        if (socials[0].isEmpty()) {
+            socials= super.getSocialsFromText(lawyer.getAttribute("innerText"));
         }
-        return new String[]{email, phone};
+        return socials;
     }
 
     public Object getLawyer(WebElement lawyer) throws Exception {

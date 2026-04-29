@@ -81,15 +81,7 @@ public class IbanezParkman extends ByNewPage {
 
 
     private String[] getSocials(WebElement lawyer) {
-        try {
-            List<WebElement> socials = lawyer
-                        .findElements(By.cssSelector("h2.elementor-heading-title"));
-            return super.getSocials(socials, true);
-
-        } catch (Exception e) {
-            System.err.println("Error getting socials: " + e.getMessage());
-            return new String[]{"", ""};
-        }
+        return super.getSocialsFromText(lawyer.getText());
     }
 
 

@@ -2,6 +2,7 @@ package org.example.src.entities.excel;
 
 import org.example.src.CONFIG;
 import org.example.src.entities.BaseSites.Site;
+import org.example.src.utils.FirmsExhausted;
 import org.example.src.utils.Stopwatch;
 
 import java.util.Comparator;
@@ -27,10 +28,13 @@ public final class Reports extends Excel {
 
 
     public void createReportRow(Site site, String time) {
+        if (site.lawyersRegistered > 0) return;
         try {
             this.addContentOnRow(currentRow, site.name, time, String.valueOf(site.lawyersRegistered));
-            this.currentRow ++;
-
+            this.currentRow++;
+            String pkg       = site.getClass().getPackageName();
+            String continent = pkg.substring(pkg.lastIndexOf('.') + 1);
+            FirmsExhausted.register(continent + "/" + site.getClass().getSimpleName());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

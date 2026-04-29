@@ -51,12 +51,12 @@ public class NFA extends ByNewPage {
 
     private String getName(WebElement subPage) throws LawyerExceptions {
         By[] byArray = {By.cssSelector("h2")};
-        return extractor.extractLawyerText(subPage, byArray, "NAME", LawyerExceptions::nameException);
+        return extractor.extractLawyerAttribute(subPage, byArray, "NAME", "textContent", LawyerExceptions::nameException);
     }
 
     private String getRole(WebElement subPage) throws LawyerExceptions {
         By[] byArray = {By.className("profissionalBio"), By.tagName("p")};
-        String role = extractor.extractLawyerText(subPage, byArray, "ROLE", LawyerExceptions::roleException);
+        String role = extractor.extractLawyerAttribute(subPage, byArray, "ROLE", "textContent", LawyerExceptions::roleException);
         boolean validPosition = siteUtl.isValidPosition(role, validRoles);
         return validPosition ? role : "Invalid Role";
     }
@@ -86,7 +86,7 @@ public class NFA extends ByNewPage {
                 "firm", this.name,
                 "country", "Brazil",
                 "practice_area", "",
-                "email", socials[0].replace("(PT)", "").trim(),
+                "email", socials[0].toLowerCase().replace("(pt)", "").trim(),
                 "phone", "551130470777"
         );
     }
