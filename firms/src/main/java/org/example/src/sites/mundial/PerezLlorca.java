@@ -1,4 +1,4 @@
-package org.example.src.sites.to_test._standingBy;
+package org.example.src.sites.mundial;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import static java.util.Map.entry;
 
@@ -29,7 +28,8 @@ public class PerezLlorca extends ByNewPage {
         super(
                 "Pérez-Llorca",
                 "https://www.perezllorca.com/en-mx/?post_type%5B%5D=abogado&search_type=abogados&s=&oficinas=Office&area-practica%5B%5D=Practices+and+Sectors&tipos=Position",
-                1
+                1,
+                3
         );
     }
 
@@ -37,12 +37,14 @@ public class PerezLlorca extends ByNewPage {
     protected void accessPage(int index) {
         this.driver.get(this.link);
         MyDriver.waitForPageToLoad();
+        MyDriver.clickOnAddBtn(By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"));
+        MyDriver.clickOnElementMultipleTimes(By.id("load-more-btn"), 10, 1);
     }
 
     @Override
     protected List<WebElement> getLawyersInPage() {
         try {
-            return MyDriver.wait.findElements(By.className("item"));
+            return MyDriver.wait.findElements(By.cssSelector("div.cuadricula div.item"));
         } catch (Exception e) {
             return List.of();
         }
@@ -62,16 +64,17 @@ public class PerezLlorca extends ByNewPage {
 
     @Override
     protected Object getLawyer(WebElement lawyer) throws Exception {
-        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("h1")}, "NAME", LawyerExceptions::nameException);
+        String name = extractor.extractLawyerText(lawyer, new By[]{By.tagName("p")}, "NAME", LawyerExceptions::nameException);
         String country = this.getCountry(lawyer);
 
-        String link = Objects.requireNonNull(driver.getCurrentUrl());
+        String link = this.openNewTab(lawyer);
 
-        String role = extractor.extractLawyerText(driver.findElement(By.tagName("body")), new By[]{By.className("titulo")}, "ROLE", LawyerExceptions::roleException);
+        WebElement container = MyDriver.wait.findElement(By.tagName("body"));
+
+        String role = extractor.extractLawyerText(container, new By[]{By.cssSelector("div.titulo h2")}, "ROLE", LawyerExceptions::roleException);
         if (!siteUtl.isValidPosition(role, validRoles)) return "Invalid Role";
 
-        WebElement contactDiv = driver.findElement(By.className("contacto"));
-        String[] socials = super.getSocialsFromText(extractor.extractLawyerText(contactDiv, new By[]{By.tagName("p")}, "SOCIALS", LawyerExceptions::socialsException));
+        String[] socials = super.getSocialsFromText(container.findElement(By.className("contacto")).getAttribute("innerText"));
 
         return Map.of(
                 "link", link,
@@ -79,7 +82,7 @@ public class PerezLlorca extends ByNewPage {
                 "role", role,
                 "firm", this.name,
                 "country", country,
-                "practice_area", extractor.extractLawyerText(lawyer, new By[]{By.className("areas")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
+                "practice_area", extractor.extractLawyerText(container, new By[]{By.className("areas")}, "PRACTICE AREA", LawyerExceptions::practiceAreaException),
                 "email", socials[0],
                 "phone", socials[1].isEmpty() ? "34914360425" : socials[1]
         );

@@ -34,7 +34,7 @@ public class PepeljugoskiLaw extends ByNewPage {
 
     @Override
     public String openNewTab(WebElement lawyer) throws LawyerExceptions {
-        String link = lawyer.findElement(By.cssSelector("h4 > a[href*='https://pepeljugoski.com.mk/en/']")).getAttribute("href");
+        String link = lawyer.findElement(By.cssSelector("h4:last-child > a[href*='https://pepeljugoski.com.mk/en/']")).getAttribute("href");
         MyDriver.openNewTab(link);
         return link;
     }

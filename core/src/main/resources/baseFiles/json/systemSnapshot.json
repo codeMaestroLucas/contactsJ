@@ -1,29 +1,29 @@
 {
-  "timestamp" : "2026-04-29T16:43:14.745419",
+  "timestamp" : "2026-04-30T11:02:53.125515",
   "continents" : {
     "Africa" : {
-      "maxLawyers" : 89,
-      "total" : 89
+      "total" : 89,
+      "maxLawyers" : 89
     },
     "Asia" : {
-      "maxLawyers" : 344,
-      "total" : 325
+      "total" : 325,
+      "maxLawyers" : 344
     },
     "Europe" : {
-      "maxLawyers" : 623,
-      "total" : 594
+      "total" : 595,
+      "maxLawyers" : 624
     },
     "Americas" : {
-      "maxLawyers" : 362,
-      "total" : 353
+      "total" : 354,
+      "maxLawyers" : 363
     },
     "Oceania" : {
-      "maxLawyers" : 62,
-      "total" : 61
+      "total" : 61,
+      "maxLawyers" : 62
     }
   },
   "mundial" : {
-    "maxLawyers" : 277,
-    "total" : 135
+    "total" : 136,
+    "maxLawyers" : 280
   }
 }
