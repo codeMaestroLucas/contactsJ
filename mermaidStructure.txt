@@ -11,24 +11,20 @@ flowchart TD
             COMPLETED["CompletedFirms
             (menu CLI + construção da lista)"]
             BUILDER["FirmsBuilder
-            (fábrica por continente)
-            Arrays: AFRICA · ASIA · EUROPE
-            AMERICAS · OCEANIA · MUNDIAL"]
+            (discovery via reflection)
+            Pacotes: africa · asia · europe
+            americas · oceania · mundial"]
         end
 
-        subgraph AMERICAS_NOTE["AMERICAS array
+        subgraph AMERICAS_NOTE["Pacote americas/
         (North · Central · South America)"]
-            AMERICAS_BOX["// North America
-            new FirmNA1(), ...
-            // Central America
-            new FirmCA1(), ...
-            // South America
-            new FirmSA1(), ..."]
+            AMERICAS_BOX["~354 classes no mesmo pacote
+            discovery automático via reflection"]
         end
 
         subgraph SITES_IMPL["Sites Concretos
-        (src/sites/africa · asia · europe · americas · oceania · mundial)
-        [~1007 classes de firmas por continente]"]
+        (firms/src/sites/africa · asia · europe · americas · oceania · mundial)
+        [~1560 classes de firmas por continente]"]
             FIRMS_BOX["FirmaA extends ByPage
             FirmaB extends ByNewPage
             ..."]
@@ -84,13 +80,16 @@ flowchart TD
             output principal"]
             REPORTS["Reports (Singleton)
             métricas de execução"]
-            CONTACTS["Contacts
-            contatos anteriores"]
+            CONTACTS_SHEET["ContactsAlreadyRegisteredSheet
+            leitura do filteredCollectedContacts.xlsx"]
+            FILTER_NORM["FilteredContactsNormalizer
+            normaliza dados do xlsx filtrado"]
             LAST_CHECK["LastCheck
-            última linha registrada"]
+            valida duplicatas via EmailDuplicateChecker"]
             EXCEL_BASE --> SHEET
             EXCEL_BASE --> REPORTS
-            EXCEL_BASE --> CONTACTS
+            EXCEL_BASE --> CONTACTS_SHEET
+            EXCEL_BASE --> FILTER_NORM
             EXCEL_BASE --> LAST_CHECK
         end
 
@@ -127,10 +126,14 @@ flowchart TD
             log.txt"]
             SITE_UTILS["SiteUtils (Singleton)
             DOM navigation helpers"]
-            NO_SLEEP["NoSleep (JNA)
-            previne sleep do sistema"]
+            NO_SLEEP["NoSleep (caffeinate/JNA)
+            previne sleep do sistema (cross-platform)"]
+            STOPWATCH["Stopwatch
+            temporizador de execução por firma"]
+            FIRMS_EXHAUSTED["FirmsExhausted
+            rastreia firmas sem contatos disponíveis"]
             VCARD["VCard
-            geração de arquivos vCard"]
+            download e parse de arquivos .vcf"]
         end
 
         subgraph UTILS_IFACE["Interface Utilitária
@@ -147,14 +150,16 @@ flowchart TD
             JSON_CFG["continentsConfig.json
             countriesToAvoidPermanent.json
             countriesToAvoidTemporary.json
-            firmsToAvoid.json
             countryAliases.json
+            firmsToAvoid.json
+            practiceAreas.json
             systemSnapshot.json"]
             TODOS_JSON["todos/byNewPage.json
-            (fila de firmas a implementar)"]
+            todos/byPage.json
+            todos/uncategorized.json
+            (filas de firmas a implementar)"]
             XLSX_FILES["Sheet.xlsx
             Reports.xlsx
-            Contacts.xlsx
             filteredCollectedContacts.xlsx
             LastCheckSheet.xlsx"]
         end
@@ -162,22 +167,24 @@ flowchart TD
         subgraph PYTHON_TOOLS["Scripts Python
         (utils/python)"]
             SORT_PY["sort_builders.py
-            ordena arrays dos builders
-            (AMERICAS: por sub-seção)"]
-            CAT_PY["categorize_firms.py
-            classifica firmas do byNewPage.json
-            por continente via TLD/keywords"]
+            ordena classes por nome dentro dos pacotes"]
             GEN_DOCS_PY["generate_docs.py
             empacota docs em .zip
             para contexto do chat"]
+            CHECK_PY["check_todos.py
+            verifica status das firmas nas filas todos/"]
+            MOVE_PY["move_firms.py
+            move classes de to_test para produção"]
         end
 
         subgraph TEST["Testes
-        (core/src/test/java)"]
+        (firms/src/test/java)"]
             TEST_SITE["TestSite.java
             - usa reflection
             - Validations.enableTestMode()
             - scraping sem registrar dados"]
+            BATCH_TEST["BatchTestRunner.java
+            - executa múltiplos scrapers em sequência"]
         end
     end
 
@@ -198,7 +205,7 @@ flowchart TD
     %% Fluxo principal
     MAIN -->|"1. preventSleep()"| NO_SLEEP
     MAIN -->|"2. login()"| EMAIL_DUP
-    MAIN -->|"3. collectLawyersRegistered()"| CONTACTS
+    MAIN -->|"3. collectLawyersRegistered()"| CONTACTS_SHEET
     MAIN -->|"4. constructFirms()"| COMPLETED
     COMPLETED --> BUILDER
     COMPLETED --> CONTINENT
@@ -224,7 +231,7 @@ flowchart TD
     BASE_SITES -->|"usa helpers de"| SITE_UTILS
     SHEET -->|"escreve em"| XLSX_FILES
     REPORTS -->|"escreve em"| XLSX_FILES
-    CONTACTS -->|"lê de"| XLSX_FILES
+    CONTACTS_SHEET -->|"lê de"| XLSX_FILES
     FIRMS_MONTH -->|"lê/escreve"| MONTH_FILE
 
     MAIN -->|"6. cleanUpBetweenSites()"| MY_DRIVER
@@ -235,5 +242,6 @@ flowchart TD
 
     %% Scripts Python
     SORT_PY -.->|"reordena"| BUILDER
-    CAT_PY -.->|"classifica entradas de"| TODOS_JSON
+    CHECK_PY -.->|"verifica entradas de"| TODOS_JSON
+    MOVE_PY -.->|"move para"| SITES_IMPL
     GEN_DOCS_PY -.->|"empacota"| JSON_CFG

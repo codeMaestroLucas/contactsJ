@@ -5,7 +5,7 @@
 
   "Europe":              { "enabled": true,  "weight": 1 },
 
-  "Americas":            { "enabled": true, "weight": 2 },
+  "Americas":            { "enabled": false, "weight": 2 },
 
   "Oceania":             { "enabled": false,  "weight": 2 }
 }

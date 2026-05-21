@@ -1,4 +1,4 @@
-package org.example.src.sites.americas;
+package org.example.src.sites.mundial;
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;

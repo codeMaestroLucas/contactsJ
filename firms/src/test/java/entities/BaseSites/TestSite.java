@@ -1,13 +1,12 @@
 package entities.BaseSites;
 
 import org.example.src.entities.BaseSites.Site;
-import org.example.src.sites.mundial.PerezLlorca;
-import org.example.src.sites.to_test._standingBy.PoswaIncorporated;
+import org.example.src.sites.mundial.GibsonDunnCrutcher;
 import org.example.src.utils.Validations;
 import java.lang.reflect.Field;
 
-    class MyTestPage extends PoswaIncorporated {
-    public static final boolean HEADLESS = false;
+    class MyTestPage extends GibsonDunnCrutcher {
+    public static final boolean HEADLESS = true;
 
     public MyTestPage() { super(); }
 

@@ -89,7 +89,7 @@ This application automates the collection of lawyer contact information from law
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Excel Layer                                 │
-│         Sheet.java │ Contacts.java │ Reports.java                │
+│ Sheet.java │ Reports.java │ ContactsAlreadyRegisteredSheet.java  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -120,84 +120,132 @@ This application automates the collection of lawyer contact information from law
 
 ## 3. Directory Structure
 
+O projeto é um Maven multi-módulo com dois módulos principais: **`core`** (infraestrutura compartilhada) e **`firms`** (scrapers de produção e ponto de entrada).
+
 ```
 project-root/
 ├── pom.xml
-├── DOCUMENTATION.md
-├── data/
-│   ├── monthFirms.txt                    # Firms processed this month
+├── README.md
+├── mermaidStructure.txt
+├── data/                                       # runtime — gerado durante execução
+│   ├── monthFirms.txt                          # firmas processadas no mês
+│   ├── exhaustedFirms.txt                      # firmas sem mais contatos disponíveis
 │   ├── sites/
-│   │   ├── byPage/                       # Monthly emails per ByPage site
-│   │   │   └── <FirmName>.txt
-│   │   └── byNewPage/                    # Monthly emails per ByNewPage site
-│   │       └── <FirmName>.txt
+│   │   ├── byPage/<FirmName>.txt               # e-mails coletados no mês (ByPage)
+│   │   └── byNewPage/<FirmName>.txt            # e-mails coletados no mês (ByNewPage)
 │   └── _toAvoid/
-│       ├── byPage/                       # Permanently avoided emails
-│       │   └── <FirmName>.txt
-│       └── byNewPage/
-│           └── <FirmName>.txt
+│       ├── byPage/<FirmName>.txt               # e-mails permanentemente evitados
+│       └── byNewPage/<FirmName>.txt
 │
-└── src/main/
-    ├── java/org/example/
-    │   ├── Main.java                     # Application entry point
-    │   ├── exceptions/
-    │   │   ├── LawyerExceptions.java     # Data extraction errors
-    │   │   └── ValidationExceptions.java # Validation errors
-    │   │
-    │   └── src/
-    │       ├── CONFIG.java               # Global configuration
-    │       │
-    │       ├── entities/
-    │       │   ├── Lawyer.java           # Data model
-    │       │   ├── MyDriver.java         # WebDriver singleton
-    │       │   │
-    │       │   ├── BaseSites/
-    │       │   │   ├── Site.java         # Abstract base class
-    │       │   │   ├── ByPage.java       # Pagination strategy
-    │       │   │   ├── ByNewPage.java    # Profile page strategy
-    │       │   │   └── SiteUtils.java    # Helper utilities
-    │       │   │
-    │       │   └── excel/
-    │       │       ├── Excel.java        # Base Excel handler
-    │       │       ├── Sheet.java        # Main output sheet
-    │       │       ├── Contacts.java     # Existing contacts
-    │       │       ├── ContactsAlreadyRegisteredSheet.java
-    │       │       └── Reports.java      # Execution reports
-    │       │
-    │       ├── sites/
-    │       │   ├── byPage/               # ByPage implementations
-    │       │   │   └── *.java
-    │       │   └── byNewPage/            # ByNewPage implementations
-    │       │       └── *.java
-    │       │
-    │       └── utils/
-    │           ├── ContinentConfig.java  # Continent settings reader
-    │           ├── EmailOfMonth.java     # Monthly email tracker
-    │           ├── ErrorLogger.java      # Error tracking system
-    │           ├── Extractor.java        # Data extraction utility
-    │           ├── FirmsOMonth.java      # Monthly firm tracker
-    │           ├── TreatLawyerParams.java # Data cleaning
-    │           ├── VCard.java            # VCF file parser (NEW)
-    │           ├── Validations.java      # Validation rules
-    │           │
-    │           └── myInterface/
-    │               ├── FirmsBuilder.java
-    │               ├── CompletedFirms.java
-    │               └── MyInterfaceUtls.java
-    │
-    └── resources/baseFiles/
-        ├── lastRowRegisteredInContacts.txt
-        ├── excel/
-        │   ├── Sheet.xlsx
-        │   ├── Contacts.xlsx
-        │   ├── Reports.xlsx
-        │   └── filteredCollectedContacts.xlsx
+├── core/                                       # módulo base (infraestrutura compartilhada)
+│   └── src/main/
+│       ├── java/org/example/
+│       │   ├── exceptions/
+│       │   │   ├── LawyerExceptions.java       # erros de extração de dados
+│       │   │   └── ValidationExceptions.java   # erros de validação
+│       │   │
+│       │   └── src/
+│       │       ├── CONFIG.java                 # constantes globais e paths
+│       │       │
+│       │       ├── entities/
+│       │       │   ├── Lawyer.java             # modelo de dados
+│       │       │   ├── MyDriver.java           # WebDriver singleton
+│       │       │   │
+│       │       │   ├── BaseSites/
+│       │       │   │   ├── Site.java           # classe base abstrata
+│       │       │   │   ├── ByPage.java         # estratégia de paginação por URL
+│       │       │   │   ├── ByNewPage.java      # estratégia de perfil em nova aba
+│       │       │   │   └── SiteUtils.java      # helpers de DOM
+│       │       │   │
+│       │       │   └── excel/
+│       │       │       ├── Excel.java                          # base Excel (Apache POI)
+│       │       │       ├── Sheet.java                          # planilha principal de saída
+│       │       │       ├── Reports.java                        # métricas de execução
+│       │       │       ├── ContactsAlreadyRegisteredSheet.java # leitura do filteredCollectedContacts.xlsx
+│       │       │       ├── FilteredContactsNormalizer.java     # normalização de dados do xlsx filtrado
+│       │       │       └── LastCheck.java                      # validação de duplicatas via EmailDuplicateChecker
+│       │       │
+│       │       ├── sites/
+│       │       │   └── to_test/                # scrapers em desenvolvimento / teste
+│       │       │       ├── americas/
+│       │       │       ├── asia/
+│       │       │       ├── ...
+│       │       │       └── _standingBy/        # firmas pausadas (país evitado, etc.)
+│       │       │
+│       │       └── utils/
+│       │           ├── ContinentConfig.java    # leitor de continentsConfig.json
+│       │           ├── EmailOfMonth.java       # rastreador de e-mails do mês
+│       │           ├── ErrorLogger.java        # sistema de log de erros
+│       │           ├── Extractor.java          # extração de dados do DOM
+│       │           ├── FirmsExhausted.java     # rastreador de firmas esgotadas
+│       │           ├── FirmsOMonth.java        # rastreador de firmas do mês
+│       │           ├── NoSleep.java            # impede suspensão do sistema (caffeinate/JNA)
+│       │           ├── Stopwatch.java          # temporizador de execução
+│       │           ├── TreatLawyerParams.java  # sanitização e normalização de dados
+│       │           ├── VCard.java              # download e parse de arquivos .vcf
+│       │           ├── Validations.java        # regras de validação
+│       │           │
+│       │           ├── myInterface/
+│       │           │   └── MyInterfaceUtls.java
+│       │           │
+│       │           ├── python/
+│       │           │   ├── generate_docs.py    # empacota docs em .zip para contexto de chat
+│       │           │   ├── check_todos.py      # verifica status das firmas nas filas todos/
+│       │           │   └── move_firms.py       # move classes de to_test para produção
+│       │           │
+│       │           └── validation/
+│       │               └── EmailDuplicateChecker.java  # verificação de duplicatas via Google Sheets
+│       │
+│       └── resources/baseFiles/
+│           ├── lastRowRegisteredInContacts.txt
+│           ├── excel/
+│           │   ├── Sheet.xlsx
+│           │   ├── Reports.xlsx
+│           │   ├── filteredCollectedContacts.xlsx
+│           │   ├── LastCheckSheet.xlsx
+│           │   └── RawXL/                      # templates originais (backup)
+│           │       ├── Sheet.xlsx
+│           │       ├── Reports.xlsx
+│           │       └── filteredCollectedContacts.xlsx
+│           │
+│           ├── json/
+│           │   ├── continentsConfig.json
+│           │   ├── countriesToAvoidPermanent.json
+│           │   ├── countriesToAvoidTemporary.json
+│           │   ├── countryAliases.json
+│           │   ├── firmsToAvoid.json
+│           │   ├── practiceAreas.json
+│           │   └── systemSnapshot.json
+│           │
+│           ├── todos/
+│           │   ├── byNewPage.json              # fila de firmas ByNewPage a implementar
+│           │   ├── byPage.json                 # fila de firmas ByPage a implementar
+│           │   └── uncategorized.json          # firmas sem estratégia definida
+│           │
+│           └── instructions/                   # prompts e convenções para geração de código
+│               └── *.md / *.txt
+│
+└── firms/                                      # módulo de scrapers de produção
+    └── src/
+        ├── main/java/org/example/
+        │   ├── Main.java                       # ponto de entrada da aplicação
+        │   │
+        │   └── src/
+        │       ├── sites/                      # ~1560 classes, organizadas por continente
+        │       │   ├── africa/                 # ~89 classes
+        │       │   ├── americas/               # ~354 classes
+        │       │   ├── asia/                   # ~325 classes
+        │       │   ├── europe/                 # ~595 classes
+        │       │   ├── mundial/                # ~136 classes
+        │       │   └── oceania/                # ~61 classes
+        │       │
+        │       └── utils/myInterface/
+        │           ├── CompletedFirms.java     # menu CLI + construção da lista de firmas
+        │           └── FirmsBuilder.java       # discovery automático via reflection
         │
-        └── json/
-            ├── continentsConfig.json
-            ├── countriesToAvoidPermanent.json
-            ├── countriesToAvoidTemporary.json
-            └── firmsToAvoid.json
+        └── test/java/entities/BaseSites/
+            ├── TestSite.java                   # executa scraper isolado sem registrar dados
+            └── BatchTestRunner.java            # executa múltiplos scrapers em sequência
 ```
 
 ---
@@ -507,7 +555,57 @@ public class ContinentConfig {
 }
 ```
 
-### 5.6 ErrorLogger.java
+### 5.6 EmailDuplicateChecker.java
+
+Verifica duplicatas globais de e-mail consultando uma planilha Google Sheets. Singleton — requer `login()` antes do primeiro uso.
+
+```java
+public class EmailDuplicateChecker {
+    public static EmailDuplicateChecker getINSTANCE();
+
+    // Autenticação via Google OAuth (deve ser chamado antes de getINSTANCE())
+    public static void login();
+
+    // Retorna true se o e-mail já está registrado na planilha remota
+    public boolean isEmailRegistered(String email);
+}
+```
+
+### 5.7 NoSleep.java
+
+Impede a suspensão do sistema durante a execução. Usa `caffeinate` no macOS e JNA (`Kernel32`) no Windows.
+
+```java
+public class NoSleep {
+    public static void preventSleep();
+    public static void allowSleep();   // libera o bloqueio ao finalizar
+}
+```
+
+### 5.8 Stopwatch.java
+
+Temporizador simples para medir o tempo de execução por firma.
+
+```java
+public class Stopwatch {
+    public void start();
+    public void stop();
+    public String format();   // retorna "Xm Ys" com o tempo decorrido
+}
+```
+
+### 5.9 FirmsExhausted.java
+
+Rastreia firmas que esgotaram todos os contatos disponíveis, persistindo em `data/exhaustedFirms.txt` para excluí-las de execuções futuras.
+
+```java
+public class FirmsExhausted {
+    public static boolean isExhausted(String firmName);
+    public static void markExhausted(String firmName);
+}
+```
+
+### 5.10 ErrorLogger.java
 
 Comprehensive error tracking system.
 
@@ -537,7 +635,7 @@ public class ErrorLogger {
 - `openNewTabError` - Failed to open profile tab
 - `getSocialsError` - Failed to extract contact info
 
-### 5.7 VCard.java (NEW)
+### 5.11 VCard.java
 
 Parses `.vcf` (VCard) files downloaded from law firm websites and extracts email and phone.
 Injectable as a field in any `ByPage` or `ByNewPage` firm class.
@@ -674,41 +772,40 @@ public class CONFIG {
 
 ### 7.4 Firm Organization in Builders
 
-```java
-// In FirmsBuilder.java
-private static final Site[] AFRICA  = { new FirmA(), new FirmB(), ... };
-private static final Site[] ASIA    = { ... };
-private static final Site[] EUROPE  = { ... };
-private static final Site[] AMERICAS = {
-// North America
-    new FirmNA1(), new FirmNA2(), ...,
-// Central America
-    new FirmCA1(), ...,
-// South America
-    new FirmSA1(), new FirmSA2(), ...,
-};
-private static final Site[] OCEANIA = { ... };
-private static final Site[] MUNDIAL = { ... };  // Always included
+`FirmsBuilder` usa **reflection** (biblioteca Reflections) para descobrir automaticamente todas as classes concretas de `Site` dentro de cada pacote de continente. Não há arrays estáticos — basta colocar a classe no pacote correto.
 
-// Getters
-public static Site[] getAfrica()   { return AFRICA; }
-public static Site[] getAsia()     { return ASIA; }
-public static Site[] getEurope()   { return EUROPE; }
-public static Site[] getAmericas() { return AMERICAS; }
-public static Site[] getOceania()  { return OCEANIA; }
-public static Site[] getMundial()  { return MUNDIAL; }
+```java
+// FirmsBuilder.java — discovery automático via reflection.
+// Para registrar uma nova firma, coloque-a no pacote correto
+// (org.example.src.sites.<continente>) — nenhuma alteração aqui é necessária.
+
+private static Site[] scanContinent(String continent) {
+    Reflections reflections = new Reflections(
+        "org.example.src.sites." + continent
+    );
+    return reflections.getSubTypesOf(Site.class).stream()
+        .filter(c -> !Modifier.isAbstract(c.getModifiers()))
+        .map(c -> (Site) c.getDeclaredConstructor().newInstance())
+        .toArray(Site[]::new);
+}
+
+public static Site[] getAfrica()   { return scanContinent("africa"); }
+public static Site[] getAsia()     { return scanContinent("asia"); }
+public static Site[] getEurope()   { return scanContinent("europe"); }
+public static Site[] getAmericas() { return scanContinent("americas"); }
+public static Site[] getOceania()  { return scanContinent("oceania"); }
+public static Site[] getMundial()  { return scanContinent("mundial"); }
 
 // Build method respects configuration
 public static Site[] build() {
     List<Site> sites = new ArrayList<>();
 
-    if (ContinentConfig.isContinentEnabled("Africa"))   sites.addAll(Arrays.asList(AFRICA));
-    if (ContinentConfig.isContinentEnabled("Asia"))     sites.addAll(Arrays.asList(ASIA));
-    if (ContinentConfig.isContinentEnabled("Europe"))   sites.addAll(Arrays.asList(EUROPE));
-    if (ContinentConfig.isContinentEnabled("Americas")) sites.addAll(Arrays.asList(AMERICAS));
-    if (ContinentConfig.isContinentEnabled("Oceania"))  sites.addAll(Arrays.asList(OCEANIA));
-
-    sites.addAll(Arrays.asList(MUNDIAL)); // Always add
+    if (ContinentConfig.isContinentEnabled("Africa"))   sites.addAll(Arrays.asList(getAfrica()));
+    if (ContinentConfig.isContinentEnabled("Asia"))     sites.addAll(Arrays.asList(getAsia()));
+    if (ContinentConfig.isContinentEnabled("Europe"))   sites.addAll(Arrays.asList(getEurope()));
+    if (ContinentConfig.isContinentEnabled("Americas")) sites.addAll(Arrays.asList(getAmericas()));
+    if (ContinentConfig.isContinentEnabled("Oceania"))  sites.addAll(Arrays.asList(getOceania()));
+    sites.addAll(Arrays.asList(getMundial())); // Always add
 
     return sites.toArray(new Site[0]);
 }
@@ -716,19 +813,16 @@ public static Site[] build() {
 
 ### 7.5 Available Continents
 
-| Continent | Array identifier | Config key | Notes |
-|-----------|-----------------|------------|-------|
-| Africa | `AFRICA` | `"Africa"` | |
-| Asia | `ASIA` | `"Asia"` | |
-| Europe | `EUROPE` | `"Europe"` | |
-| Americas | `AMERICAS` | `"Americas"` | North + Central + South America combined; internally divided by `// North America`, `// Central America`, `// South America` comments |
-| Oceania | `OCEANIA` | `"Oceania"` | |
-| Mundial (Global) | `MUNDIAL` | *(always on)* | Always included regardless of config |
+| Continent | Package | Config key | Notes |
+|-----------|---------|------------|-------|
+| Africa | `africa` | `"Africa"` | |
+| Asia | `asia` | `"Asia"` | |
+| Europe | `europe` | `"Europe"` | |
+| Americas | `americas` | `"Americas"` | North + Central + South America no mesmo pacote |
+| Oceania | `oceania` | `"Oceania"` | |
+| Mundial (Global) | `mundial` | *(sempre ativo)* | Sempre incluído independente da config |
 
-NOTE: If the country registered if from more than one continent, like Turkey (Asia and Europe), guarantee that the continent
-showed is in EUROPE
-
-NOTE: Inside ASIA, put a difference between other countries and ISRAEL just with a commentary
+NOTE: If the country registered is from more than one continent, like Turkey (Asia and Europe), guarantee that the continent showed is EUROPE
 
 ---
 
@@ -754,16 +848,20 @@ NOTE: Inside ASIA, put a difference between other countries and ISRAEL just with
 
 #### Step 2: Create the Class File
 
-**Location:**
-- `src/main/java/org/example/src/sites/byPage/` for ByPage
-- `src/main/java/org/example/src/sites/byNewPage/` for ByNewPage
+**Localização para desenvolvimento/teste:**
+- `core/src/main/java/org/example/src/sites/to_test/{continent}/`
+
+**Localização para produção** (após testes aprovados):
+- `firms/src/main/java/org/example/src/sites/{continent}/`
+
+O fluxo recomendado é desenvolver e testar em `to_test/`, depois mover com `move_firms.py`.
 
 #### Step 3: Implement Required Methods
 
 ### 8.2 ByPage Template
 
 ```java
-package org.example.src.sites.to_test.europe;
+package org.example.src.sites.to_test.americas; // ajuste o continente conforme necessário
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByPage;
@@ -900,7 +998,7 @@ public class NewFirmName extends ByPage {
 ### 8.3 ByNewPage Template
 
 ```java
-package org.example.src.sites.to_test.europe;
+package org.example.src.sites.to_test.americas; // ajuste o continente conforme necessário
 
 import org.example.exceptions.LawyerExceptions;
 import org.example.src.entities.BaseSites.ByNewPage;
@@ -1031,18 +1129,13 @@ public class NewFirmName extends ByNewPage {
 
 ### 8.4 Register the New Scraper
 
-Add to the appropriate builder in the correct continent array:
+**Nenhuma alteração manual no `FirmsBuilder` é necessária.** O builder descobre todas as firmas via reflection escaneando os pacotes de continente. Basta mover o arquivo `.java` para o pacote de produção correto:
 
-**File:** `FirmsBuilder.java`
-
-```java
-// Example: Adding a European firm to FirmsBuilder
-private static final Site[] EUROPE = {
-    new ExistingFirm1(),
-    new ExistingFirm2(),
-    new NewFirmName(),  // Add new firm here
-};
 ```
+firms/src/main/java/org/example/src/sites/{continent}/NewFirmName.java
+```
+
+Use o script `move_firms.py` para automatizar essa movimentação de `to_test` para produção.
 
 ### 8.5 Testing
 
@@ -1264,26 +1357,19 @@ When generating scraper classes for AI/automated tools:
 
 1. **`touch` Command** (create files):
    ```bash
-   touch core/src/main/java/org/example/src/sites_to_testFirm1.java core/src/main/java/org/example/src/sites_to_testFirm2.java
+   touch core/src/main/java/org/example/src/sites/to_test/americas/Firm1.java core/src/main/java/org/example/src/sites/to_test/americas/Firm2.java
    ```
 
 2. **Class Generation** (for each firm):
    - Title with firm name
    - Complete Java class code
 
-3. **Builder Lines** (at end):
+3. **Continent placement** (at end):
    ```text
-   // Europe
-   new FirmA(), new FirmB(),
-
-   // Asia
-   new FirmC(), new FirmD(),
-
-   // Americas
-   // North America
-   new FirmE(),
-   // South America
-   new FirmF(),
+   // Indicate which continent package each class should go into:
+   // europe → firms/.../sites/europe/FirmA.java
+   // asia   → firms/.../sites/asia/FirmC.java
+   // americas → firms/.../sites/americas/FirmE.java
    ```
 
 ### 11.2 Formatting Rules
@@ -1361,6 +1447,27 @@ Specific firms to skip.
   "firms": ["FirmName1", "FirmName2"]
 }
 ```
+
+### 12.5 countryAliases.json
+
+Mapeamento de aliases/variações de nomes de países para o nome canônico usado no sistema.
+
+```json
+{
+  "UK": "England",
+  "United Kingdom": "England",
+  "United Arab Emirates": "the UAE",
+  ...
+}
+```
+
+### 12.6 practiceAreas.json
+
+Lista de áreas de prática válidas para normalização do campo `practiceArea`.
+
+### 12.7 systemSnapshot.json
+
+Snapshot do estado do sistema gerado por `CompletedFirms` ao encerrar. Contém métricas de firmas disponíveis, esgotadas e do mês para diagnóstico rápido.
 
 ---
 
