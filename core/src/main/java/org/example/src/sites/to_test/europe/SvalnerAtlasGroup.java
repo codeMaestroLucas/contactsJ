@@ -31,7 +31,7 @@ public class SvalnerAtlasGroup extends ByNewPage {
     }
 
     @Override
-    public String openNewTab(WebElement lawyer) throws Exception {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         String url = extractor.extractLawyerAttribute(lawyer, new By[]{By.cssSelector("p.text-gray-800 a")}, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(url);
         return url;

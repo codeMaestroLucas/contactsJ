@@ -31,7 +31,7 @@ public class ArntzenGrette extends ByNewPage {
     }
 
     @Override
-    public String openNewTab(WebElement lawyer) throws Exception {
+    public String openNewTab(WebElement lawyer) throws LawyerExceptions {
         String url = extractor.extractLawyerAttribute(lawyer, new By[]{By.tagName("a")}, "LINK", "href", LawyerExceptions::linkException);
         MyDriver.openNewTab(url);
         return url;
